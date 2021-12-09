@@ -1,0 +1,20 @@
+#include "AudioFunctionLibrary.h"
+
+class USoundClass;
+class USoundMix;
+class UObject;
+
+float UAudioFunctionLibrary::SetSoundClassVolume(USoundClass* SoundClass, float Volume) {
+    return 0.0f;
+}
+
+void UAudioFunctionLibrary::PushTimedSoundMix(UObject* contextObject, USoundMix* mix, float Duration) {
+}
+
+float UAudioFunctionLibrary::GetSoundClassVolume(USoundClass* SoundClass) {
+    return 0.0f;
+}
+
+UAudioFunctionLibrary::UAudioFunctionLibrary() {
+}
+

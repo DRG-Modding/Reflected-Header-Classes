@@ -1,0 +1,24 @@
+#pragma once
+#include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
+#include "DestinationActorComponent.generated.h"
+
+class AActor;
+
+UCLASS(BlueprintType)
+class FSD_API UDestinationActorComponent : public UActorComponent {
+    GENERATED_BODY()
+public:
+protected:
+    UPROPERTY(BlueprintReadOnly, Replicated, Transient)
+    TWeakObjectPtr<AActor> DestinationActor;
+    
+public:
+    UFUNCTION(BlueprintPure)
+    float GetDistToDestinationActor() const;
+    
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+    UDestinationActorComponent();
+};
+
