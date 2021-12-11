@@ -3,8 +3,8 @@
 
 class UGameplayTagAssetInterface;
 class IGameplayTagAssetInterface;
-class AActor;
 class UObject;
+class AActor;
 
 bool UBlueprintGameplayTagLibrary::RemoveGameplayTag(FGameplayTagContainer& TagContainer, FGameplayTag Tag) {
     return false;

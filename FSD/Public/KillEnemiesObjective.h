@@ -36,16 +36,16 @@ public:
     void RegisterTargetSpawned(APawn* Target) const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTargetKilled(UHealthComponentBase* Health);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetKilled(UHealthComponentBase* Health);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EnemiesToKill(int32 prevAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EnemiesKilled(int32 prevAmount);
     
 public:

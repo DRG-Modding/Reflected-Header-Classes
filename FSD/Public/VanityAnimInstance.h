@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EVanitySlot.h"
 //CROSS-MODULE INCLUDE: Engine AnimInstance
+#include "EVanitySlot.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "VanityAnimInstance.generated.h"

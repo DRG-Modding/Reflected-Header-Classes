@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE: UMG UserWidget
 #include "AmmoCountWidget.generated.h"
 
-class AItem;
-class APlayerCharacter;
 class UItemAggregator;
+class APlayerCharacter;
+class AItem;
 
 UCLASS(Abstract, EditInlineNew)
 class UAmmoCountWidget : public UUserWidget {
@@ -21,28 +21,28 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, Transient)
     UItemAggregator* Aggregator;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnVisibleChanged(bool Visible, bool showClipCount);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnTotalVisibleChanged(bool Visible);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnTotalChanged(int32 Total);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnItemTotalChanged(int32 Value);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnItemEquipped(AItem* NewItem);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnItemAmountChanged(int32 Value);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAmountChanged(int32 count);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DoItemEquipped();
     
 public:

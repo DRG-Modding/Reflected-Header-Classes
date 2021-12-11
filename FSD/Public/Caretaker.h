@@ -5,10 +5,10 @@
 #include "Caretaker.generated.h"
 
 class UCaretakerActionComponent;
-class UPassthroughSubHealthComponent;
+class UHealthDamageTracker;
 class USceneComponent;
 class USkeletalMeshComponent;
-class UHealthDamageTracker;
+class UPassthroughSubHealthComponent;
 class UEnemyHealthComponent;
 class UPawnStatsComponent;
 class UAnimSequenceBase;
@@ -94,39 +94,39 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void OpenRandomEye(bool forbidLastEye);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStartHideFromDamage();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_OpenEye();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CurrentStage();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CurrentRotation();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnNewStage(int32 stageIndex);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEyeOpened(USkeletalMeshComponent* eye);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEyeClosed(USkeletalMeshComponent* eye);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDamageTaken(float Amount);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAwake() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAnyEyeOpen() const;
     
 protected:

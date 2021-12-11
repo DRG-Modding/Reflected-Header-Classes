@@ -6,9 +6,9 @@
 #include "UpgradeValues.h"
 #include "TargetStateDamageBonusUpgrade.generated.h"
 
+class UDamageClass;
 class AActor;
 class AFSDPlayerState;
-class UDamageClass;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UTargetStateDamageBonusUpgrade : public UItemUpgrade {
@@ -25,7 +25,7 @@ protected:
     UDamageClass* DamageClass;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, ETargetStateDamageBonusType NewTargetState);
     
     UTargetStateDamageBonusUpgrade();

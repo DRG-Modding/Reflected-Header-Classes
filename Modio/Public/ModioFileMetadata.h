@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioFileMetadataID.h"
-#include "ModioModID.h"
 //CROSS-MODULE INCLUDE: CoreUObject DateTime
+#include "ModioFileMetadataID.h"
 #include "EModioVirusScanStatus.h"
+#include "ModioModID.h"
 #include "EModioVirusStatus.h"
 #include "ModioFileMetadata.generated.h"
 

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: AudioMixer SynthComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "EGranularSynthEnvelopeType.h"
 #include "EGranularSynthSeekType.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "GranularSynth.generated.h"
 
 class USoundWave;
@@ -68,13 +68,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void NoteOff(const float Note, const bool bKill);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLoaded() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSampleDuration() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentPlayheadTime() const;
     
     UGranularSynth();

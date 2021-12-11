@@ -10,7 +10,7 @@
 
 class UExpandableArea;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FExpandableAreaOnExpansionChanged, UExpandableArea*, Area, bool, bIsExpanded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FExpandableAreaOnExpansionChanged, UExpandableArea*, Area, bool, bIsExpanded);
 
 UCLASS()
 class UMG_API UExpandableArea : public UWidget, public INamedSlotInterface {
@@ -54,9 +54,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIsExpanded(bool IsExpanded);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsExpanded() const;
     
     UExpandableArea();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -22,10 +22,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void StopEffect();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStopEffect();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStartEffect(APlayerCharacter* Character);
     
     UFUNCTION(BlueprintCallable)

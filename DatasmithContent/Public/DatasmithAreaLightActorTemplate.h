@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDatasmithAreaLightActorType.h"
-#include "DatasmithObjectTemplate.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
-#include "EDatasmithAreaLightActorShape.h"
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "DatasmithObjectTemplate.h"
+#include "EDatasmithAreaLightActorShape.h"
+#include "EDatasmithAreaLightActorType.h"
 //CROSS-MODULE INCLUDE: Engine ELightUnits
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "DatasmithAreaLightActorTemplate.generated.h"
 
 class UTextureLightProfile;

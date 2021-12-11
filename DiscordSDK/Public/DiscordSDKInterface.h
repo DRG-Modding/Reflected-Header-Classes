@@ -6,7 +6,7 @@
 
 class UDiscordSDKInterface;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordSDKInterfaceOnJoinRequest, const FDiscordUserDataSDK&, joinRequest);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordSDKInterfaceOnJoinRequest, const FDiscordUserDataSDK&, joinRequest);
 
 UCLASS(BlueprintType)
 class DISCORDSDK_API UDiscordSDKInterface : public UObject {
@@ -23,7 +23,7 @@ protected:
     void IgnoreInvite(const FString& UserId);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UDiscordSDKInterface* Get();
     
 protected:

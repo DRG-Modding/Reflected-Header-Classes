@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: CoreUObject Object
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "EARTrackingState.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "ARPin.generated.h"
 
-class UWorld;
-class USceneComponent;
 class UARTrackedGeometry;
+class USceneComponent;
+class UWorld;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARPinOnARTrackingStateChanged, EARTrackingState, NewTrackingState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARPinOnARTransformUpdated, const FTransform&, OldToNewTransform);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARPinOnARTrackingStateChanged, EARTrackingState, NewTrackingState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARPinOnARTransformUpdated, const FTransform&, OldToNewTransform);
 
 UCLASS(BlueprintType)
 class AUGMENTEDREALITY_API UARPin : public UObject {
@@ -40,25 +40,25 @@ private:
     FARPinOnARTransformUpdated OnARTransformUpdated;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARTrackingState GetTrackingState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UARTrackedGeometry* GetTrackedGeometry() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USceneComponent* GetPinnedComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetLocalToWorldTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetLocalToTrackingTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetDebugName() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DebugDraw(UWorld* World, const FLinearColor& Color, float Scale, float PersistForSeconds) const;
     
     UARPin();

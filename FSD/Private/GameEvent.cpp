@@ -3,9 +3,9 @@
 #include "Templates/SubclassOf.h"
 
 class ARessuplyPod;
-class AEventStarterButton;
-class AActor;
 class UDebrisPositioning;
+class AActor;
+class AEventStarterButton;
 class AProceduralSetup;
 
 void AGameEvent::TrySetupGameEvent() {

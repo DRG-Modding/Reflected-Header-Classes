@@ -4,8 +4,8 @@
 #include "DialogStruct.h"
 #include "DialogDataAsset.generated.h"
 
-class USoundSubmixBase;
 class UObject;
+class USoundSubmixBase;
 
 UCLASS(BlueprintType)
 class UDialogDataAsset : public UDataAsset {
@@ -37,13 +37,13 @@ protected:
     TArray<int32> ShuffledIndices;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 SelectIndex(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool SelectEntry(UObject* WorldContext, FDialogStruct& Dialog);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FDialogStruct GetShout(int32 Index) const;
     
     UDialogDataAsset();

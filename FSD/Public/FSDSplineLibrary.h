@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: Engine ETraceTypeQuery
 //CROSS-MODULE INCLUDE: Engine ESplineCoordinateSpace
-//CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 //CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE: CoreUObject Transform
+//CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
 //CROSS-MODULE INCLUDE: FSDEngine EPreciousMaterialOptions
 #include "FSDSplineLibrary.generated.h"
 
@@ -26,7 +26,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<FTransform> GetSplineComponentTransforms(const USplineComponent*& SplineComponent, float StepSize, TEnumAsByte<ESplineCoordinateSpace::Type> Space);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void GetLocationAndTangentsAtSplinePoint(const USplineComponent* Spline, int32 PointIndex, FVector& Location, FVector& ArriveTangent, FVector& LeaveTangent, TEnumAsByte<ESplineCoordinateSpace::Type> CoordinateSpace);
     
     UFUNCTION(BlueprintCallable)

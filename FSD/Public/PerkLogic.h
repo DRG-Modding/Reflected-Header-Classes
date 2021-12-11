@@ -10,14 +10,14 @@ class UPerkLogic : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StartLogic(int32 Rank);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetCharacter() const;
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FText GetAdditionalText(int32 Rank) const;
     
     UPerkLogic();

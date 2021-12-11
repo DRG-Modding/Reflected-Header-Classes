@@ -3,13 +3,13 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "RepairableComponent.generated.h"
 
-class APlayerCharacter;
 class UGemResourceData;
 class URepairableComponent;
+class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRepairableComponentOnFullyRepairedEvent, URepairableComponent*, Component);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRepairableComponentOnAllResourcesAquiredEvent, URepairableComponent*, Component);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRepairableComponentOnRepairedEvent, URepairableComponent*, Component);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRepairableComponentOnFullyRepairedEvent, URepairableComponent*, Component);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRepairableComponentOnAllResourcesAquiredEvent, URepairableComponent*, Component);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRepairableComponentOnRepairedEvent, URepairableComponent*, Component);
 
 UCLASS(BlueprintType)
 class URepairableComponent : public UActorComponent {
@@ -39,11 +39,11 @@ public:
     bool TryRepair(APlayerCharacter* User);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ResourcesRequired();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetResourcesRequired() const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

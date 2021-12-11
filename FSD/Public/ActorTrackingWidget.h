@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: SlateCore Margin
-#include "FSDUserWidget.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "FSDUserWidget.h"
+//CROSS-MODULE INCLUDE: SlateCore Margin
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ActorTrackingWidget.generated.h"
 
@@ -46,28 +46,28 @@ public:
     void SetTarget(AActor* Actor);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnTargetSet(AActor* NewTarget);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnTargetDistanceChanged(float Distance);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShow();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnInViewChanged(bool inView, float Angle);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetTarget() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetRenderTranslation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool FindScreenPosition(APlayerController* PlayerController, FVector WorldLocation, FMargin Margin, FVector& ScreenCord, float& Angle);
     
     UFUNCTION(BlueprintCallable)

@@ -50,10 +50,10 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     int32 RequiredCharacterLevel;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetPreviewActorClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FCraftingCost> GetCraftingCost() const;
     
     UItemData();

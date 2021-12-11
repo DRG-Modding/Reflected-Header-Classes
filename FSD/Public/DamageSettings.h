@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
-#include "DecalData.h"
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
+#include "DecalData.h"
 #include "DamageSettings.generated.h"
 
 class UDamageComponent;
 class UStatusEffect;
 class UNiagaraSystem;
-class UDamageTag;
 class USoundCue;
+class UDamageTag;
 
 UCLASS()
 class UDamageSettings : public UDataAsset {

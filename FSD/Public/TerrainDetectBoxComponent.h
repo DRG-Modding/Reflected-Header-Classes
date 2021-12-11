@@ -4,7 +4,7 @@
 #include "TerrainDetectInterface.h"
 #include "TerrainDetectBoxComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTerrainDetectBoxComponentOnBoxExcavated);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTerrainDetectBoxComponentOnBoxExcavated);
 
 UCLASS(EditInlineNew)
 class UTerrainDetectBoxComponent : public UBoxComponent, public ITerrainDetectInterface {
@@ -32,5 +32,7 @@ public:
     void StartDetect();
     
     UTerrainDetectBoxComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

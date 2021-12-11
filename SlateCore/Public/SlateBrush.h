@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Box2D
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "Margin.h"
-#include "SlateColor.h"
 #include "ESlateBrushTileType.h"
+#include "SlateColor.h"
+//CROSS-MODULE INCLUDE: CoreUObject Box2D
 #include "ESlateBrushMirrorType.h"
-#include "ESlateBrushDrawType.h"
 #include "ESlateBrushImageType.h"
+#include "ESlateBrushDrawType.h"
 #include "SlateBrush.generated.h"
 
 class UObject;

@@ -8,13 +8,13 @@ class UBasicWeaponFireComponent : public UWeaponFireComponent {
     GENERATED_BODY()
 public:
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_FireWeapon();
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_EndFire();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_WeaponFired();
     
 public:

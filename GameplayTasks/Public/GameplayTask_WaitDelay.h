@@ -7,7 +7,7 @@ class UGameplayTask_WaitDelay;
 class UGameplayTaskOwnerInterface;
 class IGameplayTaskOwnerInterface;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameplayTask_WaitDelayOnFinish);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameplayTask_WaitDelayOnFinish);
 
 UCLASS(MinimalAPI)
 class UGameplayTask_WaitDelay : public UGameplayTask {

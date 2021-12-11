@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "GunLogicComponent.generated.h"
 
+class UWeaponFireComponent;
 class UMeshComponent;
 class UParticleSystem;
-class UWeaponFireComponent;
 class USoundCue;
 
 UCLASS(BlueprintType)
@@ -43,10 +43,10 @@ public:
     void SetMesh(UMeshComponent* NewMesh);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnWeaponFireEnded();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnWeaponFired(const FVector& Location);
     
 public:

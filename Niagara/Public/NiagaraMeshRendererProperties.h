@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ENiagaraSortMode.h"
 #include "NiagaraRendererProperties.h"
-#include "NiagaraMeshMaterialOverride.h"
+#include "ENiagaraSortMode.h"
 #include "ENiagaraMeshLockedAxisSpace.h"
 #include "ENiagaraMeshFacingMode.h"
+#include "NiagaraMeshMaterialOverride.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "NiagaraVariableAttributeBinding.h"

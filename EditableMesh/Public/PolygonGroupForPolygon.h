@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MeshDescription PolygonGroupID
 //CROSS-MODULE INCLUDE: MeshDescription PolygonID
+//CROSS-MODULE INCLUDE: MeshDescription PolygonGroupID
 #include "PolygonGroupForPolygon.generated.h"
 
 USTRUCT(BlueprintType)

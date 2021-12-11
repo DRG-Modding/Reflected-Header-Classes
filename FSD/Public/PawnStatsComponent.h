@@ -21,7 +21,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void RemoveModifier(UPawnStat* Stat, float Value);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetStatValue(UPawnStat* Stat) const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

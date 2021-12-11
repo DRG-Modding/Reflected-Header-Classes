@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AssetRegistryDependencyOptions.h"
 //CROSS-MODULE INCLUDE: CoreUObject Interface
-#include "AssetData.h"
 #include "ARFilter.h"
+#include "AssetData.h"
+#include "AssetRegistryDependencyOptions.h"
 #include "AssetRegistry.generated.h"
 
 UINTERFACE(BlueprintType, MinimalAPI, meta=(CannotImplementInterfaceInBlueprint))
@@ -36,40 +36,40 @@ public:
     virtual void PrioritizeSearchPath(const FString& PathToPrioritize) PURE_VIRTUAL(PrioritizeSearchPath,);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; K2_GetReferencers(FName PackageName, const FAssetRegistryDependencyOptions& ReferenceOptions, TArray<FName>& OutReferencers) const PURE_VIRTUAL(K2_GetReferencers,);
+    virtual bool K2_GetReferencers(FName PackageName, const FAssetRegistryDependencyOptions& ReferenceOptions, TArray<FName>& OutReferencers) const PURE_VIRTUAL(K2_GetReferencers, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; K2_GetDependencies(FName PackageName, const FAssetRegistryDependencyOptions& DependencyOptions, TArray<FName>& OutDependencies) const PURE_VIRTUAL(K2_GetDependencies,);
+    virtual bool K2_GetDependencies(FName PackageName, const FAssetRegistryDependencyOptions& DependencyOptions, TArray<FName>& OutDependencies) const PURE_VIRTUAL(K2_GetDependencies, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; IsLoadingAssets() const PURE_VIRTUAL(IsLoadingAssets,);
+    virtual bool IsLoadingAssets() const PURE_VIRTUAL(IsLoadingAssets, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; HasAssets(const FName PackagePath, const bool bRecursive) const PURE_VIRTUAL(HasAssets,);
+    virtual bool HasAssets(const FName PackagePath, const bool bRecursive) const PURE_VIRTUAL(HasAssets, return false;);
     
     UFUNCTION(BlueprintCallable)
     virtual void GetSubPaths(const FString& InBasePath, TArray<FString>& OutPathList, bool bInRecurse) const PURE_VIRTUAL(GetSubPaths,);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; GetAssetsByPath(FName PackagePath, TArray<FAssetData>& OutAssetData, bool bRecursive, bool bIncludeOnlyOnDiskAssets) const PURE_VIRTUAL(GetAssetsByPath,);
+    virtual bool GetAssetsByPath(FName PackagePath, TArray<FAssetData>& OutAssetData, bool bRecursive, bool bIncludeOnlyOnDiskAssets) const PURE_VIRTUAL(GetAssetsByPath, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; GetAssetsByPackageName(FName PackageName, TArray<FAssetData>& OutAssetData, bool bIncludeOnlyOnDiskAssets) const PURE_VIRTUAL(GetAssetsByPackageName,);
+    virtual bool GetAssetsByPackageName(FName PackageName, TArray<FAssetData>& OutAssetData, bool bIncludeOnlyOnDiskAssets) const PURE_VIRTUAL(GetAssetsByPackageName, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; GetAssetsByClass(FName ClassName, TArray<FAssetData>& OutAssetData, bool bSearchSubClasses) const PURE_VIRTUAL(GetAssetsByClass,);
+    virtual bool GetAssetsByClass(FName ClassName, TArray<FAssetData>& OutAssetData, bool bSearchSubClasses) const PURE_VIRTUAL(GetAssetsByClass, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; GetAssets(const FARFilter& Filter, TArray<FAssetData>& OutAssetData) const PURE_VIRTUAL(GetAssets,);
+    virtual bool GetAssets(const FARFilter& Filter, TArray<FAssetData>& OutAssetData) const PURE_VIRTUAL(GetAssets, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return FAssetData{}; GetAssetByObjectPath(const FName ObjectPath, bool bIncludeOnlyOnDiskAssets) const PURE_VIRTUAL(GetAssetByObjectPath,);
+    virtual FAssetData GetAssetByObjectPath(const FName ObjectPath, bool bIncludeOnlyOnDiskAssets) const PURE_VIRTUAL(GetAssetByObjectPath, return FAssetData{};);
     
     UFUNCTION(BlueprintCallable)
     virtual void GetAllCachedPaths(TArray<FString>& OutPathList) const PURE_VIRTUAL(GetAllCachedPaths,);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; GetAllAssets(TArray<FAssetData>& OutAssetData, bool bIncludeOnlyOnDiskAssets) const PURE_VIRTUAL(GetAllAssets,);
+    virtual bool GetAllAssets(TArray<FAssetData>& OutAssetData, bool bIncludeOnlyOnDiskAssets) const PURE_VIRTUAL(GetAllAssets, return false;);
     
 };
 

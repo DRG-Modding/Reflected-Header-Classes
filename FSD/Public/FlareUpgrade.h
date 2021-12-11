@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "FlareUpgrade.generated.h"
 
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UFlareUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EFlareUpgradeType upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> flareClass, EFlareUpgradeType NewUpgradeType);
     
     UFlareUpgrade();

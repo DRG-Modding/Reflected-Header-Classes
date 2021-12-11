@@ -22,10 +22,10 @@ protected:
     UCommunityGoal* DSMUGoal;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCommunityGoal* GetGoal(ECommunityGoalIndex Goal) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCommunityGoal* FindGoal(const FString& Goal) const;
     
     UCommunityGoalSettings();

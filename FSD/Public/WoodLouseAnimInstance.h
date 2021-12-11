@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "SpiderAnimInstance.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "EWoodLouseState.h"
 #include "WoodLouseAnimInstance.generated.h"
 

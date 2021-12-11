@@ -32,14 +32,14 @@ protected:
     UPROPERTY(EditAnywhere)
     FText CreditsRewardText;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceChanged(UCappedResource* CappedResource, float Amount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ResourcesCollected(float prevAmount);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRequiredAmount(float missionScaling) const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

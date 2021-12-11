@@ -4,21 +4,21 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "VanityCharacter.generated.h"
 
-class UArmorVanityItem;
+class UHeadVanityItem;
 class UChildActorComponent;
-class USideburnsVanityItem;
-class UItemSkin;
-class UBeardColorVanityItem;
+class UMaterialInterface;
 class UAnimSequenceBase;
 class USkinColorVanityItem;
-class UHeadVanityItem;
+class USideburnsVanityItem;
+class USkeletalMeshComponent;
+class UBeardColorVanityItem;
 class UEyeBrowsVanityItem;
 class UMoustacheVanityItem;
 class UBeardVanityItem;
+class UArmorVanityItem;
 class UArmorMaterialVanityItem;
-class USkeletalMeshComponent;
-class UMaterialInterface;
 class AItem;
+class UItemSkin;
 
 UCLASS()
 class AVanityCharacter : public AActor {

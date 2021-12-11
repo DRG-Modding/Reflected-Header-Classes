@@ -5,9 +5,9 @@
 #include "Steerable.h"
 #include "PathfinderVehicle.generated.h"
 
-class USkeletalMeshComponent;
-class UDeepPathfinderMovement;
 class UHealthComponent;
+class UDeepPathfinderMovement;
+class USkeletalMeshComponent;
 
 UCLASS()
 class APathfinderVehicle : public APawn, public ITargetable, public ISteerable {
@@ -28,5 +28,7 @@ protected:
     
 public:
     APathfinderVehicle();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

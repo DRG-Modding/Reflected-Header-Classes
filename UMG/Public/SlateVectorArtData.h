@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "SlateMeshVertex.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "SlateVectorArtData.generated.h"
 
 class UMaterialInterface;

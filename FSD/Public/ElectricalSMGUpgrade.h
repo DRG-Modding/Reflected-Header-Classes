@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StandardItemUpgrade.h"
-#include "EElectricalSMGUpgrades.h"
 #include "UpgradeValues.h"
+#include "EElectricalSMGUpgrades.h"
 #include "ElectricalSMGUpgrade.generated.h"
 
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UElectricalSMGUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EElectricalSMGUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> Item, EElectricalSMGUpgrades NewUpgradeType);
     
     UElectricalSMGUpgrade();

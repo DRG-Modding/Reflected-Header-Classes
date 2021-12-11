@@ -5,14 +5,14 @@
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "TrackBuilderUsable.generated.h"
 
-class ATrackBuilderSegment;
 class APlayerCharacter;
 class UTrackBuilderUsable;
-class ATrackBuilderItem;
 class AActor;
 class USceneComponent;
+class ATrackBuilderSegment;
+class ATrackBuilderItem;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTrackBuilderUsableOnNextSegmentChanged, UTrackBuilderUsable*, InUsable, ATrackBuilderSegment*, InSegment);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTrackBuilderUsableOnNextSegmentChanged, UTrackBuilderUsable*, InUsable, ATrackBuilderSegment*, InSegment);
 
 UCLASS()
 class FSD_API UTrackBuilderUsable : public UInstantUsable {
@@ -37,14 +37,14 @@ protected:
     UPROPERTY(Replicated, Transient)
     TWeakObjectPtr<APlayerCharacter> InUseBy;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_NextSegment();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNextSegmentDestroyed(AActor* InActor);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetStartTransform() const;
     
     UFUNCTION(BlueprintCallable)

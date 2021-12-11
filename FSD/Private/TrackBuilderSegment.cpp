@@ -1,11 +1,11 @@
 #include "TrackBuilderSegment.h"
 #include "Net/UnrealNetwork.h"
 
+class AItem;
 class UTrackBuilderConnectPoint;
 class UTrackBuilderUsable;
-class AItem;
-class AActor;
 class ATrackBuilderSegment;
+class AActor;
 
 bool ATrackBuilderSegment::UpdatePlacement(const FTransform& InTransform, UTrackBuilderConnectPoint* InConnectPoint, bool InPlacementValid, AItem* PlaceableItem) {
     return false;

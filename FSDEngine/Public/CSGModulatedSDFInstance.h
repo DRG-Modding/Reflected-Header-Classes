@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "CSGBase.h"
 #include "CSGSDFModulatedInstanceProperties.h"
-//CROSS-MODULE INCLUDE: CoreUObject Matrix
 #include "DeepCSGFloatTree.h"
 #include "BinaryTerrainMaterialCombiner.h"
+//CROSS-MODULE INCLUDE: CoreUObject Matrix
 //CROSS-MODULE INCLUDE: CoreUObject Box
 #include "CSGModulatedSDFInstance.generated.h"
 

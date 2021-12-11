@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EProcMeshSliceCapOption.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "ProcMeshTangent.h"
+#include "EProcMeshSliceCapOption.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "KismetProceduralMeshLibrary.generated.h"
 
-class UStaticMesh;
 class UProceduralMeshComponent;
 class UMaterialInterface;
+class UStaticMesh;
 class UStaticMeshComponent;
 
 UCLASS(BlueprintType)

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "DLCBase.h"
 #include "SaveGameIDInterface.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "GameDLC.generated.h"
 
-class UObject;
 class UTexture2D;
 class UWindowWidget;
 class UResourceData;
 class UFileMediaSource;
+class UObject;
 
 UCLASS()
 class UGameDLC : public UDLCBase, public ISaveGameIDInterface {
@@ -59,7 +59,7 @@ protected:
     TSoftObjectPtr<UFileMediaSource> Movie;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldBeAnnounced(UObject* WorldContext) const;
     
     UFUNCTION(BlueprintCallable)
@@ -68,15 +68,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void MarkAnnounced(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetSonyAdditionalContentId() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBanner_16_9() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBanner() const;
     
     UGameDLC();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE: CoreUObject Box
 #include "LandscapeHeightfieldCollisionComponent.generated.h"
 
-class UPhysicalMaterial;
 class ULandscapeLayerInfoObject;
 class ULandscapeComponent;
+class UPhysicalMaterial;
 
 UCLASS(MinimalAPI, Within=LandscapeProxy)
 class ULandscapeHeightfieldCollisionComponent : public UPrimitiveComponent {
@@ -46,7 +46,7 @@ public:
     UPROPERTY()
     TArray<UPhysicalMaterial*> CookedPhysicalMaterials;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ULandscapeComponent* GetRenderComponent() const;
     
     ULandscapeHeightfieldCollisionComponent();

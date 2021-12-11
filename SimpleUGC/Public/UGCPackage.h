@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EUGCApprovalStatus.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "EUGCApprovalStatus.h"
 //CROSS-MODULE INCLUDE: CoreUObject DateTime
 #include "UGCPackage.generated.h"
 
@@ -69,10 +69,10 @@ public:
     UPROPERTY(BlueprintReadWrite)
     FDateTime LastUpdated;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetIdAsString();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int64 GetIdAsInt();
     
     UUGCPackage();

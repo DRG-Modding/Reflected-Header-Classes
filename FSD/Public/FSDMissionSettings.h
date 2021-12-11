@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MissionHazardSetting.h"
 //CROSS-MODULE INCLUDE: Engine DeveloperSettings
 //CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
+#include "MissionHazardSetting.h"
 #include "FSDMissionSettings.generated.h"
 
-class UObject;
-class UGeneratedMission;
 class UDifficultySetting;
+class UGeneratedMission;
+class UObject;
 
 UCLASS(BlueprintType, DefaultConfig, Config=Game)
 class UFSDMissionSettings : public UDeveloperSettings {
@@ -24,7 +24,7 @@ protected:
     TMap<int32, FMissionHazardSetting> MissionDurationSettings;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetTotalHazardBonus(UObject* WorldContextObject, UGeneratedMission* mission, UDifficultySetting* DifficultySetting);
     
     UFSDMissionSettings();

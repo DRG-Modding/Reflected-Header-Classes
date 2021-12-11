@@ -24,7 +24,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetFontSize(int32 Size);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetFontSize() const;
     
     UFSDLabelWidget();

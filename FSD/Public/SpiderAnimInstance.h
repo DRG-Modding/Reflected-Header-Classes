@@ -2,16 +2,16 @@
 #include "CoreMinimal.h"
 #include "EnemyAnimInstance.h"
 #include "FootStepNotifyTarget.h"
-#include "RandomWalkCycleEntry.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EMoveDirection.h"
+#include "RandomWalkCycleEntry.h"
 #include "SpiderAnimInstance.generated.h"
 
-class UAnimSequenceBase;
 class USoundCue;
-class UEnemyPlaySoundKey;
 class UEnemySpawnEffectsKey;
 class UParticleSystem;
+class UEnemyPlaySoundKey;
+class UAnimSequenceBase;
 
 UCLASS(NonTransient)
 class USpiderAnimInstance : public UEnemyAnimInstance, public IFootStepNotifyTarget {
@@ -146,5 +146,7 @@ public:
     void PlayForcedCycle(float Duration);
     
     USpiderAnimInstance();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

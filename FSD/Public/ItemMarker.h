@@ -14,10 +14,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     bool bMarkerVisible;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMarkerVisibilityChanged(bool Visible);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMarkerValidChanged(bool Valid);
     
 public:

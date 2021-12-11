@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BuilderBase.h"
-#include "MeshBaseProperties.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "MeshBaseProperties.h"
 #include "CSGBase.generated.h"
 
 UCLASS(Abstract)

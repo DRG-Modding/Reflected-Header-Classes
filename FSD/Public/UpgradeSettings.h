@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "UpgradeCostItem.h"
+//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "UpgradeSettings.generated.h"
 
-class AActor;
 class UItemUpgrade;
+class AActor;
 
 UCLASS(BlueprintType)
 class UUpgradeSettings : public UDataAsset {

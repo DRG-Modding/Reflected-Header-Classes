@@ -2,12 +2,12 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-class AProceduralSetup;
 class APawn;
+class AProceduralSetup;
+class ATetherStation;
 class UEncounterManager;
 class UDebrisPositioning;
 class AActor;
-class ATetherStation;
 class UCappedResource;
 class ARessuplyPod;
 

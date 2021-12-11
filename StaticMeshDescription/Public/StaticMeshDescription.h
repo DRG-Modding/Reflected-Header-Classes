@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: MeshDescription MeshDescriptionBase
-//CROSS-MODULE INCLUDE: MeshDescription PolygonID
 //CROSS-MODULE INCLUDE: MeshDescription PolygonGroupID
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: MeshDescription VertexInstanceID
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: MeshDescription PolygonID
 #include "StaticMeshDescription.generated.h"
 
 UCLASS()
@@ -18,7 +18,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetPolygonGroupMaterialSlotName(FPolygonGroupID PolygonGroupID, const FName& slotName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetVertexInstanceUV(FVertexInstanceID VertexInstanceID, int32 UVIndex) const;
     
     UFUNCTION(BlueprintCallable)

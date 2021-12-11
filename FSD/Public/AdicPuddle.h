@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE: Engine HitResult
 #include "AdicPuddle.generated.h"
 
-class UPrimitiveComponent;
 class USphereComponent;
+class UPrimitiveComponent;
 class USoundBase;
 class UStatusEffect;
 
@@ -29,10 +29,10 @@ private:
     float LifeTime;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPuddleEndOverLap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPuddleBeginOverLap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
 public:

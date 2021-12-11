@@ -4,11 +4,11 @@
 #include "AISense.h"
 #include "AISense_Blueprint.generated.h"
 
-class AActor;
 class UUserDefinedStruct;
-class UAIPerceptionComponent;
 class APawn;
+class UAIPerceptionComponent;
 class UAISenseEvent;
+class AActor;
 
 UCLASS(Abstract, Blueprintable, HideDropdown)
 class AIMODULE_API UAISense_Blueprint : public UAISense {
@@ -25,25 +25,25 @@ protected:
     TArray<UAISenseEvent*> UnprocessedEvents;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     float OnUpdate(const TArray<UAISenseEvent*>& EventsToProcess);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnListenerUpdated(AActor* ActorListener, UAIPerceptionComponent* PerceptionComponent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnListenerUnregistered(AActor* ActorListener, UAIPerceptionComponent* PerceptionComponent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnListenerRegistered(AActor* ActorListener, UAIPerceptionComponent* PerceptionComponent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void K2_OnNewPawn(APawn* NewPawn);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetAllListenerComponents(TArray<UAIPerceptionComponent*>& ListenerComponents) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetAllListenerActors(TArray<AActor*>& ListenerActors) const;
     
     UAISense_Blueprint();

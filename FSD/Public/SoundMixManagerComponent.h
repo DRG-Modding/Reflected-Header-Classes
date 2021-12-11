@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "SoundMixManagerItem.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "SoundMixManagerComponent.generated.h"
 
 UCLASS()

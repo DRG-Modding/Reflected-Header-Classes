@@ -4,11 +4,11 @@
 #include "EMicroMissileLauncherFireMode.h"
 #include "MicroMissileLauncher.generated.h"
 
-class USoundCue;
 class UAnimMontage;
+class USoundCue;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMicroMissileLauncherOnStartCharging);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMicroMissileLauncherOnEndCharging);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMicroMissileLauncherOnStartCharging);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMicroMissileLauncherOnEndCharging);
 
 UCLASS(Abstract)
 class AMicroMissileLauncher : public AAmmoDrivenWeapon {
@@ -72,21 +72,21 @@ protected:
     UPROPERTY(EditAnywhere)
     USoundCue* ChargedMissileFireSound;
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetIsCharging(bool isCharging);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetChargedMissile(bool isCharged);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNextShotBuckShot();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetChargeCurrentFireCount();
     
 protected:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void All_SetChargedMissile(bool isCharged);
     
 public:

@@ -9,14 +9,14 @@ UCLASS(Blueprintable)
 class UAfflictionEffect : public UObject {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool ShouldInstantiate() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveEndEffect(UPawnAfflictionComponent* Target);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveBeginEffect(UPawnAfflictionComponent* Target);
     
 public:

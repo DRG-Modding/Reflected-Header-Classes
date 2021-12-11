@@ -1,9 +1,9 @@
 #include "CharacterUseComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UUsableComponentBase;
 class AActor;
 class USceneComponent;
+class UUsableComponentBase;
 
 void UCharacterUseComponent::Server_SetCanUse_Implementation(EUseRestriction NewUseRestriction) {
 }

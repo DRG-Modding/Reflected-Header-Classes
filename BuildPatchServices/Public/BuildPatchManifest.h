@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "CustomFieldData.h"
+#include "ChunkInfoData.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "FileManifestData.h"
-#include "ChunkInfoData.h"
-#include "CustomFieldData.h"
 #include "BuildPatchManifest.generated.h"
 
 UCLASS()

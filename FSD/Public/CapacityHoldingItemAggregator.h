@@ -30,10 +30,10 @@ public:
     void Resupply(float percentage);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_MaxAmmo();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AmmoCount();
     
 public:
@@ -43,5 +43,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UCapacityHoldingItemAggregator();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

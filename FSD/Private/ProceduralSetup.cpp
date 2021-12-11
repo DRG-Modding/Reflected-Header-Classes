@@ -1,10 +1,10 @@
 #include "ProceduralSetup.h"
 #include "Net/UnrealNetwork.h"
 
-class UTunnelParameters;
 class AProceduralSetup;
 class ADeepCSGWorld;
 class UMissionDNA;
+class UTunnelParameters;
 class URoomGeneratorBase;
 class UCaveInfluencer;
 

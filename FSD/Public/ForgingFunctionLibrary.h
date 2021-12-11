@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESchematicType.h"
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+#include "ESchematicType.h"
 #include "ForgingFunctionLibrary.generated.h"
 
 class USchematic;
 class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_ThreeParams(FForgingFunctionLibraryIsLargerThan, const USchematic*, Schematic1, const USchematic*, Schematic2, bool&, FirstIsLarger);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_ThreeParams(FForgingFunctionLibraryIsLargerThan, const USchematic*, Schematic1, const USchematic*, Schematic2, bool&, FirstIsLarger);
 
 UCLASS(BlueprintType)
 class UForgingFunctionLibrary : public UBlueprintFunctionLibrary {
@@ -19,31 +19,31 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool GiveForgingXP(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<USchematic*> GetOwnedSchematicsSorted(UObject* WorldContextObject, bool SmallestFirst, const FForgingFunctionLibraryIsLargerThan& IsLargerThan);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<USchematic*> GetOwnedSchematics(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static ESchematicType GetNextForgingMasterRewardType(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetForgingXP(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetForgingLevelProgress(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetForgingLevel(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<USchematic*> GetForgedSchematics(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<USchematic*> GetAllSchematicsSorted(UObject* WorldContextObject, bool SmallestFirst, const FForgingFunctionLibraryIsLargerThan& IsLargerThan);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<USchematic*> GetAllSchematics(UObject* WorldContextObject);
     
     UForgingFunctionLibrary();

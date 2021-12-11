@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
 #include "PatchResourceCreator.generated.h"
 
-class UDebrisPositioning;
 class UFloodFillSettings;
+class UDebrisPositioning;
 class UDebrisBase;
 
 UCLASS(EditInlineNew)

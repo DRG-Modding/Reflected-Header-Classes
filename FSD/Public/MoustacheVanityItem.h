@@ -3,8 +3,8 @@
 #include "VanityItem.h"
 #include "MoustacheVanityItem.generated.h"
 
-class UVanityAnimInstance;
 class USkeletalMesh;
+class UVanityAnimInstance;
 
 UCLASS(EditInlineNew)
 class UMoustacheVanityItem : public UVanityItem {

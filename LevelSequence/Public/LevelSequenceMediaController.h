@@ -2,6 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneCustomClockSource
+//CROSS-MODULE INCLUDE: CoreUObject FrameTime
+//CROSS-MODULE INCLUDE: CoreUObject QualifiedFrameTime
 #include "LevelSequenceMediaController.generated.h"
 
 class ALevelSequenceActor;
@@ -29,18 +31,32 @@ public:
     void Play();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ServerStartTimeSeconds();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ALevelSequenceActor* GetSequence() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMediaComponent* GetMediaComponent() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ALevelSequenceMediaController();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    void OnTick(float DeltaSeconds, float InPlayRate) override PURE_VIRTUAL(OnTick,);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnStopPlaying(const FQualifiedFrameTime& InStopTime) override PURE_VIRTUAL(OnStopPlaying,);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnStartPlaying(const FQualifiedFrameTime& InStartTime) override PURE_VIRTUAL(OnStartPlaying,);
+    
+    UFUNCTION(BlueprintCallable)
+    FFrameTime OnRequestCurrentTime(const FQualifiedFrameTime& InCurrentTime, float InPlayRate) override PURE_VIRTUAL(OnRequestCurrentTime, return FFrameTime{};);
+    
 };
 

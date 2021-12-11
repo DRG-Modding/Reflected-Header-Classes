@@ -1,39 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-#include "SaveGameIDInterface.h"
-#include "Skinnable.h"
 #include "LoadoutItem.h"
 #include "ItemIDInterface.h"
+//CROSS-MODULE INCLUDE: Engine Actor
+#include "ItemLoadoutAnimations.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine EAttachLocation
+#include "SaveGameIDInterface.h"
+#include "Skinnable.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "PlaySoundInterface.h"
 #include "AudioWithCooldown.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: Engine EAttachLocation
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
-#include "ItemLoadoutAnimations.h"
 #include "Item.generated.h"
 
-class UItemCharacterAnimationSet;
-class UTexture2D;
-class UStaticMeshComponent;
+class USoundConcurrency;
 class UItemID;
-class UDialogDataAsset;
-class UCurveFloat;
 class APlayerCharacter;
 class UUpgradableItemComponent;
 class UCameraShake;
+class UCurveFloat;
 class ACharacter;
-class USoundBase;
 class UAudioComponent;
+class USoundBase;
+class UDialogDataAsset;
 class UItemsBarIcon;
 class USceneComponent;
 class USoundAttenuation;
-class USoundConcurrency;
+class UStaticMeshComponent;
 class UFirstPersonStaticMeshComponent;
 class USkinEffect;
+class UTexture2D;
 class AItem;
+class UItemCharacterAnimationSet;
 
 UCLASS(Abstract)
 class FSD_API AItem : public AActor, public ISaveGameIDInterface, public ISkinnable, public IItemIDInterface, public ILoadoutItem, public IPlaySoundInterface {
@@ -147,7 +147,7 @@ public:
     UAudioComponent* SpawnSound2D(USoundBase* Sound, float PriorityOverride, float VolumeMultiplier, float PitchMultiplier, float StartTime, USoundConcurrency* ConcurrencySettings, bool bPersistAcrossLevelTransition, bool bAutoDestroy, bool SendVibration);
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StartUsing(bool NewIsUsing);
     
 public:
@@ -155,102 +155,107 @@ public:
     void Resupply(float percentage);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RemovedFromInventory(ACharacter* oldCharacter);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveUnequipped();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveStopUsing();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveStartUsing();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveEquipped();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveCycledItem();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Recieve_UpdateMeshses(bool NewIsFirstPerson);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveResupply(float percentage);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_Overheated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     UStaticMeshComponent* Receive_GetTPAnimationEventMesh() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     UFirstPersonStaticMeshComponent* Receive_GetFPAnimationEventMesh() const;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnTemperatureChanged(float Temperature, bool NewOverheated);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSkinChanged(USkinEffect* Skin);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsUsing(bool OldValue);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerDestroyed(AActor* owningActor);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocallyControlled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFirstPerson() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetWeaponViewClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FItemLoadoutAnimations GetLoadoutAnimations() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetItemName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetItemIconLine() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetItemIconBG() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AItem* GetItemDefaultObject(TSubclassOf<AItem> itemClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetItemCategory() const;
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     USceneComponent* GetHeatingAudioSceneComponent();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemCharacterAnimationSet* GetCharacterAnimationSet() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetAnalyticsItemName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetAnalyticsItemCategory() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AddedToInventory(APlayerCharacter* ItemOwner);
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AItem();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    TSubclassOf<AItem> GetLoadoutItemClass() const override PURE_VIRTUAL(GetLoadoutItemClass, return NULL;);
+    
 };
 

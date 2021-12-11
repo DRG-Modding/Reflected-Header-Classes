@@ -50,7 +50,7 @@ protected:
     void OnDataUpdated();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsBought();
     
     UTreeOfVanityItemWidget();

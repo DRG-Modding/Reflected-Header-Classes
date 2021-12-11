@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraSystemSpawnSectionEndBehavior.h"
 #include "ENiagaraSystemSpawnSectionEvaluateBehavior.h"
-#include "ENiagaraSystemSpawnSectionStartBehavior.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
+#include "ENiagaraSystemSpawnSectionStartBehavior.h"
 #include "ENiagaraAgeUpdateMode.h"
 #include "MovieSceneNiagaraSystemSpawnSection.generated.h"
 

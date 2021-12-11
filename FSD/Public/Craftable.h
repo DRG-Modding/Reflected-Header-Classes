@@ -5,8 +5,8 @@
 #include "Craftable.generated.h"
 
 class AFSDPlayerState;
-class UPlayerCharacterID;
 class UObject;
+class UPlayerCharacterID;
 class UTexture2D;
 
 UINTERFACE(BlueprintType, meta=(CannotImplementInterfaceInBlueprint))
@@ -21,31 +21,31 @@ public:
     virtual void PreviewItem(AFSDPlayerState* PlayerState, bool Show) const PURE_VIRTUAL(PreviewItem,);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; IsOwned(UObject* WorldContextObject, UPlayerCharacterID* characterID) const PURE_VIRTUAL(IsOwned,);
+    virtual bool IsOwned(UObject* WorldContextObject, UPlayerCharacterID* characterID) const PURE_VIRTUAL(IsOwned, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return TArray<FCraftingCost>(); GetResourceCost() const PURE_VIRTUAL(GetResourceCost,);
+    virtual TArray<FCraftingCost> GetResourceCost() const PURE_VIRTUAL(GetResourceCost, return TArray<FCraftingCost>(););
     
     UFUNCTION(BlueprintCallable)
-    virtual  return 0; GetRequiredPlayerRank() const PURE_VIRTUAL(GetRequiredPlayerRank,);
+    virtual int32 GetRequiredPlayerRank() const PURE_VIRTUAL(GetRequiredPlayerRank, return 0;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return 0; GetCraftingCreditsCost() const PURE_VIRTUAL(GetCraftingCreditsCost,);
+    virtual int32 GetCraftingCreditsCost() const PURE_VIRTUAL(GetCraftingCreditsCost, return 0;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return FText::GetEmpty(); GetCraftableName() const PURE_VIRTUAL(GetCraftableName,);
+    virtual FText GetCraftableName() const PURE_VIRTUAL(GetCraftableName, return FText::GetEmpty(););
     
     UFUNCTION(BlueprintCallable)
-    virtual  return NULL; GetCraftableIcon() const PURE_VIRTUAL(GetCraftableIcon,);
+    virtual UTexture2D* GetCraftableIcon() const PURE_VIRTUAL(GetCraftableIcon, return NULL;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return FText::GetEmpty(); GetCraftableDescription() const PURE_VIRTUAL(GetCraftableDescription,);
+    virtual FText GetCraftableDescription() const PURE_VIRTUAL(GetCraftableDescription, return FText::GetEmpty(););
     
     UFUNCTION(BlueprintCallable)
     virtual void CraftItem(UObject* WorldContextObject, UPlayerCharacterID* characterID) const PURE_VIRTUAL(CraftItem,);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; CanCraft(UObject* WorldContextObject) const PURE_VIRTUAL(CanCraft,);
+    virtual bool CanCraft(UObject* WorldContextObject) const PURE_VIRTUAL(CanCraft, return false;);
     
 };
 

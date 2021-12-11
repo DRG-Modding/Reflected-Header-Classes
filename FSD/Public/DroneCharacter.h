@@ -4,8 +4,8 @@
 #include "DroneCharacter.generated.h"
 
 class USimpleObjectInfoComponent;
-class UHealthComponent;
 class UOutlineComponent;
+class UHealthComponent;
 
 UCLASS(Abstract)
 class ADroneCharacter : public ADeepPathfinderCharacter {

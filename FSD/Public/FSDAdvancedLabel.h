@@ -7,8 +7,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "FSDAdvancedLabel.generated.h"
 
-class UTexture2D;
 class UHorizontalBox;
+class UTexture2D;
 class UTextBlock;
 class UImage;
 
@@ -42,36 +42,36 @@ public:
     void Refresh();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnReset();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnNewLine(int32 Index);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnLanguageChanged(const FString& NewCulture);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnInputSourceChanged(EFSDInputSource Source);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAddString(const FString& Value);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAddKeyName(const FString& Name);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAddIcon(const FString& Name, const FActionIconMapping& Icon);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetText();
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsDesignTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EFSDInputSource GetCurrentInputSource() const;
     
     UFUNCTION(BlueprintCallable)

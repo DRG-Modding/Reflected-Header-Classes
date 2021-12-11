@@ -3,17 +3,17 @@
 //CROSS-MODULE INCLUDE: AudioMixer SynthComponent
 #include "ModularSynthPreset.h"
 #include "ESynthStereoDelayMode.h"
+#include "ESynthModEnvBiasPatch.h"
 #include "ESynthLFOPatchType.h"
 #include "ESynth1OscType.h"
-#include "ESynthModEnvBiasPatch.h"
-#include "Synth1PatchCable.h"
-#include "ESynthFilterType.h"
 #include "ESynthModEnvPatch.h"
 #include "ESynthLFOType.h"
 #include "ESynthLFOMode.h"
+#include "ESynthFilterType.h"
 #include "ESynthFilterAlgorithm.h"
 #include "PatchId.h"
 #include "ESynth1PatchSource.h"
+#include "Synth1PatchCable.h"
 #include "ModularSynthComponent.generated.h"
 
 UCLASS()

@@ -6,8 +6,8 @@
 #include "LevelSequenceBurnIn.generated.h"
 
 class ALevelSequenceActor;
-class ULevelSequenceBurnInInitSettings;
 class UObject;
+class ULevelSequenceBurnInInitSettings;
 
 UCLASS(EditInlineNew)
 class LEVELSEQUENCE_API ULevelSequenceBurnIn : public UUserWidget {
@@ -21,10 +21,10 @@ protected:
     ALevelSequenceActor* LevelSequenceActor;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetSettings(UObject* InSettings);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     TSubclassOf<ULevelSequenceBurnInInitSettings> GetSettingsClass() const;
     
     ULevelSequenceBurnIn();

@@ -13,25 +13,25 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetIsControllerMotionTrackingEnabledByDefault(bool Enable);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsMotionTrackingEnabledForSource(int32 PlayerIndex, FName SourceName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsMotionTrackingEnabledForDevice(int32 PlayerIndex, EControllerHand hand);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsMotionTrackingEnabledForComponent(const UMotionControllerComponent* MotionControllerComponent);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsMotionTrackedDeviceCountManagementNecessary();
     
     UFUNCTION(BlueprintCallable)
     static bool IsMotionSourceTracking(int32 PlayerIndex, FName SourceName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetMotionTrackingEnabledControllerCount();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetMaximumMotionTrackedControllerCount();
     
     UFUNCTION(BlueprintCallable)

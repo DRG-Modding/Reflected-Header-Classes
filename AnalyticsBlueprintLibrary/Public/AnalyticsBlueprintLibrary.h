@@ -80,7 +80,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void RecordCurrencyGiven(const FString& GameCurrencyType, int32 GameCurrencyAmount);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FAnalyticsEventAttr MakeEventAttribute(const FString& AttributeName, const FString& AttributeValue);
     
     UFUNCTION(BlueprintCallable)

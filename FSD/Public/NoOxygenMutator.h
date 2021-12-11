@@ -3,8 +3,8 @@
 #include "Mutator.h"
 #include "NoOxygenMutator.generated.h"
 
-class UOxygenComponent;
 class UStatusEffect;
+class UOxygenComponent;
 
 UCLASS(EditInlineNew)
 class UNoOxygenMutator : public UMutator {

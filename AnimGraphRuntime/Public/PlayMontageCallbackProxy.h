@@ -8,11 +8,11 @@ class UPlayMontageCallbackProxy;
 class UAnimMontage;
 class USkeletalMeshComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnCompleted, FName, NotifyName);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnBlendOut, FName, NotifyName);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnInterrupted, FName, NotifyName);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnNotifyEnd, FName, NotifyName);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnNotifyBegin, FName, NotifyName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnCompleted, FName, NotifyName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnBlendOut, FName, NotifyName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnInterrupted, FName, NotifyName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnNotifyEnd, FName, NotifyName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnNotifyBegin, FName, NotifyName);
 
 UCLASS(BlueprintType, MinimalAPI)
 class UPlayMontageCallbackProxy : public UObject {
@@ -34,16 +34,16 @@ public:
     FPlayMontageCallbackProxyOnNotifyEnd OnNotifyEnd;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNotifyEndReceived(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointNotifyPayload);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNotifyBeginReceived(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointNotifyPayload);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMontageEnded(UAnimMontage* Montage, bool bInterrupted);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMontageBlendingOut(UAnimMontage* Montage, bool bInterrupted);
     
 public:

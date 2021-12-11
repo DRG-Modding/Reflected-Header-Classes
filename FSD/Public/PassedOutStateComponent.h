@@ -16,7 +16,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     bool bAllPlayersPassedOut;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTeamPassedOut();
     
 public:

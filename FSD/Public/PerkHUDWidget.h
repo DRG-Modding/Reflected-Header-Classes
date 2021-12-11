@@ -24,10 +24,10 @@ protected:
     void ReceivePerkAssetChanged();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDPlayerState* GetFSDPlayerState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetCharacter() const;
     
     UPerkHUDWidget();

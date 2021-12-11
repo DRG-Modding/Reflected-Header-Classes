@@ -27,7 +27,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetHasBeenReleased(bool NewHasBeenReleased);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasBeenReleased() const;
     
     AGem();

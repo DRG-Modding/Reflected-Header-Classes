@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ELocationYToSpawnEnum.h"
-#include "EDebugTypeEnum.h"
-#include "ELocationFilteringModeEnum.h"
 //CROSS-MODULE INCLUDE: Niagara NiagaraDataInterface
 #include "EDataSourceTypeEnum.h"
+#include "ELocationXToSpawnEnum.h"
+#include "ELocationFilteringModeEnum.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "ELocationZToSpawnEnum.h"
-#include "ELocationXToSpawnEnum.h"
-#include "EDataSortTypeEnum.h"
+#include "ELocationYToSpawnEnum.h"
+#include "EDebugTypeEnum.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "EDataSortTypeEnum.h"
 #include "ERandomVelocityGenerationTypeEnum.h"
 #include "NiagaraDataInterfaceChaosDestruction.generated.h"
 

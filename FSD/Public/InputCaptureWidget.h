@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: UMG UserWidget
-//CROSS-MODULE INCLUDE: InputCore Key
 #include "CustomKeySetting.h"
 #include "EKeyBindingSlot.h"
+//CROSS-MODULE INCLUDE: InputCore Key
 #include "InputCaptureWidget.generated.h"
 
 UCLASS(EditInlineNew)
@@ -31,16 +31,16 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetCurrentBinding(const FKey& InKey);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveKeyChanged(FKey InKey);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveKeyCaptured(FKey InKey);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveCapturingChanged(bool InCapturing);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FKey GetCurrentBinding() const;
     
     UFUNCTION(BlueprintCallable)

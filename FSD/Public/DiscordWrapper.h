@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DiscordServerData.h"
-#include "DiscordEoMData.h"
-#include "DiscordRewardNotification.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "DiscordServerInviteData.h"
+#include "DiscordRewardNotification.h"
+#include "DiscordServerData.h"
+#include "DiscordEoMData.h"
 #include "DiscordWrapper.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordWrapperOnResponseSuccessChanged, bool, resp);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordWrapperOnDiscordUserInServer, bool, isInServer);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordWrapperOnDiscordEoMDataEvent, bool, HasEoM);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDiscordWrapperOnDiscordServerInfoLoaded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordWrapperOnDiscordServerCountLoaded, const FDiscordServerData&, discordServerCount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordWrapperOnResponseSuccessChanged, bool, resp);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordWrapperOnDiscordUserInServer, bool, isInServer);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordWrapperOnDiscordEoMDataEvent, bool, HasEoM);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDiscordWrapperOnDiscordServerInfoLoaded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDiscordWrapperOnDiscordServerCountLoaded, const FDiscordServerData&, discordServerCount);
 
 UCLASS(BlueprintType)
 class UDiscordWrapper : public UObject {
@@ -73,19 +73,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void RequestDiscordServerInfo();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RejectInviteSignature();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void IgnoreInviteSignature();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetAvatarURL();
     
     UFUNCTION(BlueprintCallable)
     void AdjustFaction();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AcceptInviteSignature();
     
     UDiscordWrapper();

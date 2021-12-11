@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Objective.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "Objective.h"
 #include "EEscortMissionState.h"
 #include "EscortObjective.generated.h"
 
 class AEscortDestination;
-class AActor;
 class UDebrisPositioning;
+class UDebrisBase;
 class AExtractorItem;
 class UCurveFloat;
-class UDebrisBase;
+class AActor;
 class UCarvedResourceData;
 class UResourceData;
 class AEscortMule;
 class UCappedResource;
 class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortObjectiveOnProgressUpdated, float, Progress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEscortObjectiveOnMuleRefueled);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortObjectiveOnShellBreakPauseChange, bool, IsPaused);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortObjectiveOnCannisterRegistered, AExtractorItem*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortObjectiveOnProgressUpdated, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEscortObjectiveOnMuleRefueled);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortObjectiveOnShellBreakPauseChange, bool, IsPaused);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortObjectiveOnCannisterRegistered, AExtractorItem*, Item);
 
 UCLASS(Abstract)
 class UEscortObjective : public UObjective {
@@ -146,41 +146,41 @@ protected:
     UFUNCTION(BlueprintCallable)
     void RecordFailStage(bool muleDied);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceChanged(UCappedResource* CappedResource, float Amount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_FullCanisters();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EscortState();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EscortMule();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AreasToScan(int32 prevAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AreasScanned(int32 prevAmount);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMuleDied(UHealthComponentBase* HealthComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHealthChanged(float Health);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFullCanistersChanged(int32 Amount);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEscortMuleSpawnedEvent();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetShellBreakProgress();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoesPathExist(FVector Start, FVector End);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

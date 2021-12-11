@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EVanitySlot.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "GenerateIconInfo.h"
+#include "EVanitySlot.h"
 //CROSS-MODULE INCLUDE: Engine LatentActionInfo
 #include "PickaxeSet.h"
 #include "EPickaxePartLocation.h"
@@ -10,9 +10,9 @@
 
 class AIconGenerationPickaxe;
 class AIconGenerationCharacter;
+class UTextureRenderTarget2D;
 class AIconGenerationWeapon;
 class UVanityItem;
-class UTextureRenderTarget2D;
 class AIconGenerationBase;
 class UIconGenerationManager;
 class UItemSkin;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneTrack
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneTrack
 #include "MovieSceneSpawnTrack.generated.h"
 
 class UMovieSceneSection;

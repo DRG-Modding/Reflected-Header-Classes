@@ -22,7 +22,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     bool SyncTargetWithBB;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFlyingBugAlerted();
     
 public:

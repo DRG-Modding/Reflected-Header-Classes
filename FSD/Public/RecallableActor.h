@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "DeepPathfinderCharacter.h"
 #include "Upgradable.h"
 #include "ERecallableActorState.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "RecallableActor.generated.h"
 
 class ARecallableActor;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRecallableActorOnRelocateFinished, AActor*, Sender, bool, Succes);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRecallableActorOnStateChanged, ARecallableActor*, Sender, ERecallableActorState, State);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRecallableActorOnReturnFinish, AActor*, Sender, bool, Succes);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRecallableActorOnRelocateFinished, AActor*, Sender, bool, Succes);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRecallableActorOnStateChanged, ARecallableActor*, Sender, ERecallableActorState, State);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRecallableActorOnReturnFinish, AActor*, Sender, bool, Succes);
 
 UCLASS(Abstract)
 class ARecallableActor : public ADeepPathfinderCharacter, public IUpgradable {
@@ -68,7 +68,7 @@ public:
     void Relocate(FVector NewLocation, FRotator NewRotation);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnStateChanged();
     
 public:
@@ -76,47 +76,47 @@ public:
     void Recall();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnReturnSucceeded();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnReturnFailed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State(ERecallableActorState oldState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_RecallTarget();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRelocated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRecallTargetChanged(AActor* NewTarget);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPathFinished(bool success);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMoving();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMoveRequested();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMoveFinished(bool returnedHome);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsReturning() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsMovingOrMoveRequested() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsMoving() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsMoveRequested() const;
     
 protected:
@@ -127,5 +127,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ARecallableActor();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -8,10 +8,10 @@ class APlayerCharacter;
 class UDialogDataAsset;
 class USingleUsableComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDroneUseComponentOnUsed, int32, TimesUsed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDroneUseComponentOnBeginUse);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDroneUseComponentOnStopUse);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDroneUseComponentOnProgress, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDroneUseComponentOnUsed, int32, TimesUsed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDroneUseComponentOnBeginUse);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDroneUseComponentOnStopUse);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDroneUseComponentOnProgress, float, Progress);
 
 UCLASS(BlueprintType)
 class FSD_API UDroneUseComponent : public UActorComponent {
@@ -48,13 +48,13 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     bool CanUse;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SyncedUsableUserCountChangedResponse(int32 userCount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SyncedUsableUsedResponse(APlayerCharacter* User, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SyncedUsableBeginUseResponse(APlayerCharacter* User, EInputKeys Key);
     
 public:
@@ -64,7 +64,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCanUse(bool NewCanUse);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetProgress() const;
     
     UFUNCTION(BlueprintCallable)

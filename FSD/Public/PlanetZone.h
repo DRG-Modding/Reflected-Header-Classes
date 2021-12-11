@@ -27,15 +27,17 @@ protected:
     FGuid SaveGameID;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnlocked(UFSDSaveGame* SaveGame) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FGuid GetSavegameID() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UBiome*> GetBiomes() const;
     
     UPlanetZone();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

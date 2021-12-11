@@ -12,17 +12,17 @@ class INTERACTIVETOOLSFRAMEWORK_API UGizmoAxisSource : public UInterface {
 class INTERACTIVETOOLSFRAMEWORK_API IGizmoAxisSource : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION()
-    virtual  return false; HasTangentVectors() const PURE_VIRTUAL(HasTangentVectors,);
+    UFUNCTION(BlueprintCallable)
+    virtual bool HasTangentVectors() const PURE_VIRTUAL(HasTangentVectors, return false;);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     virtual void GetTangentVectors(FVector& TangentXOut, FVector& TangentYOut) const PURE_VIRTUAL(GetTangentVectors,);
     
-    UFUNCTION()
-    virtual  return FVector{}; GetOrigin() const PURE_VIRTUAL(GetOrigin,);
+    UFUNCTION(BlueprintCallable)
+    virtual FVector GetOrigin() const PURE_VIRTUAL(GetOrigin, return FVector{};);
     
-    UFUNCTION()
-    virtual  return FVector{}; GetDirection() const PURE_VIRTUAL(GetDirection,);
+    UFUNCTION(BlueprintCallable)
+    virtual FVector GetDirection() const PURE_VIRTUAL(GetDirection, return FVector{};);
     
 };
 

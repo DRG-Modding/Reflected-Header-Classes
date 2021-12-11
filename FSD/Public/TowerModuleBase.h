@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "FSDPawn.h"
 #include "EventParticipant.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "EGuntowerModuleState.h"
 #include "TowerModuleBase.generated.h"
 
-class USkeletalMesh;
 class USceneComponent;
-class UStaticMeshComponent;
 class USkeletalMeshComponent;
+class UStaticMeshComponent;
 class UEnemyHealthComponent;
+class USkeletalMesh;
 class USoundCue;
 class UParticleSystem;
 
@@ -63,20 +63,22 @@ public:
     void SetState(EGuntowerModuleState NewState);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State(EGuntowerModuleState prevState);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HideArmorPlates();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DoAttack();
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ATowerModuleBase();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -19,7 +19,7 @@ protected:
     UPROPERTY(Transient)
     TArray<UMaterialInstanceDynamic*> MaterialIntances;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTemperatureChanged(float Temperature, bool Overheated);
     
 public:

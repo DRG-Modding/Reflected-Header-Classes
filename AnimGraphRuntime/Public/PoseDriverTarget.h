@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "PoseDriverTransform.h"
+//CROSS-MODULE INCLUDE: Engine RichCurve
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "ERBFFunctionType.h"
 #include "ERBFDistanceMethod.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: Engine RichCurve
 #include "PoseDriverTarget.generated.h"
 
 USTRUCT(BlueprintType)

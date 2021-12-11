@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE: FieldSystemCore EFieldPhysicsType
 #include "FieldSystemComponent.generated.h"
 
-class UFieldSystem;
 class AChaosSolverActor;
-class UFieldSystemMetaData;
+class UFieldSystem;
 class UFieldNodeBase;
+class UFieldSystemMetaData;
 
 UCLASS()
 class FIELDSYSTEMENGINE_API UFieldSystemComponent : public UPrimitiveComponent {

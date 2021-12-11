@@ -5,8 +5,8 @@
 #include "UpgradeValues.h"
 #include "DamageConversionUpgrade.generated.h"
 
-class AActor;
 class UDamageClass;
+class AActor;
 class UDamageCondition;
 class AFSDPlayerState;
 
@@ -31,7 +31,7 @@ protected:
     UDamageCondition* Condition;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, TSubclassOf<AActor> upgradedItem, AFSDPlayerState* Player, UDamageClass* NewDamageClass);
     
     UDamageConversionUpgrade();

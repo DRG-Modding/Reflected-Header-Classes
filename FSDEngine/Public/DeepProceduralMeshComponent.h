@@ -4,8 +4,8 @@
 #include "DeepProceduralMeshComponent.generated.h"
 
 class UBodySetup;
-class UTerrainMaterialCore;
 class UPhysicalMaterial;
+class UTerrainMaterialCore;
 
 UCLASS()
 class FSDENGINE_API UDeepProceduralMeshComponent : public UMeshComponent {
@@ -14,7 +14,7 @@ public:
     UPROPERTY(DuplicateTransient, Transient)
     UBodySetup* ProcMeshBodySetup;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTerrainMaterialCore* FindTerrainMaterialFromPhysicalMaterial(UPhysicalMaterial* Material) const;
     
     UDeepProceduralMeshComponent();

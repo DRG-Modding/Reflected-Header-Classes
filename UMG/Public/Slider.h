@@ -6,12 +6,12 @@
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "Slider.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(float, FSliderValueDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSliderOnMouseCaptureEnd);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSliderOnMouseCaptureBegin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSliderOnControllerCaptureEnd);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSliderOnControllerCaptureBegin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSliderOnValueChanged, float, Value);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(float, FSliderValueDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSliderOnMouseCaptureEnd);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSliderOnMouseCaptureBegin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSliderOnControllerCaptureEnd);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSliderOnControllerCaptureBegin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSliderOnValueChanged, float, Value);
 
 UCLASS()
 class UMG_API USlider : public UWidget {
@@ -98,10 +98,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIndentHandle(bool InValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetNormalizedValue() const;
     
     USlider();

@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
 #include "AchievementQueryCallbackProxy.generated.h"
 
+class APlayerController;
 class UAchievementQueryCallbackProxy;
 class UObject;
-class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAchievementQueryCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAchievementQueryCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAchievementQueryCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAchievementQueryCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UAchievementQueryCallbackProxy : public UOnlineBlueprintCallProxyBase {

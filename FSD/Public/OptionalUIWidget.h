@@ -20,7 +20,7 @@ protected:
     UPROPERTY(EditAnywhere)
     ESlateVisibility HiddenFlag;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnVisibilityChanged(UOptionalUICategory* UICategory, bool IsVisible);
     
 public:

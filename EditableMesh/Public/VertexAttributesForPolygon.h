@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "VertexAttributesForPolygonHole.h"
 //CROSS-MODULE INCLUDE: MeshDescription PolygonID
 #include "MeshElementAttributeList.h"
-#include "VertexAttributesForPolygonHole.h"
 #include "VertexAttributesForPolygon.generated.h"
 
 USTRUCT(BlueprintType)

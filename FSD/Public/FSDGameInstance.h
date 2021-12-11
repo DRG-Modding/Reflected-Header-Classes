@@ -1,111 +1,111 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 //CROSS-MODULE INCLUDE: Engine GameInstance
-#include "ESteamServerJoinStatus.h"
-#include "PendingRewardsStats.h"
+#include "EAlwaysLoadedWorlds.h"
 //CROSS-MODULE INCLUDE: OnlineSubsystemUtils BlueprintSessionResult
-#include "ECharselectionCameraLocation.h"
 #include "PendingRewards.h"
+#include "EMinersManualSection.h"
+#include "ECharselectionCameraLocation.h"
 #include "ClaimableRewardEntry.h"
 #include "CharacterViewScene.h"
+#include "NetworkConnectionInfo.h"
 #include "FSDServerSearchOptions.h"
+#include "FadeData.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "GameStateSeamlessTravelStorage.h"
 #include "ESteamSearchRegion.h"
+#include "ESteamServerJoinStatus.h"
 #include "EDisconnectReason.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-#include "EMinersManualSection.h"
-#include "FadeData.h"
-#include "EAlwaysLoadedWorlds.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "SpaceRigNotification.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "ECharacterSelectorItemStatus.h"
 //CROSS-MODULE INCLUDE: Engine ENetworkFailure
-#include "NetworkConnectionInfo.h"
+#include "PendingRewardsStats.h"
 #include "FSDGameInstance.generated.h"
 
-class UMissionResultInfo;
-class UMutator;
-class UTemporaryBuff;
-class UWindowWidget;
+class UCampaignManager;
 class ULevelSequence;
 class APlayerCharacter;
-class UWorld;
-class UDeepDiveManager;
+class UMissionResultInfo;
+class UTemporaryBuff;
 class AFSDPlayerController;
 class APostProcessingManager;
+class AActor;
 class ATutorialManager;
 class UItemSkin;
-class ABosco;
+class UFSDFriendsAndInvites;
+class UWorld;
 class UMouseCursorWidget;
-class AActor;
-class USpecialEvent;
 class AItem;
-class UFSDSendToURL;
+class USpecialEvent;
 class AProceduralSetup;
+class UFSDSendToURL;
 class UGeneratedMission;
+class UCampaignNotification;
+class UDeepDiveManager;
 class UGoogleAnalyticsWrapper;
 class AMolly;
-class UFSDFriendsAndInvites;
+class ABosco;
+class UWindowWidget;
 class UFSDGameInstance;
-class UObject;
-class UCampaignNotification;
-class UHUDWarningWidget;
-class USoundBase;
-class UIconGenerationManager;
-class ACharacterSelectionSwitcher;
-class USchematic;
-class UCampaignManager;
-class UDifficultySetting;
 class UTexture2D;
+class ACharacterSelectionSwitcher;
+class UHUDWarningWidget;
+class UIconGenerationManager;
+class UDifficultySetting;
+class UMutator;
+class UObject;
 class UFSDSaveGame;
+class USchematic;
 class UFSDCloudLoadSave;
+class UTexture;
 class UFSDSessionUpdater;
 class USoundSubmix;
 class UNetDriver;
-class UTexture;
+class USoundBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnTemporaryBuffChanged, UTemporaryBuff*, buff, APlayerCharacter*, AffectedPlayer);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnGameSettingsChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnPlayLevelSequenceInCharacterWorld, ULevelSequence*, CharacterLevelSequence);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnLoaderStop);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnLoaderStart, ULevelSequence*, LoaderLevelSequence);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnSkinChangedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnGraphicsSettingsChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnShowCharacterSelectionRefresh);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnPressStart);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnForgingDone);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnJoinPendingInvite, FBlueprintSessionResult, Session);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FFSDGameInstanceOnMinersManualNotification, EMinersManualSection, Section, FGuid, ObjectID, FText, Text);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnCharacterSelectionStart, ECharselectionCameraLocation, selectionLocation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnStartForging);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnGeneratedMissionChanged, UGeneratedMission*, OutGeneratedMission);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnCharacterSelectionStop);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnTutorialManagerSet, ATutorialManager*, NewManager);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnLocalPlayerCharacterSet, APlayerCharacter*, PlayerCharacter);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnShowViewer3D, TSubclassOf<AActor>, Actor, ECharselectionCameraLocation, selectionLocation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnShowReconnectScreen, bool, Show);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnXBoxAccountPickerClosed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnXBoxChangeUser);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnHDRGammaChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnGravityChanged, float, CurrentGravity, float, Change);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnNewPostProcessingManager, APostProcessingManager*, PostProcessingManager);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnPreviewSkinChanged, UItemSkin*, Skin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnShowCharacterSelectorEquip, TSubclassOf<AItem>, itemClass, int32, EquipSlot);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnShowCharacterSelector, TSubclassOf<APlayerCharacter>, NewCharacter, ECharselectionCameraLocation, selectionLocation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnShowCharacterSelectorEquipSlot, int32, EquipSlot);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnShowCharacterSelectorRotate, float, Pitch, float, Yaw);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnShowEndScreen, FCharacterViewScene, viewScene);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnDonkeyChanged, AMolly*, InDonkey);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnPrivilegeCheckComplete);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnBoscoChanged, ABosco*, Bosco);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnSteamSearchRegionChanged, ESteamSearchRegion, Region);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnSteamServerJoinStatusChanged, ESteamServerJoinStatus, Status);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnStartSearchForFriendsComplete, bool, bWasSuccessful, const FString&, ErrorStr);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnNewSpaceRigNotification, UFSDGameInstance*, GameInstance);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnCampaignNotification, UCampaignNotification*, Notification);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnNewHUDWarning, UHUDWarningWidget*, newWidget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnTemporaryBuffChanged, UTemporaryBuff*, buff, APlayerCharacter*, AffectedPlayer);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnGameSettingsChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnPlayLevelSequenceInCharacterWorld, ULevelSequence*, CharacterLevelSequence);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnLoaderStop);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnLoaderStart, ULevelSequence*, LoaderLevelSequence);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnSkinChangedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnGraphicsSettingsChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnShowCharacterSelectionRefresh);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnPressStart);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnForgingDone);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnJoinPendingInvite, FBlueprintSessionResult, Session);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FFSDGameInstanceOnMinersManualNotification, EMinersManualSection, Section, FGuid, ObjectID, FText, Text);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnCharacterSelectionStart, ECharselectionCameraLocation, selectionLocation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnStartForging);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnGeneratedMissionChanged, UGeneratedMission*, OutGeneratedMission);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnCharacterSelectionStop);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnTutorialManagerSet, ATutorialManager*, NewManager);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnLocalPlayerCharacterSet, APlayerCharacter*, PlayerCharacter);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnShowViewer3D, TSubclassOf<AActor>, Actor, ECharselectionCameraLocation, selectionLocation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnShowReconnectScreen, bool, Show);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnXBoxAccountPickerClosed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnXBoxChangeUser);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnHDRGammaChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnGravityChanged, float, CurrentGravity, float, Change);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnNewPostProcessingManager, APostProcessingManager*, PostProcessingManager);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnPreviewSkinChanged, UItemSkin*, Skin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnShowCharacterSelectorEquip, TSubclassOf<AItem>, itemClass, int32, EquipSlot);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnShowCharacterSelector, TSubclassOf<APlayerCharacter>, NewCharacter, ECharselectionCameraLocation, selectionLocation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnShowCharacterSelectorEquipSlot, int32, EquipSlot);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnShowCharacterSelectorRotate, float, Pitch, float, Yaw);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnShowEndScreen, FCharacterViewScene, viewScene);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnDonkeyChanged, AMolly*, InDonkey);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameInstanceOnPrivilegeCheckComplete);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnBoscoChanged, ABosco*, Bosco);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnSteamSearchRegionChanged, ESteamSearchRegion, Region);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnSteamServerJoinStatusChanged, ESteamServerJoinStatus, Status);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameInstanceOnStartSearchForFriendsComplete, bool, bWasSuccessful, const FString&, ErrorStr);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnNewSpaceRigNotification, UFSDGameInstance*, GameInstance);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnCampaignNotification, UCampaignNotification*, Notification);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameInstanceOnNewHUDWarning, UHUDWarningWidget*, newWidget);
 
 UCLASS(NonTransient)
 class UFSDGameInstance : public UGameInstance {
@@ -509,10 +509,10 @@ public:
     UFUNCTION(BlueprintCallable)
     AProceduralSetup* SpawnProcedural();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldPendingRewardsBeShown() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldPendingRewardsBeGiven() const;
     
     UFUNCTION(BlueprintCallable)
@@ -602,57 +602,57 @@ public:
     void PairingUseNewProfile();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNewFSDSessionID(const FString& sessionId);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNetworkFailure(UWorld* World, UNetDriver* NetDriver, TEnumAsByte<ENetworkFailure::Type> failType, const FString& errorMessage);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLoadComplete(const FString& MapName);
     
     UFUNCTION(BlueprintCallable)
     void LoadSaveGame(UFSDSaveGame* toLoad);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsScreenFadingToBlack(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsScreenFadingFromBlack(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsScreenFading(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPendingInvitePasswordProtected();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPendingInviteModded();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMutatorActive(TSubclassOf<UMutator> mutatorClass) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsGameModded();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFreeBeerRewardActive() const;
     
     UFUNCTION(BlueprintCallable)
     bool IsCampaignMission();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasTooManyModsEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasSignedIn();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasPendingInvite() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasPendingActivity() const;
     
     UFUNCTION(BlueprintCallable)
@@ -664,57 +664,57 @@ public:
     UFUNCTION(BlueprintCallable)
     void GiveTemporaryBuff(UTemporaryBuff* buff, APlayerCharacter* Player);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetViewportSize();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftClassPtr<AProceduralSetup> GetSoftReferenceToPLS();
     
     UFUNCTION(BlueprintCallable)
     TArray<FBlueprintSessionResult> GetServersFriendsArePlaying(TArray<FBlueprintSessionResult> servers);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPendingRewards(FPendingRewardsStats& OutStats, FPendingRewards& OutRewards) const;
     
     UFUNCTION(BlueprintCallable)
     bool GetNextSpaceRigNotification(FSpaceRigNotification& NextNotification);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMutator*> GetMutators(TSubclassOf<UMutator> mutatorClass) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxPublicConnections() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxAllowedMods() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDPlayerController* GetLocalFSDPlayerController() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UIconGenerationManager* GetIconGenerationManager() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasSeenInfoScreen();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetGlobalMissionSeed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UGeneratedMission* GetGeneratedMission() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMutator* GetFirstMutator(TSubclassOf<UMutator> mutatorClass) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentFadeAmount() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FNetworkConnectionInfo> GetConnectionInfo();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetCharacterSelectorCharacter();
     
     UFUNCTION(BlueprintCallable)

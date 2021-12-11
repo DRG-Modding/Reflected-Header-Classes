@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "AudioFunctionLibrary.generated.h"
 
-class USoundClass;
 class USoundMix;
+class USoundClass;
 class UObject;
 
 UCLASS(BlueprintType)
@@ -17,7 +17,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void PushTimedSoundMix(UObject* contextObject, USoundMix* mix, float Duration);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetSoundClassVolume(USoundClass* SoundClass);
     
     UAudioFunctionLibrary();

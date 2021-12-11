@@ -7,12 +7,12 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "PipelineFinish.generated.h"
 
-class UTrackBuilderConnectPoint;
+class ATrackBuilderSegment;
 class USingleUsableComponent;
+class UTrackBuilderConnectPoint;
 class APipelineExtractorPod;
 class ARessuplyPod;
 class APlayerCharacter;
-class ATrackBuilderSegment;
 class APipelineSegment;
 
 UCLASS(Abstract)
@@ -35,31 +35,31 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_PipelineCompleted)
     bool bPipelineCompleted;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePipelineCompleted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveExtractorPodSpawned(APipelineExtractorPod* InExtractorPod);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PipelineCompleted();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ExtractorPod();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnExtractorPodStateChanged(ARessuplyPod* InExtractorPod, ERessuplyPodState InState);
     
     UFUNCTION(BlueprintCallable)
     void OnExtractorPodOrdered(APlayerCharacter* InUser, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnConnectedWithSegment(UTrackBuilderConnectPoint* InConnectPoint, ATrackBuilderSegment* InSegment);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnConnectedSegmentActivated(APipelineSegment* InSegment);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FVector GetLandingOffset();
     
 public:

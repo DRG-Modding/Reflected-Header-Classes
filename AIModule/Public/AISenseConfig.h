@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Color
 //CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE: CoreUObject Color
 #include "AISenseConfig.generated.h"
 
 UCLASS(Abstract, BlueprintType, EditInlineNew, Config=Game)

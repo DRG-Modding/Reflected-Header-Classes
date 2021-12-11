@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AudioMixer SynthComponent
-#include "EMediaSoundChannels.h"
 //CROSS-MODULE INCLUDE: Engine SoundAttenuationSettings
-//CROSS-MODULE INCLUDE: CoreUObject FloatRange
+//CROSS-MODULE INCLUDE: AudioMixer SynthComponent
 #include "EMediaSoundComponentFFTSize.h"
+#include "EMediaSoundChannels.h"
+//CROSS-MODULE INCLUDE: CoreUObject FloatRange
 #include "MediaSoundComponentSpectralData.h"
 #include "MediaSoundComponent.generated.h"
 
@@ -49,10 +49,10 @@ public:
     UFUNCTION(BlueprintCallable)
     TArray<FMediaSoundComponentSpectralData> GetSpectralData();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMediaPlayer* GetMediaPlayer() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEnvelopeValue() const;
     
     UFUNCTION(BlueprintCallable)

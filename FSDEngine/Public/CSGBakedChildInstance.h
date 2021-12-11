@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CSGBase.h"
 #include "CSGBakedChildInstanceProperties.h"
+#include "CSGBase.h"
 //CROSS-MODULE INCLUDE: CoreUObject Box
-#include "DeepCSGFloatTree.h"
 //CROSS-MODULE INCLUDE: CoreUObject Matrix
+#include "DeepCSGFloatTree.h"
 #include "CSGBakedChildInstance.generated.h"
 
 UCLASS(BlueprintType)

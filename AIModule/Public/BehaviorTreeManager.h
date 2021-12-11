@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BehaviorTreeTemplateInfo.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "BehaviorTreeTemplateInfo.h"
 #include "BehaviorTreeManager.generated.h"
 
 class UBehaviorTreeComponent;

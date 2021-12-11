@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CSGAddMaterialLayersProperties.h"
 #include "CSGBaseComponent.h"
+#include "CSGAddMaterialLayersProperties.h"
 #include "CSGAddMaterialLayersComponent.generated.h"
 
 UCLASS(BlueprintType)

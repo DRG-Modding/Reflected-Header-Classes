@@ -6,7 +6,7 @@
 
 class UWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FWidgetNavigationDataCustomDelegate, EUINavigation, Navigation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FWidgetNavigationDataCustomDelegate, EUINavigation, Navigation);
 
 USTRUCT(BlueprintType)
 struct UMG_API FWidgetNavigationData {

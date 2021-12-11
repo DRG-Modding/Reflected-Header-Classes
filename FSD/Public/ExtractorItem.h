@@ -3,18 +3,18 @@
 #include "AnimatedItem.h"
 #include "Throwable.h"
 #include "EExtractorState.h"
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 //CROSS-MODULE INCLUDE: CoreUObject Color
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ExtractorItem.generated.h"
 
-class ACharacter;
-class UBoxComponent;
-class UFSDAudioComponent;
-class USkeletalMeshComponent;
-class UFirstPersonParticleSystemComponent;
-class UPointLightComponent;
 class UParticleSystemComponent;
+class UBoxComponent;
+class ACharacter;
+class UFirstPersonParticleSystemComponent;
+class USkeletalMeshComponent;
+class UFSDAudioComponent;
+class UPointLightComponent;
 class UAnimMontage;
 class UParticleSystem;
 class UForceFeedbackEffect;
@@ -23,8 +23,8 @@ class UDialogDataAsset;
 class USoundCue;
 class AResourceChunk;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FExtractorItemOnCurrentLoadChangedEvent, float, FloatValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FExtractorItemOnCharacterEquipChange, ACharacter*, Character);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FExtractorItemOnCurrentLoadChangedEvent, float, FloatValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FExtractorItemOnCharacterEquipChange, ACharacter*, Character);
 
 UCLASS()
 class AExtractorItem : public AAnimatedItem, public IThrowable {
@@ -191,67 +191,67 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void SetCanPickup(bool canPickup);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StopMining();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StartMining();
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetReadyToExtract(bool IsReady);
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_DigBlock(FVector_NetQuantize Start, FVector_NetQuantize End);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_CollectChunk(AResourceChunk* chunk);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void ResetCurrentLoad();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnValidSurfaceChanged(bool IsValid);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnThrown(FVector Direction);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStopDrilling();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStartDrilling();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SimulatingMining();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsGunslinging();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CurrentLoad();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnCurrentLoadChanged(float load);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnChunkCooldownOver();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFull() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBoxComponent* GetRootCollider() const;
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SimulateDigBlock(FVector_NetQuantize Position, bool spawnParticles, int32 Material);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ChunkSplat(AResourceChunk* chunk);
     
     UFUNCTION(BlueprintCallable)
@@ -260,5 +260,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AExtractorItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

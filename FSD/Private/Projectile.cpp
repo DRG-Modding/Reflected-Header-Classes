@@ -2,11 +2,11 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-class USceneComponent;
-class AProjectile;
-class UObject;
 class AProjectileBase;
+class UObject;
+class AProjectile;
 class APawn;
+class USceneComponent;
 class UFSDPhysicalMaterial;
 
 AProjectileBase* AProjectile::SpawnProjectileFromSelf(UObject* WorldContextObject, TSubclassOf<AProjectileBase> projectileClass, FVector Origin, FRotator velocityDirection) {

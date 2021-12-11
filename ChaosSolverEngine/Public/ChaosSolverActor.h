@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: ChaosSolvers SolverCollisionFilterSettings
 //CROSS-MODULE INCLUDE: Engine Actor
-#include "EClusterConnectionTypeEnum.h"
-//CROSS-MODULE INCLUDE: ChaosSolvers SolverTrailingFilterSettings
-//CROSS-MODULE INCLUDE: ChaosSolvers SolverBreakingFilterSettings
 #include "ChaosDebugSubstepControl.h"
+//CROSS-MODULE INCLUDE: ChaosSolvers SolverBreakingFilterSettings
+#include "EClusterConnectionTypeEnum.h"
+//CROSS-MODULE INCLUDE: ChaosSolvers SolverCollisionFilterSettings
+//CROSS-MODULE INCLUDE: ChaosSolvers SolverTrailingFilterSettings
 #include "ChaosSolverActor.generated.h"
 
 class UChaosGameplayEventDispatcher;

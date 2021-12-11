@@ -20,7 +20,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void SpawnEventRewardFrame(UObject* WorldContextObject, FVector Location);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool HasPendingReward(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable)

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ChallengeVariation.h"
-#include "SavableDataAsset.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "TrackedStatInfo.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+#include "SavableDataAsset.h"
+#include "ChallengeVariation.h"
 #include "SeasonChallenge.generated.h"
 
 class UTexture2D;
@@ -51,10 +51,10 @@ public:
     UPROPERTY(EditAnywhere)
     TArray<TSubclassOf<UCampaign>> RequiredCampaigns;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetIconOutlined();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetIcon();
     
     USeasonChallenge();

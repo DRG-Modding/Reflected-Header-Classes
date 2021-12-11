@@ -9,9 +9,9 @@ class UYesNoPromptAction;
 class UObject;
 class UResourceData;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FYesNoPromptActionYes);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FYesNoPromptActionYesNoDelegate, bool, Yes);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FYesNoPromptActionNo);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FYesNoPromptActionYes);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FYesNoPromptActionYesNoDelegate, bool, Yes);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FYesNoPromptActionNo);
 
 UCLASS()
 class UYesNoPromptAction : public UBlueprintAsyncActionBase {
@@ -38,7 +38,7 @@ public:
     static UYesNoPromptAction* PromptPurchase(UObject* WorldContext, FYesNoPromptSettings Prompt, const TMap<UResourceData*, int32>& Resources);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void PromptCallback(bool YesClicked);
     
 public:

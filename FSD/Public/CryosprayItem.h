@@ -1,16 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AmmoDrivenWeapon.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "DecalData.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "CryosprayItem.generated.h"
 
-class UParticleSystemComponent;
-class AProjectileBase;
-class UProjectileLauncherComponent;
 class UDamageComponent;
+class UParticleSystemComponent;
 class UMotionAudioController;
+class UProjectileLauncherComponent;
 class UStickyFlameSpawner;
 class UParticleSystem;
 class UFSDAudioComponent;
@@ -18,6 +17,7 @@ class UItemUpgrade;
 class UHealthComponentBase;
 class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
+class AProjectileBase;
 
 UCLASS(Abstract)
 class ACryosprayItem : public AAmmoDrivenWeapon {
@@ -135,37 +135,37 @@ protected:
     UPROPERTY(Transient)
     bool AoEColdEnabled;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerDoDamage(FVector_NetQuantize Start, FVector_NetQuantize End, uint8 Power);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_TriggerAoECold();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_PreLaunchProjectile();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveRepressurisingChanged(bool Value);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsCharging(bool OldValue);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnProjectileSpawned(AProjectileBase* Projectile);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnProjectileLaunched(const FVector& Location);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPressurizedPartileShoot();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPreProjectileLaunch();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_PreLaunchProjectile();
     
 public:

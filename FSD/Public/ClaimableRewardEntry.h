@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "ClaimableRewardEntry.generated.h"
 
-class UReward;
 class UObject;
+class UReward;
 
 USTRUCT(BlueprintType)
 struct FClaimableRewardEntry {

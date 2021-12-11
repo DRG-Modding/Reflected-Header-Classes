@@ -1,9 +1,9 @@
 #include "PatrolBot.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
 class UHealthComponentBase;
 class UPrimitiveComponent;
+class AActor;
 
 void APatrolBot::SetIsPatrolling(bool patroling) {
 }

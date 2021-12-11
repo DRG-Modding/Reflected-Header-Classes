@@ -18,7 +18,7 @@ protected:
     EModifyStatusEffectDamageUpgrade upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, TSubclassOf<AActor> upgradedItem, AFSDPlayerState* Player, EModifyStatusEffectDamageUpgrade NewUpgradeType);
     
     UModifyDynamicStatusEffectDamageBonusUpgrade();

@@ -2,25 +2,26 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagAssetInterface
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagAssetInterface
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTag
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "GameEvent.generated.h"
 
-class AEventStarterButton;
 class UChildActorComponent;
-class UDialogDataAsset;
+class AEventStarterButton;
 class ARessuplyPod;
+class UDialogDataAsset;
 class AProceduralSetup;
 class UDebrisPositioning;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventTimeProgressChanged, float, CurrentProgress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventStageCompleteDelegate, int32, stageCompleted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameEventEventTriggeredDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameEventEventFinishedDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventProgressChangedDelegate, float, CurrentProgress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventObjectivesPerStageChanged, int32, stageCompleted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventTimeProgressChanged, float, CurrentProgress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventStageCompleteDelegate, int32, stageCompleted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameEventEventTriggeredDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameEventEventFinishedDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventProgressChangedDelegate, float, CurrentProgress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameEventObjectivesPerStageChanged, int32, stageCompleted);
 
 UCLASS()
 class AGameEvent : public AActor, public IGameplayTagAssetInterface {
@@ -122,7 +123,7 @@ private:
     TArray<AActor*> EventParticipants;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TrySetupGameEvent();
     
 public:
@@ -130,7 +131,7 @@ public:
     void TriggerEvent();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void StartShout();
     
 public:
@@ -150,79 +151,79 @@ public:
     void SetObjectivesPerStage(int32 NewObjectivesPerStage);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RemoveParticipant(AActor* participant);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStarterObjectUsed(AEventStarterButton* eventStarter);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStageProgress(float Progress);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStageComplete(int32 Stage);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_StageProgress();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ObjectivesPerStage();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsEventStartersActive();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_FailedEvent();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EventStarted();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EventParticipants();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEventTriggered();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEventFinished(bool eventSuccess);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEventBooted();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEventActive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetStageProgress() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowTimeOnHUD() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowScoreOnHUD() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetObjectiveText() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetObjectivesPerStage() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetEventName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetEventFailed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDelayUITime() const;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void EndShout();
     
 public:
@@ -238,5 +239,19 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AGameEvent();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override PURE_VIRTUAL(HasMatchingGameplayTag, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAnyMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAllMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(GetOwnedGameplayTags,);
+    
 };
 

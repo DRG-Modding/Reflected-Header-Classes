@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnemyDeepPathfinderCharacter.h"
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "AFlyingBug.generated.h"
 
-class UEnemyComponent;
-class UAudioComponent;
-class UPawnStatsComponent;
 class UOutlineComponent;
-class UPawnSensingComponent;
+class UEnemyComponent;
+class UPawnStatsComponent;
 class UPawnAlertComponent;
+class UPawnSensingComponent;
 class USphereComponent;
+class USoundBase;
+class UAudioComponent;
 class UFrozenPawnImpactComponent;
 class UAnimSequenceBase;
 class AActor;
 class UPhysicsAsset;
-class USoundBase;
 class UHealthComponentBase;
 
 UCLASS()
@@ -97,7 +97,7 @@ protected:
     bool UseDefaultRagdoll;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StartFizzle();
     
     UFUNCTION(BlueprintCallable)
@@ -113,42 +113,42 @@ protected:
     UFUNCTION(BlueprintCallable)
     void Ragdoll(bool applyForce, const FVector& force);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void PlayVoice();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStartFalling();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_RagdollImpact();
     
 protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_AttackStance();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRagdoll();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFreezeImpact();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDamaged(float Amount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnBugDeath(UHealthComponentBase* Health);
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMidZpointFromCielingAndFloor(float& distanceFromCieling, float& distanceFromFloor) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsInAttackStance() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AlertNearbyEnemies();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

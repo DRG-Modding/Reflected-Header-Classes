@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-#include "PickaxePartEquip.h"
-#include "ItemIDInterface.h"
 #include "EPickaxePartLocation.h"
+#include "ItemIDInterface.h"
 #include "PickaxeMeshInstance.h"
+#include "PickaxePartEquip.h"
 #include "PickaxePreviewActor.generated.h"
 
-class USceneComponent;
 class UMaterialInterface;
+class USceneComponent;
 class UItemID;
 class UPickaxePart;
 
@@ -37,5 +37,7 @@ public:
     void EquipParts();
     
     APickaxePreviewActor();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

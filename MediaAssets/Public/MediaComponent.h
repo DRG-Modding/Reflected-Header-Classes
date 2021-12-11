@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "MediaComponent.generated.h"
 
-class UMediaPlayer;
 class UMediaTexture;
+class UMediaPlayer;
 
 UCLASS(BlueprintType)
 class MEDIAASSETS_API UMediaComponent : public UActorComponent {
@@ -18,10 +18,10 @@ private:
     UMediaPlayer* MediaPlayer;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMediaTexture* GetMediaTexture() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMediaPlayer* GetMediaPlayer() const;
     
     UMediaComponent();

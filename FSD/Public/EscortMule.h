@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "FSDPawn.h"
 #include "TriggerAI.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "EscortMuleMovementState.h"
 #include "EscortMuleExtractorSlot.h"
-#include "EEscortExtractorState.h"
 #include "EEscortMissionState.h"
+#include "EEscortExtractorState.h"
 #include "EscortMule.generated.h"
 
 class UFriendlyHealthComponent;
@@ -15,16 +15,16 @@ class URestrictedResourceBank;
 class USimpleObjectInfoComponent;
 class USkeletalMeshComponent;
 class UOutlineComponent;
-class AExtractorItem;
 class APlayerCharacter;
 class UInstantUsable;
+class AExtractorItem;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEscortMuleCheat_JumpToNextPhase);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEscortMuleOnMuleActivated);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortMuleOnSpeedChanged, float, newSpeedModifier);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortMuleOnFullCanistersChanged, int32, IntValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortMuleOnExitGaragePathSet, const TArray<FVector>&, Path);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortMuleCheat_SetMuleSpeed, float, FloatValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEscortMuleCheat_JumpToNextPhase);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEscortMuleOnMuleActivated);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortMuleOnSpeedChanged, float, newSpeedModifier);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortMuleOnFullCanistersChanged, int32, IntValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortMuleOnExitGaragePathSet, const TArray<FVector>&, Path);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortMuleCheat_SetMuleSpeed, float, FloatValue);
 
 UCLASS()
 class AEscortMule : public AFSDPawn, public ITriggerAI {
@@ -122,38 +122,38 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void ResetExtractors();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PathIsReady();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SpeedModifier();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_MovementState();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRep_IsCarvingTunnel();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ExtractorSlots();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnObjectiveStateChanged(EEscortMissionState NewState);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnExtractorSlotChanged(const FEscortMuleExtractorSlot& Slot, int32 Index);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnExtractorDetached(AExtractorItem* Item);
     
 public:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void ObjectiveStateChange(EEscortMissionState NewState);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EEscortExtractorState GetExtractorState(UInstantUsable* Usable) const;
     
 protected:
@@ -164,5 +164,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AEscortMule();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

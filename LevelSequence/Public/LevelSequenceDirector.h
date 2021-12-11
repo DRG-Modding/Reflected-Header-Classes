@@ -12,7 +12,7 @@ public:
     UPROPERTY(BlueprintReadOnly)
     ULevelSequencePlayer* Player;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnCreated();
     
     ULevelSequenceDirector();

@@ -13,7 +13,7 @@ class UBarMenuWidget;
 class APlayerCharacter;
 class ADrinkableActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpaceRigBarOnNewDrinkableSpecial, UDrinkableDataAsset*, Drinkable);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpaceRigBarOnNewDrinkableSpecial, UDrinkableDataAsset*, Drinkable);
 
 UCLASS(Abstract)
 class ASpaceRigBar : public AActor {
@@ -44,13 +44,13 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SpawnDrinkables(UDrinkableDataAsset* Drinkable, APlayerCharacter* User);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveFinishedSpawningDrinkables(UDrinkableDataAsset* DrinkableData, APlayerCharacter* Customer);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDrinkableSpawned(ADrinkableActor* Drinkable, APlayerCharacter* Customer, int32 LocationIndex);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveBeginSpawningDrinkables(UDrinkableDataAsset* DrinkableData, APlayerCharacter* Customer);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -59,16 +59,16 @@ protected:
     UFUNCTION(BlueprintCallable)
     void PayTip(APlayerCharacter* Character, int32 Credits);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DrinkableSpecial();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool HasUnclaimedDrinkables() const;
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool HasSpaceForMoreDrinkables() const;
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     int32 GetAvailableDrinkableSlots() const;
     
 public:

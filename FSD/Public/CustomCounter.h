@@ -4,7 +4,7 @@
 
 class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FCustomCounterOnCount, float, Value, float, NormalizedTime);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FCustomCounterOnCount, float, Value, float, NormalizedTime);
 
 USTRUCT(BlueprintType)
 struct FCustomCounter {

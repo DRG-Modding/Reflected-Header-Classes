@@ -21,7 +21,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetValue(bool InValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetValue() const;
     
     UBoolUserSettingAsset();

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ENiagaraModuleDependencyScriptConstraint.h"
 #include "ENiagaraModuleDependencyType.h"
+#include "ENiagaraModuleDependencyScriptConstraint.h"
 #include "NiagaraModuleDependency.generated.h"
 
 USTRUCT()

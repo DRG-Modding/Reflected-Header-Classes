@@ -5,7 +5,7 @@
 
 class UAnimMontage;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpecialAttackComponentOnAttackActionNotify, FName, nameValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpecialAttackComponentOnAttackActionNotify, FName, nameValue);
 
 UCLASS()
 class USpecialAttackComponent : public UAttackBaseComponent {
@@ -18,22 +18,22 @@ protected:
     UPROPERTY(BlueprintAssignable)
     FSpecialAttackComponentOnAttackActionNotify OnAttackActionNotify;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TriggerAttack(FName Name);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UAnimMontage* SelectMontage() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_OnPerformAttack();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_OnAborted();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMontageEnded(UAnimMontage* Montage, bool interrupted);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnFrozen(bool IsFrozen);
     
 public:

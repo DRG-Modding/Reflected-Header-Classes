@@ -3,24 +3,24 @@
 #include "Templates/SubclassOf.h"
 #include "AmmoDrivenWeapon.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "TracerData.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "LockCounter.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
 #include "LockOnWeapon.generated.h"
 
-class AActor;
-class UActorTrackingWidget;
-class UHitscanComponent;
-class ALockOnBeam;
 class UDamageComponent;
 class UStatusEffect;
+class UActorTrackingWidget;
+class AActor;
+class UHitscanComponent;
+class ALockOnBeam;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FLockOnWeaponOnLockonTargetRotationUpdated, bool, hasTargetLockon, FRotator, socketRotation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLockOnWeaponOnLockingStopped);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLockOnWeaponOnLockingStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLockOnWeaponOnMaxTargetsChanged, int32, InMaxTargets);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLockOnWeaponOnLockOnCountChanged, int32, InCurrentCount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FLockOnWeaponOnLockonTargetRotationUpdated, bool, hasTargetLockon, FRotator, socketRotation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLockOnWeaponOnLockingStopped);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLockOnWeaponOnLockingStarted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLockOnWeaponOnMaxTargetsChanged, int32, InMaxTargets);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLockOnWeaponOnLockOnCountChanged, int32, InCurrentCount);
 
 UCLASS(Abstract)
 class FSD_API ALockOnWeapon : public AAmmoDrivenWeapon {
@@ -156,58 +156,58 @@ protected:
     UPROPERTY(EditAnywhere)
     float LockOnRecoilMult;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UpdateRifleEye();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetMuzzleDirection(FVector TargetLocation);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_TriggerAoe(FVector Location);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetTotalLockCount(int32 totalLockCount);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetLockCount(const FLockCounter& LockCounter);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIsMovementSlowed(bool bisMovementSlowed);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIsLatestShotLockedOn(bool bisShotLockedOn);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIsChargingShot(bool bisCharging);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_PushStatusEffect(AActor* Target);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_PopStatusEffect(AActor* Target);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_FiringComplete(int32 ShotsFired);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void RefundAmmo();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRep_AimTarget();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMovementSlowed(bool isSlowed);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHitDeadTarget();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHit(const FHitResult& Hit, bool AlwaysPenetrate);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAsyncFireComplete();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void MuzzleLerpToTarget(FVector TargetLocation);
     
 public:

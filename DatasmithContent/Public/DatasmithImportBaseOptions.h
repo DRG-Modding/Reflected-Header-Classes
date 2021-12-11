@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DatasmithStaticMeshImportOptions.h"
 #include "DatasmithAssetImportOptions.h"
 #include "EDatasmithImportScene.h"
-#include "DatasmithStaticMeshImportOptions.h"
 #include "DatasmithImportBaseOptions.generated.h"
 
 USTRUCT(BlueprintType)

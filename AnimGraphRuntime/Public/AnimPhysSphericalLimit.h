@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BoneReference
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine BoneReference
 #include "ESphericalLimitType.h"
 #include "AnimPhysSphericalLimit.generated.h"
 

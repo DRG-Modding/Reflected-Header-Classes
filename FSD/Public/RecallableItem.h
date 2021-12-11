@@ -3,12 +3,12 @@
 #include "Templates/SubclassOf.h"
 #include "AnimatedItem.h"
 #include "Upgradable.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "RecallableItem.generated.h"
 
-class ARecallableActor;
 class AActor;
+class ARecallableActor;
 
 UCLASS(Abstract)
 class ARecallableItem : public AAnimatedItem, public IUpgradable {
@@ -21,24 +21,26 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_ActiveItems)
     TArray<TWeakObjectPtr<ARecallableActor>> ActiveItems;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSpawnItem(const FVector& Location, const FRotator& Rotation);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnItemSpawned(ARecallableActor* Item);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActiveItems();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ItemReturnFinished(AActor* Item, bool success);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool CanSpawnItem(const FVector& Location, const FRotator& Rotation);
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ARecallableItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

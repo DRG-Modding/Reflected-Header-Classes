@@ -32,19 +32,19 @@ public:
     void SetState(EDefendPointState State);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DefendState();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDefensePointActivated(APlayerCharacter* Player, EInputKeys Key);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DefenseStart();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DefenseFail();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DefenseComplete();
     
 public:

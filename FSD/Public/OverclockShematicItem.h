@@ -19,7 +19,7 @@ protected:
     UItemUpgrade* Overclock;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UUpgradableGearComponent* GetOwningGearComponent() const;
     
     UOverclockShematicItem();

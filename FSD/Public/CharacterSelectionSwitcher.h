@@ -17,13 +17,13 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnVanityItemEquipped(EVanitySlot Slot);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Hide();
     
-    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     AActor* GetViewerActor() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     APlayerCharacter* GetActiveCharacter() const;
     
     ACharacterSelectionSwitcher();

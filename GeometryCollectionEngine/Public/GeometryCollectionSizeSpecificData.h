@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EImplicitTypeEnum
 //CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore ECollisionTypeEnum
+//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EImplicitTypeEnum
 #include "GeometryCollectionSizeSpecificData.generated.h"
 
 USTRUCT(BlueprintType)

@@ -14,13 +14,13 @@ protected:
     TArray<FProfileEntry> Entries;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetTotalTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FProfileEntry> GetEntries() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FProfileCategoryTiming> GetCategoryTimings() const;
     
     UProfilingSubSystem();

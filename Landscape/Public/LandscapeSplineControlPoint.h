@@ -2,10 +2,10 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Box
 //CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "LandscapeSplineConnection.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "LandscapeSplineInterpPoint.h"
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "LandscapeSplineControlPoint.generated.h"
 
 class UControlPointMeshComponent;

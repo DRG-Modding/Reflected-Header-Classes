@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CSGRandomizeTransformProperties.h"
 #include "CSGSingleChildBase.h"
+#include "CSGRandomizeTransformProperties.h"
 #include "CSGRandomizeTransform.generated.h"
 
 UCLASS(BlueprintType)

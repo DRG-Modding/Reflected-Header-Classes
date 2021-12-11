@@ -2,10 +2,10 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "AnimNode_SkeletalControlBase.h"
+//CROSS-MODULE INCLUDE: Engine EBoneControlSpace
 #include "BoneSocketTarget.h"
 //CROSS-MODULE INCLUDE: Engine BoneReference
 //CROSS-MODULE INCLUDE: Engine EBoneRotationSource
-//CROSS-MODULE INCLUDE: Engine EBoneControlSpace
 #include "AnimNode_Fabrik.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AnimNode_SkeletalControlBase.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine BoneReference
 //CROSS-MODULE INCLUDE: CoreUObject EAxis
-#include "RotationLimit.h"
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
-//CROSS-MODULE INCLUDE: Engine InputScaleBiasClamp
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "AnimPhysPlanarLimit.h"
+//CROSS-MODULE INCLUDE: Engine InputScaleBiasClamp
+#include "RotationLimit.h"
 #include "AnimNode_Trail.generated.h"
 
 USTRUCT(BlueprintType)

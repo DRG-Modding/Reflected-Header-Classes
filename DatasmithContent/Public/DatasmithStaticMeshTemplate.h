@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "DatasmithObjectTemplate.h"
 #include "DatasmithMeshSectionInfoMapTemplate.h"
-#include "DatasmithMeshBuildSettingsTemplate.h"
 #include "DatasmithStaticMaterialTemplate.h"
+#include "DatasmithMeshBuildSettingsTemplate.h"
 #include "DatasmithStaticMeshTemplate.generated.h"
 
 UCLASS()

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: FieldSystemCore ESetMaskConditionType
 #include "FieldNodeInt.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: FieldSystemCore ESetMaskConditionType
 #include "RadialIntMask.generated.h"
 
 class URadialIntMask;
@@ -26,7 +26,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TEnumAsByte<ESetMaskConditionType> SetMaskCondition;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     URadialIntMask* SetRadialIntMask(float NewRadius, FVector NewPosition, int32 NewInteriorValue, int32 NewExteriorValue, TEnumAsByte<ESetMaskConditionType> SetMaskConditionIn);
     
     URadialIntMask();

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOculusMR_DepthQuality.h"
-//CROSS-MODULE INCLUDE: CoreUObject Color
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EOculusMR_PostProcessEffects.h"
 #include "EOculusMR_ClippingReference.h"
+//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE: CoreUObject Color
+#include "EOculusMR_DepthQuality.h"
 #include "EOculusMR_CompositionMethod.h"
 #include "EOculusMR_VirtualGreenScreenType.h"
 #include "EOculusMR_CameraDeviceEnum.h"

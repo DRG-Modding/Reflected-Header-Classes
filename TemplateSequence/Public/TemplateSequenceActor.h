@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 //CROSS-MODULE INCLUDE: MovieScene MovieScenePlaybackClient
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlaybackSettings
 #include "TemplateSequenceBindingOverrideData.h"
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "TemplateSequenceActor.generated.h"
 
-class UTemplateSequence;
 class UTemplateSequencePlayer;
+class UTemplateSequence;
 
 UCLASS()
 class TEMPLATESEQUENCE_API ATemplateSequenceActor : public AActor, public IMovieScenePlaybackClient {
@@ -32,17 +32,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetBinding(AActor* Actor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTemplateSequence* LoadSequence() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTemplateSequencePlayer* GetSequencePlayer() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTemplateSequence* GetSequence() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ATemplateSequenceActor();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

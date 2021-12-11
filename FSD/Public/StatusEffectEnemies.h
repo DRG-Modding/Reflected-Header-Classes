@@ -33,7 +33,7 @@ protected:
     UPROPERTY(EditAnywhere)
     TMap<UEnemyDescriptor*, TSubclassOf<UStatusEffect>> Overrides;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnemySpawned(APawn* enemy, UEnemyDescriptor* descriptor);
     
 public:

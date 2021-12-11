@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "TextLayoutWidget.h"
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
 //CROSS-MODULE INCLUDE: SlateCore SlateBrush
-#include "TextLayoutWidget.h"
 //CROSS-MODULE INCLUDE: SlateCore TextBlockStyle
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
@@ -70,13 +70,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAutoWrapText(bool InAutoTextWrap);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetText() const;
     
     UFUNCTION(BlueprintCallable)
     URichTextBlockDecorator* GetDecoratorByClass(TSubclassOf<URichTextBlockDecorator> DecoratorClass);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ClearAllDefaultStyleOverrides();
     
     URichTextBlock();

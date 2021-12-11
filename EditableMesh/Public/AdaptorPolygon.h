@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AdaptorTriangleID.h"
 //CROSS-MODULE INCLUDE: MeshDescription PolygonGroupID
+#include "AdaptorTriangleID.h"
 #include "AdaptorPolygon.generated.h"
 
 USTRUCT()

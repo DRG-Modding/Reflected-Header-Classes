@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CameraFocusSettings.h"
-//CROSS-MODULE INCLUDE: Engine CameraComponent
-#include "CameraFilmbackSettings.h"
-#include "NamedLensPreset.h"
 #include "CameraLensSettings.h"
+//CROSS-MODULE INCLUDE: Engine CameraComponent
 #include "NamedFilmbackPreset.h"
+#include "CameraFilmbackSettings.h"
+#include "CameraFocusSettings.h"
+#include "NamedLensPreset.h"
 #include "CineCameraComponent.generated.h"
 
 UCLASS()
@@ -65,22 +65,22 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCurrentFocalLength(const float& InFocalLength);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVerticalFieldOfView() const;
     
     UFUNCTION(BlueprintCallable)
     static TArray<FNamedLensPreset> GetLensPresetsCopy();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetLensPresetName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHorizontalFieldOfView() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetFilmbackPresetName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetDefaultFilmbackPresetName() const;
     
     UCineCameraComponent();

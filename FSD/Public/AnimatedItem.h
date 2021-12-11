@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Item.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "Item.h"
 #include "AnimatedItem.generated.h"
 
-class UItemCharacterAnimationSet;
-class USkinnableComponent;
 class UAnimMontage;
-class UPlayerAnimInstance;
+class UItemCharacterAnimationSet;
 class USkeletalMeshComponent;
+class USkinnableComponent;
+class UPlayerAnimInstance;
 
 UCLASS(Abstract)
 class AAnimatedItem : public AItem {
@@ -42,13 +42,13 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UItemCharacterAnimationSet* CharacterAnimationSet;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnReceiveEquippedFinished();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetMuzzle() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USkeletalMeshComponent* GetItemMesh() const;
     
 public:

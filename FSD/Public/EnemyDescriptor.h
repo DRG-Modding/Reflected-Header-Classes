@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "EnemyDebris.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
-#include "EVeteranScaling.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EEnemySignificance.h"
+#include "EVeteranScaling.h"
+//CROSS-MODULE INCLUDE: FSDEngine DeepPathFinderType
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ECreatureSize.h"
 #include "SpawnRarityItem.h"
-#include "EnemyDebris.h"
-//CROSS-MODULE INCLUDE: FSDEngine DeepPathFinderType
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "EnemyDescriptor.generated.h"
 
+class UBiome;
 class UEnemyID;
 class APawn;
 class UEnemyDescriptor;
-class UBiome;
 class UMissionTemplate;
 class UDebrisPositioning;
 class UCaveInfluencer;
@@ -120,7 +120,7 @@ protected:
     TArray<FSpawnRarityItem> SpawnRarityModifiers;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<APawn> GetEnemyClass(UBiome* Biome, bool isElite) const;
     
     UEnemyDescriptor();

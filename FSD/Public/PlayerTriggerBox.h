@@ -5,10 +5,10 @@
 
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTriggerBoxOnPlayerExited, APlayerCharacter*, Player);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTriggerBoxOnPlayerEntered, APlayerCharacter*, Player);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerTriggerBoxOnAllPlayersExited);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerTriggerBoxOnAllPlayersEntered);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTriggerBoxOnPlayerExited, APlayerCharacter*, Player);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTriggerBoxOnPlayerEntered, APlayerCharacter*, Player);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerTriggerBoxOnAllPlayersExited);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerTriggerBoxOnAllPlayersEntered);
 
 UCLASS()
 class APlayerTriggerBox : public ATriggerBox {
@@ -31,24 +31,24 @@ protected:
     TArray<APlayerCharacter*> PlayersInside;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAnyPlayerInside(bool excludingDeadPlayers) const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnPlayerExited(APlayerCharacter* Player);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnPlayerEntered(APlayerCharacter* Player);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnAllPlayersExited();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnAllPlayersEntered();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreAllPlayersInside(bool excludingDeadPlayers) const;
     
     APlayerTriggerBox();

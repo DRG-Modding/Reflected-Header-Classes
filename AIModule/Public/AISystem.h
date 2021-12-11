@@ -6,10 +6,10 @@
 #include "AISystem.generated.h"
 
 class UAIHotSpotManager;
+class UAIAsyncTaskBlueprintProxy;
 class UEnvQueryManager;
 class UBehaviorTreeManager;
 class UAIPerceptionSystem;
-class UAIAsyncTaskBlueprintProxy;
 class UNavLocalGridManager;
 
 UCLASS()
@@ -77,10 +77,10 @@ protected:
     UNavLocalGridManager* NavLocalGrids;
     
 public:
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void AILoggingVerbose();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void AIIgnorePlayers();
     
     UAISystem();

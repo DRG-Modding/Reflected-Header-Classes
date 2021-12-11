@@ -4,7 +4,7 @@
 
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FProximityTriggerItemCallback, APlayerCharacter*, Player, bool, enteredTrigger);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FProximityTriggerItemCallback, APlayerCharacter*, Player, bool, enteredTrigger);
 
 USTRUCT(BlueprintType)
 struct FProximityTriggerItem {

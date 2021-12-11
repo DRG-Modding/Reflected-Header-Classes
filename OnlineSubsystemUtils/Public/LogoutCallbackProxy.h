@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE: Engine BlueprintAsyncActionBase
 #include "LogoutCallbackProxy.generated.h"
 
-class APlayerController;
 class ULogoutCallbackProxy;
+class APlayerController;
 class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLogoutCallbackProxyOnSuccess, APlayerController*, PlayerController);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLogoutCallbackProxyOnFailure, APlayerController*, PlayerController);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLogoutCallbackProxyOnSuccess, APlayerController*, PlayerController);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLogoutCallbackProxyOnFailure, APlayerController*, PlayerController);
 
 UCLASS(MinimalAPI)
 class ULogoutCallbackProxy : public UBlueprintAsyncActionBase {

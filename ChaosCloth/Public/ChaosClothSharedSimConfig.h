@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: ClothingSystemRuntimeCommon ClothSharedConfigCommon
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ChaosClothSharedSimConfig.generated.h"
 
 UCLASS()

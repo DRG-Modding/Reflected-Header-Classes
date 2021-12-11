@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine PerPlatformBool
-//CROSS-MODULE INCLUDE: Engine PerPlatformFloat
 //CROSS-MODULE INCLUDE: Engine PerPlatformInt
+//CROSS-MODULE INCLUDE: Engine PerPlatformFloat
 #include "AnimationSharingScalability.generated.h"
 
 USTRUCT(BlueprintType)

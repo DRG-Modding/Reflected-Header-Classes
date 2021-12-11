@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene EMovieSceneBlendType
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
 //CROSS-MODULE INCLUDE: MovieScene MovieScenePropertySectionTemplate
 #include "MovieScene2DTransformMask.h"
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
+//CROSS-MODULE INCLUDE: MovieScene EMovieSceneBlendType
 #include "MovieScene2DTransformSectionTemplate.generated.h"
 
 USTRUCT()

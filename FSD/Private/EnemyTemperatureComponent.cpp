@@ -1,12 +1,12 @@
 #include "EnemyTemperatureComponent.h"
 
-class UHealthComponent;
-class UFSDPhysicalMaterial;
-class UDamageClass;
-class UStatusEffectsComponent;
-class AActor;
-class AController;
 class UDamageTag;
+class AActor;
+class UHealthComponent;
+class UDamageClass;
+class UFSDPhysicalMaterial;
+class AController;
+class UStatusEffectsComponent;
 
 void UEnemyTemperatureComponent::TimerCallback() {
 }

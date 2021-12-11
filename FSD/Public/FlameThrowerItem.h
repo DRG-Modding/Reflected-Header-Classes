@@ -2,21 +2,21 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "AmmoDrivenWeapon.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "DecalData.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "FlameThrowerItem.generated.h"
 
-class UProjectileLauncherBaseComponent;
-class UParticleSystemComponent;
 class UStatusEffect;
-class UDamageComponent;
 class UMotionAudioController;
+class UParticleSystemComponent;
+class UDamageComponent;
+class USoundCue;
 class UStickyFlameSpawner;
 class UParticleSystem;
 class UItemUpgrade;
-class USoundCue;
+class UProjectileLauncherBaseComponent;
 class AActor;
 class UFSDPhysicalMaterial;
 class UHealthComponentBase;
@@ -141,25 +141,25 @@ protected:
     UPROPERTY(Export, VisibleAnywhere)
     UProjectileLauncherBaseComponent* ProjectileLancher;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TriggerAoEHeat();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerMeltIce(const TArray<FVector>& meltPoints);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerDoDamage(FVector_NetQuantize Start, FVector_NetQuantize End);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetKilled(AActor* Target, UFSDPhysicalMaterial* PhysMat);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowTargetBurstIntoFire(FVector_NetQuantize Location, FRotator Rotation);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_FlameFeedback(FVector_NetQuantize Location, FRotator Rotation);
     
 public:

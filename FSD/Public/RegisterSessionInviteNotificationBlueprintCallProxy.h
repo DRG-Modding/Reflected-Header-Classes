@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE: OnlineSubsystemUtils BlueprintSessionResult
 #include "RegisterSessionInviteNotificationBlueprintCallProxy.generated.h"
 
-class UObject;
 class URegisterSessionInviteNotificationBlueprintCallProxy;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRegisterSessionInviteNotificationBlueprintCallProxyOnSessionUserInviteAccepted, const FBlueprintSessionResult&, SessionInvite);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRegisterSessionInviteNotificationBlueprintCallProxyOnSessionUserInviteAccepted, const FBlueprintSessionResult&, SessionInvite);
 
 UCLASS()
 class URegisterSessionInviteNotificationBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {

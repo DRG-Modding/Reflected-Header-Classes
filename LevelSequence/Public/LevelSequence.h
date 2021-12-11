@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LevelSequenceBindingReferences.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSequence
 #include "LevelSequenceObjectReferenceMap.h"
+#include "LevelSequenceBindingReferences.h"
 #include "LevelSequenceObject.h"
 #include "LevelSequence.generated.h"
 
-class UMovieScene;
 class UObject;
+class UMovieScene;
 
 UCLASS()
 class LEVELSEQUENCE_API ULevelSequence : public UMovieSceneSequence {
@@ -36,7 +36,7 @@ public:
     UFUNCTION(BlueprintCallable)
     UObject* FindOrAddMetaDataByClass(UClass* InClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObject* FindMetaDataByClass(UClass* InClass) const;
     
     UFUNCTION(BlueprintCallable)

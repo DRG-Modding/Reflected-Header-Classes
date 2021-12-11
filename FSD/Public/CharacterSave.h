@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "VictoryPoseSave.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "ItemLoadout.h"
 #include "CharacterVanitySave.h"
-#include "VictoryPoseSave.h"
 #include "CharacterSave.generated.h"
 
 class APlayerCharacter;

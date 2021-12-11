@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 //CROSS-MODULE INCLUDE: CoreUObject Box
+//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "ARCandidateObject.generated.h"
 
 UCLASS(BlueprintType)
@@ -28,13 +28,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetBoundingBox(const FBox& InBoundingBox);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetFriendlyName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<uint8> GetCandidateObjectData() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FBox GetBoundingBox() const;
     
     UARCandidateObject();

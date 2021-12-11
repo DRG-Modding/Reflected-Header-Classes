@@ -1,10 +1,10 @@
 #include "UGCSubsystem.h"
 
-class UUGCPackage;
-class UModioModInfoWrapper;
-class UTexture2DDynamic;
 class UObject;
+class UUGCPackage;
 class UModioTermsWrapper;
+class UTexture2DDynamic;
+class UModioModInfoWrapper;
 
 void UUGCSubsystem::SetPackagesAsRecentlyInstalled(TArray<UUGCPackage*> RecentMods) {
 }

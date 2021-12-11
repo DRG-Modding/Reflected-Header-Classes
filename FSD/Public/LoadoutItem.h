@@ -15,7 +15,7 @@ class ILoadoutItem : public IInterface {
     GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable)
-    virtual  return NULL; GetLoadoutItemClass() const PURE_VIRTUAL(GetLoadoutItemClass,);
+    virtual TSubclassOf<AItem> GetLoadoutItemClass() const PURE_VIRTUAL(GetLoadoutItemClass, return NULL;);
     
 };
 

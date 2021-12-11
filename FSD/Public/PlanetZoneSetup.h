@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: Engine DataAsset
 #include "PlanetZoneSetup.generated.h"
 
-class UPlanetZone;
 class UBiome;
+class UPlanetZone;
 
 UCLASS(BlueprintType)
 class UPlanetZoneSetup : public UDataAsset {
@@ -15,7 +15,7 @@ protected:
     TArray<UPlanetZone*> PlanetZones;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlanetZone* GetPlanetZoneForBiome(UBiome* Biome) const;
     
     UPlanetZoneSetup();

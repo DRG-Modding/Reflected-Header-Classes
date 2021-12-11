@@ -18,7 +18,7 @@ protected:
     EFlaregunUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, EFlaregunUpgrades NewUpgradeType);
     
     UFlareGunUpgrade();

@@ -5,12 +5,12 @@
 //CROSS-MODULE INCLUDE: UMG ESlateVisibility
 #include "WindowManager.generated.h"
 
+class USoundCue;
 class UWindowWidget;
 class UUserWidget;
-class USoundCue;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWindowManagerOnFirstWindowOpened);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWindowManagerOnLastWindowClosed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWindowManagerOnFirstWindowOpened);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWindowManagerOnLastWindowClosed);
 
 UCLASS(BlueprintType)
 class UWindowManager : public UActorComponent {
@@ -54,16 +54,16 @@ public:
     UFUNCTION(BlueprintCallable)
     UWindowWidget* OpenSingleUseWindow(TSubclassOf<UWindowWidget> windowClass, int32 ZOrder);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsWindowOpen(UWindowWidget* Window) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTopWindow(UWindowWidget* Window) const;
     
     UFUNCTION(BlueprintCallable)
     UUserWidget* GetOrCreateSingletonWidget(TSubclassOf<UUserWidget> WidgetClass, bool& WidgetCreated);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWindowWidget* GetCurrentWindow() const;
     
     UFUNCTION(BlueprintCallable)
@@ -80,7 +80,7 @@ protected:
     void CenterCursor();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AnyWindowsOpen() const;
     
     UWindowManager();

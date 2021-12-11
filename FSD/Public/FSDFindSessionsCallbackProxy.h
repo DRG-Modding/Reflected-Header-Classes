@@ -4,14 +4,14 @@
 //CROSS-MODULE INCLUDE: OnlineSubsystemUtils BlueprintSessionResult
 #include "FSDFindSessionsCallbackProxy.generated.h"
 
-class UObject;
 class UFSDFindSteamSessions;
 class UFSDFindSessionsCallbackProxy;
+class UObject;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDFindSessionsCallbackProxyOnSuccess, const TArray<FBlueprintSessionResult>&, Results);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDFindSessionsCallbackProxyOnFailure, const TArray<FBlueprintSessionResult>&, Results);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDFindSessionsCallbackProxyOnRefresh, const TArray<FBlueprintSessionResult>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDFindSessionsCallbackProxyOnSuccess, const TArray<FBlueprintSessionResult>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDFindSessionsCallbackProxyOnFailure, const TArray<FBlueprintSessionResult>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDFindSessionsCallbackProxyOnRefresh, const TArray<FBlueprintSessionResult>&, Results);
 
 UCLASS(MinimalAPI)
 class UFSDFindSessionsCallbackProxy : public UOnlineBlueprintCallProxyBase {
@@ -33,7 +33,7 @@ private:
     UPROPERTY()
     UFSDFindSteamSessions* FSDFindSteamSessions;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFSDCompleted(bool bSuccess, const TArray<FBlueprintSessionResult>& Results);
     
 public:

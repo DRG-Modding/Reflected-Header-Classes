@@ -4,9 +4,9 @@
 #include "IconGenerationCharacter.generated.h"
 
 class UMaterialInterface;
-class USkeletalMeshComponent;
 class UIconSceneCaptureComponent;
 class UBeardColorVanityItem;
+class USkeletalMeshComponent;
 
 UCLASS()
 class AIconGenerationCharacter : public AIconGenerationBase {

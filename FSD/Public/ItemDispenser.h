@@ -10,8 +10,8 @@ class UInstantUsable;
 class ACarriableItem;
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemDispenserOnItemSpawned, AActor*, spawnedItem);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemDispenserOnItemTaken, AActor*, spawnedItem);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemDispenserOnItemSpawned, AActor*, spawnedItem);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemDispenserOnItemTaken, AActor*, spawnedItem);
 
 UCLASS()
 class AItemDispenser : public AActor {
@@ -51,7 +51,7 @@ protected:
     UPROPERTY(EditAnywhere)
     bool KillItemsOnDestuction;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SpawnItem();
     
 public:
@@ -59,29 +59,29 @@ public:
     void Open();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUsed(APlayerCharacter* User, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SpawnedItem(AActor* oldItem);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsOpen();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPickedUpItem(AActor* Item);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnOpenChanged(bool NewOpen);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnItemSpawnedEvent(AActor* Item);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetItem() const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

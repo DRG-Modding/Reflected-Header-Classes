@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteractiveGizmo.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "InteractiveGizmo.h"
 #include "AxisAngleGizmo.generated.h"
 
 class UGizmoStateTarget;

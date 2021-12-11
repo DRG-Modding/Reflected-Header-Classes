@@ -16,7 +16,7 @@ public:
     void SetRotateWhileStationary(bool Value);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_RotateWhileStationary();
     
 public:

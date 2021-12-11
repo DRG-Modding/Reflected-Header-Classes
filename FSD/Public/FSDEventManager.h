@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine GameInstanceSubsystem
 //CROSS-MODULE INCLUDE: CoreUObject DateTime
+//CROSS-MODULE INCLUDE: Engine GameInstanceSubsystem
 #include "FSDEventManager.generated.h"
 
 class UFSDEvent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDEventManagerOnFSDEventsRefresh);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDEventManagerOnEventActiveChanged, const UFSDEvent*, InFsdEvent, bool, InIsActive);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDEventManagerOnFSDEventsRefresh);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDEventManagerOnEventActiveChanged, const UFSDEvent*, InFsdEvent, bool, InIsActive);
 
 UCLASS(BlueprintType)
 class UFSDEventManager : public UGameInstanceSubsystem {
@@ -39,13 +39,13 @@ protected:
     float NextCheckTime;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEventActive(const UFSDEvent* FSDEvent) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UFSDEvent*> GetActiveEventHandlers() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool FSDEventsReady() const;
     
     UFSDEventManager();

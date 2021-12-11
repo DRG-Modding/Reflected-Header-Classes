@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlaybackSettings
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlayer
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlaybackSettings
 #include "LevelSequencePlayer.generated.h"
 
+class UObject;
 class UCameraComponent;
 class ULevelSequence;
 class ULevelSequencePlayer;
-class UObject;
 class ALevelSequenceActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLevelSequencePlayerOnCameraCut, UCameraComponent*, CameraComponent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLevelSequencePlayerOnCameraCut, UCameraComponent*, CameraComponent);
 
 UCLASS()
 class LEVELSEQUENCE_API ULevelSequencePlayer : public UMovieSceneSequencePlayer {
@@ -19,7 +19,7 @@ public:
     UPROPERTY(BlueprintAssignable)
     FLevelSequencePlayerOnCameraCut OnCameraCut;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCameraComponent* GetActiveCameraComponent() const;
     
     UFUNCTION(BlueprintCallable)

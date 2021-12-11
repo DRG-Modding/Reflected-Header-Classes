@@ -4,11 +4,11 @@
 #include "BlueprintFriend.h"
 #include "GetFriendsListBlueprintCallProxy.generated.h"
 
-class UObject;
 class UGetFriendsListBlueprintCallProxy;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGetFriendsListBlueprintCallProxyOnSuccess, const TArray<FBlueprintFriend>&, Results);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGetFriendsListBlueprintCallProxyOnFailure, const TArray<FBlueprintFriend>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGetFriendsListBlueprintCallProxyOnSuccess, const TArray<FBlueprintFriend>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGetFriendsListBlueprintCallProxyOnFailure, const TArray<FBlueprintFriend>&, Results);
 
 UCLASS()
 class UGetFriendsListBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {

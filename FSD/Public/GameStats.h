@@ -21,7 +21,7 @@ public:
     UPROPERTY(BlueprintReadWrite, Replicated, Transient)
     int32 MissionHaz;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerMinedGold(UCappedResource* Resource, float Amount);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

@@ -5,8 +5,8 @@
 
 class UFSDSaveGame;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDCloudLoadSaveOnCloudLoadAll, const TArray<UFSDSaveGame*>&, savegames);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDCloudLoadSaveOnCloudLoadAllFailed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDCloudLoadSaveOnCloudLoadAll, const TArray<UFSDSaveGame*>&, savegames);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDCloudLoadSaveOnCloudLoadAllFailed);
 
 UCLASS(BlueprintType)
 class UFSDCloudLoadSave : public UObject {

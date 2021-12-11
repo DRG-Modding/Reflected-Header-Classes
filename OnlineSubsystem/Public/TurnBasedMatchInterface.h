@@ -11,10 +11,10 @@ class UTurnBasedMatchInterface : public UInterface {
 class ITurnBasedMatchInterface : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMatchReceivedTurn(const FString& Match, bool bDidBecomeActive);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMatchEnded(const FString& Match);
     
 };

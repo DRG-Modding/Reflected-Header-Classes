@@ -15,27 +15,27 @@ public:
     UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_IsFlareOn)
     bool IsFlareOn;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUpdateShadowRadius();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFlareOn();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFlareIgnite();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFlareExtinguish();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDroppodImpact(AMiningPod* DropPod);
     
 public:
     UFUNCTION(BlueprintCallable)
     void Inhibit();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ActivateFlare();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

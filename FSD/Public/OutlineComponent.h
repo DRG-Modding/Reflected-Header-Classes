@@ -4,13 +4,13 @@
 #include "EOutline.h"
 #include "OutlineComponent.generated.h"
 
+class UPrimitiveComponent;
+class APlayerCharacter;
 class AItem;
 class UHealthComponentBase;
-class APlayerCharacter;
-class UPrimitiveComponent;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOutlineComponentOnOutlineChanged, EOutline, InOutline);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOutlineComponentOnOutlineChanged, EOutline, InOutline);
 
 UCLASS(BlueprintType)
 class UOutlineComponent : public UActorComponent {
@@ -58,19 +58,19 @@ public:
     void RemoveFromOutline(UPrimitiveComponent* Component);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnToggleOutline(bool Visible);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerDeath(UHealthComponentBase* HealthComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnLocalPlayerSet(APlayerCharacter* PlayerCharacter);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnItemUnequipped(AItem* Item);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnItemEquipped(AItem* Item);
     
 public:

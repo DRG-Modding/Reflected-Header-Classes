@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "EnvelopeFollowerListener.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnvelopeFollowerListenerOnEnvelopeFollowerUpdate, float, EnvelopeValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnvelopeFollowerListenerOnEnvelopeFollowerUpdate, float, EnvelopeValue);
 
 UCLASS()
 class SYNTHESIS_API UEnvelopeFollowerListener : public UActorComponent {

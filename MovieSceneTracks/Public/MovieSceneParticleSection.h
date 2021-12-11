@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneParticleChannel.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
+#include "MovieSceneParticleChannel.h"
 #include "MovieSceneParticleSection.generated.h"
 
 UCLASS(MinimalAPI)

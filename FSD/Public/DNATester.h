@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "DNATester.generated.h"
 
-class URoomGeneratorGroup;
 class UMissionDNA;
+class URoomGeneratorGroup;
 
 UCLASS()
 class ADNATester : public AActor {

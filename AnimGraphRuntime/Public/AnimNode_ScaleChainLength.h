@@ -2,10 +2,10 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine AnimNode_Base
 //CROSS-MODULE INCLUDE: Engine PoseLink
-//CROSS-MODULE INCLUDE: Engine BoneReference
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-#include "EScaleChainInitialLength.h"
+//CROSS-MODULE INCLUDE: Engine BoneReference
 //CROSS-MODULE INCLUDE: Engine InputScaleBias
+#include "EScaleChainInitialLength.h"
 #include "AnimNode_ScaleChainLength.generated.h"
 
 USTRUCT(BlueprintType)

@@ -7,8 +7,8 @@
 #include "ChargedProjectileUpgrade.generated.h"
 
 class AActor;
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UChargedProjectileUpgrade : public UStandardItemUpgrade {
@@ -22,7 +22,7 @@ protected:
     TSubclassOf<AActor> projectileClass;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, TSubclassOf<AActor> upgradedActor, AFSDPlayerState* Player, EChargedProjectileUpgrades NewUpgradeType);
     
     UChargedProjectileUpgrade();

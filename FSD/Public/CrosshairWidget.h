@@ -9,10 +9,10 @@ UCLASS(EditInlineNew)
 class UCrosshairWidget : public UUserWidget {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetData(AItem* Item);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUpgraded(AItem* Item);
     
     UCrosshairWidget();

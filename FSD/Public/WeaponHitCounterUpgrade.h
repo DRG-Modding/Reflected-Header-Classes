@@ -5,9 +5,9 @@
 #include "UpgradeValues.h"
 #include "WeaponHitCounterUpgrade.generated.h"
 
-class AActor;
 class UWeaponHitCounterComponent;
 class AFSDPlayerState;
+class AActor;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UWeaponHitCounterUpgrade : public UItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     TSubclassOf<UWeaponHitCounterComponent> ComponentClass;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> Item, TSubclassOf<UWeaponHitCounterComponent> NewComponentClass);
     
     UWeaponHitCounterUpgrade();

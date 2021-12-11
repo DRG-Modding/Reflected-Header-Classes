@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE: CoreUObject Vector4
 #include "NiagaraVariable.h"
 #include "NiagaraParameterStore.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Vector4
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: CoreUObject Quat
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "NiagaraParameterCollectionInstance.generated.h"

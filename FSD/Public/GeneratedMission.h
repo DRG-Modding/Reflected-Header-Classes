@@ -7,19 +7,19 @@
 #include "ObjectiveMissionIcon.h"
 #include "GeneratedMission.generated.h"
 
-class UMissionComplexity;
-class UObjective;
+class UMutator;
+class UGeneratedMission;
 class UBiome;
 class UMissionTemplate;
-class UMutator;
+class UObjective;
 class UMissionWarning;
 class UMissionMutator;
+class UMissionComplexity;
 class UMissionDuration;
 class UMissionDNA;
 class ULevelSequence;
 class AProceduralSetup;
 class AFSDPlayerController;
-class UGeneratedMission;
 
 UCLASS(Blueprintable)
 class UGeneratedMission : public UObject {
@@ -71,38 +71,38 @@ protected:
     UPROPERTY(EditAnywhere)
     TSoftObjectPtr<ULevelSequence> LoaderLevelSequence;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Recieve_SetupPLS(AProceduralSetup* pls);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSingleMission() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocked(AFSDPlayerController* Player) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDeepDive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FObjectiveMissionIcon GetSecondaryObjectiveIcon() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AProceduralSetup> GetPLS() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMutator*> GetMutators(TSubclassOf<UMutator> mutatorClass) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMissionScale() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMissionDNA* GetMissionDNA() const;
     
     UFUNCTION(BlueprintCallable)
     AProceduralSetup* CreatePLS(int32 NewSeed);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreMissionsEqual(UGeneratedMission* Other) const;
     
     UGeneratedMission();

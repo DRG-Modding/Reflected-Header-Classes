@@ -5,7 +5,7 @@
 
 class UWidgetAnimation;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FAnimationEventBindingDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FAnimationEventBindingDelegate);
 
 USTRUCT(BlueprintType)
 struct FAnimationEventBinding {

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "SavableDataAsset.h"
 #include "VanityNode.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "TreeOfVanity.generated.h"
 
 class UReward;

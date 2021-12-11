@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SoftMinersManualDescription.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
+#include "SoftMinersManualDescription.h"
 #include "MinersManualData.generated.h"
 
 class UTexture2D;
@@ -15,13 +15,13 @@ protected:
     FSoftMinersManualDescription Description;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetText(FText& Headline, FText& richText);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetFrontImage();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBackgroundImage();
     
     UMinersManualData();

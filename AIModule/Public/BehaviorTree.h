@@ -5,9 +5,9 @@
 #include "BlackboardAssetProvider.h"
 #include "BehaviorTree.generated.h"
 
-class UBTDecorator;
 class UBTCompositeNode;
 class UBlackboardData;
+class UBTDecorator;
 
 UCLASS()
 class AIMODULE_API UBehaviorTree : public UObject, public IBlackboardAssetProvider {
@@ -26,5 +26,10 @@ public:
     TArray<FBTDecoratorLogic> RootDecoratorOps;
     
     UBehaviorTree();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    UBlackboardData* GetBlackboardAsset() const override PURE_VIRTUAL(GetBlackboardAsset, return NULL;);
+    
 };
 

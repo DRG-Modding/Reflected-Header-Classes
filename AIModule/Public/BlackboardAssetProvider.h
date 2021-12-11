@@ -14,7 +14,7 @@ class IBlackboardAssetProvider : public IInterface {
     GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable)
-    virtual  return NULL; GetBlackboardAsset() const PURE_VIRTUAL(GetBlackboardAsset,);
+    virtual UBlackboardData* GetBlackboardAsset() const PURE_VIRTUAL(GetBlackboardAsset, return NULL;);
     
 };
 

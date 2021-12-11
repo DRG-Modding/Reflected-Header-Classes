@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneAdditiveCameraAnimationTemplate.h"
 //CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+#include "MovieSceneAdditiveCameraAnimationTemplate.h"
 #include "MovieSceneCameraShakeSectionData.h"
 #include "MovieSceneCameraShakeSectionTemplate.generated.h"
 

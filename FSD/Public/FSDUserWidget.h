@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE: UMG ESlateVisibility
 #include "FSDUserWidget.generated.h"
 
-class AItem;
 class APlayerCharacter;
+class AItem;
 class AFSDPlayerState;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDUserWidgetOnVisibilityChanged, UUserWidget*, Widget, bool, IsVisible);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDUserWidgetOnVisibilityChanged, UUserWidget*, Widget, bool, IsVisible);
 
 UCLASS(EditInlineNew)
 class UFSDUserWidget : public UUserWidget {
@@ -32,33 +32,33 @@ protected:
     UFUNCTION(BlueprintCallable)
     void Refresh();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveNewVisibility(ESlateVisibility NewVisibility);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnCloseMenuReleased(bool& Handled);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnCloseMenuPressed(bool& Handled);
     
     UFUNCTION(BlueprintCallable)
     bool HasCharacter();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetOpacity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDPlayerState* GetFSDPlayerState();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AItem* GetEquippedItem() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBaseResolutionScale() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnRefresh();
     
 public:

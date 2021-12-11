@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ChunkPartData.h"
 #include "SHAHashData.h"
+#include "ChunkPartData.h"
 #include "FileManifestData.generated.h"
 
 USTRUCT(BlueprintType)

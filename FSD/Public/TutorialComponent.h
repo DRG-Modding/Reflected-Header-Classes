@@ -70,19 +70,19 @@ public:
     void RegisterTutorial();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnShown();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnInitialized();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnHidden();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTutorialsReset();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnManagerReady(ATutorialManager* Manager);
     
     UFUNCTION(BlueprintCallable)
@@ -94,11 +94,11 @@ protected:
     UFUNCTION(BlueprintCallable)
     void MarkTutorialReadyInSeconds(float Delay);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasTutorialBeenShown();
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FString GetTutorialName() const;
     
 protected:

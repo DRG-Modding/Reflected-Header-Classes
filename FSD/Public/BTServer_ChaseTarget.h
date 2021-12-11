@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AIModule BTService
 //CROSS-MODULE INCLUDE: AIModule BlackboardKeySelector
+//CROSS-MODULE INCLUDE: AIModule BTService
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "BTServer_ChaseTarget.generated.h"

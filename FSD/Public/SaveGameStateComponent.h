@@ -1,30 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "SaveGameStatePerkItem.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "CharacterProgress.h"
-#include "PlayerProgress.h"
 #include "ItemLoadout.h"
+#include "PlayerProgress.h"
 #include "ActiveCampaingMission.h"
+#include "SaveGameStatePerkItem.h"
 #include "ItemUpgradeSelection.h"
+#include "CharacterProgress.h"
 #include "SaveGameStateComponent.generated.h"
 
+class UItemUpgrade;
+class AActor;
+class AFSDPlayerState;
 class UVictoryPose;
 class UPlayerCharacterID;
-class AActor;
-class UItemUpgrade;
-class AFSDPlayerState;
 class UGeneratedMission;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSaveGameStateComponentOnCreditsChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSaveGameStateComponentOnPlayerProgressChanged, AFSDPlayerState*, PlayerState, FPlayerProgress, Progress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSaveGameStateComponentOnItemUpgradeEquipped, TSubclassOf<AActor>, itemClass, UItemUpgrade*, Upgrade);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSaveGameStateComponentOnEquippedPerksChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSaveGameStateComponentOnLoadoutChangedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSaveGameStateComponentOnItemUpgradeCrafted, UItemUpgrade*, Upgrade);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSaveGameStateComponentOnItemUpgradeUnequipped, TSubclassOf<AActor>, itemClass, UItemUpgrade*, Upgrade);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSaveGameStateComponentOnCharacterStatsChanged, AFSDPlayerState*, PlayerState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSaveGameStateComponentOnCreditsChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSaveGameStateComponentOnPlayerProgressChanged, AFSDPlayerState*, PlayerState, FPlayerProgress, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSaveGameStateComponentOnItemUpgradeEquipped, TSubclassOf<AActor>, itemClass, UItemUpgrade*, Upgrade);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSaveGameStateComponentOnEquippedPerksChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSaveGameStateComponentOnLoadoutChangedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSaveGameStateComponentOnItemUpgradeCrafted, UItemUpgrade*, Upgrade);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSaveGameStateComponentOnItemUpgradeUnequipped, TSubclassOf<AActor>, itemClass, UItemUpgrade*, Upgrade);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSaveGameStateComponentOnCharacterStatsChanged, AFSDPlayerState*, PlayerState);
 
 UCLASS(BlueprintType)
 class USaveGameStateComponent : public UActorComponent {
@@ -84,25 +84,25 @@ public:
     void SetCampaign();
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetVictoryPose(UVictoryPose* pose);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetPlayerProgress(const FPlayerProgress& Progress);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetLoadout(const FItemLoadout& Loadout, const TArray<FItemUpgradeSelection>& weaponLoadouts);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetEquippedPerks(const TArray<FSaveGameStatePerkItem>& perks);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetCredits(const int32 Amount);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetCharacterStats(const TArray<FCharacterProgress>& Stats);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetActiveCampaignMission(FActiveCampaingMission Data);
     
 public:
@@ -110,26 +110,26 @@ public:
     void RefreshLoadoutFromSave(UPlayerCharacterID* characterID);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PlayerProgress();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ItemUpgradeSelections();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Credits();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CharacterStats();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActiveCampaignMission();
     
 public:
     UFUNCTION(BlueprintCallable)
     FCharacterProgress GetCharacterStat(UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UGeneratedMission* GetActiveCampaignMission() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

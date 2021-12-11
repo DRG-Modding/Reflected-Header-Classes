@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagTableRow.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "GameplayTagTableRow.h"
 #include "GameplayTagsList.generated.h"
 
 UCLASS(NotPlaceable, Config=GameplayTagsList)

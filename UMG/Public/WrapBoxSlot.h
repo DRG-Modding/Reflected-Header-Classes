@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore EVerticalAlignment
-//CROSS-MODULE INCLUDE: SlateCore EHorizontalAlignment
 #include "PanelSlot.h"
 //CROSS-MODULE INCLUDE: SlateCore Margin
+//CROSS-MODULE INCLUDE: SlateCore EVerticalAlignment
+//CROSS-MODULE INCLUDE: SlateCore EHorizontalAlignment
 #include "WrapBoxSlot.generated.h"
 
 UCLASS(BlueprintType)

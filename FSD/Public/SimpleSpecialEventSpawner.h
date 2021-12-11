@@ -3,8 +3,8 @@
 #include "SpecialEventSpawner.h"
 #include "SimpleSpecialEventSpawner.generated.h"
 
-class UDebrisPositioning;
 class AActor;
+class UDebrisPositioning;
 
 UCLASS(EditInlineNew)
 class USimpleSpecialEventSpawner : public USpecialEventSpawner {

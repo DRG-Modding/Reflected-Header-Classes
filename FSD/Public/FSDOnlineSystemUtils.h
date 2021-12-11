@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EBlueprintableUserPrivileges.h"
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "EBlueprintablePrivilegeResults.h"
-#include "EBlueprintableUserPrivileges.h"
 #include "EInviteBlockReason.h"
 #include "FSDOnlineSystemUtils.generated.h"
 
-class UFSDGameInstance;
 class APlayerState;
 class UObject;
+class UFSDGameInstance;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FFSDOnlineSystemUtilsOnOverlayClosed, const FString&, LastURL);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_ThreeParams(FFSDOnlineSystemUtilsDelegate, const APlayerState*, CheckedPlayerState, EBlueprintableUserPrivileges, CheckedPrivilege, EBlueprintablePrivilegeResults, PrivilegeResult);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FFSDOnlineSystemUtilsOnOverlayClosed, const FString&, LastURL);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_ThreeParams(FFSDOnlineSystemUtilsDelegate, const APlayerState*, CheckedPlayerState, EBlueprintableUserPrivileges, CheckedPrivilege, EBlueprintablePrivilegeResults, PrivilegeResult);
 
 UCLASS(BlueprintType)
 class UFSDOnlineSystemUtils : public UBlueprintFunctionLibrary {
@@ -35,19 +35,19 @@ public:
     UFUNCTION(BlueprintCallable)
     static void OpenProfile(APlayerState* Requestor, APlayerState* Requestee);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText OnlinePlayBlockReasonToString(EBlueprintablePrivilegeResults reason);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void GetOnlinePlayBlockReasons(TArray<EBlueprintablePrivilegeResults>& reasons);
     
     UFUNCTION(BlueprintCallable)
     static void GetIsPrivilegeAllowed(const APlayerState* PlayerState, EBlueprintableUserPrivileges Privilege, const FFSDOnlineSystemUtilsDelegate& Delegate);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetInviteFeatureBlockReason(UObject* WorldContextObject, EInviteBlockReason reason);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EInviteBlockReason CanPlayerInvite(UObject* WorldContextObject);
     
     UFSDOnlineSystemUtils();

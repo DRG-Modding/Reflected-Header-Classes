@@ -1,9 +1,9 @@
 #include "TemplateSequencePlayer.h"
 
-class UTemplateSequence;
 class UObject;
-class ATemplateSequenceActor;
+class UTemplateSequence;
 class UTemplateSequencePlayer;
+class ATemplateSequenceActor;
 
 UTemplateSequencePlayer* UTemplateSequencePlayer::CreateTemplateSequencePlayer(UObject* WorldContextObject, UTemplateSequence* TemplateSequence, FMovieSceneSequencePlaybackSettings Settings, ATemplateSequenceActor*& OutActor) {
     return NULL;

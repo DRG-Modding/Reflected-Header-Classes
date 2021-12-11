@@ -18,10 +18,10 @@ public:
     void Show(const FText& Text, const FText& Title, const FText& TaskText, UTexture2D* Image, float Duration);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShow(const FText& Text, const FText& Title, const FText& TaskText, UTexture2D* Image);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHide(bool watched);
     
 public:

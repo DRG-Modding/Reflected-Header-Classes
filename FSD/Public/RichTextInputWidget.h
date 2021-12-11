@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE: UMG UserWidget
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: SlateCore TextBlockStyle
-#include "InputDisplay.h"
 #include "EFSDInputSource.h"
+#include "InputDisplay.h"
 #include "RichTextInputWidget.generated.h"
 
-class UTextBlock;
 class URichTextBlock;
+class UTextBlock;
 
 UCLASS(Abstract, EditInlineNew, HideDropdown)
 class URichTextInputWidget : public UUserWidget {
@@ -36,22 +36,22 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ScaleTextBlockToHeight(UTextBlock* InTextBlock, float LineHeight);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveInputUnknown();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveInputDetails(const FInputDisplay& InDisplay);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnInputSourceChanged(EFSDInputSource InSource);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCustomKeyBindsChanged();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D MeasureTextSize(const FText& Text, float Scale) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLineHeight() const;
     
     UFUNCTION(BlueprintCallable)

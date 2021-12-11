@@ -13,7 +13,7 @@ class UUpgradable : public UInterface {
 class IUpgradable : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Upgraded(const TArray<UItemUpgrade*>& upgrades);
     
 };

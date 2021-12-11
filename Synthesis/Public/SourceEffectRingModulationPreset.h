@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SourceEffectRingModulationSettings.h"
 //CROSS-MODULE INCLUDE: Engine SoundEffectSourcePreset
+#include "SourceEffectRingModulationSettings.h"
 #include "SourceEffectRingModulationPreset.generated.h"
 
 UCLASS(BlueprintType, EditInlineNew)

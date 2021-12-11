@@ -16,7 +16,7 @@ protected:
     UPROPERTY(EditAnywhere)
     float AmountPerValue;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHealthChanged(float Health);
     
 public:

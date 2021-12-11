@@ -7,7 +7,7 @@ UCLASS(Abstract, BlueprintType, EditInlineNew)
 class MEDIAASSETS_API UMediaSource : public UObject {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool Validate() const;
     
     UFUNCTION(BlueprintCallable)
@@ -22,7 +22,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetMediaOptionBool(const FName& Key, bool Value);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetUrl() const;
     
     UMediaSource();

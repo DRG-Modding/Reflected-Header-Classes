@@ -3,9 +3,9 @@
 #include "BeltDrivenWeapon.h"
 #include "GatlingGun.generated.h"
 
+class AActor;
 class UFXSystemAsset;
 class UDamageComponent;
-class AActor;
 class UFSDPhysicalMaterial;
 
 UCLASS()
@@ -52,19 +52,19 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     UDamageComponent* BarrelProximityDamageComponent;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetHotShellsOn(bool hotShellsIsOn);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HotShellsTracerOn();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnGatlingTemperatureChanged(float Temperature, bool isOverheated);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnemyKilled(AActor* Target, UFSDPhysicalMaterial* PhysMat);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_RemoveHeat();
     
 public:

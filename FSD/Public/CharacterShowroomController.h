@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ShowroomController.h"
 #include "EItemCategory.h"
+#include "ShowroomController.h"
 #include "CharacterShowroomController.generated.h"
 
-class UShowroomCameraKey;
 class APlayerCharacter;
+class UObject;
 class UCharacterShowroomController;
 class UPlayerCharacterID;
-class UObject;
+class UShowroomCameraKey;
 
 UCLASS(Blueprintable)
 class UCharacterShowroomController : public UShowroomController {
@@ -18,7 +18,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     APlayerCharacter* CharacterInstance;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_CharacterShown();
     
 public:

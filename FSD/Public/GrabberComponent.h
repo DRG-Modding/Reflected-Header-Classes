@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "EUseRestriction.h"
 #include "EOutline.h"
 #include "EGrabbedStateCameraMode.h"
 #include "GrabberComponent.generated.h"
 
-class UDialogDataAsset;
-class ADeepPathfinderCharacter;
-class AActor;
 class USkeletalMeshComponent;
-class UPrimitiveComponent;
+class AActor;
+class ADeepPathfinderCharacter;
 class USoundCue;
+class UPrimitiveComponent;
+class UDialogDataAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGrabberComponentOnReleasedActor, AActor*, aGrabbedActor);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGrabberComponentOnGrabbedActor, AActor*, aGrabbedActor);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGrabberComponentOnReleasedActor, AActor*, aGrabbedActor);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGrabberComponentOnGrabbedActor, AActor*, aGrabbedActor);
 
 UCLASS(BlueprintType)
 class UGrabberComponent : public UActorComponent {
@@ -94,10 +94,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     bool NeedsPathToTarget;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetPlayerReleased();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     bool SetPlayerGrabbed();
     
 public:
@@ -105,26 +105,26 @@ public:
     void ReleaseTarget();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CurrentlyGrabbed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPrimWake(UPrimitiveComponent* WakingComponent, FName BoneName);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnParentDestroyed(AActor* Actor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsGrabbedTargetValid() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasGrabbed() const;
     
     UFUNCTION(BlueprintCallable)
     bool GrabTarget(AActor* aGrabTarget);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanGrabTarget(AActor* aTarget) const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

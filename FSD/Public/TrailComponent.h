@@ -6,8 +6,8 @@
 //CROSS-MODULE INCLUDE: Engine ETraceTypeQuery
 #include "TrailComponent.generated.h"
 
-class UWorld;
 class UTrailComponent;
+class UWorld;
 
 UCLASS(BlueprintType)
 class UTrailComponent : public USceneComponent {
@@ -48,7 +48,7 @@ protected:
     FColor DrawColor;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 TrailLength() const;
     
     UFUNCTION(BlueprintCallable)
@@ -57,19 +57,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void Reset();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetTrailPoint(int32 Index) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetNextTrailPointFrom(FVector From) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNearestTrailIndex(FVector Location) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UTrailComponent* GetNearestPlayerTrail(UWorld* World, FVector From, float MinDist, float MaxDist);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FColor GetDrawColor() const;
     
     UTrailComponent();

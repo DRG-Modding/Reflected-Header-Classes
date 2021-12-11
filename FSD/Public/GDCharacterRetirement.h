@@ -4,8 +4,8 @@
 #include "RetirementCostItem.h"
 #include "GDCharacterRetirement.generated.h"
 
-class UCampaign;
 class UPlayerCharacterID;
+class UCampaign;
 
 USTRUCT(BlueprintType)
 struct FGDCharacterRetirement {

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine GameInstanceSubsystem
-#include "EAsyncLoadPriority.h"
 #include "EAsyncPersistence.h"
+#include "EAsyncLoadPriority.h"
 //CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "AsyncManager.generated.h"
 
 class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FAsyncManagerOnLoadComplete);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FAsyncManagerOnLoadComplete);
 
 UCLASS(BlueprintType)
 class UAsyncManager : public UGameInstanceSubsystem {

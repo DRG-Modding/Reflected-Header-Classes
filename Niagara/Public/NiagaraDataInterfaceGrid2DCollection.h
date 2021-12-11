@@ -3,8 +3,8 @@
 #include "NiagaraDataInterfaceGrid2D.h"
 #include "NiagaraDataInterfaceGrid2DCollection.generated.h"
 
-class UTextureRenderTarget2D;
 class UNiagaraComponent;
+class UTextureRenderTarget2D;
 
 UCLASS(BlueprintType, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceGrid2DCollection : public UNiagaraDataInterfaceGrid2D {

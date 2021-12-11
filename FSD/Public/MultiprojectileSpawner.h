@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "MultiprojectileSpawner.generated.h"
 
+class UDataAsset;
 class UMultiprojectileSpawner;
 class AActor;
-class UDataAsset;
 
 UCLASS(BlueprintType)
 class FSD_API UMultiprojectileSpawner : public UActorComponent {
@@ -21,7 +21,7 @@ protected:
     bool ProjectilesIgnoreEachOther;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsFiring() const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

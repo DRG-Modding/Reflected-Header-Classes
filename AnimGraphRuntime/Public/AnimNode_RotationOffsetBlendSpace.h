@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine PoseLink
-#include "AnimNode_BlendSpacePlayer.h"
-//CROSS-MODULE INCLUDE: Engine InputScaleBias
-//CROSS-MODULE INCLUDE: Engine InputAlphaBoolBlend
-//CROSS-MODULE INCLUDE: Engine InputScaleBiasClamp
 //CROSS-MODULE INCLUDE: Engine EAnimAlphaInputType
+#include "AnimNode_BlendSpacePlayer.h"
+//CROSS-MODULE INCLUDE: Engine InputAlphaBoolBlend
+//CROSS-MODULE INCLUDE: Engine PoseLink
+//CROSS-MODULE INCLUDE: Engine InputScaleBias
+//CROSS-MODULE INCLUDE: Engine InputScaleBiasClamp
 #include "AnimNode_RotationOffsetBlendSpace.generated.h"
 
 USTRUCT(BlueprintType)

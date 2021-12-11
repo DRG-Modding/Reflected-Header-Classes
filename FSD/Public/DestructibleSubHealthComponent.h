@@ -6,7 +6,7 @@
 class USceneComponent;
 class UDestructibleSubHealthComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDestructibleSubHealthComponentOnDestroyed, UDestructibleSubHealthComponent*, subHealth);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDestructibleSubHealthComponentOnDestroyed, UDestructibleSubHealthComponent*, subHealth);
 
 UCLASS()
 class UDestructibleSubHealthComponent : public USubHealthComponent {
@@ -39,7 +39,7 @@ public:
     void ResetHealth();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Damage(float oldDamage);
     
 public:

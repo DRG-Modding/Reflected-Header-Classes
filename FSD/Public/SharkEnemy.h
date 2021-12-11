@@ -6,19 +6,19 @@
 #include "ESharkEnemyState.h"
 #include "SharkEnemy.generated.h"
 
+class AActor;
+class UFakePhysGrabberComponent;
 class UParticleSystemComponent;
+class UDamageComponent;
 class UPawnSensingComponent;
 class USphereComponent;
-class UFakePhysGrabberComponent;
-class USoundCue;
+class UPrimitiveComponent;
 class UInDangerComponent;
 class UEnemyComponent;
-class UDamageComponent;
+class USoundCue;
 class UFakeMoverSettings;
 class UParticleSystem;
-class AActor;
 class APawn;
-class UPrimitiveComponent;
 class UHealthComponentBase;
 
 UCLASS(Abstract)
@@ -165,79 +165,79 @@ protected:
     ESharkEnemyState State;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetVulnerable();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ReleasePlayer(AActor* playerchar);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void PopRecentlyBumpedPlayer();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStateChangedEvent(ESharkEnemyState CurrentState);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSeePawn(APawn* APawn);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State(ESharkEnemyState oldState);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_RagdollImpact();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DiveTime();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNearTarget(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLandedEvent();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnJumpEvent();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnGrabbedEvent();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnExitState(ESharkEnemyState NewState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEnterState(ESharkEnemyState NewState);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* aHealthComponent);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDamaged(float aAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCollided(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void Jumped();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void ImpactSound();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DiveShow();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DiveHide();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ActivateDanger();
     
 public:

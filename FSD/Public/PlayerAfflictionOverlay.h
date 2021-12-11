@@ -6,8 +6,8 @@
 #include "PlayerAfflictionOverlay.generated.h"
 
 class UTexture2D;
-class USoundCue;
 class UPlayerAfflictionOverlayWidget;
+class USoundCue;
 
 UCLASS(BlueprintType)
 class UPlayerAfflictionOverlay : public UDataAsset {

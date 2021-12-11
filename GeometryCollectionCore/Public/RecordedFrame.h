@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
-#include "SolverCollisionData.h"
 #include "SolverBreakingData.h"
+#include "SolverCollisionData.h"
 #include "SolverTrailingData.h"
 #include "RecordedFrame.generated.h"
 

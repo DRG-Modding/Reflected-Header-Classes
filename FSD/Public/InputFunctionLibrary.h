@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-#include "EKeyBindingAxis.h"
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
-//CROSS-MODULE INCLUDE: SlateCore KeyEvent
 //CROSS-MODULE INCLUDE: Engine InputActionKeyMapping
-#include "EFSDInputSource.h"
+//CROSS-MODULE INCLUDE: SlateCore PointerEvent
+#include "EKeyBindingAxis.h"
 //CROSS-MODULE INCLUDE: Engine InputAxisKeyMapping
-#include "InputDisplay.h"
+//CROSS-MODULE INCLUDE: SlateCore KeyEvent
 //CROSS-MODULE INCLUDE: InputCore Key
+#include "EFSDInputSource.h"
+#include "InputDisplay.h"
 #include "InputFunctionLibrary.generated.h"
 
 class APlayerController;
@@ -20,31 +20,31 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetMouseSmoothingOn(bool smoothingOn);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsMouseSmoothingOn();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsMouseEventAction(const FPointerEvent& MouseEvent, const FName& ActionName, bool IgnoreCustomBindings);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsKeyEventActionAny(const FKeyEvent& KeyEvent, TArray<FName> ActionNames, bool IgnoreCustomBindings);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsKeyEventAction(const FKeyEvent& KeyEvent, FName ActionName, bool IgnoreCustomBindings);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsAxisMappedToDirectional(FName InActionName, FKey Key, int32 Direction, bool IgnoreCustomBindings);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsActionMappedTo(FName InActionName, FKey Key, bool IgnoreCustomBindings);
     
     UFUNCTION(BlueprintCallable)
     static TArray<FKey> GetInputKeysBoundToAction(const FName& ActionName, EKeyBindingAxis Axis, bool IsGamePadKey);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetAxisMapping(FName InActionName, int32 Axis, bool InGamepadKeys, FInputAxisKeyMapping& OutResult);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetActionMapping(FName InActionName, bool InGamepadKeys, FInputActionKeyMapping& OutResult);
     
     UFUNCTION(BlueprintCallable)

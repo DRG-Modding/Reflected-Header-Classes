@@ -31,11 +31,11 @@ public:
     void ToggleIcon(bool Visible);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHoldTAB(bool IsDown);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsIconVisible() const;
     
     UActorTrackingComponent();

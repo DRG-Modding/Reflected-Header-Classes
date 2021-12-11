@@ -3,8 +3,8 @@
 #include "WeightmapLayerAllocationInfo.h"
 #include "WeightmapData.generated.h"
 
-class ULandscapeWeightmapUsage;
 class UTexture2D;
+class ULandscapeWeightmapUsage;
 
 USTRUCT(BlueprintType)
 struct FWeightmapData {

@@ -44,10 +44,10 @@ protected:
     TArray<UDebrisBase*> DebrisLoaded;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetCollectedGemsCreditValue(AFSDGameState* GameState);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetCollectedGemsAmount(AFSDGameState* GameState);
     
     UGemResourceData();

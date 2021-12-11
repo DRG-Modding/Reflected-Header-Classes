@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SupportedAreaData.h"
+//CROSS-MODULE INCLUDE: Engine NavDataConfig
 //CROSS-MODULE INCLUDE: Engine Actor
 //CROSS-MODULE INCLUDE: Engine NavigationDataInterface
-//CROSS-MODULE INCLUDE: Engine NavDataConfig
 #include "ERuntimeGenerationType.h"
+#include "SupportedAreaData.h"
 #include "NavigationData.generated.h"
 
 class UPrimitiveComponent;
@@ -52,5 +52,7 @@ protected:
     
 public:
     ANavigationData();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

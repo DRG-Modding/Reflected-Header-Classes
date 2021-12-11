@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "VanityItem.h"
-#include "ECharacterHeadMesh.h"
 #include "EHeadVanityType.h"
+#include "ECharacterHeadMesh.h"
 #include "HeadVanityItem.generated.h"
 
-class UVanityAnimInstance;
 class USkeletalMesh;
+class UVanityAnimInstance;
 class UMaterialInterface;
 
 UCLASS(EditInlineNew)

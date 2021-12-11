@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: SlateCore SlateWidgetStyle
-#include "ESynthSlateSizeType.h"
 #include "ESynthSlateColorStyle.h"
+#include "ESynthSlateSizeType.h"
 #include "SynthSlateStyle.generated.h"
 
 USTRUCT(BlueprintType)

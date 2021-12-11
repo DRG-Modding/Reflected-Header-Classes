@@ -4,8 +4,8 @@
 #include "EBeaconConnectionState.h"
 #include "OnlineBeaconClient.generated.h"
 
-class UNetConnection;
 class AOnlineBeaconHostObject;
+class UNetConnection;
 
 UCLASS(NonTransient)
 class ONLINESUBSYSTEMUTILS_API AOnlineBeaconClient : public AOnlineBeacon {
@@ -22,7 +22,7 @@ protected:
     EBeaconConnectionState ConnectionState;
     
 private:
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void ClientOnConnected();
     
 public:

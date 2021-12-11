@@ -26,7 +26,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FGameplayTagQuery ExcludeSurfaceTags;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool CanFireWeapon(FText& FailMsg, UDialogDataAsset*& FailShout);
     
 public:

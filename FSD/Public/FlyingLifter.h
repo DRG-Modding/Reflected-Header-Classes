@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGrabberState.h"
 #include "AFlyingBug.h"
+#include "EGrabberState.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
 #include "FlyingLifter.generated.h"
 
-class UAnimSequenceBase;
-class UGrabberComponent;
-class USoundBase;
 class UCapsuleComponent;
+class UGrabberComponent;
 class UAudioComponent;
+class USoundBase;
+class UPrimitiveComponent;
 class UInDangerComponent;
+class UAnimSequenceBase;
 class UPointLightComponent;
 class AActor;
-class UPrimitiveComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFlyingLifterOnGrabSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFlyingLifterOnGrabSuccess);
 
 UCLASS(Abstract)
 class AFlyingLifter : public AAFlyingBug {
@@ -115,26 +115,26 @@ protected:
     bool SelectAnotherTarget();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStateBroke(AActor* aReleasedPlayer);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ShouldScream();
     
     UFUNCTION(BlueprintCallable)
     void OnInDanger();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnActorLeftGrabZone(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnActorEnterGrabZone(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetJustGrabbed() const;
     
 public:

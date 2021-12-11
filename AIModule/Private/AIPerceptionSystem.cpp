@@ -1,10 +1,10 @@
 #include "AIPerceptionSystem.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
-class UAISense;
 class UObject;
 class UAISenseEvent;
+class UAISense;
+class AActor;
 
 void UAIPerceptionSystem::ReportPerceptionEvent(UObject* WorldContextObject, UAISenseEvent* PerceptionEvent) {
 }

@@ -4,15 +4,15 @@
 #include "RecallableItem.h"
 #include "RecallableSentryGunItem.generated.h"
 
-class UItemUpgrade;
+class UItemPlacerAggregator;
 class ARecallableSentryGunItem;
 class ARecallableSentryGun;
 class UCapacityHoldingItemAggregator;
-class UItemPlacerAggregator;
+class UItemUpgrade;
 class AItem;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRecallableSentryGunItemOnActiveItemsChanged, ARecallableSentryGunItem*, Item);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRecallableSentryGunItemOnSelectedItemChanged, ARecallableSentryGun*, SentryGun);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRecallableSentryGunItemOnActiveItemsChanged, ARecallableSentryGunItem*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRecallableSentryGunItemOnSelectedItemChanged, ARecallableSentryGun*, SentryGun);
 
 UCLASS()
 class ARecallableSentryGunItem : public ARecallableItem {
@@ -58,20 +58,20 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool bIsUpgraded;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveItemUpgraded();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasAmmoLeft();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ARecallableSentryGun* GetSelectedSentryGun();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<ARecallableSentryGun*> GetActiveSentryGuns();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreAllSentriesPlaced() const;
     
     ARecallableSentryGunItem();

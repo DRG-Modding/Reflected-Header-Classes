@@ -9,5 +9,7 @@ class DATASMITHCONTENT_API UDatasmithScene : public UObject, public IInterface_A
     GENERATED_BODY()
 public:
     UDatasmithScene();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

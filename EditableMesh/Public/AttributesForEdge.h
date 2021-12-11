@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MeshDescription EdgeID
 #include "MeshElementAttributeList.h"
+//CROSS-MODULE INCLUDE: MeshDescription EdgeID
 #include "AttributesForEdge.generated.h"
 
 USTRUCT(BlueprintType)

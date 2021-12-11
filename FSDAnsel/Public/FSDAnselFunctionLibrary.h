@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-#include "EUIControlEffectTarget.h"
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+#include "EUIControlEffectTarget.h"
 #include "FSDAnselFunctionLibrary.generated.h"
 
 class UObject;

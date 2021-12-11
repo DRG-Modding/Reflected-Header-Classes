@@ -1,15 +1,15 @@
 #include "FSDGameMode.h"
 #include "Templates/SubclassOf.h"
 
-class UDifficultyManager;
-class AActor;
 class AMiningPod;
+class AFSDPlayerController;
+class AActor;
 class AFSDGameMode;
 class UEnemyWaveManager;
-class AFSDPlayerController;
 class AMolly;
 class UEncounterManager;
 class ABosco;
+class UDifficultyManager;
 class APlayerController;
 class APlayerCharacter;
 

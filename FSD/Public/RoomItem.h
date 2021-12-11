@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Rotator_NoQuantize.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "Rotator_NoQuantize.h"
 #include "RoomItem.generated.h"
 
 class AActor;

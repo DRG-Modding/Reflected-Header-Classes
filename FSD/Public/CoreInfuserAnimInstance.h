@@ -17,7 +17,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
     bool IsRewardSelected;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRewardSelected();
     
 public:

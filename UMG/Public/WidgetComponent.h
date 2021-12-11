@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "EWidgetGeometryMode.h"
 //CROSS-MODULE INCLUDE: Engine MeshComponent
-#include "EWidgetBlendMode.h"
 #include "EWindowVisibility.h"
 #include "EWidgetSpace.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "EWidgetTimingPolicy.h"
 //CROSS-MODULE INCLUDE: CoreUObject IntPoint
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
-#include "EWidgetGeometryMode.h"
+#include "EWidgetBlendMode.h"
 #include "WidgetComponent.generated.h"
 
 class ULocalPlayer;
-class UUserWidget;
 class UBodySetup;
+class UUserWidget;
 class UMaterialInterface;
 class UTextureRenderTarget2D;
 class UMaterialInstanceDynamic;
@@ -187,55 +187,55 @@ public:
     UFUNCTION(BlueprintCallable)
     void RequestRedraw();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EWindowVisibility GetWindowVisiblility() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetWindowFocusable() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EWidgetSpace GetWidgetSpace() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UUserWidget* GetUserWidgetObject() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetTwoSided() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetTickWhenOffscreen() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTextureRenderTarget2D* GetRenderTarget() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRedrawTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetPivot() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ULocalPlayer* GetOwnerPlayer() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInstanceDynamic* GetMaterialInstance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetManuallyRedraw() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EWidgetGeometryMode GetGeometryMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetDrawSize() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetDrawAtDesiredSize() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCylinderArcAngle() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetCurrentDrawSize() const;
     
     UWidgetComponent();

@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "FSDAIController.h"
+#include "EInputKeys.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "LaserPointerTarget.h"
-#include "EInputKeys.h"
 #include "BoscoController.generated.h"
 
 class APlayerCharacter;
-class UBehaviorTree;
 class UTerrainMaterial;
-class AActor;
+class UBehaviorTree;
 class UDroneUseComponent;
+class AActor;
 class ACarriableItem;
 class AFSDPlayerState;
 class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoControllerOnFollowTargetChangedDelegate, AActor*, FollowTarget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoControllerOnFollowTargetChangedDelegate, AActor*, FollowTarget);
 
 UCLASS()
 class ABoscoController : public AFSDAIController {
@@ -91,7 +91,7 @@ public:
     void ResetToFollowState();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RegisterPlayer(APlayerCharacter* APlayerCharacter);
     
 public:
@@ -99,34 +99,34 @@ public:
     void PickupGem();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUseDone(int32 TimesUsed);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSecondaryLaserPointer(AActor* aTarget, const FVector& aLocation);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerShout(APlayerCharacter* APlayerCharacter);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerSalute(APlayerCharacter* aCharacater);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerLeave(AFSDPlayerState* APlayerState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnLaserPointer(const FLaserPointerTarget& HitInfo);
     
     UFUNCTION(BlueprintCallable)
     void OnJobFinished();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEscortTargetDied(UHealthComponentBase* Health);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetPointNearPlayers() const;
     
     UFUNCTION(BlueprintCallable)
@@ -135,14 +135,14 @@ public:
     UFUNCTION(BlueprintCallable)
     void GenerateRelativeLocation(AActor* aTarget, float aRange, float aHeightRestriction, float aMinRange, bool aTryToStayOutOfTheWay, bool aStayBehind);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void GemUsed(APlayerCharacter* usedBy, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ConfirmPickup();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CarriableDrop();
     
 public:

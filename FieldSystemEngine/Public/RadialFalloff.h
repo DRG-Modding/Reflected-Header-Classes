@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FieldNodeFloat.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: FieldSystemCore EFieldFalloffType
 #include "RadialFalloff.generated.h"
 
@@ -32,7 +32,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TEnumAsByte<EFieldFalloffType> Falloff;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     URadialFalloff* SetRadialFalloff(float NewMagnitude, float NewMinRange, float NewMaxRange, float NewDefault, float NewRadius, FVector NewPosition, TEnumAsByte<EFieldFalloffType> NewFalloff);
     
     URadialFalloff();

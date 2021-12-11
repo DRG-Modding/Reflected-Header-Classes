@@ -6,10 +6,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "SplinePlant.generated.h"
 
-class UAudioComponent;
 class USceneComponent;
 class USplineComponent;
 class USoundCue;
+class UAudioComponent;
 class UStaticMesh;
 class USplineMeshComponent;
 
@@ -104,31 +104,31 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ResetScale();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void ReceivePrepareSpline(USplineComponent* InSplineComponent, int32 InSeed);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveMovementUpdated(float InDistanceProgress);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveMovementStarted(float InTargetDistance);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveMovementFinished(float InDistanceProgress);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPlantTargetLengthPercent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPlantLengthPercent() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetNearestLocationToLocalPlayer() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetFullPlantLength() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

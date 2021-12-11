@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 //CROSS-MODULE INCLUDE: CoreUObject Guid
-#include "RejoinFloat.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "RejoinInt.h"
+#include "RejoinFloat.h"
 #include "PlayerRejoinState.generated.h"
 
 UCLASS(BlueprintType)
@@ -14,13 +14,13 @@ public:
     void Server_Reset();
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_AddIntValue_Internal(const FGuid& ItemKey, const FName& ValueKey, int32 Value);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_AddFloatValue_Internal(const FGuid& ItemKey, const FName& ValueKey, float Value);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_SetValues(const TArray<FRejoinFloat>& floatValues, const TArray<FRejoinInt>& intValues);
     
 public:

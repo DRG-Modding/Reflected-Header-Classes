@@ -1,8 +1,8 @@
 #include "DetPack.h"
 #include "Net/UnrealNetwork.h"
 
-class UHealthComponentBase;
 class APlayerCharacter;
+class UHealthComponentBase;
 
 void ADetPack::UseFearStaggerUpgrades() {
 }

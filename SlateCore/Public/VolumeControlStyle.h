@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SlateWidgetStyle.h"
 #include "SliderStyle.h"
+#include "SlateWidgetStyle.h"
 #include "SlateBrush.h"
 #include "VolumeControlStyle.generated.h"
 

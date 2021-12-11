@@ -22,9 +22,11 @@ protected:
     UBuildRestriction* BuildRestriction;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FGuid GetSavegameID() const;
     
     USavableDataAsset();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

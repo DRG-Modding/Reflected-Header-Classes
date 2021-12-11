@@ -1,7 +1,7 @@
 #include "ARSaveWorldAsyncTaskBlueprintProxy.h"
 
-class UARSaveWorldAsyncTaskBlueprintProxy;
 class UObject;
+class UARSaveWorldAsyncTaskBlueprintProxy;
 
 UARSaveWorldAsyncTaskBlueprintProxy* UARSaveWorldAsyncTaskBlueprintProxy::ARSaveWorld(UObject* WorldContextObject) {
     return NULL;

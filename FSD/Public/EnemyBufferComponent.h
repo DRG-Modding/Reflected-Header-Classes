@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "EnemyBufferComponent.generated.h"
 
-class UHealthComponentBase;
+class UParticleSystemComponent;
 class UStatusEffect;
 class UParticleSystem;
 class AFSDPawn;
-class UParticleSystemComponent;
+class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyBufferComponentOnBuffingChangedEvent, bool, isBuffing);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyBufferComponentOnBuffingChangedEvent, bool, isBuffing);
 
 UCLASS(BlueprintType)
 class UEnemyBufferComponent : public UActorComponent {
@@ -53,10 +53,10 @@ public:
     void SetBuffingEnabled(bool Enabled);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPawnDied(UHealthComponentBase* Health);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerDied(UHealthComponentBase* Health);
     
 public:

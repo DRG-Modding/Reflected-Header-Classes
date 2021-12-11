@@ -6,9 +6,9 @@
 class UAnimMontage;
 class UAttackEffect;
 
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMeleeAttackComponentOnAttackStartedEvent);
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMeleeAttackComponentOnAttackEndedEvent);
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMeleeAttackComponentOnDamageAppliedEvent);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMeleeAttackComponentOnAttackStartedEvent);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMeleeAttackComponentOnAttackEndedEvent);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMeleeAttackComponentOnDamageAppliedEvent);
 
 UCLASS()
 class UMeleeAttackComponent : public UDamageAttackComponent {
@@ -33,13 +33,13 @@ protected:
     UPROPERTY(BlueprintAssignable)
     FMeleeAttackComponentOnAttackEndedEvent OnAttackEndedEvent;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UAnimMontage* SelectMontage() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPerformAttack(FName Name);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMontageEnded(UAnimMontage* Montage, bool interrupted);
     
 public:

@@ -4,15 +4,15 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "BoscoAbillityComponent.generated.h"
 
-class ABosco;
-class AActor;
 class UItemUpgrade;
-class UAnimSequenceBase;
 class AProjectileBase;
+class ABosco;
+class UAnimSequenceBase;
 class USoundBase;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FBoscoAbillityComponentOnAbillityChargeProgress, float, aProgress, int32, aNextIndex);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoAbillityComponentOnAbillityChargeUsed, int32, aCurrentCharges);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FBoscoAbillityComponentOnAbillityChargeProgress, float, aProgress, int32, aNextIndex);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoAbillityComponentOnAbillityChargeUsed, int32, aCurrentCharges);
 
 UCLASS(BlueprintType)
 class UBoscoAbillityComponent : public UActorComponent {
@@ -44,10 +44,10 @@ protected:
     TWeakObjectPtr<ABosco> AbillityOwner;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxCharges() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCharges() const;
     
     UBoscoAbillityComponent();

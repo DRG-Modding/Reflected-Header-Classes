@@ -7,7 +7,7 @@
 
 class UDamageComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDownedStateComponentOnEnableDownedBombUIEvent, bool, Active);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDownedStateComponentOnEnableDownedBombUIEvent, bool, Active);
 
 UCLASS(MinimalAPI)
 class UDownedStateComponent : public UCharacterStateComponent {
@@ -40,7 +40,7 @@ public:
     void Server_TriggerDownedBomb();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_TriggerDownedBomb();
     
 public:

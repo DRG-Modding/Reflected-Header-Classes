@@ -16,7 +16,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     APlayerCharacter* PlayerCharacter;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_OnInitialized();
     
 public:

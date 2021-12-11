@@ -44,16 +44,16 @@ public:
     void SetArmSpeed(float Speed);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStateEnd(EProspectorRobotState oldState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStateBegin(EProspectorRobotState NewState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ProspectorState(EProspectorRobotState oldState);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsStateActive(EProspectorRobotState State) const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

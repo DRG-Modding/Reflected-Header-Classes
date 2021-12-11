@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SpiderAnimInstance.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
+#include "SpiderAnimInstance.h"
 #include "PatrolBotAnimInstance.generated.h"
 
 UCLASS(NonTransient)

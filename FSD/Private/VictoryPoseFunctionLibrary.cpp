@@ -1,8 +1,8 @@
 #include "VictoryPoseFunctionLibrary.h"
 
 class UVictoryPose;
-class UPlayerCharacterID;
 class UObject;
+class UPlayerCharacterID;
 
 bool UVictoryPoseFunctionLibrary::IsRandomVictoryPose(UVictoryPose* VictoryPose) {
     return false;

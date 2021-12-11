@@ -3,8 +3,8 @@
 
 class UPrimitiveComponent;
 class AActor;
-class UBoxComponent;
 class UParticleSystemComponent;
+class UBoxComponent;
 
 void UTremorAttackComponent::StopParticles() {
 }

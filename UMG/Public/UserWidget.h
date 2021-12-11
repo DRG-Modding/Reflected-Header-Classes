@@ -1,42 +1,42 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NamedSlotBinding.h"
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "Widget.h"
-#include "EventReply.h"
 #include "NamedSlotInterface.h"
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: SlateCore Margin
+#include "NamedSlotBinding.h"
+#include "EUMGSequencePlayMode.h"
 #include "EWidgetTickFrequency.h"
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
+//CROSS-MODULE INCLUDE: SlateCore MotionEvent
 #include "AnimationEventBinding.h"
 //CROSS-MODULE INCLUDE: SlateCore Geometry
-#include "EUMGSequencePlayMode.h"
 //CROSS-MODULE INCLUDE: Engine EInputEvent
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: SlateCore FocusEvent
 //CROSS-MODULE INCLUDE: Slate Anchors
-//CROSS-MODULE INCLUDE: SlateCore CharacterEvent
+#include "EventReply.h"
+//CROSS-MODULE INCLUDE: SlateCore PointerEvent
+//CROSS-MODULE INCLUDE: SlateCore FocusEvent
 //CROSS-MODULE INCLUDE: SlateCore KeyEvent
 #include "PaintContext.h"
-//CROSS-MODULE INCLUDE: SlateCore MotionEvent
+//CROSS-MODULE INCLUDE: SlateCore CharacterEvent
 //CROSS-MODULE INCLUDE: SlateCore AnalogInputEvent
 #include "EWidgetAnimationEvent.h"
 #include "UserWidget.generated.h"
 
-class UUMGSequencePlayer;
-class UWidgetAnimation;
-class UWidgetTree;
-class APawn;
 class UInputComponent;
-class USoundBase;
+class UUMGSequencePlayer;
+class UWidgetTree;
 class APlayerController;
+class UWidgetAnimation;
+class USoundBase;
 class UDragDropOperation;
+class APawn;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FUserWidgetColorAndOpacityDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FUserWidgetCallback);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateColor, FUserWidgetForegroundColorDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FUserWidgetDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FUserWidgetColorAndOpacityDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FUserWidgetCallback);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateColor, FUserWidgetForegroundColorDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FUserWidgetDelegate);
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UMG_API UUserWidget : public UWidget, public INamedSlotInterface {
@@ -119,7 +119,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void UnbindAllFromAnimationFinished(UWidgetAnimation* Animation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void Tick(FGeometry MyGeometry, float InDeltaTime);
     
 protected:
@@ -188,7 +188,7 @@ protected:
     void RegisterInputComponent();
     
 public:
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void PreConstruct(bool IsDesignTime);
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
@@ -209,108 +209,108 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     float PauseAnimation(const UWidgetAnimation* InAnimation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnTouchStarted(FGeometry MyGeometry, const FPointerEvent& InTouchEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnTouchMoved(FGeometry MyGeometry, const FPointerEvent& InTouchEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnTouchGesture(FGeometry MyGeometry, const FPointerEvent& GestureEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnTouchForceChanged(FGeometry MyGeometry, const FPointerEvent& InTouchEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnTouchEnded(FGeometry MyGeometry, const FPointerEvent& InTouchEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnRemovedFromFocusPath(FFocusEvent InFocusEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnPreviewMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FEventReply OnPreviewKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnPaint(UPARAM(Ref) FPaintContext& Context) const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnMouseWheel(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnMouseMove(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnMouseLeave(const FPointerEvent& MouseEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnMouseEnter(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnMouseCaptureLost();
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnMouseButtonUp(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnMouseButtonDoubleClick(FGeometry InMyGeometry, const FPointerEvent& InMouseEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnMotionDetected(FGeometry MyGeometry, FMotionEvent InMotionEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnKeyUp(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnKeyChar(FGeometry MyGeometry, FCharacterEvent InCharacterEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnInitialized();
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     FEventReply OnFocusReceived(FGeometry MyGeometry, FFocusEvent InFocusEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnFocusLost(FFocusEvent InFocusEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     bool OnDrop(FGeometry MyGeometry, FPointerEvent PointerEvent, UDragDropOperation* Operation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     bool OnDragOver(FGeometry MyGeometry, FPointerEvent PointerEvent, UDragDropOperation* Operation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnDragLeave(FPointerEvent PointerEvent, UDragDropOperation* Operation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnDragEnter(FGeometry MyGeometry, FPointerEvent PointerEvent, UDragDropOperation* Operation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnDragDetected(FGeometry MyGeometry, const FPointerEvent& PointerEvent, UDragDropOperation*& Operation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnDragCancelled(const FPointerEvent& PointerEvent, UDragDropOperation* Operation);
     
 protected:
-    UFUNCTION(BlueprintCosmetic, BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintNativeEvent)
     void OnAnimationStarted(const UWidgetAnimation* Animation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintNativeEvent)
     void OnAnimationFinished(const UWidgetAnimation* Animation);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FEventReply OnAnalogValueChanged(FGeometry MyGeometry, FAnalogInputEvent InAnalogInputEvent);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void OnAddedToFocusPath(FFocusEvent InFocusEvent);
     
 protected:
@@ -318,48 +318,48 @@ protected:
     void ListenForInputAction(FName ActionName, TEnumAsByte<EInputEvent> EventType, bool bConsume, FUserWidgetCallback Callback);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlayingAnimation() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsListeningForInputAction(FName ActionName) const;
     
 public:
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     bool IsInViewport() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     bool IsInteractable() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     bool IsAnyAnimationPlaying() const;
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     bool IsAnimationPlayingForward(const UWidgetAnimation* InAnimation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     bool IsAnimationPlaying(const UWidgetAnimation* InAnimation) const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     APawn* GetOwningPlayerPawn() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     bool GetIsVisible() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     float GetAnimationCurrentTime(const UWidgetAnimation* InAnimation) const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     FAnchors GetAnchorsInViewport() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     FVector2D GetAlignmentInViewport() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void Destruct();
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void Construct();
     
     UFUNCTION(BlueprintCallable)
@@ -381,5 +381,7 @@ public:
     bool AddToPlayerScreen(int32 ZOrder);
     
     UUserWidget();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneSequenceTransform.h"
 //CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
-//CROSS-MODULE INCLUDE: CoreUObject FrameRate
-#include "MovieSceneSequenceInstanceDataPtr.h"
+#include "MovieSceneSequenceTransform.h"
 #include "MovieSceneSequenceID.h"
+//CROSS-MODULE INCLUDE: CoreUObject FrameRate
 #include "MovieSceneFrameRange.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "MovieSceneSequenceInstanceDataPtr.h"
 #include "MovieSceneSubSequenceData.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine EAttachLocation
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-#include "ENCPoolMethod.h"
+//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
+#include "ENCPoolMethod.h"
+//CROSS-MODULE INCLUDE: Engine EAttachLocation
 #include "NiagaraFunctionLibrary.generated.h"
 
 class UNiagaraComponent;
-class UStaticMeshComponent;
-class UVolumeTexture;
 class USkeletalMeshComponent;
 class UNiagaraSystem;
 class USceneComponent;
-class UObject;
-class UTexture;
 class UStaticMesh;
+class UObject;
+class UVolumeTexture;
+class UTexture;
+class UStaticMeshComponent;
 class UNiagaraParameterCollectionInstance;
 class UNiagaraParameterCollection;
 

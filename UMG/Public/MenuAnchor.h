@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "ContentWidget.h"
 //CROSS-MODULE INCLUDE: SlateCore EMenuPlacement
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "MenuAnchor.generated.h"
 
-class UUserWidget;
 class UWidget;
+class UUserWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(UWidget*, FMenuAnchorOnGetMenuContentEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMenuAnchorOnMenuOpenChanged, bool, bIsOpen);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(UWidget*, FMenuAnchorOnGetMenuContentEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMenuAnchorOnMenuOpenChanged, bool, bIsOpen);
 
 UCLASS()
 class UMG_API UMenuAnchor : public UContentWidget {
@@ -40,7 +40,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void ToggleOpen(bool bFocusOnOpen);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldOpenDueToClick() const;
     
     UFUNCTION(BlueprintCallable)
@@ -49,13 +49,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void Open(bool bFocusMenu);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOpen() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasOpenSubMenus() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetMenuPosition() const;
     
     UFUNCTION(BlueprintCallable)

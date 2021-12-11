@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 #include "BrainComponent.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 #include "BehaviorTreeComponent.generated.h"
 
 class UBTNode;
@@ -22,7 +22,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetDynamicSubtree(FGameplayTag InjectTag, UBehaviorTree* BehaviorAsset);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetTagCooldownEndTime(FGameplayTag CooldownTag) const;
     
     UFUNCTION(BlueprintCallable)

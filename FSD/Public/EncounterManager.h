@@ -4,10 +4,10 @@
 #include "EncounterManagerItem.h"
 #include "EncounterManager.generated.h"
 
-class UEnemyDescriptor;
 class UCritterDescriptor;
 class AProceduralSetup;
 class UEnemySpawnManager;
+class UEnemyDescriptor;
 
 UCLASS(BlueprintType)
 class FSD_API UEncounterManager : public UActorComponent {
@@ -36,16 +36,16 @@ protected:
     TArray<UCritterDescriptor*> CritterPool;
     
 public:
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void ShowSpawnLocations();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UEnemyDescriptor*> GetEnemyPool() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UEnemyDescriptor*> GetEncounterPool() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UCritterDescriptor*> GetCritterPool() const;
     
     UEncounterManager();

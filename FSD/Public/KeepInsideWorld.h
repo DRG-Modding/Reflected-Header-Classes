@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "KeepInsideWorld.generated.h"
 
-class UObject;
 class AActor;
+class UObject;
 
 UCLASS(BlueprintType)
 class UKeepInsideWorld : public UActorComponent {

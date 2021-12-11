@@ -17,7 +17,7 @@ protected:
     UPROPERTY(EditAnywhere)
     float OnKillFearRange;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetKilled(AActor* Target, UFSDPhysicalMaterial* PhysMat);
     
 public:

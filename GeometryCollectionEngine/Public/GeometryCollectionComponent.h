@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine MeshComponent
-//CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosPhysicsCollisionInfo
 //CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosNotifyHandlerInterface
-//CROSS-MODULE INCLUDE: ChaosSolverEngine EClusterConnectionTypeEnum
 //CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EObjectStateTypeEnum
+//CROSS-MODULE INCLUDE: ChaosSolverEngine EClusterConnectionTypeEnum
+//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EGeometryCollectionPhysicsTypeEnum
 //CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EInitialVelocityTypeEnum
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosBreakEvent
 #include "GeomComponentCacheParameters.h"
-//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EGeometryCollectionPhysicsTypeEnum
+//CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosBreakEvent
+//CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosPhysicsCollisionInfo
 #include "GeometryCollectionComponent.generated.h"
 
 class UChaosPhysicalMaterial;
@@ -21,10 +21,10 @@ class UBodySetup;
 class UFieldSystemMetaData;
 class UFieldNodeBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeometryCollectionComponentNotifyGeometryCollectionPhysicsStateChange, UGeometryCollectionComponent*, FracturedComponent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeometryCollectionComponentNotifyGeometryCollectionPhysicsLoadingStateChange, UGeometryCollectionComponent*, FracturedComponent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeometryCollectionComponentOnChaosBreakEvent, const FChaosBreakEvent&, BreakEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeometryCollectionComponentOnChaosPhysicsCollision, const FChaosPhysicsCollisionInfo&, CollisionInfo);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeometryCollectionComponentNotifyGeometryCollectionPhysicsStateChange, UGeometryCollectionComponent*, FracturedComponent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeometryCollectionComponentNotifyGeometryCollectionPhysicsLoadingStateChange, UGeometryCollectionComponent*, FracturedComponent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeometryCollectionComponentOnChaosBreakEvent, const FChaosBreakEvent&, BreakEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGeometryCollectionComponentOnChaosPhysicsCollision, const FChaosPhysicsCollisionInfo&, CollisionInfo);
 
 UCLASS(Blueprintable)
 class GEOMETRYCOLLECTIONENGINE_API UGeometryCollectionComponent : public UMeshComponent, public IChaosNotifyHandlerInterface {
@@ -120,7 +120,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetNotifyBreaks(bool bNewNotifyBreaks);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
     
     UFUNCTION(BlueprintCallable)
@@ -130,5 +130,7 @@ public:
     void ApplyKinematicField(float Radius, FVector Position);
     
     UGeometryCollectionComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

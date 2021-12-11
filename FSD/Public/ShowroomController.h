@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "ShowroomController.generated.h"
 
-class AActor;
 class AShowroomStage;
+class AActor;
 
 UCLASS(Abstract, BlueprintType)
 class UShowroomController : public UActorComponent {

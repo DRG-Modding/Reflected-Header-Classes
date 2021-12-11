@@ -20,7 +20,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     float DirectDamageReduction;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAoEDamageEnabled();
     
 public:

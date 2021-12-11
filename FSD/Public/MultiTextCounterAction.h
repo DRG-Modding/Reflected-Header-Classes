@@ -4,14 +4,14 @@
 #include "TextCounterEntry.h"
 #include "MultiTextCounterAction.generated.h"
 
-class UObject;
-class UAudioComponent;
 class UTextBlock;
+class UAudioComponent;
 class USoundCue;
+class UObject;
 class UMultiTextCounterAction;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMultiTextCounterActionCompleted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMultiTextCounterActionOnTick);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMultiTextCounterActionCompleted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMultiTextCounterActionOnTick);
 
 UCLASS()
 class UMultiTextCounterAction : public UTickableActionBase {

@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FadeVisibilitySubSystem.generated.h"
 
+class UMeshComponent;
 class UPrimitiveComponent;
 class ULightComponent;
-class UMeshComponent;
 
 UCLASS(BlueprintType)
 class UFadeVisibilitySubSystem : public UWorldSubsystem {

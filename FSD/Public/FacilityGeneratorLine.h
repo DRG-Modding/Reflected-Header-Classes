@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FacilityGeneratorLine.generated.h"
 
+class UMaterialInterface;
+class UStaticMesh;
 class USplineComponent;
 class USplineDecoratorComponent;
-class UStaticMesh;
-class UMaterialInterface;
 class ATetherStation;
 
 UCLASS()
@@ -66,13 +66,13 @@ public:
     void SetConnected(bool InConnected);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveBeginPathFinding();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Path();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Connected();
     
 public:

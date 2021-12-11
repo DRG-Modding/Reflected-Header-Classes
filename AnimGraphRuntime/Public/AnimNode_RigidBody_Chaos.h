@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine SolverIterations
 #include "AnimNode_SkeletalControlBase.h"
+//CROSS-MODULE INCLUDE: Engine BoneReference
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine ECollisionChannel
-//CROSS-MODULE INCLUDE: Engine BoneReference
 #include "ESimulationSpace.h"
 #include "AnimNode_RigidBody_Chaos.generated.h"
 

@@ -5,16 +5,16 @@
 #include "GuntowerActivationPlatform.generated.h"
 
 class USceneComponent;
-class USkeletalMeshComponent;
-class UCapsuleComponent;
 class AGuntowerModule;
+class USkeletalMeshComponent;
 class APlayerCharacter;
+class UCapsuleComponent;
 class UPrimitiveComponent;
 class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGuntowerActivationPlatformOnProgressUpdatedDelegate, float, Progress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGuntowerActivationPlatformOnPlayersInsideChangedDelegate, int32, playerCount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGuntowerActivationPlatformOnProgressFilled);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGuntowerActivationPlatformOnProgressUpdatedDelegate, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGuntowerActivationPlatformOnPlayersInsideChangedDelegate, int32, playerCount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGuntowerActivationPlatformOnProgressFilled);
 
 UCLASS()
 class FSD_API AGuntowerActivationPlatform : public AActor {
@@ -57,7 +57,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_IsShutDown)
     bool IsShutDown;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UpdatePlayersInside(APlayerCharacter* Character);
     
 public:
@@ -68,46 +68,46 @@ public:
     void SetPlatformActive(bool IsActive);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ReEnable();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShutDown();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PlayersInside();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsShutDown();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Disabled();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPlayersInsideChanged(int32 NewPlayersInside);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFinished();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDisabledChanged(bool IsDisabled);
     
     UFUNCTION(BlueprintCallable)
     void ModuleDestroyed(UHealthComponentBase* Health);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AGuntowerModule* GetAssignedModule() const;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void EndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanWidgetAppear() const;
     
     UFUNCTION(BlueprintCallable)

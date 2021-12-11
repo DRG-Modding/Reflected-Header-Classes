@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene EMovieSceneBlendType
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
+//CROSS-MODULE INCLUDE: MovieScene EMovieSceneBlendType
 #include "MovieSceneTransformMask.h"
 #include "MovieScene3DTransformTemplateData.generated.h"
 

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EnvQueryTest.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
-//CROSS-MODULE INCLUDE: GameplayTags EGameplayContainerMatchType
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
+//CROSS-MODULE INCLUDE: GameplayTags EGameplayContainerMatchType
 #include "EnvQueryTest_GameplayTags.generated.h"
 
 UCLASS(MinimalAPI)

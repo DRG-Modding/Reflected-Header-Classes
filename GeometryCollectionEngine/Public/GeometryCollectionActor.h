@@ -18,7 +18,7 @@ public:
     UPROPERTY(Export, VisibleAnywhere)
     UGeometryCollectionDebugDrawComponent* GeometryCollectionDebugDrawComponent;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool RaycastSingle(FVector Start, FVector End, FHitResult& OutHit) const;
     
     AGeometryCollectionActor();

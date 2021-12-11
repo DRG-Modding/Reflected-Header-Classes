@@ -3,19 +3,19 @@
 #include "Templates/SubclassOf.h"
 #include "Item.h"
 #include "RejoinListener.h"
-#include "EThrownGrenadeItemState.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "EThrownGrenadeItemState.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "ThrownGrenadeItem.generated.h"
 
 class UHealthComponentBase;
 class UPlayerAnimInstance;
+class UGrenadeAnimationSet;
 class UItemCharacterAnimationSet;
 class AGrenade;
-class UGrenadeAnimationSet;
 class UStaticMeshComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FThrownGrenadeItemOnGrenadeThrown);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FThrownGrenadeItemOnGrenadeThrown);
 
 UCLASS()
 class AThrownGrenadeItem : public AItem, public IRejoinListener {
@@ -64,47 +64,49 @@ protected:
     UPROPERTY(Replicated, Transient)
     bool HasRejoinedInitialized;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ThrowGrenade();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetState(EThrownGrenadeItemState itemState);
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Resupply(float percentage);
     
     UFUNCTION(BlueprintCallable)
     void ResupplyGrenades(float percentage);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_GrenadeCount();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* Health);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void GrenadeThrowFinished();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetGrenadeThrowVelocity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetGrenadeThrowRotation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetGrenadeGravity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetGrenadeDuration() const;
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AThrownGrenadeItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

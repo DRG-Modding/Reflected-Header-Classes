@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FrozenPawnImpactComponent.generated.h"
 
-class UPrimitiveComponent;
-class UPhysicalMaterial;
 class UPhysicsAsset;
+class UPhysicalMaterial;
+class UPrimitiveComponent;
 class USoundCue;
-class AActor;
 class UParticleSystem;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFrozenPawnImpactComponentOnStartFallingEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFrozenPawnImpactComponentOnFreezeImpactEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFrozenPawnImpactComponentOnStartFallingEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFrozenPawnImpactComponentOnFreezeImpactEvent);
 
 UCLASS(BlueprintType)
 class UFrozenPawnImpactComponent : public UActorComponent {
@@ -38,13 +38,13 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UParticleSystem* FrozenDeathparticles;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TriggerFrozenRagdoll();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFrozen(bool frozen);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFreezeImpact(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     
 public:

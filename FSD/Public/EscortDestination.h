@@ -8,7 +8,7 @@ class ADeepCSGWorld;
 class UDamageComponent;
 class UTerrainMaterial;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortDestinationOnShellCracked, int32, numberOfShellsCracked);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEscortDestinationOnShellCracked, int32, numberOfShellsCracked);
 
 UCLASS()
 class AEscortDestination : public AActor {
@@ -46,7 +46,7 @@ protected:
     UTerrainMaterial* GetTerrainMaterialByHandle(ADeepCSGWorld* CSGWorld, int32 materialHandle);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSecondsToDestroyObjective();
     
     UFUNCTION(BlueprintCallable)

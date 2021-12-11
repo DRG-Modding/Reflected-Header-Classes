@@ -6,11 +6,11 @@
 #include "UpgradableGear.h"
 #include "DetPackItem.generated.h"
 
-class USkeletalMeshComponent;
-class ADetPack;
 class UForceFeedbackEffect;
 class UAnimMontage;
 class AItem;
+class ADetPack;
+class USkeletalMeshComponent;
 class UCapacityHoldingItemAggregator;
 class UDialogDataAsset;
 class UItemUpgrade;
@@ -101,33 +101,35 @@ protected:
     UPROPERTY(BlueprintReadOnly, Replicated, Transient)
     bool HasThrownPack;
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void Simulate_ThrowGrenade();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ThrowGrenade();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Detonate();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_CycleItem();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_OnRep_IsDetonatorOut();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsDetonatorOut();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDetonatingFinished();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentGrenades() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ADetPackItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

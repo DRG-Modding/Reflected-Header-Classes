@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ControlEnemyState.h"
 #include "CharacterStateComponent.h"
-//CROSS-MODULE INCLUDE: CoreUObject Quat
 #include "EEnemyControlState.h"
+#include "ControlEnemyState.h"
+//CROSS-MODULE INCLUDE: CoreUObject Quat
 #include "EnemyControlStateComponent.generated.h"
 
-class UAnimMontage;
 class UAIPlayerControlComponent;
+class UAnimMontage;
 
 UCLASS()
 class FSD_API UEnemyControlStateComponent : public UCharacterStateComponent {
@@ -29,28 +29,28 @@ protected:
     UPROPERTY(Replicated, Transient)
     FQuat ControlRotation;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerExit();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_StateData(const FControlEnemyState& oldState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ControlState(EEnemyControlState oldState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnemyCrashMontageEnded(UAnimMontage* Montage, bool interrupted);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnControllingEnemyAttached();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnControllingEnemy(bool IsControlling);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void JumpPressed();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAIPlayerControlComponent* GetAiPlayerControlComponent();
     
 public:

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "ESchematicType.h"
+//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "SchematicType.h"
 #include "SchematicSettings.generated.h"
 
+class UOverclockBank;
+class USchematicBank;
 class UDataTable;
 class UItemSkinSchematicCollection;
 class USchematic;
-class USchematicBank;
-class UOverclockBank;
 class USchematicBankBase;
 class USchematicCategory;
 class USchematicPricingTier;
@@ -70,10 +70,10 @@ public:
     UPROPERTY(EditAnywhere)
     TArray<USchematicRarity*> EndlessRarity;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSchematicType GetSchematicTypeData(ESchematicType InType);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     TSet<USchematic*> GetSchematics() const;
     
     USchematicSettings();

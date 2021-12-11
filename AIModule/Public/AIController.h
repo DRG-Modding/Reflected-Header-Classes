@@ -1,32 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GenericTeamAgentInterface.h"
-#include "EPathFollowingRequestResult.h"
+#include "AIRequestID.h"
 //CROSS-MODULE INCLUDE: GameplayTasks GameplayTaskOwnerInterface
 //CROSS-MODULE INCLUDE: Engine Controller
+#include "EPathFollowingRequestResult.h"
 #include "AIPerceptionListenerInterface.h"
 //CROSS-MODULE INCLUDE: Engine VisualLoggerDebugSnapshotInterface
-#include "AIRequestID.h"
+#include "GenericTeamAgentInterface.h"
 #include "EPathFollowingResult.h"
 //CROSS-MODULE INCLUDE: GameplayTasks GameplayResourceSet
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EPathFollowingStatus.h"
 #include "AIController.generated.h"
 
+class UNavigationQueryFilter;
+class UBrainComponent;
 class UAIPerceptionComponent;
 class UPathFollowingComponent;
-class UBrainComponent;
 class UPawnActionsComponent;
 class UBlackboardComponent;
 class UGameplayTasksComponent;
-class UNavigationQueryFilter;
 class UBlackboardData;
 class UGameplayTaskResource;
 class UBehaviorTree;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAIControllerReceiveMoveCompleted, FAIRequestID, RequestID, TEnumAsByte<EPathFollowingResult::Type>, Result);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAIControllerReceiveMoveCompleted, FAIRequestID, RequestID, TEnumAsByte<EPathFollowingResult::Type>, Result);
 
 UCLASS()
 class AIMODULE_API AAIController : public AController, public IAIPerceptionListenerInterface, public IGameplayTaskOwnerInterface, public IGenericTeamAgentInterface, public IVisualLoggerDebugSnapshotInterface {
@@ -100,11 +100,11 @@ public:
     bool RunBehaviorTree(UBehaviorTree* BTAsset);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUsingBlackBoard(UBlackboardComponent* BlackboardComp, UBlackboardData* BlackboardAsset);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnGameplayTaskResourcesClaimed(FGameplayResourceSet NewlyClaimed, FGameplayResourceSet FreshlyReleased);
     
     UFUNCTION(BlueprintCallable)
@@ -122,33 +122,35 @@ public:
     UFUNCTION(BlueprintCallable)
     void K2_ClearFocus();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasPartialPath() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPathFollowingComponent* GetPathFollowingComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TEnumAsByte<EPathFollowingStatus::Type> GetMoveStatus() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetImmediateMoveDestination() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetFocusActor() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetFocalPointOnActor(const AActor* Actor) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetFocalPoint() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAIPerceptionComponent* GetAIPerceptionComponent();
     
     UFUNCTION(BlueprintCallable)
     void ClaimTaskResource(TSubclassOf<UGameplayTaskResource> ResourceClass);
     
     AAIController();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

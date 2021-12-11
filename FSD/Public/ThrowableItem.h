@@ -6,11 +6,11 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ThrowableItem.generated.h"
 
-class AThrowableActor;
-class UAnimMontage;
 class AActor;
-class UItemUpgrade;
+class AThrowableActor;
 class AItem;
+class UAnimMontage;
+class UItemUpgrade;
 
 UCLASS()
 class AThrowableItem : public AAnimatedItem, public IUpgradable {
@@ -62,27 +62,29 @@ protected:
     UPROPERTY(Transient)
     TArray<TWeakObjectPtr<AThrowableActor>> ThrownActors;
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void Simulate_Throw(TSubclassOf<AThrowableActor> ActorClass);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Throw(TSubclassOf<AThrowableActor> ActorClass);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveItemThrown(AThrowableActor* thrownActor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveItemSpawned(AThrowableActor* thrownActor);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnThrownActorDestroyed(AActor* Actor);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FVector GetThrowLocation() const;
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AThrowableItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

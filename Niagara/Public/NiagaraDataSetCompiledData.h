@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "NiagaraVariable.h"
 #include "NiagaraVariableLayoutInfo.h"
-#include "NiagaraDataSetID.h"
 #include "ENiagaraSimTarget.h"
+#include "NiagaraDataSetID.h"
 #include "NiagaraDataSetCompiledData.generated.h"
 
 USTRUCT()

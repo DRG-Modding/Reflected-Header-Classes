@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneEvalTemplate
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneObjectBindingID
+//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "MovieSceneCameraCutSectionTemplate.generated.h"
 
 USTRUCT()

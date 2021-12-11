@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Quat
 #include "GizmoBaseComponent.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: CoreUObject Quat
 #include "GizmoBoxComponent.generated.h"
 
 UCLASS()

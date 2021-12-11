@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "DroneFlame.generated.h"
 
-class UParticleSystemComponent;
 class UStatusEffect;
 class UDamageComponent;
+class UParticleSystemComponent;
 
 UCLASS()
 class ADroneFlame : public AActor {

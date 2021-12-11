@@ -4,12 +4,12 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "LMGGuntoweModule.generated.h"
 
-class UHitscanComponent;
 class UDamageComponent;
-class UParticleSystem;
-class UAudioComponent;
+class UHitscanComponent;
 class USceneComponent;
 class USoundCue;
+class UAudioComponent;
+class UParticleSystem;
 
 UCLASS()
 class ALMGGuntoweModule : public AHostileTargetingGuntowerModule {
@@ -58,10 +58,10 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_IsFiresoundPlaying)
     bool IsFiresoundPlaying;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ShowShot(const FVector& Location);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFiresoundPlaying();
     
 public:

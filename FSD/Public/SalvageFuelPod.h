@@ -10,13 +10,13 @@ UCLASS(Abstract)
 class ASalvageFuelPod : public ARessuplyPod {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveFuelLineStarted(bool InFuelLineStarted);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveFuelLineConnected(AFuelLineEndPoint* InFuelLine);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveFirstFuelLineSegment(AFuelLineSegment* InFirstSegment);
     
     ASalvageFuelPod();

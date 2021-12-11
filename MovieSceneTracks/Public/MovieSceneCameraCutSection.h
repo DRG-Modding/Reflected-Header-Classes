@@ -20,7 +20,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCameraBindingID(const FMovieSceneObjectBindingID& InCameraBindingID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FMovieSceneObjectBindingID GetCameraBindingID() const;
     
     UMovieSceneCameraCutSection();

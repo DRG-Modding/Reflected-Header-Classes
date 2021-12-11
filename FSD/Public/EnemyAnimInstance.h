@@ -6,10 +6,10 @@
 class UHealthComponentBase;
 class USkeletalMeshComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyAnimInstanceOnIsAttackingChanged, bool, IsAttacking);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEnemyAnimInstanceOnRangedAttackNotify);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEnemyAnimInstanceOnStopLeadingNotify);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyAnimInstanceOnMeleeAttackNotify, FName, nameValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyAnimInstanceOnIsAttackingChanged, bool, IsAttacking);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEnemyAnimInstanceOnRangedAttackNotify);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEnemyAnimInstanceOnStopLeadingNotify);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyAnimInstanceOnMeleeAttackNotify, FName, nameValue);
 
 UCLASS(NonTransient)
 class UEnemyAnimInstance : public UAnimInstance {
@@ -41,10 +41,10 @@ protected:
     UHealthComponentBase* HealthComponent;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSlotPlayingAnyAnimation(FName SlotNodeName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USkeletalMeshComponent* GetSkeletalMesh() const;
     
     UEnemyAnimInstance();

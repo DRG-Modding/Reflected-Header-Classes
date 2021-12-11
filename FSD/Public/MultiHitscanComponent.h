@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HitscanBaseComponent.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
+#include "HitscanBaseComponent.h"
 #include "MultiHitScanHits.h"
 #include "MultiHitscanComponent.generated.h"
 
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMultiHitscanComponentOnHit, const FHitResult&, Hit, bool, AlwaysPenetrate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMultiHitscanComponentOnHit, const FHitResult&, Hit, bool, AlwaysPenetrate);
 
 UCLASS()
 class UMultiHitscanComponent : public UHitscanBaseComponent {
@@ -36,10 +36,10 @@ protected:
     UPROPERTY(Transient)
     TArray<AActor*> ActorsHit;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_RegisterHit(const FMultiHitScanHits& hitResults);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowHit(const FMultiHitScanHits& hitResults);
     
 public:

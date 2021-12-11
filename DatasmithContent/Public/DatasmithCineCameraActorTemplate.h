@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DatasmithCameraLookatTrackingSettingsTemplate.h"
 #include "DatasmithObjectTemplate.h"
+#include "DatasmithCameraLookatTrackingSettingsTemplate.h"
 #include "DatasmithCineCameraActorTemplate.generated.h"
 
 UCLASS()

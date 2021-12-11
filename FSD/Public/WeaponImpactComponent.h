@@ -5,8 +5,8 @@
 
 class USkeletalMeshComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponImpactComponentOnImpactedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponImpactComponentOnHighAcceleration);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponImpactComponentOnImpactedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponImpactComponentOnHighAcceleration);
 
 UCLASS(BlueprintType)
 class UWeaponImpactComponent : public UActorComponent {

@@ -26,7 +26,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetUseText(const FText& NewText);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasDuration() const;
     
     UUsableComponent();

@@ -11,7 +11,7 @@ class UNotifyMessageReceiver : public UInterface {
 class INotifyMessageReceiver : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool OnNotifyMessageReceived(FName TriggerName);
     
 };

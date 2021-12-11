@@ -27,37 +27,37 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, Transient)
     UItemsBarIcon* SelectedIcon;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSupplyItemUnequipped(UItemsBarIcon* ItemIcon);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSupplyItemEquipped(UItemsBarIcon* ItemIcon);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSupplyItemAdded(UItemsBarIcon* ItemIcon);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnItemUnequipped(UItemsBarIcon* ItemIcon);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnItemsLoaded();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnItemEquipped(UItemsBarIcon* ItemIcon);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnItemClicked();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnItemAdded(UItemsBarIcon* ItemIcon);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnClear();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ItemEquipped(AItem* NewItem);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ItemClicked(AItem* NewItem);
     
 public:

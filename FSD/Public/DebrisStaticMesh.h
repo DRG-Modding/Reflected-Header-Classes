@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DecalData.h"
 #include "EDebrisMeshShadows.h"
 #include "EDebrisMeshCollisionProfile.h"
+#include "DecalData.h"
 #include "DebrisStaticMesh.generated.h"
 
 class UStaticMesh;
-class USoundCue;
 class UMaterialInterface;
+class USoundCue;
 class UParticleSystem;
 
 USTRUCT(BlueprintType)

@@ -21,7 +21,7 @@ public:
     void SetDestroyOnSystemFinish(bool bShouldDestroyOnSystemFinish);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNiagaraSystemFinished(UNiagaraComponent* FinishedComponent);
     
 public:

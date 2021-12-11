@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Renderer LightPropagationVolumeSettings
 //CROSS-MODULE INCLUDE: CoreUObject Object
 //CROSS-MODULE INCLUDE: Engine BlendableInterface
+//CROSS-MODULE INCLUDE: Renderer LightPropagationVolumeSettings
 #include "LightPropagationVolumeBlendable.generated.h"
 
 UCLASS(BlueprintType, MinimalAPI)
@@ -16,5 +16,7 @@ public:
     float BlendWeight;
     
     ULightPropagationVolumeBlendable();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

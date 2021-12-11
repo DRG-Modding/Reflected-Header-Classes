@@ -4,8 +4,8 @@
 #include "ToolContextTransactionProvider.h"
 #include "InteractiveToolManager.generated.h"
 
-class UInteractiveToolBuilder;
 class UInteractiveTool;
+class UInteractiveToolBuilder;
 
 UCLASS(Transient)
 class INTERACTIVETOOLSFRAMEWORK_API UInteractiveToolManager : public UObject, public IToolContextTransactionProvider {
@@ -23,5 +23,7 @@ protected:
     
 public:
     UInteractiveToolManager();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

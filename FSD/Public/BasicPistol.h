@@ -18,7 +18,7 @@ protected:
     UPROPERTY(EditAnywhere)
     float ConsecutiveHitsMaxBonus;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
 public:

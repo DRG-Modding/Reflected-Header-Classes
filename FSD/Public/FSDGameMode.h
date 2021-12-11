@@ -1,37 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine GameMode
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "EPauseReason.h"
 #include "FSDGameMode.generated.h"
 
 class UFormationsManagerComponent;
+class UEnemySpawnManager;
 class AFSDPlayerController;
 class APlayerCharacter;
-class AMolly;
 class UKeepInsideWorld;
-class UPheromoneSpawnerComponent;
-class UEnemySpawnManager;
+class UDifficultyManager;
 class UObjectivesManager;
+class UPheromoneSpawnerComponent;
 class UMissionManager;
 class UEncounterManager;
 class UCritterManager;
 class AMiningPod;
-class ABosco;
 class UWidget;
+class AMolly;
+class ABosco;
 class UEnemyDescriptor;
 class UEnemyWaveManager;
-class UDifficultyManager;
-class AActor;
 class AFSDGameMode;
+class AActor;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameModeOnMatchStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameModeOnAllControllersReady);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameModeOnPlayerLoggedIn, AFSDPlayerController*, Controller);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameModeOnDonkeyCalled, FVector, Position, APlayerCharacter*, requester);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameModeOnMatchStarted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameModeOnAllControllersReady);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameModeOnPlayerLoggedIn, AFSDPlayerController*, Controller);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameModeOnDonkeyCalled, FVector, Position, APlayerCharacter*, requester);
 
 UCLASS(MinimalAPI, NonTransient)
 class AFSDGameMode : public AGameMode {
@@ -140,28 +140,28 @@ public:
     UFUNCTION(BlueprintCallable)
     void ResetDeaths();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveEndLevel();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveAllDwarvesDown();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Recieve_ContinueTimerEnded();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePostSeamlessTravel();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnObjectivesInitialized();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLevelGenerationComplete(int32 pass);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnControllerDestroyed(AActor* Controller);
     
 public:
@@ -174,40 +174,40 @@ public:
     UFUNCTION(BlueprintCallable)
     void HostAbortMission();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UEnemyWaveManager* GetWaveManager() const;
     
     UFUNCTION(BlueprintCallable)
     AActor* GetPlayerStart(AFSDPlayerController* Controller);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AMolly> GetMuleClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UEncounterManager* GetEncounterManager() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSoftObjectPath GetDropPodPath() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSoftObjectPath GetDropPodEscapePath() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AMiningPod> GetDropPodEscapeClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AMiningPod> GetDropPodClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSoftObjectPath GetDronePath() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<ABosco> GetDroneClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDifficultyManager* GetDifficultyManager() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentLevel() const;
     
     UFUNCTION(BlueprintCallable)
@@ -228,17 +228,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void DestroyNonLocalPlayers();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void Debug_ShowPlayerSpheres();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool AllPlayersHaveSelectedCharacter() const;
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool AllPlayersHaveGeneratedLevel() const;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AddControllerForGracePeriod(APlayerCharacter* APlayerCharacter);
     
 public:

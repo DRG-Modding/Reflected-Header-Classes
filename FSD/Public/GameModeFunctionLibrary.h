@@ -4,17 +4,17 @@
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "GameModeFunctionLibrary.generated.h"
 
-class AActor;
 class UObject;
+class AActor;
 
 UCLASS(BlueprintType)
 class UGameModeFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FTransform FindRandomEscapePodLocation(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FTransform FindEscapePodLocationAtDistance(UObject* WorldContextObject, float Distance, float aboveDistanceBias, AActor* optionalFrom);
     
     UGameModeFunctionLibrary();

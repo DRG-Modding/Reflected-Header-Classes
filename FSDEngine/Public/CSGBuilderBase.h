@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Box
 //CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE: CoreUObject Box
 #include "BakeSettings.h"
 #include "CSGBuilderBase.generated.h"
 
+class UBakeConfig;
 class UCSGPreviewComponent;
 class UTerrainMaterialCore;
-class UBakeConfig;
 
 UCLASS()
 class FSDENGINE_API ACSGBuilderBase : public AActor {
@@ -37,7 +37,7 @@ public:
     UPROPERTY(Export, Transient)
     UCSGPreviewComponent* PreviewComponent;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PreGenerate(UBakeConfig* builder);
     
     ACSGBuilderBase();

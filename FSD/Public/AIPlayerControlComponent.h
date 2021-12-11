@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "AIPlayerControlComponent.generated.h"
 
+class UAnimMontage;
 class UDialogDataAsset;
 class UControlEnemyUsable;
-class UAnimMontage;
 
 UCLASS(BlueprintType)
 class UAIPlayerControlComponent : public UActorComponent {

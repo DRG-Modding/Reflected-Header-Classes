@@ -1,23 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-#include "SaveGameIDInterface.h"
 #include "LoadoutItem.h"
 #include "ItemIDInterface.h"
+//CROSS-MODULE INCLUDE: Engine Actor
+#include "SaveGameIDInterface.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "Grenade.generated.h"
 
 class UProjectileMovementComponent;
-class UItemID;
 class ALoadoutItemProxy;
+class UItemID;
 class UStaticMesh;
 class USoundCue;
 class UParticleSystem;
 class UGrenadeAnimationSet;
 class AGrenade;
+class AItem;
 
 UCLASS()
 class AGrenade : public AActor, public ISaveGameIDInterface, public IItemIDInterface, public ILoadoutItem {
@@ -69,32 +70,37 @@ protected:
     UPROPERTY(EditAnywhere)
     UGrenadeAnimationSet* GrenadeAnimationSetOverride;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HasExploded();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnExploded();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNonFriendlyPawn(AActor* Actor) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNonFriendly(AActor* Actor) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetWeaponViewClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AGrenade* GetGrenadeDefaultObject(TSubclassOf<AGrenade> GrenadeClass);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ActorWasHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AGrenade();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    TSubclassOf<AItem> GetLoadoutItemClass() const override PURE_VIRTUAL(GetLoadoutItemClass, return NULL;);
+    
 };
 

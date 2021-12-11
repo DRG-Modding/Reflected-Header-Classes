@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameRate
+#include "MovieSceneFrameRange.h"
 #include "MovieSceneSignedObject.h"
+//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "MovieSceneSpawnable.h"
-#include "MovieSceneObjectBindingIDs.h"
 #include "MovieScenePossessable.h"
 #include "MovieSceneBinding.h"
-#include "MovieSceneFrameRange.h"
+#include "MovieSceneObjectBindingIDs.h"
+//CROSS-MODULE INCLUDE: CoreUObject FrameRate
 #include "EMovieSceneEvaluationType.h"
 #include "EUpdateClockSource.h"
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "MovieSceneMarkedFrame.h"
 #include "MovieScene.generated.h"
 

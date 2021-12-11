@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosPhysicsCollisionInfo
+//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore ECollisionTypeEnum
 //CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosNotifyHandlerInterface
 //CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EObjectStateTypeEnum
-//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore ECollisionTypeEnum
 //CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EInitialVelocityTypeEnum
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosPhysicsCollisionInfo
 #include "SkeletalMeshSimulationComponent.generated.h"
 
-class UChaosPhysicalMaterial;
-class AChaosSolverActor;
 class UPhysicsAsset;
+class AChaosSolverActor;
+class UChaosPhysicalMaterial;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkeletalMeshSimulationComponentOnChaosPhysicsCollision, const FChaosPhysicsCollisionInfo&, CollisionInfo);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSkeletalMeshSimulationComponentOnChaosPhysicsCollision, const FChaosPhysicsCollisionInfo&, CollisionInfo);
 
 UCLASS(Blueprintable)
 class GEOMETRYCOLLECTIONENGINE_API USkeletalMeshSimulationComponent : public UActorComponent, public IChaosNotifyHandlerInterface {
@@ -79,9 +79,11 @@ public:
     UPROPERTY(BlueprintAssignable)
     FSkeletalMeshSimulationComponentOnChaosPhysicsCollision OnChaosPhysicsCollision;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
     
     USkeletalMeshSimulationComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

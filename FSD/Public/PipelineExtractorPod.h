@@ -18,18 +18,18 @@ protected:
     float TargetRotation;
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void SetTargetRotation(APipelineSegment* InPipelineSegment);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveConnectedToSegment(APipelineSegment* InConnectedSegment);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ConnectedSegment();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ExtractorPodOrderedEvent(APlayerCharacter* InUser);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

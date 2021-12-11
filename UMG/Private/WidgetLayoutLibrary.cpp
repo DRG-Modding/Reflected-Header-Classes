@@ -1,12 +1,12 @@
 #include "WidgetLayoutLibrary.h"
 
-class UWrapBoxSlot;
-class UScrollBoxSlot;
-class UUniformGridSlot;
 class UWidget;
-class UWidgetSwitcherSlot;
+class UWrapBoxSlot;
 class USizeBoxSlot;
 class UVerticalBoxSlot;
+class UWidgetSwitcherSlot;
+class UScrollBoxSlot;
+class UUniformGridSlot;
 class UScaleBoxSlot;
 class USafeZoneSlot;
 class UOverlaySlot;

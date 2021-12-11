@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-#include "EQSQueryResultSourceInterface.h"
 #include "EEnvQueryStatus.h"
+#include "EQSQueryResultSourceInterface.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EnvQueryInstanceBlueprintWrapper.generated.h"
 
@@ -11,7 +11,7 @@ class AActor;
 class UEnvQueryItemType;
 class UEnvQueryInstanceBlueprintWrapper;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEnvQueryInstanceBlueprintWrapperOnQueryFinishedEvent, UEnvQueryInstanceBlueprintWrapper*, QueryInstance, TEnumAsByte<EEnvQueryStatus::Type>, QueryStatus);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEnvQueryInstanceBlueprintWrapperOnQueryFinishedEvent, UEnvQueryInstanceBlueprintWrapper*, QueryInstance, TEnumAsByte<EEnvQueryStatus::Type>, QueryStatus);
 
 UCLASS(BlueprintType)
 class AIMODULE_API UEnvQueryInstanceBlueprintWrapper : public UObject, public IEQSQueryResultSourceInterface {
@@ -34,10 +34,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetNamedParam(FName ParamName, float Value);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FVector> GetResultsAsLocations() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AActor*> GetResultsAsActors() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
@@ -46,9 +46,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     bool GetQueryResultsAsActors(TArray<AActor*>& ResultActors) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetItemScore(int32 ItemIndex) const;
     
     UEnvQueryInstanceBlueprintWrapper();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ECaveEntrancePriority.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ECaveEntranceType.h"
-#include "ECaveEntrancePriority.h"
 #include "RoomEntrance.generated.h"
 
 USTRUCT(BlueprintType)

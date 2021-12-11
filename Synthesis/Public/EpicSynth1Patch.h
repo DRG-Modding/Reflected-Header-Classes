@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESynth1PatchSource.h"
 #include "Synth1PatchCable.h"
+#include "ESynth1PatchSource.h"
 #include "EpicSynth1Patch.generated.h"
 
 USTRUCT(BlueprintType)

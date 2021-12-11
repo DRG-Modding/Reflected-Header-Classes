@@ -3,8 +3,8 @@
 class UPrimitiveComponent;
 class UCurveFloat;
 class UHealthComponentBase;
-class UMeshComponent;
 class UFSDPhysicalMaterial;
+class UMeshComponent;
 
 bool UWeakpointGlowComponent::StopLoopingGlow(int32 aGlowID, bool aFade) {
     return false;

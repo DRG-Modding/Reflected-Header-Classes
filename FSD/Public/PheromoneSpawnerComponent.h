@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RandRange.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+#include "RandRange.h"
 #include "PheromoneSpawnerComponent.generated.h"
 
 class UEnemyDescriptor;

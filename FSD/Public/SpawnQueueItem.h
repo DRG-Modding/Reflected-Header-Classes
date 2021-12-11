@@ -5,7 +5,7 @@
 class APawn;
 class UEnemyDescriptor;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FSpawnQueueItemCallback, APawn*, enemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FSpawnQueueItemCallback, APawn*, enemy);
 
 USTRUCT(BlueprintType)
 struct FSpawnQueueItem {

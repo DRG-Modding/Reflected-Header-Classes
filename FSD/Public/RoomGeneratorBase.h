@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 //CROSS-MODULE INCLUDE: Engine DataAsset
 #include "ERoomMirroringSupport.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 #include "RoomGeneratorBase.generated.h"
 
 UCLASS(Abstract, BlueprintType)

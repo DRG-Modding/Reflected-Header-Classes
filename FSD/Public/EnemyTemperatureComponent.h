@@ -4,13 +4,13 @@
 #include "EnemyTemperatureComponent.generated.h"
 
 class UFSDPhysicalMaterial;
+class AController;
 class UDamageClass;
 class UPawnStatsComponent;
-class AController;
 class UEnemyDetonationSetting;
-class UHealthComponent;
-class AActor;
 class UDamageTag;
+class AActor;
+class UHealthComponent;
 class UStatusEffectsComponent;
 
 UCLASS()
@@ -72,19 +72,19 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     uint8 IceDetonationStack;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TimerCallback();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponent* HealthComponent, float damageAmount, UDamageClass* DamageClass, AActor* damageCause, AController* Instigator, UFSDPhysicalMaterial* PhysicalMaterial, bool IsRadial, const TArray<UDamageTag*>& Tags);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DoTemperatureShock(UStatusEffectsComponent* Status);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void All_IceDetonation();
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void All_FireDetonation();
     
 public:

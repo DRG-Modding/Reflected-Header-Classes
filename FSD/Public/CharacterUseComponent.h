@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "ECharacterState.h"
 #include "UsableRepliactional.h"
 #include "EUseRestriction.h"
+#include "ECharacterState.h"
 #include "ECustomUsableType.h"
 #include "CharacterUseComponent.generated.h"
 
-class USphereComponent;
 class UResourceBank;
-class UUsableComponentBase;
-class USoundBase;
 class USceneComponent;
+class UUsableComponentBase;
+class USphereComponent;
+class USoundBase;
 class APlayerCharacter;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterUseComponentOnDepositingEnd, UResourceBank*, ResourceBank);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterUseComponentOnDepositingBegin, UResourceBank*, ResourceBank);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterUseComponentOnEndUsingEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterUseComponentOnBeginUsingEvent, UUsableComponentBase*, Component);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterUseComponentOnEndHoveringEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterUseComponentOnBeginHoveringEvent, UUsableComponentBase*, Component);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterUseComponentOnEndUseNoUsable);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterUseComponentOnBeginUseNoUsable);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterUseComponentOnDepositingEnd, UResourceBank*, ResourceBank);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterUseComponentOnDepositingBegin, UResourceBank*, ResourceBank);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterUseComponentOnEndUsingEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterUseComponentOnBeginUsingEvent, UUsableComponentBase*, Component);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterUseComponentOnEndHoveringEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterUseComponentOnBeginHoveringEvent, UUsableComponentBase*, Component);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterUseComponentOnEndUseNoUsable);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCharacterUseComponentOnBeginUseNoUsable);
 
 UCLASS(BlueprintType)
 class UCharacterUseComponent : public UActorComponent {
@@ -87,42 +87,42 @@ protected:
     TMap<UUsableComponentBase*, float> UseCooldownTracker;
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetCanUse(EUseRestriction NewUseRestriction);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_EndUse();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_BeginUse(uint8 Key, UUsableComponentBase* Usable, USceneComponent* UsableCollider);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActiveUsablee(FUsableRepliactional lastUsable);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCharacterStateChanged(ECharacterState NewState);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLookingAtUsable() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLookingAtDepositable() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetUseProgress() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetLookingAtActor() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsUsing();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsDepositing();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_PlaySingleUse(uint8 Key, UUsableComponentBase* Usable);
     
     UFUNCTION(BlueprintCallable)

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseArmorDamageComponent.h"
 #include "CompositeArmorItem.h"
+#include "BaseArmorDamageComponent.h"
 #include "CompositeArmorComponent.generated.h"
 
-class UFXSystemAsset;
 class UPrimitiveComponent;
+class UFXSystemAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCompositeArmorComponentOnArmorPartDestroyedEvent, UPrimitiveComponent*, collider);
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCompositeArmorComponentOnArmorPartDamagedEvent, UPrimitiveComponent*, collider, float, Damage);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCompositeArmorComponentOnArmorPartDestroyedEvent, UPrimitiveComponent*, collider);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCompositeArmorComponentOnArmorPartDamagedEvent, UPrimitiveComponent*, collider, float, Damage);
 
 UCLASS()
 class UCompositeArmorComponent : public UBaseArmorDamageComponent {
@@ -33,7 +33,7 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_ArmorDamageIndex)
     uint32 ArmorDamageIndex;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ArmorDamageIndex(uint32 OldValue);
     
 public:

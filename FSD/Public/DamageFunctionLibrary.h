@@ -10,7 +10,7 @@ UCLASS(BlueprintType)
 class UDamageFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsCorrosiveDeath(UDamageClass* DamageClass, const TArray<UDamageTag*>& Tags);
     
     UDamageFunctionLibrary();

@@ -5,8 +5,8 @@
 #include "OverclockBank.generated.h"
 
 class UOverclockUpgrade;
-class UItemID;
 class USchematic;
+class UItemID;
 
 UCLASS()
 class FSD_API UOverclockBank : public UDataAsset, public ISchematicBankInterface {
@@ -19,5 +19,7 @@ public:
     UItemID* OwningItem;
     
     UOverclockBank();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

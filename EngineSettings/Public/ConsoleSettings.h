@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Color
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "AutoCompleteCommand.h"
+//CROSS-MODULE INCLUDE: CoreUObject Color
 #include "ConsoleSettings.generated.h"
 
 UCLASS(DefaultConfig, Config=Input)

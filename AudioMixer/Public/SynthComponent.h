@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SoundAttenuationSettings
 //CROSS-MODULE INCLUDE: Engine SceneComponent
-//CROSS-MODULE INCLUDE: Engine SoundSubmixSendInfo
+//CROSS-MODULE INCLUDE: Engine SoundAttenuationSettings
 //CROSS-MODULE INCLUDE: Engine SoundSourceBusSendInfo
+//CROSS-MODULE INCLUDE: Engine SoundSubmixSendInfo
 //CROSS-MODULE INCLUDE: AudioExtensions SoundModulation
 #include "SynthComponent.generated.h"
 
+class USoundClass;
 class USoundAttenuation;
 class USoundConcurrency;
-class USoundClass;
 class USoundEffectSourcePresetChain;
 class USoundSubmixBase;
 class USynthSound;
 class UAudioComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynthComponentOnAudioEnvelopeValue, const float, EnvelopeValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynthComponentOnAudioEnvelopeValue, const float, EnvelopeValue);
 
 UCLASS(BlueprintType)
 class AUDIOMIXER_API USynthComponent : public USceneComponent {
@@ -104,7 +104,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetSubmixSend(USoundSubmixBase* Submix, float SendLevel);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlaying() const;
     
     USynthComponent();

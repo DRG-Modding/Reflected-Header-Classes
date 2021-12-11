@@ -5,9 +5,9 @@
 
 class UObjective;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FObjectivesManagerOnObjectivesCompleted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FObjectivesManagerOnObjectivesChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FObjectivesManagerOnAllRequiredReturnObjectivesCompleted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FObjectivesManagerOnObjectivesCompleted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FObjectivesManagerOnObjectivesChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FObjectivesManagerOnAllRequiredReturnObjectivesCompleted);
 
 UCLASS(BlueprintType)
 class UObjectivesManager : public UActorComponent {
@@ -38,14 +38,14 @@ protected:
     UPROPERTY(Transient)
     bool bCheatObjectivesCompleted;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnObjectiveChanged(UObjective* obj);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObjective* GetSecondaryObjective() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObjective* GetPrimaryObjective() const;
     
     UFUNCTION(BlueprintCallable)

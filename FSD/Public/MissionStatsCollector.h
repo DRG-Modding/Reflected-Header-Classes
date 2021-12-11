@@ -14,7 +14,7 @@ protected:
     UPROPERTY(Transient)
     APlayerCharacter* Character;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceIncremented(UCappedResource* Resource, float Amount);
     
 public:

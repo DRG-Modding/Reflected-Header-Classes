@@ -8,7 +8,7 @@ UCLASS()
 class UMG_API UCheckedStateBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     ECheckBoxState GetValue() const;
     
     UCheckedStateBinding();

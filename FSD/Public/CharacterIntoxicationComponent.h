@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CountDownFloat.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "EDrinkableAlcoholStrength.h"
 #include "EIntoxicationState.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "LerpingPercent.h"
+#include "CountDownFloat.h"
 #include "CharacterIntoxicationComponent.generated.h"
 
-class UCurveFloat;
-class APlayerCharacter;
 class UDrinkableDataAsset;
+class APlayerCharacter;
+class UCurveFloat;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterIntoxicationComponentOnPassOutDrunk, APlayerCharacter*, Player);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCharacterIntoxicationComponentOnIntoxicationChanged, APlayerCharacter*, Player, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCharacterIntoxicationComponentOnPassOutDrunk, APlayerCharacter*, Player);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCharacterIntoxicationComponentOnIntoxicationChanged, APlayerCharacter*, Player, float, Progress);
 
 UCLASS(Blueprintable, MinimalAPI)
 class UCharacterIntoxicationComponent : public UActorComponent {
@@ -46,52 +46,52 @@ protected:
     UPROPERTY(EditAnywhere)
     uint8 SoberingPercent;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveStateChange(EIntoxicationState NewState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePassOutDrunk();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDrunkTick(float DeltaTime, float DrunkTime);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDrunkEnd();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDrunkBegin();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPassOutDrunk() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOnSpaceRig() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocallyControlled() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDrunk() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasAuthority() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSoberingUpCoolDown() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetIntoxicationProgressMapped(UCurveFloat* Curve) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetIntoxicationProgress() const;
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     int32 GetAlcoholPct(EDrinkableAlcoholStrength Strength) const;
     
 public:

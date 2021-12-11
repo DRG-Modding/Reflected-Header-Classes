@@ -7,10 +7,10 @@
 
 class AFlareGunProjectile;
 class AFlare;
-class UObject;
 class AActor;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFlareControllerOnShadowQualityChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFlareControllerOnShadowQualityChanged);
 
 UCLASS(BlueprintType)
 class UFlareController : public UActorComponent {

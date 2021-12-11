@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlaybackSettings
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlayer
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlaybackSettings
 #include "TemplateSequencePlayer.generated.h"
 
 class UTemplateSequencePlayer;
-class UTemplateSequence;
 class UObject;
+class UTemplateSequence;
 class ATemplateSequenceActor;
 
 UCLASS()

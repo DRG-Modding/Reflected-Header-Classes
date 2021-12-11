@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "BlackboardComponent.generated.h"
 
-class UBlackboardKeyType;
 class UBrainComponent;
 class UBlackboardData;
+class UBlackboardKeyType;
 class UObject;
 
 UCLASS(BlueprintType)
@@ -58,43 +58,43 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetValueAsBool(const FName& KeyName, bool boolValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsVectorValueSet(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetValueAsVector(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetValueAsString(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetValueAsRotator(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObject* GetValueAsObject(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetValueAsName(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetValueAsInt(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetValueAsFloat(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     uint8 GetValueAsEnum(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UClass* GetValueAsClass(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetValueAsBool(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetRotationFromEntry(const FName& KeyName, FRotator& ResultRotation) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetLocationFromEntry(const FName& KeyName, FVector& ResultLocation) const;
     
     UFUNCTION(BlueprintCallable)

@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "SingleUsableUpgrade.generated.h"
 
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class USingleUsableUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     ESingleUsableUpgradeType upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, TSubclassOf<AActor> subItem, AFSDPlayerState* Player, ESingleUsableUpgradeType NewUpgradeType);
     
     USingleUsableUpgrade();

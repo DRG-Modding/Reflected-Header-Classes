@@ -10,8 +10,8 @@ class APlayerCharacter;
 class AFSDHUD;
 class APlayerCameraDrone;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDHUDSetObjectivesVisible, bool, InVisible, bool, animate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDHUDOnHUDVisibilityChanged, bool, InHudVisible);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDHUDSetObjectivesVisible, bool, InVisible, bool, animate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDHUDOnHUDVisibilityChanged, bool, InHudVisible);
 
 UCLASS(NonTransient)
 class AFSDHUD : public AHUD {
@@ -37,30 +37,30 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetHUDVisible(bool IsVisible, EHUDVisibilityReason reason);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RadarPointAdded(URadarPointComponent* radarPoint);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PlayerSpawned(APlayerCharacter* Player);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnVisibilityChanged();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsHUDVisibleFlagSet(EHUDVisibilityReason reason) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void HandleSeamlessTravel();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHUDVisible() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AFSDHUD* GetFSDHUD(APlayerController* InPlayerController);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CameraDroneSpawned(APlayerCameraDrone* Drone);
     
     AFSDHUD();

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "SaveGameSnapShot.h"
+//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject DateTime
 #include "SaveGameLibrary.generated.h"
 
@@ -11,13 +11,13 @@ UCLASS(BlueprintType)
 class USaveGameLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool TryGetSaveGameSnapShot(UObject* WorldContext, const FString& Filename, int32 userIdx, FSaveGameSnapShot& OutSnapShot);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TMap<FString, FDateTime> GetUserSaveGameSlots(const FString& UserId);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TMap<FString, FDateTime> GetAllSaveGameSlots();
     
     USaveGameLibrary();

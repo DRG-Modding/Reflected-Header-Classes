@@ -4,12 +4,12 @@
 #include "EUMGSequencePlayMode.h"
 #include "WidgetAnimationPlayCallbackProxy.generated.h"
 
-class UWidgetAnimation;
-class UUMGSequencePlayer;
 class UWidgetAnimationPlayCallbackProxy;
+class UWidgetAnimation;
 class UUserWidget;
+class UUMGSequencePlayer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWidgetAnimationPlayCallbackProxyFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWidgetAnimationPlayCallbackProxyFinished);
 
 UCLASS(BlueprintType, MinimalAPI)
 class UWidgetAnimationPlayCallbackProxy : public UObject {

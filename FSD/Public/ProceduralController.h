@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TunnelNode.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "GeneratedDebrisItem.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
+#include "LevelGenerationCarverLists.h"
 #include "EDebrisItemPass.h"
 #include "RoomNode.h"
+#include "TunnelNode.h"
 #include "PathObstacle.h"
-#include "LevelGenerationCarverLists.h"
 #include "GeneratedInfluenceSets.h"
 #include "ProceduralController.generated.h"
 
@@ -18,7 +18,7 @@ public:
     void Server_RequestTunnelData();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SendTunnelData();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -38,10 +38,10 @@ public:
     void RequestCarverData(EDebrisItemPass pass);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivedTunnelData(const TArray<FTunnelNode>& Tunnels);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivedRoomData(int32 Seed, const TArray<FRoomNode>& Rooms, const TArray<FPathObstacle>& obstacles);
     
 public:
@@ -52,16 +52,16 @@ public:
     void Client_SendRoomData(int32 Seed, const TArray<FRoomNode>& Rooms, const TArray<FPathObstacle>& obstacles);
     
 protected:
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_RecieveCarverSizes(int32 pass, int32 carverCount);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_ReceivePLSLevelCarver(int32 pass, const FLevelGenerationCarverLists& levelCarvers);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_ReceivePLSInfluencers(const FGeneratedInfluenceSets& influenceSet);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_ReceivePLSDebris(const TArray<FGeneratedDebrisItem>& levelDebris);
     
 public:

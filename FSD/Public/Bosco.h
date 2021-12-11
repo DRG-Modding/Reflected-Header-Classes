@@ -1,53 +1,53 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DeepPathfinderCharacter.h"
-#include "WeaponFireOwner.h"
-#include "NotifyMessageReceiver.h"
-#include "ItemIDInterface.h"
 #include "UpgradableGear.h"
+#include "WeaponFireOwner.h"
 #include "Upgradable.h"
 #include "SaveGameIDInterface.h"
 #include "Skinnable.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "NotifyMessageReceiver.h"
+#include "ItemIDInterface.h"
 #include "BoscoLightSetting.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 #include "EDroneAIState.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "Bosco.generated.h"
 
-class UBoscoProjectileAbillity;
-class USpotLightComponent;
-class USoundBase;
 class ABoscoController;
-class AActor;
+class UTerrainMaterial;
 class UHealthComponent;
-class UBoscoAbillityComponent;
 class UUpgradableBoscoComponent;
+class UBoscoAbillityComponent;
+class UParticleSystemComponent;
 class UDamageComponent;
 class UPawnSensingComponent;
 class UDroneMiningToolBase;
-class UPointLightComponent;
+class UItemUpgrade;
 class UBobbingComponent;
 class USkeletalMeshComponent;
 class UHitscanComponent;
-class UParticleSystemComponent;
-class UAudioComponent;
 class UDialogDataAsset;
-class UItemUpgrade;
+class USpotLightComponent;
+class UPointLightComponent;
+class USoundBase;
+class UAudioComponent;
+class USoundCue;
+class UBoscoProjectileAbillity;
 class UItemID;
 class UAnimSequenceBase;
 class UDroneSkinnableComponent;
 class UBoscoAbillity;
-class USoundCue;
+class AActor;
 class UParticleSystem;
 class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
-class UTerrainMaterial;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoOnReviveused, const int32, ReviveCount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoOnStateChanged, EDroneAIState, aCurrentState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoOnReviveused, const int32, ReviveCount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBoscoOnStateChanged, EDroneAIState, aCurrentState);
 
 UCLASS()
 class FSD_API ABosco : public ADeepPathfinderCharacter, public IWeaponFireOwner, public IUpgradableGear, public IUpgradable, public ISaveGameIDInterface, public ISkinnable, public IItemIDInterface, public INotifyMessageReceiver {
@@ -317,11 +317,11 @@ public:
     void UseABillity();
     
 protected:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void StopShootingSound();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StateChanged(EDroneAIState aCurrentState);
     
     UFUNCTION(BlueprintCallable)
@@ -333,71 +333,73 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIsRepairing(bool isRepairing);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SelfDestruct();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ReviveCounterChanged(int32 remainingCharges);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Respond();
     
 public:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void PlaySalute();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnWeaponFired(const FVector& Location);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetBurrowChange(bool burrowed);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State(EDroneAIState prevState);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnReadyToShoot();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNotReadyToShoot();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHit(float Amount, float BaseAmount, UPrimitiveComponent* Component, UFSDPhysicalMaterial* PhysMat, const FName& BoneName);
     
 public:
     UFUNCTION(BlueprintCallable)
     void OnGrabbedGem();
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MineEffects(UTerrainMaterial* aTerrainMaterial, FVector_NetQuantize aLocation, FRotator aRotation);
     
     UFUNCTION(BlueprintCallable)
     UUpgradableBoscoComponent* GetUpgradeComponent();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetReviveCharges() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBoscoAbillityComponent* GetPlayerAbillity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EDroneAIState GetCurrentState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCarryInterrupted() const;
     
     UFUNCTION(BlueprintCallable)
     bool DoPickupGemAnimation();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_OnSelfDestruct();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ABosco();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

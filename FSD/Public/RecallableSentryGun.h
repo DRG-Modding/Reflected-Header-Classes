@@ -7,7 +7,7 @@
 class APlayerCharacter;
 class ASentryGun;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRecallableSentryGunOnSentryIndexChanged, int32, Index);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRecallableSentryGunOnSentryIndexChanged, int32, Index);
 
 UCLASS(Abstract)
 class ARecallableSentryGun : public ARecallableActor {
@@ -20,20 +20,20 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_SentryIndex)
     int32 SentryIndex;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnSentryReady(ASentryGun* SentryGun, APlayerCharacter* PlayerCharacter);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SentryIndex();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     void GetStateDescription(FText& Description) const;
     
-    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     TSubclassOf<ASentryGun> GetSentryGunClass() const;
     
-    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     ASentryGun* GetSentryGun();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESourceEffectDynamicsProcessorType.h"
 #include "ESourceEffectDynamicsPeakMode.h"
+#include "ESourceEffectDynamicsProcessorType.h"
 #include "SourceEffectDynamicsProcessorSettings.generated.h"
 
 USTRUCT(BlueprintType)

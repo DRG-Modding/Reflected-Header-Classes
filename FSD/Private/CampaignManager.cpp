@@ -1,9 +1,9 @@
 #include "CampaignManager.h"
 #include "Templates/SubclassOf.h"
 
-class UObject;
 class UCampaign;
 class UGeneratedMission;
+class UObject;
 class UFSDSaveGame;
 class AFSDPlayerController;
 class UDifficultySetting;

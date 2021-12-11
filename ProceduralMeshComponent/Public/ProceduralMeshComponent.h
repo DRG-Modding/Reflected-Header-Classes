@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: Engine KConvexElem
 //CROSS-MODULE INCLUDE: Engine MeshComponent
+//CROSS-MODULE INCLUDE: CoreUObject BoxSphereBounds
 //CROSS-MODULE INCLUDE: Engine Interface_CollisionDataProvider
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ProcMeshSection.h"
-//CROSS-MODULE INCLUDE: Engine KConvexElem
-//CROSS-MODULE INCLUDE: CoreUObject BoxSphereBounds
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: CoreUObject Color
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "ProcMeshTangent.h"
+//CROSS-MODULE INCLUDE: CoreUObject Color
 #include "ProceduralMeshComponent.generated.h"
 
 class UBodySetup;
@@ -50,10 +50,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetMeshSectionVisible(int32 SectionIndex, bool bNewVisibility);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMeshSectionVisible(int32 SectionIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumSections() const;
     
     UFUNCTION(BlueprintCallable)
@@ -75,5 +75,7 @@ public:
     void AddCollisionConvexMesh(TArray<FVector> ConvexVerts);
     
     UProceduralMeshComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

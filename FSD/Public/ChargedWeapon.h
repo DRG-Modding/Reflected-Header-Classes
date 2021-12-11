@@ -3,13 +3,13 @@
 #include "AmmoDrivenWeapon.h"
 #include "ChargedWeapon.generated.h"
 
-class UFXSystemComponent;
-class USoundCue;
 class UAnimMontage;
 class UFXSystemAsset;
+class UFXSystemComponent;
+class USoundCue;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChargedWeaponOnChargeChanged, float, charge);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChargedWeaponOnHeatChanged, float, charge);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChargedWeaponOnChargeChanged, float, charge);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChargedWeaponOnHeatChanged, float, charge);
 
 UCLASS(Abstract)
 class AChargedWeapon : public AAmmoDrivenWeapon {
@@ -85,17 +85,17 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetOverheated(bool isOverheated);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIsCharging(bool isChargingValue);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveChargeProgressChanged(float NewChargeProgress);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOverheatedChanged(bool isOverheated);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsCharging() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

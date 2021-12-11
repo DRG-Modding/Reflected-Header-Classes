@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "EEnvTestPathfinding.h"
 #include "EnvQueryTest.h"
 #include "AIDataProviderBoolValue.h"
-#include "EEnvTestPathfinding.h"
 #include "EnvQueryTest_Pathfinding.generated.h"
 
-class UNavigationQueryFilter;
 class UEnvQueryContext;
+class UNavigationQueryFilter;
 
 UCLASS()
 class UEnvQueryTest_Pathfinding : public UEnvQueryTest {

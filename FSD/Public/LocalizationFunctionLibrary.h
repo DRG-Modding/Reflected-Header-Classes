@@ -8,7 +8,7 @@ UCLASS(BlueprintType)
 class ULocalizationFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<FLocalizedLanguageInfo> GetLocalizedLanguages();
     
     ULocalizationFunctionLibrary();

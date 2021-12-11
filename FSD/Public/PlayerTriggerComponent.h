@@ -7,8 +7,8 @@
 class UPrimitiveComponent;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerTriggerComponentOnTriggerEndEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerTriggerComponentOnTriggerBeginEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerTriggerComponentOnTriggerEndEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerTriggerComponentOnTriggerBeginEvent);
 
 UCLASS(BlueprintType)
 class UPlayerTriggerComponent : public UActorComponent {
@@ -29,10 +29,10 @@ public:
     void SetCollider(UPrimitiveComponent* NewCollider);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
 public:

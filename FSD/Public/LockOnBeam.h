@@ -4,11 +4,11 @@
 #include "BeamCollision.h"
 #include "LockOnBeam.generated.h"
 
-class ALockOnWeapon;
+class UMaterialInterface;
 class USceneComponent;
 class USplineComponent;
 class USplineMeshComponent;
-class UMaterialInterface;
+class ALockOnWeapon;
 
 UCLASS(Abstract)
 class ALockOnBeam : public AActor {
@@ -54,7 +54,7 @@ protected:
     UPROPERTY(EditAnywhere)
     FBeamCollision Collision;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveItemSet();
     
 public:

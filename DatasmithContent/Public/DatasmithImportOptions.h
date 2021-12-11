@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "DatasmithOptionsBase.h"
 #include "EDatasmithImportSearchPackagePolicy.h"
-#include "DatasmithImportBaseOptions.h"
-#include "EDatasmithImportMaterialQuality.h"
-#include "EDatasmithImportAssetConflictPolicy.h"
-#include "EDatasmithImportActorPolicy.h"
 #include "DatasmithReimportOptions.h"
+#include "EDatasmithImportMaterialQuality.h"
+#include "EDatasmithImportActorPolicy.h"
+#include "EDatasmithImportAssetConflictPolicy.h"
+#include "DatasmithImportBaseOptions.h"
 #include "DatasmithImportOptions.generated.h"
 
 UCLASS(BlueprintType, Config=EditorPerProjectUserSettings)

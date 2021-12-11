@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "EDynamicBoxType.h"
 #include "Widget.h"
+#include "UserWidgetPool.h"
 #include "SlateChildSize.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: SlateCore EVerticalAlignment
 //CROSS-MODULE INCLUDE: SlateCore EHorizontalAlignment
-#include "UserWidgetPool.h"
 #include "DynamicEntryBoxBase.generated.h"
 
 class UUserWidget;
@@ -45,10 +45,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetEntrySpacing(const FVector2D& InEntrySpacing);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumEntries() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UUserWidget*> GetAllEntries() const;
     
     UDynamicEntryBoxBase();

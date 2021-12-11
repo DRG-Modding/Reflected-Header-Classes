@@ -8,7 +8,7 @@ class APlayerCharacter;
 class AHackingToolItem;
 class UHackingToolWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHackingUsableComponentOnHacked, APlayerCharacter*, InHackedBy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHackingUsableComponentOnHacked, APlayerCharacter*, InHackedBy);
 
 UCLASS()
 class FSD_API UHackingUsableComponent : public UInstantUsable {
@@ -27,20 +27,20 @@ protected:
     UPROPERTY(ReplicatedUsing=OnRep_HackingState)
     FHackingUsableState HackingState;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HackingState(const FHackingUsableState& oldState) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsHacked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsBeingHacked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftClassPtr<UHackingToolWidget> GetHackingWidgetType() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetHackedBy() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

@@ -13,7 +13,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     UItemPlacerAggregator* SegmentPlacer;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePlacementUpdated(bool InCanPlace, bool InConnecting, float InDistanceProgress);
     
 public:

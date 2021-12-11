@@ -5,13 +5,13 @@
 //CROSS-MODULE INCLUDE: Engine WeightedBlendables
 #include "FSDPostProcessingActor.generated.h"
 
-class UObject;
 class UPostProcessComponent;
-class UMaterialInstanceDynamic;
 class APostProcessingManager;
+class UMaterialInterface;
 class UBlendableInterface;
 class IBlendableInterface;
-class UMaterialInterface;
+class UObject;
+class UMaterialInstanceDynamic;
 
 UCLASS(Abstract)
 class AFSDPostProcessingActor : public AActor {
@@ -41,14 +41,14 @@ public:
     static void UnapplyAllPostProcessingBlendables(UObject* WorldContext);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetupHDRColorGamma();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetPostProcessManager(APostProcessingManager* InManager);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UMaterialInstanceDynamic* GetPostProcessingMaterialInstance(UObject* WorldContext, UMaterialInterface* Material);
     
     UFUNCTION(BlueprintCallable)

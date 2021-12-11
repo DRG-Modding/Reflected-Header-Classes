@@ -7,8 +7,8 @@
 class UStaticMesh;
 class UStaticMeshComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FSteamVRTrackingReferencesOnTrackedDeviceActivated, int32, DeviceID, FName, DeviceClass, const FString&, DeviceModel);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FSteamVRTrackingReferencesOnTrackedDeviceDeactivated, int32, DeviceID, FName, DeviceClass, const FString&, DeviceModel);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FSteamVRTrackingReferencesOnTrackedDeviceActivated, int32, DeviceID, FName, DeviceClass, const FString&, DeviceModel);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FSteamVRTrackingReferencesOnTrackedDeviceDeactivated, int32, DeviceID, FName, DeviceClass, const FString&, DeviceModel);
 
 UCLASS(BlueprintType)
 class STEAMVRINPUTDEVICE_API USteamVRTrackingReferences : public UActorComponent {

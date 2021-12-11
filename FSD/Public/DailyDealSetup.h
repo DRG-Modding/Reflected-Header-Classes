@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "EDealType.h"
 //CROSS-MODULE INCLUDE: CoreUObject IntPoint
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "DailyDealSetup.generated.h"
 
 class UResourceData;

@@ -19,11 +19,11 @@ protected:
     UPROPERTY(Export, VisibleAnywhere)
     UDamageComponent* BurstFireBonusDamage;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnReadyToFire();
     
     ABurstWeapon();

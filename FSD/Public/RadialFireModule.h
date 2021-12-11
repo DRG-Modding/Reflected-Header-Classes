@@ -39,7 +39,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FName BackFireSocket;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFire();
     
 public:

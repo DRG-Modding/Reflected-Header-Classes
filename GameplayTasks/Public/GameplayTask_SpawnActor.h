@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "GameplayTask.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "GameplayTask_SpawnActor.generated.h"
 
@@ -12,8 +12,8 @@ class UGameplayTask_SpawnActor;
 class UGameplayTaskOwnerInterface;
 class IGameplayTaskOwnerInterface;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameplayTask_SpawnActorSuccess, AActor*, SpawnedActor);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameplayTask_SpawnActorDidNotSpawn, AActor*, SpawnedActor);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameplayTask_SpawnActorSuccess, AActor*, SpawnedActor);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameplayTask_SpawnActorDidNotSpawn, AActor*, SpawnedActor);
 
 UCLASS(MinimalAPI)
 class UGameplayTask_SpawnActor : public UGameplayTask {

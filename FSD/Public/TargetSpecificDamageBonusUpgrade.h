@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ItemUpgrade.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
+#include "ItemUpgrade.h"
 #include "UpgradeValues.h"
 #include "TargetSpecificDamageBonusUpgrade.generated.h"
 
@@ -24,7 +24,7 @@ protected:
     FName Key;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, FName NewKey);
     
     UTargetSpecificDamageBonusUpgrade();

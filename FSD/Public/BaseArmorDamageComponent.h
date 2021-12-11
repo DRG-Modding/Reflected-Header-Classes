@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "BaseArmorDamageComponent.generated.h"
 
-class UFSDPhysicalMaterial;
-class UParticleSystem;
 class USkeletalMeshComponent;
+class UParticleSystem;
+class UFSDPhysicalMaterial;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBaseArmorDamageComponentOnArmorShatteredEvent, const FVector&, Location);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBaseArmorDamageComponentOnArmorShatteredEvent, const FVector&, Location);
 
 UCLASS(Abstract, BlueprintType)
 class UBaseArmorDamageComponent : public UActorComponent {

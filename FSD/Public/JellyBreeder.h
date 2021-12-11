@@ -4,13 +4,13 @@
 #include "AFlyingBug.h"
 #include "JellyBreeder.generated.h"
 
+class UPhysicalMaterial;
 class UAnimSequenceBase;
-class AActor;
 class AProjectile;
 class UParticleSystem;
 class USoundBase;
 class UEnemyDescriptor;
-class UPhysicalMaterial;
+class AActor;
 
 UCLASS()
 class AJellyBreeder : public AAFlyingBug {
@@ -61,20 +61,20 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable)
-    void SpawnEnemies(AProjectile* Egg, int32 AmountToSpawn);
+    void SpawnEnemies(AProjectile* egg, int32 AmountToSpawn);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void PlaySpawnEggAnim();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_BreedMode();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnJellyDestroyed(AActor* AActor);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BreedModeFlipped(bool aIsLayingEggs);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

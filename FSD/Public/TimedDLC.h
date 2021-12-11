@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DLCBase.h"
 //CROSS-MODULE INCLUDE: CoreUObject DateTime
+#include "DLCBase.h"
 #include "TimedDLC.generated.h"
 
 UCLASS()

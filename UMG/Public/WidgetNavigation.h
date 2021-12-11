@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WidgetNavigationData.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "WidgetNavigationData.h"
 #include "WidgetNavigation.generated.h"
 
 UCLASS(BlueprintType)

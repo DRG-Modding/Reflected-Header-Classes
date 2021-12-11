@@ -6,17 +6,17 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "SalvageObjective.generated.h"
 
+class UDebrisPositioning;
 class URepairableComponent;
 class UGemResourceData;
-class UDebrisPositioning;
 class UDebrisBase;
-class AMiniMule;
 class AMiningPod;
+class AMiniMule;
 class AProceduralSetup;
 class AActor;
 class UCurveFloat;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSalvageObjectiveOnDisableLegSpheres);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSalvageObjectiveOnDisableLegSpheres);
 
 UCLASS(Abstract)
 class USalvageObjective : public UObjective {
@@ -85,16 +85,16 @@ public:
     void PointRepaired();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PointsRepaired();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActorsToSalvage(int32 prevAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActorsSalvaged(int32 prevAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnActorRepaired(URepairableComponent* repairable);
     
 public:
@@ -102,7 +102,7 @@ public:
     static FTransform FindRepairPointLocation(AProceduralSetup* setup, const FVector& podLocation, float Radius, float maxVerticalDistance, UDebrisPositioning* DebrisPositioning, TSubclassOf<AActor> terrainPlacement, const TArray<FVector>& locationsToAvoid, UCurveFloat* AvoidCostCurve);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AllActorsSalvaged();
     
 public:

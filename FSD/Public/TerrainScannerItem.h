@@ -3,8 +3,8 @@
 #include "AnimatedItem.h"
 #include "TerrainScannerItem.generated.h"
 
-class UAnimMontage;
 class USceneComponent;
+class UAnimMontage;
 class USceneCaptureComponent2D;
 
 UCLASS()
@@ -54,10 +54,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     USceneCaptureComponent2D* TerrainScannerCapture;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIslookingAtMap(bool lookingAtMap);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsLookingAtMap();
     
 public:

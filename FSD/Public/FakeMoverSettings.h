@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
 //CROSS-MODULE INCLUDE: FSDEngine DeepPathFinderSize
-#include "FakeMoverTarget.h"
 #include "FakeMoverPropulsion.h"
+#include "FakeMoverTarget.h"
 #include "FakeMoverSettings.generated.h"
 
 UCLASS(BlueprintType)

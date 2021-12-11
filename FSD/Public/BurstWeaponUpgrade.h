@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StandardItemUpgrade.h"
-#include "UpgradeValues.h"
 #include "EBurstWeaponUpgrades.h"
+#include "UpgradeValues.h"
 #include "BurstWeaponUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UBurstWeaponUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EBurstWeaponUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EBurstWeaponUpgrades NewUpgradeType);
     
     UBurstWeaponUpgrade();

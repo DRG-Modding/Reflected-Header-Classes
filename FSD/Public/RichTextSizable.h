@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: UMG RichTextBlock
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "RichTextSizable.generated.h"
 
 UCLASS()

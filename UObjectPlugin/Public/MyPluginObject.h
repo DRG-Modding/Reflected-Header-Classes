@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MyPluginStruct.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "MyPluginStruct.h"
 #include "MyPluginObject.generated.h"
 
 UCLASS()

@@ -3,8 +3,8 @@
 #include "ItemAggregator.h"
 #include "OverheatingAggregator.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOverheatingAggregatorOnOverheatingProgressChanged, float, Progress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOverheatingAggregatorOnOverheatedChanged, bool, Overheated);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOverheatingAggregatorOnOverheatingProgressChanged, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOverheatingAggregatorOnOverheatedChanged, bool, Overheated);
 
 UCLASS()
 class UOverheatingAggregator : public UItemAggregator {
@@ -29,26 +29,26 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_Temperature)
     float Temperature;
     
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void Server_SetTemperature(float NewTemperature);
     
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void Server_SetIsOverheated(bool NewOverheated);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Temperature();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsOverheated();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetTemperature() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetOverheatingProgress() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsOverheated() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

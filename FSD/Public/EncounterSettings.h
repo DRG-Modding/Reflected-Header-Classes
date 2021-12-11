@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EncounterSpecialItem.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
 #include "RandInterval.h"
 #include "IRandRange.h"
 #include "RandRange.h"
 #include "EncounterRareCritterItem.h"
-#include "EncounterSpecialItem.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 #include "EliteEnemyEntry.h"
 #include "EncounterSettings.generated.h"
 
+class UMutator;
 class UEnemyDescriptor;
 class UCritterDescriptor;
-class UMutator;
 
 UCLASS()
 class UEncounterSettings : public UDataAsset {

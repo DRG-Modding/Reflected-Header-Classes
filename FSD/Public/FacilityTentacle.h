@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "TentacleBase.h"
-#include "EFacilityTentacleState.h"
 #include "TriggerAI.h"
+#include "EFacilityTentacleState.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FacilityTentacle.generated.h"
 
-class USkeletalMeshComponent;
 class UAnimMontage;
+class USkeletalMeshComponent;
 class UDebrisPositioning;
 
 UCLASS()
@@ -30,13 +30,13 @@ protected:
     UPROPERTY(Export, Transient)
     USkeletalMeshComponent* HeadMesh;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void PlayHitReaction(float Amount);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStateChanged(EFacilityTentacleState NewState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_TentacleState();
     
 public:
@@ -46,5 +46,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AFacilityTentacle();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -6,8 +6,8 @@
 #include "StatusEffectMissionBP.generated.h"
 
 class UStatusEffect;
-class UEnemyDescriptor;
 class APawn;
+class UEnemyDescriptor;
 
 UCLASS()
 class UStatusEffectMissionBP : public URunningMissionBP {
@@ -20,7 +20,7 @@ protected:
     UPROPERTY(EditAnywhere)
     TSubclassOf<UStatusEffect> StatusEffect;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnemySpawned(APawn* Pawn, UEnemyDescriptor* descriptor);
     
 public:

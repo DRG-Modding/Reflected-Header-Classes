@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Margin.h"
 #include "SlateWidgetStyle.h"
 #include "SlateBrush.h"
-#include "Margin.h"
 #include "SlateSound.h"
 #include "ButtonStyle.generated.h"
 

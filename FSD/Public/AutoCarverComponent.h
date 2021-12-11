@@ -6,7 +6,7 @@
 
 class UTerrainMaterialBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAutoCarverComponentOnCarveDoneEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAutoCarverComponentOnCarveDoneEvent);
 
 UCLASS(EditInlineNew)
 class UAutoCarverComponent : public UStaticMeshComponent {

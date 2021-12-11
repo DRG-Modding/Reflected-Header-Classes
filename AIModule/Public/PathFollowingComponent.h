@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "AIResourceInterface.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
+#include "AIResourceInterface.h"
 //CROSS-MODULE INCLUDE: Engine PathFollowingAgentInterface
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EPathFollowingAction.h"
 #include "PathFollowingComponent.generated.h"
 
-class ANavigationData;
 class UNavMovementComponent;
+class ANavigationData;
 class AActor;
 
 UCLASS(BlueprintType)
@@ -23,19 +23,21 @@ protected:
     UPROPERTY(Transient)
     ANavigationData* MyNavData;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNavDataRegistered(ANavigationData* NavData);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnActorBump(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetPathDestination() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TEnumAsByte<EPathFollowingAction::Type> GetPathActionType() const;
     
     UPathFollowingComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -25,13 +25,13 @@ public:
     void Show(UPrimitiveComponent* InContextPrimitive);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveUpdate(UPrimitiveComponent* InContextPrimitive);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveShow(UPrimitiveComponent* InContextPrimitive);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveContextActorChanged(AActor* InContextActor);
     
 public:

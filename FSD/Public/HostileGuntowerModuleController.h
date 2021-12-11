@@ -14,7 +14,7 @@ public:
     UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     UAIPerceptionComponent* Perception;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPerceptionUpdated(AActor* sensedActor, FAIStimulus Stimulus);
     
     AHostileGuntowerModuleController();

@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine EBoneAxis
 #include "ERBFSolverType.h"
+#include "ERBFNormalizeMethod.h"
 #include "ERBFDistanceMethod.h"
 #include "ERBFFunctionType.h"
-#include "ERBFNormalizeMethod.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "RBFParams.generated.h"
 

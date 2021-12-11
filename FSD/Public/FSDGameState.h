@@ -3,66 +3,66 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine GameState
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
-#include "FSDLocalizedChatMessage.h"
-#include "ScaledEffect.h"
+#include "CreditsReward.h"
 #include "GeneratedMissionSeed.h"
 #include "ReplicatedObjectives.h"
-#include "CreditsReward.h"
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "FSDChatMessage.h"
+#include "FSDLocalizedChatMessage.h"
+#include "ScaledEffect.h"
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "FSDGameState.generated.h"
 
-class AFSDPlayerState;
-class UObjective;
-class UPlayerCharacterID;
-class UDifficultyManager;
-class AActor;
 class UGemProximityTracker;
 class APlayerCharacter;
+class AProceduralSetup;
+class AFSDPlayerState;
+class UPrimitiveComponent;
 class UDifficultySetting;
 class AMiningPod;
-class USpawnEffectsComponent;
+class AActor;
+class UObjective;
 class ADeepCSGWorld;
-class USeasonReplicatorComponent;
-class AProceduralSetup;
-class UPrimitiveComponent;
+class USpawnEffectsComponent;
 class UDynamicMeshScaler;
 class UFlareController;
-class UAttackerManagerComponent;
 class USoundMixManagerComponent;
-class UGeneratedMission;
+class UAttackerManagerComponent;
+class UDifficultyManager;
+class USeasonReplicatorComponent;
 class UTeamResourcesComponent;
 class UPlayerProximityTracker;
+class UFSDEvent;
 class UShowroomManager;
 class AGameStats;
 class APlayerState;
+class UGeneratedMission;
+class UPlayerCharacterID;
 class UResourceData;
-class UFSDEvent;
 class USoundCue;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnMissionTimeUpdated, int32, Value);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnPlayerLeave, AFSDPlayerState*, PlayerState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnCountdownStarted, const FText&, countdownText);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnPlayerJoined, AFSDPlayerState*, PlayerState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnTerrainGenerated);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnTerrainGenerationStarting);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnMatchStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnMatchEnded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnCountdownFinished);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnGameEventCompletedEvent, FText, GameEventName);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnContinueActive);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnContinueCountdownChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnAllDwarvesDown);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnTeamMemberCampaignMissionChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameStateOnEnemyKilledEvent, const FGameplayTagContainer&, enemyTags, AActor*, killedEnemy);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnPlayerCharacterRegistered, APlayerCharacter*, PlayerCharacter);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnBoscoReviveCounterChanged, int32, RevivesLeft);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnTeamDown, bool, boolValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnObjectivesCompleted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnObjectiveAdded, UObjective*, Objective);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnDifficultyChanged, UDifficultySetting*, Setting);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateSessionLeaderChanged, const APlayerState*, PlayerState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnCountdownTimeChanged, int32, SecondsLeft);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnMissionTimeUpdated, int32, Value);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnPlayerLeave, AFSDPlayerState*, PlayerState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnCountdownStarted, const FText&, countdownText);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnPlayerJoined, AFSDPlayerState*, PlayerState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnTerrainGenerated);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnTerrainGenerationStarting);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnMatchStarted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnMatchEnded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnCountdownFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnGameEventCompletedEvent, FText, GameEventName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnContinueActive);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnContinueCountdownChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnAllDwarvesDown);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnTeamMemberCampaignMissionChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDGameStateOnEnemyKilledEvent, const FGameplayTagContainer&, enemyTags, AActor*, killedEnemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnPlayerCharacterRegistered, APlayerCharacter*, PlayerCharacter);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnBoscoReviveCounterChanged, int32, RevivesLeft);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnTeamDown, bool, boolValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameStateOnObjectivesCompleted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnObjectiveAdded, UObjective*, Objective);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnDifficultyChanged, UDifficultySetting*, Setting);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateSessionLeaderChanged, const APlayerState*, PlayerState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameStateOnCountdownTimeChanged, int32, SecondsLeft);
 
 UCLASS()
 class FSD_API AFSDGameState : public AGameState {
@@ -323,7 +323,7 @@ public:
     void SetCompletionData(bool NewObjectivesCompleted, int32 playersInPod);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveGeneratedMissionReplicated();
     
 public:
@@ -333,54 +333,54 @@ public:
     UFUNCTION(BlueprintCallable)
     void PostGameMessage(const FString& Msg);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_StartPressed(bool oldStartPressed);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ObjectivesCompleted();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_MissionTime();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_GeneratedMissionSeed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_FSDSessionID();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CurrentDifficultySetting();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CountdownText();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CountdownRemaining(int32 prevTime);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ContinuePressed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ContinueCountdown();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CompletedGameEvent();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_BoscoReviveCounter();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AllDwarvesDown();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 MissionEndscreenSeed();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTutorialMission() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCountingDown() const;
     
     UFUNCTION(BlueprintCallable)
@@ -389,90 +389,90 @@ public:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void HostDisbandedTeam();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasObjectivesReplicated() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void HandleSeamlessTravelEvent();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDPlayerState* GetServerPlayerState();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObjective* GetSecondaryObjective() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AProceduralSetup* GetProceduralSetup();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObjective* GetPrimaryObjective() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPreventLatejoinCharacterDuplication() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPlayersHaveReachedDroppod() const;
     
-    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     TArray<TSubclassOf<APlayerCharacter>> GetPlayableCharacters();
     
-    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     TArray<UPlayerCharacterID*> GetPlayableCharacterIDs();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UObjective*> GetObjectives() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AFSDPlayerState*> GetNetworkSortedPlayerArray();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMissionTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetMissionSuccessful() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMissionStartTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMissionRewardCreditSum() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FCreditsReward> GetMissionRewardCredits() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetMissionCompletedCreditReward(bool primary, int32& OutReward) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetGlobalMissionSeed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AGameStats* GetGameStats() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<UResourceData*, float> GetEndscreenResources() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDifficultyManager* GetDifficultyManager() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<UResourceData*, float> GetCollectedResources() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UFSDEvent*> GetActiveEventsFromMission() const;
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void ClientNewMessage(const FFSDChatMessage& Msg);
     
     UFUNCTION(BlueprintCallable)
     void Client_StartPressed();
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Client_NewLocalizedMessage(const FFSDLocalizedChatMessage& Msg);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AllMissionEndResultsReceived() const;
     
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)

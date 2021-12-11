@@ -3,13 +3,13 @@
 #include "EnemyPawn.h"
 #include "ParasiteEnemy.generated.h"
 
-class UParticleSystem;
-class USceneComponent;
-class UStaticMeshComponent;
 class USkeletalMeshComponent;
 class UOutlineComponent;
-class USoundBase;
+class USceneComponent;
 class UHealthComponentBase;
+class UStaticMeshComponent;
+class UParticleSystem;
+class USoundBase;
 
 UCLASS()
 class AParasiteEnemy : public AEnemyPawn {
@@ -37,7 +37,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
     USoundBase* deathSound;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSelfDeath(UHealthComponentBase* aHealthComponent);
     
 public:

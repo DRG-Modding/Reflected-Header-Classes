@@ -6,11 +6,11 @@
 #include "GooPuddleStatusEffectTrigger.h"
 #include "GooGunPuddle.generated.h"
 
-class UPrimitiveComponent;
 class USphereComponent;
-class UStatusEffect;
 class USimpleHealthComponent;
+class UPrimitiveComponent;
 class USoundBase;
+class UStatusEffect;
 class UDamageClass;
 
 UCLASS()
@@ -44,19 +44,19 @@ public:
     void SetStatusEffect(TSubclassOf<UStatusEffect> NewStatusEffect);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStatusEffectAdded(const FGooPuddleStatusEffectTrigger& Trigger);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActiveStatusEffectTriggersMask(int32 PreviousMask);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPuddleEndOverLap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPuddleBeginOverLap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHit(float Damage, UDamageClass* DamageClass, AActor* DamageCauser, bool anyHealthLost);
     
 public:

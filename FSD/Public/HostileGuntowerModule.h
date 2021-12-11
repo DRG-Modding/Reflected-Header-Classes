@@ -30,18 +30,20 @@ protected:
     UPROPERTY(BlueprintReadOnly, Replicated, Transient)
     FRotator CurrentAimRotation;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnWeakpointDied(UHealthComponentBase* Health);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ModuleMaxHealth();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnModuleDied(UHealthComponentBase* Health);
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AHostileGuntowerModule();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

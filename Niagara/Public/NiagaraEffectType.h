@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "NiagaraSystemScalabilitySettingsArray.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "ENiagaraCullReaction.h"
 #include "ENiagaraScalabilityUpdateFrequency.h"
 #include "NiagaraSystemScalabilitySettings.h"
-#include "ENiagaraCullReaction.h"
-#include "NiagaraSystemScalabilitySettingsArray.h"
 #include "NiagaraEmitterScalabilitySettingsArray.h"
 #include "NiagaraEffectType.generated.h"
 

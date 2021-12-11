@@ -6,8 +6,8 @@
 #include "TetherStation.generated.h"
 
 class USceneComponent;
-class AFacilityGeneratorLine;
 class USkeletalMeshComponent;
+class AFacilityGeneratorLine;
 
 UCLASS()
 class FSD_API ATetherStation : public AActor {
@@ -38,21 +38,21 @@ protected:
     void SetGeneratorsReady(bool ready);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Onrep_FacilityActive();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AreGeneratorsReady();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnGeneratorsReady();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnActivated();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DisableShields();
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

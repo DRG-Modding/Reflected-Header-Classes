@@ -5,7 +5,7 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "TerrainDetectComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTerrainDetectComponentOnPointRemoved);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTerrainDetectComponentOnPointRemoved);
 
 UCLASS(BlueprintType)
 class UTerrainDetectComponent : public USceneComponent, public ITerrainDetectInterface {
@@ -39,5 +39,7 @@ public:
     void StartDetect();
     
     UTerrainDetectComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

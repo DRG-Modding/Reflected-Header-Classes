@@ -9,10 +9,10 @@ UCLASS()
 class UMG_API UColorBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     FSlateColor GetSlateValue() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     FLinearColor GetLinearValue() const;
     
     UColorBinding();

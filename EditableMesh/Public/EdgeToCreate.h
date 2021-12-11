@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: MeshDescription VertexID
-#include "MeshElementAttributeList.h"
 //CROSS-MODULE INCLUDE: MeshDescription EdgeID
+#include "MeshElementAttributeList.h"
 #include "EdgeToCreate.generated.h"
 
 USTRUCT(BlueprintType)

@@ -2,38 +2,38 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "ECharacterState.h"
 #include "CarriedItemState.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "EItemCategory.h"
+#include "ECharacterState.h"
 #include "InventoryComponent.generated.h"
 
-class AItem;
 class APickaxeItem;
+class AItem;
 class UInventoryComponent;
-class AActor;
-class ALaserPointerItem;
 class ARecallableSentryGunItem;
-class AThrownGrenadeItem;
+class ALaserPointerItem;
 class UInventoryList;
-class USoundCue;
-class ATerrainScannerItem;
+class AActor;
 class ARessuplyPodItem;
+class AThrownGrenadeItem;
+class ATerrainScannerItem;
 class UItemUpgrade;
+class USoundCue;
 class UDialogDataAsset;
 class AFlare;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryComponentOnMaxFlareCountChanged, int32, CurrentCount, UInventoryComponent*, Inventory);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FInventoryComponentOnItemsLoaded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnItemClicked, AItem*, Item);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnItemEquipped, AItem*, Item);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnGrenadeCountChanged, int32, CurrentCount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryComponentOnFlareProduction, int32, NextIndex, float, Progress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnItemUnequipped, AItem*, Item);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryComponentOnFlareCountChanged, int32, CurrentCount, UInventoryComponent*, Inventory);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnResuppliedEvent, float, percentage);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnCarriableChangedEvent, AActor*, carriedActor);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryComponentOnMaxFlareCountChanged, int32, CurrentCount, UInventoryComponent*, inventory);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FInventoryComponentOnItemsLoaded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnItemClicked, AItem*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnItemEquipped, AItem*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnGrenadeCountChanged, int32, CurrentCount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryComponentOnFlareProduction, int32, NextIndex, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnItemUnequipped, AItem*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInventoryComponentOnFlareCountChanged, int32, CurrentCount, UInventoryComponent*, inventory);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnResuppliedEvent, float, percentage);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryComponentOnCarriableChangedEvent, AActor*, carriedActor);
 
 UCLASS(BlueprintType)
 class UInventoryComponent : public UActorComponent {
@@ -161,14 +161,14 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void UpdateFromSaveGameInSlot(EItemCategory Category);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void StartGrenadeThrow();
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ThrowFlare();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Equip(AItem* Item);
     
 public:
@@ -185,44 +185,44 @@ public:
     AItem* PickupItem(TSubclassOf<AItem> itemClass);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PickedUpItem();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Items();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EquippedItem(AItem* oldItem);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CarriedItem(FCarriedItemState& LastCarriedItem);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCharacterStateChanged(ECharacterState NewState);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTerrainScannerEquipped() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasPickedUpItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasDrink() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTotalAmmoLeft() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ARecallableSentryGunItem* GetRecallableSentryGunItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AItem* GetItem(EItemCategory Category) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetCarriedItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AItem*> GetAllItems() const;
     
     UFUNCTION(BlueprintCallable)
@@ -237,21 +237,21 @@ public:
     UFUNCTION(BlueprintCallable)
     void Equip(AItem* Item, bool ignoreIsUsing);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void EndGrenadeThrow();
     
     UFUNCTION(BlueprintCallable)
     void DropPickedupItem();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CreateStartingEquipmentWhenItemsLoaded();
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_Resupply(float percentage);
     
 public:
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_DropPickedUpItem();
     
     UFUNCTION(BlueprintCallable)

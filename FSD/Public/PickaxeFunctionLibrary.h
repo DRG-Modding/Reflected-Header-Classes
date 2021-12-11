@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-#include "PickaxeSet.h"
 #include "EPickaxePartLocation.h"
+#include "PickaxeSet.h"
 #include "PickaxeFunctionLibrary.generated.h"
 
 class UPickaxePart;
@@ -16,7 +16,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool RemovePickaxePartFromOwned(UObject* WorldContextObject, const UPickaxePart* part);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsPickaxePartEquipped(UObject* WorldContextObject, EPickaxePartLocation Location, UPickaxePart* part, UItemID* pickaxeID);
     
     UFUNCTION(BlueprintCallable)
@@ -25,13 +25,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<UPickaxePart*> GetPickaxeParts(UObject* WorldContextObject, EPickaxePartLocation Category);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetIsPickAxePartAcquired(UObject* WorldContextObject, const UPickaxePart* InPickaxePart);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FPickaxeSet GetEquippedPickaxeSet(UObject* WorldContextObject, UItemID* pickaxeID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UPickaxePart* GetEquippedPickaxePart(UObject* WorldContextObject, EPickaxePartLocation partLocation, UItemID* pickaxeID);
     
     UFUNCTION(BlueprintCallable)

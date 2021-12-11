@@ -1,7 +1,7 @@
 #include "LevelSequencePlayer.h"
 
-class UCameraComponent;
 class UObject;
+class UCameraComponent;
 class ULevelSequencePlayer;
 class ULevelSequence;
 class ALevelSequenceActor;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBTParallelMode.h"
 #include "BTCompositeNode.h"
+#include "EBTParallelMode.h"
 #include "BTComposite_SimpleParallel.generated.h"
 
 UCLASS()

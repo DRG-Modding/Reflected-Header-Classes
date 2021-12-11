@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "FSDPawn.h"
-#include "TriggerAI.h"
 //CROSS-MODULE INCLUDE: Engine VisualLoggerDebugSnapshotInterface
+#include "TriggerAI.h"
 #include "DeepPathfinderCharacter.generated.h"
 
-class USkeletalMeshComponent;
 class UDeepPatherFinderCharacterAfflictionComponent;
 class UDeepPathfinderMovement;
+class USkeletalMeshComponent;
 class UMaterialInterface;
 
 UCLASS()
@@ -71,16 +71,18 @@ public:
     void SetHidden(bool shouldHide);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPausedMovementElapsed();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnControlledByPlayer(bool IsControlled, bool IsLocallyControlled);
     
     UFUNCTION(BlueprintCallable)
     void LeaveFormation();
     
     ADeepPathfinderCharacter();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

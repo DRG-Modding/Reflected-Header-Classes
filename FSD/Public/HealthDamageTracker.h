@@ -5,7 +5,7 @@
 
 class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthDamageTrackerOnTrackedPercentageReachedEvent, float, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthDamageTrackerOnTrackedPercentageReachedEvent, float, Amount);
 
 UCLASS(BlueprintType)
 class UHealthDamageTracker : public UActorComponent {
@@ -26,7 +26,7 @@ public:
     void ResetTrackedDamage();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDamageTaken(float Amount);
     
 public:

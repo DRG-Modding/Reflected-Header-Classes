@@ -1,35 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 //CROSS-MODULE INCLUDE: Engine PlayerState
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 #include "RewardTexts.h"
+#include "EChatSenderType.h"
 #include "XPReward.h"
 #include "CharacterProgress.h"
 #include "EGameOwnerStatus.h"
 #include "CreditsReward.h"
-#include "EChatSenderType.h"
 #include "FSDPlayerState.generated.h"
 
 class UPlayerStatsComponent;
+class UDamageClass;
 class UPlayerResourceComponent;
 class APlayerCharacter;
-class UDamageClass;
-class UPlayerCharacterID;
 class AActor;
-class UPlayerRejoinState;
 class UVanityItem;
+class UPlayerRejoinState;
 class USaveGameStateComponent;
+class UPlayerCharacterID;
 class AFSDPlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnPlayerCharacterSpawned, APlayerCharacter*, PlayerCharacter);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnFractionLevelGenerated, float, Fraction);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnPlayerTalkingChanged, bool, IsTalking);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnSelectedCharacterChanged, TSubclassOf<APlayerCharacter>, NewCharacter);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDPlayerStateOnSupplyStatusChangedEvent, float, ammoStatus01, float, healthStatus01);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnLevelGenerationStateChanged, const FString&, NewState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FFSDPlayerStateOnEnemyKilledEvent, const FGameplayTagContainer&, enemyTags, AActor*, enemy, UDamageClass*, DamageClass);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnPlayerNameChanged, const FString&, NewName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnPlayerCharacterSpawned, APlayerCharacter*, PlayerCharacter);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnFractionLevelGenerated, float, Fraction);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnPlayerTalkingChanged, bool, IsTalking);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnSelectedCharacterChanged, TSubclassOf<APlayerCharacter>, NewCharacter);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDPlayerStateOnSupplyStatusChangedEvent, float, ammoStatus01, float, healthStatus01);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnLevelGenerationStateChanged, const FString&, NewState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FFSDPlayerStateOnEnemyKilledEvent, const FGameplayTagContainer&, enemyTags, AActor*, enemy, UDamageClass*, DamageClass);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerStateOnPlayerNameChanged, const FString&, NewName);
 
 UCLASS()
 class AFSDPlayerState : public APlayerState {
@@ -137,100 +137,100 @@ public:
     void SetCanOnlySpectate(bool canOnlySpectate);
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetSelectedCharacter(TSubclassOf<APlayerCharacter> NewCharacter);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetSupplyStatus(uint8 StatusHealth, uint8 StatusAmmo);
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetGameOwnerStatus(int32 NewGameOwnerStatus);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SupplyHealthStatus();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SupplyAmmoStatus();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SelectedCharacter();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PlayerCharacter();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_LevelGenerationState();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_GameOwnerStatus();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_FractionLevelGenerated();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLateJoinFinished();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasNormalOwnerStatus() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetXPRewardsSum();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FXPReward> GetXPRewards();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FXPReward> GetXPRewardDeepDive(int32 StagesCompleted);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetUIPing();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSupplyHealthStatus() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSupplyAmmoStatus() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSelectedCharacterLevel() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerCharacterID* GetSelectedCharacterID() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<APlayerCharacter> GetSelectedCharacter() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FCharacterProgress GetSelectCharacterProgress();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerResourceComponent* GetPlayerResourceComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPlayerRank() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDPlayerController* GetPlayerController() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasGeneratedLevel() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetGameOwnerStatus(EGameOwnerStatus Status) const;
     
-    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     TArray<FCreditsReward> GetDeepDiveCreditsReward(int32 StagesCompleted, int32 goldCollected);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EChatSenderType GetChatSenderType() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FCharacterProgress GetCharacterProgress(UPlayerCharacterID* characterID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCharacterLevel(UPlayerCharacterID* characterID) const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

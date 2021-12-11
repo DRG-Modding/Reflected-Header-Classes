@@ -3,22 +3,23 @@
 //CROSS-MODULE INCLUDE: Engine Pawn
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagAssetInterface
 #include "Targetable.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 #include "ProjectileSpawner.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EPawnAttitude.h"
 #include "FSDPawn.generated.h"
 
-class UStatusEffectsComponent;
 class UEnemyTemperatureComponent;
-class AFSDAIController;
+class UStatusEffectsComponent;
 class UEnemyDescriptor;
 class UPawnStatsComponent;
 class AActor;
 class USkeletalMeshComponent;
 class UHealthComponentBase;
+class AFSDAIController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPawnOnFrozenEvent, bool, boolValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPawnOnFrozenEvent, bool, boolValue);
 
 UCLASS(Abstract)
 class AFSDPawn : public APawn, public IGameplayTagAssetInterface, public ITargetable, public IProjectileSpawner {
@@ -69,53 +70,53 @@ public:
     void SetAlerted(bool isAlerted);
     
 protected:
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void Receive_Alerted();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnUnFrozen();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStoppedFleeing();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStartedFleeing();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFrozen();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnFrozen(AActor* Source);
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void OnFirstHostileDamageTaken();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEnemyScaled(float newScale);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnArmorShattered(const FVector& Location);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAlerted();
     
 public:
     UFUNCTION(BlueprintCallable)
     void MakeRagdollMesh(USkeletalMeshComponent* Mesh);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void MakeElite();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool GetIsAlerted() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UHealthComponentBase* GetHealthComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDAIController* GetFSDAIController() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EPawnAttitude GetAttitude() const;
     
     UFUNCTION(BlueprintCallable)
@@ -130,5 +131,19 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AFSDPawn();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override PURE_VIRTUAL(HasMatchingGameplayTag, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAnyMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAllMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(GetOwnedGameplayTags,);
+    
 };
 

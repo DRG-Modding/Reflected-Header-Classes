@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine PrimitiveComponent
-#include "LandscapeComponentMaterialOverride.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Vector4
+//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "LandscapeComponentMaterialOverride.h"
 //CROSS-MODULE INCLUDE: CoreUObject Box
 #include "WeightmapLayerAllocationInfo.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "LandscapeComponent.generated.h"
 
-class ULandscapeLayerInfoObject;
-class UMaterialInstanceDynamic;
-class UMaterialInterface;
 class UMaterialInstanceConstant;
+class UMaterialInterface;
+class UMaterialInstanceDynamic;
 class UTexture2D;
 class ULandscapeHeightfieldCollisionComponent;
+class ULandscapeLayerInfoObject;
 
 UCLASS(MinimalAPI, Within=LandscapeProxy)
 class ULandscapeComponent : public UPrimitiveComponent {
@@ -133,7 +133,7 @@ public:
     UPROPERTY(NonPIEDuplicateTransient)
     TArray<UTexture2D*> MobileWeightmapTextures;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInstanceDynamic* GetMaterialInstanceDynamic(int32 InIndex) const;
     
     UFUNCTION(BlueprintCallable)

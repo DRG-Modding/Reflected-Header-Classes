@@ -9,7 +9,7 @@ UCLASS(BlueprintType)
 class FIELDSYSTEMENGINE_API UReturnResultsTerminal : public UFieldNodeBase {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UReturnResultsTerminal* SetReturnResultsTerminal();
     
     UReturnResultsTerminal();

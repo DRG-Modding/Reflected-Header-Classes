@@ -1,8 +1,8 @@
 #include "StatusEffectsComponent.h"
 #include "Templates/SubclassOf.h"
 
-class UStatusEffect;
 class UObject;
+class UStatusEffect;
 class AActor;
 class UHealthComponentBase;
 

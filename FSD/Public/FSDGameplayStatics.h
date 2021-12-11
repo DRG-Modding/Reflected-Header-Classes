@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+#include "DecalData.h"
 #include "ScaledEffect.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
-#include "DecalData.h"
 #include "FSDGameplayStatics.generated.h"
 
 class UFXSystemComponent;
 class UObject;
 class UDecalComponent;
-class AActor;
 class UMaterialInterface;
+class AActor;
 class UAudioComponent;
 
 UCLASS(BlueprintType)

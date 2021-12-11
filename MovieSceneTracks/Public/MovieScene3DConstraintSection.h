@@ -17,10 +17,10 @@ protected:
     FMovieSceneObjectBindingID ConstraintBindingID;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void SetConstraintBindingID(const FMovieSceneObjectBindingID& InConstraintBindingID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FMovieSceneObjectBindingID GetConstraintBindingID() const;
     
     UMovieScene3DConstraintSection();

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: ClothingSystemRuntimeCommon ClothConfigCommon
+#include "EClothingWindMethodNv.h"
 //CROSS-MODULE INCLUDE: ClothingSystemRuntimeCommon EClothingWindMethod_Legacy
 #include "ClothConstraintSetupNv.h"
-#include "EClothingWindMethodNv.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: ClothingSystemRuntimeCommon ClothConstraintSetup_Legacy
 #include "ClothConfigNv.generated.h"

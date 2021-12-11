@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "GooGunProjectileUpgrade.generated.h"
 
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UGooGunProjectileUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EGooGunProjectileUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> Item, TSubclassOf<AActor> upgradedItem, EGooGunProjectileUpgrades NewUpgradeType);
     
     UGooGunProjectileUpgrade();

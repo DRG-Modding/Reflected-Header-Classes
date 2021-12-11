@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject SoftClassPath
 //CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
+//CROSS-MODULE INCLUDE: CoreUObject SoftClassPath
 #include "StructSerializerObjectTestStruct.generated.h"
 
 class UMetaData;

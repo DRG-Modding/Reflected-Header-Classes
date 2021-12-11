@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore ETextCommit
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "Widget.h"
-//CROSS-MODULE INCLUDE: SlateCore EditableTextStyle
-#include "ShapedTextOptions.h"
-//CROSS-MODULE INCLUDE: Slate VirtualKeyboardOptions
 //CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
-//CROSS-MODULE INCLUDE: Slate EVirtualKeyboardTrigger
+//CROSS-MODULE INCLUDE: SlateCore EditableTextStyle
 #include "EVirtualKeyboardType.h"
+//CROSS-MODULE INCLUDE: Slate VirtualKeyboardOptions
+//CROSS-MODULE INCLUDE: Slate EVirtualKeyboardTrigger
 //CROSS-MODULE INCLUDE: Slate EVirtualKeyboardDismissAction
 //CROSS-MODULE INCLUDE: Slate ETextJustify
+#include "ShapedTextOptions.h"
+//CROSS-MODULE INCLUDE: SlateCore ETextCommit
 #include "EditableText.generated.h"
 
-class USlateBrushAsset;
 class USlateWidgetStyleAsset;
+class USlateBrushAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FEditableTextTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FEditableTextHintTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEditableTextOnTextChanged, const FText&, Text);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEditableTextOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FEditableTextTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FEditableTextHintTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEditableTextOnTextChanged, const FText&, Text);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEditableTextOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
 
 UCLASS()
 class UMG_API UEditableText : public UWidget {
@@ -124,7 +124,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetHintText(FText InHintText);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetText() const;
     
     UEditableText();

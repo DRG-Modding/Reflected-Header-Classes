@@ -1,10 +1,10 @@
 #include "PickaxeItem.h"
 #include "Net/UnrealNetwork.h"
 
-class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
 class UParticleSystem;
 class USoundCue;
+class UPrimitiveComponent;
 
 
 void APickaxeItem::SetSpecialCoolDownDuration(float newCooldownDuration) {

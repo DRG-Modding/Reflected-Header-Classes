@@ -1,11 +1,11 @@
 #include "SessionHandling.h"
 #include "Templates/SubclassOf.h"
 
-class UObject;
 class UFSDGameInstance;
+class UObject;
+class UDifficultySetting;
 class UPlayerCharacterID;
 class APlayerCharacter;
-class UDifficultySetting;
 class UBiome;
 class UMissionTemplate;
 

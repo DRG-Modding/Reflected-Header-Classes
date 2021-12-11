@@ -13,7 +13,7 @@ protected:
     UPROPERTY(Export, Transient)
     TArray<URDGComponent*> ActiveGrenades;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_DetonateAll();
     
 public:

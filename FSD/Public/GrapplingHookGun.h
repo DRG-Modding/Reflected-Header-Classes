@@ -6,9 +6,9 @@
 #include "GraplingGunState.h"
 #include "GrapplingHookGun.generated.h"
 
+class AGrapplingHookGun;
 class UCoolDownItemAggregator;
 class UAnimMontage;
-class AGrapplingHookGun;
 
 UCLASS(Abstract)
 class AGrapplingHookGun : public AAnimatedItem, public IUpgradable {
@@ -57,10 +57,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     bool StartGrapple();
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetState(const FGraplingGunState& NewState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State(const FGraplingGunState& prevState);
     
 public:
@@ -68,27 +68,29 @@ public:
     void OnReleaseHook();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnGrappleUpdate(float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnGrappleStart();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnGrappleFailed(bool TooFar);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnGrappleEnd();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetWindUpProgress() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetCooldownDuration(TSubclassOf<AGrapplingHookGun> GrapplingHookGun);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AGrapplingHookGun();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

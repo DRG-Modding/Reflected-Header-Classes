@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieScene3DConstraintSection.h"
-//CROSS-MODULE INCLUDE: Engine EDetachmentRule
 //CROSS-MODULE INCLUDE: Engine EAttachmentRule
+//CROSS-MODULE INCLUDE: Engine EDetachmentRule
 #include "MovieScene3DAttachSection.generated.h"
 
 UCLASS(MinimalAPI)

@@ -5,7 +5,7 @@
 
 class UNoOxygenMutator;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOxygenSourceComponentOnOxygenActivationChanged, bool, IsActive);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOxygenSourceComponentOnOxygenActivationChanged, bool, IsActive);
 
 UCLASS(Blueprintable)
 class UOxygenSourceComponent : public UActorComponent {
@@ -24,10 +24,10 @@ protected:
     UPROPERTY(Transient)
     UNoOxygenMutator* Mutator;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTimerTick();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSourceActivated();
     
 public:

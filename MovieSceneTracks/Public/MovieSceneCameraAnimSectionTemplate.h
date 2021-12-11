@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
 #include "MovieSceneAdditiveCameraAnimationTemplate.h"
 #include "MovieSceneCameraAnimSectionData.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
 #include "MovieSceneCameraAnimSectionTemplate.generated.h"
 
 USTRUCT()

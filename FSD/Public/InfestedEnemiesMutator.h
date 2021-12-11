@@ -15,7 +15,7 @@ protected:
     TArray<UParticleSystem*> SpawnEffects;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UParticleSystem* GetParticleSystem(AFSDPawn* enemy) const;
     
     UInfestedEnemiesMutator();

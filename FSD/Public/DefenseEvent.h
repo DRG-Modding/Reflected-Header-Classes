@@ -20,7 +20,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_Progress)
     float Progress;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Progress(float OldValue);
     
 public:

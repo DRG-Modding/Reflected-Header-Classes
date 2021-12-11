@@ -16,11 +16,11 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetLegsVisibleOnScanner();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void OnLegsSetVisible();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AGem*> FindLegsInLevelSortedByDistance() const;
     
     AMiniMule();

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "NiagaraDetailsLevelScaleOverrides.h"
 //CROSS-MODULE INCLUDE: CoreUObject Box
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EParticleAllocationMode.h"
 #include "NiagaraEmitterScriptProperties.h"
-#include "NiagaraEmitterScalabilityOverrides.h"
-#include "NiagaraDetailsLevelScaleOverrides.h"
 #include "ENiagaraSimTarget.h"
+#include "NiagaraEmitterScalabilityOverrides.h"
 #include "NiagaraPlatformSet.h"
 #include "NiagaraEventScriptProperties.h"
 #include "NiagaraEmitter.generated.h"

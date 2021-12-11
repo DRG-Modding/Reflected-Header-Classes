@@ -11,7 +11,7 @@ class UBPInstantUsable : public UInstantUsable {
     GENERATED_BODY()
 public:
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPCanUse(APlayerCharacter* User, USceneComponent* UseCollider) const;
     
 public:

@@ -1,9 +1,9 @@
 #include "TreasureFunctionLibrary.h"
 
-class UObject;
-class UItemID;
-class AProceduralSetup;
 class UItemSkin;
+class UObject;
+class AProceduralSetup;
+class UItemID;
 
 bool UTreasureFunctionLibrary::IsBoxInWall(UObject* WorldContextObject, AProceduralSetup* setup, float SizeX, float SizeY, float sizeZ, const FTransform& transorm) {
     return false;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnemyGroupDescriptorItem.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
+#include "EnemyGroupDescriptorItem.h"
 #include "RandInterval.h"
 #include "EnemyGroupDescriptor.generated.h"
 

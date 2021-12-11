@@ -1,42 +1,42 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine GameUserSettings
-#include "ModdingUISettings.h"
-#include "EConsoleGraphicsMode.h"
-#include "HUDElements.h"
 #include "CharacterOptions.h"
-//CROSS-MODULE INCLUDE: CoreUObject IntPoint
+#include "EConsoleGraphicsMode.h"
+//CROSS-MODULE INCLUDE: Engine GameUserSettings
+#include "ControllerSettings.h"
+#include "ModdingUISettings.h"
+#include "HUDElements.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "EFSDInputSource.h"
+//CROSS-MODULE INCLUDE: CoreUObject IntPoint
 //CROSS-MODULE INCLUDE: Engine EWindowMode
 #include "CustomKeyBinding.h"
-#include "ControllerSettings.h"
 #include "EVolumeType.h"
 #include "ESteamSearchRegion.h"
 #include "ESaveSlotChangeProcedure.h"
 #include "FSDGameUserSettings.generated.h"
 
-class UDifficultySetting;
 class USoundClass;
 class APlayerController;
 class UObject;
+class UDifficultySetting;
 class UFSDGameUserSettings;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnFontSizeChanged, int32, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnShowFPSChanged, bool, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnUseHoldToRunChanged, bool, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnFOVChanged, float, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameUserSettingsOnModdingSettingsChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnLanguageChanged, const FString&, Culture);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnJukeboxStreamerModeChanged, bool, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnGameServerNameChanged, const FString&, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnCanShowBloodChanged, bool, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnInputSourceChanged, EFSDInputSource, InputSource);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnEnableTutorialHintsChanged, bool, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnShowNetInfoLevelChanged, int32, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnDx12Enabled, bool, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnShowUpgradeExtraDetailsChanged, bool, NewValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameUserSettingsOnCustomKeyBindingsChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnFontSizeChanged, int32, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnShowFPSChanged, bool, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnUseHoldToRunChanged, bool, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnFOVChanged, float, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameUserSettingsOnModdingSettingsChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnLanguageChanged, const FString&, Culture);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnJukeboxStreamerModeChanged, bool, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnGameServerNameChanged, const FString&, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnCanShowBloodChanged, bool, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnInputSourceChanged, EFSDInputSource, InputSource);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnEnableTutorialHintsChanged, bool, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnShowNetInfoLevelChanged, int32, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnDx12Enabled, bool, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDGameUserSettingsOnShowUpgradeExtraDetailsChanged, bool, NewValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDGameUserSettingsOnCustomKeyBindingsChanged);
 
 UCLASS()
 class UFSDGameUserSettings : public UGameUserSettings {
@@ -573,7 +573,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void PostInitFSDUserSettings(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsVoiceChatEnabled() const;
     
 protected:
@@ -581,10 +581,10 @@ protected:
     bool IsDx12Enabled();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDebugLocalizerModeEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsCurrentInputSource(EFSDInputSource InputSource);
     
 protected:
@@ -592,210 +592,210 @@ protected:
     void InitializeDifficultySelection(UObject* WorldContext, const TArray<UDifficultySetting*> StartSelection);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasAudioOutputDeviceChanged(FString& AudioDeviceChangedTo);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetZiplineGunAutoSwitch() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetVSyncEnabledToBeApplied();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVolume(EVolumeType volumeType);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetUseToggleTerrainScanner() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetUseToggleLaserpointer() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetUseStreamerProgram() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetUseSeparateSensitivity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetUseProfanityFilter() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetUseHoldToRun() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetUseDefaultAudioOutputDevice() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetUseCustomUIScale();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetUIDPIScale() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetTutorialHintsEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetTemporalAAUpscalingEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESteamSearchRegion GetSteamSearchRegion() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowUIAnimations() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowSubtitles() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowSandboxLabel() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetShowNetInfoLevel() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowFPS() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSharpening() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FIntPoint GetScreenResolutionToBeApplied();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPushToTalk() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPreventLatejoinCharacterDuplication() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPlaySoundOnChatMessage() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPhotosensitiveMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMouseYSensitivity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMouseXSensitivity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetModdingServerFilterEnabled(uint8 ServerFilter);
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsDifficultySelected(UDifficultySetting* Difficulty) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetInvertMouseWheel() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetInvertMouse() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetInvertFlightControls() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EFSDInputSource GetInputSource();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHeadBobbingScale() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHDRColorGamma();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetGrapplingHookAutoSwitch() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetGamma() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TEnumAsByte<EWindowMode::Type> GetFullscreenModeToBeApplied();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UFSDGameUserSettings* GetFSDGameUserSettings();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetFOV() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetForceFeedbackScale() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetDx12EnabledToBeApplied();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDownCameraTurnDirection(EFSDInputSource InputSource) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetDisableMasterEQ();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetCurrentUserSaveSlotName();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EFSDInputSource GetCurrentInputSource();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCurrentAudioOutputDevice(UObject* WorldContextObject, FString& AudioDevice);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetCurrentAudioInputDeviceName();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentAudioInputDeviceAmplitude(int32 localUserId);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EConsoleGraphicsMode GetConsoleGraphicsMode();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCheckForOutOfBounds();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetChatFontSize() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetChatFadeTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCameraShakeScale() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAvaliableAudioOutputDevices(UObject* WorldContextObject, TArray<FString>& AudioDevices);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAvaliableAudioInputDevices(TArray<FString>& AudioDevices);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAvailableScreenResolutionsForNonPrimaryMonitors(TArray<FIntPoint>& Resolutions);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAutoRefreshServerlist() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetAudioOutputDeviceName(UObject* WorldContextObject, const FString& DeviceID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAppearOffline();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetAntiAliasingType() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAimSensitivity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAimOuterAcceleration() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAimDeadZone() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GameServerNameFiltered() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GameServerName() const;
     
     UFUNCTION(BlueprintCallable)
@@ -804,13 +804,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static UFSDGameUserSettings* FSDGameUserSettings();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ConsoleGraphicsModeAvailable(EConsoleGraphicsMode Mode);
     
     UFUNCTION(BlueprintCallable)
     void ClearCustomKeyBindings(bool InGamepadKeys);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanShowBlood() const;
     
     UFUNCTION(BlueprintCallable)

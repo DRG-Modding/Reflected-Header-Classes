@@ -1,8 +1,8 @@
 #include "PlayMontageCallbackProxy.h"
 
-class UPlayMontageCallbackProxy;
 class UAnimMontage;
 class USkeletalMeshComponent;
+class UPlayMontageCallbackProxy;
 
 void UPlayMontageCallbackProxy::OnNotifyEndReceived(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointNotifyPayload) {
 }

@@ -29,5 +29,7 @@ protected:
     
 public:
     USavablePrimaryDataAsset();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

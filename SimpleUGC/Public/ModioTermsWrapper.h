@@ -28,7 +28,7 @@ public:
     UPROPERTY(BlueprintReadOnly)
     FString TermsOfUseText;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool isEmpty();
     
     UModioTermsWrapper();

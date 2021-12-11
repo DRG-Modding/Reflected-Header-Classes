@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ResourceChunk.generated.h"
 
-class APlayerCharacter;
 class USimpleObjectInfoComponent;
 class USoundCue;
 class UResourceData;
+class APlayerCharacter;
 
 UCLASS()
 class AResourceChunk : public AFSDPhysicsActor {
@@ -41,21 +41,21 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_CollectedBy)
     TWeakObjectPtr<APlayerCharacter> CollectedBy;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetCollectOpen();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CollectedBy();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UResourceData* GetResourceData() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetResourceAmount() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CalcMovement(float InProgress, const FVector& InVector, FVector& OutVelocity, FVector& OutAngularVelocity);
     
 public:

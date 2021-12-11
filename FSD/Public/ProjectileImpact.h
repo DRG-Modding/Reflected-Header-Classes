@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
 #include "ProjectileImpact.generated.h"
 
-class UPhysicalMaterial;
-class UPrimitiveComponent;
 class AActor;
+class UPrimitiveComponent;
+class UPhysicalMaterial;
 
 USTRUCT(BlueprintType)
 struct FProjectileImpact {

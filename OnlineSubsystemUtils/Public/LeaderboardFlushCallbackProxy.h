@@ -3,11 +3,11 @@
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "LeaderboardFlushCallbackProxy.generated.h"
 
-class APlayerController;
 class ULeaderboardFlushCallbackProxy;
+class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardFlushCallbackProxyOnSuccess, FName, SessionName);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardFlushCallbackProxyOnFailure, FName, SessionName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardFlushCallbackProxyOnSuccess, FName, SessionName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardFlushCallbackProxyOnFailure, FName, SessionName);
 
 UCLASS(BlueprintType, MinimalAPI)
 class ULeaderboardFlushCallbackProxy : public UObject {

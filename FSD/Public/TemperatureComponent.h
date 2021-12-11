@@ -24,7 +24,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void ResetTemperature();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     float GetCurrentTemperature() const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

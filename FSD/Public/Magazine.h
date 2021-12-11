@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: Engine HitResult
 #include "Skinnable.h"
+//CROSS-MODULE INCLUDE: Engine HitResult
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "Magazine.generated.h"
 
@@ -17,13 +17,15 @@ protected:
     UPROPERTY(EditAnywhere)
     USoundCue* ImpactGroundSound;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnItemSkinned(USkinEffect* Skin);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ActorWasHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     
 public:
     AMagazine();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,36 +1,36 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WeaponFireOwner.h"
 #include "AnimatedItem.h"
+#include "UpgradableGear.h"
+#include "WeaponFireOwner.h"
 #include "RejoinListener.h"
 #include "Upgradable.h"
-#include "UpgradableGear.h"
-#include "EAmmoWeaponState.h"
 #include "ItemAnimationItem.h"
 #include "TracerData.h"
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 #include "RecoilSettings.h"
+#include "EAmmoWeaponState.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "AmmoDrivenWeapon.generated.h"
 
-class UAnimMontage;
-class UWeaponFireComponent;
-class UFXSystemAsset;
+class UForceFeedbackEffect;
 class UAmmoDriveWeaponAggregator;
+class UWeaponFireComponent;
+class UAnimMontage;
+class UFXSystemAsset;
 class UParticleSystem;
 class ULightComponent;
 class USoundCue;
-class UForceFeedbackEffect;
 class UAudioComponent;
 class UDialogDataAsset;
 class UItemUpgrade;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAmmoDrivenWeaponOnClipCountChanged, int32, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnItemAutoReloaded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnTryReloadEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnReloadingEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnShotFiredEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnStoppedUsingEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAmmoDrivenWeaponOnClipCountChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnItemAutoReloaded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnTryReloadEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnReloadingEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnShotFiredEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAmmoDrivenWeaponOnStoppedUsingEvent);
 
 UCLASS(Abstract)
 class AAmmoDrivenWeapon : public AAnimatedItem, public IWeaponFireOwner, public IUpgradable, public IUpgradableGear, public IRejoinListener {
@@ -245,20 +245,20 @@ protected:
     EAmmoWeaponState WeaponState;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Upgraded_Blueprint_Implementation(const TArray<UItemUpgrade*>& upgrades);
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_StopReload();
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ReloadWeapon();
     
-    UFUNCTION(Server, Unreliable)
+    UFUNCTION(BlueprintCallable, Server, Unreliable)
     void Server_PlayBurstFire(uint8 shotCount);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_Gunsling(uint8 Index);
     
 public:
@@ -266,61 +266,63 @@ public:
     void ResupplyAmmo(int32 Amount);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveFiredWeapon();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_ReloadEnd();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_ReloadBegin();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_IsFiringChanged(bool NewValue);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnWeaponFireEnded();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnWeaponFired(const FVector& Location);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRicochet(const FVector& Origin, const FVector& Location, const FVector& Normal);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFiring();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsClipFull() const;
     
     UFUNCTION(BlueprintCallable)
     void InstantlyReload();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CustomEvent1(const UItemUpgrade* Event);
     
 protected:
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_RefillAmmo(float percentage);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_StopReload();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_StartReload();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_PlayBurstFire(uint8 shotCount);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_Gunsling(uint8 Index);
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AAmmoDrivenWeapon();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

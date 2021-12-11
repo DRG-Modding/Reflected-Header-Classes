@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "WeakpointChannel.h"
-//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 #include "WeakpointGlowComponent.generated.h"
 
+class UMeshComponent;
 class UCurveFloat;
 class UHealthComponentBase;
-class UMeshComponent;
 class UFSDPhysicalMaterial;
 class UPrimitiveComponent;
 
@@ -39,7 +39,7 @@ public:
     bool StopLoopingGlow(int32 aGlowID, bool aFade);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ShowBodypartHit(float Amount, float BaseAmount, UPrimitiveComponent* Component, UFSDPhysicalMaterial* PhysMat, const FName& BoneName);
     
 public:
@@ -56,7 +56,7 @@ public:
     void EnableWeakpointRegistration(bool Enabled);
     
 protected:
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowWeakPointHit(uint8 Channel);
     
 public:

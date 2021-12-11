@@ -5,12 +5,12 @@
 class USoundBase;
 class UAudioComponent;
 class USceneComponent;
-class USoundConcurrency;
-class UItemCharacterAnimationSet;
-class UTexture2D;
 class USoundAttenuation;
+class USoundConcurrency;
 class AActor;
+class UTexture2D;
 class AItem;
+class UItemCharacterAnimationSet;
 
 void AItem::UpdateSkin() {
 }

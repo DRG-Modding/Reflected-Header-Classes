@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: Engine HitResult
 #include "TremorAttackComponent.generated.h"
 
-class UBoxComponent;
 class UParticleSystemComponent;
+class UBoxComponent;
 class UPrimitiveComponent;
 class AActor;
 
@@ -41,25 +41,25 @@ protected:
     UPROPERTY(EditAnywhere)
     float Duration;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void StopParticles();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void StartParticles();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetExitedTrigger(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetEnteredTrigger(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsAttackActive();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInited() const;
     
     UFUNCTION(BlueprintCallable)

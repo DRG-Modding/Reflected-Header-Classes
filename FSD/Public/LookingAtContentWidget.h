@@ -3,13 +3,13 @@
 //CROSS-MODULE INCLUDE: UMG UserWidget
 #include "LookingAtContentWidget.generated.h"
 
+class UPetComponent;
 class UPawnAfflictionComponent;
 class AActor;
 class USimpleObjectInfoComponent;
 class UHealth;
 class IHealth;
 class UHackingUsableComponent;
-class UPetComponent;
 
 UCLASS(Abstract, EditInlineNew)
 class ULookingAtContentWidget : public UUserWidget {
@@ -45,20 +45,20 @@ public:
     void RegisterWeakPointHit();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveUpdateTarget(AActor* InCurrentTarget, float DeltaTime);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveNewTarget(AActor* InCurrentTarget);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTargetOwnerName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTargetName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetTargetHealthPct() const;
     
     ULookingAtContentWidget();

@@ -1,8 +1,8 @@
 #include "AudioFunctionLibrary.h"
 
 class USoundClass;
-class USoundMix;
 class UObject;
+class USoundMix;
 
 float UAudioFunctionLibrary::SetSoundClassVolume(USoundClass* SoundClass, float Volume) {
     return 0.0f;

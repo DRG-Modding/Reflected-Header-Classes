@@ -1,7 +1,7 @@
 #include "LandscapeComponent.h"
 
-class ULandscapeLayerInfoObject;
 class UMaterialInstanceDynamic;
+class ULandscapeLayerInfoObject;
 
 UMaterialInstanceDynamic* ULandscapeComponent::GetMaterialInstanceDynamic(int32 InIndex) const {
     return NULL;

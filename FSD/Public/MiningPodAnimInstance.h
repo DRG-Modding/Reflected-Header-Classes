@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EMiningPodRampState.h"
-//CROSS-MODULE INCLUDE: Engine AnimInstance
 #include "EMiningPodState.h"
+//CROSS-MODULE INCLUDE: Engine AnimInstance
+#include "EMiningPodRampState.h"
 #include "MiningPodAnimInstance.generated.h"
 
 UCLASS(NonTransient)

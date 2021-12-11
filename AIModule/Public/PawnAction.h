@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EPawnActionResult.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EAIRequestPriority.h"
+#include "EPawnActionResult.h"
 #include "PawnAction.generated.h"
 
 class UPawnAction;
@@ -44,7 +44,7 @@ protected:
     uint8 bAlwaysNotifyOnFinished: 1;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TEnumAsByte<EAIRequestPriority::Type> GetActionPriority();
     
 protected:

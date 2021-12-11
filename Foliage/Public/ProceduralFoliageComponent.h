@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "ProceduralFoliageComponent.generated.h"
 
 class UProceduralFoliageSpawner;

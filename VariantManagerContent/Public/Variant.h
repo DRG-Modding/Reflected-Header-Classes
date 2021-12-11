@@ -34,13 +34,13 @@ public:
     UFUNCTION(BlueprintCallable)
     UTexture2D* GetThumbnail();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumActors();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetDisplayText() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetActor(int32 ActorIndex);
     
     UVariant();

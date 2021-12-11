@@ -1,19 +1,19 @@
 #include "FSDWidgetBlueprintLibrary.h"
 #include "Templates/SubclassOf.h"
 
-class UHorizontalBox;
-class UWidgetAnimation;
 class UObject;
 class UWidget;
+class UHorizontalBox;
+class UUserWidget;
+class UWidgetAnimation;
 class USizeBox;
 class UPanelWidget;
-class UUserWidget;
 class UTextBlock;
 class UImage;
 class UWindowWidget;
 class AFSDPlayerState;
-class APlayerController;
 class UFSDCheatManager;
+class APlayerController;
 class UVerticalBox;
 class USpacer;
 class UTexture2D;

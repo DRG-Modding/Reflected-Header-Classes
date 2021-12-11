@@ -1,41 +1,41 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-#include "ECharacterState.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-#include "HeroInfo.h"
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
+#include "ECharacterState.h"
+#include "HeroInfo.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 #include "ActorFunctionLibrary.generated.h"
 
-class UTexture2D;
 class UObject;
 class UWindowWidget;
-class UDamageClass;
 class APlayerCharacter;
 class UMaterialInstanceDynamic;
-class UBlendableInterface;
-class IBlendableInterface;
 class USoundCue;
 class APlayerController;
+class UPathfinderCollisionComponent;
 class UUserWidget;
-class UPlayerCharacterID;
+class AFSDGameMode;
 class AActor;
 class USceneComponent;
 class UFXSystemAsset;
-class UPathfinderCollisionComponent;
 class UFSDPhysicalMaterial;
+class UPlayerCharacterID;
+class UEnemyComponent;
 class UItemID;
 class UInventoryList;
-class UEnemyComponent;
 class UActorComponent;
+class UTexture2D;
 class UPostProcessComponent;
-class AFSDGameMode;
 class UHealthComponentBase;
+class UBlendableInterface;
+class IBlendableInterface;
 class UMeshComponent;
+class UDamageClass;
 class AFSDGameState;
 
 UCLASS(BlueprintType)
@@ -48,7 +48,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void UnlockCharacters(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float TimeSince(UObject* WorldContextObject, float Time);
     
     UFUNCTION(BlueprintCallable)
@@ -60,10 +60,10 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void PlayCueOnAll(UObject* WorldContextObject, USoundCue* cue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float PingPong(float Time, float Length, bool normalize);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float MoveTowards(float current, float End, float step);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
@@ -78,10 +78,10 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void LockCharacters(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TSubclassOf<UWindowWidget> LoadWindowWidgetClass(TSoftClassPtr<UWindowWidget> WidgetClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TSubclassOf<UUserWidget> LoadWidgetClass(TSoftClassPtr<UUserWidget> WidgetClass);
     
     UFUNCTION(BlueprintCallable)
@@ -90,67 +90,67 @@ public:
     UFUNCTION(BlueprintCallable)
     static void KillActorWithEffects(AActor* Actor, USceneComponent* visualsToHide, USoundCue* deathSound, UFXSystemAsset* deathParticles, float particleScale, UPathfinderCollisionComponent* pathColliderToDisable);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsWeakPoint(UFSDPhysicalMaterial* Material);
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     static bool IsSingleplayer(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsInRangeOfLocalPlayer(AActor* toActor, float MinDistance, float MaxDistance);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsCloseToLocalPlayer(AActor* toActor, float Distance);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetTotalHeroLevels(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGuid GetSaveGameIDFromCharacterID(UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGuid GetSavegameID(UClass* objectClass);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static TArray<APlayerCharacter*> GetPlayersInRange(UObject* WorldContextObject, const FVector& Origin, float Radius, bool MustBeAlive);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UItemID* GetItemID(TSubclassOf<AActor> itemClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetHeroXP(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetHeroSwitchToMessage(TSubclassOf<APlayerCharacter> playerClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetHeroSourceName(TSubclassOf<APlayerCharacter> playerClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetHeroProgress(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetHeroName(TSubclassOf<APlayerCharacter> playerClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetHeroLevel(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UInventoryList* GetHeroInventoryList(UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FHeroInfo GetHeroInfo(TSubclassOf<APlayerCharacter> playerClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UTexture2D* GetHeroImageSmall(TSubclassOf<APlayerCharacter> playerClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UTexture2D* GetHeroImageFullSize(TSubclassOf<APlayerCharacter> playerClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UTexture2D* GetHeroImage(TSubclassOf<APlayerCharacter> playerClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FLinearColor GetHeroColor(TSubclassOf<APlayerCharacter> playerClass);
     
     UFUNCTION(BlueprintCallable)
@@ -159,13 +159,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static UActorComponent* GetComponentByClass(AActor* Actor, TSubclassOf<UActorComponent> ComponentClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UPlayerCharacterID* GetCharacterIDFromCharacter(APlayerCharacter* Character);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UPlayerCharacterID* GetCharacterID(TSubclassOf<APlayerCharacter> playerClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<APlayerCharacter*> GetAllPlayerCharacters(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable)
@@ -180,7 +180,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void FSDDumpCallStack(const FString& Msg);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static APlayerCharacter* FindNearestPlayerCharacter(UObject* WorldContextObject, FVector fromLocation, float MaxRadius, bool MustBeAlive, bool MustBeUnparalyzed, bool MustHaveLineOfSight);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
@@ -198,7 +198,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void FadeMaterials(const UObject* WorldContextObject, const UMeshComponent*& Mesh, float Duration);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float EvaluateRuntimeCurve(UObject* WorldContextObject, const FRuntimeFloatCurve& Curve, float Time);
     
     UFUNCTION(BlueprintCallable)
@@ -225,7 +225,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void AddEnemyKill(APlayerCharacter* Instigator, UEnemyComponent* EnemyComponent, AFSDGameState* GameState);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool ActorMatchesTagQuery(const FGameplayTagQuery& Query, const AActor* InActor);
     
     UActorFunctionLibrary();

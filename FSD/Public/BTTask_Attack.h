@@ -18,7 +18,7 @@ private:
     FName AttackName;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAttackCompleted(UBehaviorTreeComponent* btComponent);
     
 public:

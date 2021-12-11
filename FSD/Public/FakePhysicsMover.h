@@ -31,10 +31,10 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Teleport(const FVector& Pos, const FVector& Vel);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PosVel(const FFakeMoveState& NewPosVel);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_MoveSettings(const UFakeMoverSettings* NewMoveSettings);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

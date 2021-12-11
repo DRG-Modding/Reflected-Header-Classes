@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
-//CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "EFSDFaction.h"
+//CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "CommunityGoalFaction.generated.h"
 
 class UTexture2D;

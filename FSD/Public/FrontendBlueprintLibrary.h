@@ -11,10 +11,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void OpenURLInExternalBrowser(const FString& URL);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsShippingBuild();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EFSDTargetPlatform FSDTargetPlatform();
     
     UFrontendBlueprintLibrary();

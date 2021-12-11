@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "CampaignRequirement.generated.h"
 
-class UCampaign;
 class AFSDPlayerController;
+class UCampaign;
 
 UCLASS(Abstract, BlueprintType, EditInlineNew)
 class UCampaignRequirement : public UObject {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsRequirementMet(AFSDPlayerController* Player, UCampaign* Campaign) const;
     
     UCampaignRequirement();

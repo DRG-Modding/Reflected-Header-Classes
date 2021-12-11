@@ -11,10 +11,10 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool bHUDVisibile;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveHUDVisibilityChanged(bool InHudVisible);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackHUDVisibilityChanged(bool InHudVisible);
     
 public:

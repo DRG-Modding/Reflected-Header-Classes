@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneTimeTransform.h"
 #include "MovieSceneNestedSequenceTransform.h"
+#include "MovieSceneTimeTransform.h"
 #include "MovieSceneSequenceTransform.generated.h"
 
 USTRUCT(BlueprintType)

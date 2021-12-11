@@ -15,25 +15,25 @@ UCLASS(BlueprintType)
 class UFSDConversionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector_NetQuantizeNormal VectorToNetQuantizeNormal(FVector Vec);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector_NetQuantize VectorToNetQuantize(FVector Vec);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector QuatToVector(FQuat Quat);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FRotator QuatToRotator(FQuat Quat);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector_NetQuantizeNormal QuadToNetQuantizeNormal(FQuat Quat);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector ComponentToWorldLocation(USceneComponent* Component);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector ActorToWorldLocation(AActor* Actor);
     
     UFSDConversionLibrary();

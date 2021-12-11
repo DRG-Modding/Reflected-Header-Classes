@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-#include "NavigationFilterArea.h"
 #include "NavigationFilterFlags.h"
+#include "NavigationFilterArea.h"
 #include "NavigationQueryFilter.generated.h"
 
 UCLASS(Abstract)

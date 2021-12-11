@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESubmixEffectDynamicsChannelLinkMode.h"
 #include "ESubmixEffectDynamicsProcessorType.h"
-#include "ESubmixEffectDynamicsPeakMode.h"
 #include "SubmixEffectDynamicProcessorFilterSettings.h"
+#include "ESubmixEffectDynamicsChannelLinkMode.h"
+#include "ESubmixEffectDynamicsPeakMode.h"
 #include "SubmixEffectDynamicsProcessorSettings.generated.h"
 
 class USoundSubmix;

@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CaveVine.generated.h"
 
+class UHealthComponent;
 class USceneComponent;
 class USplineMeshComponent;
-class UHealthComponent;
 
 UCLASS(Abstract)
 class ACaveVine : public AActor {
@@ -53,10 +53,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, Transient)
     TWeakObjectPtr<UHealthComponent> Target;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnTargetChanged(UHealthComponent* NewTarget);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnInitialized();
     
 public:

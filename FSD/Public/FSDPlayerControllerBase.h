@@ -6,11 +6,11 @@
 #include "EDisconnectReason.h"
 #include "FSDPlayerControllerBase.generated.h"
 
-class UWindowManager;
 class UMaterialParameterCollection;
+class UWindowManager;
 class UPlayerCharacterID;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerControllerBaseOnPlayerVoiceStatusChanged, bool, voiceChatting);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDPlayerControllerBaseOnPlayerVoiceStatusChanged, bool, voiceChatting);
 
 UCLASS()
 class AFSDPlayerControllerBase : public APlayerController {
@@ -49,17 +49,17 @@ public:
     void Server_Cheat_SwitchCharacter(UPlayerCharacterID* NewCharacter);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecievePreClientTravel();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveHUDVisibilityChanged(bool IsVisible);
     
 public:
     UFUNCTION(BlueprintCallable)
     bool IsHUDVisibleFlagSet(EHUDVisibilityReason reason);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_WasKicked(EDisconnectReason reason);
     
     AFSDPlayerControllerBase();

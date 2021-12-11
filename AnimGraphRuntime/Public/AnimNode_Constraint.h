@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AnimNode_SkeletalControlBase.h"
-#include "Constraint.h"
 //CROSS-MODULE INCLUDE: Engine BoneReference
+#include "Constraint.h"
 #include "AnimNode_Constraint.generated.h"
 
 USTRUCT(BlueprintType)

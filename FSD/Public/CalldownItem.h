@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CalldownItem.generated.h"
 
+class AActor;
 class UResourceData;
 class UItemPlacerAggregator;
 class ARessuplyPod;
-class AActor;
 
 UCLASS()
 class ACalldownItem : public AAnimatedItem {
@@ -42,7 +42,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     float CooldownRemaining;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Call_Resupply(const FVector& Location);
     
 public:

@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AnimationCore Axis
 #include "AnimNode_SkeletalControlBase.h"
-//CROSS-MODULE INCLUDE: Engine BoneReference
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-#include "BoneSocketTarget.h"
+//CROSS-MODULE INCLUDE: Engine BoneReference
 //CROSS-MODULE INCLUDE: Engine EBoneControlSpace
+#include "BoneSocketTarget.h"
+//CROSS-MODULE INCLUDE: AnimationCore Axis
 #include "AnimNode_TwoBoneIK.generated.h"
 
 USTRUCT(BlueprintType)

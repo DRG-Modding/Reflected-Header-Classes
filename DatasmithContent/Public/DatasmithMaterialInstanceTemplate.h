@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "DatasmithObjectTemplate.h"
 #include "DatasmithStaticParameterSetTemplate.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "DatasmithMaterialInstanceTemplate.generated.h"
 
 class UMaterialInterface;

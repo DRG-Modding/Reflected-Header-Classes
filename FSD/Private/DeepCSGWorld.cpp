@@ -1,14 +1,14 @@
 #include "DeepCSGWorld.h"
 
 class UPrimitiveComponent;
-class AActor;
-class USTLMeshCarver;
 class UTerrainMaterial;
-class ADebrisDataActor;
-class ADeepCSGWorld;
-class UStaticMeshCarver;
 class UStaticMesh;
+class ADebrisDataActor;
+class AActor;
+class ADeepCSGWorld;
+class USTLMeshCarver;
 class UDebrisBase;
+class UStaticMeshCarver;
 
 void ADeepCSGWorld::UnRegisterScannerComponent(UPrimitiveComponent* Component) {
 }

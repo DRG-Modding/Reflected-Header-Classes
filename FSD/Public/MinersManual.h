@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
+#include "DamageTypeDescription.h"
 #include "MissionTypeDescription.h"
 #include "BiomeFeatures.h"
-#include "DamageTypeDescription.h"
 #include "MissionStepDescription.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "EDamageType.h"
 #include "MinersManual.generated.h"
 
+class UBiome;
+class UObject;
 class ULoreScreenMasterWidget;
 class UEnemyMinersManualData;
-class UBiome;
-class UMinersManualData;
 class UMissionTemplate;
-class UObject;
+class UMinersManualData;
 
 UCLASS(BlueprintType)
 class UMinersManual : public UDataAsset {
@@ -55,46 +55,46 @@ protected:
     TMap<int32, FBiomeFeatures> BiomeFeatureDescriptions;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsObjectInMinersManual(UObject* WorldContext, UObject* Object);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMissionUnlocked(UObject* WorldContext, UMissionTemplate* mission);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBiomeUnlocked(UObject* WorldContext, UBiome* Biome);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FText> GetUnlockedCreatureLore(UObject* WorldContext, UEnemyMinersManualData* enemy, float& completePercentage);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSoftObjectPtr<UMissionTemplate>> GetMissions() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetMissionInfo(int32 MissionTypeIndex, FText& InfoHeadline, FText& InfoDescription, TArray<FMissionStepDescription>& Steps);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetEnemyKillCount(UObject* WorldContext, FGuid EnemyID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UEnemyMinersManualData*> GetEnemiesSorted();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UEnemyMinersManualData*> GetEnemies();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetDamageTypeDescriptions(TArray<EDamageType> damageTypes, TArray<FDamageTypeDescription>& Icon);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetDamageTypeDescription(EDamageType damageTypes, FDamageTypeDescription& Icon);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSoftObjectPtr<UBiome>> GetBiomes() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMinersManualData*> GetBiomeFeatures(int32 BiomeIndex);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FDamageTypeDescription> GetAllDamageTypeDescriptions();
     
     UMinersManual();

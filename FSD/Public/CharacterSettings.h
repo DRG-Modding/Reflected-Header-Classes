@@ -5,13 +5,13 @@
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "CharacterSettings.generated.h"
 
-class UDialogDataAsset;
 class APlayerCharacter;
-class USkeletalMesh;
-class UPlayerCharacterID;
 class ACarriableItem;
-class UCharacterVanityItems;
+class UPlayerCharacterID;
+class USkeletalMesh;
 class UUseAnimationSetting;
+class UCharacterVanityItems;
+class UDialogDataAsset;
 class UDebrisPositioning;
 class UTerrainPlacementComponent;
 class UAsyncManager;
@@ -74,7 +74,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void PreloadAllInventories(UAsyncManager* AsyncManager);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerCharacterID* GetPlayerCharacterID(const FGuid& ID) const;
     
     UCharacterSettings();

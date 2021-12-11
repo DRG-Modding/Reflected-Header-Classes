@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SavablePrimaryDataAsset.h"
 #include "EPickaxePartLocation.h"
+#include "SavablePrimaryDataAsset.h"
 #include "PickaxePart.generated.h"
 
 class UItemAquisitionSource;
@@ -29,7 +29,7 @@ protected:
     UDLCBase* RequiredDLC;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EPickaxePartLocation GetPrefferedLocation() const;
     
     UPickaxePart();

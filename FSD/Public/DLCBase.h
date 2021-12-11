@@ -12,10 +12,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void QueryAllDLC();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnlocked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsDLCUnLocked(UDLCBase* dlc);
     
     UDLCBase();

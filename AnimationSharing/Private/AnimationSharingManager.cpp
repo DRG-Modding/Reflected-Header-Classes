@@ -1,10 +1,10 @@
 #include "AnimationSharingManager.h"
 
-class UObject;
 class AActor;
-class USkeleton;
-class UAnimationSharingManager;
 class UAnimationSharingSetup;
+class USkeleton;
+class UObject;
+class UAnimationSharingManager;
 
 void UAnimationSharingManager::RegisterActorWithSkeletonBP(AActor* InActor, const USkeleton* SharingSkeleton) {
 }

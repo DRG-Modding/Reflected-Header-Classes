@@ -3,8 +3,8 @@
 #include "AnimatedItem.h"
 #include "JetPackItem.generated.h"
 
-class UCurveFloat;
 class UPlayerMovementComponent;
+class UCurveFloat;
 
 UCLASS(Abstract)
 class AJetPackItem : public AAnimatedItem {
@@ -44,19 +44,19 @@ protected:
     UPROPERTY(Export, Transient)
     UPlayerMovementComponent* CharacterMovement;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StopThruster();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StartThruster();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Fuel(float OldFuel);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRep_Active();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFuelChanged(float Value, float Delta);
     
 public:

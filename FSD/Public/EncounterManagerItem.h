@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ManagedEncounterItem.h"
 #include "PrePlacedEncounterItem.h"
+#include "ManagedEncounterItem.h"
 #include "EncounterManagerItem.generated.h"
 
 class APawn;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FEncounterManagerItemCallback, APawn*, enemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FEncounterManagerItemCallback, APawn*, enemy);
 
 USTRUCT(BlueprintType)
 struct FEncounterManagerItem {

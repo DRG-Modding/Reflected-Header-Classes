@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: Engine Texture
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "EARTextureType.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "ARTexture.generated.h"
 
 UCLASS(Abstract)

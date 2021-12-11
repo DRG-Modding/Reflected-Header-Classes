@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneEvalTemplate
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneObjectBindingID
 //CROSS-MODULE INCLUDE: Engine EDetachmentRule
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneObjectBindingID
 //CROSS-MODULE INCLUDE: Engine EAttachmentRule
 #include "MovieScene3DAttachSectionTemplate.generated.h"
 

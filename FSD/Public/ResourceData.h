@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
-//CROSS-MODULE INCLUDE: CoreUObject Color
 #include "SaveGameIDInterface.h"
+//CROSS-MODULE INCLUDE: CoreUObject Color
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "ResourceData.generated.h"
 
-class UMissionStat;
 class UObject;
+class UMissionStat;
 class UTexture2D;
 class AResourceChunk;
 
@@ -74,9 +74,11 @@ protected:
     FGuid SaveGameID;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetOwnedAmount(UObject* WorldContextObject) const;
     
     UResourceData();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnemyPawn.h"
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
+#include "EnemyPawn.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "FacilityTurret.generated.h"
 
+class USkeletalMeshComponent;
 class AActor;
 class USceneComponent;
-class USkeletalMeshComponent;
 class USoundCue;
 
 UCLASS()
@@ -57,20 +57,20 @@ protected:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetIsAttacking(bool IsAttacking);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_TurretEngaged();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnProjectileSpawned();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEngagedChanged(bool engaged);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAttack();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetLookingDirection() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

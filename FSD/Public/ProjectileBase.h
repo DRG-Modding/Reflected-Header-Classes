@@ -2,21 +2,21 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "ProjectileImpact.h"
+#include "EOnProjectileImpactBehaviourEnum.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
-#include "EOnProjectileImpactBehaviourEnum.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
 #include "ProjectileBase.generated.h"
 
-class USoundCue;
-class USphereComponent;
-class UProjectileUpgradeElement;
 class UTerrainMaterial;
-class UDamageComponent;
+class USphereComponent;
+class USoundCue;
+class UProjectileUpgradeElement;
+class UItemUpgrade;
 class UPrimitiveComponent;
 class AProjectileBase;
-class UItemUpgrade;
+class UDamageComponent;
 
 UCLASS(Abstract)
 class AProjectileBase : public AActor {
@@ -81,63 +81,63 @@ protected:
     EOnProjectileImpactBehaviourEnum EOnImpactBehaviour;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTerrainMaterial* TryGetTerrainMaterial() const;
     
     UFUNCTION(BlueprintCallable)
     void StopMovement();
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetState(FVector_NetQuantize Position, FVector_NetQuantize Velocity);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Penetrated(const FProjectileImpact& Impact);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Impacted(const FProjectileImpact& Impact);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUpgradeElementAdded(UProjectileUpgradeElement* element);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ProjectileImpact();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsDorment(const bool wasDorment);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPenetrated(bool PredictedPenetration, const FHitResult& HitResult);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnInitialized();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnImpacted(bool PredictedImpact, const FHitResult& HitResult);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void MakeBouncy();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InitState(const FVector& ShootDirection, const FVector& initialBonusVelocity);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InitComponents();
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void IgnoreCollision(UPrimitiveComponent* otherCollider);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasImpactAuthority() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetGameTimeSinceActivation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetBoneIndex() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DoOnSpawn();
     
     UFUNCTION(BlueprintCallable)
@@ -150,10 +150,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void DamageArmor(UDamageComponent* DamageComponent, const FHitResult& HitResult);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CustomEvent(const UItemUpgrade* Event);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_DrawServersDebugPath(FVector Location);
     
 public:

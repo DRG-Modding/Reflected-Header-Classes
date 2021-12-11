@@ -11,16 +11,16 @@ class INTERACTIVETOOLSFRAMEWORK_API UGizmoFloatParameterSource : public UInterfa
 class INTERACTIVETOOLSFRAMEWORK_API IGizmoFloatParameterSource : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     virtual void SetParameter(float NewValue) PURE_VIRTUAL(SetParameter,);
     
-    UFUNCTION()
-    virtual  return 0.0f; GetParameter() const PURE_VIRTUAL(GetParameter,);
+    UFUNCTION(BlueprintCallable)
+    virtual float GetParameter() const PURE_VIRTUAL(GetParameter, return 0.0f;);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     virtual void EndModify() PURE_VIRTUAL(EndModify,);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     virtual void BeginModify() PURE_VIRTUAL(BeginModify,);
     
 };

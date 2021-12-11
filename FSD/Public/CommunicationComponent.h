@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "MixerAnnouncement.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
-#include "MissionShoutQueueItem.h"
 #include "ActiveOutline.h"
+#include "MissionShoutQueueItem.h"
 #include "EShoutType.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CommunicationComponent.generated.h"
 
-class UDialogDataAsset;
-class APlayerCharacter;
 class UShoutWidget;
-class UCharacterShoutsData;
-class UAudioComponent;
-class UObject;
 class USoundBase;
+class UAudioComponent;
+class UCharacterShoutsData;
+class APlayerCharacter;
+class UDialogDataAsset;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCommunicationComponentOnMissionControlFinished);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCommunicationComponentOnMissionShout, const FText&, Text, float, Duration);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCommunicationComponentOnMissionShoutEnd);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCommunicationComponentOnMixerAnnouncement, const FMixerAnnouncement&, Announcement);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCommunicationComponentOnMissionControlFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCommunicationComponentOnMissionShout, const FText&, Text, float, Duration);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCommunicationComponentOnMissionShoutEnd);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCommunicationComponentOnMixerAnnouncement, const FMixerAnnouncement&, Announcement);
 
 UCLASS(BlueprintType)
 class UCommunicationComponent : public UActorComponent {
@@ -112,13 +112,13 @@ public:
     void SetMissionControlPaused(bool IsPaused);
     
 protected:
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void ServerShout(UDialogDataAsset* NewShout);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerMixerAnnouncement(const FMixerAnnouncement& Announcement);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerMissionShout(UDialogDataAsset* NewShout, int32 Index, bool bPriority);
     
 public:
@@ -143,17 +143,17 @@ public:
     UFUNCTION(BlueprintCallable)
     static void MissionShout(UObject* WorldContext, UDialogDataAsset* NewShout, bool bPriority);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMissionControlSpeaking() const;
     
 protected:
-    UFUNCTION(Client, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Unreliable, WithValidation)
     void ClientShout(APlayerCharacter* Sender, UDialogDataAsset* NewShout, int32 Index);
     
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientMixerAnnouncement(const FMixerAnnouncement& Announcement);
     
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientMissionShout(UDialogDataAsset* NewShout, int32 Index, bool bPriority);
     
 public:

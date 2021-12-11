@@ -4,8 +4,8 @@
 #include "PlayerMovementComponent.generated.h"
 
 class USoundBase;
-class APlayerCharacter;
 class UCharacterStateComponent;
+class APlayerCharacter;
 class AActor;
 
 UCLASS()

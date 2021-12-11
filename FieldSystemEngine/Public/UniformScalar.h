@@ -12,7 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float Magnitude;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UUniformScalar* SetUniformScalar(float NewMagnitude);
     
     UUniformScalar();

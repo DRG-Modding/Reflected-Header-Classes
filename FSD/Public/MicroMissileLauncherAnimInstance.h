@@ -15,10 +15,15 @@ protected:
     UPROPERTY(Transient)
     AMicroMissileLauncher* Weapon;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMontageEndedInternal(UAnimMontage* Montage, bool interrupted);
     
 public:
     UMicroMissileLauncherAnimInstance();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    void CopyBoneVisibilityCompleted(int32 BoneIndex) override PURE_VIRTUAL(CopyBoneVisibilityCompleted,);
+    
 };
 

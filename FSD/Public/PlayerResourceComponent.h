@@ -10,7 +10,7 @@ UCLASS()
 class UPlayerResourceComponent : public UResourcesComponent {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UPlayerResourceComponent* GetFromPlayer(APlayerCharacter* PlayerCharacter);
     
     UPlayerResourceComponent();

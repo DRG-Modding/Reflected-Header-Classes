@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "GameEvent.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "RockEnemiesEvent.generated.h"
 
+class USkeletalMeshComponent;
 class UParticleSystem;
 class AProjectile;
 class UEnemyGroupDescriptor;
-class USkeletalMeshComponent;
 class APawn;
 class UHealthComponentBase;
 
@@ -59,21 +59,21 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SpawnRockEnemies(float Difficulty, const TArray<FVector>& Locations);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void ShowFireEffects(int32 selectedBone);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RockEnemySpawned(APawn* spawnedEnemy);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RockEnemyDied(UHealthComponentBase* Health);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShoot();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void EnemySpawnedAfterComplete(APawn* spawnedEnemy);
     
 public:

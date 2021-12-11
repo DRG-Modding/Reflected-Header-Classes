@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "RandRange.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "WaveEntry.h"
+#include "RandRange.h"
 #include "EnemyWaveManager.generated.h"
 
 class UEnemyWaveController;
+class APawn;
 class UEnemySpawnManager;
 class AFSDGameMode;
 class UObject;
-class APawn;
 
 UCLASS(BlueprintType)
 class UEnemyWaveManager : public UActorComponent {
@@ -79,17 +79,17 @@ public:
     void PopDisableNormalWaves(UObject* Owner);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMatchEnded();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnemySpawned(APawn* enemy);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreScriptedWavesBlocked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreNormalWavesBlocked() const;
     
     UEnemyWaveManager();

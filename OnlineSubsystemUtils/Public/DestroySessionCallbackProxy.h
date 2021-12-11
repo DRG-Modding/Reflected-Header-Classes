@@ -7,8 +7,8 @@ class UDestroySessionCallbackProxy;
 class UObject;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroySessionCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroySessionCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroySessionCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroySessionCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UDestroySessionCallbackProxy : public UOnlineBlueprintCallProxyBase {

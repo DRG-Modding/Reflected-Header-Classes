@@ -3,22 +3,22 @@
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "GameFunctionLibrary.generated.h"
 
+class UDeepDiveManager;
+class UGoogleAnalyticsWrapper;
 class UFSDSaveGame;
-class UAudioComponent;
 class UObject;
+class UAudioComponent;
 class USoundBase;
 class UWindowManager;
 class APlayerCharacter;
 class UWindowWidget;
-class UGoogleAnalyticsWrapper;
-class UCampaignManager;
 class AFSDGameModeSpaceRig;
+class ADeepCSGWorld;
 class AFSDGameState;
 class AFSDGameMode;
 class UFSDGameInstance;
 class UGameData;
-class UDeepDiveManager;
-class ADeepCSGWorld;
+class UCampaignManager;
 class UAsyncManager;
 
 UCLASS(BlueprintType)
@@ -37,79 +37,79 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetGlobalGravityScale(UObject* WorldContextObject, float GravityScale);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsWorldTickEnabled(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void IsTearingDown(UObject* caller, bool& NewIsTearingDown);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsPlayingOffline(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsPlayInEditor(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UWindowManager* GetWindowManager(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetUsePushToTalk();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UWindowWidget* GetTopWindow(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetProjectVersion();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetNumPlayers(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetNumAdditionalPlayers(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetMajorProjectVersion();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static APlayerCharacter* GetLocalPlayerCharacter(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UGoogleAnalyticsWrapper* GetGoogleAnalyticsWrapper(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetGlobalGravityZ(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AFSDGameModeSpaceRig* GetFSDSRGameMode(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UFSDSaveGame* GetFSDSaveGame(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AFSDGameState* GetFSDGameState(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AFSDGameMode* GetFSDGameMode(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UFSDGameInstance* GetFSDGameInstance(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UGameData* GetFSDGameData();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UDeepDiveManager* GetDeepDiveManager(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static ADeepCSGWorld* GetCSGWorld(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetChangelist();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UCampaignManager* GetCampaingManager(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UAsyncManager* GetAsyncManager(UObject* WorldContextObject);
     
     UGameFunctionLibrary();

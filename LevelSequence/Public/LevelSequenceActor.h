@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneBindingOwnerInterface
 //CROSS-MODULE INCLUDE: Engine Actor
-#include "LevelSequenceCameraSettings.h"
+//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 //CROSS-MODULE INCLUDE: MovieScene MovieScenePlaybackClient
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlaybackSettings
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneBindingOwnerInterface
+#include "LevelSequenceCameraSettings.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneObjectBindingID
 #include "LevelSequenceActor.generated.h"
 
 class ULevelSequencePlayer;
+class UObject;
 class ULevelSequenceBurnInOptions;
 class UMovieSceneBindingOverrides;
-class UObject;
 class ULevelSequenceBurnIn;
 class ULevelSequence;
 
@@ -91,22 +91,22 @@ public:
     UFUNCTION(BlueprintCallable)
     void RemoveBinding(FMovieSceneObjectBindingID Binding, AActor* Actor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ULevelSequence* LoadSequence() const;
     
     UFUNCTION(BlueprintCallable)
     void HideBurnin();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ULevelSequencePlayer* GetSequencePlayer() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ULevelSequence* GetSequence() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FMovieSceneObjectBindingID> FindNamedBindings(FName Tag) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FMovieSceneObjectBindingID FindNamedBinding(FName Tag) const;
     
     UFUNCTION(BlueprintCallable)
@@ -118,5 +118,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ALevelSequenceActor();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

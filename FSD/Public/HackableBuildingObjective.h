@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Objective.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "Objective.h"
 #include "HackableBuildingObjective.generated.h"
 
-class AProceduralSetup;
 class UDebrisPositioning;
+class AProceduralSetup;
 class ARessuplyPod;
 
 UCLASS()

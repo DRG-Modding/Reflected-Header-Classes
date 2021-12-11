@@ -6,14 +6,14 @@
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "Synth2DSlider.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(float, FSynth2DSliderValueXDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(float, FSynth2DSliderValueYDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynth2DSliderOnMouseCaptureEnd);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynth2DSliderOnMouseCaptureBegin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynth2DSliderOnControllerCaptureEnd);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynth2DSliderOnControllerCaptureBegin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynth2DSliderOnValueChangedX, float, Value);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynth2DSliderOnValueChangedY, float, Value);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(float, FSynth2DSliderValueXDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(float, FSynth2DSliderValueYDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynth2DSliderOnMouseCaptureEnd);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynth2DSliderOnMouseCaptureBegin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynth2DSliderOnControllerCaptureEnd);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynth2DSliderOnControllerCaptureBegin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynth2DSliderOnValueChangedX, float, Value);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynth2DSliderOnValueChangedY, float, Value);
 
 UCLASS()
 class SYNTHESIS_API USynth2DSlider : public UWidget {
@@ -82,7 +82,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIndentHandle(bool InValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetValue() const;
     
     USynth2DSlider();

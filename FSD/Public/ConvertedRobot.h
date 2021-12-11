@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "WeaponFireOwner.h"
 #include "EnemyDeepPathfinderCharacter.h"
+#include "WeaponFireOwner.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-#include "ERobotState.h"
-//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 #include "EInputKeys.h"
+//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
+#include "ERobotState.h"
 #include "ConvertedRobot.generated.h"
 
-class USoundBase;
 class USceneComponent;
-class UAudioComponent;
-class UEnemyComponent;
-class UPawnStatsComponent;
 class UOutlineComponent;
-class USingleUsableComponent;
+class UEnemyComponent;
 class UHitscanComponent;
+class UPawnStatsComponent;
+class USingleUsableComponent;
 class USkeletalMeshComponent;
 class UPointLightComponent;
 class USpotLightComponent;
 class UStaticMeshComponent;
+class USoundBase;
+class UAudioComponent;
 class UDamageComponent;
 class UParticleSystem;
 class AActor;
@@ -31,9 +31,9 @@ class USoundCue;
 class APlayerCharacter;
 class APawn;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConvertedRobotOnShieldChanged, bool, aIsGrowing);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConvertedRobotOnStateChanged, uint8, aState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FConvertedRobotOnIntroductionStart);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConvertedRobotOnShieldChanged, bool, aIsGrowing);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConvertedRobotOnStateChanged, uint8, aState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FConvertedRobotOnIntroductionStart);
 
 UCLASS()
 class AConvertedRobot : public AEnemyDeepPathfinderCharacter, public IWeaponFireOwner {
@@ -288,7 +288,7 @@ private:
     AActor* CurrentTarget;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UpdateGunsInsideTerrain();
     
 public:
@@ -296,73 +296,75 @@ public:
     void StartBossFight();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ParasiteDamaged(float aDamage);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnWeaponsFired(const FVector& aHitResult);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUsed(APlayerCharacter* aUser, EInputKeys Key);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSeePawn(APawn* APawn);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_TeamState();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Target();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SpinTurret();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsIntroducting();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFiring();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsDoingSpecialAttack();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnParasiteDeath(AActor* AParasiteEnemy);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ERobotState GetTeamState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetPlayerMediumPoint() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AActor*> GetParasites() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasPoweredDown() const;
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void DestroyAttatchPoint(USceneComponent* aComponent);
     
 protected:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void CannonEffects();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnStateChanged(ERobotState NewTeamState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnShieldChanged(bool isGrowing);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnInstroduce();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AConvertedRobot();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

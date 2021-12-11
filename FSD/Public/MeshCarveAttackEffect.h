@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AttackEffect.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
+#include "AttackEffect.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "MeshCarveAttackEffect.generated.h"
 

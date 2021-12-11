@@ -13,7 +13,7 @@ private:
     uint32 NumMeshSamples;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AddMeshSample(const FGeometryCacheMeshData& MeshData, const float SampleTime);
     
     UDEPRECATED_GeometryCacheTrack_FlipbookAnimation();

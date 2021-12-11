@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SubmixEffectReverbSettings.h"
 //CROSS-MODULE INCLUDE: Engine SoundEffectSubmixPreset
+#include "SubmixEffectReverbSettings.h"
 #include "SubmixEffectReverbPreset.generated.h"
 
 class UReverbEffect;

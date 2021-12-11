@@ -3,14 +3,14 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
 #include "RandFloatInterval.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "RandRange.h"
 #include "EliteEnemyEntry.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "EnemySettings.generated.h"
 
-class UEnemyID;
-class UEnemyDescriptor;
 class UDamageComponent;
+class UEnemyDescriptor;
+class UEnemyID;
 
 UCLASS()
 class UEnemySettings : public UDataAsset {

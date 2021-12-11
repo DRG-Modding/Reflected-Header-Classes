@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine StaticMeshComponent
-//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
 //CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
+//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
 #include "MeshCarverComponent.generated.h"
 
 class UTerrainMaterialBase;

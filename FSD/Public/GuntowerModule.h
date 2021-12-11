@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "FSDPawn.h"
 #include "EventParticipant.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "GuntowerModule.generated.h"
 
-class USoundCue;
-class AActor;
-class UParticleSystem;
 class UAnimSequenceBase;
+class AActor;
+class USoundCue;
+class UParticleSystem;
 class UStaticMeshComponent;
-class USkeletalMeshComponent;
 class UGunTowerHealthComponent;
+class USkeletalMeshComponent;
 class AGuntowerEvent;
 class AGuntowerModule;
 
@@ -109,60 +109,62 @@ public:
     void ShootOutArmor();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetModuleActive();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnTearArmor();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsModuleActive();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsArmorOff();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Exploded();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AreWeakpointExposed();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnActivationChanged(bool IsActivated);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Introduce();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HideWeakpoints();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HideArmor();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetModuleID() const;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DoExplosion();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DeactivateTowerModule();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_PlayIntroductionAnim();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ActivateTowerModule();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AGuntowerModule();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

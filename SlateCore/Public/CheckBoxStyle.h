@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Margin.h"
 #include "SlateWidgetStyle.h"
 #include "SlateColor.h"
 #include "SlateBrush.h"
 #include "ESlateCheckBoxType.h"
-#include "Margin.h"
 #include "SlateSound.h"
 #include "CheckBoxStyle.generated.h"
 

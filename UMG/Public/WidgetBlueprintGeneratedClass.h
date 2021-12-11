@@ -5,8 +5,8 @@
 #include "WidgetBlueprintGeneratedClass.generated.h"
 
 class UWidgetTree;
-class UWidgetAnimation;
 class UUserWidget;
+class UWidgetAnimation;
 
 UCLASS()
 class UMG_API UWidgetBlueprintGeneratedClass : public UBlueprintGeneratedClass {

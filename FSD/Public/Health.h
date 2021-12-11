@@ -15,22 +15,22 @@ class IHealth : public IInterface {
     GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable)
-    virtual  return false; IsDead() const PURE_VIRTUAL(IsDead,);
+    virtual bool IsDead() const PURE_VIRTUAL(IsDead, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return false; IsAlive() const PURE_VIRTUAL(IsAlive,);
+    virtual bool IsAlive() const PURE_VIRTUAL(IsAlive, return false;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return NULL; GetOwner() const PURE_VIRTUAL(GetOwner,);
+    virtual AActor* GetOwner() const PURE_VIRTUAL(GetOwner, return NULL;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return 0.0f; GetMaxHealth() const PURE_VIRTUAL(GetMaxHealth,);
+    virtual float GetMaxHealth() const PURE_VIRTUAL(GetMaxHealth, return 0.0f;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return EHealthbarType::None; GetHealthbarType() const PURE_VIRTUAL(GetHealthbarType,);
+    virtual EHealthbarType GetHealthbarType() const PURE_VIRTUAL(GetHealthbarType, return EHealthbarType::None;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return 0.0f; GetHealth() const PURE_VIRTUAL(GetHealth,);
+    virtual float GetHealth() const PURE_VIRTUAL(GetHealth, return 0.0f;);
     
 };
 

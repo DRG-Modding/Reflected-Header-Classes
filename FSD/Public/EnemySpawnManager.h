@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "SpawnRarityModifierItem.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 #include "SpawnQueueItem.h"
+//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "EnemySpawnManager.generated.h"
 
-class UEnemyDescriptor;
-class APawn;
-class AProceduralSetup;
-class UStatusEffect;
 class USpawnEffectsComponent;
+class AProceduralSetup;
+class APawn;
+class UEnemyDescriptor;
+class UStatusEffect;
 class AActor;
 class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemySpawnManagerOnEnemyDestroyed, APawn*, enemy);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemySpawnManagerOnEnemyDied, APawn*, enemy);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FEnemySpawnManagerCallback, APawn*, enemy);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEnemySpawnManagerOnEnemySpawned, APawn*, enemy, UEnemyDescriptor*, descriptor);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemySpawnManagerOnEnemyDestroyed, APawn*, enemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemySpawnManagerOnEnemyDied, APawn*, enemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FEnemySpawnManagerCallback, APawn*, enemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEnemySpawnManagerOnEnemySpawned, APawn*, enemy, UEnemyDescriptor*, descriptor);
 
 UCLASS(BlueprintType)
 class FSD_API UEnemySpawnManager : public UActorComponent {
@@ -109,28 +109,28 @@ public:
     void PromoteToCritical(APawn* Pawn);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMatchStarted();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMatchEnded();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetSpawningEnabled() const;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void EnemyDestroyed(AActor* Actor);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void EnemyDeath(UHealthComponentBase* HealthComponent);
     
 public:
     UFUNCTION(BlueprintCallable)
     void DestroyAllEnemies();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool CanSpawn(UEnemyDescriptor* EnemyDescriptor) const;
     
     UFUNCTION(BlueprintCallable)

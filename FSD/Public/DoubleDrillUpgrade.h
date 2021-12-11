@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "DoubleDrillUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UDoubleDrillUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EDoubleDrillUpgradeType upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EDoubleDrillUpgradeType NewUpgradeType);
     
     UDoubleDrillUpgrade();

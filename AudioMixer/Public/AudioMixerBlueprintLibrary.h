@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+#include "EFFTWindowType.h"
 //CROSS-MODULE INCLUDE: Engine EAudioRecordingExportType
 #include "EFFTPeakInterpolationMethod.h"
-#include "EFFTWindowType.h"
 #include "EFFTSize.h"
 //CROSS-MODULE INCLUDE: Engine SourceEffectChainEntry
 #include "AudioMixerBlueprintLibrary.generated.h"
 
-class UObject;
 class USoundWave;
+class UObject;
 class USoundSubmix;
 class USoundEffectSourcePresetChain;
 class USoundEffectSubmixPreset;
 class USoundCue;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FAudioMixerBlueprintLibraryOnLoadCompletion, const USoundWave*, LoadedSoundWave, const bool, WasCancelled);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FAudioMixerBlueprintLibraryOnLoadCompletion, const USoundWave*, LoadedSoundWave, const bool, WasCancelled);
 
 UCLASS(BlueprintType)
 class AUDIOMIXER_API UAudioMixerBlueprintLibrary : public UBlueprintFunctionLibrary {

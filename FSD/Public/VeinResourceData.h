@@ -24,7 +24,7 @@ protected:
     UVeinResourceCreator* ResourceCreator;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTerrainMaterial* GetTerrainMaterial() const;
     
     UVeinResourceData();

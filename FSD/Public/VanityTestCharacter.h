@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "VanityTestCharacterItem.h"
 //CROSS-MODULE INCLUDE: Engine Character
 #include "EVanitySlot.h"
-#include "VanityTestCharacterItem.h"
 #include "VanityTestCharacter.generated.h"
 
 class USkeletalMesh;

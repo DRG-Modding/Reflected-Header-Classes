@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "BoltActionRifleUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UBoltActionRifleUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EBoltActionRifleUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EBoltActionRifleUpgrades NewUpgradeType);
     
     UBoltActionRifleUpgrade();

@@ -5,11 +5,11 @@
 //CROSS-MODULE INCLUDE: Engine EEasingFunc
 #include "MoveComponentToAction.generated.h"
 
-class UObject;
-class USceneComponent;
 class UMoveComponentToAction;
+class USceneComponent;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMoveComponentToActionCompleted, USceneComponent*, Component);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMoveComponentToActionCompleted, USceneComponent*, Component);
 
 UCLASS()
 class UMoveComponentToAction : public UTickableActionBase {

@@ -9,7 +9,7 @@ UCLASS()
 class UMG_API UWidgetBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     UWidget* GetValue() const;
     
     UWidgetBinding();

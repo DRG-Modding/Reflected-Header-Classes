@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AssetRegistry AssetData
 //CROSS-MODULE INCLUDE: Engine EngineSubsystem
+//CROSS-MODULE INCLUDE: AssetRegistry AssetData
 #include "AssetTagsSubsystem.generated.h"
 
 class UObject;

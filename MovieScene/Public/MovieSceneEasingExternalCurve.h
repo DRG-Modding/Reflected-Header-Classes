@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "MovieSceneEasingFunction.h"
+//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "MovieSceneEasingExternalCurve.generated.h"
 
 class UCurveFloat;
@@ -14,5 +14,7 @@ public:
     UCurveFloat* Curve;
     
     UMovieSceneEasingExternalCurve();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

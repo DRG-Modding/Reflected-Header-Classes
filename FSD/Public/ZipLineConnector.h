@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "ZipLineConnector.generated.h"
 
 class APlayerCharacter;
@@ -26,13 +26,13 @@ public:
     UPROPERTY(BlueprintReadOnly, Transient)
     bool bSpeeding;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveUpdateZipLinePoint(const FVector& WorldLocation, const FVector& Directioy, bool Speeding);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDisconnected();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveConnected(const FVector& WorldLocation, const FVector& Direction);
     
     AZipLineConnector();

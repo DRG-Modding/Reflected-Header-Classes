@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EUGCApprovalStatus.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "EUGCApprovalStatus.h"
 #include "ModioModInfoWrapper.generated.h"
 
 UCLASS(BlueprintType)
@@ -29,7 +29,7 @@ public:
     UPROPERTY(BlueprintReadOnly)
     EUGCApprovalStatus Status;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModIdInvalid();
     
     UModioModInfoWrapper();

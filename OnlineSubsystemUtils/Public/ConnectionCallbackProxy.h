@@ -7,8 +7,8 @@ class UConnectionCallbackProxy;
 class UObject;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConnectionCallbackProxyOnSuccess, int32, ErrorCode);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConnectionCallbackProxyOnFailure, int32, ErrorCode);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConnectionCallbackProxyOnSuccess, int32, ErrorCode);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConnectionCallbackProxyOnFailure, int32, ErrorCode);
 
 UCLASS(MinimalAPI)
 class UConnectionCallbackProxy : public UOnlineBlueprintCallProxyBase {

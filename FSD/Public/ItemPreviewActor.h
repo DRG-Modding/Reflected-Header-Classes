@@ -38,19 +38,21 @@ public:
     void SetItemClass(TSubclassOf<AActor> NewItemClass);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSkinPreviewChanged(UItemSkin* PreviewSkin);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnSkinItem(USkinEffect* Skin);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSkinChanged();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ChangeSkin(UItemSkin* skinMesh, UItemSkin* skinColor, bool isPreview);
     
 public:
     AItemPreviewActor();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

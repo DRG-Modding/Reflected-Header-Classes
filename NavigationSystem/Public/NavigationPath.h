@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: Engine ENavPathEvent
 //CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE: Engine ENavPathEvent
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine ENavigationOptionFlag
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "NavigationPath.generated.h"
 
 class UNavigationPath;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FNavigationPathPathUpdatedNotifier, UNavigationPath*, AffectedPath, TEnumAsByte<ENavPathEvent::Type>, PathEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FNavigationPathPathUpdatedNotifier, UNavigationPath*, AffectedPath, TEnumAsByte<ENavPathEvent::Type>, PathEvent);
 
 UCLASS(BlueprintType)
 class NAVIGATIONSYSTEM_API UNavigationPath : public UObject {
@@ -24,22 +24,22 @@ public:
     UPROPERTY(BlueprintReadOnly)
     TEnumAsByte<ENavigationOptionFlag::Type> RecalculateOnInvalidation;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsValid() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsStringPulled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPartial() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPathLength() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPathCost() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetDebugString() const;
     
     UFUNCTION(BlueprintCallable)

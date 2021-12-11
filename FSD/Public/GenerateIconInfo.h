@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EPickaxePartLocation.h"
-#include "PickaxeSet.h"
 #include "EGeneratorIconType.h"
+#include "PickaxeSet.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "GenerateIconInfo.generated.h"
 
-class UVanityItem;
-class UPickaxePart;
 class UItemSkin;
+class UPickaxePart;
 class UPlayerCharacterID;
+class UVanityItem;
 
 USTRUCT(BlueprintType)
 struct FGenerateIconInfo {

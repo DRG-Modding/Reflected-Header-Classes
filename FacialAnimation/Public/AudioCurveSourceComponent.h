@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine AudioComponent
 //CROSS-MODULE INCLUDE: Engine CurveSourceInterface
+//CROSS-MODULE INCLUDE: Engine AudioComponent
 #include "AudioCurveSourceComponent.generated.h"
 
 UCLASS()
@@ -15,5 +15,7 @@ public:
     float CurveSyncOffset;
     
     UAudioCurveSourceComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

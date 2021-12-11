@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "MovieSceneImageCaptureProtocolBase.h"
 #include "CompositionGraphCapturePasses.h"
+//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "EHDRCaptureGamut.h"
 #include "CompositionGraphCaptureProtocol.generated.h"
 

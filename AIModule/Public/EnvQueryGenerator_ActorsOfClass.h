@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "EnvQueryGenerator.h"
-#include "AIDataProviderFloatValue.h"
 #include "AIDataProviderBoolValue.h"
+#include "AIDataProviderFloatValue.h"
 #include "EnvQueryGenerator_ActorsOfClass.generated.h"
 
 class AActor;

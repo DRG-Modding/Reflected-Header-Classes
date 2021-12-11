@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TimeSynthClipHandle.h"
-#include "TimeSynthTimeDef.h"
 //CROSS-MODULE INCLUDE: AudioMixer SynthComponent
+#include "TimeSynthSpectralData.h"
 #include "TimeSynthQuantizationSettings.h"
+#include "TimeSynthTimeDef.h"
 #include "ETimeSynthEventClipQuantization.h"
 #include "ETimeSynthFFTSize.h"
 #include "TimeSynthFilterSettings.h"
 #include "TimeSynthEnvelopeFollowerSettings.h"
+#include "TimeSynthClipHandle.h"
 #include "ETimeSynthFilter.h"
-#include "TimeSynthSpectralData.h"
 #include "ETimeSynthEventQuantization.h"
 #include "TimeSynthComponent.generated.h"
 
 class UTimeSynthVolumeGroup;
 class UTimeSynthClip;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTimeSynthComponentOnPlaybackTime, float, SynthPlaybackTimeSeconds);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_ThreeParams(FTimeSynthComponentOnQuantizationEvent, ETimeSynthEventQuantization, QuantizationType, int32, NumBars, float, Beat);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTimeSynthComponentOnPlaybackTime, float, SynthPlaybackTimeSeconds);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_ThreeParams(FTimeSynthComponentOnQuantizationEvent, ETimeSynthEventQuantization, QuantizationType, int32, NumBars, float, Beat);
 
 UCLASS()
 class TIMESYNTH_API UTimeSynthComponent : public USynthComponent {
@@ -107,13 +107,13 @@ public:
     UFUNCTION(BlueprintCallable)
     bool HasActiveClips();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FTimeSynthSpectralData> GetSpectralData() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEnvelopeFollowerValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetBPM() const;
     
     UFUNCTION(BlueprintCallable)

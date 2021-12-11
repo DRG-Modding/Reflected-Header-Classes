@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HealthBarLooks.h"
-#include "FSDUserWidget.h"
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
+#include "FSDUserWidget.h"
+#include "HealthBarLooks.h"
 #include "EHealthbarType.h"
 #include "HUDHealthBar.generated.h"
 
@@ -10,7 +10,7 @@ class UHUDHealthBar;
 class UHealth;
 class IHealth;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHUDHealthBarOnOwnerDead, UHUDHealthBar*, HealthBar);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHUDHealthBarOnOwnerDead, UHUDHealthBar*, HealthBar);
 
 UCLASS(Abstract, EditInlineNew)
 class UHUDHealthBar : public UFSDUserWidget {
@@ -63,7 +63,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetHealthComponent(const TScriptInterface<IHealth>& Health, float Damage);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentHealth() const;
     
     UHUDHealthBar();

@@ -4,17 +4,17 @@
 #include "EDrinkableAlcoholStrength.h"
 #include "DrinkableDataAsset.generated.h"
 
-class APlayerCharacter;
 class UDialogDataAsset;
-class ADrinkableItem;
-class UTexture2D;
-class ADrinkableActor;
-class UTemporaryBuff;
 class UMissionStat;
+class UTexture2D;
 class UDrinkableDataAsset;
+class ADrinkableActor;
+class ADrinkableItem;
+class UTemporaryBuff;
 class UDrinkEffectComponent;
 class UResourceData;
 class UObject;
+class APlayerCharacter;
 class APlayerController;
 
 UCLASS()
@@ -93,25 +93,25 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnRoundOrdered(APlayerCharacter* Character);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool MustBeUnlocked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnlocked(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDrinkFree(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasSupporterEdition() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetDrinkableIcon() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDrinkableDataAsset* GetDrinkableEdition(UObject* WorldContext, APlayerController* Player);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool AreSpecialDrinksUnlocked(UObject* WorldContext);
     
     UDrinkableDataAsset();

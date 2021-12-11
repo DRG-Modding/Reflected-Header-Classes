@@ -6,9 +6,9 @@
 #include "NoisyPathfinderTest.generated.h"
 
 class UFloodFillSettings;
-class ADeepCSGWorld;
 class UTunnelSegmentSetting;
 class UTunnelParameters;
+class ADeepCSGWorld;
 
 UCLASS()
 class ANoisyPathfinderTest : public AActor {

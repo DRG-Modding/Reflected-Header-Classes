@@ -2,27 +2,27 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine NavigationSystemBase
-//CROSS-MODULE INCLUDE: Engine ENavigationQueryResult
 //CROSS-MODULE INCLUDE: Engine ENavDataGatheringModeConfig
 //CROSS-MODULE INCLUDE: Engine NavDataConfig
-//CROSS-MODULE INCLUDE: Engine NavAgentSelector
 //CROSS-MODULE INCLUDE: Engine FNavigationSystemRunMode
+//CROSS-MODULE INCLUDE: Engine NavAgentSelector
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine ENavigationQueryResult
 #include "NavigationSystemV1.generated.h"
 
-class UNavArea;
 class ANavigationData;
-class AActor;
 class UCrowdManagerBase;
+class AActor;
+class UNavArea;
+class UNavigationQueryFilter;
 class AController;
 class UObject;
-class UNavigationQueryFilter;
 class ANavMeshBoundsVolume;
 class UNavigationSystemV1;
 class UNavigationPath;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNavigationSystemV1OnNavDataRegisteredEvent, ANavigationData*, NavData);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNavigationSystemV1OnNavigationGenerationFinishedDelegate, ANavigationData*, NavData);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNavigationSystemV1OnNavDataRegisteredEvent, ANavigationData*, NavData);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNavigationSystemV1OnNavigationGenerationFinishedDelegate, ANavigationData*, NavData);
 
 UCLASS(BlueprintType, NonTransient, Within=World)
 class NAVIGATIONSYSTEM_API UNavigationSystemV1 : public UNavigationSystemBase {
@@ -124,7 +124,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void RegisterNavigationInvoker(AActor* Invoker, float TileGenerationRadius, float TileRemovalRadius);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector ProjectPointToNavigation(UObject* WorldContextObject, const FVector& Point, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass, const FVector QueryExtent);
     
     UFUNCTION(BlueprintCallable)
@@ -136,37 +136,37 @@ public:
     UFUNCTION(BlueprintCallable)
     bool K2_ReplaceAreaInOctreeData(const UObject* Object, TSubclassOf<UNavArea> OldArea, TSubclassOf<UNavArea> NewArea);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool K2_ProjectPointToNavigation(UObject* WorldContextObject, const FVector& Point, FVector& ProjectedLocation, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass, const FVector QueryExtent);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool K2_GetRandomReachablePointInRadius(UObject* WorldContextObject, const FVector& Origin, FVector& RandomLocation, float Radius, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool K2_GetRandomPointInNavigableRadius(UObject* WorldContextObject, const FVector& Origin, FVector& RandomLocation, float Radius, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass);
     
     UFUNCTION(BlueprintCallable)
     static bool K2_GetRandomLocationInNavigableRadius(UObject* WorldContextObject, const FVector& Origin, FVector& RandomLocation, float Radius, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsNavigationBeingBuiltOrLocked(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsNavigationBeingBuilt(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector GetRandomReachablePointInRadius(UObject* WorldContextObject, const FVector& Origin, float Radius, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector GetRandomPointInNavigableRadius(UObject* WorldContextObject, const FVector& Origin, float Radius, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TEnumAsByte<ENavigationQueryResult::Type> GetPathLength(UObject* WorldContextObject, const FVector& PathStart, const FVector& PathEnd, float& PathLength, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TEnumAsByte<ENavigationQueryResult::Type> GetPathCost(UObject* WorldContextObject, const FVector& PathStart, const FVector& PathEnd, float& PathCost, ANavigationData* NavData, TSubclassOf<UNavigationQueryFilter> FilterClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UNavigationSystemV1* GetNavigationSystem(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable)

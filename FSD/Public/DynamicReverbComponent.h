@@ -34,10 +34,10 @@ protected:
     UPROPERTY(Export, Transient)
     UAudioComponent* TunnelSoundInstance;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TunnelTimerTriggered();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TimerTriggered();
     
 public:

@@ -4,12 +4,12 @@
 #include "EInputKeys.h"
 #include "EventStarterButton.generated.h"
 
-class AEventStarterButton;
 class USceneComponent;
 class USingleUsableComponent;
+class AEventStarterButton;
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEventStarterButtonOnBootupEvent, AEventStarterButton*, pushedButton);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEventStarterButtonOnBootupEvent, AEventStarterButton*, pushedButton);
 
 UCLASS()
 class AEventStarterButton : public AActor {
@@ -38,26 +38,26 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIsEventActive(bool NewIsEventActive);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUseProgress(float Progress);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_OpenForUse();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Booted();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnOpenedForUse(bool wasOpened);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnBooted();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CloseForUse(APlayerCharacter* User, EInputKeys Key);
     
     UFUNCTION(BlueprintCallable)

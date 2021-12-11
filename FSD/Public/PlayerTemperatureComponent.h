@@ -6,14 +6,14 @@
 #include "PlayerTemperatureComponent.generated.h"
 
 class UHealthComponentBase;
-class APlayerCharacter;
 class UStatusEffect;
+class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerTemperatureComponentOnTemperatureChanged, float, Temperature, float, Change);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTemperatureComponentOnTemperatureStateChanged, EPlayerTemperatureState, State);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTemperatureComponentOnTemperatureChangeRate, int32, ChangeRate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTemperatureComponentOnBarVisibilityChanged, bool, barVisible);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTemperatureComponentOnDefrosting, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerTemperatureComponentOnTemperatureChanged, float, Temperature, float, Change);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTemperatureComponentOnTemperatureStateChanged, EPlayerTemperatureState, State);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTemperatureComponentOnTemperatureChangeRate, int32, ChangeRate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTemperatureComponentOnBarVisibilityChanged, bool, barVisible);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerTemperatureComponentOnDefrosting, float, Progress);
 
 UCLASS()
 class UPlayerTemperatureComponent : public UTemperatureComponent {
@@ -91,29 +91,29 @@ public:
     void SetFrozenTemperature();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_TemperatureState(EPlayerTemperatureState oldState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_TemperatureChangeSpeed(int8 OldSpeed);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DefrostProgress();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CurrentTemperature(float OldTemperature);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* Health);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTemperatureChangedSpeed() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDefrostProgress() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentTemperatureNormalized() const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

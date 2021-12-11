@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "SavableDataAsset.h"
 #include "EItemCategory.h"
+#include "SavableDataAsset.h"
 #include "ItemID.generated.h"
 
-class AItem;
-class UPlayerCharacterID;
 class AActor;
+class UPlayerCharacterID;
+class AItem;
 
 UCLASS()
 class FSD_API UItemID : public USavableDataAsset {
@@ -24,19 +24,19 @@ protected:
     EItemCategory ItemCategory;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AItem> GetItemClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EItemCategory GetItemCategory() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AItem* GetItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetActorClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetActor() const;
     
     UItemID();

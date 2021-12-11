@@ -24,7 +24,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float FadeDuration;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnParticleCollision(FName EventName, float EmitterTime, int32 ParticleTime, FVector Location, FVector Velocity, FVector Direction, FVector Normal, FName BoneName, UPhysicalMaterial* PhysMat) const;
     
 public:

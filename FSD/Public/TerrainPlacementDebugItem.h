@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "TerrainPlacementBox.h"
-#include "EDebrisColliderType.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "EDebrisColliderType.h"
 #include "DebrisCapsule.h"
 #include "TerrainPlacementDebugItem.generated.h"
 

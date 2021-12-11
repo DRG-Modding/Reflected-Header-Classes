@@ -6,9 +6,9 @@
 #include "NiagaraPreviewGrid.generated.h"
 
 class UChildActorComponent;
+class ANiagaraPreviewBase;
 class UNiagaraSystem;
 class UNiagaraPreviewAxis;
-class ANiagaraPreviewBase;
 class UNiagaraComponent;
 
 UCLASS()

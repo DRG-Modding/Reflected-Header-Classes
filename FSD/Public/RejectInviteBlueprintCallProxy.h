@@ -6,8 +6,8 @@
 class UObject;
 class URejectInviteBlueprintCallProxy;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRejectInviteBlueprintCallProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRejectInviteBlueprintCallProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRejectInviteBlueprintCallProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRejectInviteBlueprintCallProxyOnFailure);
 
 UCLASS()
 class URejectInviteBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {

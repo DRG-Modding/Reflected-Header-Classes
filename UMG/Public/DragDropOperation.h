@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EDragPivot.h"
+//CROSS-MODULE INCLUDE: SlateCore PointerEvent
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "DragDropOperation.generated.h"
 
 class UWidget;
 class UDragDropOperation;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDrop, UDragDropOperation*, Operation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDragCancelled, UDragDropOperation*, Operation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDragged, UDragDropOperation*, Operation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDrop, UDragDropOperation*, Operation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDragCancelled, UDragDropOperation*, Operation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDragged, UDragDropOperation*, Operation);
 
 UCLASS(Blueprintable)
 class UMG_API UDragDropOperation : public UObject {
@@ -41,13 +41,13 @@ public:
     UPROPERTY(BlueprintAssignable)
     FDragDropOperationOnDragged OnDragged;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Drop(const FPointerEvent& PointerEvent);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Dragged(const FPointerEvent& PointerEvent);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void DragCancelled(const FPointerEvent& PointerEvent);
     
     UDragDropOperation();

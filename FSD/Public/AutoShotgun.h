@@ -18,10 +18,10 @@ protected:
     UPROPERTY(EditAnywhere)
     TSubclassOf<UStatusEffect> CQCKillBuff;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetKilled(AActor* Target, UFSDPhysicalMaterial* PhysicalMaterial);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
 public:

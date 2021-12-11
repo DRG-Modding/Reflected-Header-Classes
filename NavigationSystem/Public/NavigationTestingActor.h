@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 //CROSS-MODULE INCLUDE: Engine NavAgentInterface
 //CROSS-MODULE INCLUDE: Engine NavPathObserverInterface
+//CROSS-MODULE INCLUDE: Engine NavAgentProperties
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ENavCostDisplay.h"
-//CROSS-MODULE INCLUDE: Engine NavAgentProperties
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "NavigationTestingActor.generated.h"
 
@@ -116,5 +116,7 @@ public:
     float OffsetFromCornersDistance;
     
     ANavigationTestingActor();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

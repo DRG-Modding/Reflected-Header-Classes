@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESlateAccessibleBehavior.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "ESlateAccessibleBehavior.h"
 #include "SlateAccessibleWidgetData.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FSlateAccessibleWidgetDataAccessibleTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FSlateAccessibleWidgetDataAccessibleSummaryTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FSlateAccessibleWidgetDataAccessibleTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FSlateAccessibleWidgetDataAccessibleSummaryTextDelegate);
 
 UCLASS(DefaultToInstanced)
 class USlateAccessibleWidgetData : public UObject {

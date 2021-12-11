@@ -5,15 +5,15 @@
 #include "EVanitySlot.h"
 #include "CharacterVanityItems.generated.h"
 
-class USideburnsVanityItem;
-class UHeadVanityItem;
 class UVanitySchematicBank;
 class UObject;
+class UHeadVanityItem;
 class UBeardVanityItem;
 class UArmorVanityItem;
 class UArmorMaterialVanityItem;
 class UEyeBrowsVanityItem;
 class UMoustacheVanityItem;
+class USideburnsVanityItem;
 class UBeardColorVanityItem;
 class USkinColorVanityItem;
 class UVanityItem;
@@ -88,7 +88,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<UVanityItem*> GetVanityItems(UObject* WorldContextObject, EVanitySlot Slot, bool onlyStoreItems, UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UVanityItem* GetVanityItem(const FGuid& VanityID) const;
     
     UFUNCTION(BlueprintCallable)
@@ -97,10 +97,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<UVanityItem*> GetLockedVanityItems(UObject* WorldContextObject, EVanitySlot Slot, UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UVanityItem*> GetItems(EVanitySlot Slot, bool onlyStoreItems) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UVanityItem* GetDefaultVanityItem(UObject* WorldContext, EVanitySlot Slot, UPlayerCharacterID* characterID);
     
     UFUNCTION(BlueprintCallable)

@@ -11,13 +11,13 @@ UCLASS(EditInlineNew)
 class UWeeklyTimerCampaignRequirement : public UCampaignRequirement {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetWeeklyTimeLeft(AFSDPlayerController* Player) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetTimeUntillNewCampaign(AFSDPlayerController* Player) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasCompleted(UCampaign* Campaign, AFSDPlayerController* Player) const;
     
     UWeeklyTimerCampaignRequirement();

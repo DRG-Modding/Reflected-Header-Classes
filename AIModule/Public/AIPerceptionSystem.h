@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine EEndPlayReason
 #include "AISubsystem.h"
 #include "AIStimulus.h"
+//CROSS-MODULE INCLUDE: Engine EEndPlayReason
 #include "AIPerceptionSystem.generated.h"
 
-class AActor;
 class UObject;
 class UAISense;
 class UAISenseEvent;
+class AActor;
 
 UCLASS(BlueprintType, Config=Game)
 class AIMODULE_API UAIPerceptionSystem : public UAISubsystem {
@@ -33,7 +33,7 @@ public:
     static bool RegisterPerceptionStimuliSource(UObject* WorldContextObject, TSubclassOf<UAISense> Sense, AActor* Target);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPerceptionStimuliSourceEndPlay(AActor* Actor, TEnumAsByte<EEndPlayReason::Type> EndPlayReason);
     
 public:

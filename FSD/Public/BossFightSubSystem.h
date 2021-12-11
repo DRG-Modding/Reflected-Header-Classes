@@ -7,8 +7,8 @@ class UBossFightInterface;
 class IBossFightInterface;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBossFightSubSystemOnNewBossFight, const TScriptInterface<IBossFightInterface>&, BossFight);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBossFightSubSystemOnBossFightRemoved, const TScriptInterface<IBossFightInterface>&, BossFight);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBossFightSubSystemOnNewBossFight, const TScriptInterface<IBossFightInterface>&, BossFight);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBossFightSubSystemOnBossFightRemoved, const TScriptInterface<IBossFightInterface>&, BossFight);
 
 UCLASS(BlueprintType)
 class UBossFightSubSystem : public UGameInstanceSubsystem {

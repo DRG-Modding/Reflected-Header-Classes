@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore Margin
+//CROSS-MODULE INCLUDE: SlateCore CheckBoxStyle
 #include "ContentWidget.h"
 //CROSS-MODULE INCLUDE: SlateCore ECheckBoxState
-//CROSS-MODULE INCLUDE: SlateCore CheckBoxStyle
 //CROSS-MODULE INCLUDE: SlateCore EHorizontalAlignment
+//CROSS-MODULE INCLUDE: SlateCore Margin
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "CheckBox.generated.h"
 
 class USlateBrushAsset;
 class USlateWidgetStyleAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(ECheckBoxState, FCheckBoxCheckedStateDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCheckBoxOnCheckStateChanged, bool, bIsChecked);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(ECheckBoxState, FCheckBoxCheckedStateDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCheckBoxOnCheckStateChanged, bool, bIsChecked);
 
 UCLASS()
 class UMG_API UCheckBox : public UContentWidget {
@@ -78,13 +78,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCheckedState(ECheckBoxState InCheckedState);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPressed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsChecked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ECheckBoxState GetCheckedState() const;
     
     UCheckBox();

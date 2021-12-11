@@ -4,8 +4,8 @@
 #include "ArmorHealthItem.h"
 #include "ArmorHealthDamageComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FArmorHealthDamageComponentOnArmorPartDestroyedEvent, FName, Name);
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FArmorHealthDamageComponentOnArmorPartDamagedEvent, FName, BoneName, float, Damage);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FArmorHealthDamageComponentOnArmorPartDestroyedEvent, FName, Name);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FArmorHealthDamageComponentOnArmorPartDamagedEvent, FName, BoneName, float, Damage);
 
 UCLASS()
 class UArmorHealthDamageComponent : public UBaseArmorDamageComponent {
@@ -38,7 +38,7 @@ public:
     void RegrowAllArmor(float baseHealth);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ArmorDamageIndex(uint32 OldValue);
     
 public:

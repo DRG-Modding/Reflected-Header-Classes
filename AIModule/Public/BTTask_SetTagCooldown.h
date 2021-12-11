@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BTTaskNode.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTag
+#include "BTTaskNode.h"
 #include "BTTask_SetTagCooldown.generated.h"
 
 UCLASS()

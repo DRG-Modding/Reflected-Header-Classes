@@ -22,10 +22,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetLevelNames(const TArray<FName>& InLevelNames);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ELevelVisibility GetVisibility() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FName> GetLevelNames() const;
     
     UMovieSceneLevelVisibilitySection();

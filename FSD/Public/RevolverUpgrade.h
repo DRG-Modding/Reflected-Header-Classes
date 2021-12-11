@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StandardItemUpgrade.h"
-#include "UpgradeValues.h"
 #include "ERevolerUpgrades.h"
+#include "UpgradeValues.h"
 #include "RevolverUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class URevolverUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     ERevolerUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, ERevolerUpgrades NewUpgradeType);
     
     URevolverUpgrade();

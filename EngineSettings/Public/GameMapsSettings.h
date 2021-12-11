@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
+#include "GameModeName.h"
 //CROSS-MODULE INCLUDE: CoreUObject SoftClassPath
 #include "ETwoPlayerSplitScreenType.h"
+//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "EFourPlayerSplitScreenType.h"
 #include "EThreePlayerSplitScreenType.h"
-#include "GameModeName.h"
 #include "GameMapsSettings.generated.h"
 
 class UGameMapsSettings;
@@ -62,10 +62,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetSkipAssigningGamepadToPlayer1(bool bSkipFirstPlayer);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetSkipAssigningGamepadToPlayer1() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UGameMapsSettings* GetGameMapsSettings();
     
     UGameMapsSettings();

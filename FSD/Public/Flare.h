@@ -5,10 +5,10 @@
 #include "ItemIDInterface.h"
 #include "FSDPhysicsActor.h"
 #include "SaveGameIDInterface.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "UpgradableGear.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "Flare.generated.h"
 
 class AActor;
@@ -62,11 +62,11 @@ protected:
     USoundCue* ImpactGroundSound;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUpdateShadowRadius();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFlareOn();
     
 public:
@@ -74,32 +74,37 @@ public:
     void OnFlareSpawnCompleted();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFlareIgnite();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFlareExtinguish();
     
 public:
     UFUNCTION(BlueprintCallable)
     void Inhibit();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetWeaponViewClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AFlare* GetFlareDefaultObject(TSubclassOf<AFlare> flareClass);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ActorWasHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ActivateFlare();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AFlare();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    TSubclassOf<AItem> GetLoadoutItemClass() const override PURE_VIRTUAL(GetLoadoutItemClass, return NULL;);
+    
 };
 

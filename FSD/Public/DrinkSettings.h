@@ -5,9 +5,9 @@
 #include "RandInterval.h"
 #include "DrinkSettings.generated.h"
 
-class UDrinkableDataAsset;
-class UResourceData;
 class UObject;
+class UResourceData;
+class UDrinkableDataAsset;
 
 UCLASS(BlueprintType)
 class UDrinkSettings : public UDataAsset {
@@ -25,10 +25,10 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TArray<UDrinkableDataAsset*> Drinkables;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<UDrinkableDataAsset*> GetBarDrinkables(UObject* WorldContext, bool IncludeDailySpecial, bool includeNotUnlocked, bool includePlayerRankTooLow);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UDrinkableDataAsset* GetBarDailySpecial(UObject* WorldContext);
     
     UDrinkSettings();

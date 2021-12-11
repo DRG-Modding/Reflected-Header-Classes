@@ -40,7 +40,7 @@ protected:
     UPROPERTY(EditAnywhere)
     UAnimMontage* WPN_ItemReloadEndMontage;
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void ApplyShieldDamage();
     
 public:

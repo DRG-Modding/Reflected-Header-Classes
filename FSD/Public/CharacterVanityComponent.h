@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "TattooArmorItem.h"
 #include "EHeadVanityType.h"
+#include "TattooArmorItem.h"
 #include "EVanitySlot.h"
 #include "CharacterVanityComponent.generated.h"
 
-class UCharacterVanityItems;
+class USkeletalMeshComponent;
 class UBeardColorVanityItem;
 class UMaterialInterface;
-class UVanityItem;
+class UCharacterVanityItems;
 class UMaterialInstanceDynamic;
-class USkeletalMeshComponent;
+class UVanityItem;
 class UObject;
 class UPlayerCharacterID;
 
@@ -50,7 +50,7 @@ protected:
     UPROPERTY(Export, Transient)
     TMap<EVanitySlot, USkeletalMeshComponent*> VanityMeshes;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UpdateMeshes();
     
 public:
@@ -61,22 +61,22 @@ public:
     void SetEquippedVanityInViewer(const TArray<UVanityItem*>& Vanity);
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetEquippedVanity(const TArray<UVanityItem*>& equippedItems);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UVanityItem* Receive_GetEquippedVanityItem(UObject* WorldContextObject, UPlayerCharacterID* Character, EVanitySlot Slot);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EquippedVanity();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UVanityItem* GetEquippedVanityItem(EVanitySlot Slot) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCharacterVanityItems* GetAvailableVanityItems() const;
     
     UFUNCTION(BlueprintCallable)

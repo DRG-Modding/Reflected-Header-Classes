@@ -5,7 +5,7 @@
 
 class UHealthComponentBase;
 
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FObjectTemperatureComponentOnStartBurning);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FObjectTemperatureComponentOnStartBurning);
 
 UCLASS()
 class UObjectTemperatureComponent : public UTemperatureComponent {
@@ -33,10 +33,10 @@ protected:
     UPROPERTY(EditAnywhere)
     float OnFireHeatRange;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TimerCallback();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* HealthComponent);
     
 public:

@@ -4,19 +4,19 @@
 #include "EItemSkinType.h"
 #include "ItemSkin.generated.h"
 
-class UDLCBase;
-class UItemSkin;
 class UMaterialInterface;
-class UItemSkinSet;
+class UItemSkin;
+class UDLCBase;
 class UItemID;
+class UItemSkinSet;
 class USkinEffect;
 class UPlayerCharacterID;
 class UObject;
 class AFSDPlayerState;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemSkinOnSkinEquipped, const UItemSkin*, Skin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemSkinOnSkinUnlocked, UItemSkin*, Skin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemSkinOnSkinUnequipped, const UItemSkin*, Skin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemSkinOnSkinEquipped, const UItemSkin*, Skin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemSkinOnSkinUnlocked, UItemSkin*, Skin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemSkinOnSkinUnequipped, const UItemSkin*, Skin);
 
 UCLASS(BlueprintType, EditInlineNew)
 class FSD_API UItemSkin : public USavablePrimaryDataAsset {
@@ -66,16 +66,16 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void Receive_SkinItem(UObject* Skinnable) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocked(UObject* WorldContext, UItemID* skinnableID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEquippedOnItem(UItemID* ItemID, AFSDPlayerState* PlayerState) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemID* GetOwningItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerCharacterID* GetOwningCharacter() const;
     
     UItemSkin();

@@ -13,13 +13,13 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_Vehicle)
     AActor* Vehicle;
     
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void Server_MoveRight(float Value);
     
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void Server_MoveForward(float Value);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Vehicle();
     
 public:

@@ -1,14 +1,14 @@
 #include "PipelineSegment.h"
 #include "Net/UnrealNetwork.h"
 
-class UHealthComponentBase;
 class APlayerCharacter;
+class UTrackBuilderUsable;
 class USplineMeshComponent;
+class ATrackBuilderSegment;
 class UMaterialInterface;
 class APipelineStart;
 class APipelineSegment;
-class UTrackBuilderUsable;
-class ATrackBuilderSegment;
+class UHealthComponentBase;
 
 void APipelineSegment::UpdateSplineMesh(USplineMeshComponent* InMesh, float InProgress, bool InMoveEndCap) {
 }

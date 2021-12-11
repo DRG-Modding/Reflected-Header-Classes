@@ -3,12 +3,12 @@
 #include "FSDPawn.h"
 #include "GuntowerWeakPoint.generated.h"
 
-class UParticleSystem;
 class USceneComponent;
+class UWeakpointGlowComponent;
 class UEnemyHealthComponent;
 class UStaticMeshComponent;
-class UWeakpointGlowComponent;
 class UDamageClass;
+class UParticleSystem;
 class USoundCue;
 class UHealthComponentBase;
 
@@ -41,13 +41,13 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     USoundCue* deathSound;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnExposedChanged(bool isExposed);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* HealthComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DamageParent(float ammount);
     
 public:

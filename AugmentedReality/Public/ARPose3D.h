@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EARJointTransformSpace.h"
 #include "ARSkeletonDefinition.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
-#include "EARJointTransformSpace.h"
 #include "ARPose3D.generated.h"
 
 USTRUCT(BlueprintType)

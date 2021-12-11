@@ -2,8 +2,8 @@
 
 class AFSDGameState;
 class APlayerController;
-class AActor;
 class USeasonChallenge;
+class AActor;
 class AFSDPlayerState;
 
 void UGoogleAnalyticsWrapper::StartMissionPartyInfo(AFSDGameState* GameState) {

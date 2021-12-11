@@ -1,9 +1,9 @@
 #include "TreasureBox.h"
 #include "Net/UnrealNetwork.h"
 
+class APlayerCharacter;
 class AProceduralSetup;
 class UDebrisPositioning;
-class APlayerCharacter;
 class UCurveFloat;
 class URepairableComponent;
 

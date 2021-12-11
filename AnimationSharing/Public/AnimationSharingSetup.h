@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AnimationSharingScalability.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "PerSkeletonAnimationSharingSetup.h"
-#include "AnimationSharingScalability.h"
 #include "AnimationSharingSetup.generated.h"
 
 UCLASS()

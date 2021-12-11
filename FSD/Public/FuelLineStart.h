@@ -3,15 +3,15 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "FuelLineStart.generated.h"
 
-class AFuelLineStart;
-class UStaticMeshComponent;
 class ATrackBuilderSegment;
 class UOutlineComponent;
-class UTrackBuilderUsable;
+class AFuelLineStart;
 class USimpleObjectInfoComponent;
+class UStaticMeshComponent;
 class UFuelLineStartUsable;
+class UTrackBuilderUsable;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFuelLineStartOnFuelLineConnected, AFuelLineStart*, InFuelLineStart);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFuelLineStartOnFuelLineConnected, AFuelLineStart*, InFuelLineStart);
 
 UCLASS(Abstract)
 class FSD_API AFuelLineStart : public AActor {
@@ -36,13 +36,13 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_FuelLineConnected)
     bool bFuelLineConnected;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveFuelLineConnected();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_FuelLineConnected();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackNextSegmentChanged(UTrackBuilderUsable* InUsable, ATrackBuilderSegment* InSegment);
     
 public:

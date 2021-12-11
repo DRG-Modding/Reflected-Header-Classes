@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "OptionalUICategory.generated.h"
 
-class UOptionalUICategory;
 class UObject;
+class UOptionalUICategory;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOptionalUICategoryOnVisibilityChanged, UOptionalUICategory*, Category, bool, IsVisible);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOptionalUICategoryOnVisibilityChanged, UOptionalUICategory*, Category, bool, IsVisible);
 
 UCLASS(BlueprintType)
 class UOptionalUICategory : public UDataAsset {
@@ -27,7 +27,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetVisible(UObject* WorldContext, bool IsCategoryVisible);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsVisible(UObject* WorldContext) const;
     
     UOptionalUICategory();

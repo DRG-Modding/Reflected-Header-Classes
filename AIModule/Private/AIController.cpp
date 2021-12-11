@@ -2,9 +2,9 @@
 #include "Templates/SubclassOf.h"
 
 class UBlackboardData;
+class UPathFollowingComponent;
 class UBlackboardComponent;
 class UGameplayTaskResource;
-class UPathFollowingComponent;
 class UBehaviorTree;
 class UNavigationQueryFilter;
 class AActor;

@@ -12,7 +12,7 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TArray<TSoftObjectPtr<UNiagaraSystem>> ParticlesForShaderGeneration;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool NeedsShadeGeneration() const;
     
     UFUNCTION(BlueprintCallable)

@@ -24,7 +24,7 @@ public:
     void UpdateSkin(AFSDPlayerState* Player);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnLoadoutChanged();
     
 public:
@@ -43,10 +43,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<UItemSkin*> GetEquippableColorSkins(UItemID* ItemID, AFSDPlayerState* Player);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UItemSkin* GetDefaultItemSkin(UItemID* ItemID, EItemSkinType itemSkinType);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UItemSkin* GetBaseColorSkinForMeshSkin(UItemID* ItemID, UItemSkin* meshSkin);
     
     UFUNCTION(BlueprintCallable)

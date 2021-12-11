@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NamedInterfaceDef.h"
-#include "NamedInterface.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "NamedInterface.h"
+#include "NamedInterfaceDef.h"
 #include "NamedInterfaces.generated.h"
 
 UCLASS(Transient)

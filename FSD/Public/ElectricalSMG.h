@@ -8,10 +8,10 @@
 
 class UStatusEffect;
 class UParticleSystem;
+class UPrimitiveComponent;
 class USoundCue;
 class UFSDPhysicalMaterial;
 class UHealthComponentBase;
-class UPrimitiveComponent;
 
 UCLASS()
 class AElectricalSMG : public AAmmoDrivenWeapon {
@@ -33,13 +33,13 @@ protected:
     UPROPERTY(EditAnywhere)
     float AoEStatusEffectRange;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStatusEffectPushed(UHealthComponentBase* Health);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_OnAoETriggered(const FVector_NetQuantize& Location, const FVector_NetQuantizeNormal& Normal) const;
     
 public:

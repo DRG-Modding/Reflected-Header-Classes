@@ -14,7 +14,7 @@ protected:
     TWeakObjectPtr<AActor> DestinationActor;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDistToDestinationActor() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

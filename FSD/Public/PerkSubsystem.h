@@ -15,7 +15,7 @@ protected:
     TMap<UPerkAsset*, UPerkDelegateItem*> PerkDelegates;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPerkDelegateItem* GetPerkDelegates(UPerkAsset* Perk);
     
     UPerkSubsystem();

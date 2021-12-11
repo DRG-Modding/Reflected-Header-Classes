@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnemyDeepPathfinderCharacter.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FlyingEnemyDeepPathfinderCharacter.generated.h"
 
-class UPrimitiveComponent;
+class AActor;
 class UPhysicalMaterial;
 class UPhysicsAsset;
+class UPrimitiveComponent;
 class USoundCue;
-class AActor;
 class UParticleSystem;
 
 UCLASS()
@@ -29,14 +29,14 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UParticleSystem* FrozenDeathparticles;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TriggerFrozenRagdoll();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFreezeImpact(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_FreezeImpact();
     
     AFlyingEnemyDeepPathfinderCharacter();

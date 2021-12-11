@@ -2,11 +2,11 @@
 #include "Net/UnrealNetwork.h"
 
 class UGeneratedMission;
+class AGameStats;
 class UDifficultySetting;
-class AProceduralSetup;
 class AFSDPlayerState;
 class UObjective;
-class AGameStats;
+class AProceduralSetup;
 class UResourceData;
 class UDifficultyManager;
 class UFSDEvent;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETrackBuildPlacementState.h"
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
+#include "ETrackBuildPlacementState.h"
 #include "TrackBuilderPoint.generated.h"
 
 class UTrackBuilderConnectPoint;

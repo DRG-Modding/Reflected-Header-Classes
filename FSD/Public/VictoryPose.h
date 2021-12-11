@@ -3,10 +3,10 @@
 #include "SavablePrimaryDataAsset.h"
 #include "VictoryPose.generated.h"
 
+class AActor;
+class UObject;
 class UAnimSequence;
 class UPlayerCharacterID;
-class UObject;
-class AActor;
 
 UCLASS(BlueprintType)
 class UVictoryPose : public USavablePrimaryDataAsset {
@@ -47,10 +47,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void ResetUnlock(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnlockedNotFromStart(UObject* WorldContextObject, UPlayerCharacterID* characterID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnlocked(UObject* WorldContextObject, UPlayerCharacterID* characterID) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)

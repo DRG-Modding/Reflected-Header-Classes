@@ -5,8 +5,8 @@
 #include "UpgradeValues.h"
 #include "PushSatusEffectDamageBonusUpgrade.generated.h"
 
-class AActor;
 class UStatusEffect;
+class AActor;
 class AFSDPlayerState;
 
 UCLASS(EditInlineNew, MinimalAPI)
@@ -24,7 +24,7 @@ protected:
     bool IgnoreArmorHit;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, TSubclassOf<UStatusEffect> NewStatusEffect);
     
     UPushSatusEffectDamageBonusUpgrade();

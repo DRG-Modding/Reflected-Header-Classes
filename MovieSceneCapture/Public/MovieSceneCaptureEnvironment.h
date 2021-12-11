@@ -13,10 +13,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool IsCaptureInProgress();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetCaptureFrameNumber();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetCaptureElapsedTime();
     
     UFUNCTION(BlueprintCallable)

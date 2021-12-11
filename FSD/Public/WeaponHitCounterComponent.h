@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "WeaponHitCounterComponent.generated.h"
 
+class UWeaponHitCountEffect;
 class UFSDPhysicalMaterial;
 class UHealthComponentBase;
-class UWeaponHitCountEffect;
 class UPrimitiveComponent;
 class AActor;
 
@@ -20,19 +20,19 @@ protected:
     UPROPERTY(EditAnywhere)
     bool RequiresWeakpointHit;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_OnReloading();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStoppedUsing();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnReloading();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowDamageEffects(const TArray<TWeakObjectPtr<AActor>>& Targets);
     
 public:

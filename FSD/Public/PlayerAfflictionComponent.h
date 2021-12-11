@@ -6,8 +6,8 @@
 class UPlayerAfflictionOverlay;
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerAfflictionComponentOnShowOverlay, UPlayerAfflictionOverlay*, Overlay);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerAfflictionComponentOnHideOverlay, UPlayerAfflictionOverlay*, Overlay);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerAfflictionComponentOnShowOverlay, UPlayerAfflictionOverlay*, Overlay);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerAfflictionComponentOnHideOverlay, UPlayerAfflictionOverlay*, Overlay);
 
 UCLASS()
 class UPlayerAfflictionComponent : public UPawnAfflictionComponent {

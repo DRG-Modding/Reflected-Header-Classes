@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine Volume
 //CROSS-MODULE INCLUDE: Engine NavRelevantInterface
+//CROSS-MODULE INCLUDE: Engine Volume
 #include "NavModifierVolume.generated.h"
 
 class UNavArea;
@@ -20,5 +20,7 @@ public:
     void SetAreaClass(TSubclassOf<UNavArea> NewAreaClass);
     
     ANavModifierVolume();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

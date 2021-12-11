@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "SchematicBlueprintLibrary.generated.h"
 
-class USchematicCategory;
 class UItemUpgrade;
-class UPlayerCharacterID;
 class UObject;
 class UItemSkinSchematicCollection;
 class USchematic;
+class UPlayerCharacterID;
+class USchematicCategory;
 
 UCLASS(BlueprintType)
 class USchematicBlueprintLibrary : public UBlueprintFunctionLibrary {
@@ -17,16 +17,16 @@ public:
     UFUNCTION(BlueprintCallable)
     static void PriceAllSchematics(bool lockPrices);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsSchematicOwnedOrForged(UObject* WorldContextObject, USchematic* Schematic);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsSchematicOwned(UObject* WorldContextObject, USchematic* Schematic);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsSchematicForged(UObject* WorldContextObject, USchematic* Schematic);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool HasAnyUnlockableSchematics(UObject* WorldContextObject, UPlayerCharacterID* characterID, TSet<USchematicCategory*>& Categories);
     
     UFUNCTION(BlueprintCallable)

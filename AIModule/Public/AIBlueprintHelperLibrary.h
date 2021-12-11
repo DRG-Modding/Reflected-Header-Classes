@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "AIBlueprintHelperLibrary.generated.h"
 
-class AAIController;
-class AActor;
-class UObject;
 class UAnimInstance;
-class APawn;
 class UBehaviorTree;
+class APawn;
+class UObject;
+class AActor;
 class AController;
 class UNavigationPath;
 class UBlackboardComponent;
+class AAIController;
 class UAIAsyncTaskBlueprintProxy;
 
 UCLASS(BlueprintType)
@@ -39,22 +39,22 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void LockAIResourcesWithAnimation(UAnimInstance* AnimInstance, bool bLockMovement, bool LockAILogic);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsValidAIRotation(FRotator Rotation);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsValidAILocation(FVector Location);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsValidAIDirection(FVector DirectionVector);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UNavigationPath* GetCurrentPath(AController* Controller);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UBlackboardComponent* GetBlackboard(AActor* Target);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AAIController* GetAIController(AActor* ControlledActor);
     
     UFUNCTION(BlueprintCallable)

@@ -28,10 +28,10 @@ protected:
     TArray<FGameplayTagQuery> RoomQueries;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDurationHazardBonus() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetComplexityHazardBonus() const;
     
     UMissionDNA();

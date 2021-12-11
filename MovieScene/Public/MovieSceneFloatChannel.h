@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneChannel.h"
-#include "MovieSceneFloatValue.h"
 //CROSS-MODULE INCLUDE: Engine ERichCurveExtrapolation
-//CROSS-MODULE INCLUDE: CoreUObject FrameRate
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
 #include "MovieSceneKeyHandleMap.h"
+//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+#include "MovieSceneFloatValue.h"
+//CROSS-MODULE INCLUDE: CoreUObject FrameRate
 #include "MovieSceneFloatChannel.generated.h"
 
 USTRUCT(BlueprintType)

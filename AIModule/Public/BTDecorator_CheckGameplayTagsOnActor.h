@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlackboardKeySelector.h"
 #include "BTDecorator.h"
-//CROSS-MODULE INCLUDE: GameplayTags EGameplayContainerMatchType
+#include "BlackboardKeySelector.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
+//CROSS-MODULE INCLUDE: GameplayTags EGameplayContainerMatchType
 #include "BTDecorator_CheckGameplayTagsOnActor.generated.h"
 
 UCLASS()

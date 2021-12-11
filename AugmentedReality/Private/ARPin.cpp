@@ -1,8 +1,8 @@
 #include "ARPin.h"
 
 class UWorld;
-class USceneComponent;
 class UARTrackedGeometry;
+class USceneComponent;
 
 EARTrackingState UARPin::GetTrackingState() const {
     return EARTrackingState::Unknown;

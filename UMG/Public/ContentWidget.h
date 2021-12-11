@@ -3,8 +3,8 @@
 #include "PanelWidget.h"
 #include "ContentWidget.generated.h"
 
-class UPanelSlot;
 class UWidget;
+class UPanelSlot;
 
 UCLASS(Abstract)
 class UMG_API UContentWidget : public UPanelWidget {
@@ -13,10 +13,10 @@ public:
     UFUNCTION(BlueprintCallable)
     UPanelSlot* SetContent(UWidget* Content);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPanelSlot* GetContentSlot() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWidget* GetContent() const;
     
     UContentWidget();

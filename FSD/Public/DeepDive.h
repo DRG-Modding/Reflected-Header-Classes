@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DeepDiveRewardItem.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "DeepDiveRewardItem.h"
 #include "DeepDive.generated.h"
 
 class UBiome;
@@ -39,13 +39,13 @@ public:
     UPROPERTY(BlueprintReadOnly, Transient)
     int32 BestTime;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCompleted() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasCompletedStage(int32 stageIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FDeepDiveRewardItem GetGivenRewardAtStage(int32 stageIndex);
     
     UDeepDive();

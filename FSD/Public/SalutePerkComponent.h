@@ -14,7 +14,7 @@ protected:
     UPROPERTY(EditAnywhere)
     float FleeRadius;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSalute();
     
 public:

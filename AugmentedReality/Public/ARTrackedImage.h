@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "ARTrackedGeometry.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "ARTrackedImage.generated.h"
 
 class UARCandidateImage;
@@ -18,10 +18,10 @@ protected:
     FVector2D EstimatedSize;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetEstimateSize();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UARCandidateImage* GetDetectedImage() const;
     
     UARTrackedImage();

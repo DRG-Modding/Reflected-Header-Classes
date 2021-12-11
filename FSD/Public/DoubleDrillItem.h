@@ -4,24 +4,24 @@
 #include "RejoinListener.h"
 #include "Upgradable.h"
 #include "UpgradableGear.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EDoubleDrillState.h"
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine HitResult
 #include "DoubleDrillDamageItem.h"
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "DoubleDrillItem.generated.h"
 
 class UFSDAudioComponent;
-class UDoubleDrillAggregator;
 class UFirstPersonParticleSystemComponent;
+class UForceFeedbackEffect;
 class UDamageComponent;
+class UDoubleDrillAggregator;
 class UAnimMontage;
 class UParticleSystem;
-class UForceFeedbackEffect;
-class UFSDPhysicalMaterial;
 class UDialogDataAsset;
 class UDamageClass;
 class AActor;
+class UFSDPhysicalMaterial;
 
 UCLASS()
 class ADoubleDrillItem : public ADualAnimatedItem, public IUpgradable, public IUpgradableGear, public IRejoinListener {
@@ -162,53 +162,55 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsGunslinging)
     bool IsGunslinging;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StopMining();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StartMining();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_DoDamage(const TArray<FDoubleDrillDamageItem>& Targets);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_DigBlock(FVector_NetQuantize Start, FVector_NetQuantize End);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetKilled(AActor* Target, UFSDPhysicalMaterial* PhysMat);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStopDrilling();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStartDrilling();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SimulatingMining();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsGunslinging();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDrillParticlesTimerElapsed();
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_Resupply(float percentage);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnDrillDamage();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SimulateDigDebris(FVector_NetQuantize Position, int32 DebrisIndex);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SimulateDigBlock(FVector_NetQuantize Position, bool spawnParticles, int32 Material);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SimulateDamage(const TArray<FDoubleDrillDamageItem>& Targets);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ADoubleDrillItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

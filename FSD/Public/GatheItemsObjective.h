@@ -23,10 +23,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UCollectableResourceData* ItemResource;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceChanged(UCappedResource* CappedResource, float Amount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ItemsCollected(int32 prevAmount);
     
 public:

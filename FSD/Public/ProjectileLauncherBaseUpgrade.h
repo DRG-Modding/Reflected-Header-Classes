@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "ProjectileLauncherBaseUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UProjectileLauncherBaseUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EProjectileLauncherBaseUpgradeType upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EProjectileLauncherBaseUpgradeType NewUpgradeType);
     
     UProjectileLauncherBaseUpgrade();

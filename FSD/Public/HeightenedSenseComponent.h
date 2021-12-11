@@ -24,10 +24,10 @@ protected:
     UPROPERTY(Transient)
     bool bAfflictionActivated;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RemoveTracker(AActor* TrackerActor);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AddTracker(AActor* TrackerActor);
     
 public:

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "WeaponFireComponent.h"
+#include "ERicochetBehavior.h"
 #include "EImpactDecalSize.h"
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
-#include "ERicochetBehavior.h"
 #include "HitscanBaseComponent.generated.h"
 
 class UDamageComponent;
 class UDamageClass;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FHitscanBaseComponentOnSpreadChanged, float, HorizontalSpread, float, VerticalSpread, bool, isAtRest);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FHitscanBaseComponentOnFireComplete);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FHitscanBaseComponentOnSpreadChanged, float, HorizontalSpread, float, VerticalSpread, bool, isAtRest);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FHitscanBaseComponentOnFireComplete);
 
 UCLASS()
 class UHitscanBaseComponent : public UWeaponFireComponent {
@@ -95,17 +95,17 @@ protected:
     UPROPERTY(EditAnywhere)
     float RicochetMaxRange;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StopFire();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_RemoveDebris(int32 instance, int32 Component);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentVerticalSpread() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentHorizontalSpread() const;
     
     UHitscanBaseComponent();

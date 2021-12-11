@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioModID.h"
 #include "EModioModManagementEventType.h"
+#include "ModioModID.h"
 #include "ModioErrorCode.h"
 #include "ModioModManagementEvent.generated.h"
 

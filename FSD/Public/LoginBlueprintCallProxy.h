@@ -3,11 +3,11 @@
 //CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
 #include "LoginBlueprintCallProxy.generated.h"
 
-class ULoginBlueprintCallProxy;
 class UObject;
+class ULoginBlueprintCallProxy;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLoginBlueprintCallProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLoginBlueprintCallProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLoginBlueprintCallProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLoginBlueprintCallProxyOnFailure);
 
 UCLASS()
 class ULoginBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {

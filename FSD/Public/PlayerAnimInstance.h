@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GliderAnimSync.h"
-//CROSS-MODULE INCLUDE: Engine AnimInstance
 #include "FootStepNotifyTarget.h"
+//CROSS-MODULE INCLUDE: Engine AnimInstance
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ECharacterState.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "GliderAnimSync.h"
 #include "ECharacterMoveDirection.h"
 #include "PlayerAnimInstance.generated.h"
 
-class UParticleSystem;
+class UUseAnimationSetting;
 class USoundCue;
 class APlayerCharacter;
+class UParticleSystem;
 class UItemCharacterAnimationSet;
 class UAnimMontage;
-class UUseAnimationSetting;
 
 UCLASS(NonTransient)
 class UPlayerAnimInstance : public UAnimInstance, public IFootStepNotifyTarget {
@@ -182,10 +182,10 @@ public:
     bool StopUseMontage(bool stopImmediately);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StopInspectWeapon();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StartInspectWeapon();
     
 public:
@@ -195,12 +195,14 @@ public:
     UFUNCTION(BlueprintCallable)
     void PlayUseMontages(UUseAnimationSetting* useSetting);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlayingMontageInGroup(FName GroupName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemCharacterAnimationSet* GetAnimationSet() const;
     
     UPlayerAnimInstance();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

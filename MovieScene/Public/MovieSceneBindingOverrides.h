@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneBindingOverrideData.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "MovieSceneBindingOverrideData.h"
 #include "MovieSceneBindingOverrides.generated.h"
 
 UCLASS(DefaultToInstanced, EditInlineNew)

@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE: UMG UserWidget
 #include "OptionalObjectiveWidget.generated.h"
 
-class UOptionalObjectiveWidget;
 class UObjective;
+class UOptionalObjectiveWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOptionalObjectiveWidgetOnWidgetUpdated, UOptionalObjectiveWidget*, InOptionalObjectiveWidget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOptionalObjectiveWidgetOnWidgetUpdated, UOptionalObjectiveWidget*, InOptionalObjectiveWidget);
 
 UCLASS(Abstract, EditInlineNew)
 class UOptionalObjectiveWidget : public UUserWidget {

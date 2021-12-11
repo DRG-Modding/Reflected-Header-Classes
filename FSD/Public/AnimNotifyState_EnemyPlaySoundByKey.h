@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: Engine AnimNotifyState
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "AnimNotifyState_EnemyPlaySoundByKey.generated.h"
 
 class UEnemyPlaySoundKey;

@@ -13,7 +13,7 @@ protected:
     UPROPERTY(Transient)
     TArray<URunningMissionBP*> RunningBlueprints;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMatchStarted();
     
 public:

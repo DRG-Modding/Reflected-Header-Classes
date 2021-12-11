@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "SubObjective.h"
 #include "Objective.h"
+#include "SubObjective.h"
 #include "IRandRange.h"
 #include "RandInterval.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
@@ -10,19 +10,19 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FacilityObjective.generated.h"
 
-class AActor;
 class ARessuplyPod;
-class AProceduralSetup;
+class AActor;
 class APawn;
 class UEnemyDescriptor;
 class ATetherStation;
 class UResourceData;
+class AProceduralSetup;
 class UEncounterManager;
 class UDebrisPositioning;
 class UCappedResource;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FFacilityObjectiveOnFirstEncounterDroneSpawned_Delegate, APawn*, enemy);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FFacilityObjectiveOnSecondEncounterDroneSpawned_Delegate, APawn*, enemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FFacilityObjectiveOnFirstEncounterDroneSpawned_Delegate, APawn*, enemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FFacilityObjectiveOnSecondEncounterDroneSpawned_Delegate, APawn*, enemy);
 
 UCLASS(Abstract)
 class UFacilityObjective : public UObjective {
@@ -120,11 +120,11 @@ public:
     void SetGeneratorRooms(TArray<int32>& generatorRoomsIndicies);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SecondGeneratorEncounterSpawn(APawn* spawned);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_AddEnemies(AProceduralSetup* setup);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
@@ -133,24 +133,24 @@ public:
     UFUNCTION(BlueprintCallable)
     AActor* PlaceObjectInRoom(AProceduralSetup* setup, const FRoomNode& RoomNode, UDebrisPositioning* Positioning, TSubclassOf<AActor> placementActor);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceChanged(UCappedResource* Resource, float Amount);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ObjectivesStage();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_GeneratorsActivated();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AmountCollected();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnCoreDeposited();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSubObjectiveComplete(int32 objectiveIndex) const;
     
     UFUNCTION(BlueprintCallable)
@@ -162,30 +162,30 @@ public:
     UFUNCTION(BlueprintCallable)
     TArray<AActor*> GetShieldGenerators();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetShieldGeneratorCount() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetFacilityRoomIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetFacilityLocation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSubObjective GetCurrentObjective() const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void GeneratorActivated();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void FirstGeneratorEncounterSpawn(APawn* spawned);
     
 public:
     UFUNCTION(BlueprintCallable)
     void DropOverCharger(AProceduralSetup* setup, int32 roomIndex, const FVector& facilityLocation, float idealRange, float idealZDistance, UDebrisPositioning* DebrisPositioning, TSubclassOf<ARessuplyPod> NewGeneratorClass);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ChangeObjective();
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

@@ -2,25 +2,25 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine EngineSubsystem
 #include "EModioRequestType.h"
-//CROSS-MODULE INCLUDE: Engine LatentActionInfo
 #include "EUGCPackageError.h"
+//CROSS-MODULE INCLUDE: Engine LatentActionInfo
 #include "UGCSubsystem.generated.h"
 
+class UObject;
 class UUGCPackage;
 class UUGCRegistry;
 class UUGCLatentActionManager;
-class UModioModInfoWrapper;
-class UObject;
 class UTexture2DDynamic;
 class UModioTermsWrapper;
+class UModioModInfoWrapper;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCSubsystemOnModManagementStateChanged, bool, Enabled);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUGCSubsystemOnModDownloadExtractProgressFinished, const FString&, ModName, const FString&, ModId);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCSubsystemOnModioUserAuthenticated, bool, Authenticated);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUGCSubsystemOnLocalUserModsInstalled);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUGCSubsystemOnErrorInstalling, const FString&, ModName, EUGCPackageError, ErrorType);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FUGCSubsystemOnModDownloadExtractProgress, const FString&, Name, const TArray<FString>&, ModsPendingDownload, bool, Downloading, int32, Progress, int32, Total);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUGCSubsystemOnModUninstallProgressFinished, const FString&, ModName, const FString&, ModId);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCSubsystemOnModManagementStateChanged, bool, Enabled);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUGCSubsystemOnModDownloadExtractProgressFinished, const FString&, ModName, const FString&, ModId);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCSubsystemOnModioUserAuthenticated, bool, Authenticated);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUGCSubsystemOnLocalUserModsInstalled);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUGCSubsystemOnErrorInstalling, const FString&, ModName, EUGCPackageError, ErrorType);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FUGCSubsystemOnModDownloadExtractProgress, const FString&, Name, const TArray<FString>&, ModsPendingDownload, bool, Downloading, int32, Progress, int32, Total);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUGCSubsystemOnModUninstallProgressFinished, const FString&, ModName, const FString&, ModId);
 
 UCLASS(BlueprintType)
 class SIMPLEUGC_API UUGCSubsystem : public UEngineSubsystem {
@@ -133,19 +133,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void K2_RequestAuthentication();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModPendingUninstall(UUGCPackage* InMod) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasOutstadingRequestOfType(EModioRequestType requestType);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FString> GetNamesOfModsPendingUninstall();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FString> GetNamesOfModsPendingInstall();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCheckGameVersion();
     
     UFUNCTION(BlueprintCallable)

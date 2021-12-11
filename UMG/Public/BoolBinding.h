@@ -7,7 +7,7 @@ UCLASS()
 class UMG_API UBoolBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     bool GetValue() const;
     
     UBoolBinding();

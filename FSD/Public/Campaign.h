@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ECampaignMutators.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "ECampaignMutators.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "ECampaignType.h"
 #include "Campaign.generated.h"
 
-class UPlayerCharacterID;
 class UCampaignMission;
-class UDifficultySetting;
 class UCampaignRequirement;
+class UPlayerCharacterID;
+class UDifficultySetting;
 class UTexture2D;
 class UMissionStat;
 class UGameActivityAssignmentType;
@@ -85,34 +85,34 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UGameActivityAssignmentType* CampaignActivity;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsComplete() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsCampaignComplete(UObject* WorldContext, TSubclassOf<UCampaign> Campaign);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UCampaign* GetReference(TSubclassOf<UCampaign> Campaign);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCampaignMission* GetPreviousMission() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetPicture() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetCampaignTitle(TSubclassOf<UCampaign> Campaign);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCampaignMission* GetActiveMission() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanStartCampaign(AFSDPlayerController* Player) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanSeeCampaign(APlayerController* PlayerController) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreRestrictionsMet(AFSDPlayerController* Player, UDifficultySetting* optionalDifficulty) const;
     
     UCampaign();

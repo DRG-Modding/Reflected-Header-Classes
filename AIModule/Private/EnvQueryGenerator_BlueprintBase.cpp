@@ -1,9 +1,9 @@
 #include "EnvQueryGenerator_BlueprintBase.h"
-#include "EnvQueryItemType_Actor.h"
 #include "EnvQueryContext_Querier.h"
+#include "EnvQueryItemType_Actor.h"
 
-class AActor;
 class UObject;
+class AActor;
 
 UObject* UEnvQueryGenerator_BlueprintBase::GetQuerier() const {
     return NULL;

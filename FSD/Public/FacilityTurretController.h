@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: AIModule AIStimulus
 #include "FacilityTurretController.generated.h"
 
-class UHealthComponentBase;
 class UAIPerceptionComponent;
+class UHealthComponentBase;
 class AActor;
 
 UCLASS()
@@ -25,17 +25,17 @@ private:
     UPROPERTY(EditAnywhere)
     bool RespectAttack;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTurretsAttackingChanged(bool IsAttacking);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetRevived();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDied(UHealthComponentBase* Health);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPerceptionUpdated(AActor* sensedActor, FAIStimulus Stimulus);
     
     AFacilityTurretController();

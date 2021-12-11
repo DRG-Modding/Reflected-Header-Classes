@@ -12,13 +12,13 @@ class UMG_API IUserListEntry : public IInterface {
     GENERATED_BODY()
 public:
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnItemSelectionChanged(bool bIsSelected);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnItemExpansionChanged(bool bIsExpanded);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnEntryReleased();
     
 };

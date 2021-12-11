@@ -3,13 +3,13 @@
 #include "UsableComponentBase.h"
 #include "ResourceBank.generated.h"
 
-class USoundBase;
 class APlayerCharacter;
 class AFSDGameState;
+class USoundBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourceBankOnEndDeposite, APlayerCharacter*, User);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourceBankOnBeginDeposite, APlayerCharacter*, User);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourceBankOnDepositing, APlayerCharacter*, User);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourceBankOnEndDeposite, APlayerCharacter*, User);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourceBankOnBeginDeposite, APlayerCharacter*, User);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourceBankOnDepositing, APlayerCharacter*, User);
 
 UCLASS()
 class UResourceBank : public UUsableComponentBase {
@@ -52,7 +52,7 @@ protected:
     UPROPERTY(EditAnywhere)
     USoundBase* AudioEndDepositing;
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_Depositing(APlayerCharacter* Character);
     
 public:

@@ -6,8 +6,8 @@
 class ULeaderboardQueryCallbackProxy;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardQueryCallbackProxyOnSuccess, int32, LeaderboardValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardQueryCallbackProxyOnFailure, int32, LeaderboardValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardQueryCallbackProxyOnSuccess, int32, LeaderboardValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardQueryCallbackProxyOnFailure, int32, LeaderboardValue);
 
 UCLASS(BlueprintType, MinimalAPI)
 class ULeaderboardQueryCallbackProxy : public UObject {

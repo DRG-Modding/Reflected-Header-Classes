@@ -3,8 +3,8 @@
 #include "PanelWidget.h"
 #include "GridPanel.generated.h"
 
-class UGridSlot;
 class UWidget;
+class UGridSlot;
 
 UCLASS()
 class UMG_API UGridPanel : public UPanelWidget {

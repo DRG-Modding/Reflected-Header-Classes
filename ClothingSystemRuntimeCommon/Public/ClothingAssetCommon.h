@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ClothConfig_Legacy.h"
 //CROSS-MODULE INCLUDE: ClothingSystemRuntimeInterface ClothingAssetBase
+#include "ClothConfig_Legacy.h"
 #include "ClothLODDataCommon.h"
 #include "ClothingAssetCommon.generated.h"
 
 class UPhysicsAsset;
-class UClothLODDataCommon_Legacy;
 class UClothConfigBase;
+class UClothLODDataCommon_Legacy;
 class UClothingAssetCustomData;
 
 UCLASS(BlueprintType)

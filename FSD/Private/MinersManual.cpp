@@ -1,10 +1,10 @@
 #include "MinersManual.h"
 
-class UObject;
-class UMinersManualData;
-class UMissionTemplate;
 class UBiome;
+class UObject;
+class UMissionTemplate;
 class UEnemyMinersManualData;
+class UMinersManualData;
 
 bool UMinersManual::IsObjectInMinersManual(UObject* WorldContext, UObject* Object) {
     return false;

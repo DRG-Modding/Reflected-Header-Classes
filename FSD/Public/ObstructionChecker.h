@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ObstructionChecker.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FObstructionCheckerOnObstructionChangedEvent, float, Distance);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FObstructionCheckerOnObstructionChangedEvent, float, Distance);
 
 UCLASS(BlueprintType)
 class UObstructionChecker : public USceneComponent {
@@ -23,10 +23,10 @@ protected:
     UPROPERTY(EditAnywhere)
     TArray<FVector> RayOffsets;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Timer_Tick();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Timer_Result();
     
 public:

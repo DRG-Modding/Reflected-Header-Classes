@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "RDGComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRDGComponentOnDetonated);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRDGComponentOnDetonated);
 
 UCLASS()
 class URDGComponent : public UActorComponent {

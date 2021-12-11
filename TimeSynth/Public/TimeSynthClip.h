@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Object
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "TimeSynthClipSound.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-#include "TimeSynthTimeDef.h"
 #include "ETimeSynthEventClipQuantization.h"
+#include "TimeSynthTimeDef.h"
 #include "TimeSynthClip.generated.h"
 
 UCLASS(BlueprintType)

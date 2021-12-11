@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CSGRemapped.h"
-//CROSS-MODULE INCLUDE: CoreUObject Box
-//CROSS-MODULE INCLUDE: Engine SplineCurves
 #include "SplineModProperties.h"
+//CROSS-MODULE INCLUDE: Engine SplineCurves
+//CROSS-MODULE INCLUDE: CoreUObject Box
 //CROSS-MODULE INCLUDE: CoreUObject Vector4
 #include "CSGSplineMod.generated.h"
 

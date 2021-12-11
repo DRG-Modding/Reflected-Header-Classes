@@ -5,10 +5,10 @@
 #include "ActiveStatusEffectBank.h"
 #include "StatusEffectsComponent.generated.h"
 
-class UStatusEffectExclusiveKey;
 class UHealthComponentBase;
-class UStatusEffect;
+class UStatusEffectExclusiveKey;
 class UObject;
+class UStatusEffect;
 class AActor;
 
 UCLASS(BlueprintType)
@@ -51,11 +51,11 @@ public:
     bool PopActiveStatusEffect(TSubclassOf<UStatusEffect> StatusEffect, AActor* Owner);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* HealthComponent);
     
 public:
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool HasActiveEffect(TSubclassOf<UStatusEffect> StatusEffect) const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

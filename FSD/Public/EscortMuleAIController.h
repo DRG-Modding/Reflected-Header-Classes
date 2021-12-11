@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FSDAIController.h"
-#include "AsyncPathRequestsInterface.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject RandomStream
+#include "FSDAIController.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "AsyncPathRequestsInterface.h"
 #include "EscortMuleAIController.generated.h"
 
 class UEscortObjective;
@@ -42,19 +42,21 @@ public:
     void SetDozerNextPathSegment();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPathComplete();
     
 public:
     UFUNCTION(BlueprintCallable)
     TArray<FVector> GetPathForDebug(int32 Segment);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetPathEndTagent();
     
     UFUNCTION(BlueprintCallable)
     void FindDozerPath(FVector StartPosition);
     
     AEscortMuleAIController();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

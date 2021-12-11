@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneVectorKeyStructBase.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector4
+#include "MovieSceneVectorKeyStructBase.h"
 #include "MovieSceneVector4KeyStruct.generated.h"
 
 USTRUCT()

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "SavableDataAsset.h"
 #include "DeepDiveTemplateItem.h"
-#include "RandInterval.h"
 #include "ESchematicType.h"
+#include "RandInterval.h"
 #include "DeepDiveTemplate.generated.h"
 
 class UDifficultySetting;
@@ -42,7 +42,7 @@ public:
     UPROPERTY(EditAnywhere)
     FRandInterval WarningCount;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESchematicType GetStageRewardType(int32 stageIndex) const;
     
     UDeepDiveTemplate();

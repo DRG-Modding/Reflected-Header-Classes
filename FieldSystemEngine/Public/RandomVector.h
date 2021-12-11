@@ -12,7 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float Magnitude;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     URandomVector* SetRandomVector(float NewMagnitude);
     
     URandomVector();

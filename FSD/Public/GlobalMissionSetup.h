@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
-#include "IRandRange.h"
 #include "MissionBiomeItem.h"
-#include "RequiredMissionItem.h"
+#include "IRandRange.h"
 #include "MissionTemplateItem.h"
+#include "RequiredMissionItem.h"
 #include "GlobalMissionSetup.generated.h"
 
-class UPlanetZone;
-class UMissionWarning;
 class UMissionNameBank;
+class UPlanetZone;
 class UMissionMutator;
+class UMissionWarning;
 
 UCLASS(BlueprintType)
 class UGlobalMissionSetup : public UDataAsset {
@@ -61,7 +61,7 @@ public:
     UPROPERTY(EditAnywhere)
     TArray<FRequiredMissionItem> GlobalRequiredMissions;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FMissionTemplateItem> GetAllPossibleMissions() const;
     
     UGlobalMissionSetup();

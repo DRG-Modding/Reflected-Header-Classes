@@ -3,8 +3,8 @@
 #include "UsableComponent.h"
 #include "ReloadSentryUsableComponent.generated.h"
 
-class USoundBase;
 class UAudioComponent;
+class USoundBase;
 class APlayerCharacter;
 class ASentryGun;
 
@@ -54,10 +54,10 @@ public:
     void SetCanUse(bool isUsable);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Reloading();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnReloadAudioFinished();
     
 public:

@@ -6,8 +6,8 @@
 
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCarriableItemOnAttachedChangeDelegate, bool, Attached, FVector, PrevScale);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCarriableItemOnCarriableDeposited, APlayerCharacter*, fromCharacter);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCarriableItemOnAttachedChangeDelegate, bool, Attached, FVector, PrevScale);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCarriableItemOnCarriableDeposited, APlayerCharacter*, fromCharacter);
 
 UCLASS(Abstract)
 class ACarriableItem : public AFSDPhysicsActor {
@@ -24,15 +24,15 @@ protected:
     bool StrictDeposit;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Throw(FVector force);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_OnDeposited(APlayerCharacter* fromPlayer);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAttachChanged(bool Attached);
     
     ACarriableItem();

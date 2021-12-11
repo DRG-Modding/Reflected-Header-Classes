@@ -3,13 +3,13 @@
 #include "ItemAggregator.h"
 #include "CapacityBasedItemAggregator.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnCurrentAmountChanged, int32, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnMaxAmountChanged, int32, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnClipAndTotalChanged, int32, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnReloadTimeChanged, float, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCapacityBasedItemAggregatorOnReloadStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCapacityBasedItemAggregatorOnReloadComplete);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnMaxAmmoCapacityChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnCurrentAmountChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnMaxAmountChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnClipAndTotalChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnReloadTimeChanged, float, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCapacityBasedItemAggregatorOnReloadStarted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCapacityBasedItemAggregatorOnReloadComplete);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCapacityBasedItemAggregatorOnMaxAmmoCapacityChanged, int32, Amount);
 
 UCLASS()
 class UCapacityBasedItemAggregator : public UItemAggregator {
@@ -41,16 +41,16 @@ protected:
     bool showClipCount;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ReloadStarted();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ReloadComplete();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxAmount() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentAmount() const;
     
     UCapacityBasedItemAggregator();

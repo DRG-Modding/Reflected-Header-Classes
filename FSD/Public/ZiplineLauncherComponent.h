@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "WeaponFireComponent.h"
 //CROSS-MODULE INCLUDE: Engine ECollisionChannel
+#include "WeaponFireComponent.h"
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "ZiplineLauncherComponent.generated.h"
 
@@ -22,10 +22,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TSubclassOf<AZipLineProjectile> projectileClass;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Fire(FVector_NetQuantize Origin, FVector_NetQuantize Destination);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowHit();
     
 public:

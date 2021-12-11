@@ -8,8 +8,8 @@
 
 class UUserWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBaseBP_OnEntryGenerated, UUserWidget*, Widget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBaseBP_OnEntryReleased, UUserWidget*, Widget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBaseBP_OnEntryGenerated, UUserWidget*, Widget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBaseBP_OnEntryReleased, UUserWidget*, Widget);
 
 UCLASS(Abstract, HideDropdown)
 class UMG_API UListViewBase : public UWidget {
@@ -63,7 +63,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void RegenerateAllEntries();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UUserWidget*> GetDisplayedEntryWidgets() const;
     
     UListViewBase();

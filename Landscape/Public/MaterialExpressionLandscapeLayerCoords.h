@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine MaterialExpression
 #include "ELandscapeCustomizedCoordType.h"
 #include "ETerrainCoordMappingType.h"
+//CROSS-MODULE INCLUDE: Engine MaterialExpression
 #include "MaterialExpressionLandscapeLayerCoords.generated.h"
 
 UCLASS(CollapseCategories)

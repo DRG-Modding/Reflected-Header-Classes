@@ -7,12 +7,12 @@
 #include "Bomber.generated.h"
 
 class UParticleSystemComponent;
-class AActor;
-class UParticleSystem;
-class AProjectile;
+class UPrimitiveComponent;
 class UAudioComponent;
 class USoundBase;
-class UPrimitiveComponent;
+class UParticleSystem;
+class AProjectile;
+class AActor;
 
 UCLASS()
 class ABomber : public AAFlyingBug {
@@ -94,7 +94,7 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_DropAcid)
     bool dropAcid;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void StopSpinAndDie();
     
 public:
@@ -102,34 +102,34 @@ public:
     void SetDropAcid(bool NewDropAcid);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStartDeathPanic();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DropAcid();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Death();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRagdollHitGround(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnBladderDamage(float Amount);
     
     UFUNCTION(BlueprintCallable)
     void OnArmorDestroyed(FName Name);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HideMesh();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetDropAcid() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreBladdersDestroyed() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

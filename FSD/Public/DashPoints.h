@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "EDashPointsGenerationMode.h"
-//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "DashPoints.generated.h"
 
 class UHealthComponentBase;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDashPointsOnStopDashEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDashPointsOnStartDashEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDashPointsOnStopDashEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDashPointsOnStartDashEvent);
 
 UCLASS(BlueprintType)
 class UDashPoints : public UActorComponent {
@@ -79,11 +79,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void StartDashing();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Dashing();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnParentDeath(UHealthComponentBase* Health);
     
 public:

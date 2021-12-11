@@ -29,7 +29,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TEnumAsByte<EFieldFalloffType> Falloff;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBoxFalloff* SetBoxFalloff(float NewMagnitude, float NewMinRange, float NewMaxRange, float NewDefault, FTransform NewTransform, TEnumAsByte<EFieldFalloffType> NewFalloff);
     
     UBoxFalloff();

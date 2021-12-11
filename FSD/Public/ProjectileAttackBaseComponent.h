@@ -7,9 +7,9 @@ class UProjectileAttack;
 class UAnimMontage;
 class AActor;
 
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FProjectileAttackBaseComponentOnProjectileFiredEvent);
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FProjectileAttackBaseComponentOnAttackStartedEvent);
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FProjectileAttackBaseComponentOnAttackEndedEvent);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FProjectileAttackBaseComponentOnProjectileFiredEvent);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FProjectileAttackBaseComponentOnAttackStartedEvent);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FProjectileAttackBaseComponentOnAttackEndedEvent);
 
 UCLASS(Abstract)
 class UProjectileAttackBaseComponent : public UAttackBaseComponent {
@@ -43,16 +43,16 @@ protected:
     UFUNCTION(BlueprintCallable)
     bool TriggerMontage(AActor* Target);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UAnimMontage* SelectMontage() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPerformAttack();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMontageEnded(UAnimMontage* Montage, bool interrupted);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void MulticastProjectileFired();
     
     UFUNCTION(BlueprintCallable)

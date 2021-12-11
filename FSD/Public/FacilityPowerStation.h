@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "FacilityPowerStation.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFacilityPowerStationOnHackingProgressDelegate, float, hackProgress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFacilityPowerStationOnProgresspointDelegate, float, hackProgress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFacilityPowerStationOnHackingProgressDelegate, float, hackProgress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFacilityPowerStationOnProgresspointDelegate, float, hackProgress);
 
 UCLASS()
 class FSD_API AFacilityPowerStation : public AActor {
@@ -40,20 +40,20 @@ public:
     void StartHacking();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Progress();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsHacking();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHackingComplete();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHackingChanged(bool NewIsHacking);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsHacked() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

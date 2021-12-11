@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE: Engine UniqueNetIdRepl
 #include "OncePerPlayerUsableComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOncePerPlayerUsableComponentOnUsersChangedEvent, const TArray<FUniqueNetIdRepl>&, userList);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOncePerPlayerUsableComponentOnUsersChangedEvent, const TArray<FUniqueNetIdRepl>&, userList);
 
 UCLASS()
 class UOncePerPlayerUsableComponent : public UInstantUsable {
@@ -17,10 +17,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_Users)
     TArray<FUniqueNetIdRepl> Users;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUsersChanged(const TArray<FUniqueNetIdRepl>& userList);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Users();
     
 public:

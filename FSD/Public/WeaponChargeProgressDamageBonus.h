@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject FloatInterval
 #include "ItemUpgrade.h"
+//CROSS-MODULE INCLUDE: CoreUObject FloatInterval
 #include "WeaponChargeProgressDamageBonus.generated.h"
 
 class UDamageClass;

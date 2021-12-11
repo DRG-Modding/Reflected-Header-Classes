@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EncounterSpecialItem.h"
 #include "SpecialEventSpawner.h"
+#include "EncounterSpecialItem.h"
 #include "EncounterSpecialEventSpawner.generated.h"
 
 UCLASS(EditInlineNew)

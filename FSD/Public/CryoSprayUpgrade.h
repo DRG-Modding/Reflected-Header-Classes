@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "CryoSprayUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UCryoSprayUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     ECryoSprayUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, ECryoSprayUpgrades NewUpgradeType);
     
     UCryoSprayUpgrade();

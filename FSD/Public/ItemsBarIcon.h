@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE: UMG UserWidget
 #include "ItemsBarIcon.generated.h"
 
+class APlayerCharacter;
 class UItemsBar;
 class AItem;
-class APlayerCharacter;
 
 UCLASS(Abstract, EditInlineNew)
 class UItemsBarIcon : public UUserWidget {
@@ -27,13 +27,13 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     int32 Index;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUnselect();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSelect();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnInit();
     
 public:

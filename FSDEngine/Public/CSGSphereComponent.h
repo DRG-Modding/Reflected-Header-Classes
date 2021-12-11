@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CSGSphereProperties.h"
 #include "ConvexMeshWithCachedTreeComponent.h"
+#include "CSGSphereProperties.h"
 #include "CSGSphereComponent.generated.h"
 
 UCLASS()

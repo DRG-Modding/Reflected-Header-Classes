@@ -4,8 +4,8 @@
 #include "EnemyAttacker.h"
 #include "SpiderEnemy.generated.h"
 
-class UAnimSequenceBase;
 class UPawnStatsComponent;
+class UAnimSequenceBase;
 class UStaticMeshComponent;
 class UStaticMesh;
 
@@ -41,19 +41,24 @@ protected:
     UPROPERTY(EditAnywhere)
     float MaxRagdollSpeed;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void PlayHitReaction();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDamaged(float Damage);
     
     UFUNCTION(BlueprintCallable)
     UStaticMeshComponent* CreateHeadGore();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AlertNearbyEnemies();
     
 public:
     ASpiderEnemy();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    float GetAttackDamageModifier() const override PURE_VIRTUAL(GetAttackDamageModifier, return 0.0f;);
+    
 };
 

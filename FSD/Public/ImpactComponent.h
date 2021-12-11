@@ -5,8 +5,8 @@
 
 class USceneComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FImpactComponentOnImpactedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FImpactComponentOnHighAcceleration);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FImpactComponentOnImpactedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FImpactComponentOnHighAcceleration);
 
 UCLASS(BlueprintType)
 class UImpactComponent : public UActorComponent {

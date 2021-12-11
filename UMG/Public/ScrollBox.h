@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: SlateCore ScrollBarStyle
+#include "PanelWidget.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: SlateCore ScrollBoxStyle
-#include "PanelWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore ScrollBarStyle
-#include "ESlateVisibility.h"
 //CROSS-MODULE INCLUDE: SlateCore EOrientation
+#include "ESlateVisibility.h"
 //CROSS-MODULE INCLUDE: SlateCore EConsumeMouseWheel
 //CROSS-MODULE INCLUDE: SlateCore Margin
 //CROSS-MODULE INCLUDE: Slate EDescendantScrollDestination
@@ -15,7 +15,7 @@
 class USlateWidgetStyleAsset;
 class UWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FScrollBoxOnUserScrolled, float, CurrentOffset);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FScrollBoxOnUserScrolled, float, CurrentOffset);
 
 UCLASS()
 class UMG_API UScrollBox : public UPanelWidget {
@@ -117,13 +117,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void ScrollToEnd();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetViewOffsetFraction() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetScrollOffsetOfEnd() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetScrollOffset() const;
     
     UFUNCTION(BlueprintCallable)

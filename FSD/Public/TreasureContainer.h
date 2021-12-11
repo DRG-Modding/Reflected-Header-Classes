@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-#include "TreasureWeight.h"
 #include "EInputKeys.h"
+#include "TreasureWeight.h"
 #include "TreasureContainer.generated.h"
 
+class UItemAquisitionSource;
 class USceneComponent;
 class APlayerCharacter;
 class UOncePerPlayerUsableComponent;
-class UItemAquisitionSource;
 class UTreasureRewarder;
 
 UCLASS()
@@ -52,31 +52,31 @@ public:
     void SetCanCollectTreasure(bool canCollect);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_LastJoiner();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Collectors();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerLatejoined(APlayerCharacter* joiner);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerCollectedTreasure(APlayerCharacter* collector, EInputKeys Key);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLocalPlayerCollectedTreasure(APlayerCharacter* Player);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDisableChestLocally();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnContainerActivated();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool GetPreventFurtherLatejoiners() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "RoomFeature.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EItemAdjustmentType.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "SpawnActorFeature.generated.h"
 

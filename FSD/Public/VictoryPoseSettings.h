@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: Engine DataAsset
 #include "VictoryPoseSettings.generated.h"
 
-class UTexture2D;
 class UActorComponent;
+class UTexture2D;
 class UVictoryPose;
 class AActor;
 
@@ -30,7 +30,7 @@ protected:
     TArray<TSubclassOf<AActor>> ModProxyHack;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UVictoryPose*> GetVictoryPoses() const;
     
     UVictoryPoseSettings();

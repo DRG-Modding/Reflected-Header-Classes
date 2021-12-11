@@ -38,19 +38,19 @@ protected:
     UPROPERTY(EditAnywhere)
     FCoolDownProgressStyle RechargeProgressUI;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveGeneratorReturned();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveGeneratorRechargeProgress(float Progress);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveGeneratorRecharged();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_UnchargedCount(int32 OldCount);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsRecharging() const;
     
     UFUNCTION(BlueprintCallable)
@@ -60,5 +60,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AShieldGeneratorItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterStateComponent.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "CharacterStateComponent.h"
 #include "FallingStateComponent.generated.h"
 
 class UDialogDataAsset;
@@ -81,52 +81,52 @@ protected:
     UPROPERTY(BlueprintReadWrite)
     bool JumpBootsActive;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ShowJumpBootsActivation();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_TakeFallDamage(float Amount);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetJumpPressed(bool Pressed);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetHoverBootsPressed(bool IsPressed);
     
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void Server_SetFallVelocity(float Velocity);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ClimbLedge(bool shouldPlayAnimation);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ActivateJumpBoots();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveHoverBootsTick(float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveHoverBootsActiveChanged(bool IsActive);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HoverBootsActive();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void JumpReleased();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void JumpPressed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HoverBootsReleased();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HoverBootsPressed();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowJumpBootsActivation();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowClimbLedge();
     
 public:

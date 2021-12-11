@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Projectile.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "Projectile.h"
 #include "TerrainModifyingProjectile.generated.h"
 
 class UTerrainMaterial;
 class UStaticMesh;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTerrainModifyingProjectileOnRevertToNormal);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTerrainModifyingProjectileOnRevertToNormal);
 
 UCLASS()
 class ATerrainModifyingProjectile : public AProjectile {
@@ -45,13 +45,13 @@ protected:
     float ExpensiveCarveNoise;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Tick(float DeltaSeconds);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRadius() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void BeginPlay();
     
     ATerrainModifyingProjectile();

@@ -16,5 +16,7 @@ protected:
     
 public:
     UInteractiveGizmo();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

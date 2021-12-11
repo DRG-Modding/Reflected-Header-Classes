@@ -3,7 +3,7 @@
 #include "EDesiredImageFormat.h"
 #include "ImageWriteOptions.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FImageWriteOptionsOnComplete, bool, bSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FImageWriteOptionsOnComplete, bool, bSuccess);
 
 USTRUCT(BlueprintType)
 struct FImageWriteOptions {

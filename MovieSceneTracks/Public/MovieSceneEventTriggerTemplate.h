@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
 #include "MovieSceneEventTemplateBase.h"
+//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
 #include "MovieSceneEventPtrs.h"
 #include "MovieSceneEventTriggerTemplate.generated.h"
 

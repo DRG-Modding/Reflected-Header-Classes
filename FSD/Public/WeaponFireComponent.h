@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "Upgradable.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
 #include "WeaponFireComponent.generated.h"
 
 class UWeaponFireOwner;
 class IWeaponFireOwner;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FWeaponFireComponentOnWeaponFired, const FVector&, Location);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponFireComponentOnWeaponFireEnded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FWeaponFireComponentOnRicochetEvent, const FVector&, Origin, const FVector&, Location, const FVector&, Normal);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FWeaponFireComponentOnWeaponFired, const FVector&, Location);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWeaponFireComponentOnWeaponFireEnded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FWeaponFireComponentOnRicochetEvent, const FVector&, Origin, const FVector&, Location, const FVector&, Normal);
 
 UCLASS(Abstract, BlueprintType)
 class UWeaponFireComponent : public UActorComponent, public IUpgradable {
@@ -35,7 +35,7 @@ public:
     void StopFire();
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetShotPower(float shotPower);
     
 public:
@@ -43,5 +43,7 @@ public:
     void Fire(const FVector& Origin, const FVector_NetQuantizeNormal& Direction, bool playFireFX);
     
     UWeaponFireComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

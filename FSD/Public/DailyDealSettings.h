@@ -17,7 +17,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool IsDailyDealBought(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetDailyDealSeed();
     
     UFUNCTION(BlueprintCallable)

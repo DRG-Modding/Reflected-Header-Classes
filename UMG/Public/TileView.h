@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ListView.h"
 //CROSS-MODULE INCLUDE: Slate EListItemAlignment
+#include "ListView.h"
 #include "TileView.generated.h"
 
 UCLASS()

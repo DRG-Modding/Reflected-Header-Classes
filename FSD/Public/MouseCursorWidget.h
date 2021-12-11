@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EFSDInputSource.h"
 #include "FSDUserWidget.h"
+#include "EFSDInputSource.h"
 #include "MouseCursorWidget.generated.h"
 
 UCLASS(Abstract, EditInlineNew)
@@ -15,13 +15,13 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     bool bIsHovering;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUnhover();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnInputSourceChanged(EFSDInputSource Source);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHover();
     
 public:

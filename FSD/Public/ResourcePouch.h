@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine HitResult
 #include "CarriableItem.h"
+//CROSS-MODULE INCLUDE: Engine HitResult
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ResourcePouch.generated.h"
 
@@ -20,7 +20,7 @@ protected:
     UPROPERTY(EditAnywhere)
     USoundCue* ImpactGroundSound;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ActorWasHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     
 public:

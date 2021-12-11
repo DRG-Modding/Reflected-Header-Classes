@@ -1,7 +1,7 @@
 #include "FSDSplineLibrary.h"
 
-class USplineComponent;
 class UObject;
+class USplineComponent;
 class AActor;
 class USplineMeshComponent;
 class UTerrainMaterial;

@@ -5,9 +5,9 @@
 
 class UMissionComplexity;
 class UMissionDuration;
-class UMissionMutator;
 class UDifficultySetting;
 class UMissionWarning;
+class UMissionMutator;
 class UBiome;
 class UMissionTemplate;
 

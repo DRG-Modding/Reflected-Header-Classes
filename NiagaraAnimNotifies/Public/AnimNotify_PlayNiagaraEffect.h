@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine AnimNotify
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine AnimNotify
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "AnimNotify_PlayNiagaraEffect.generated.h"
 

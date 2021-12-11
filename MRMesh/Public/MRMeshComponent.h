@@ -33,7 +33,7 @@ private:
     UMaterialInterface* WireframeMaterial;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsConnected() const;
     
     UFUNCTION(BlueprintCallable)

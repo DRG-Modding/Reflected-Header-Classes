@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine AnimNode_Base
+//CROSS-MODULE INCLUDE: Engine ECurveBlendOption
 //CROSS-MODULE INCLUDE: Engine PoseLink
 //CROSS-MODULE INCLUDE: Engine InputBlendPose
-//CROSS-MODULE INCLUDE: Engine PerBoneBlendWeight
-//CROSS-MODULE INCLUDE: Engine ECurveBlendOption
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: Engine PerBoneBlendWeight
 #include "AnimNode_LayeredBoneBlend.generated.h"
 
 USTRUCT(BlueprintType)

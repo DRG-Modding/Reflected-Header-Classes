@@ -6,10 +6,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "DropPod.generated.h"
 
-class UObject;
 class UAutoCarverComponent;
-class ADropPod;
 class UCurveFloat;
+class UObject;
+class ADropPod;
 
 UCLASS()
 class ADropPod : public AActor {
@@ -60,19 +60,19 @@ public:
     void PrepForTakeOff();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPrepForTakeOff();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDroppodImpact();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDrillingStarted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDeparting();
     
 public:

@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosPhysicsCollisionInfo
+//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore ECollisionTypeEnum
 //CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosNotifyHandlerInterface
 //CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EImplicitTypeEnum
 //CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EObjectStateTypeEnum
-//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore ECollisionTypeEnum
 //CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EInitialVelocityTypeEnum
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: ChaosSolverEngine ChaosPhysicsCollisionInfo
 #include "StaticMeshSimulationComponent.generated.h"
 
 class UChaosPhysicalMaterial;
 class AChaosSolverActor;
 class UPrimitiveComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStaticMeshSimulationComponentOnChaosPhysicsCollision, const FChaosPhysicsCollisionInfo&, CollisionInfo);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStaticMeshSimulationComponentOnChaosPhysicsCollision, const FChaosPhysicsCollisionInfo&, CollisionInfo);
 
 UCLASS(Blueprintable)
 class GEOMETRYCOLLECTIONENGINE_API UStaticMeshSimulationComponent : public UActorComponent, public IChaosNotifyHandlerInterface {
@@ -70,12 +70,14 @@ private:
     TArray<UPrimitiveComponent*> SimulatedComponents;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePhysicsCollision(const FChaosPhysicsCollisionInfo& CollisionInfo);
     
     UFUNCTION(BlueprintCallable)
     void ForceRecreatePhysicsState();
     
     UStaticMeshSimulationComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

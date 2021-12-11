@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "FuelLineEndPoint.generated.h"
 
+class ATrackBuilderSegment;
 class UFuelLineConnectPoint;
 class UTrackBuilderConnectPoint;
 class UStaticMeshComponent;
-class ATrackBuilderSegment;
 
 UCLASS(Abstract)
 class FSD_API AFuelLineEndPoint : public AActor {
@@ -20,11 +20,11 @@ protected:
     UStaticMeshComponent* StaticMesh;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePing(bool InValidPlacement);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackConnectedWithSegment(UTrackBuilderConnectPoint* InConnectPoint, ATrackBuilderSegment* InSegment);
     
 public:

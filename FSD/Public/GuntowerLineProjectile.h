@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "Projectile.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "GuntowerLineProjectile.generated.h"
 
 class USceneComponent;
-class UDamageComponent;
 class UParticleSystemComponent;
+class UDamageComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGuntowerLineProjectileOnLineDestroy, FHitResult, Result);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGuntowerLineProjectileOnLineDestroy, FHitResult, Result);
 
 UCLASS()
 class AGuntowerLineProjectile : public AProjectile {
@@ -43,7 +43,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float TimeBetweenLineChecks;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TurnOffParticles();
     
 public:

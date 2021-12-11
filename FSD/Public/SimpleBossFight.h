@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "BossFightInterface.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "BossFight.h"
-#include "BossFightInterface.h"
 #include "SimpleBossFight.generated.h"
 
 UCLASS(BlueprintType)
@@ -13,5 +13,7 @@ public:
     FBossFight BossFight;
     
     USimpleBossFight();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

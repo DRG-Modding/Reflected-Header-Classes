@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneEvalTemplate
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneEvaluationOperand
+//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneEvalTemplate
+//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "TemplateSequenceSectionTemplate.generated.h"
 
 USTRUCT()

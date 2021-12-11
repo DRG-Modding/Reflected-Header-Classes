@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AttackerInfo.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+#include "AttackerInfo.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "AttackerPositioningComponent.generated.h"
 
-class UHealthComponentBase;
 class AActor;
+class UHealthComponentBase;
 
 UCLASS(Abstract, BlueprintType)
 class UAttackerPositioningComponent : public UActorComponent {
@@ -48,10 +48,10 @@ public:
     void RegisterAttacker(AActor* Attacker, bool IsFlying);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFlyingAttackerDeath(UHealthComponentBase* HealthComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAttackerDeath(UHealthComponentBase* HealthComponent);
     
 public:

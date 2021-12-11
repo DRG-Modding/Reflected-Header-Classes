@@ -7,9 +7,9 @@
 #include "VeteranComposition.h"
 #include "DifficultySetting.generated.h"
 
-class UObject;
 class UCampaign;
 class UMissionStat;
+class UObject;
 
 UCLASS()
 class FSD_API UDifficultySetting : public USavableDataAsset {
@@ -143,10 +143,10 @@ protected:
     int32 MaxActiveElites;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnlocked(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float AddHazardBonus(float BaseValue) const;
     
     UDifficultySetting();

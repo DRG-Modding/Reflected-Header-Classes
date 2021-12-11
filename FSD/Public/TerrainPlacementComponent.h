@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "TerrainPlacementBox.h"
 //CROSS-MODULE INCLUDE: Engine SceneComponent
-#include "EDebrisColliderType.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "EDebrisColliderType.h"
 #include "DebrisCapsule.h"
 #include "TerrainPlacementComponent.generated.h"
 

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EnvQueryGenerator.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EnvQueryGenerator_BlueprintBase.generated.h"
 
 class UEnvQueryContext;
-class UEnvQueryItemType;
 class AActor;
+class UEnvQueryItemType;
 class UObject;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
@@ -23,10 +23,10 @@ public:
     UPROPERTY(EditDefaultsOnly)
     TSubclassOf<UEnvQueryItemType> GeneratedItemType;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObject* GetQuerier() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DoItemGeneration(const TArray<FVector>& ContextLocations) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)

@@ -13,7 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export)
     UFieldNodeFloat* FloatField;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UToIntegerField* SetToIntegerField(const UFieldNodeFloat* NewFloatField);
     
     UToIntegerField();

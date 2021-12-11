@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StandardItemUpgrade.h"
-#include "ESawedOffShotgunUpgrades.h"
 #include "UpgradeValues.h"
+#include "ESawedOffShotgunUpgrades.h"
 #include "SawedOffShotgunUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class USawedOffShotgunUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     ESawedOffShotgunUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, ESawedOffShotgunUpgrades NewUpgradeType);
     
     USawedOffShotgunUpgrade();

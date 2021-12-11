@@ -5,8 +5,8 @@
 
 class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FTreeViewBP_OnGetItemChildren, UObject*, Item, TArray<UObject*>&, Children);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTreeViewBP_OnItemExpansionChanged, UObject*, Item, bool, bIsExpanded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FTreeViewBP_OnGetItemChildren, UObject*, Item, TArray<UObject*>&, Children);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTreeViewBP_OnItemExpansionChanged, UObject*, Item, bool, bIsExpanded);
 
 UCLASS()
 class UMG_API UTreeView : public UListView {

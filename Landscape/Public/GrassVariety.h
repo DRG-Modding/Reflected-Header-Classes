@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine PerPlatformFloat
 //CROSS-MODULE INCLUDE: Engine PerPlatformInt
-//CROSS-MODULE INCLUDE: Engine LightingChannels
-//CROSS-MODULE INCLUDE: CoreUObject FloatInterval
+//CROSS-MODULE INCLUDE: Engine PerPlatformFloat
 #include "EGrassScaling.h"
+//CROSS-MODULE INCLUDE: CoreUObject FloatInterval
+//CROSS-MODULE INCLUDE: Engine LightingChannels
 #include "GrassVariety.generated.h"
 
 class UStaticMesh;

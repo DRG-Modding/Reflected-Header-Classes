@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "IconGenerationBase.generated.h"
 
-class USceneCaptureComponent2D;
 class UMaterialInterface;
+class USceneCaptureComponent2D;
 
 UCLASS()
 class AIconGenerationBase : public AActor {

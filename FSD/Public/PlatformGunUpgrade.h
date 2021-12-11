@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "PlatformGunUpgrade.generated.h"
 
-class AActor;
 class AFSDPlayerState;
+class AActor;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UPlatformGunUpgrade : public UItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EPlatformGunUpgrades myUpgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> Item, EPlatformGunUpgrades aUpgradeType);
     
     UPlatformGunUpgrade();

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Interface
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE: CoreUObject Interface
 #include "GizmoVec2ParameterSource.generated.h"
 
 UINTERFACE()
@@ -12,16 +12,16 @@ class INTERACTIVETOOLSFRAMEWORK_API UGizmoVec2ParameterSource : public UInterfac
 class INTERACTIVETOOLSFRAMEWORK_API IGizmoVec2ParameterSource : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     virtual void SetParameter(const FVector2D& NewValue) PURE_VIRTUAL(SetParameter,);
     
-    UFUNCTION()
-    virtual  return FVector2D{}; GetParameter() const PURE_VIRTUAL(GetParameter,);
+    UFUNCTION(BlueprintCallable)
+    virtual FVector2D GetParameter() const PURE_VIRTUAL(GetParameter, return FVector2D{};);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     virtual void EndModify() PURE_VIRTUAL(EndModify,);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     virtual void BeginModify() PURE_VIRTUAL(BeginModify,);
     
 };

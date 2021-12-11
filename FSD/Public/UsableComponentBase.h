@@ -5,12 +5,12 @@
 #include "EUseRestriction.h"
 #include "UsableComponentBase.generated.h"
 
+class UTexture2D;
 class APlayerCharacter;
 class UUseAnimationSetting;
 class USceneComponent;
-class UTexture2D;
 
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUsableComponentBaseOnClientBeginUse, APlayerCharacter*, User, EInputKeys, Key);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUsableComponentBaseOnClientBeginUse, APlayerCharacter*, User, EInputKeys, Key);
 
 UCLASS(Abstract, Blueprintable)
 class UUsableComponentBase : public UActorComponent {
@@ -63,25 +63,25 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetRayTraceTriggered(bool rayTraceTriggered);
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     FText GetUseText(APlayerCharacter* User);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetUseProgressInPercent(APlayerCharacter* User) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetUsableIcon() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowUsingUI() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsRayTraceTriggerd() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHideProgressBar(APlayerCharacter* User) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHideActionText(APlayerCharacter* User) const;
     
     UFUNCTION(BlueprintCallable)

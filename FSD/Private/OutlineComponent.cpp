@@ -2,8 +2,8 @@
 
 class UPrimitiveComponent;
 class AItem;
-class APlayerCharacter;
 class UHealthComponentBase;
+class APlayerCharacter;
 class AActor;
 
 void UOutlineComponent::UnlockOutline() {

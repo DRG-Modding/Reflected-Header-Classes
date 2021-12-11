@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SubmixEffectSubmixEQSettings.h"
 //CROSS-MODULE INCLUDE: Engine SoundEffectSubmixPreset
+#include "SubmixEffectSubmixEQSettings.h"
 #include "SubmixEffectSubmixEQPreset.generated.h"
 
 UCLASS(BlueprintType, EditInlineNew)

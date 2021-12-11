@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Quat
 //CROSS-MODULE INCLUDE: Engine FXSystemComponent
 #include "ENiagaraTickBehavior.h"
 #include "NiagaraUserRedirectionParameterStore.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Vector4
 //CROSS-MODULE INCLUDE: Engine EAttachmentRule
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE: CoreUObject Quat
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "ENiagaraAgeUpdateMode.h"
 #include "NiagaraComponent.generated.h"
 
 class UNiagaraSystem;
-class UNiagaraDataInterface;
 class UNiagaraComponent;
 class USceneComponent;
 class UObject;
-class UMaterialInterface;
 class AActor;
+class UMaterialInterface;
+class UNiagaraDataInterface;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNiagaraComponentOnSystemFinished, UNiagaraComponent*, PSystem);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNiagaraComponentOnSystemFinished, UNiagaraComponent*, PSystem);
 
 UCLASS(EditInlineNew)
 class NIAGARA_API UNiagaraComponent : public UFXSystemComponent {
@@ -181,16 +181,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void ReinitializeSystem();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPaused() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSeekDelta() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPreviewLODDistanceEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPreviewLODDistance() const;
     
     UFUNCTION(BlueprintCallable)
@@ -202,22 +202,22 @@ public:
     UFUNCTION(BlueprintCallable)
     TArray<FVector> GetNiagaraParticlePositions_DebugOnly(const FString& InEmitterName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMaxSimTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetForceSolo() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDesiredAge() const;
     
     UFUNCTION(BlueprintCallable)
     UNiagaraDataInterface* GetDataInterface(const FString& Name);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UNiagaraSystem* GetAsset() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ENiagaraAgeUpdateMode GetAgeUpdateMode() const;
     
     UFUNCTION(BlueprintCallable)

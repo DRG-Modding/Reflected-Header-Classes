@@ -23,10 +23,10 @@ protected:
     bool Overheated;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFull() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool isEmpty() const;
     
     UAmmoDrivenWeaponAnimInstance();

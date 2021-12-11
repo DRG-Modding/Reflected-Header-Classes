@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraRendererProperties.h"
-#include "ENiagaraRibbonFacingMode.h"
-#include "NiagaraUserParameterBinding.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-#include "NiagaraVariableAttributeBinding.h"
-#include "ENiagaraRibbonDrawDirection.h"
 #include "ENiagaraRibbonAgeOffsetMode.h"
 #include "ENiagaraRibbonTessellationMode.h"
+#include "ENiagaraRibbonDrawDirection.h"
+#include "NiagaraUserParameterBinding.h"
+#include "ENiagaraRibbonFacingMode.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraRibbonRendererProperties.generated.h"
 
 class UMaterialInterface;

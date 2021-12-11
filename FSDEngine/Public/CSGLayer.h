@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CSGGroup.h"
-//CROSS-MODULE INCLUDE: CoreUObject Box
 #include "MeshLayerProperties.h"
 #include "DeepCSGTree.h"
+//CROSS-MODULE INCLUDE: CoreUObject Box
 #include "GeneralTerrainMaterialCombiner.h"
-//CROSS-MODULE INCLUDE: CoreUObject Matrix
 #include "DeepCSGFloatTree.h"
+//CROSS-MODULE INCLUDE: CoreUObject Matrix
 #include "CSGLayer.generated.h"
 
 UCLASS(BlueprintType)

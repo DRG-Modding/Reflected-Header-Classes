@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE: OnlineSubsystemUtils BlueprintSessionResult
 #include "FSDLookupSessionId.generated.h"
 
-class UObject;
 class UFSDLookupSessionId;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDLookupSessionIdOnSuccess, FBlueprintSessionResult, Result);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDLookupSessionIdOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDLookupSessionIdOnSuccess, FBlueprintSessionResult, Result);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDLookupSessionIdOnFailure);
 
 UCLASS(MinimalAPI)
 class UFSDLookupSessionId : public UOnlineBlueprintCallProxyBase {

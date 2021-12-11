@@ -5,7 +5,7 @@
 
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBobbingComponentOnMovedIntoSomethingEvent, bool, Up);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBobbingComponentOnMovedIntoSomethingEvent, bool, Up);
 
 UCLASS(BlueprintType)
 class UBobbingComponent : public USceneComponent {

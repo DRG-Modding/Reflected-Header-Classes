@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EARObjectClassification.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "EARTrackingState.h"
+#include "EARObjectClassification.h"
 #include "ARTrackedGeometry.generated.h"
 
 class UMRMeshComponent;
@@ -40,31 +40,31 @@ private:
     FName DebugName;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTracked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMRMeshComponent* GetUnderlyingMesh();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARTrackingState GetTrackingState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARObjectClassification GetObjectClassification() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetLocalToWorldTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetLocalToTrackingTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLastUpdateTimestamp() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetLastUpdateFrameNumber() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetDebugName() const;
     
     UARTrackedGeometry();

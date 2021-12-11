@@ -3,11 +3,11 @@
 
 class AFSDPlayerState;
 class UItemID;
-class AActor;
-class UPlayerCharacterID;
-class UItemUpgrade;
 class UObject;
+class AActor;
+class UItemUpgrade;
 class UResourceData;
+class UPlayerCharacterID;
 class UTexture2D;
 class AFSDPlayerController;
 

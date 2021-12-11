@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EnemyPawn.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "TentacleTarget.h"
+//CROSS-MODULE INCLUDE: CoreUObject Transform
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "TentacleBase.generated.h"
 
 class USplineComponent;
-class AStabberVineRoot;
 class USceneComponent;
+class AStabberVineRoot;
 
 UCLASS(Abstract)
 class ATentacleBase : public AEnemyPawn {
@@ -76,10 +76,10 @@ protected:
     UPROPERTY(Export, Transient)
     USceneComponent* HeadRotator;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Recieve_OnRep_Owner();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DesiredTarget();
     
 public:
@@ -87,13 +87,13 @@ public:
     void MoveHydraHead(FTransform newDesiredTransform, float newCanSwayCooldown, float newHeadMovementDuration, bool UseSpring);
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AStabberVineRoot* GetStabberVineRoot() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     USceneComponent* GetHeadRotator();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     USceneComponent* GetHeadRoot();
     
 public:

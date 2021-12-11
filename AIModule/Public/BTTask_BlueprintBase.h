@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BTTaskNode.h"
 #include "IntervalCountdown.h"
+#include "BTTaskNode.h"
 #include "BTTask_BlueprintBase.generated.h"
 
-class AActor;
 class AAIController;
+class AActor;
 class APawn;
 
 UCLASS(Abstract, Blueprintable)
@@ -31,28 +31,28 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetFinishOnMessage(FName MessageName);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTickAI(AAIController* OwnerController, APawn* ControlledPawn, float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTick(AActor* OwnerActor, float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveExecuteAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveExecute(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveAbortAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveAbort(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTaskExecuting() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTaskAborting() const;
     
     UFUNCTION(BlueprintCallable)

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARTrackedGeometry.h"
-#include "EARFaceBlendShape.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "ARTrackedGeometry.h"
 #include "EAREye.h"
+//CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "EARFaceBlendShape.h"
 #include "ARFaceGeometry.generated.h"
 
 UCLASS()
@@ -22,16 +22,16 @@ private:
     TMap<EARFaceBlendShape, float> BlendShapes;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetWorldSpaceEyeTransform(EAREye eye) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetLocalSpaceEyeTransform(EAREye eye) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBlendShapeValue(EARFaceBlendShape BlendShape) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<EARFaceBlendShape, float> GetBlendShapes() const;
     
     UARFaceGeometry();

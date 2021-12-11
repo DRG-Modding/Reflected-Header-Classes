@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "Widget.h"
 #include "ShapedTextOptions.h"
-//CROSS-MODULE INCLUDE: SlateCore Margin
 //CROSS-MODULE INCLUDE: Slate ETextJustify
 //CROSS-MODULE INCLUDE: Slate ETextWrappingPolicy
+//CROSS-MODULE INCLUDE: SlateCore Margin
 #include "TextLayoutWidget.generated.h"
 
 UCLASS(Abstract)

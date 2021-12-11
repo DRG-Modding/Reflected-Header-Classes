@@ -7,7 +7,7 @@
 
 class UUserWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRadarPointComponentOnRemove);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRadarPointComponentOnRemove);
 
 UCLASS(BlueprintType)
 class URadarPointComponent : public UActorComponent {

@@ -14,10 +14,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_ObjectivesToFind)
     int32 ObjectivesToFind;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ObjectivesToFind(int32 prevAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ObjectivesFound(int32 prevAmount);
     
 public:

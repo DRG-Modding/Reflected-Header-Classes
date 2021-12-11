@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "AnimSharingInstance.generated.h"
 
-class AActor;
-class UAnimationSharingStateProcessor;
 class UAnimSequence;
 class UEnum;
+class AActor;
+class UAnimationSharingStateProcessor;
 
 UCLASS()
 class UAnimSharingInstance : public UObject {

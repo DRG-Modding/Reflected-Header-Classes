@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "GrowthComponent.generated.h"
 
 class USceneComponent;

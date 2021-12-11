@@ -8,25 +8,25 @@
 #include "PipelineSegment.generated.h"
 
 class UMaterialInterface;
+class USimpleHealthComponent;
 class APipelineSegment;
-class APipelineStart;
 class USingleUsableComponent;
 class UStaticMesh;
 class UDroneUseComponent;
-class USimpleHealthComponent;
 class USplineComponent;
+class UTrackBuilderUsable;
+class UPathfinderSplineSegmentCollisionComponent;
 class USplineMeshComponent;
 class USkeletalMeshComponent;
 class UStaticMeshComponent;
-class UTrackBuilderUsable;
-class UPathfinderSplineSegmentCollisionComponent;
+class APipelineStart;
 class APlayerCharacter;
 class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPipelineSegmentOnPipelineBroken, APipelineSegment*, InPipelineSegment);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPipelineSegmentOnPipelineRepaired, APipelineSegment*, InPipelineSegment);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPipelineSegmentOnPipelineStateChanged, EPipelineBuildState, InPipelineState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPipelineSegmentOnPipelineActivated, APipelineSegment*, InPipelineSegment);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPipelineSegmentOnPipelineBroken, APipelineSegment*, InPipelineSegment);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPipelineSegmentOnPipelineRepaired, APipelineSegment*, InPipelineSegment);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPipelineSegmentOnPipelineStateChanged, EPipelineBuildState, InPipelineState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPipelineSegmentOnPipelineActivated, APipelineSegment*, InPipelineSegment);
 
 UCLASS(Abstract)
 class APipelineSegment : public ATrackBuilderSegment {
@@ -155,60 +155,60 @@ public:
     void SetEndPostVisible(bool InVisible);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveSegmentBrokenChanged(bool InSegmentBroken);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveSegmentActivatedProgress(float InProgress);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveSegmentActivated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePlacementFinished();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePlacementBegin();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRepaired(APlayerCharacter* InUser);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SegmentBroken();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SegmentActivatedProgress();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APipelineStart* GetPipelineStart() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APipelineSegment* GetNextPipelineSegment(bool bForward) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsSegmentActivated() const;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackSegmentRepaired(APlayerCharacter* InUser, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackSegmentDestroyed(UHealthComponentBase* InHealth);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackSegmentActivatedProgress(float InProgress);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackSegmentActivated(APlayerCharacter* InUser, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackPipelineStateChanged(APipelineStart* InPipelineStart, EPipelineBuildState InState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackNextSegmentChanged(UTrackBuilderUsable* InUsable, ATrackBuilderSegment* InSegment);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackDroneUsed(int32 TimesUsed);
     
 public:

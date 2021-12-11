@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Color
 //CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE: CoreUObject Color
 #include "SchematicItem.generated.h"
 
 class UTexture;
@@ -10,16 +10,16 @@ UCLASS(Abstract, BlueprintType, EditInlineNew)
 class USchematicItem : public UObject {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTitle() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FColor GetIconTint() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture* GetIcon(UObject* WorldContextObject) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetDescription() const;
     
     USchematicItem();

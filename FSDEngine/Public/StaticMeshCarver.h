@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DeepCSGFloatTree.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 //CROSS-MODULE INCLUDE: CoreUObject Box
+//CROSS-MODULE INCLUDE: Engine DataAsset
+#include "DeepCSGFloatTree.h"
 #include "DeepCSGFloatTreePacked.h"
 #include "StaticMeshCarver.generated.h"
 

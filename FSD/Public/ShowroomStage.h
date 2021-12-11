@@ -38,14 +38,14 @@ protected:
     UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
     USceneComponent* CameraFocusPoint;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveInitialize(UTextureRenderTarget2D* RenderTarget);
     
 public:
     UFUNCTION(BlueprintCallable)
     USceneCaptureComponent2D* GetActiveCaptureComponent();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     UTextureRenderTarget2D* CreateRenderTarget();
     
     AShowroomStage();

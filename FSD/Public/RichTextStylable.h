@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: UMG RichTextBlock
 #include "TextStyleOverride.h"
 //CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
-//CROSS-MODULE INCLUDE: UMG RichTextBlock
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "RichTextStylable.generated.h"
 

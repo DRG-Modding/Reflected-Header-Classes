@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "ConditionalDamageModifierUpgrade.generated.h"
 
-class AActor;
 class UDamageCondition;
+class AActor;
 class AFSDPlayerState;
 
 UCLASS(EditInlineNew, MinimalAPI)
@@ -22,7 +22,7 @@ protected:
     TArray<FDamageModifierItem> Modifiers;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player);
     
     UConditionalDamageModifierUpgrade();

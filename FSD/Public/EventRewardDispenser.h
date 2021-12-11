@@ -5,9 +5,9 @@
 #include "EventRewardDispenser.generated.h"
 
 class AFSDPlayerState;
-class USchematic;
 class AEventRewardFrame;
 class APlayerCharacter;
+class USchematic;
 
 UCLASS()
 class AEventRewardDispenser : public AActor {
@@ -37,38 +37,38 @@ public:
     bool PowerUp(APlayerCharacter* InPlayerCharacter);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRewardSelected();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SelectedReward();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PoweredUp();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PlayerId();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsActivated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPoweredUp();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnOwnerAssigned();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnOpenDispenser();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOwningPlayer(APlayerCharacter* PlayerCharacter) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetPlayerCharacter() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDPlayerState* GetPlayer() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

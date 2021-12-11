@@ -16,25 +16,25 @@ public:
     UFUNCTION(BlueprintCallable)
     static void OpenURLInSteamBrowser(const FString& URL);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsTextFilteringInitialized();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsSteamLoaded();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsDev(APlayerState* PlayerState);
     
     UFUNCTION(BlueprintCallable)
     static bool InitializeFilterText();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool HasSupporterUpgrade();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool HasDeluxeEdition();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool HasContentCreatorEdition();
     
     UFUNCTION(BlueprintCallable)
@@ -55,7 +55,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static FString GetPlayerSteamID();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString FilterProfanityText(const FString& inputMessage);
     
     UFSDSteamUtils();

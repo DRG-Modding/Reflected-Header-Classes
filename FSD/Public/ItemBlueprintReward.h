@@ -15,10 +15,10 @@ protected:
     TSoftClassPtr<AActor> ItemToUnlock;
     
 private:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetActorDefaultObject() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetActorClass() const;
     
 public:

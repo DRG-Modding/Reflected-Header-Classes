@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Slate ETextFlowDirection
 //CROSS-MODULE INCLUDE: SlateCore ETextShapingMethod
+//CROSS-MODULE INCLUDE: Slate ETextFlowDirection
 #include "ShapedTextOptions.generated.h"
 
 USTRUCT(BlueprintType)

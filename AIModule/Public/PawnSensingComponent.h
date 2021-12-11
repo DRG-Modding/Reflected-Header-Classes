@@ -6,8 +6,8 @@
 
 class APawn;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPawnSensingComponentOnSeePawn, APawn*, Pawn);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FPawnSensingComponentOnHearNoise, APawn*, Instigator, const FVector&, Location, float, Volume);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPawnSensingComponentOnSeePawn, APawn*, Pawn);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FPawnSensingComponentOnHearNoise, APawn*, Instigator, const FVector&, Location, float, Volume);
 
 UCLASS(BlueprintType)
 class AIMODULE_API UPawnSensingComponent : public UActorComponent {
@@ -63,10 +63,10 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetPeripheralVisionAngle(const float NewPeripheralVisionAngle);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPeripheralVisionCosine() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPeripheralVisionAngle() const;
     
     UPawnSensingComponent();

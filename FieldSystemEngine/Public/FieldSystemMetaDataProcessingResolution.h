@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: FieldSystemCore EFieldResolutionType
 #include "FieldSystemMetaData.h"
+//CROSS-MODULE INCLUDE: FieldSystemCore EFieldResolutionType
 #include "FieldSystemMetaDataProcessingResolution.generated.h"
 
 class UFieldSystemMetaDataProcessingResolution;
@@ -13,7 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TEnumAsByte<EFieldResolutionType> ResolutionType;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UFieldSystemMetaDataProcessingResolution* SetMetaDataaProcessingResolutionType(TEnumAsByte<EFieldResolutionType> NewResolutionType);
     
     UFieldSystemMetaDataProcessingResolution();

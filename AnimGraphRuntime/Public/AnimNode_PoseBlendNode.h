@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimNode_PoseHandler.h"
 //CROSS-MODULE INCLUDE: Engine EAlphaBlendOption
+#include "AnimNode_PoseHandler.h"
 //CROSS-MODULE INCLUDE: Engine PoseLink
 #include "AnimNode_PoseBlendNode.generated.h"
 

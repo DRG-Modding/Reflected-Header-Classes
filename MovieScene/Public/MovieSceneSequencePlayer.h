@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameTime
-#include "MovieSceneSequenceReplProperties.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EMovieScenePlayerStatus.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameRate
+//CROSS-MODULE INCLUDE: CoreUObject Object
 //CROSS-MODULE INCLUDE: CoreUObject FrameNumber
-//CROSS-MODULE INCLUDE: CoreUObject QualifiedFrameTime
 #include "MovieSceneSequencePlaybackSettings.h"
 #include "MovieSceneRootEvaluationTemplateInstance.h"
+#include "MovieSceneSequenceReplProperties.h"
 #include "EUpdatePositionMethod.h"
+//CROSS-MODULE INCLUDE: CoreUObject FrameRate
+//CROSS-MODULE INCLUDE: CoreUObject QualifiedFrameTime
+//CROSS-MODULE INCLUDE: CoreUObject FrameTime
 #include "MovieSceneObjectBindingID.h"
 #include "MovieSceneSequencePlayer.generated.h"
 
@@ -17,11 +17,11 @@ class UMovieSceneSequence;
 class UMovieScenePlaybackClient;
 class IMovieScenePlaybackClient;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnPlayReverse);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnPlay);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnStop);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnFinished);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnPause);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnPlayReverse);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnPlay);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnStop);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneSequencePlayerOnPause);
 
 UCLASS(Abstract, BlueprintType)
 class MOVIESCENE_API UMovieSceneSequencePlayer : public UObject {
@@ -114,10 +114,10 @@ public:
     void Scrub();
     
 private:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void RPC_OnStopEvent(FFrameTime StoppedTime);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void RPC_ExplicitServerUpdateEvent(EUpdatePositionMethod Method, FFrameTime RelevantTime);
     
 public:
@@ -154,55 +154,55 @@ public:
     UFUNCTION(BlueprintCallable)
     void JumpToFrame(FFrameTime NewPosition);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsReversed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlaying() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPaused() const;
     
     UFUNCTION(BlueprintCallable)
     void GoToEndAndStop();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FQualifiedFrameTime GetStartTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPlayRate() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPlaybackStart() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPlaybackPosition() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPlaybackEnd() const;
     
     UFUNCTION(BlueprintCallable)
     TArray<FMovieSceneObjectBindingID> GetObjectBindings(UObject* InObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLength() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FFrameRate GetFrameRate() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetFrameDuration() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FQualifiedFrameTime GetEndTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FQualifiedFrameTime GetDuration() const;
     
     UFUNCTION(BlueprintCallable)
     bool GetDisableCameraCuts();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FQualifiedFrameTime GetCurrentTime() const;
     
     UFUNCTION(BlueprintCallable)

@@ -19,7 +19,7 @@ public:
     void Pickup(APlayerCharacter* byCharacter);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRep_DrinkableData();
     
 public:

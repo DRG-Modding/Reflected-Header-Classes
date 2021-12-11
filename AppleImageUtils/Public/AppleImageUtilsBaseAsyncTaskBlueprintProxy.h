@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "AppleImageUtilsImageConversionResult.h"
+//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "ETextureRotationDirection.h"
 #include "AppleImageUtilsBaseAsyncTaskBlueprintProxy.generated.h"
 
 class UTexture;
 class UAppleImageUtilsBaseAsyncTaskBlueprintProxy;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAppleImageUtilsBaseAsyncTaskBlueprintProxyOnSuccess, const FAppleImageUtilsImageConversionResult&, ConversionResult);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAppleImageUtilsBaseAsyncTaskBlueprintProxyOnFailure, const FAppleImageUtilsImageConversionResult&, ConversionResult);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAppleImageUtilsBaseAsyncTaskBlueprintProxyOnSuccess, const FAppleImageUtilsImageConversionResult&, ConversionResult);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAppleImageUtilsBaseAsyncTaskBlueprintProxyOnFailure, const FAppleImageUtilsImageConversionResult&, ConversionResult);
 
 UCLASS(BlueprintType, MinimalAPI)
 class UAppleImageUtilsBaseAsyncTaskBlueprintProxy : public UObject {

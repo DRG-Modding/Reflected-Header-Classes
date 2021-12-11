@@ -6,18 +6,18 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CharacterSightComponent.generated.h"
 
-class UTemperatureComponent;
-class USimpleObjectInfoComponent;
-class APlayerCharacter;
+class UPawnAfflictionComponent;
 class AActor;
 class UPrimitiveComponent;
-class UPawnAfflictionComponent;
+class APlayerCharacter;
+class UTemperatureComponent;
+class USimpleObjectInfoComponent;
 class UHealth;
 class IHealth;
 class UTargetable;
 class ITargetable;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCharacterSightComponentOnTargetChanged, AActor*, NewTarget, UPrimitiveComponent*, NewPrimitive);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FCharacterSightComponentOnTargetChanged, AActor*, NewTarget, UPrimitiveComponent*, NewPrimitive);
 
 UCLASS(Blueprintable)
 class UCharacterSightComponent : public UActorComponent {
@@ -66,7 +66,7 @@ protected:
     UPROPERTY(Replicated, Transient)
     FReplicatedCharacterData ReplicatedData;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_UpdateTarget(AActor* NewActor, UPrimitiveComponent* NewPrimitive);
     
 public:
@@ -74,14 +74,14 @@ public:
     void RemoveIgnoreActor(AActor* InActor);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTargetInSightTick(float DeltaTime);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTargetChanged();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetSightStartAndEnd(float InMaxDistance, FVector& OutStartLocation, FVector& OutEndLocation);
     
     UFUNCTION(BlueprintCallable)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine NavRelevantInterface
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE: Engine NavRelevantInterface
 #include "NavRelevantComponent.generated.h"
 
 class UObject;
@@ -22,5 +22,7 @@ public:
     void SetNavigationRelevancy(bool bRelevant);
     
     UNavRelevantComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

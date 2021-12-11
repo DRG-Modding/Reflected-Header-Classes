@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "ChargedWeaponUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UChargedWeaponUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EChargedWeaponUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EChargedWeaponUpgrades NewUpgradeType);
     
     UChargedWeaponUpgrade();

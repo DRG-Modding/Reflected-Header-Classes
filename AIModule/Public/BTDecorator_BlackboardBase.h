@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlackboardKeySelector.h"
 #include "BTDecorator.h"
+#include "BlackboardKeySelector.h"
 #include "BTDecorator_BlackboardBase.generated.h"
 
 UCLASS(Abstract)

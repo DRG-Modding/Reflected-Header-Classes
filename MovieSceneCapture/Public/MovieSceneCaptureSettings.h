@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "CaptureResolution.h"
 //CROSS-MODULE INCLUDE: Engine DirectoryPath
+#include "CaptureResolution.h"
 //CROSS-MODULE INCLUDE: CoreUObject FrameRate
 #include "MovieSceneCaptureSettings.generated.h"
 

@@ -6,14 +6,14 @@
 #include "ECampaignType.h"
 #include "CampaignManager.generated.h"
 
-class UCampaign;
 class UGeneratedMission;
 class UFSDSaveGame;
+class UCampaign;
 class AFSDPlayerController;
 class UDifficultySetting;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCampaignManagerOnCampaignCompleted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCampaignManagerOnCampaignChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCampaignManagerOnCampaignCompleted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCampaignManagerOnCampaignChanged);
 
 UCLASS(Abstract, BlueprintType)
 class UCampaignManager : public UObject {
@@ -67,32 +67,32 @@ public:
     void SkipMainCampaign(UObject* WorldContextObject);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEventsRefreshed();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsWeeklyCampaignCompleted(UObject* WorldContext, ECampaignType campaigntype) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInCampaignMission(AFSDPlayerController* Player) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCampaignRestrictionsMet(UObject* WorldContextObject, UGeneratedMission* mission, UDifficultySetting* optionalDifficulty) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCampaignMission(UObject* WorldContextObject, UGeneratedMission* mission) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsActiveCampaign(UCampaign* Campaign) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSubclassOf<UCampaign>> GetUncompletedCampaigns(AFSDPlayerController* Player) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UGeneratedMission* GetCampaingMissionFromSeeds(UObject* WorldContextObject, int32 GlobalSeed, int32 MissionSeed) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UGeneratedMission* GetCampaingMission(const TArray<UGeneratedMission*>& missions, int32 MissionSeed) const;
     
     UFUNCTION(BlueprintCallable)

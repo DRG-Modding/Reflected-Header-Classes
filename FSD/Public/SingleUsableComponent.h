@@ -6,17 +6,17 @@
 
 class UDialogDataAsset;
 class APlayerCharacter;
-class USoundCue;
-class UPawnStat;
-class UTexture2D;
 class UAudioComponent;
+class UPawnStat;
+class USoundCue;
+class UTexture2D;
 
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSingleUsableComponentOnUseBegin, APlayerCharacter*, User, EInputKeys, Key);
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSingleUsableComponentOnUsedBy, APlayerCharacter*, User, EInputKeys, Key);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSingleUsableComponentOnProgress, float, Progress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSingleUsableComponentOnUsableChanged, bool, CanUse);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSingleUsableComponentOnUserCountChanged, int32, userCount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSingleUsableComponentOnFailed);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSingleUsableComponentOnUseBegin, APlayerCharacter*, User, EInputKeys, Key);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSingleUsableComponentOnUsedBy, APlayerCharacter*, User, EInputKeys, Key);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSingleUsableComponentOnProgress, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSingleUsableComponentOnUsableChanged, bool, CanUse);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSingleUsableComponentOnUserCountChanged, int32, userCount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSingleUsableComponentOnFailed);
 
 UCLASS()
 class USingleUsableComponent : public UUsableComponent {
@@ -103,13 +103,13 @@ public:
     void SetCanUse(bool CanUse);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_UserCount();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Usable();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DesiredProgress();
     
 public:
@@ -117,7 +117,7 @@ public:
     void Cheat_Use(APlayerCharacter* User, EInputKeys Key);
     
 protected:
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_PlayFailedAudio();
     
 public:

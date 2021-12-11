@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: Engine SceneComponent
+#include "EWidgetInteractionSource.h"
+//CROSS-MODULE INCLUDE: Engine ECollisionChannel
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
-#include "EWidgetInteractionSource.h"
-//CROSS-MODULE INCLUDE: Engine SceneComponent
-//CROSS-MODULE INCLUDE: Engine ECollisionChannel
 //CROSS-MODULE INCLUDE: Engine HitResult
 //CROSS-MODULE INCLUDE: InputCore Key
 #include "WidgetInteractionComponent.generated.h"
@@ -12,7 +12,7 @@
 class UWidgetComponent;
 class UWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FWidgetInteractionComponentOnHoveredWidgetChanged, UWidgetComponent*, WidgetComponent, UWidgetComponent*, PreviousWidgetComponent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FWidgetInteractionComponentOnHoveredWidgetChanged, UWidgetComponent*, WidgetComponent, UWidgetComponent*, PreviousWidgetComponent);
 
 UCLASS(BlueprintType)
 class UMG_API UWidgetInteractionComponent : public USceneComponent {
@@ -98,22 +98,22 @@ public:
     UFUNCTION(BlueprintCallable)
     bool PressAndReleaseKey(FKey Key);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOverInteractableWidget() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOverHitTestVisibleWidget() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOverFocusableWidget() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FHitResult GetLastHitResult() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWidgetComponent* GetHoveredWidgetComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D Get2DHitLocation() const;
     
     UWidgetInteractionComponent();

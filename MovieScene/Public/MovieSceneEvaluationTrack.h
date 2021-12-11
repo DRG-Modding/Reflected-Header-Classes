@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneTrackImplementationPtr.h"
-#include "EEvaluationMethod.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "MovieSceneEvaluationTrackSegments.h"
+#include "EEvaluationMethod.h"
 #include "MovieSceneEvalTemplatePtr.h"
 #include "SectionEvaluationDataTree.h"
-#include "MovieSceneEvaluationTrackSegments.h"
+#include "MovieSceneTrackImplementationPtr.h"
 #include "MovieSceneEvaluationTrack.generated.h"
 
 class UMovieSceneTrack;

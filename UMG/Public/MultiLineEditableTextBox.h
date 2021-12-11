@@ -5,16 +5,16 @@
 //CROSS-MODULE INCLUDE: SlateCore EditableTextBoxStyle
 //CROSS-MODULE INCLUDE: SlateCore TextBlockStyle
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: Slate EVirtualKeyboardDismissAction
 //CROSS-MODULE INCLUDE: Slate VirtualKeyboardOptions
+//CROSS-MODULE INCLUDE: Slate EVirtualKeyboardDismissAction
 //CROSS-MODULE INCLUDE: SlateCore ETextCommit
 #include "MultiLineEditableTextBox.generated.h"
 
 class USlateWidgetStyleAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FMultiLineEditableTextBoxHintTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiLineEditableTextBoxOnTextChanged, const FText&, Text);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMultiLineEditableTextBoxOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FMultiLineEditableTextBoxHintTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiLineEditableTextBoxOnTextChanged, const FText&, Text);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMultiLineEditableTextBoxOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
 
 UCLASS()
 class UMG_API UMultiLineEditableTextBox : public UTextLayoutWidget {
@@ -83,10 +83,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetError(FText InError);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetText() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetHintText() const;
     
     UMultiLineEditableTextBox();

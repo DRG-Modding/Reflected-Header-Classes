@@ -548,6 +548,7 @@ void UFSDGameUserSettings::ApplyConsoleGraphicsMode() {
 UFSDGameUserSettings::UFSDGameUserSettings() {
     this->bJukeboxStreamerMode = false;
     this->bGraphicSettingsChanged = false;
+    this->CurrentUserSetSaveSlotName = TEXT("Modded_Sandbox");
     this->ServerSearchRegion = 3;
     this->ServerSearchPasswordRequired = false;
     this->volumeCharacterVoice = 100.00f;

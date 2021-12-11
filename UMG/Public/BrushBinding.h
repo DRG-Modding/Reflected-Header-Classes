@@ -8,7 +8,7 @@ UCLASS()
 class UMG_API UBrushBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     FSlateBrush GetValue() const;
     
     UBrushBinding();

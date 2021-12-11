@@ -4,8 +4,8 @@
 #include "FloatPerkComponent.h"
 #include "ShieldLinkComponent.generated.h"
 
-class UStatusEffect;
 class APlayerCharacter;
+class UStatusEffect;
 
 UCLASS()
 class UShieldLinkComponent : public UFloatPerkComponent {
@@ -27,7 +27,7 @@ protected:
     UPROPERTY(EditAnywhere)
     TSubclassOf<UStatusEffect> LinkStatusEffect;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TimerFunction();
     
 public:

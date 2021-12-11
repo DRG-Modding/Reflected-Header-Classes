@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIDataProviderFloatValue.h"
 #include "EnvQueryTest_Pathfinding.h"
+#include "AIDataProviderFloatValue.h"
 #include "EnvQueryTest_PathfindingBatch.generated.h"
 
 UCLASS()

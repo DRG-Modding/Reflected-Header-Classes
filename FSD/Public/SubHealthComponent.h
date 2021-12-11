@@ -1,16 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "EEnemyHealthScaling.h"
 #include "EHealthbarType.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "Health.h"
+#include "EEnemyHealthScaling.h"
 #include "SubHealthComponent.generated.h"
 
 class USubHealthComponent;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSubHealthComponentOnCanTakeDamageChanged, USubHealthComponent*, subHealth);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSubHealthComponentOnHealthChanged, float, Health);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSubHealthComponentOnDamageTaken, float, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSubHealthComponentOnCanTakeDamageChanged, USubHealthComponent*, subHealth);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSubHealthComponentOnHealthChanged, float, Health);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSubHealthComponentOnDamageTaken, float, Amount);
 
 UCLASS(Abstract, BlueprintType)
 class USubHealthComponent : public UActorComponent, public IHealth {
@@ -36,21 +37,32 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCanTakeDamage(bool canTakeDamage);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDead() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAlive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHealthPct() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHealth() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCanTakeDamage() const;
     
     USubHealthComponent();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    AActor* GetOwner() const override PURE_VIRTUAL(GetOwner, return NULL;);
+    
+    UFUNCTION(BlueprintCallable)
+    float GetMaxHealth() const override PURE_VIRTUAL(GetMaxHealth, return 0.0f;);
+    
+    UFUNCTION(BlueprintCallable)
+    EHealthbarType GetHealthbarType() const override PURE_VIRTUAL(GetHealthbarType, return EHealthbarType::None;);
+    
 };
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine AnimNode_Base
-#include "EModifyCurveApplyMode.h"
 //CROSS-MODULE INCLUDE: Engine PoseLink
+#include "EModifyCurveApplyMode.h"
 #include "AnimNode_ModifyCurve.generated.h"
 
 USTRUCT(BlueprintType)

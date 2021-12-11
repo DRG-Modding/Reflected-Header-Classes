@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "FSDSessionUpdater.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSessionUpdaterOnNewFSDSessionID, const FString&, sessionId);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSessionUpdaterOnNewFSDSessionID, const FString&, sessionId);
 
 UCLASS()
 class UFSDSessionUpdater : public UObject {

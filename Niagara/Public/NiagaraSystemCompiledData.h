@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraParameterStore.h"
 #include "NiagaraDataSetCompiledData.h"
+#include "NiagaraParameterStore.h"
 #include "NiagaraParameterDataSetBindingCollection.h"
 #include "NiagaraSystemCompiledData.generated.h"
 

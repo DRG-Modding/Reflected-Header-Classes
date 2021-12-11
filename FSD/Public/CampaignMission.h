@@ -27,7 +27,7 @@ protected:
     UDialogDataAsset* MissionCompleteShout;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMissionTemplate* GetMissionTemplate() const;
     
     UCampaignMission();

@@ -7,18 +7,18 @@
 #include "CraftingCost.h"
 #include "VanityItem.generated.h"
 
-class UIconGenerationCameraKey;
-class UTexture2D;
 class UDLCBase;
-class UResourceData;
+class UTexture2D;
 class UVanityItem;
+class UIconGenerationCameraKey;
+class UResourceData;
 class UPlayerCharacterID;
 class UObject;
 class AFSDPlayerState;
 class UTexture;
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FVanityItemOnUnlockFlagChanged, UVanityItem*, Item, bool, IsUnlockFlagged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FVanityItemOnUnlockFlagChanged, UVanityItem*, Item, bool, IsUnlockFlagged);
 
 UCLASS(BlueprintType, EditInlineNew)
 class FSD_API UVanityItem : public USavablePrimaryDataAsset, public ICraftable, public IRefundableInterface {
@@ -82,40 +82,40 @@ protected:
     void MarkAsUnLocked();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOwned(UObject* WorldContextObject, UPlayerCharacterID* characterID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEquipped(UObject* WorldContextObject, UPlayerCharacterID* characterID) const;
     
     UFUNCTION(BlueprintCallable)
     void GiftItem(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EVanitySlot GetVanitySlot() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FCraftingCost> GetResourceCost() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetRequiredPlayerRank() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsUnLockedFromStart() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture* GetIcon(UObject* WorldContextObject) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCraftingCreditsCost() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetCraftableName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetCraftableIcon() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetCraftableDescription() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
@@ -126,7 +126,7 @@ protected:
     void ClearUnLockedMark();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanCraft(UObject* WorldContextObject) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
@@ -136,5 +136,7 @@ public:
     void ApplyItem(APlayerCharacter* Player, bool isPermanent) const;
     
     UVanityItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

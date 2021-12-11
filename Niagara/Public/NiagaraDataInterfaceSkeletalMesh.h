@@ -5,8 +5,8 @@
 #include "ENDISkeletalMesh_SkinningMode.h"
 #include "NiagaraDataInterfaceSkeletalMesh.generated.h"
 
-class AActor;
 class USkeletalMeshComponent;
+class AActor;
 
 UCLASS(EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceSkeletalMesh : public UNiagaraDataInterface {

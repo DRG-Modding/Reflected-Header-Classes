@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "BlendBoneByChannelEntry.h"
 //CROSS-MODULE INCLUDE: Engine AnimNode_Base
 //CROSS-MODULE INCLUDE: Engine PoseLink
-#include "BlendBoneByChannelEntry.h"
 //CROSS-MODULE INCLUDE: Engine InputScaleBias
 //CROSS-MODULE INCLUDE: Engine EBoneControlSpace
 #include "AnimNode_BlendBoneByChannel.generated.h"

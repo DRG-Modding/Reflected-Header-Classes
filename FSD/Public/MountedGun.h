@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
 #include "Steerable.h"
+//CROSS-MODULE INCLUDE: Engine Actor
 #include "WeaponFireOwner.h"
 #include "MountedGun.generated.h"
 
-class UWeaponFireComponent;
-class USkeletalMeshComponent;
 class UGunLogicComponent;
+class USkeletalMeshComponent;
+class UWeaponFireComponent;
 
 UCLASS()
 class AMountedGun : public AActor, public ISteerable, public IWeaponFireOwner {
@@ -24,9 +24,11 @@ protected:
     UGunLogicComponent* GunLogic;
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Test();
     
     AMountedGun();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

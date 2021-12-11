@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "SavableDataAsset.h"
 #include "ESchematicType.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "SchematicCategory.generated.h"
 
 class UEventRewardType;

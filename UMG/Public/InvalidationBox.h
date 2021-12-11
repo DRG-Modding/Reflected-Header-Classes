@@ -21,7 +21,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void InvalidateCache();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCanCache() const;
     
     UInvalidationBox();

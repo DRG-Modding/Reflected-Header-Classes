@@ -17,13 +17,13 @@ private:
     TArray<UVariantSet*> VariantSets;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UVariantSet* GetVariantSetByName(const FString& VariantSetName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UVariantSet* GetVariantSet(int32 VariantSetIndex);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumVariantSets();
     
     ULevelVariantSets();

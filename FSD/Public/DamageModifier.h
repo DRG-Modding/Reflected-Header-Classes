@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DamageModifierItem.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
+#include "DamageModifierItem.h"
 #include "DamageModifier.generated.h"
 
 class UDamageCondition;

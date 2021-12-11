@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "SteamVRChaperoneComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSteamVRChaperoneComponentOnLeaveBounds);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSteamVRChaperoneComponentOnReturnToBounds);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSteamVRChaperoneComponentOnLeaveBounds);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSteamVRChaperoneComponentOnReturnToBounds);
 
 UCLASS(BlueprintType)
 class STEAMVR_API USteamVRChaperoneComponent : public UActorComponent {
@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintAssignable)
     FSteamVRChaperoneComponentOnReturnToBounds OnReturnToBounds;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FVector> GetBounds() const;
     
     USteamVRChaperoneComponent();

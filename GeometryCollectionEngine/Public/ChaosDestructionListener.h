@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ChaosTrailingEventRequestSettings.h"
 //CROSS-MODULE INCLUDE: Engine SceneComponent
 #include "ChaosCollisionEventRequestSettings.h"
 #include "ChaosBreakingEventRequestSettings.h"
-#include "ChaosTrailingEventData.h"
+#include "ChaosTrailingEventRequestSettings.h"
 #include "ChaosCollisionEventData.h"
 #include "ChaosBreakingEventData.h"
-#include "EChaosTrailingSortMethod.h"
 #include "EChaosCollisionSortMethod.h"
+#include "ChaosTrailingEventData.h"
+#include "EChaosTrailingSortMethod.h"
 #include "EChaosBreakingSortMethod.h"
 #include "ChaosDestructionListener.generated.h"
 
 class AChaosSolverActor;
 class AGeometryCollectionActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnCollisionEvents, const TArray<FChaosCollisionEventData>&, CollisionEvents);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnBreakingEvents, const TArray<FChaosBreakingEventData>&, BreakingEvents);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnTrailingEvents, const TArray<FChaosTrailingEventData>&, TrailingEvents);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnCollisionEvents, const TArray<FChaosCollisionEventData>&, CollisionEvents);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnBreakingEvents, const TArray<FChaosBreakingEventData>&, BreakingEvents);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnTrailingEvents, const TArray<FChaosTrailingEventData>&, TrailingEvents);
 
 UCLASS(BlueprintType)
 class GEOMETRYCOLLECTIONENGINE_API UChaosDestructionListener : public USceneComponent {
@@ -89,7 +89,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void RemoveChaosSolverActor(AChaosSolverActor* ChaosSolverActor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEventListening() const;
     
     UFUNCTION(BlueprintCallable)

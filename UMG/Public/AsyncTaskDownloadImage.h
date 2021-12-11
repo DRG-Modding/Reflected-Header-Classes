@@ -6,8 +6,8 @@
 class UTexture2DDynamic;
 class UAsyncTaskDownloadImage;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTaskDownloadImageOnSuccess, UTexture2DDynamic*, Texture);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTaskDownloadImageOnFail, UTexture2DDynamic*, Texture);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTaskDownloadImageOnSuccess, UTexture2DDynamic*, Texture);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTaskDownloadImageOnFail, UTexture2DDynamic*, Texture);
 
 UCLASS()
 class UMG_API UAsyncTaskDownloadImage : public UBlueprintAsyncActionBase {

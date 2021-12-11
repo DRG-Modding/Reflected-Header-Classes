@@ -11,7 +11,7 @@ protected:
     UPROPERTY(EditAnywhere)
     FText RewardUseText;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FText CreateUseText(int32 blankSchematicCount) const;
     
 public:

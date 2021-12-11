@@ -3,8 +3,8 @@
 #include "GameplayTask.h"
 #include "GameplayTask_TimeLimitedExecution.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameplayTask_TimeLimitedExecutionOnTimeExpired);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameplayTask_TimeLimitedExecutionOnFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameplayTask_TimeLimitedExecutionOnTimeExpired);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGameplayTask_TimeLimitedExecutionOnFinished);
 
 UCLASS(MinimalAPI)
 class UGameplayTask_TimeLimitedExecution : public UGameplayTask {

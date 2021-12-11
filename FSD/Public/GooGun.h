@@ -4,15 +4,15 @@
 #include "EGooGunFireMode.h"
 #include "GooGun.generated.h"
 
-class UFXSystemComponent;
-class UAnimMontage;
 class USoundCue;
 class UFXSystemAsset;
+class UFXSystemComponent;
+class UAnimMontage;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGooGunOnStartCharging);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGooGunOnChargeChanged, float, charge);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGooGunOnEndCharging);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGooGunOnChargingFailed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGooGunOnStartCharging);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGooGunOnChargeChanged, float, charge);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGooGunOnEndCharging);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGooGunOnChargingFailed);
 
 UCLASS(Abstract)
 class AGooGun : public AAmmoDrivenWeapon {
@@ -80,13 +80,13 @@ protected:
     UAnimMontage* TP_ChargeupMontage;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetOverChargeProgress() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsCharging();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetChargeProgress() const;
     
     AGooGun();

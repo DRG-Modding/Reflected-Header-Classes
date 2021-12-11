@@ -10,7 +10,7 @@ UCLASS(BlueprintType)
 class SIMPLEUGC_API UUGCBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UUGCRegistry* GetUGCRegistry(UObject* WorldContextObject);
     
     UUGCBlueprintLibrary();

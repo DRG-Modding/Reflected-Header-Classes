@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EModioLogLevel.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EModioEnvironment.h"
-#include "EModioLogLevel.h"
 #include "EModioPortal.h"
 #include "ModioSettings.generated.h"
 

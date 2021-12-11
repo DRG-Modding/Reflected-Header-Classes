@@ -1,31 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "SavableDataAsset.h"
 #include "ResourceSpawner.h"
+#include "SavableDataAsset.h"
+#include "ObjectiveMissionIcon.h"
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: CoreUObject RandomStream
-#include "ObjectiveMissionIcon.h"
 #include "MissionTemplate.generated.h"
 
-class UMutator;
-class UObjective;
-class UWorld;
-class UMissionComplexity;
 class AProceduralSetup;
+class UMissionTemplate;
+class UObjective;
+class UObject;
+class UFSDSaveGame;
+class UMutator;
+class UMissionComplexity;
+class UWorld;
 class AFSDGameMode;
 class UMissionDuration;
-class UBiome;
-class UFSDSaveGame;
 class UTexture2D;
 class UMissionDNA;
 class UDebrisActorComponent;
 class UTutorialComponent;
+class UBiome;
 class UGeneratedMission;
-class UMissionTemplate;
-class UObject;
-class UMissionMutator;
 class UMissionWarning;
+class UMissionMutator;
 
 UCLASS(Blueprintable, EditInlineNew)
 class UMissionTemplate : public USavableDataAsset {
@@ -104,38 +104,38 @@ protected:
     UPROPERTY(EditAnywhere)
     TArray<TSoftClassPtr<UTutorialComponent>> Tutorials;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_SetMissionParameters(UGeneratedMission* mission, FRandomStream& Random);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocked(UFSDSaveGame* SaveGame) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMissionDuration*> GetValidDurations() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMissionComplexity*> GetValidComplexities() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftClassPtr<AProceduralSetup> GetSoftReferenceToPLS();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FObjectiveMissionIcon GetPrimaryObjectiveIconFromAsset(UMissionTemplate* mission, bool getSmallVersion);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FObjectiveMissionIcon GetPrimaryObjectiveIcon(bool getSmallVersion) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AProceduralSetup> GetPLS() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMissionTypeIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetMissionImageLarge() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetMissionButtonImage() const;
     
     UFUNCTION(BlueprintCallable)

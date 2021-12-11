@@ -25,7 +25,7 @@ public:
     UPROPERTY(BlueprintReadOnly)
     int32 ARWorldBytesDelivered;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void K2_OnARWorldMapIsReady();
     
     AARSharedWorldGameState();

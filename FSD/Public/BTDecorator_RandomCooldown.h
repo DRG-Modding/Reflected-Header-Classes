@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AIModule BlackboardKeySelector
 //CROSS-MODULE INCLUDE: AIModule BTDecorator
 #include "RandRange.h"
+//CROSS-MODULE INCLUDE: AIModule BlackboardKeySelector
 #include "BTDecorator_RandomCooldown.generated.h"
 
 UCLASS()

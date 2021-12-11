@@ -9,19 +9,19 @@ UCLASS(BlueprintType)
 class UBoxFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FBox CreateBoxAt(FVector Location, FVector Size);
     
     UFUNCTION(BlueprintCallable)
     static FVector ClosestPointToBox(FVector Pos, const FBox& Box);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float BoxSize(FBox Box);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector BoxExtends(FBox Box);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector BoxCenter(FBox Box);
     
     UBoxFunctionLibrary();

@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "SkinEffect.generated.h"
 
-class AActor;
 class UMeshComponent;
+class AActor;
 
 UCLASS(Abstract, BlueprintType, EditInlineNew)
 class FSD_API USkinEffect : public UObject {

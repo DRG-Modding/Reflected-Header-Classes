@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject DateTime
 #include "DeepDiveBank.h"
+//CROSS-MODULE INCLUDE: CoreUObject DateTime
 #include "DeepDiveManager.generated.h"
 
-class UDeepDive;
 class UGeneratedMission;
+class UDeepDive;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepDiveManagerOnDeepDivesRefresh);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepDiveManagerOnDeepDivesRefresh);
 
 UCLASS(BlueprintType)
 class UDeepDiveManager : public UObject {
@@ -64,31 +64,31 @@ public:
     UFUNCTION(BlueprintCallable)
     void MarkGivenRewards();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEliteDeepDive(UGeneratedMission* mission) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDeepDive* GetDeepDiveFromMission(UGeneratedMission* mission) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UGeneratedMission* GetCurrentSingleMission() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentDeepDiveStage() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDeepDive* GetActiveNormalDeepDive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDeepDive* GetActiveHardDeepDive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDeepDive* GetActiveDeepDive() const;
     
     UFUNCTION(BlueprintCallable)
     bool CompleteCurrentSingleMission();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreAllSelectedClassesQualified() const;
     
     UDeepDiveManager();

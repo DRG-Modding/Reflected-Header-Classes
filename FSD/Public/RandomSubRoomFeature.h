@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RoomFeature.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "RandomSubRoomFeature.generated.h"
 
 class URoomGeneratorGroup;

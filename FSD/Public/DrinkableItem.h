@@ -13,16 +13,16 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere, ReplicatedUsing=OnRep_DrinkableData)
     UDrinkableDataAsset* DrinkableData;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DrinkableData();
     
     UFUNCTION(BlueprintCallable)
     void Consume();
     
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientConsumed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool CheckCanSalute() const;
     
 public:

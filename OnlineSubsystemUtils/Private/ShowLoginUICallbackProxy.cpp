@@ -1,8 +1,8 @@
 #include "ShowLoginUICallbackProxy.h"
 
-class UShowLoginUICallbackProxy;
 class UObject;
 class APlayerController;
+class UShowLoginUICallbackProxy;
 
 UShowLoginUICallbackProxy* UShowLoginUICallbackProxy::ShowExternalLoginUI(UObject* WorldContextObject, APlayerController* InPlayerController) {
     return NULL;

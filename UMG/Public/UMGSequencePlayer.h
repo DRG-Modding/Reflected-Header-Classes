@@ -17,7 +17,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetUserTag(FName InUserTag);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetUserTag() const;
     
     UUMGSequencePlayer();

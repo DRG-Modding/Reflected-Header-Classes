@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "LandscapeLayerInfoObject.generated.h"
 
 class UPhysicalMaterial;

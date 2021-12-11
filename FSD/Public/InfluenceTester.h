@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "InfluenceTester.generated.h"
 
-class UCaveInfluencer;
 class USphereComponent;
+class UCaveInfluencer;
 
 UCLASS()
 class AInfluenceTester : public AActor {

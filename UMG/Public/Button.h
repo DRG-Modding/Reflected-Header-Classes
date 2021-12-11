@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore EButtonPressMethod
-//CROSS-MODULE INCLUDE: SlateCore EButtonTouchMethod
-//CROSS-MODULE INCLUDE: SlateCore ButtonStyle
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
+#include "ContentWidget.h"
+//CROSS-MODULE INCLUDE: SlateCore ButtonStyle
+//CROSS-MODULE INCLUDE: SlateCore EButtonTouchMethod
 //CROSS-MODULE INCLUDE: SlateCore EButtonClickMethod
+//CROSS-MODULE INCLUDE: SlateCore EButtonPressMethod
 #include "Button.generated.h"
 
 class USlateWidgetStyleAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnHovered);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnClicked);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnPressed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnReleased);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnUnhovered);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnHovered);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnClicked);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnPressed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnReleased);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnUnhovered);
 
 UCLASS()
 class UMG_API UButton : public UContentWidget {
@@ -77,7 +77,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetBackgroundColor(FLinearColor InBackgroundColor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPressed() const;
     
     UButton();

@@ -4,10 +4,10 @@
 #include "StateStats.h"
 #include "GroundToAirComponent.generated.h"
 
-class ADeepPathfinderCharacter;
 class UDeepPathfinderMovement;
+class ADeepPathfinderCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGroundToAirComponentOnChangedPathfinderState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGroundToAirComponentOnChangedPathfinderState);
 
 UCLASS(BlueprintType)
 class UGroundToAirComponent : public UActorComponent {
@@ -64,14 +64,14 @@ public:
     void SetAllowedToChangeState(bool aIsAllowed);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_StateChange();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsWalking() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsFlying() const;
     
     UFUNCTION(BlueprintCallable)

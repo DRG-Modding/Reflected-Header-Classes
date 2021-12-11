@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OptionalMovieSceneBlendType.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
-#include "MovieSceneSignedObject.h"
-#include "EMovieSceneBlendType.h"
 #include "MovieSceneFrameRange.h"
-#include "MovieSceneEasingSettings.h"
 #include "MovieSceneSectionEvalOptions.h"
+#include "MovieSceneSignedObject.h"
+#include "MovieSceneEasingSettings.h"
+//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+#include "EMovieSceneBlendType.h"
+#include "OptionalMovieSceneBlendType.h"
 #include "EMovieSceneCompletionMode.h"
 #include "MovieSceneSection.generated.h"
 
@@ -89,28 +89,28 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetBlendType(EMovieSceneBlendType InBlendType);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsActive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetRowIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPreRollFrames() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPostRollFrames() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetOverlapPriority() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EMovieSceneCompletionMode GetCompletionMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FOptionalMovieSceneBlendType GetBlendType() const;
     
     UMovieSceneSection();

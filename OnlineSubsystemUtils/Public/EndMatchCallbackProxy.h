@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
 //CROSS-MODULE INCLUDE: OnlineSubsystem EMPMatchOutcome
+//CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
 #include "EndMatchCallbackProxy.generated.h"
 
+class APlayerController;
 class UEndMatchCallbackProxy;
 class UObject;
-class APlayerController;
 class UTurnBasedMatchInterface;
 class ITurnBasedMatchInterface;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndMatchCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndMatchCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndMatchCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndMatchCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UEndMatchCallbackProxy : public UOnlineBlueprintCallProxyBase {

@@ -7,8 +7,8 @@
 class APlayerCharacter;
 class USoundCue;
 
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInstantUsableOnUsedBy, APlayerCharacter*, User, EInputKeys, Key);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInstantUsableOnUsableChanged, bool, CanUse);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInstantUsableOnUsedBy, APlayerCharacter*, User, EInputKeys, Key);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInstantUsableOnUsableChanged, bool, CanUse);
 
 UCLASS()
 class UInstantUsable : public UUsableComponent {
@@ -41,7 +41,7 @@ public:
     void SetCanUse(bool CanUse);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Usable();
     
 public:

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETrackingStatus.h"
 //CROSS-MODULE INCLUDE: Engine PrimitiveComponent
 //CROSS-MODULE INCLUDE: InputCore EControllerHand
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "ETrackingStatus.h"
 #include "MotionControllerComponent.generated.h"
 
 class UStaticMesh;
@@ -64,14 +64,14 @@ public:
     void SetAssociatedPlayerIndex(const int32 NewPlayer);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMotionControllerUpdated();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTracked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EControllerHand GetTrackingSource() const;
     
 protected:

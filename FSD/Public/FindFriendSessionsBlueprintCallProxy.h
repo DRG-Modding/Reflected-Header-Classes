@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE: OnlineSubsystemUtils BlueprintSessionResult
 #include "FindFriendSessionsBlueprintCallProxy.generated.h"
 
-class UFindFriendSessionsBlueprintCallProxy;
 class UObject;
+class UFindFriendSessionsBlueprintCallProxy;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindFriendSessionsBlueprintCallProxyOnSuccess, const TArray<FBlueprintSessionResult>&, Results);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindFriendSessionsBlueprintCallProxyOnFailure, const TArray<FBlueprintSessionResult>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindFriendSessionsBlueprintCallProxyOnSuccess, const TArray<FBlueprintSessionResult>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindFriendSessionsBlueprintCallProxyOnFailure, const TArray<FBlueprintSessionResult>&, Results);
 
 UCLASS()
 class UFindFriendSessionsBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {

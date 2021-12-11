@@ -4,8 +4,8 @@
 #include "EBTNodeResult.h"
 #include "BTDecorator_BlueprintBase.generated.h"
 
-class AActor;
 class AAIController;
+class AActor;
 class APawn;
 
 UCLASS(Abstract, Blueprintable)
@@ -31,46 +31,46 @@ protected:
     UPROPERTY()
     uint8 bIsObservingBB: 1;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTickAI(AAIController* OwnerController, APawn* ControlledPawn, float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTick(AActor* OwnerActor, float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveObserverDeactivatedAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveObserverDeactivated(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveObserverActivatedAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveObserverActivated(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveExecutionStartAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveExecutionStart(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveExecutionFinishAI(AAIController* OwnerController, APawn* ControlledPawn, TEnumAsByte<EBTNodeResult::Type> NodeResult);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveExecutionFinish(AActor* OwnerActor, TEnumAsByte<EBTNodeResult::Type> NodeResult);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool PerformConditionCheckAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool PerformConditionCheck(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDecoratorObserverActive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDecoratorExecutionActive() const;
     
 public:

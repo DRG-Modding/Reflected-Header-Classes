@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-#include "Objective.h"
-#include "ERefineryState.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "Objective.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "ERefineryState.h"
 #include "RefineryObjective.generated.h"
 
-class AActor;
-class AFSDRefinery;
-class AProceduralSetup;
 class UDebrisPositioning;
+class AProceduralSetup;
+class AFSDRefinery;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRefineryObjectiveOnRefinerySpawned, AFSDRefinery*, InRefinery);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRefineryObjectiveOnRefinerySpawned, AFSDRefinery*, InRefinery);
 
 UCLASS(Abstract)
 class URefineryObjective : public UObjective {
@@ -57,13 +57,13 @@ public:
     void SpawnWells(AProceduralSetup* setup, const FVector& rigLocation, float minDistanceBetween, const TArray<FVector2D>& minMaxDistancesToRig);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveRefinerySpawned(AFSDRefinery* InRefinery);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Refinery();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRefineryStateChanged(ERefineryState InRefineryState);
     
 public:
@@ -71,7 +71,7 @@ public:
     FVector GetRefinerySpawnLocation(TSubclassOf<AFSDRefinery> NewRefineryClass);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AddMissionCriticalItems(AProceduralSetup* setup);
     
 public:

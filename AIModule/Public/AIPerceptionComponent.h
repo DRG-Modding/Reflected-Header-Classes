@@ -2,18 +2,18 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "ActorPerceptionBlueprintInfo.h"
 #include "AIStimulus.h"
 //CROSS-MODULE INCLUDE: Engine EEndPlayReason
+#include "ActorPerceptionBlueprintInfo.h"
 #include "AIPerceptionComponent.generated.h"
 
-class AActor;
 class AAIController;
 class UAISense;
 class UAISenseConfig;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAIPerceptionComponentOnPerceptionUpdated, const TArray<AActor*>&, UpdatedActors);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAIPerceptionComponentOnTargetPerceptionUpdated, AActor*, Actor, FAIStimulus, Stimulus);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAIPerceptionComponentOnPerceptionUpdated, const TArray<AActor*>&, UpdatedActors);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAIPerceptionComponentOnTargetPerceptionUpdated, AActor*, Actor, FAIStimulus, Stimulus);
 
 UCLASS(BlueprintType, Config=Game)
 class AIMODULE_API UAIPerceptionComponent : public UActorComponent {
@@ -42,19 +42,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void RequestStimuliListenerUpdate();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerEndPlay(AActor* Actor, TEnumAsByte<EEndPlayReason::Type> EndPlayReason);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetPerceivedHostileActors(TArray<AActor*>& OutActors) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetPerceivedActors(TSubclassOf<UAISense> SenseToUse, TArray<AActor*>& OutActors) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetKnownPerceivedActors(TSubclassOf<UAISense> SenseToUse, TArray<AActor*>& OutActors) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetCurrentlyPerceivedActors(TSubclassOf<UAISense> SenseToUse, TArray<AActor*>& OutActors) const;
     
     UFUNCTION(BlueprintCallable)

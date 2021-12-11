@@ -4,14 +4,14 @@
 #include "HackingToolWidget.generated.h"
 
 class USoundCue;
-class UDialogDataAsset;
 class UHackingUsableComponent;
+class UDialogDataAsset;
 class AHackingToolItem;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FHackingToolWidgetOnRequestUnequipHackingTool);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHackingToolWidgetOnHackingFail, USoundCue*, InFailCue, UDialogDataAsset*, InShout);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHackingToolWidgetOnHackingStageCompleted, int32, InNextStage, int32, InTotalStages);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHackingToolWidgetOnHackingCompleted, bool, InSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FHackingToolWidgetOnRequestUnequipHackingTool);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHackingToolWidgetOnHackingFail, USoundCue*, InFailCue, UDialogDataAsset*, InShout);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHackingToolWidgetOnHackingStageCompleted, int32, InNextStage, int32, InTotalStages);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHackingToolWidgetOnHackingCompleted, bool, InSuccess);
 
 UCLASS(Abstract, EditInlineNew)
 class FSD_API UHackingToolWidget : public UUserWidget {
@@ -47,7 +47,7 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveHackingToolUnequipped();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveHackingStarted();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

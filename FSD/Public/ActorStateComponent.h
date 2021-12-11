@@ -5,9 +5,9 @@
 
 class UActorStateComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorStateComponentOnEndState, UActorStateComponent*, State);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorStateComponentOnBeginState, UActorStateComponent*, State);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FActorStateComponentOnTickState, UActorStateComponent*, State, float, DeltaTime);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorStateComponentOnEndState, UActorStateComponent*, State);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorStateComponentOnBeginState, UActorStateComponent*, State);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FActorStateComponentOnTickState, UActorStateComponent*, State, float, DeltaTime);
 
 UCLASS(BlueprintType)
 class UActorStateComponent : public UActorComponent {
@@ -35,11 +35,11 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     float StateActiveTime;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CurrentState(UActorStateComponent* PreviousState);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsStateActive() const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)

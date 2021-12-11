@@ -30,10 +30,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetPaused(bool IsPaused);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCoolingDown() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCoolDownProgress() const;
     
     UFUNCTION(BlueprintCallable)

@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-#include "CommunityFactionData.h"
 #include "CommunityGoalStateData.h"
+#include "CommunityFactionData.h"
 #include "CommunityRewardNotification.h"
 #include "CommunityGoalWrapper.generated.h"
 
-class UCommunityGoal;
 class UCommunityGoalFaction;
+class UCommunityGoal;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCommunityGoalWrapperOnFreeBeerRewardChanged, bool, IsBeersFree);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FCommunityGoalWrapperOnFactionsDataReceived, const TArray<FString>&, Goals, const TArray<float>&, Values, const TArray<int32>&, Members);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCommunityGoalWrapperOnDiscordCGSDataEvent, bool, stateReceived);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCommunityGoalWrapperUICheck);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCommunityGoalWrapperOnGoalsInitializedDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCommunityGoalWrapperOnFreeBeerRewardChanged, bool, IsBeersFree);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FCommunityGoalWrapperOnFactionsDataReceived, const TArray<FString>&, Goals, const TArray<float>&, Values, const TArray<int32>&, Members);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCommunityGoalWrapperOnDiscordCGSDataEvent, bool, stateReceived);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCommunityGoalWrapperUICheck);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCommunityGoalWrapperOnGoalsInitializedDelegate);
 
 UCLASS(BlueprintType)
 class UCommunityGoalWrapper : public UObject {
@@ -63,7 +63,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void UpdateAllGoalsInitialized();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool RewardReceived() const;
     
     UFUNCTION(BlueprintCallable)
@@ -78,7 +78,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void InitializeGoalTierTargetValues(UCommunityGoal* goalToInitialize);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCommunityGoalFaction* GetPlayerCurrentFaction(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable)

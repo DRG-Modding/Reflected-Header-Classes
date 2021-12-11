@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDrivenBoneModificationMode.h"
 #include "AnimNode_SkeletalControlBase.h"
 //CROSS-MODULE INCLUDE: Engine BoneReference
+#include "EDrivenBoneModificationMode.h"
 #include "EDrivenDestinationMode.h"
 //CROSS-MODULE INCLUDE: Engine EComponentType
 #include "AnimNode_BoneDrivenController.generated.h"

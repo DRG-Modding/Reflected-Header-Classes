@@ -4,8 +4,8 @@
 #include "DecalData.h"
 #include "StickyFlame.generated.h"
 
-class UAudioComponent;
 class UParticleSystemComponent;
+class UAudioComponent;
 class UStatusEffectTriggerComponent;
 
 UCLASS()
@@ -37,10 +37,10 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_IsActive)
     bool IsActive;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsActive();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnExtinguisFlame();
     
 public:

@@ -27,13 +27,13 @@ protected:
     TArray<FActionIconMapping> MouseKeyboard_KeyIcons;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool FindMouseKeyboardKeyIcon(FKey Key, FActionIconMapping& KeyIcon);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool FindKeyIcon(FKey Key, FActionIconMapping& KeyIcon);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool FindControllerKeyIcon(FKey Key, FActionIconMapping& KeyIcon);
     
     UControllerIconSettings();

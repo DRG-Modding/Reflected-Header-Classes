@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: Engine DataAsset
 #include "DamageBonusBase.generated.h"
 
-class UDamageCondition;
 class UDamageComponent;
+class UDamageCondition;
 class UDamageBonusBase;
 
 UCLASS(Abstract, BlueprintType, EditInlineNew)

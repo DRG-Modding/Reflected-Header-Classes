@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine PrimitiveComponent
-//CROSS-MODULE INCLUDE: Engine NavigationLink
 #include "NavLinkHostInterface.h"
+//CROSS-MODULE INCLUDE: Engine NavigationLink
 #include "NavLinkComponent.generated.h"
 
 UCLASS()
@@ -13,5 +13,7 @@ public:
     TArray<FNavigationLink> Links;
     
     UNavLinkComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

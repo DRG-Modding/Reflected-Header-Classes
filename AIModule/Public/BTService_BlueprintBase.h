@@ -3,8 +3,8 @@
 #include "BTService.h"
 #include "BTService_BlueprintBase.generated.h"
 
-class AActor;
 class AAIController;
+class AActor;
 class APawn;
 
 UCLASS(Abstract, Blueprintable)
@@ -24,31 +24,31 @@ protected:
     UPROPERTY(EditInstanceOnly)
     uint8 bShowEventDetails: 1;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTickAI(AAIController* OwnerController, APawn* ControlledPawn, float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTick(AActor* OwnerActor, float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveSearchStartAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveSearchStart(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDeactivationAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDeactivation(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveActivationAI(AAIController* OwnerController, APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveActivation(AActor* OwnerActor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsServiceActive() const;
     
 public:

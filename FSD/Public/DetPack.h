@@ -68,23 +68,23 @@ protected:
     UFUNCTION(BlueprintCallable)
     void UseFearStaggerUpgrades();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void RecieveHitObject();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsMoving();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HasExploded();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnExploded();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDetPackPickedUp(APlayerCharacter* User, EInputKeys Key);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDetPackDeath(UHealthComponentBase* HealthComponent);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

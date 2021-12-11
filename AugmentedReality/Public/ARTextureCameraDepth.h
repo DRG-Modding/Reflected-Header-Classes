@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EARDepthQuality.h"
 #include "ARTexture.h"
+#include "EARDepthQuality.h"
 #include "EARDepthAccuracy.h"
 #include "ARTextureCameraDepth.generated.h"
 

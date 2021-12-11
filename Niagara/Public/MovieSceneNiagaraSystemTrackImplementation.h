@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ENiagaraSystemSpawnSectionEndBehavior.h"
-#include "ENiagaraSystemSpawnSectionEvaluateBehavior.h"
-#include "ENiagaraSystemSpawnSectionStartBehavior.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneTrackImplementation
 //CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+#include "ENiagaraSystemSpawnSectionStartBehavior.h"
+#include "ENiagaraSystemSpawnSectionEndBehavior.h"
+#include "ENiagaraSystemSpawnSectionEvaluateBehavior.h"
 #include "ENiagaraAgeUpdateMode.h"
 #include "MovieSceneNiagaraSystemTrackImplementation.generated.h"
 

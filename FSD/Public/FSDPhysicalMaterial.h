@@ -3,18 +3,18 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine PhysicalMaterial
 //CROSS-MODULE INCLUDE: CoreUObject FloatInterval
-#include "DecalData.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
+#include "DecalData.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FSDPhysicalMaterial.generated.h"
 
-class UFXSystemAsset;
-class UObject;
 class USoundCue;
-class UReactiveTerrain;
+class UFXSystemAsset;
 class UNiagaraSystem;
 class UMaterialInstance;
+class UReactiveTerrain;
 class UFXSystemComponent;
+class UObject;
 class UFSDPhysicalMaterial;
 class UPrimitiveComponent;
 
@@ -117,7 +117,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     UFXSystemComponent* SpawnImpactParticles(UObject* WorldContextObject, FVector Location, FVector Normal) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UFSDPhysicalMaterial* GetPhysicalMaterialFromPrimitive(UPrimitiveComponent* Component);
     
     UFSDPhysicalMaterial();

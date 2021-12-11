@@ -7,8 +7,8 @@
 
 class UMonoWaveTableSynthPreset;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynthComponentMonoWaveTableOnNumTablesChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynthComponentMonoWaveTableOnTableAltered, int32, TableIndex);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynthComponentMonoWaveTableOnNumTablesChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynthComponentMonoWaveTableOnTableAltered, int32, TableIndex);
 
 UCLASS()
 class SYNTHESIS_API USynthComponentMonoWaveTable : public USynthComponent {
@@ -151,10 +151,10 @@ public:
     UFUNCTION(BlueprintCallable)
     int32 GetNumTableEntries();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxTableIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<float> GetKeyFrameValuesForTable(float TableIndex) const;
     
     UFUNCTION(BlueprintCallable)

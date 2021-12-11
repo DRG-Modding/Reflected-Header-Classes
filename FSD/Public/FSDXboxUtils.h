@@ -15,10 +15,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void ShowStoreUI(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool ShowCheatTerminal();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsDCLCheckComplete(UObject* WorldContextObject);
     
     UFSDXboxUtils();

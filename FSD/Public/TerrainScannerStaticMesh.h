@@ -27,7 +27,7 @@ public:
     void SetVisibleOnScanner(bool InShowOnScanner);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerDeath(UHealthComponentBase* InHealthComponent);
     
 public:

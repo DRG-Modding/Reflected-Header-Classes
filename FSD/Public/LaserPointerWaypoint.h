@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "LaserPointerWaypoint.generated.h"
 
-class APlayerCharacter;
 class ALaserPointerItem;
+class APlayerCharacter;
 
 UCLASS(Abstract)
 class ALaserPointerWaypoint : public AActor {
@@ -24,10 +24,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     int32 Index;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShow();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHide();
     
 public:

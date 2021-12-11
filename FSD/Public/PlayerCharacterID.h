@@ -6,8 +6,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "PlayerCharacterID.generated.h"
 
-class APlayerCharacter;
 class UPlayerCharacterData;
+class APlayerCharacter;
 
 UCLASS(BlueprintType)
 class FSD_API UPlayerCharacterID : public UDataAsset, public ISaveGameIDInterface {
@@ -30,12 +30,14 @@ protected:
     UPlayerCharacterData* CharacterData;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<APlayerCharacter> GetCharacterClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetCharacter() const;
     
     UPlayerCharacterID();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

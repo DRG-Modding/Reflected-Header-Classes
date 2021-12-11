@@ -3,8 +3,8 @@
 #include "AmmoDrivenWeapon.h"
 #include "BeltDrivenWeapon.generated.h"
 
-class UAudioComponent;
 class USoundCue;
+class UAudioComponent;
 class UCurveFloat;
 
 UCLASS(Abstract)
@@ -39,10 +39,10 @@ protected:
     UPROPERTY(Replicated, Transient)
     bool Simulate_SpinBarrel;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StopBarrel();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StartBarrel();
     
 public:

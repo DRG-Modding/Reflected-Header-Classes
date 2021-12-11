@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-#include "EFSDGoogleAnalyticsProperties.h"
 #include "PartyAnalyticsInformation.h"
 #include "DeepDiveAnalyticsInformation.h"
+#include "EFSDGoogleAnalyticsProperties.h"
 #include "GoogleAnalyticsWrapper.generated.h"
 
-class AActor;
-class USeasonChallenge;
 class AFSDGameState;
 class APlayerController;
+class USeasonChallenge;
+class AActor;
 class AFSDPlayerState;
 
 UCLASS(BlueprintType)
@@ -90,10 +90,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void RecordGAUserTiming(const FString& TimingCategory, const int32 TimingValue, const FString& TimingName);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RecordGaTreeOfVanityClaim(int32 NodeID);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RecordGASeasonLevelUp();
     
     UFUNCTION(BlueprintCallable)
@@ -108,7 +108,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void RecordGADeepDiveStageHit(const FString& Key, bool Rank, int32 stageTime, int32 timeSinceStartOfDive, int32 totalTime, int32 nitraLeft);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RecordGaChallengeReroll(int32 challengeIndex, USeasonChallenge* challenge);
     
     UFUNCTION(BlueprintCallable)
@@ -123,7 +123,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void RecordBossFightEnd(const FString& BossName, bool WasBossKilled, int32 BossKills);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString ProcessCampaignName(UClass* Campaign);
     
     UFUNCTION(BlueprintCallable)
@@ -132,16 +132,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void PlayerDropout();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerLeaveBind(AFSDPlayerState* PlayerState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerJoinBind(AFSDPlayerState* PlayerState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HandleMatchStarted();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetAnalyticsFText(FText Text);
     
     UFUNCTION(BlueprintCallable)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "GenerationItem.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "RandomSubRoomItem.generated.h"
 
 class URoomGeneratorGroup;

@@ -5,10 +5,10 @@
 #include "PipelineMovementData.h"
 #include "TrackMovementStateComponent.generated.h"
 
-class UAudioComponent;
-class USoundBase;
 class AZipLineConnector;
 class UDialogDataAsset;
+class USoundBase;
+class UAudioComponent;
 
 UCLASS()
 class FSD_API UTrackMovementStateComponent : public UCharacterStateComponent {
@@ -90,16 +90,16 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_TrackMovementdata)
     FPipelineMovementData TrackMovementData;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerExitMode(EExitTrackMode eMode);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerAddTemporaryAcceration(float Acceleration, float Duration);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_TrackMovementdata(FPipelineMovementData& oldState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void JumpPressed();
     
 public:

@@ -6,15 +6,15 @@
 //CROSS-MODULE INCLUDE: SlateCore EConsumeMouseWheel
 #include "ListView.generated.h"
 
-class UUserWidget;
 class UObject;
+class UUserWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemScrolledIntoView, UObject*, Item, UUserWidget*, Widget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnEntryInitialized, UObject*, Item, UUserWidget*, Widget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemIsHoveredChanged, UObject*, Item, bool, bIsHovered);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBP_OnItemClicked, UObject*, Item);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemSelectionChanged, UObject*, Item, bool, bIsSelected);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBP_OnItemDoubleClicked, UObject*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemScrolledIntoView, UObject*, Item, UUserWidget*, Widget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnEntryInitialized, UObject*, Item, UUserWidget*, Widget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemIsHoveredChanged, UObject*, Item, bool, bIsHovered);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBP_OnItemClicked, UObject*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemSelectionChanged, UObject*, Item, bool, bIsSelected);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBP_OnItemDoubleClicked, UObject*, Item);
 
 UCLASS()
 class UMG_API UListView : public UListViewBase {
@@ -80,19 +80,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void NavigateToIndex(int32 Index);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsRefreshPending() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumItems() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UObject*> GetListItems() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObject* GetItemAt(int32 Index) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndexForItem(UObject* Item) const;
     
     UFUNCTION(BlueprintCallable)
@@ -114,16 +114,16 @@ private:
     UFUNCTION(BlueprintCallable)
     void BP_NavigateToItem(UObject* Item);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BP_IsItemVisible(UObject* Item) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     bool BP_GetSelectedItems(TArray<UObject*>& Items) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObject* BP_GetSelectedItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BP_GetNumItemsSelected() const;
     
     UFUNCTION(BlueprintCallable)

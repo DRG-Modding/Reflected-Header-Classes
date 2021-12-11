@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "RessuplyPodItem.generated.h"
 
-class UObject;
 class AActor;
 class UItemPlacerAggregator;
 class ARessuplyPod;
+class UObject;
 
 UCLASS()
 class ARessuplyPodItem : public AAnimatedItem {
@@ -42,21 +42,21 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_Used)
     bool Used;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Call_Resupply(const FVector& Location);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveItemPlacerSpawned(UItemPlacerAggregator* InItemPlacer);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Used();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetResourceCost(UObject* WorldContextObject) const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemPlacerAggregator* GetActiveAggregator() const;
     
 public:

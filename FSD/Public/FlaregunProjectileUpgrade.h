@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StandardItemUpgrade.h"
-#include "EFlaregunProjectileUpgrades.h"
 #include "UpgradeValues.h"
+#include "EFlaregunProjectileUpgrades.h"
 #include "FlaregunProjectileUpgrade.generated.h"
 
 class AActor;
@@ -21,7 +21,7 @@ protected:
     TSubclassOf<AActor> projectileClass;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, TSubclassOf<AActor> upgradedItem, AFSDPlayerState* Player, EFlaregunProjectileUpgrades NewUpgradeType);
     
     UFlaregunProjectileUpgrade();

@@ -33,7 +33,7 @@ protected:
     bool AlwaysUpdateAimRotation;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPerceptionUpdated(AActor* sensedActor, FAIStimulus Stimulus);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

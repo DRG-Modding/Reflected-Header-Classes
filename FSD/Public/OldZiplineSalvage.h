@@ -18,7 +18,7 @@ protected:
     UPROPERTY(EditAnywhere)
     FVector RelativeDestinationLocation;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMatchStarted();
     
 public:

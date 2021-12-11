@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "DebrisBase.h"
-//CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
 #include "EDebrisCarvedType.h"
+#include "DebrisBase.h"
 #include "UDebrisStaticCarveMesh.h"
+//CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
 #include "DebrisInfluence.h"
 #include "DebrisStaticCarved.generated.h"
 

@@ -6,11 +6,11 @@
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "ElectroBeam.generated.h"
 
-class UAudioComponent;
 class USceneComponent;
 class UCapsuleComponent;
 class UStatusEffect;
 class UParticleSystemComponent;
+class UAudioComponent;
 class UHealthComponentBase;
 
 UCLASS(Abstract)
@@ -67,10 +67,10 @@ private:
     bool IsLit;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetTarget(USceneComponent* TargetPoint);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetSource(USceneComponent* SourcePoint);
     
     UFUNCTION(BlueprintCallable)
@@ -79,21 +79,21 @@ public:
     UFUNCTION(BlueprintCallable)
     void RecalculateBeam();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_TargetLocation();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SourceLocation();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Flag();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnParentTwoDeath(UHealthComponentBase* HealthComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnParentOneDeath(UHealthComponentBase* HealthComponent);
     
     UFUNCTION(BlueprintCallable)

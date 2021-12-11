@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterStateComponent.h"
 #include "EInputKeys.h"
+#include "CharacterStateComponent.h"
 #include "WalkingStateComponent.generated.h"
 
+class APlayerCharacter;
+class UAudioComponent;
 class USoundBase;
 class UTrackBuilderMovement;
-class UAudioComponent;
-class APlayerCharacter;
 
 UCLASS(MinimalAPI)
 class UWalkingStateComponent : public UCharacterStateComponent {
@@ -44,17 +44,17 @@ protected:
     UPROPERTY(Export, Transient)
     UAudioComponent* AudioComponentIceSliding;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TrackGrindCallback(APlayerCharacter* User, EInputKeys Key);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StartTrackMovement(UTrackBuilderMovement* InMovement);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIsSliding(bool isSliding);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void JumpPress();
     
     UWalkingStateComponent();

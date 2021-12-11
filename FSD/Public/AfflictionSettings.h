@@ -5,9 +5,9 @@
 #include "RandRange.h"
 #include "AfflictionSettings.generated.h"
 
-class USoundCue;
 class UStaticMesh;
 class UPawnAffliction;
+class USoundCue;
 class UParticleSystem;
 
 UCLASS()

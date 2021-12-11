@@ -5,9 +5,9 @@
 #include "GuntowerEvent.generated.h"
 
 class AGuntowerModule;
-class UDamageComponent;
-class USceneComponent;
 class USkeletalMeshComponent;
+class USceneComponent;
+class UDamageComponent;
 
 UCLASS()
 class AGuntowerEvent : public AGameEvent {
@@ -42,13 +42,13 @@ protected:
     int32 ActiveHostileModules;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ModuleActive();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnModulesSpawned();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnModuleExploded(AGuntowerModule* explodedModule);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

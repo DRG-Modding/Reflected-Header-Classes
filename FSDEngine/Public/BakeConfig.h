@@ -21,22 +21,22 @@ public:
     UPROPERTY(Transient)
     TArray<FString> Warnings;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetVectorSetting(FName Name, FVector defaultVal);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRandomStream GetRandomStream();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBuilderBase* GetObject(FName Name);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIntSetting(FName Name, int32 defaultVal);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetFloatSetting(FName Name, float defaultVal);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetBoolSetting(FName Name, bool defaultVal);
     
     UBakeConfig();

@@ -6,8 +6,8 @@
 #include "SimpleObjectInfoComponent.generated.h"
 
 class UDialogDataAsset;
-class UActorContextWidget;
 class UTexture2D;
+class UActorContextWidget;
 class USceneComponent;
 
 UCLASS()
@@ -43,10 +43,10 @@ protected:
     UActorContextWidget* ContextWidget;
     
 public:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void SetInGameName(const FString& GameName);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void SetInGameDescription(const FString& GameDescription);
     
     UFUNCTION(BlueprintCallable)
@@ -58,7 +58,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void OverrideLookAtShout(UDialogDataAsset* InShout);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDialogDataAsset* GetDefaultLookAtShout() const;
     
     UFUNCTION(BlueprintCallable)

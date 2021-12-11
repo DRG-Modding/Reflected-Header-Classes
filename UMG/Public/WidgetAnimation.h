@@ -7,7 +7,7 @@
 class UMovieScene;
 class UUserWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FWidgetAnimationDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FWidgetAnimationDelegate);
 
 UCLASS(MinimalAPI)
 class UWidgetAnimation : public UMovieSceneSequence {
@@ -39,10 +39,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void UnbindAllFromAnimationFinished(UUserWidget* Widget);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetStartTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEndTime() const;
     
     UFUNCTION(BlueprintCallable)

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CSGBaseComponent.h"
-#include "CSGChildInstanceProperties.h"
 #include "GeneralTerrainMaterialCombiner.h"
+#include "CSGChildInstanceProperties.h"
 #include "CSGChildInstanceComponent.generated.h"
 
 UCLASS(BlueprintType)

@@ -6,8 +6,8 @@
 
 class AFSDPlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpacerigStartOnPlayerLeave, AFSDPlayerController*, Controller);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpacerigStartOnPlayerSpawn, AFSDPlayerController*, Controller);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpacerigStartOnPlayerLeave, AFSDPlayerController*, Controller);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpacerigStartOnPlayerSpawn, AFSDPlayerController*, Controller);
 
 UCLASS()
 class ASpacerigStart : public APlayerStart {

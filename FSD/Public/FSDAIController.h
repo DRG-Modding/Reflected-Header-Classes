@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AIModule AIController
 //CROSS-MODULE INCLUDE: Engine ECollisionChannel
+//CROSS-MODULE INCLUDE: AIModule AIController
 #include "FSDAIController.generated.h"
 
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDAIControllerOnMessageBehaviorTreeEvent, FName, Message);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDAIControllerOnAlertedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDAIControllerOnMessageBehaviorTreeEvent, FName, Message);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDAIControllerOnAlertedEvent);
 
 UCLASS()
 class AFSDAIController : public AAIController {
@@ -37,7 +37,7 @@ public:
     void RegisterBlackboardChanges(const FName& Key);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Recieve_BlackboardValueChanged(const FName& KeyName);
     
 public:
@@ -45,11 +45,11 @@ public:
     void PauseLogic();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAttackingChanged(bool attacking);
     
 public:
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintPure)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     bool GetIsAlerted() const;
     
     AFSDAIController();

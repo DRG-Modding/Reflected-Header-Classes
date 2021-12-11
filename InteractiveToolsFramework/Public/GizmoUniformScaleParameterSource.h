@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GizmoVec2ParameterChange.h"
 #include "GizmoBaseVec2ParameterSource.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
-#include "GizmoVec2ParameterChange.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "GizmoUniformScaleParameterSource.generated.h"
 

@@ -7,7 +7,7 @@
 
 class UUserWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCrosshairAggregatorOnCrosshairCreated, UUserWidget*, Crosshair);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCrosshairAggregatorOnCrosshairCreated, UUserWidget*, Crosshair);
 
 UCLASS()
 class UCrosshairAggregator : public UItemAggregator, public IUpgradable {
@@ -27,9 +27,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCrosshair(UUserWidget* Widget);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UUserWidget* GetOrCreateCrosshair();
     
     UCrosshairAggregator();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

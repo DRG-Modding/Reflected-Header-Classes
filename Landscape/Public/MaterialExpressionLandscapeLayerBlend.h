@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine MaterialExpression
 #include "LayerBlendInput.h"
+//CROSS-MODULE INCLUDE: Engine MaterialExpression
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "MaterialExpressionLandscapeLayerBlend.generated.h"
 

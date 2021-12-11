@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Margin.h"
 #include "SlateWidgetStyle.h"
 #include "ButtonStyle.h"
 #include "SlateColor.h"
 #include "SlateBrush.h"
-#include "Margin.h"
 #include "DockTabStyle.generated.h"
 
 USTRUCT()

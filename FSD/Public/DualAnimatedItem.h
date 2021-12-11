@@ -3,11 +3,11 @@
 #include "Item.h"
 #include "DualAnimatedItem.generated.h"
 
-class UAnimInstance;
 class UAnimMontage;
+class UAnimInstance;
 class UPlayerAnimInstance;
-class USkeletalMeshComponent;
 class UItemCharacterAnimationSet;
+class USkeletalMeshComponent;
 
 UCLASS(Abstract)
 class ADualAnimatedItem : public AItem {
@@ -44,10 +44,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UItemCharacterAnimationSet* CharacterAnimationSet;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USkeletalMeshComponent* GetRItemMesh() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USkeletalMeshComponent* GetLItemMesh() const;
     
 public:

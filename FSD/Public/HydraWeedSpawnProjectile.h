@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Projectile.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "Projectile.h"
 #include "HydraWeedSpawnProjectile.generated.h"
 
 UCLASS()

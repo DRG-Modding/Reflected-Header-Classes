@@ -33,11 +33,11 @@ public:
     float SyncTime;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SphereBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PosVel(const FFakeMoveState& NewPosVel);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

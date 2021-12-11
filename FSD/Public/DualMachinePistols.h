@@ -14,7 +14,7 @@ protected:
     UPROPERTY(EditAnywhere)
     TSubclassOf<UStatusEffect> EmptyClipStatusEffect;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_TriggerStatusEffect();
     
 public:

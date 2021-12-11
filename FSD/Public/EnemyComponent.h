@@ -5,10 +5,10 @@
 
 class UDialogDataAsset;
 class UEnemyFamily;
-class UEnemyID;
 class UTexture2D;
+class UEnemyID;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyComponentOnMixerNameChange, const FString&, mixerName);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyComponentOnMixerNameChange, const FString&, mixerName);
 
 UCLASS()
 class UEnemyComponent : public USimpleObjectInfoComponent {
@@ -31,13 +31,13 @@ protected:
     FEnemyComponentOnMixerNameChange OnMixerNameChange;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     UEnemyID* GetID();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetFamilyName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetFamilyIcon() const;
     
     UEnemyComponent();

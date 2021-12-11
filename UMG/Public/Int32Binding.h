@@ -7,7 +7,7 @@ UCLASS()
 class UMG_API UInt32Binding : public UPropertyBinding {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     int32 GetValue() const;
     
     UInt32Binding();

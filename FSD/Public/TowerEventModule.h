@@ -7,12 +7,12 @@
 
 class USceneComponent;
 class USkeletalMeshComponent;
+class UWeakpointGlowComponent;
 class UParticleSystemComponent;
 class UEnemyHealthComponent;
-class UArmorHealthDamageComponent;
-class UWeakpointGlowComponent;
-class USkeletalMesh;
 class USoundCue;
+class UArmorHealthDamageComponent;
+class USkeletalMesh;
 class UParticleSystem;
 class ATowerEventModule;
 class UStaticMesh;
@@ -79,18 +79,20 @@ private:
     TArray<UStaticMeshComponent*> ArmorMeshes;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAttack();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HideArmorPlates();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DestroyArmor();
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ATowerEventModule();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

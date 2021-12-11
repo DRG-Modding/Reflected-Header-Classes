@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "MovieSceneEasingFunction.h"
+//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EMovieSceneBuiltInEasing.h"
 #include "MovieSceneBuiltInEasingFunction.generated.h"
 
@@ -13,5 +13,7 @@ public:
     EMovieSceneBuiltInEasing Type;
     
     UMovieSceneBuiltInEasingFunction();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

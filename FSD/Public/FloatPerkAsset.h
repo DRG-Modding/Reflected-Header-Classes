@@ -5,8 +5,8 @@
 #include "FloatPerkEffect.h"
 #include "FloatPerkAsset.generated.h"
 
-class UObject;
 class UFloatPerkAsset;
+class UObject;
 
 UCLASS()
 class UFloatPerkAsset : public UPerkAsset {
@@ -20,13 +20,13 @@ protected:
     TArray<FFloatPerkEffect> Effects;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPerkValue(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLastTierValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetFloatPerkValue(UObject* WorldContext, UFloatPerkAsset* Perk, float UnclaimedValue);
     
     UFloatPerkAsset();

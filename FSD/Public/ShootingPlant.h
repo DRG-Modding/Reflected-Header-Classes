@@ -21,7 +21,7 @@ public:
     void SetTarget(AActor* NewTarget);
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnRep_Target();
     
 public:

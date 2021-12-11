@@ -1,8 +1,8 @@
 #include "ConvertedRobot.h"
 #include "Net/UnrealNetwork.h"
 
-class APlayerCharacter;
 class APawn;
+class APlayerCharacter;
 class USceneComponent;
 class AActor;
 

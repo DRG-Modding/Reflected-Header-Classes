@@ -3,29 +3,29 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "ObjectInfoComponent.generated.h"
 
+class UTexture2D;
 class UDialogDataAsset;
+class APlayerController;
 class UPrimitiveComponent;
 class UActorContextWidget;
-class UTexture2D;
-class APlayerController;
 
 UCLASS(Abstract, BlueprintType)
 class UObjectInfoComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDialogDataAsset* GetLookAtShout(const UPrimitiveComponent* TargetComponent) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsPingableByLaserpointer(const UPrimitiveComponent* TargetComponent) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetInGameName(const UPrimitiveComponent* TargetComponent) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetInGameIcon(const UPrimitiveComponent* TargetComponent) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetInGameDescription(const UPrimitiveComponent* TargetComponent) const;
     
     UFUNCTION(BlueprintCallable)

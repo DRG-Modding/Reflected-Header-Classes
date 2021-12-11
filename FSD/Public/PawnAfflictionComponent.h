@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "PawnAfflictionItem.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "AfflictionEntriesArray.h"
 #include "EFrozenBitsSize.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
+#include "PawnAfflictionItem.h"
+#include "AfflictionEntriesArray.h"
 #include "PawnAfflictionComponent.generated.h"
 
-class UHealthComponentBase;
-class UPawnAffliction;
 class UFrozenAfflictionEffect;
 class UBurningAfflictionEffect;
+class UPawnAffliction;
+class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPawnAfflictionComponentOnAfflictionActivatedEvent, UPawnAffliction*, Affliction);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPawnAfflictionComponentOnAfflictionDeactivatedEvent, UPawnAffliction*, Affliction);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPawnAfflictionComponentOnAfflictionActivatedEvent, UPawnAffliction*, Affliction);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPawnAfflictionComponentOnAfflictionDeactivatedEvent, UPawnAffliction*, Affliction);
 
 UCLASS(BlueprintType)
 class UPawnAfflictionComponent : public UActorComponent {
@@ -55,14 +55,14 @@ public:
     void PopAffliction(UPawnAffliction* Affliction);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* HealthComponent);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAfflictedBy(UPawnAffliction* Affliction) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UPawnAffliction*> GetActiveAfflictions() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneSection.h"
 #include "MovieSceneSectionParameters.h"
+#include "MovieSceneSection.h"
 //CROSS-MODULE INCLUDE: Engine DirectoryPath
 #include "MovieSceneSubSection.generated.h"
 
@@ -42,7 +42,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetSequence(UMovieSceneSequence* Sequence);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMovieSceneSequence* GetSequence() const;
     
     UMovieSceneSubSection();

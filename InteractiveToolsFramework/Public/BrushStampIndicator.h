@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-#include "InteractiveGizmo.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "InteractiveGizmo.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "BrushStampIndicator.generated.h"
 
 class UPrimitiveComponent;

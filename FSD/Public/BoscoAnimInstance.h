@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine AnimInstance
 #include "EDroneAIState.h"
+//CROSS-MODULE INCLUDE: Engine AnimInstance
 #include "BoscoAnimInstance.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBoscoAnimInstanceOnWeaponsReady);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBoscoAnimInstanceOnWeaponsNotReady);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBoscoAnimInstanceOnWeaponsReady);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBoscoAnimInstanceOnWeaponsNotReady);
 
 UCLASS(NonTransient)
 class UBoscoAnimInstance : public UAnimInstance {

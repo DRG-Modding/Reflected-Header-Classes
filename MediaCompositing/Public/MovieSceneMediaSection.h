@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject FrameNumber
 #include "MovieSceneMediaSection.generated.h"
 
-class UMediaTexture;
 class UMediaSource;
+class UMediaTexture;
 class UMediaPlayer;
 class UMediaSoundComponent;
 

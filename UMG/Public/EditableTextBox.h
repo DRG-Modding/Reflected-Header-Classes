@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Widget.h"
-//CROSS-MODULE INCLUDE: SlateCore Margin
 //CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
 //CROSS-MODULE INCLUDE: SlateCore EditableTextBoxStyle
-#include "ShapedTextOptions.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+#include "EVirtualKeyboardType.h"
+//CROSS-MODULE INCLUDE: SlateCore Margin
 //CROSS-MODULE INCLUDE: Slate VirtualKeyboardOptions
 //CROSS-MODULE INCLUDE: Slate EVirtualKeyboardTrigger
-#include "EVirtualKeyboardType.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: Slate EVirtualKeyboardDismissAction
 //CROSS-MODULE INCLUDE: Slate ETextJustify
+#include "ShapedTextOptions.h"
 //CROSS-MODULE INCLUDE: SlateCore ETextCommit
 #include "EditableTextBox.generated.h"
 
 class USlateWidgetStyleAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FEditableTextBoxTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FEditableTextBoxHintTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEditableTextBoxOnTextChanged, const FText&, Text);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEditableTextBoxOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FEditableTextBoxTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FEditableTextBoxHintTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEditableTextBoxOnTextChanged, const FText&, Text);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEditableTextBoxOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
 
 UCLASS()
 class UMG_API UEditableTextBox : public UWidget {
@@ -127,10 +127,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetError(FText InError);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasError() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetText() const;
     
     UFUNCTION(BlueprintCallable)

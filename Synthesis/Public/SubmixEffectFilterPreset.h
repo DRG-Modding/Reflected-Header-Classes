@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SubmixEffectFilterSettings.h"
 //CROSS-MODULE INCLUDE: Engine SoundEffectSubmixPreset
-#include "ESubmixFilterAlgorithm.h"
+#include "SubmixEffectFilterSettings.h"
 #include "ESubmixFilterType.h"
+#include "ESubmixFilterAlgorithm.h"
 #include "SubmixEffectFilterPreset.generated.h"
 
 UCLASS(BlueprintType, EditInlineNew)

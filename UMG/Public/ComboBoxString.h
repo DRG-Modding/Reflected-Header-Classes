@@ -3,15 +3,15 @@
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "Widget.h"
 //CROSS-MODULE INCLUDE: SlateCore ComboBoxStyle
+//CROSS-MODULE INCLUDE: SlateCore Margin
 //CROSS-MODULE INCLUDE: SlateCore TableRowStyle
 //CROSS-MODULE INCLUDE: SlateCore ESelectInfo
 //CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
-//CROSS-MODULE INCLUDE: SlateCore Margin
 #include "ComboBoxString.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FComboBoxStringOnGenerateWidgetEvent, const FString&, Item);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FComboBoxStringOnSelectionChanged, const FString&, SelectedItem, TEnumAsByte<ESelectInfo::Type>, SelectionType);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FComboBoxStringOnOpening);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FComboBoxStringOnGenerateWidgetEvent, const FString&, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FComboBoxStringOnSelectionChanged, const FString&, SelectedItem, TEnumAsByte<ESelectInfo::Type>, SelectionType);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FComboBoxStringOnOpening);
 
 UCLASS()
 class UMG_API UComboBoxString : public UWidget {
@@ -73,22 +73,22 @@ public:
     UFUNCTION(BlueprintCallable)
     void RefreshOptions();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOpen() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetSelectedOption() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSelectedIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetOptionCount() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetOptionAtIndex(int32 Index) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 FindOptionIndex(const FString& Option) const;
     
     UFUNCTION(BlueprintCallable)

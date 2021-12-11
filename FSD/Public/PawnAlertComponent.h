@@ -7,7 +7,7 @@ class UDamageClass;
 class APawn;
 class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPawnAlertComponentOnAlertedFromDamage);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPawnAlertComponentOnAlertedFromDamage);
 
 UCLASS(BlueprintType)
 class UPawnAlertComponent : public UActorComponent {
@@ -29,13 +29,13 @@ public:
     void StopAutoAlerting();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPawnSeen(APawn* Pawn);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHit(float Damage, UDamageClass* DamageClass, AActor* DamageCauser, bool anyHealthLost);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAlerted();
     
 public:

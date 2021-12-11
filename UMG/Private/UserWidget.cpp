@@ -1,10 +1,10 @@
 #include "UserWidget.h"
 
 class UWidgetAnimation;
-class APawn;
 class APlayerController;
 class USoundBase;
 class UUMGSequencePlayer;
+class APawn;
 
 void UUserWidget::UnregisterInputComponent() {
 }

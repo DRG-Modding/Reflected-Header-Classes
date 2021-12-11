@@ -9,5 +9,7 @@ class ANIMGRAPHRUNTIME_API UAnimSequencerInstance : public UAnimInstance, public
     GENERATED_BODY()
 public:
     UAnimSequencerInstance();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

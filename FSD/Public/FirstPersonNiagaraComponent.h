@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Niagara NiagaraComponent
-//CROSS-MODULE INCLUDE: Engine EAttachLocation
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE: Niagara NiagaraComponent
+//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine EAttachLocation
 #include "FirstPersonNiagaraComponent.generated.h"
 
 class UNiagaraSystem;

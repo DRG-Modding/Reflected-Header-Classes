@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
 #include "ScalarParameterNameAndCurve.h"
 #include "BoolParameterNameAndCurve.h"
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
 #include "Vector2DParameterNameAndCurves.h"
 #include "VectorParameterNameAndCurves.h"
-#include "ColorParameterNameAndCurves.h"
 #include "TransformParameterNameAndCurves.h"
+#include "ColorParameterNameAndCurves.h"
 #include "MovieSceneParameterSection.generated.h"
 
 UCLASS()

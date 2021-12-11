@@ -5,8 +5,8 @@
 #include "UpgradeValues.h"
 #include "StickyFlameStatusEffectUpgrade.generated.h"
 
-class AActor;
 class UStatusEffect;
+class AActor;
 class AFSDPlayerState;
 
 UCLASS(EditInlineNew, MinimalAPI)
@@ -18,7 +18,7 @@ protected:
     TSubclassOf<UStatusEffect> StatusEffect;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, TSubclassOf<UStatusEffect> NewStatusEffect);
     
     UStickyFlameStatusEffectUpgrade();

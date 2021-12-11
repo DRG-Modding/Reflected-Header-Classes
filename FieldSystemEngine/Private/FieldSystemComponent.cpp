@@ -1,7 +1,7 @@
 #include "FieldSystemComponent.h"
 
-class UFieldSystemMetaData;
 class UFieldNodeBase;
+class UFieldSystemMetaData;
 
 void UFieldSystemComponent::ResetFieldSystem() {
 }

@@ -32,10 +32,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetOffsets(FMargin InOffset);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetMinimum(FVector2D InMinimumAnchors);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetMaximum(FVector2D InMaximumAnchors);
     
     UFUNCTION(BlueprintCallable)
@@ -50,28 +50,28 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAlignment(FVector2D InAlignment);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetZOrder() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetSize() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetPosition() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FMargin GetOffsets() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FAnchorData GetLayout() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAutoSize() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FAnchors GetAnchors() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetAlignment() const;
     
     UCanvasPanelSlot();

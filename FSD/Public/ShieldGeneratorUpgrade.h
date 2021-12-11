@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "ShieldGeneratorUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UShieldGeneratorUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EShieldGeneratorUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EShieldGeneratorUpgrades NewUpgradeType);
     
     UShieldGeneratorUpgrade();

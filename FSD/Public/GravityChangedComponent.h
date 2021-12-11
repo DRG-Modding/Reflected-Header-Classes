@@ -16,7 +16,7 @@ protected:
     UPROPERTY(Export, Transient)
     TArray<UPrimitiveComponent*> PrimitiveComponents;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnGravityChanged(float Gravity, float Change);
     
 public:

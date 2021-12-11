@@ -2,23 +2,24 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagAssetInterface
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "MiningPodDialogs.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EMiningPodMission.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagAssetInterface
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTag
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 #include "EMiningPodState.h"
 #include "EMiningPodRampState.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "MiningPod.generated.h"
 
 class UAutoCarverComponent;
-class UBoxComponent;
 class UCurveFloat;
+class UBoxComponent;
 class UOutlineComponent;
-class UObject;
 class UObjectivesManager;
 class AMiningPod;
+class UObject;
 class AMolly;
 
 UCLASS()
@@ -107,10 +108,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetMuleInstance(AMolly* Donkey);
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void RecieveReturnTimerFifteenSecondWarning();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void RecieveReturnTimerExpired();
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
@@ -123,50 +124,50 @@ public:
     void PoweredUp();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRep_RampState();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPrepForTakeOff();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPoweringUp();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPoweredUp();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHostInsidePod(bool isInside);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDropStarted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDroppodImpact();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDrillingStarted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDeparting();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCountdownFinished();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCountdownChanged(int32 newTime);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAllDwavesInsidePod(bool AllInside);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTimeToDeparture() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasLanded() const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -201,5 +202,19 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AMiningPod();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override PURE_VIRTUAL(HasMatchingGameplayTag, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAnyMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAllMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(GetOwnedGameplayTags,);
+    
 };
 

@@ -2,23 +2,23 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "TreasureContainer.h"
-#include "EInputKeys.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "EInputKeys.h"
 #include "TreasureBox.generated.h"
 
-class URepairableUsable;
+class AActor;
+class UAnimSequenceBase;
 class URepairableComponent;
-class USkeletalMeshComponent;
+class URepairableUsable;
 class UStaticMeshComponent;
 class USingleUsableComponent;
-class UAnimSequenceBase;
+class USkeletalMeshComponent;
 class UTerrainPlacementComponent;
-class AActor;
 class UTreasureRewarder;
 class AProceduralSetup;
 class UDebrisPositioning;
-class APlayerCharacter;
 class UCurveFloat;
+class APlayerCharacter;
 
 UCLASS()
 class FSD_API ATreasureBox : public ATreasureContainer {
@@ -71,32 +71,32 @@ public:
     UFUNCTION(BlueprintCallable)
     void PlaceResources(AProceduralSetup* setup, float Radius, UDebrisPositioning* DebrisPositioning, const TArray<FVector>& locationsToAvoid, UCurveFloat* AvoidCostCurve);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUsedEvent(APlayerCharacter* User, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRepairedEvent(URepairableComponent* repaired);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHammerProgress(float Progress);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHammered(APlayerCharacter* User, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFullyRepairedEvent(URepairableComponent* repaired);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAllResourcesCollectedEvent(URepairableComponent* repaired);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnCollectedTreasure(APlayerCharacter* collector);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AfterRepairDelay();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ActivateCollection();
     
 public:

@@ -3,8 +3,8 @@
 #include "DeepDiveTesterItem.generated.h"
 
 class UMissionTemplate;
-class UMissionMutator;
 class UMissionWarning;
+class UMissionMutator;
 
 USTRUCT(BlueprintType)
 struct FDeepDiveTesterItem {

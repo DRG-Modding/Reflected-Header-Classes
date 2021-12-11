@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE: Engine AudioComponent
 #include "ImpactAudioComponent.generated.h"
 
-class USceneComponent;
-class AActor;
 class UHealthComponentBase;
 class UImpactAudioComponent;
+class USceneComponent;
+class AActor;
 
 UCLASS()
 class UImpactAudioComponent : public UAudioComponent {
@@ -24,7 +24,7 @@ protected:
     bool ListenForDeath;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerDeath(UHealthComponentBase* HealthComponent);
     
     UFUNCTION(BlueprintCallable)

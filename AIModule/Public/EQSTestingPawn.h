@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIDynamicParam.h"
-#include "EQSQueryResultSourceInterface.h"
 //CROSS-MODULE INCLUDE: Engine Character
 #include "EnvNamedValue.h"
-#include "EEnvQueryHightlightMode.h"
+#include "EQSQueryResultSourceInterface.h"
 //CROSS-MODULE INCLUDE: Engine NavAgentProperties
+#include "EEnvQueryHightlightMode.h"
+#include "AIDynamicParam.h"
 #include "EEnvQueryRunMode.h"
 #include "EQSTestingPawn.generated.h"
 
@@ -55,5 +55,7 @@ public:
     FNavAgentProperties NavAgentProperties;
     
     AEQSTestingPawn();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

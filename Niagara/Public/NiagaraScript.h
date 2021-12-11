@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraVMExecutableData.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-#include "ENiagaraScriptUsage.h"
-#include "NiagaraVMExecutableDataId.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-#include "NiagaraScriptDataInterfaceInfo.h"
-#include "NiagaraScriptExecutionParameterStore.h"
-#include "NiagaraParameterStore.h"
 #include "NiagaraBoundParameter.h"
+#include "NiagaraScriptExecutionParameterStore.h"
+#include "ENiagaraScriptUsage.h"
+#include "NiagaraVMExecutableData.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "NiagaraVMExecutableDataId.h"
+#include "NiagaraParameterStore.h"
+#include "NiagaraScriptDataInterfaceInfo.h"
 #include "NiagaraScript.generated.h"
 
 class UNiagaraParameterCollection;
@@ -51,7 +51,7 @@ private:
     TArray<FNiagaraScriptDataInterfaceInfo> CachedDefaultDataInterfaces;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RaiseOnGPUCompilationComplete();
     
     UNiagaraScript();

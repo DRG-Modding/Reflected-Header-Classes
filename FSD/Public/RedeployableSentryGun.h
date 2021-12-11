@@ -5,18 +5,18 @@
 #include "ERedeployableSentryGunState.h"
 #include "RedeployableSentryGun.generated.h"
 
+class UActorTrackingComponent;
 class ARedeployableSentryGun;
 class AActor;
-class UActorTrackingComponent;
 class UOutlineComponent;
 class ASentryElectroBeam;
 class APlayerCharacter;
 class USkeletalMeshComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRedeployableSentryGunOnStateChanged, ARedeployableSentryGun*, Sender, ERedeployableSentryGunState, NewState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRedeployableSentryGunOnDeployFinished);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRedeployableSentryGunOnDismantleFinished);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRedeployableSentryGunOnDeployProgressEvent, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FRedeployableSentryGunOnStateChanged, ARedeployableSentryGun*, Sender, ERedeployableSentryGunState, NewState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRedeployableSentryGunOnDeployFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRedeployableSentryGunOnDismantleFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRedeployableSentryGunOnDeployProgressEvent, float, Progress);
 
 UCLASS(Abstract)
 class ARedeployableSentryGun : public ASentryGun {
@@ -79,42 +79,42 @@ public:
     void SetSentryGunOwner(APlayerCharacter* Character);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnStateChanged();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnSentryGunOwnerChanged();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnDismantled();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnDismantle();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnDeployed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnDeploy();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State(ERedeployableSentryGunState oldState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SentryGunOwner();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnElectrocutionActorDestroyed(AActor* Actor);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsDismantled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsDeployed() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAnimDuration(USkeletalMeshComponent* Mesh);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
@@ -132,7 +132,7 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Deploy();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void ActivateSpecialAttack();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "FSDPlayerStart.generated.h"
 
-class UPlayerCharacterID;
 class AFSDPlayerController;
+class UPlayerCharacterID;
 
 UCLASS()
 class AFSDPlayerStart : public AActor {

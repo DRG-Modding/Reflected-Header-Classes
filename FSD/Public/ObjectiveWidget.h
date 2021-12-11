@@ -3,11 +3,11 @@
 //CROSS-MODULE INCLUDE: UMG UserWidget
 #include "ObjectiveWidget.generated.h"
 
-class UObjectiveWidget;
 class UObjective;
+class UObjectiveWidget;
 class UTexture2D;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FObjectiveWidgetOnObjectiveWidgetUpdated, UObjectiveWidget*, InObjectiveWidget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FObjectiveWidgetOnObjectiveWidgetUpdated, UObjectiveWidget*, InObjectiveWidget);
 
 UCLASS(Abstract, EditInlineNew)
 class UObjectiveWidget : public UUserWidget {
@@ -46,13 +46,13 @@ public:
     void SetObjective(UObjective* InObjective, bool InIsPrimaryObjective);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveObjectiveUpdated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveObjectiveInitialized();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnObjectiveUpdated(UObjective* InObjective);
     
 public:

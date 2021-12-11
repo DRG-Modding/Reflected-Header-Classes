@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EnemyPawn.h"
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 #include "AttackingPointInterface.h"
 #include "ECaveLeechState.h"
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CaveLeech.generated.h"
 
 class USkeletalMeshComponent;
@@ -98,35 +98,37 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     USceneComponent* TentacleHead;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetTentacleTargetLocation() const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     FVector GetMouthLocation() const;
     
     UFUNCTION(BlueprintCallable)
     AActor* GetCurrentTarget();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Died(UHealthComponentBase* HealthComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Damaged(float Amount);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnStateChanged(ECaveLeechState NewState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnBite(UHealthComponent* TargetHealth);
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ACaveLeech();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

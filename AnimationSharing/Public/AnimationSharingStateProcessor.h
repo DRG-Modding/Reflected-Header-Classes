@@ -13,10 +13,10 @@ public:
     UPROPERTY(EditAnywhere)
     TSoftObjectPtr<UEnum> AnimationStateEnum;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void ProcessActorState(int32& OutState, AActor* InActor, uint8 CurrentState, uint8 OnDemandState, bool& bShouldProcess);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UEnum* GetAnimationStateEnum();
     
     UAnimationSharingStateProcessor();

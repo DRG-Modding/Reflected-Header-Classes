@@ -1,31 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "SentryGunMuzzleSetup.h"
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "WeaponFireOwner.h"
-#include "SentryGunMuzzleSetup.h"
 #include "Upgradable.h"
+#include "LaserPointerTarget.h"
 #include "TracerData.h"
 //CROSS-MODULE INCLUDE: Engine OverlapResult
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-#include "LaserPointerTarget.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "SentryGun.generated.h"
 
+class USoundCue;
+class USkeletalMeshComponent;
 class UParticleSystem;
 class AProjectile;
+class UAudioComponent;
 class USoundBase;
-class USkeletalMeshComponent;
-class USoundCue;
 class UHealthComponentBase;
 class UWeaponFireComponent;
-class UAudioComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSentryGunOnAmmoCountChanged, int32, AmmoCount, int32, Change);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSentryGunOnEnabledChanged, bool, IsEnabled);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSentryGunOnMaxAmmoCountChanged, int32, AmmoCount, int32, Change);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSentryGunOnAmmoCountChanged, int32, AmmoCount, int32, Change);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSentryGunOnEnabledChanged, bool, IsEnabled);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSentryGunOnMaxAmmoCountChanged, int32, AmmoCount, int32, Change);
 
 UCLASS(Abstract)
 class ASentryGun : public AActor, public IWeaponFireOwner, public IUpgradable {
@@ -146,53 +146,55 @@ public:
     void UseAmmo(int32 Amount);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveAmmoChanged(int32 Delta, int32 currentAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_MaxAmmoCount(int32 OldCount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_LastTarget();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AmmoCount(int32 OldCount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnProjectileFired(const FVector& Location);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNewTargetRequested(const FLaserPointerTarget& HitInfo);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetMuzzleTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetMuzzleName() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxAmmoCount() const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     float GetDeployProgress() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAmmoLeftPct() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetAmmoLeft() const;
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Force_Fire(AActor* Target);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AmmoSpent();
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ASentryGun();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ResourceSpawner.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
+#include "ResourceSpawner.h"
 #include "GlobalMissionParameters.generated.h"
 
 UCLASS()

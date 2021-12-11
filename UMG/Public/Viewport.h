@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ContentWidget.h"
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
+#include "ContentWidget.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "Viewport.generated.h"
 
-class UWorld;
 class AActor;
+class UWorld;
 
 UCLASS()
 class UMG_API UViewport : public UContentWidget {
@@ -26,13 +26,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetViewLocation(FVector Location);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetViewRotation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWorld* GetViewportWorld() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetViewLocation() const;
     
     UViewport();

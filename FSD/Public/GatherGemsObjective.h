@@ -23,10 +23,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UGemResourceData* GemResource;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceChanged(UCappedResource* CappedResource, float Amount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_GemsCollected(int32 prevAmount);
     
 public:

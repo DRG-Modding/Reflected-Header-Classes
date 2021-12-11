@@ -3,13 +3,13 @@
 //CROSS-MODULE INCLUDE: UMG UserWidget
 #include "LookingAtWidget.generated.h"
 
-class UPawnAfflictionComponent;
-class UHealthComponentBase;
 class APlayerCharacter;
 class UCharacterSightComponent;
+class UPawnAfflictionComponent;
 class AActor;
 class UHealth;
 class IHealth;
+class UHealthComponentBase;
 
 UCLASS(EditInlineNew)
 class ULookingAtWidget : public UUserWidget {
@@ -52,28 +52,28 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ResetCurrentTarget();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveUpdateTarget(AActor* InCurrentTarget, float DeltaTime);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTargetLost();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveNewTarget(AActor* InCurrentTarget);
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     bool IsValidTarget(AActor* TargetActor, const TScriptInterface<IHealth>& TargetHealth) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBossFight(const TScriptInterface<IHealth>& Health) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UHealthComponentBase* GetLookingAtHealth() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetLookingAtActor() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCharacterTemperatureEffect(float& TemperatureEffect) const;
     
 public:

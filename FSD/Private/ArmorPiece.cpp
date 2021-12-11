@@ -1,8 +1,8 @@
 #include "ArmorPiece.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
 class AArmorPiece;
+class AActor;
 
 TSubclassOf<AActor> AArmorPiece::GetWeaponViewClass() const {
     return NULL;

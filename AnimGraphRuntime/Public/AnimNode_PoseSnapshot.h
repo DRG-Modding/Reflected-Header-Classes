@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine PoseSnapshot
 //CROSS-MODULE INCLUDE: Engine AnimNode_Base
+//CROSS-MODULE INCLUDE: Engine PoseSnapshot
 #include "ESnapshotSourceMode.h"
 #include "AnimNode_PoseSnapshot.generated.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieScenePropertySectionTemplate
 //CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+//CROSS-MODULE INCLUDE: MovieScene MovieScenePropertySectionTemplate
 #include "MovieSceneMediaPlayerPropertySectionTemplate.generated.h"
 
 class UMediaSource;

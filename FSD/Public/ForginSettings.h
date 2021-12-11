@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "ESchematicType.h"
+//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "ForginSettings.generated.h"
 
 UCLASS()

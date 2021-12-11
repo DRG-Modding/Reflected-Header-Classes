@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore Margin
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "ContentWidget.h"
 //CROSS-MODULE INCLUDE: SlateCore EVerticalAlignment
 //CROSS-MODULE INCLUDE: SlateCore EHorizontalAlignment
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: SlateCore Geometry
+//CROSS-MODULE INCLUDE: SlateCore Margin
 //CROSS-MODULE INCLUDE: SlateCore SlateBrush
+//CROSS-MODULE INCLUDE: SlateCore Geometry
 //CROSS-MODULE INCLUDE: SlateCore PointerEvent
 #include "EventReply.h"
 #include "Border.generated.h"
 
-class USlateBrushAsset;
 class UTexture2D;
 class UMaterialInterface;
+class USlateBrushAsset;
 class UMaterialInstanceDynamic;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateBrush, FBorderBackgroundDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FBorderContentColorAndOpacityDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FBorderBrushColorDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseButtonDownEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseDoubleClickEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseButtonUpEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseMoveEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateBrush, FBorderBackgroundDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FBorderContentColorAndOpacityDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FBorderBrushColorDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseButtonDownEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseDoubleClickEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseButtonUpEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseMoveEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
 
 UCLASS()
 class UMG_API UBorder : public UContentWidget {

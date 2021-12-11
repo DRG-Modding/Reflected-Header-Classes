@@ -6,8 +6,8 @@
 #include "CryoSprayProjectileUpgrade.generated.h"
 
 class AProjectile;
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UCryoSprayProjectileUpgrade : public UItemUpgrade {
@@ -24,7 +24,7 @@ protected:
     TSubclassOf<AProjectile> projectileClass;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, TSubclassOf<AProjectile> NewProjectileClass);
     
     UCryoSprayProjectileUpgrade();

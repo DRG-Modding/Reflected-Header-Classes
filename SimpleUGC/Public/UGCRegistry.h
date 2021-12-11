@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EUGCApprovalStatus.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EPackageSortField.h"
+#include "EUGCApprovalStatus.h"
 #include "UGCRegistry.generated.h"
 
-class AActor;
 class UUGCPackage;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCRegistryOnPackageMounted, bool, Sandbox);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUGCRegistryOnPackageMounted, bool, Sandbox);
 
 UCLASS(BlueprintType)
 class SIMPLEUGC_API UUGCRegistry : public UObject {
@@ -59,52 +59,52 @@ public:
     UFUNCTION(BlueprintCallable)
     void RegisterAssetFromPackage(UUGCPackage* Package);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 NumberOfModsInstalled(EUGCApprovalStatus ApprovalStatus);
     
     UFUNCTION(BlueprintCallable)
     bool MountUGCPackage(UUGCPackage* Package, bool FromJoining);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModToBeEnabled(int64 ModId) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModInstalledImprecise(const FString& ModName, bool IncludeDeprecatedLocation) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModInstalledByIdOrName(const FString& ModIdOrName, bool IncludeDeprecatedLocation) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModInstalled(const FString& ModId) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModEnabled(const FString& ModId) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UUGCPackage*> GetPackagesWhichDependsOnPackage(UUGCPackage* Package);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UUGCPackage*> GetPackagesSorted(EPackageSortField ByField, bool Ascending) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetOverrideForActorClass(TSubclassOf<AActor> ActorClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetMapsInPackage(UUGCPackage* Package, TArray<FName>& Maps);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAllClassesInPackage(UUGCPackage* Package, TArray<UClass*>& Classes);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetActorClassesWithReplacementActorComponentsInPackage(UUGCPackage* Package, TArray<TSubclassOf<AActor>>& ActorClasses);
     
     UFUNCTION(BlueprintCallable)
     void ClearOverrideForClass(TSubclassOf<AActor> ActorClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreModsInstalled(EUGCApprovalStatus ApprovalStatus);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AreDeprecatedModsInstalled();
     
     UFUNCTION(BlueprintCallable)

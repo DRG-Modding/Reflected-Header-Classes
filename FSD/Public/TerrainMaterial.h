@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: FSDEngine TerrainMaterialCore
 #include "DecalData.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "TerrainMaterial.generated.h"
 
-class UFXSystemAsset;
 class UResourceData;
+class UMaterialInstance;
 class UTerrainType;
 class UDialogDataAsset;
-class UMaterialInstance;
+class UFXSystemAsset;
 class USoundCue;
 class UFXSystemComponent;
 class UObject;
@@ -99,16 +99,16 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     UFXSystemComponent* SpawnDigParticles(UObject* WorldContextObject, FVector Location, FRotator Rotation, float Density) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPrecious() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInstance* GetObjectMaterial() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetInGameName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInstance* GetDigParticlesMaterialOverride() const;
     
     UTerrainMaterial();

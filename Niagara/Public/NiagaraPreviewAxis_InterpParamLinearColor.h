@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "NiagaraPreviewAxis_InterpParamBase.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "NiagaraPreviewAxis_InterpParamLinearColor.generated.h"
 
 UCLASS(EditInlineNew)

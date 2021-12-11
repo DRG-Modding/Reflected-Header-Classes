@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 
 class UVanityItem;
-class UPlayerCharacterID;
 class UObject;
+class UPlayerCharacterID;
 class UCharacterVanityItems;
 
 void UCharacterVanityComponent::UpdateMeshes() {

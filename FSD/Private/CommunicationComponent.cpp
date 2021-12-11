@@ -3,9 +3,9 @@
 
 class APlayerCharacter;
 class UDialogDataAsset;
-class USoundBase;
-class UAudioComponent;
 class UObject;
+class UAudioComponent;
+class USoundBase;
 
 void UCommunicationComponent::ShoutCustomOrDefault(UDialogDataAsset* CustomShout, EShoutType DefaultShout) {
 }

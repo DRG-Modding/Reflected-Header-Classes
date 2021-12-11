@@ -22,7 +22,7 @@ protected:
     UPROPERTY(EditAnywhere)
     TSubclassOf<UStatusEffect> ThornsSTE;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHit(float Damage, UDamageClass* inDamageClass, AActor* DamageCauser, bool anyHealthLost);
     
 public:

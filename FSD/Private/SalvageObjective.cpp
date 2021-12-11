@@ -2,10 +2,10 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
 class URepairableComponent;
 class AProceduralSetup;
 class UDebrisPositioning;
+class AActor;
 class UCurveFloat;
 
 void USalvageObjective::PointRepaired() {

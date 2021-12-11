@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlaybackSettings
 #include "ActorSequenceComponent.generated.h"
 
-class UActorSequence;
 class UActorSequencePlayer;
+class UActorSequence;
 
 UCLASS(BlueprintType)
 class ACTORSEQUENCE_API UActorSequenceComponent : public UActorComponent {

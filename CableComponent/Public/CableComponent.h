@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ComponentReference
 //CROSS-MODULE INCLUDE: Engine MeshComponent
+//CROSS-MODULE INCLUDE: Engine ComponentReference
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CableComponent.generated.h"
 
@@ -69,13 +69,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAttachEndTo(AActor* Actor, FName ComponentProperty, FName SocketName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetCableParticleLocations(TArray<FVector>& Locations) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USceneComponent* GetAttachedComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetAttachedActor() const;
     
     UCableComponent();

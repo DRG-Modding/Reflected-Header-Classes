@@ -2,22 +2,22 @@
 #include "Templates/SubclassOf.h"
 
 class AProceduralSetup;
-class UWorld;
-class AActor;
-class UTemporaryBuff;
-class UMutator;
-class UGeneratedMission;
-class UObject;
-class UIconGenerationManager;
-class ACharacterSelectionSwitcher;
-class UNetDriver;
-class UTexture2D;
-class UFSDSaveGame;
-class APlayerCharacter;
 class AFSDPlayerController;
+class AActor;
+class UGeneratedMission;
+class UMutator;
+class UFSDSaveGame;
+class UObject;
+class UTexture2D;
+class UHUDWarningWidget;
+class ACharacterSelectionSwitcher;
+class UWorld;
+class UNetDriver;
+class UTemporaryBuff;
+class APlayerCharacter;
+class UIconGenerationManager;
 class UTexture;
 class UItemSkin;
-class UHUDWarningWidget;
 class USoundBase;
 
 void UFSDGameInstance::UpdateGlobelMissionSeed() {

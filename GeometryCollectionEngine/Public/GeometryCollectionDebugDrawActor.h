@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Color
-//CROSS-MODULE INCLUDE: Engine Actor
-#include "GeometryCollectionDebugDrawWarningMessage.h"
-#include "EGeometryCollectionDebugDrawActorHideGeometry.h"
 #include "GeometryCollectionDebugDrawActorSelectedRigidBody.h"
+//CROSS-MODULE INCLUDE: Engine Actor
+#include "EGeometryCollectionDebugDrawActorHideGeometry.h"
+#include "GeometryCollectionDebugDrawWarningMessage.h"
 #include "GeometryCollectionDebugDrawActor.generated.h"
 
 class UBillboardComponent;

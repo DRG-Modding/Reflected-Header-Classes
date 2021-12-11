@@ -12,7 +12,7 @@ public:
     UPROPERTY(Export, VisibleAnywhere)
     TArray<URoomFeature*> RoomFeatures;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<URoomFeature*> GetAllRoomFeatures() const;
     
     URoomGenerator();

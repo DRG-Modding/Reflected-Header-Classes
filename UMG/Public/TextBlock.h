@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TextLayoutWidget.h"
 //CROSS-MODULE INCLUDE: SlateCore SlateBrush
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
-#include "TextLayoutWidget.h"
 //CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
@@ -10,9 +10,9 @@
 
 class UMaterialInstanceDynamic;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FTextBlockTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateColor, FTextBlockColorAndOpacityDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FTextBlockShadowColorAndOpacityDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FTextBlockTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateColor, FTextBlockColorAndOpacityDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FTextBlockShadowColorAndOpacityDelegate);
 
 UCLASS()
 class UMG_API UTextBlock : public UTextLayoutWidget {
@@ -86,7 +86,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAutoWrapText(bool InAutoTextWrap);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetText() const;
     
     UFUNCTION(BlueprintCallable)

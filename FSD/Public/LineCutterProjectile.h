@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Projectile.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "Projectile.h"
 #include "ScaledEffect.h"
 #include "EImpactDecalSize.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
@@ -13,10 +13,10 @@ class USceneComponent;
 class UDamageComponent;
 class UParticleSystemComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLineCutterProjectileOnPerformHit, const FHitResult&, Result);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLineCutterProjectileOnLineDestroy, const FHitResult&, Result);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLineCutterProjectileOnLineLifespanEnd);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLineCutterProjectileOnLineEffectHide);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLineCutterProjectileOnPerformHit, const FHitResult&, Result);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLineCutterProjectileOnLineDestroy, const FHitResult&, Result);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLineCutterProjectileOnLineLifespanEnd);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLineCutterProjectileOnLineEffectHide);
 
 UCLASS()
 class ALineCutterProjectile : public AProjectile {
@@ -165,20 +165,20 @@ public:
     UFUNCTION(BlueprintCallable)
     void TerrainSweep(const FVector& Left, const FVector& Right);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StartSpawningTrail();
     
 protected:
     UFUNCTION(BlueprintCallable)
     void SpawnDecal(FHitResult& Result);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetExtraBeamVisibility(bool IsVisible);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_RemoveDebris(int32 instance, int32 Component);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_LineRotation();
     
 public:

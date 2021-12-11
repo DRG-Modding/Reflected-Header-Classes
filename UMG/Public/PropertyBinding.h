@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "DynamicPropertyPath.h"
+//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "PropertyBinding.generated.h"
 
 UCLASS()

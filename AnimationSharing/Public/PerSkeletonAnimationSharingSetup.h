@@ -4,11 +4,11 @@
 #include "AnimationStateEntry.h"
 #include "PerSkeletonAnimationSharingSetup.generated.h"
 
-class UAnimationSharingStateProcessor;
-class UAnimSharingAdditiveInstance;
+class UAnimSharingTransitionInstance;
 class USkeleton;
 class USkeletalMesh;
-class UAnimSharingTransitionInstance;
+class UAnimationSharingStateProcessor;
+class UAnimSharingAdditiveInstance;
 
 USTRUCT(BlueprintType)
 struct FPerSkeletonAnimationSharingSetup {

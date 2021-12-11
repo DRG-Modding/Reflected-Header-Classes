@@ -6,10 +6,10 @@
 class UCappedResource;
 class UResourceData;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FResourcesComponentOnResourceChanged, UCappedResource*, Resource, float, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourcesComponentOnResourceAdded, UCappedResource*, Resource);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FResourcesComponentOnResourceIncreased, UCappedResource*, Resource, float, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourcesComponentOnResourceFull, UCappedResource*, Resource);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FResourcesComponentOnResourceChanged, UCappedResource*, Resource, float, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourcesComponentOnResourceAdded, UCappedResource*, Resource);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FResourcesComponentOnResourceIncreased, UCappedResource*, Resource, float, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FResourcesComponentOnResourceFull, UCappedResource*, Resource);
 
 UCLASS(BlueprintType)
 class UResourcesComponent : public UActorComponent {
@@ -34,35 +34,35 @@ protected:
     UPROPERTY(EditAnywhere)
     float ResourceCap;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ResourceIncreased(UCappedResource* Resource, float Delta);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ResourceFull(UCappedResource* Resource);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ResourceChanged(UCappedResource* Resource, float currentAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Resources();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetXPFromResourceMap(const TMap<UResourceData*, float>& NewResources);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetXpFromMining() const;
     
     UFUNCTION(BlueprintCallable)
     static TMap<UResourceData*, float> GetSeparateResourcesFromMap(const TMap<UResourceData*, float>& NewResources);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCappedResource* GetResource(UResourceData* Data, bool createIfAmountIsZero);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCapacityPct() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UCappedResource*> GetAllResources();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

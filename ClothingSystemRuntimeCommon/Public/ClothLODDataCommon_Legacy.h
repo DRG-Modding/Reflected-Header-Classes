@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: ClothingSystemRuntimeInterface ClothCollisionData
 #include "ClothPhysicalMeshData.h"
+//CROSS-MODULE INCLUDE: ClothingSystemRuntimeInterface ClothCollisionData
 #include "ClothLODDataCommon_Legacy.generated.h"
 
 class UClothPhysicalMeshDataBase_Legacy;

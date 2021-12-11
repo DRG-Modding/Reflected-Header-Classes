@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
-//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
 //CROSS-MODULE INCLUDE: FSDEngine MatrixWithExactSync
+//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
 #include "LevelGenerationCarver.generated.h"
 
 class UTerrainMaterial;

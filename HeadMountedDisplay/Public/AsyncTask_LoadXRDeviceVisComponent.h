@@ -5,12 +5,12 @@
 #include "XRDeviceId.h"
 #include "AsyncTask_LoadXRDeviceVisComponent.generated.h"
 
-class UPrimitiveComponent;
-class UAsyncTask_LoadXRDeviceVisComponent;
 class AActor;
+class UAsyncTask_LoadXRDeviceVisComponent;
+class UPrimitiveComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTask_LoadXRDeviceVisComponentOnModelLoaded, const UPrimitiveComponent*, LoadedComponent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTask_LoadXRDeviceVisComponentOnLoadFailure, const UPrimitiveComponent*, LoadedComponent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTask_LoadXRDeviceVisComponentOnModelLoaded, const UPrimitiveComponent*, LoadedComponent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTask_LoadXRDeviceVisComponentOnLoadFailure, const UPrimitiveComponent*, LoadedComponent);
 
 UCLASS()
 class UAsyncTask_LoadXRDeviceVisComponent : public UBlueprintAsyncActionBase {

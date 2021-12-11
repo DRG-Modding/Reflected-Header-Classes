@@ -7,8 +7,8 @@
 
 class UDebrisBase;
 class UVeinResourceData;
-class UDebrisPositioning;
 class UFloodFillSettings;
+class UDebrisPositioning;
 
 UCLASS(EditInlineNew)
 class UVeinResourceCreator : public UResourceCreator {

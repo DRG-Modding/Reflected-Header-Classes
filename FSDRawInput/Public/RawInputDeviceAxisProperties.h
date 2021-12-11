@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: InputCore Key
 #include "RawInputDeviceAxisToButtonProperties.h"
+//CROSS-MODULE INCLUDE: InputCore Key
 #include "RawInputDeviceAxisProperties.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: Engine NavigationLink
-//CROSS-MODULE INCLUDE: NavigationSystem NavLinkHostInterface
 //CROSS-MODULE INCLUDE: Engine NavRelevantInterface
+//CROSS-MODULE INCLUDE: NavigationSystem NavLinkHostInterface
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine NavigationLink
 //CROSS-MODULE INCLUDE: Engine NavigationSegmentLink
 #include "NavLinkProxy.generated.h"
 
 class UNavLinkCustomComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FNavLinkProxyOnSmartLinkReached, AActor*, MovingActor, const FVector&, DestinationPoint);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FNavLinkProxyOnSmartLinkReached, AActor*, MovingActor, const FVector&, DestinationPoint);
 
 UCLASS()
 class AIMODULE_API ANavLinkProxy : public AActor, public INavLinkHostInterface, public INavRelevantInterface {
@@ -41,15 +41,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void ResumePathFollowing(AActor* Agent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveSmartLinkReached(AActor* Agent, const FVector& Destination);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSmartLinkEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasMovingAgents() const;
     
     ANavLinkProxy();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

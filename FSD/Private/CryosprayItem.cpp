@@ -1,9 +1,9 @@
 #include "CryosprayItem.h"
 #include "Net/UnrealNetwork.h"
 
-class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
 class UHealthComponentBase;
+class UPrimitiveComponent;
 class AProjectileBase;
 
 void ACryosprayItem::ServerDoDamage_Implementation(FVector_NetQuantize Start, FVector_NetQuantize End, uint8 Power) {

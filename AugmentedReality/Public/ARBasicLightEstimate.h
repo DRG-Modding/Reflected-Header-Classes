@@ -19,13 +19,13 @@ private:
     FLinearColor AmbientColor;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAmbientIntensityLumens() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAmbientColorTemperatureKelvin() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FLinearColor GetAmbientColor() const;
     
     UARBasicLightEstimate();

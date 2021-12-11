@@ -3,9 +3,9 @@
 #include "ShowroomController.h"
 #include "EnemyShowroomController.generated.h"
 
-class UAnimSequenceBase;
-class AEnemyShowroomItem;
 class UObject;
+class AEnemyShowroomItem;
+class UAnimSequenceBase;
 class UEnemyShowroomController;
 
 UCLASS(Blueprintable)
@@ -16,7 +16,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     AEnemyShowroomItem* EnemyInstance;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_PlayAttack(UAnimSequenceBase* attackAnimation);
     
 public:

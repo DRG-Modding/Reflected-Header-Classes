@@ -1,49 +1,49 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MeltOperationData.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: Engine VisualLoggerDebugSnapshotInterface
-#include "DrillOperationData.h"
 #include "DebrisWhenCarving.h"
+//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
+#include "DrillOperationData.h"
+#include "MeltOperationData.h"
+//CROSS-MODULE INCLUDE: Engine VisualLoggerDebugSnapshotInterface
 #include "TerrainLateJoinData.h"
 //CROSS-MODULE INCLUDE: FSDEngine EncodedChunkId
-#include "PickaxeDigOperationData.h"
 #include "RemoveFloatingIslandOperationData.h"
+#include "PickaxeDigOperationData.h"
 #include "GrenadeExplodeOperationData.h"
 #include "CarveWithSTLMeshOperationData.h"
-//CROSS-MODULE INCLUDE: FSDEngine CarveSplineSegment
 #include "SplineSegmentCarveOperationData.h"
-//CROSS-MODULE INCLUDE: CoreUObject Quat
 #include "CarveWithColliderOperationData.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CSGRaycastHitInfo.h"
 #include "ELandscapeCellFilter.h"
-//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
-//CROSS-MODULE INCLUDE: CoreUObject Transform
+//CROSS-MODULE INCLUDE: CoreUObject Quat
 //CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
+//CROSS-MODULE INCLUDE: CoreUObject Transform
 //CROSS-MODULE INCLUDE: FSDEngine EPreciousMaterialOptions
 //CROSS-MODULE INCLUDE: Engine LatentActionInfo
+//CROSS-MODULE INCLUDE: FSDEngine CarveSplineSegment
 #include "DeepCSGWorld.generated.h"
 
-class UTerrainMaterialsCollection;
-class UTerrainType;
-class UDebrisSet;
-class ADebrisDataActor;
-class UTerrainMaterial;
-class UDebrisBase;
 class UMaterialInterface;
+class UDebrisSet;
+class UTerrainType;
+class UTerrainMaterial;
+class UTerrainMaterialsCollection;
+class UStaticMeshCarver;
+class UDebrisBase;
 class AProceduralSetup;
+class ADebrisDataActor;
 class UObject;
 class UAsyncPathRequests;
 class UDebrisInstances;
 class UPrimitiveComponent;
-class USTLMeshCarver;
-class ADeepCSGWorld;
-class UStaticMeshCarver;
 class UStaticMesh;
+class ADeepCSGWorld;
+class USTLMeshCarver;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepCSGWorldOnBaseLayerCommitDone);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepCSGWorldOnBaseLayerFinalCommitDone);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepCSGWorldOnBaseLayerCommitDone);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepCSGWorldOnBaseLayerFinalCommitDone);
 
 UCLASS()
 class ADeepCSGWorld : public AActor, public IVisualLoggerDebugSnapshotInterface {
@@ -181,32 +181,32 @@ public:
     UFUNCTION(BlueprintCallable)
     void UnRegisterScannerComponent(UPrimitiveComponent* Component);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void TerrainOp_RemoveFloating(const FRemoveFloatingIslandOperationData& Data);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void TerrainOp_PickAxe(const FPickaxeDigOperationData& Data);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void TerrainOp_Melt(const FMeltOperationData& Data);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void TerrainOp_Explode(const FGrenadeExplodeOperationData& Data);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void TerrainOp_Drill(const FDrillOperationData& Data);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void TerrainOp_CarveSTLMesh(const FCarveWithSTLMeshOperationData& Data);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void TerrainOp_CarveSplineSegment(const FSplineSegmentCarveOperationData& Data);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void TerrainOp_CarveCollider(const FCarveWithColliderOperationData& Data);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void TerrainMaterialDataLoaded();
     
 public:
@@ -219,7 +219,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void ResetEntireWorld();
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void RemoveDebrisInstance_TerrainOp2(int32 instance, int32 Component);
     
     UFUNCTION(BlueprintCallable)
@@ -228,28 +228,28 @@ public:
     UFUNCTION(BlueprintCallable)
     void RegisterScannerComponent(UPrimitiveComponent* Component, bool useFogOfWar);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool Raycast(FVector Start, FVector Direction, float MaxDistance, FCSGRaycastHitInfo& HitInfo, ELandscapeCellFilter Filter) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool Linecast(FVector Start, FVector End, FCSGRaycastHitInfo& HitInfo, ELandscapeCellFilter Filter) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPositionVisibleToScanner(const FVector& Pos) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPointInsideTerrain(const FVector& Pos) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsComponentRegisteredWithScanner(UPrimitiveComponent* Component);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTerrainHash();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetShadowQuality();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ADebrisDataActor* GetDebrisDataActor() const;
     
     UFUNCTION(BlueprintCallable)
@@ -319,5 +319,7 @@ public:
     void ApplyBaseDebrisCarvers(const TArray<UDebrisBase*>& Carvers);
     
     ADeepCSGWorld();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

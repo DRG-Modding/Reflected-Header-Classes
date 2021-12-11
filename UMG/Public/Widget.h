@@ -1,32 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject EMouseCursor
 #include "Visual.h"
+//CROSS-MODULE INCLUDE: CoreUObject EMouseCursor
 #include "ESlateVisibility.h"
 #include "WidgetTransform.h"
-//CROSS-MODULE INCLUDE: SlateCore EUINavigation
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: SlateCore EWidgetClipping
 //CROSS-MODULE INCLUDE: SlateCore EFlowDirectionPreference
+//CROSS-MODULE INCLUDE: SlateCore EUINavigation
 //CROSS-MODULE INCLUDE: SlateCore EUINavigationRule
 //CROSS-MODULE INCLUDE: SlateCore Geometry
 #include "Widget.generated.h"
 
-class UWidgetNavigation;
 class UPanelSlot;
-class UWidget;
 class USlateAccessibleWidgetData;
-class UPropertyBinding;
+class UWidget;
+class UWidgetNavigation;
 class APlayerController;
+class UPropertyBinding;
 class UPanelWidget;
 class ULocalPlayer;
 class UGameInstance;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(bool, FWidgetBIsEnabledDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FWidgetToolTipTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(UWidget*, FWidgetToolTipWidgetDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(ESlateVisibility, FWidgetVisibilityDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FWidgetInCustomDelegate, EUINavigation, Navigation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(bool, FWidgetBIsEnabledDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FWidgetToolTipTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(UWidget*, FWidgetToolTipWidgetDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(ESlateVisibility, FWidgetVisibilityDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FWidgetInCustomDelegate, EUINavigation, Navigation);
 
 UCLASS(Abstract, BlueprintType)
 class UMG_API UWidget : public UVisual {
@@ -175,73 +175,73 @@ public:
     UFUNCTION(BlueprintCallable)
     void RemoveFromParent();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsVisible() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsHovered() const;
     
     UFUNCTION(BlueprintCallable)
     void InvalidateLayoutAndVolatility();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasUserFocusedDescendants(APlayerController* PlayerController) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasUserFocus(APlayerController* PlayerController) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasMouseCaptureByUser(int32 UserIndex, int32 PointerIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasMouseCapture() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasKeyboardFocus() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasFocusedDescendants() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasAnyUserFocus() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESlateVisibility GetVisibility() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FGeometry GetTickSpaceGeometry() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRenderTransformAngle() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRenderOpacity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPanelWidget* GetParent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FGeometry GetPaintSpaceGeometry() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     APlayerController* GetOwningPlayer() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     ULocalPlayer* GetOwningLocalPlayer() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsEnabled() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     UGameInstance* GetGameInstance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetDesiredSize() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EWidgetClipping GetClipping() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FGeometry GetCachedGeometry() const;
     
     UFUNCTION(BlueprintCallable)

@@ -9,8 +9,8 @@ class UDialogDataAsset;
 class APlayerCharacter;
 class UResourceBank;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMollyOnCalledByChanged, APlayerCharacter*, InPlayer);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMollyOnReachedDropShip);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMollyOnCalledByChanged, APlayerCharacter*, InPlayer);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMollyOnReachedDropShip);
 
 UCLASS(Abstract)
 class AMolly : public AMULE {
@@ -43,11 +43,11 @@ public:
     void SetCalledBy(APlayerCharacter* InPlayer);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CalledBy();
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UDialogDataAsset* GetCallingShout() const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE: Engine BlueprintAsyncActionBase
 #include "ShowLoginUICallbackProxy.generated.h"
 
+class UShowLoginUICallbackProxy;
 class APlayerController;
 class UObject;
-class UShowLoginUICallbackProxy;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FShowLoginUICallbackProxyOnSuccess, APlayerController*, PlayerController);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FShowLoginUICallbackProxyOnFailure, APlayerController*, PlayerController);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FShowLoginUICallbackProxyOnSuccess, APlayerController*, PlayerController);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FShowLoginUICallbackProxyOnFailure, APlayerController*, PlayerController);
 
 UCLASS(MinimalAPI)
 class UShowLoginUICallbackProxy : public UBlueprintAsyncActionBase {

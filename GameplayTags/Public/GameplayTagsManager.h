@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagSource.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "GameplayTagSource.h"
 #include "GameplayTagsManager.generated.h"
 
 class UDataTable;

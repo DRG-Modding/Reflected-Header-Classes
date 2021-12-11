@@ -28,12 +28,14 @@ public:
     UFUNCTION(BlueprintCallable)
     void RestartLogic();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsRunning() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPaused() const;
     
     UBrainComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

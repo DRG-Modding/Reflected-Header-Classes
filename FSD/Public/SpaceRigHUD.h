@@ -23,10 +23,10 @@ public:
     void SetNotificationQueueActive(bool Inactive);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveNotificationQueueActivated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveNotificationAdded(UObject* InNotification);
     
 public:
@@ -42,7 +42,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void QueueMissionShout(TSoftObjectPtr<UDialogDataAsset> InShout);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNotificationQueueEmpty() const;
     
     UFUNCTION(BlueprintCallable)

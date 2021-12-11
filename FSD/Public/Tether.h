@@ -3,12 +3,12 @@
 #include "CarriableItem.h"
 #include "Tether.generated.h"
 
-class USphereComponent;
-class USkeletalMeshComponent;
 class UNiagaraComponent;
+class USphereComponent;
+class UCarriableComponent;
+class USkeletalMeshComponent;
 class UInstantUsable;
 class UDamageComponent;
-class UCarriableComponent;
 class UParticleSystem;
 class USoundCue;
 
@@ -54,13 +54,13 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetIsOnGround(bool NewIsOnGround);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDronePickup();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDroneDrop();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnClosed();
     
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)

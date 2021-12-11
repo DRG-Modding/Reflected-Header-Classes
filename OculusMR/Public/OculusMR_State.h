@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "TrackedCamera.h"
+//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "OculusMR_State.generated.h"
 
 class USceneComponent;

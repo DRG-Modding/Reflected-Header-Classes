@@ -18,7 +18,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetShotDisplayName(const FString& InShotDisplayName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetShotDisplayName() const;
     
     UMovieSceneCinematicShotSection();

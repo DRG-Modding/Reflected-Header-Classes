@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
-#include "RandRange.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
+#include "RandRange.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "StatusEffect.generated.h"
 
 class UStatusEffectItem;
 class UPawnAffliction;
-class UDamageClass;
 class UStatusEffectExclusiveKey;
+class UDamageClass;
 class UStatusEffect;
 class AActor;
 
@@ -62,13 +62,13 @@ protected:
     FGameplayTagContainer TargetRequiredTags;
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool ShouldInstantiate() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetStatusEffectDuration(TSubclassOf<UStatusEffect> StatusEffect);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanTrigger(AActor* Target) const;
     
     UStatusEffect();

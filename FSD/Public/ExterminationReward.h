@@ -21,7 +21,7 @@ protected:
     UPROPERTY(EditAnywhere)
     FGameplayTagContainer AllowedFilter;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnemyKilled(const FGameplayTagContainer& GameplayTags, AActor* killedEnemy);
     
 public:

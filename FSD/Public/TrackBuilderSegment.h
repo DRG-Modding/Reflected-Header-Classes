@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TrackBuilderPoint.h"
 //CROSS-MODULE INCLUDE: Engine Actor
+#include "TrackBuilderPoint.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "ETrackBuildPlacementState.h"
 #include "TrackBuilderSegment.generated.h"
 
-class AItem;
+class ATrackBuilderSegment;
 class APlayerCharacter;
 class UTrackBuilderUsable;
+class AItem;
 class UTrackBuilderConnectPoint;
-class ATrackBuilderSegment;
 
 UCLASS()
 class FSD_API ATrackBuilderSegment : public AActor {
@@ -37,47 +37,47 @@ public:
     bool UpdatePlacement(const FTransform& InTransform, UTrackBuilderConnectPoint* InConnectPoint, bool InPlacementValid, AItem* PlaceableItem);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivPlacementValidChanged(bool InIsValid);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePlacementStateChanged(ETrackBuildPlacementState NewState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePlacementChangedEnd(const FTransform& NewEndTransform, UTrackBuilderConnectPoint* InConnectPoint);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePlacementChangedBegin(const FTransform& NewEndTransform, UTrackBuilderConnectPoint* InConnectPoint);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool ReceiveCanPlaceAt(const FTransform& InCandidateTransform, UTrackBuilderConnectPoint* InConnectPoint);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SegmentEndTransform();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTrackBuilderUsable* GetTrackStartUsable() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetTrackStartActor() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetStartTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetSegmentEndTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ETrackBuildPlacementState GetPlacementState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ATrackBuilderSegment* GetNextSegment(bool bForward) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsSegmentEndTransformValid() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTrackBuilderConnectPoint* GetConnectPoint() const;
     
     UFUNCTION(BlueprintCallable)

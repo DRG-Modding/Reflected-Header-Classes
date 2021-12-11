@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Projectile.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagAssetInterface
+#include "Projectile.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 #include "HomingDroneBomb.generated.h"
 
@@ -35,19 +36,33 @@ protected:
     float HomingAccelerationMagnitude;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UpdateHomingSpeed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SearchForTarget();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HomingAccelerationMagnitude();
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     AHomingDroneBomb();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override PURE_VIRTUAL(HasMatchingGameplayTag, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAnyMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAllMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(GetOwnedGameplayTags,);
+    
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RoomLinePoint.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "RoomLinePoint.h"
 #include "RoomLine.generated.h"
 
 class UFloodFillSettings;

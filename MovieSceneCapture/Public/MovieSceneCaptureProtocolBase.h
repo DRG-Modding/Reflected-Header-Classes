@@ -13,10 +13,10 @@ private:
     EMovieSceneCaptureProtocolState State;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCapturing() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EMovieSceneCaptureProtocolState GetState() const;
     
     UMovieSceneCaptureProtocolBase();

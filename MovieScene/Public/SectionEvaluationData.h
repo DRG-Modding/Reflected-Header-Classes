@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESectionEvaluationFlags.h"
 //CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+#include "ESectionEvaluationFlags.h"
 #include "SectionEvaluationData.generated.h"
 
 USTRUCT()

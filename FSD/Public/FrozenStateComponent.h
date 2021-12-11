@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterStateComponent.h"
 #include "RandRange.h"
+#include "CharacterStateComponent.h"
 #include "FrozenStateComponent.generated.h"
 
-class UFSDPhysicalMaterial;
 class USoundBase;
+class UFSDPhysicalMaterial;
 
 UCLASS(MinimalAPI)
 class UFrozenStateComponent : public UCharacterStateComponent {
@@ -27,10 +27,10 @@ protected:
     UPROPERTY(EditAnywhere)
     float SlowAnimationSpeed;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ThawPlayer();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnDefrosting();
     
 public:

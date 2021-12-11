@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneEvalTemplate
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneObjectBindingID
+//CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
 #include "MovieScene3DPathSection_Axis.h"
 #include "MovieScene3DPathSectionTemplate.generated.h"
 

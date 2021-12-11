@@ -24,14 +24,14 @@ protected:
     bool IgnoreOwnersCollision;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveIgnoreCharacter(APlayerCharacter* Character);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveHitObject();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsMoving();
     
 public:

@@ -2,8 +2,8 @@
 #include "Templates/SubclassOf.h"
 
 class AFSDPlayerState;
-class UWeaponHitCounterComponent;
 class AActor;
+class UWeaponHitCounterComponent;
 
 FUpgradeValues UWeaponHitCounterUpgrade::GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> Item, TSubclassOf<UWeaponHitCounterComponent> NewComponentClass) {
     return FUpgradeValues{};

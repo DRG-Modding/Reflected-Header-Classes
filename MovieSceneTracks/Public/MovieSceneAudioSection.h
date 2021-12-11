@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
-#include "MovieSceneActorReferenceData.h"
 //CROSS-MODULE INCLUDE: CoreUObject FrameNumber
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
+#include "MovieSceneActorReferenceData.h"
 //CROSS-MODULE INCLUDE: Engine SubtitleCue
 #include "MovieSceneAudioSection.generated.h"
 
-class USoundWave;
 class USoundBase;
+class USoundWave;
 class USoundAttenuation;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FMovieSceneAudioSectionOnQueueSubtitles, const TArray<FSubtitleCue>&, Subtitles, float, CueDuration);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneAudioSectionOnAudioFinished);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMovieSceneAudioSectionOnAudioPlaybackPercent, const USoundWave*, PlayingSoundWave, const float, PlaybackPercent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FMovieSceneAudioSectionOnQueueSubtitles, const TArray<FSubtitleCue>&, Subtitles, float, CueDuration);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneAudioSectionOnAudioFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMovieSceneAudioSectionOnAudioPlaybackPercent, const USoundWave*, PlayingSoundWave, const float, PlaybackPercent);
 
 UCLASS()
 class MOVIESCENETRACKS_API UMovieSceneAudioSection : public UMovieSceneSection {
@@ -72,10 +72,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetSound(USoundBase* InSound);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FFrameNumber GetStartOffset() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USoundBase* GetSound() const;
     
     UMovieSceneAudioSection();

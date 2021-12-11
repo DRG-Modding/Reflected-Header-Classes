@@ -4,12 +4,12 @@
 #include "BlueprintFriend.h"
 #include "RegisterInviteNotificationBlueprintCallProxy.generated.h"
 
-class URegisterInviteNotificationBlueprintCallProxy;
 class UObject;
+class URegisterInviteNotificationBlueprintCallProxy;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRegisterInviteNotificationBlueprintCallProxyOnInviteReceived, const FBlueprintFriend&, Results);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRegisterInviteNotificationBlueprintCallProxyOnInviteAccepted, const FBlueprintFriend&, Results);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRegisterInviteNotificationBlueprintCallProxyOnInviteRejected, const FBlueprintFriend&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRegisterInviteNotificationBlueprintCallProxyOnInviteReceived, const FBlueprintFriend&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRegisterInviteNotificationBlueprintCallProxyOnInviteAccepted, const FBlueprintFriend&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FRegisterInviteNotificationBlueprintCallProxyOnInviteRejected, const FBlueprintFriend&, Results);
 
 UCLASS()
 class URegisterInviteNotificationBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {

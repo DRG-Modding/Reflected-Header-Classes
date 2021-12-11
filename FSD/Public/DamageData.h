@@ -3,8 +3,8 @@
 #include "DamageDataBase.h"
 #include "DamageData.generated.h"
 
-class UDamageClass;
 class UFSDPhysicalMaterial;
+class UDamageClass;
 
 USTRUCT()
 struct FDamageData : public FDamageDataBase {

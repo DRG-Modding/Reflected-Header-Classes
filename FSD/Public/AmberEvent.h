@@ -32,10 +32,10 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float MaxSpawnRange;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSpawnedDeath(UHealthComponentBase* spawnedHealthComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnemySpawned(APawn* Pawn);
     
 public:

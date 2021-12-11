@@ -3,10 +3,10 @@
 #include "Objective.h"
 #include "RepairObjective.generated.h"
 
+class UDebrisPositioning;
+class AActor;
 class URepairableComponent;
 class UGemResourceData;
-class AActor;
-class UDebrisPositioning;
 
 UCLASS()
 class URepairObjective : public UObjective {
@@ -40,16 +40,16 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     TArray<AActor*> RepairedObjectivesList;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_RepairedObjectives();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ObjectivesToRepair();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnObjectiveRepaired(URepairableComponent* repairable);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AllObjectivesRepaired();
     
 public:

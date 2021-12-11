@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine ProjectileMovementComponent
 //CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE: Engine ProjectileMovementComponent
 #include "FSDProjectileMovementComponent.generated.h"
 
 class AActor;
 class UCurveFloat;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDProjectileMovementComponentOnProjectileOutOfPropulsion);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDProjectileMovementComponentOnProjectilePenetrate, const FHitResult&, ImpactResult);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDProjectileMovementComponentOnProjectileOutOfPropulsion);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDProjectileMovementComponentOnProjectilePenetrate, const FHitResult&, ImpactResult);
 
 UCLASS()
 class UFSDProjectileMovementComponent : public UProjectileMovementComponent {

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore EditableTextBoxStyle
 //CROSS-MODULE INCLUDE: SlateCore SlateWidgetStyleContainerBase
+//CROSS-MODULE INCLUDE: SlateCore EditableTextBoxStyle
 #include "EditableTextBoxWidgetStyle.generated.h"
 
 UCLASS(MinimalAPI)

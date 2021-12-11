@@ -24,7 +24,7 @@ public:
     UPROPERTY(BlueprintReadOnly, Replicated, Transient)
     UTerrainMaterial* LookAtTerrainMaterial;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetCharacter() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

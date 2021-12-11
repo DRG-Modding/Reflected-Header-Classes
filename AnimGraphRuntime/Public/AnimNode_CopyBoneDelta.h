@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CopyBoneDeltaMode.h"
 #include "AnimNode_SkeletalControlBase.h"
+#include "CopyBoneDeltaMode.h"
 //CROSS-MODULE INCLUDE: Engine BoneReference
 #include "AnimNode_CopyBoneDelta.generated.h"
 

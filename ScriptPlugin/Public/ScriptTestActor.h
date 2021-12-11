@@ -16,7 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool TestBool;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     float TestFunction(float InValue, float InFactor, bool bMultiply);
     
     AScriptTestActor();

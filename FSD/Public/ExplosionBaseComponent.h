@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ExplosionBaseComponent.generated.h"
 
-class UPhysicalMaterial;
 class UPrimitiveComponent;
 class UDamageComponent;
+class UPhysicalMaterial;
 
 UCLASS(BlueprintType)
 class UExplosionBaseComponent : public UActorComponent {

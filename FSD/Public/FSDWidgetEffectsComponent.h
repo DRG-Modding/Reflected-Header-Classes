@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "WidgetMover.h"
 #include "WidgetPing.h"
 #include "WidgetFade.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "WidgetTextCounter.h"
 #include "CustomCounter.h"
+#include "WidgetMover.h"
 #include "EPingType.h"
 #include "EMoveType.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "FSDWidgetEffectsComponent.generated.h"
 
-class UTextBlock;
 class UObject;
+class UTextBlock;
 class UWidget;
 class UUserWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FFSDWidgetEffectsComponentOnCount, float, Value, float, NormalizedTime);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FFSDWidgetEffectsComponentOnCount, float, Value, float, NormalizedTime);
 
 UCLASS(BlueprintType)
 class UFSDWidgetEffectsComponent : public UActorComponent {

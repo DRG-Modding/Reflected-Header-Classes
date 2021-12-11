@@ -4,8 +4,8 @@
 #include "MeshCellNoiseProperties.h"
 #include "DeepCSGFloatTree.h"
 #include "BinaryTerrainMaterialCombiner.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "DeepCSGNode.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CSGCellNoise.generated.h"
 
 UCLASS(BlueprintType)

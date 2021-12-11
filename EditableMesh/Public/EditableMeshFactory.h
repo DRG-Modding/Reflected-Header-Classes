@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EditableMeshFactory.generated.h"
 
-class UPrimitiveComponent;
 class UEditableMesh;
+class UPrimitiveComponent;
 
 UCLASS(BlueprintType)
 class EDITABLEMESH_API UEditableMeshFactory : public UObject {

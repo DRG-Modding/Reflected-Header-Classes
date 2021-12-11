@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARTrackedGeometry.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "ARTrackedGeometry.h"
 #include "AREnvironmentCaptureProbe.generated.h"
 
 class UAREnvironmentCaptureProbeTexture;
@@ -15,10 +15,10 @@ protected:
     UAREnvironmentCaptureProbeTexture* EnvironmentCaptureTexture;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetExtent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAREnvironmentCaptureProbeTexture* GetEnvironmentCaptureTexture();
     
     UAREnvironmentCaptureProbe();

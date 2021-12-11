@@ -1,87 +1,86 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 //CROSS-MODULE INCLUDE: Engine Character
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagAssetInterface
 #include "Targetable.h"
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTagAssetInterface
 #include "RejoinListener.h"
 #include "PlaySoundInterface.h"
-#include "LaserPointerTarget.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "ECharacterCameraMode.h"
 #include "ECharacterState.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 #include "CoolDownProgressStyle.h"
-#include "DownCameraSettings.h"
+#include "LaserPointerTarget.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "PlatformComponent.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-#include "HoldButton.h"
+#include "DownCameraSettings.h"
 #include "AnalogAimSettings.h"
+#include "HoldButton.h"
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
 #include "HeroInfo.h"
 #include "CameraSpringSettings.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 //CROSS-MODULE INCLUDE: Engine EAttachLocation
 #include "EInputKeys.h"
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 #include "PlayerCharacter.generated.h"
 
-class USingleUsableComponent;
+class UAudioComponent;
 class USchematic;
-class UVictoryPose;
+class UPhysicsAsset;
 class AItem;
-class UCharacterCameraController;
-class UDrinkableDataAsset;
+class UPlayerAttackPositionComponent;
+class UPerkHUDActivationWidget;
 class UItemSkin;
 class UItemID;
+class UTexture2D;
+class UDrinkableDataAsset;
+class UVictoryPose;
 class USpringArmComponent;
 class UPlayerCharacterID;
-class UZipLineStateComponent;
-class AActor;
 class UPickaxePart;
 class UVanityItem;
+class UCharacterStateComponent;
 class APlayerCharacter;
-class AFSDPhysicsActor;
 class UHealth;
 class IHealth;
-class UPhysicsAsset;
-class USoundConcurrency;
-class UPerkHUDActivationWidget;
-class USoundCue;
-class UStatusEffectsComponent;
-class UObject;
-class UCharacterRecoilComponent;
-class UPlayerTemperatureComponent;
-class UPlayerHealthComponent;
-class APlayerController;
-class UWidgetInteractionComponent;
-class AShieldGeneratorActor;
-class UCommunicationComponent;
-class USkeletalMeshComponent;
-class UCharacterUseComponent;
-class UInstantUsable;
+class UPlayerTPAnimInstance;
 class ATutorialManager;
-class UCameraComponent;
-class UActorTrackingComponent;
-class USceneComponent;
-class UCharacterIntoxicationComponent;
-class UMissionStatsCollector;
-class UPointLightComponent;
-class UCharacterSightComponent;
-class USoundAttenuation;
-class UInventoryComponent;
-class UOutlineComponent;
+class AActor;
 class UPlayerAfflictionComponent;
-class UTrailComponent;
-class UPawnStatsComponent;
-class UPlayerAttackPositionComponent;
+class UZipLineStateComponent;
 class UPlayerReactiveTerrainTrackerComponent;
 class UPawnAffliction;
+class USoundCue;
+class UInventoryComponent;
+class UObject;
+class UPlayerTemperatureComponent;
+class UPlayerHealthComponent;
+class UWidgetInteractionComponent;
+class UCameraComponent;
+class USingleUsableComponent;
+class AShieldGeneratorActor;
+class UPawnStatsComponent;
+class USkeletalMeshComponent;
+class UCharacterIntoxicationComponent;
+class USceneComponent;
+class UActorTrackingComponent;
+class UMissionStatsCollector;
+class UPointLightComponent;
+class UCharacterCameraController;
+class UCharacterSightComponent;
+class UCharacterUseComponent;
+class UOutlineComponent;
 class UParticleSystem;
-class UAudioComponent;
+class UTrailComponent;
+class UCharacterRecoilComponent;
+class UStatusEffectsComponent;
+class UCommunicationComponent;
+class UInstantUsable;
 class UStatusEffect;
-class UCharacterStateComponent;
 class UFSDAchievement;
 class UAnimMontage;
 class UDialogDataAsset;
@@ -91,74 +90,76 @@ class UFSDPhysicalMaterial;
 class UCharacterVanityComponent;
 class AZipLineProjectile;
 class USoundBase;
+class USoundAttenuation;
+class USoundConcurrency;
+class APlayerController;
 class AEventRewardDispenser;
+class UInventoryList;
+class AFSDPhysicsActor;
 class UCappedResource;
-class UPlayerTPAnimInstance;
 class AFSDPlayerState;
 class AFSDPlayerController;
-class UInventoryList;
-class UTexture2D;
 class UPlayerFPAnimInstance;
 class UPlayerAnimInstance;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnStoppedUsingItem, AItem*, Item);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnStartedUsingItem, AItem*, Item);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCollectedEverything, FText, InMessage);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnSaluteEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnToggleMapTool, bool, Visible);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnFirePressed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnFireReleased);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnCollectedSkin, UItemSkin*, Skin, UItemID*, ItemID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnPerkInitialized);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnCameraModeChanged, ECharacterCameraMode, NewCameraMode, ECharacterCameraMode, OldCameraMode);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnGrenadePressed, bool, boolValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnInstantRevivePossibleEvent, bool, boolValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnDownCameraTargetChanged, APlayerCharacter*, Target);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCollectedSchematic, USchematic*, Schematic);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnReviveCallEvent, AActor*, ReviveTarget);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCollectedDrink, UDrinkableDataAsset*, Drinkable);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnCollectedVictoryPose, UVictoryPose*, pose, UPlayerCharacterID*, characterID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnToggleScanTool, bool, Visible);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCollectedPickaxePart, UPickaxePart*, PickaxePart);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnCollectedVanityItem, UVanityItem*, Item, UPlayerCharacterID*, characterID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnSecondaryLaserPointerEvent, AActor*, aTarget, const FVector&, aTargetLocation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnActionHoldProgress, FText, Description, float, Progress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FPlayerCharacterOnThrowCarriableProgress, float, Progress, float, timeToCancel, bool, isDone);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCanEscapeGrabberChanged, bool, bCanEscape);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnJumpPressed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnTerrainScannerPressed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnJumpReleased);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnDropItem);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnSecondaryFirePressed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnSecondaryFireReleased);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnManualMiningBegin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnLaserPointerReleased);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnManualMiningEnd);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCharacterStateChanged, ECharacterState, NewState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnFlareThrown);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnLaserPointerPressed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnUpdateMeshes);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnTerrainScannerReleased);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnOpenChat);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnAcceptInvite);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnPlayerShout, APlayerCharacter*, ShoutingPlayer);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnRejectInvite);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnIgnoreInvite);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnToggleOutline, bool, Visible);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnDepthChanged, int32, Depth);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCharacterDeathChange, APlayerCharacter*, Character);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnPerkActivationTimerFinished);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_SixParams(FPlayerCharacterOnDamagedEnemy, const TScriptInterface<IHealth>&, EnemyHealth, float, Damage, float, DamageModifier, float, HealthRemaining, bool, IsWeakPoint, bool, IsRadial);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnLaserPointerEvent, const FLaserPointerTarget&, HitInfo);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnCallDonkey);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnBoscoSalute, APlayerCharacter*, ShoutingPlayer);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnRevivedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnRevivedOtherCharacter);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnHeadlightOnChanged, bool, IsOn);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnEnemyStartedTracking, AActor*, InTrackingEnemy);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnEnemyEndedTracking, AActor*, InTrackingEnemy);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnKilledGrabber, AActor*, Grabber);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FPlayerCharacterOnCoolDownProgress, UObject*, CoolDownObject, const FCoolDownProgressStyle&, Style, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnStoppedUsingItem, AItem*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnStartedUsingItem, AItem*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCollectedEverything, FText, InMessage);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnSaluteEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnToggleMapTool, bool, Visible);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnFirePressed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnFireReleased);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnCollectedSkin, UItemSkin*, Skin, UItemID*, ItemID);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnPerkInitialized);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnCameraModeChanged, ECharacterCameraMode, NewCameraMode, ECharacterCameraMode, OldCameraMode);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnGrenadePressed, bool, boolValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnInstantRevivePossibleEvent, bool, boolValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnDownCameraTargetChanged, APlayerCharacter*, Target);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCollectedSchematic, USchematic*, Schematic);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnReviveCallEvent, AActor*, ReviveTarget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCollectedDrink, UDrinkableDataAsset*, Drinkable);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnCollectedVictoryPose, UVictoryPose*, pose, UPlayerCharacterID*, characterID);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnToggleScanTool, bool, Visible);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCollectedPickaxePart, UPickaxePart*, PickaxePart);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnCollectedVanityItem, UVanityItem*, Item, UPlayerCharacterID*, characterID);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnSecondaryLaserPointerEvent, AActor*, aTarget, const FVector&, aTargetLocation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPlayerCharacterOnActionHoldProgress, FText, Description, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FPlayerCharacterOnThrowCarriableProgress, float, Progress, float, timeToCancel, bool, isDone);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCanEscapeGrabberChanged, bool, bCanEscape);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnJumpPressed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnTerrainScannerPressed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnJumpReleased);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnDropItem);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnSecondaryFirePressed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnSecondaryFireReleased);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnManualMiningBegin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnLaserPointerReleased);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnManualMiningEnd);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCharacterStateChanged, ECharacterState, NewState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnFlareThrown);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnLaserPointerPressed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnUpdateMeshes);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnTerrainScannerReleased);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnOpenChat);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnAcceptInvite);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnPlayerShout, APlayerCharacter*, ShoutingPlayer);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnRejectInvite);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnIgnoreInvite);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnToggleOutline, bool, Visible);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnDepthChanged, int32, Depth);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnCharacterDeathChange, APlayerCharacter*, Character);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnPerkActivationTimerFinished);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_SixParams(FPlayerCharacterOnDamagedEnemy, const TScriptInterface<IHealth>&, EnemyHealth, float, Damage, float, DamageModifier, float, HealthRemaining, bool, IsWeakPoint, bool, IsRadial);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnLaserPointerEvent, const FLaserPointerTarget&, HitInfo);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnCallDonkey);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnBoscoSalute, APlayerCharacter*, ShoutingPlayer);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnRevivedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerCharacterOnRevivedOtherCharacter);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnHeadlightOnChanged, bool, IsOn);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnEnemyStartedTracking, AActor*, InTrackingEnemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnEnemyEndedTracking, AActor*, InTrackingEnemy);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerCharacterOnKilledGrabber, AActor*, Grabber);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FPlayerCharacterOnCoolDownProgress, UObject*, CoolDownObject, const FCoolDownProgressStyle&, Style, float, Progress);
 
 UCLASS(Abstract)
 class FSD_API APlayerCharacter : public ACharacter, public IGameplayTagAssetInterface, public ITargetable, public IRejoinListener, public IPlaySoundInterface {
@@ -749,10 +750,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ToggleScanTool(bool Visible);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ToggleHUDReleased();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ToggleHUDPressed();
     
 public:
@@ -760,14 +761,14 @@ public:
     void ToggleHeadLight();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ThrowFlareReleased();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ThrowFlarePressed();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ThrowFlare();
     
 protected:
@@ -826,48 +827,48 @@ public:
     void SetAttached(USceneComponent* AttachTo, bool DelayUntilLanded);
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_TriggerDash();
     
 public:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_ThrowCarriedItem(FVector_NetQuantize force);
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_StartSalute(UAnimMontage* startSalute);
     
 public:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_Shouted();
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetUsing(bool characterIsUsing);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetRunning(bool characterIsRunning);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetRunBoostActive(bool IsActive);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetIsThrowingCarriable(bool isThrowing);
     
 public:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetIsPressingMovementInput(bool aIsPushingInput);
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetIsJumpPressed(bool InJumpPressed);
     
 public:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetDispenserReward(AEventRewardDispenser* Dispenser, USchematic* Reward);
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetClientReady();
     
 public:
@@ -878,40 +879,40 @@ protected:
     UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_EscapeFromGrabber();
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_CancelThrowingCarriable();
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_CallDonkey();
     
 public:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_AddImpulseToActor(AFSDPhysicsActor* Target, FVector_NetQuantize Impulse, FVector_NetQuantize Location, FVector_NetQuantize AngularImpulse);
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_AddImpulse(const FVector_NetQuantizeNormal& Direction, float force);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SendLevelUpStatistics(const int32 currentRank);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ReviveProgress(float Progress);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void RequestChangeInGravityScale(float newGravityScale);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RejectInvite();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnHeadlightOn();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveEscapedFromGrabber();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_ShowFieldMedicInstantReviveEffects();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -924,45 +925,45 @@ public:
     void Paralyze(AActor* ParalyzedBy);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OpenChat();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceFull(UCappedResource* Resource);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsStandingDown();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsDancing();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HeadLightOn();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_DanceMove();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CharacterState(UCharacterStateComponent* oldState);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPerkActivationFinished();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnItemEquipped(AItem* Item);
     
     UFUNCTION(BlueprintCallable)
     void OnCharacterUsed(APlayerCharacter* User, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCharacterBeginUse(APlayerCharacter* User, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void MouseWheelUp();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void MouseWheelDown();
     
 public:
@@ -970,147 +971,147 @@ public:
     bool LockIfState(ECharacterState LockIf, ECharacterState LockTo, bool canMoveAndAim);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void JumpRelease();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void JumpPress();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsWithinDistance(AActor* Source, float Distance) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsWalking() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsStateActive(ECharacterState State) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSaluting() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsParalyzed() const;
     
     UFUNCTION(BlueprintCallable)
     bool IsMovementInputPressed();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMining() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLyingDown() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsJumpPressed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInState(ECharacterState aState) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFrozen() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFirstPerson() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDown() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAlive() const;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void IgnoreInvite();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasBeenRevived() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTrailComponent* GetTrailComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerTPAnimInstance* GetTPAnimInstance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetTimeSinceLastRevival() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ECharacterState GetPreviousState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDPlayerState* GetPlayerState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetPlayerName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFSDPlayerController* GetPlayerController() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UInventoryList* GetInventoryList() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetHeroSwitchToMessage() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetHeroName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetHeroIcon() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FLinearColor GetHeroColor() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerFPAnimInstance* GetFPAnimInstance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AItem* GetEquippedItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDownTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerCharacter* GetDownCameraTarget() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     USceneComponent* GetDownCameraRotationPoint();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     USceneComponent* GetDownCameraAttachPoint();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ECharacterState GetCurrentState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetClassXP();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCharacterVanityComponent* GetCharacterVanity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCharacterStateComponent* GetCharacterStateComponent(ECharacterState State) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBeginRevivedProgress() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetAnalyticsClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetAimRotation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetActorGroundLocation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AShieldGeneratorActor*> GetActiveShieldGenerators();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerAnimInstance* GetActiveAnimInstance() const;
     
     UFUNCTION(BlueprintCallable)
@@ -1120,16 +1121,16 @@ public:
     void ExitVehicle();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CycleItemUp();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CycleItemReleased();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CycleItemPressed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CycleItemDown();
     
 public:
@@ -1137,11 +1138,11 @@ public:
     void ConsumeCycleItemButton();
     
 protected:
-    UFUNCTION(Client, Unreliable)
+    UFUNCTION(BlueprintCallable, Client, Unreliable)
     void Client_TargetDamaged(UObject* Health, float Damage, float DamageModifier, bool IsWeakPoint, bool IsRadial);
     
 public:
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_AddImpulse(const FVector_NetQuantizeNormal& Direction, float force);
     
 protected:
@@ -1149,10 +1150,10 @@ protected:
     void CheckWithoutAPaddleAchievement();
     
 public:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void CheatRevive();
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void CheatGodMode();
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
@@ -1161,20 +1162,20 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void ChangeIfDifferentState(ECharacterState NewState);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanEscapeFromGrabber() const;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallDonkeyReleased();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallDonkeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnUpdateMeshes();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnControllerReady();
     
 public:
@@ -1182,10 +1183,10 @@ public:
     void AnnounceSchematicCollected(USchematic* InSchematic);
     
 protected:
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_StartSalute(UAnimMontage* saluteMontage);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowImpactEffects(UParticleSystem* Particles, FVector_NetQuantize Location, FVector_NetQuantizeNormal Orientation) const;
     
 public:
@@ -1205,15 +1206,29 @@ public:
     float AddClassXP(float Amount);
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void AcknowledgeCharacterState(ECharacterState eState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AcceptInvite();
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     APlayerCharacter();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    bool HasMatchingGameplayTag(FGameplayTag TagToCheck) const override PURE_VIRTUAL(HasMatchingGameplayTag, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAnyMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAnyMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool HasAllMatchingGameplayTags(const FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(HasAllMatchingGameplayTags, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(GetOwnedGameplayTags,);
+    
 };
 

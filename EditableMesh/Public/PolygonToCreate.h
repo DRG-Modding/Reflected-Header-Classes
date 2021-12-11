@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MeshDescription PolygonID
 //CROSS-MODULE INCLUDE: MeshDescription PolygonGroupID
 #include "VertexAndAttributes.h"
+//CROSS-MODULE INCLUDE: MeshDescription PolygonID
 #include "EPolygonEdgeHardness.h"
 #include "PolygonToCreate.generated.h"
 

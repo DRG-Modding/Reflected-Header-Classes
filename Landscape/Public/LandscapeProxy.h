@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ELandscapeLODFalloff.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: CoreUObject IntPoint
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "LandscapeProxyMaterialOverride.h"
+//CROSS-MODULE INCLUDE: CoreUObject IntPoint
+#include "ELandscapeLODFalloff.h"
 //CROSS-MODULE INCLUDE: Engine ERuntimeVirtualTextureMainPassType
 //CROSS-MODULE INCLUDE: Engine LightingChannels
 //CROSS-MODULE INCLUDE: Engine LightmassPrimitiveSettings
@@ -13,18 +13,18 @@
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "LandscapeProxy.generated.h"
 
-class ULandscapeSplinesComponent;
-class UPhysicalMaterial;
 class UMaterialInterface;
+class ULandscapeSplinesComponent;
+class UTexture;
+class UPhysicalMaterial;
 class URuntimeVirtualTexture;
 class ULandscapeComponent;
 class ULandscapeHeightfieldCollisionComponent;
 class UHierarchicalInstancedStaticMeshComponent;
-class ULandscapeLayerInfoObject;
 class UTexture2D;
 class ULandscapeWeightmapUsage;
-class UTexture;
 class USplineComponent;
+class ULandscapeLayerInfoObject;
 
 UCLASS(Abstract, MinimalAPI)
 class ALandscapeProxy : public AActor {

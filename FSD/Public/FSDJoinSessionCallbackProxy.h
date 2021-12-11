@@ -4,12 +4,12 @@
 //CROSS-MODULE INCLUDE: OnlineSubsystemUtils BlueprintSessionResult
 #include "FSDJoinSessionCallbackProxy.generated.h"
 
-class UFSDJoinSessionCallbackProxy;
 class UObject;
+class UFSDJoinSessionCallbackProxy;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDJoinSessionCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDJoinSessionCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDJoinSessionCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDJoinSessionCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UFSDJoinSessionCallbackProxy : public UOnlineBlueprintCallProxyBase {

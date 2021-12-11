@@ -4,8 +4,8 @@
 #include "EnemyPawn.h"
 #include "InsectSwarmSpawner.generated.h"
 
-class UStaticMeshComponent;
 class AInsectSwarmEnemy;
+class UStaticMeshComponent;
 class AActor;
 
 UCLASS(Abstract)
@@ -28,13 +28,13 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     TWeakObjectPtr<AInsectSwarmEnemy> SwarmInstance;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     UStaticMeshComponent* Receive_GetStaticMesh() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSwarmSpawned(AInsectSwarmEnemy* Swarm);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSwarmDestroyed(AActor* DestroyedActor);
     
 public:

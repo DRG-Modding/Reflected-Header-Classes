@@ -16,13 +16,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCooldown(const FName& AttackName, float cooldownSeconds);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAttackOffCooldown(const FName& AttackName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAnyAttackOffCooldown() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AttackUsed(const FName& Name);
     
     UAttackCooldownComponent();

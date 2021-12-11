@@ -1,7 +1,7 @@
 #include "MultiTextCounterAction.h"
 
-class UTextBlock;
 class UObject;
+class UTextBlock;
 class USoundCue;
 class UMultiTextCounterAction;
 

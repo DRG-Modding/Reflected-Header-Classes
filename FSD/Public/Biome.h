@@ -3,33 +3,33 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
 //CROSS-MODULE INCLUDE: CoreUObject Color
+#include "BiomeNoiseItem.h"
 #include "HeatSource.h"
 #include "RandRange.h"
-#include "BiomeEnemyEntry.h"
-#include "BiomeNoiseItem.h"
 #include "ResourceSpawner.h"
+#include "BiomeEnemyEntry.h"
 //CROSS-MODULE INCLUDE: Engine ReverbSettings
 //CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
 #include "Biome.generated.h"
 
-class UParticleSystem;
-class UUserWidget;
 class UFileMediaSource;
 class UTexture2D;
-class UPillarSettings;
-class UCaveScriptComponent;
-class UEnemyDescriptor;
+class UParticleSystem;
+class UFloodFillSettings;
+class UUserWidget;
 class UDebrisSet;
-class UTerrainMaterial;
+class UCaveScriptComponent;
+class UCritterDescriptor;
 class ADebrisDataActor;
 class AActor;
+class UTerrainMaterial;
 class UMaterialInstance;
-class USoundCue;
 class UMissionStat;
-class UFloodFillSettings;
 class UDetailNoise;
+class USoundCue;
+class UPillarSettings;
 class UTunnelSetting;
-class UCritterDescriptor;
+class UEnemyDescriptor;
 class UReverbEffect;
 class ULevelSequence;
 
@@ -216,52 +216,52 @@ protected:
     float PlanetZoneSelectionWeight;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTerrainMaterial* GetRockMaterial() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftClassPtr<AActor> GetPostProcessActorClass_Soft() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTerrainMaterial* GetDirtMaterial() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftClassPtr<ADebrisDataActor> GetDebrisActorSoftClass();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBiomeWorldMap() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBiomePicture() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetBiomeName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBiomeMissionBar() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<UUserWidget> GetBiomeMapWidget() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FSoftObjectPath> GetBiomeMapAssetList() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBiomeLargeImage() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetBiomeIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetBiomeIcon() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetBiomeAnalyticsIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UParticleSystem* GetAtmosphericParticles() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USoundCue* GetAmbientSounds() const;
     
     UBiome();

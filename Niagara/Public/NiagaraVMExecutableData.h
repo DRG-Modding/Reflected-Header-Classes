@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraScriptDataInterfaceCompileInfo.h"
+#include "NiagaraStatScope.h"
 #include "NiagaraParameters.h"
-#include "NiagaraVariable.h"
-#include "NiagaraScriptDataUsageInfo.h"
 #include "VMExternalFunctionBindingInfo.h"
+#include "NiagaraVariable.h"
+#include "ENiagaraScriptCompileStatus.h"
+#include "NiagaraScriptDataUsageInfo.h"
 #include "NiagaraDataSetID.h"
 #include "NiagaraDataSetProperties.h"
-#include "NiagaraStatScope.h"
 //CROSS-MODULE INCLUDE: NiagaraShader NiagaraDataInterfaceGPUParamInfo
-#include "ENiagaraScriptCompileStatus.h"
 #include "SimulationStageMetaData.h"
 #include "NiagaraVMExecutableData.generated.h"
 

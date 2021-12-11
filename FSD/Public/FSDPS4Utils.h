@@ -10,10 +10,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetUGCAllowed(bool bAllowed);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsUGCAllowed();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsPS4SystemLoaded();
     
     UFSDPS4Utils();

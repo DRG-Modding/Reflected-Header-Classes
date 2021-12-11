@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE: Engine BodyInstance
 //CROSS-MODULE INCLUDE: CoreUObject FloatInterval
+//CROSS-MODULE INCLUDE: CoreUObject Object
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "EFoliageScaling.h"
 #include "FoliageVertexColorChannelMask.h"
-#include "FoliageVertexColorMask.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "FoliageVertexColorMask.h"
 //CROSS-MODULE INCLUDE: CoreUObject BoxSphereBounds
 //CROSS-MODULE INCLUDE: Engine EComponentMobility
-//CROSS-MODULE INCLUDE: Engine ELightmapType
 //CROSS-MODULE INCLUDE: CoreUObject Int32Interval
-//CROSS-MODULE INCLUDE: Engine BodyInstance
-//CROSS-MODULE INCLUDE: Engine ERuntimeVirtualTextureMainPassType
+//CROSS-MODULE INCLUDE: Engine ELightmapType
 //CROSS-MODULE INCLUDE: Engine EHasCustomNavigableGeometry
 //CROSS-MODULE INCLUDE: Engine LightingChannels
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
+//CROSS-MODULE INCLUDE: Engine ERuntimeVirtualTextureMainPassType
 #include "FoliageType.generated.h"
 
 class URuntimeVirtualTexture;

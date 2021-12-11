@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "TrackBuilderSegment.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Transform
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "FuelLineSegment.generated.h"
 
+class USceneComponent;
 class USplineMeshComponent;
-class USimpleHealthComponent;
 class USplineComponent;
 class UStaticMeshComponent;
-class USceneComponent;
+class USimpleHealthComponent;
 class UHealthComponentBase;
 
 UCLASS(Abstract)
@@ -44,16 +44,16 @@ protected:
     UPROPERTY(EditAnywhere)
     float MaxTurnAngle;
     
-    UFUNCTION(Client, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Unreliable, WithValidation)
     void ClientUpdateStartTransform(const FVector& NewStartLocation);
     
     UFUNCTION(BlueprintCallable)
     void ChangeStartTransform(const FTransform& ChangedStartLocation);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackOnDeath(UHealthComponentBase* InHealthComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CallbackCanStartNextSegmentChanged(bool InCanStart);
     
 public:

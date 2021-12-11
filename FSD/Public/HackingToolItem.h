@@ -13,16 +13,16 @@ protected:
     UPROPERTY(BlueprintReadOnly, Export, Transient, ReplicatedUsing=OnRep_HackingUsable)
     TWeakObjectPtr<UHackingUsableComponent> HackingUsable;
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_HackingCompleted(bool InHackingSuccessful);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveHackingStarted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveClick();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HackingUsable();
     
 public:

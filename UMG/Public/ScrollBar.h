@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Widget.h"
 //CROSS-MODULE INCLUDE: SlateCore ScrollBarStyle
+#include "Widget.h"
 //CROSS-MODULE INCLUDE: SlateCore EOrientation
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 //CROSS-MODULE INCLUDE: SlateCore Margin

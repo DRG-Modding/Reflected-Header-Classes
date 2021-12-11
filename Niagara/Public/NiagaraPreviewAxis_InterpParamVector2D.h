@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "NiagaraPreviewAxis_InterpParamBase.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "NiagaraPreviewAxis_InterpParamVector2D.generated.h"
 
 UCLASS(EditInlineNew)

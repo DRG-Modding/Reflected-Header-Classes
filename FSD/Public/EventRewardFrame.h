@@ -38,7 +38,7 @@ protected:
     void RegisterDispenser(AEventRewardDispenser* Dispenser);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetDispensRewards() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

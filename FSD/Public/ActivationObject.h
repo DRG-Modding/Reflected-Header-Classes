@@ -18,7 +18,7 @@ protected:
     UPROPERTY()
     bool HasBeenUsed;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUsedBy(APlayerCharacter* User, EInputKeys Key);
     
 public:

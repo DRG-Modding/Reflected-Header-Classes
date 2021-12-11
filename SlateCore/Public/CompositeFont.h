@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Typeface.h"
 #include "CompositeFallbackFont.h"
+#include "Typeface.h"
 #include "CompositeSubFont.h"
 #include "CompositeFont.generated.h"
 

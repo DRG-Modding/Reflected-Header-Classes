@@ -1,7 +1,7 @@
 #include "UIFunctionLibrary.h"
 
-class UPlayerCharacterID;
 class UObject;
+class UPlayerCharacterID;
 class UNewsTextLists;
 class UMissionNameBank;
 

@@ -7,10 +7,10 @@ UCLASS(BlueprintType)
 class UFSDPFPUtils : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsPlayfabLoaded();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetPlayfabUserId();
     
     UFSDPFPUtils();

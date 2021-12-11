@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ItemAggregator.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
+#include "ItemAggregator.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "ItemPlacerAggregator.generated.h"
 
 class AActor;
 class AItem;
-class UDialogDataAsset;
 class AItemMarker;
+class UDialogDataAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemPlacerAggregatorOnMarkerSpawned, AItemMarker*, Marker);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FItemPlacerAggregatorOnPlacementChanged, bool, InPlacementValid, const FTransform&, InPlacement);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemPlacerAggregatorOnMarkerSpawned, AItemMarker*, Marker);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FItemPlacerAggregatorOnPlacementChanged, bool, InPlacementValid, const FTransform&, InPlacement);
 
 UCLASS()
 class UItemPlacerAggregator : public UItemAggregator {
@@ -83,10 +83,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void ToggleMarkerHidden(bool InHidden);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetPlacementEx(FTransform& Placement, bool& OutValidLocation, bool& OutValidMarker) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPlacement(FTransform& Placement) const;
     
     UFUNCTION(BlueprintCallable)

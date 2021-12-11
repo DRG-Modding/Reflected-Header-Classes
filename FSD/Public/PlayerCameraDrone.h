@@ -7,9 +7,9 @@
 #include "PlayerCameraDrone.generated.h"
 
 class UPawnMovementComponent;
-class UCameraComponent;
 class AActor;
 class UPrimitiveComponent;
+class UCameraComponent;
 
 UCLASS(Abstract)
 class APlayerCameraDrone : public APawn {
@@ -92,7 +92,7 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ResetAllLights();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFlareHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
     
 private:
@@ -103,19 +103,19 @@ protected:
     UFUNCTION(BlueprintCallable)
     FVector GetFlareLightSettings();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     UCameraComponent* GetCamera();
     
     UFUNCTION(BlueprintCallable)
     FVector GetBounceFlareLightSettings();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CreateHUD();
     
     UFUNCTION(BlueprintCallable)
     void ClearFocusPoint();
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void BeginCountdown();
     
 public:

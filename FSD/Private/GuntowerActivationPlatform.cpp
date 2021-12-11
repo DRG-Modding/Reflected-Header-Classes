@@ -1,10 +1,10 @@
 #include "GuntowerActivationPlatform.h"
 #include "Net/UnrealNetwork.h"
 
-class UHealthComponentBase;
 class APlayerCharacter;
 class UPrimitiveComponent;
 class AActor;
+class UHealthComponentBase;
 class AGuntowerModule;
 
 void AGuntowerActivationPlatform::UpdatePlayersInside(APlayerCharacter* Character) {

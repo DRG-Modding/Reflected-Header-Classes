@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AIModule BlackboardKeySelector
 //CROSS-MODULE INCLUDE: AIModule BTDecorator
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: AIModule BlackboardKeySelector
 #include "BTDecorator_CanSeeTarget.generated.h"
 
 UCLASS()

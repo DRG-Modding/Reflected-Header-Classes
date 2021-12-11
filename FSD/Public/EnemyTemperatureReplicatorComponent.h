@@ -5,9 +5,9 @@
 
 class UEnemyTemperatureComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyTemperatureReplicatorComponentOnIsOnFireChanged, float, FloatValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyTemperatureReplicatorComponentOnTemperatureEffectChanged, float, FloatValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyTemperatureReplicatorComponentOnIsFrozenChanged, float, FloatValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyTemperatureReplicatorComponentOnIsOnFireChanged, float, FloatValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyTemperatureReplicatorComponentOnTemperatureEffectChanged, float, FloatValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyTemperatureReplicatorComponentOnIsFrozenChanged, float, FloatValue);
 
 UCLASS(BlueprintType)
 class UEnemyTemperatureReplicatorComponent : public UActorComponent {
@@ -35,23 +35,23 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_IsOnFire)
     bool bIsOnFire;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_TemperatureEffect();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsOnFire();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsFrozen();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsOnFire() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFrozen() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetTemperatureEffect() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

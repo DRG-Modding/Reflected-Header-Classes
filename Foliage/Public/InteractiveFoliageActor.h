@@ -58,7 +58,7 @@ public:
     float Mass;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CapsuleTouched(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& OverlapInfo);
     
 public:

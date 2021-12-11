@@ -5,8 +5,8 @@
 
 class ULandscapeSplineControlPoint;
 class ULandscapeSplineSegment;
-class USplineMeshComponent;
 class UMeshComponent;
+class USplineMeshComponent;
 
 UCLASS(MinimalAPI)
 class ULandscapeSplinesComponent : public UPrimitiveComponent {

@@ -18,13 +18,13 @@ protected:
     bool ResetSelectedMission;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UGeneratedMission*> GetMissions(int32 Seed);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UGeneratedMission* GetMissionFromSeeds(int32 GlobalSeed, int32 MissionSeed);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UGeneratedMission*> GetAvailableMissions();
     
     UMissionGenerationManager();

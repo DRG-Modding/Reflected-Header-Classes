@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
 //CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
 //CROSS-MODULE INCLUDE: Engine PrimitiveComponent
+//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
 #include "LevelGenerationCarverComponent.generated.h"
 
-class UTerrainMaterialBase;
 class USTLMeshCarver;
 class UStaticMeshCarver;
 class UStaticMesh;
+class UTerrainMaterialBase;
 
 UCLASS()
 class ULevelGenerationCarverComponent : public UPrimitiveComponent {

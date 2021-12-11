@@ -9,14 +9,14 @@ class UStatusEffect;
 class UDamageComponent;
 class USoundCue;
 class UHitscanBaseComponent;
-class AActor;
 class UParticleSystem;
+class AActor;
 class UFSDPhysicalMaterial;
 class UHealthComponentBase;
 class UPrimitiveComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBoltActionWeaponFullyFocusedEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBoltActionWeaponFocusLostEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBoltActionWeaponFullyFocusedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FBoltActionWeaponFocusLostEvent);
 
 UCLASS(Abstract)
 class ABoltActionWeapon : public AAmmoDrivenWeapon {
@@ -128,31 +128,31 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetOverheated(bool isOverheated);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIsMovementSlowed(bool bisMovementSlowed);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIsLatestShotFocused(bool bisShotFocused);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetIsChargingShot(bool bisCharging);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTimerElapsed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetKilled(AActor* Target, UFSDPhysicalMaterial* PhysicalMaterial);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnShotPowerSet();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMovementSlowed(bool isSlowed);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_OnTargetKilled(bool BoostReloadTime);
     
 public:

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "NiagaraDataInterfaceRWBase.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject IntVector
-#include "NiagaraDataInterfaceRWBase.h"
 #include "NiagaraDataInterfaceGrid3D.generated.h"
 
 UCLASS(Abstract, EditInlineNew)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnvOverlapData.h"
 #include "EnvQueryTest.h"
+#include "EnvOverlapData.h"
 #include "EnvQueryTest_Overlap.generated.h"
 
 UCLASS(MinimalAPI)

@@ -4,8 +4,8 @@
 #include "FloatPerkComponent.h"
 #include "EyeForEyePerkComponent.generated.h"
 
-class UStatusEffect;
 class UDamageClass;
+class UStatusEffect;
 class AActor;
 
 UCLASS(Abstract)
@@ -22,7 +22,7 @@ protected:
     UPROPERTY(Transient)
     TSubclassOf<UStatusEffect> LoadedSTE;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHit(float Damage, UDamageClass* inDamageClass, AActor* DamageCauser, bool anyHealthLost);
     
 public:

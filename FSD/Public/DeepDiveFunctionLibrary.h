@@ -11,10 +11,10 @@ UCLASS(BlueprintType)
 class UDeepDiveFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsDeepDiveElite(UObject* WorldContextObject, UDeepDive* DeepDive);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetHasEverCompletedDeepDive(UObject* WorldContextObject, UDeepDiveTemplate* DeepDive);
     
     UDeepDiveFunctionLibrary();

@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "TreasureBeacon.generated.h"
 
+class ATreasureContainer;
 class USceneComponent;
 class UTerrainPlacementComponent;
 class UDebrisPositioning;
 class UCurveFloat;
-class ATreasureContainer;
 
 UCLASS()
 class FSD_API ATreasureBeacon : public AActor {

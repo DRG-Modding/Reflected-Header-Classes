@@ -7,7 +7,7 @@
 
 class UTerrainMaterial;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDroneMiningToolBaseHitSomething, UTerrainMaterial*, TerrainMaterial, const FVector&, Location);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDroneMiningToolBaseHitSomething, UTerrainMaterial*, TerrainMaterial, const FVector&, Location);
 
 UCLASS(BlueprintType)
 class UDroneMiningToolBase : public UActorComponent {
@@ -36,7 +36,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void StartMining();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void SpawnEffects(UTerrainMaterial* aTerrainMaterial, bool aParialHit, FVector_NetQuantize aLocation, FVector_NetQuantize aImpactNormal);
     
     UDroneMiningToolBase();

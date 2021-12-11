@@ -9,9 +9,9 @@
 #include "Projectile.generated.h"
 
 class UObject;
-class AActor;
 class UFSDProjectileMovementComponent;
 class APawn;
+class AActor;
 class AProjectile;
 class USceneComponent;
 class UFSDPhysicalMaterial;
@@ -47,10 +47,10 @@ public:
     void SetHomingTargetComponent(USceneComponent* HomingTargetComponent, float Delay);
     
 protected:
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_DisableHoming();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State(const FProjectileState& oldState);
     
 public:
@@ -63,7 +63,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnBounce(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UFSDPhysicalMaterial* FindBoneIndexFromArmor(const FHitResult& HitResult, int32& outBoneIndex) const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
-#include "MovieScene2DTransformMask.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
+#include "MovieScene2DTransformMask.h"
 #include "MovieScene2DTransformSection.generated.h"
 
 UCLASS(MinimalAPI)

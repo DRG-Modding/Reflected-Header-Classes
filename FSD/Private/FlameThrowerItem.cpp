@@ -1,9 +1,9 @@
 #include "FlameThrowerItem.h"
 
-class UPrimitiveComponent;
-class AActor;
 class UHealthComponentBase;
 class UFSDPhysicalMaterial;
+class AActor;
+class UPrimitiveComponent;
 
 void AFlameThrowerItem::TriggerAoEHeat() {
 }

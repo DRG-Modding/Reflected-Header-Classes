@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPipelineBuildState.h"
 //CROSS-MODULE INCLUDE: Engine Actor
+#include "EPipelineBuildState.h"
 #include "PipelineStart.generated.h"
 
+class ATrackBuilderSegment;
+class APipelineFinish;
 class APipelineStart;
 class AFSDRefinery;
 class UTrackBuilderUsable;
-class ATrackBuilderSegment;
-class APipelineFinish;
 class APipelineSegment;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPipelineStartOnBuildStateChanged, APipelineStart*, InPipelineStart, EPipelineBuildState, InPipelineState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPipelineStartOnBuildStateChanged, APipelineStart*, InPipelineStart, EPipelineBuildState, InPipelineState);
 
 UCLASS(Abstract)
 class FSD_API APipelineStart : public AActor {
@@ -39,7 +39,7 @@ protected:
     UPROPERTY(Transient)
     TArray<TWeakObjectPtr<APipelineSegment>> BrokenSegments;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveBuildStateChanged(EPipelineBuildState InBuildState);
     
 public:
@@ -47,14 +47,14 @@ public:
     void PipelineCompleted(APipelineFinish* InPipelineFinish);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_BuildState();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNextSegmentChanged(UTrackBuilderUsable* InUsable, ATrackBuilderSegment* InSegment);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<APipelineSegment*> GetAllPipelineSegments() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

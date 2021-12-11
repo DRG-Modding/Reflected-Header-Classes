@@ -4,8 +4,8 @@
 #include "ItemUpgradeElement.h"
 #include "ReplaceSkeletonMeshUpgradeElement.generated.h"
 
-class UAnimInstance;
 class USkeletalMesh;
+class UAnimInstance;
 
 UCLASS(EditInlineNew)
 class UReplaceSkeletonMeshUpgradeElement : public UItemUpgradeElement {

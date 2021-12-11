@@ -4,12 +4,12 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ARGetCandidateObjectAsyncTaskBlueprintProxy.generated.h"
 
+class UObject;
 class UARCandidateObject;
 class UARGetCandidateObjectAsyncTaskBlueprintProxy;
-class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARGetCandidateObjectAsyncTaskBlueprintProxyOnFailed, UARCandidateObject*, SavedObject);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARGetCandidateObjectAsyncTaskBlueprintProxyOnSuccess, UARCandidateObject*, SavedObject);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARGetCandidateObjectAsyncTaskBlueprintProxyOnFailed, UARCandidateObject*, SavedObject);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARGetCandidateObjectAsyncTaskBlueprintProxyOnSuccess, UARCandidateObject*, SavedObject);
 
 UCLASS()
 class UARGetCandidateObjectAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy {

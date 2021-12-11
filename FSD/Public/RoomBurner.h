@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-#include "ERoomMirroringSupport.h"
 #include "ERoomMirror.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
+#include "ERoomMirroringSupport.h"
 #include "RoomBurner.generated.h"
 
 class UBiome;
-class URoomGenerator;
-class UMissionWarning;
 class UDifficultySetting;
-class UEnemyDescriptor;
+class UMissionWarning;
 class UMissionMutator;
+class URoomGenerator;
+class UEnemyDescriptor;
+class AProceduralSetup;
 class USpecialEvent;
 class UMissionTemplate;
 class ADeepCSGWorld;
-class AProceduralSetup;
 
 UCLASS()
 class ARoomBurner : public AActor {
@@ -102,11 +102,11 @@ private:
     URoomGenerator* LiveEditRoomGenerator;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SpawnEncounter(AProceduralSetup* setup);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     URoomGenerator* GetRoomGenerator() const;
     
     ARoomBurner();

@@ -3,11 +3,11 @@
 #include "TickableActionBase.h"
 #include "MiniTimerAction.generated.h"
 
-class UObject;
 class UMiniTimerAction;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMiniTimerActionCompleted, float, DeltaTime, float, NormalizedTime);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMiniTimerActionOnTick, float, DeltaTime, float, NormalizedTime);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMiniTimerActionCompleted, float, DeltaTime, float, NormalizedTime);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMiniTimerActionOnTick, float, DeltaTime, float, NormalizedTime);
 
 UCLASS()
 class UMiniTimerAction : public UTickableActionBase {

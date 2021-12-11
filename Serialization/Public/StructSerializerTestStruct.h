@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StructSerializerObjectTestStruct.h"
 #include "StructSerializerNumericTestStruct.h"
-#include "StructSerializerArrayTestStruct.h"
+#include "StructSerializerObjectTestStruct.h"
 #include "StructSerializerBooleanTestStruct.h"
-#include "StructSerializerBuiltinTestStruct.h"
-#include "StructSerializerMapTestStruct.h"
 #include "StructSerializerSetTestStruct.h"
+#include "StructSerializerBuiltinTestStruct.h"
+#include "StructSerializerArrayTestStruct.h"
+#include "StructSerializerMapTestStruct.h"
 #include "StructSerializerTestStruct.generated.h"
 
 USTRUCT()

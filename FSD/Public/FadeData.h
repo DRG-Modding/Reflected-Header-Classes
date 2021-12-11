@@ -3,8 +3,8 @@
 #include "Templates/SubclassOf.h"
 #include "FadeData.generated.h"
 
-class UFSDLevelLoadingPersistentWidget;
 class UTexture;
+class UFSDLevelLoadingPersistentWidget;
 
 USTRUCT(BlueprintType)
 struct FFadeData {

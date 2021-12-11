@@ -3,9 +3,9 @@
 #include "BTTaskNode.h"
 #include "BTTask_PlayAnimation.generated.h"
 
+class USkeletalMeshComponent;
 class UAnimationAsset;
 class UBehaviorTreeComponent;
-class USkeletalMeshComponent;
 
 UCLASS()
 class AIMODULE_API UBTTask_PlayAnimation : public UBTTaskNode {

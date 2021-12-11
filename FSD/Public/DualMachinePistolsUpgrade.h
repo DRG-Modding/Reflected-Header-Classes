@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "DualMachinePistolsUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UDualMachinePistolsUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EDualMachinePistolsUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EDualMachinePistolsUpgrades NewUpgradeType);
     
     UDualMachinePistolsUpgrade();

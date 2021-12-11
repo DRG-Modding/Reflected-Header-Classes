@@ -5,12 +5,12 @@
 #include "OxygenCallback.h"
 #include "OxygenComponent.generated.h"
 
-class UHealthComponentBase;
 class UStatusEffect;
+class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOxygenComponentOnOxygenChanged, int32, oxygenLevel);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOxygenComponentOnOxygenReplenishingEvent, bool, IsActive);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FOxygenComponentOxygenCallback);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOxygenComponentOnOxygenChanged, int32, oxygenLevel);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOxygenComponentOnOxygenReplenishingEvent, bool, IsActive);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FOxygenComponentOxygenCallback);
 
 UCLASS(BlueprintType)
 class UOxygenComponent : public UActorComponent {
@@ -52,16 +52,16 @@ public:
     void RegisterOxygenEvent(FOxygenComponentOxygenCallback OxygenCallback, float oxygenLevel, bool triggerOnOxygenLoss);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRevived();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_NetworkedOxygen(int32 OldValue);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsReplenishingOxygen();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* HealthComponent);
     
 public:

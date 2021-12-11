@@ -6,8 +6,8 @@
 class UCSGGroupComponent;
 class UTerrainMaterialCore;
 class UCSGBase;
-class UBakeConfig;
 class UCSGPreviewScene;
+class UBakeConfig;
 
 UCLASS()
 class FSDENGINE_API ACSGBuilder : public ACSGBuilderBase {

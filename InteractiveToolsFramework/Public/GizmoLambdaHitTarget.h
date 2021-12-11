@@ -9,5 +9,10 @@ class INTERACTIVETOOLSFRAMEWORK_API UGizmoLambdaHitTarget : public UObject, publ
     GENERATED_BODY()
 public:
     UGizmoLambdaHitTarget();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    void UpdateHoverState(bool bHovering) const override PURE_VIRTUAL(UpdateHoverState,);
+    
 };
 

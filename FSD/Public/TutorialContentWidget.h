@@ -5,7 +5,7 @@
 
 class UTutorialContentWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTutorialContentWidgetOnTutorialFinished, UTutorialContentWidget*, TutorialWidget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTutorialContentWidgetOnTutorialFinished, UTutorialContentWidget*, TutorialWidget);
 
 UCLASS(EditInlineNew)
 class UTutorialContentWidget : public UFSDUserWidget {
@@ -14,10 +14,10 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintCallable)
     FTutorialContentWidgetOnTutorialFinished OnTutorialFinished;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShown();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRemoveWidget();
     
     UTutorialContentWidget();

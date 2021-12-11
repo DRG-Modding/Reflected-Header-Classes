@@ -3,11 +3,11 @@
 //CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
 #include "SendSessionInviteToFriendBlueprintCallProxy.generated.h"
 
-class UObject;
 class USendSessionInviteToFriendBlueprintCallProxy;
+class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSendSessionInviteToFriendBlueprintCallProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSendSessionInviteToFriendBlueprintCallProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSendSessionInviteToFriendBlueprintCallProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSendSessionInviteToFriendBlueprintCallProxyOnFailure);
 
 UCLASS()
 class USendSessionInviteToFriendBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "AnimatedItem.h"
-#include "PlaceableInterface.h"
 #include "EPlaceableObstructionType.h"
+#include "AnimatedItem.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "PlaceableInterface.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "TrackBuilderItem.generated.h"
 
+class ATrackBuilderSegment;
 class UTrackBuilderConnectPoint;
 class UCrosshairAggregator;
-class ATrackBuilderSegment;
 class UTrackBuilderUsable;
 
 UCLASS(Abstract)
@@ -44,26 +44,26 @@ public:
     void UpdatePlacement(const FTransform& InTransform, UTrackBuilderConnectPoint* InConnectPoint, bool bPlacementValid, bool InUpdateServer);
     
 protected:
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void ServerUpdatePlacement(const FTransform& InTransform, const bool bPlacementValid, UTrackBuilderConnectPoint* InConnectPoint);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerFinishPlacement(const FTransform& FinalLocation, UTrackBuilderConnectPoint* ConnectPoint);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerCancelPlacement();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerBeginPlaceSegment(UTrackBuilderUsable* InUsable);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveBeginPlaceSegment();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_NextSegment();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<ATrackBuilderSegment> GetSegmentType() const;
     
     UFUNCTION(BlueprintCallable)
@@ -72,11 +72,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void CancelPlacement();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector AdjustInitialLocation(const FVector& Location) const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     ATrackBuilderItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -2,16 +2,16 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "SpawnActorWithDebrisPosComponent.generated.h"
 
-class UCurveFloat;
 class AActor;
 class AProceduralSetup;
 class UDebrisPositioning;
+class UCurveFloat;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FSpawnActorWithDebrisPosComponentOnSpawned, TSubclassOf<AActor>, Actor, const FTransform&, Transform);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FSpawnActorWithDebrisPosComponentOnSpawned, TSubclassOf<AActor>, Actor, const FTransform&, Transform);
 
 UCLASS(BlueprintType)
 class FSD_API USpawnActorWithDebrisPosComponent : public UActorComponent {

@@ -18,16 +18,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetActiveWidget(UWidget* Widget);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWidget* GetWidgetAtIndex(int32 Index) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumWidgets() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetActiveWidgetIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWidget* GetActiveWidget() const;
     
     UWidgetSwitcher();

@@ -1,7 +1,7 @@
 #include "MediaPlayer.h"
 
-class UMediaSource;
 class UMediaPlaylist;
+class UMediaSource;
 class UObject;
 
 bool UMediaPlayer::SupportsSeeking() const {

@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEnemyFamily.h"
+#include "EArmorType.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
-#include "EnemyMinersManualStats.h"
+#include "EEnemyFamily.h"
 #include "EEnemyType.h"
 #include "EnemyAttackDescription.h"
-#include "EArmorType.h"
+#include "EnemyMinersManualStats.h"
 #include "EDamageType.h"
 #include "EnemyMinersManualData.generated.h"
 
-class UAnimSequenceBase;
-class UEnemyID;
 class UTexture2D;
+class UEnemyID;
+class UAnimSequenceBase;
 class AEnemyShowroomItem;
 
 UCLASS(BlueprintType)
@@ -80,7 +80,7 @@ protected:
     TSoftClassPtr<AEnemyShowroomItem> PreviewActor;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetEnemyIcon() const;
     
     UEnemyMinersManualData();

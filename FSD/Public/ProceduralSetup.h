@@ -4,42 +4,42 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 //CROSS-MODULE INCLUDE: CoreUObject RandomStream
 #include "EncounterSpecialItem.h"
-#include "RandRange.h"
-#include "TunnelNode.h"
-#include "VeinResource.h"
-#include "EDebrisItemPass.h"
-#include "ESpawnSettings.h"
-#include "CarvedResource.h"
-#include "GemResourceAmount.h"
-#include "CollectableSpawnableItem.h"
 #include "RoomNode.h"
+#include "GemResourceAmount.h"
+#include "VeinResource.h"
+#include "CarvedResource.h"
+#include "CollectableSpawnableItem.h"
+#include "ESpawnSettings.h"
+#include "TunnelNode.h"
 #include "GeneratedInfluenceSets.h"
 #include "GeneratedInstantCarvers.h"
 #include "GeneratedDebris.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "PathObstacle.h"
 #include "InfluenceMap.h"
-#include "DebrisCapsule.h"
-#include "EDebrisCarvedType.h"
 //CROSS-MODULE INCLUDE: Engine LatentActionInfo
+#include "EDebrisItemPass.h"
+#include "EDebrisCarvedType.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "RandRange.h"
+#include "DebrisCapsule.h"
 #include "ProceduralSetup.generated.h"
 
-class UNoisyPathfinderComponent;
-class UProceduralTunnelComponent;
+class UProceduralObjectColliders;
 class AProceduralSetup;
 class USpecialEvent;
-class UProceduralObjectColliders;
+class UNoisyPathfinderComponent;
+class UProceduralTunnelComponent;
 class ADeepCSGWorld;
 class UFloodFillSettings;
-class UTunnelParameters;
 class UMissionDNA;
-class UBiome;
 class UResourceData;
+class UBiome;
 class AFSDPlayerController;
+class UTunnelParameters;
 class URoomGeneratorBase;
 class UCaveInfluencer;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FProceduralSetupOnEncounterSpawnedEvent, AProceduralSetup*, setup);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FProceduralSetupOnEncounterSpawnedEvent, AProceduralSetup*, setup);
 
 UCLASS()
 class AProceduralSetup : public AActor {
@@ -207,37 +207,37 @@ public:
     void SetSeed(int32 NewSeed);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetObjectivesCompleted();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ResetData();
     
     UFUNCTION(BlueprintCallable)
     void RemoveBLockedEntrances();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPLSDataRecieved();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnObjectivesCompleted();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnCarverDataRecieved(EDebrisItemPass pass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsGeneratedDataReady() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCarverDataReady(EDebrisItemPass pass) const;
     
     UFUNCTION(BlueprintCallable)
     void InitializeObjectives();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMissionDNA* GetMissionDNA() const;
     
 protected:
@@ -245,7 +245,7 @@ protected:
     TMap<FString, float> GetGemsResourceAmounts();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ADeepCSGWorld* GetCSGWorld() const;
     
 protected:
@@ -298,7 +298,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void DoneCarving();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoAsyncThreadGeneration() const;
     
     UFUNCTION(BlueprintCallable)
@@ -328,13 +328,13 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CarveTunnels();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BeginLiveGeneration();
     
     UFUNCTION(BlueprintCallable)
     void BeginGenerating();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void AddRoomToInitialState(const FRoomNode& RoomNode);
     
     UFUNCTION(BlueprintCallable)

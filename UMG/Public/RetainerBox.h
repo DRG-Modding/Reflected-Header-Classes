@@ -42,7 +42,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void RequestRender();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInstanceDynamic* GetEffectMaterial() const;
     
     URetainerBox();

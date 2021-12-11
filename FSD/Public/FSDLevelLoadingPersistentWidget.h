@@ -9,7 +9,7 @@ UCLASS(Abstract, EditInlineNew)
 class UFSDLevelLoadingPersistentWidget : public UUserWidget {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SetFadeProgress(float Fade, bool ToSpaceRig, UTexture* loadingImage);
     
     UFSDLevelLoadingPersistentWidget();

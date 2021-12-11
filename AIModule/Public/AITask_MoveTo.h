@@ -3,16 +3,16 @@
 #include "AITask.h"
 #include "EPathFollowingResult.h"
 #include "AIMoveRequest.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EAIOptionFlag.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "AITask_MoveTo.generated.h"
 
 class AActor;
 class AAIController;
 class UAITask_MoveTo;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAITask_MoveToOnRequestFailed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAITask_MoveToOnMoveFinished, TEnumAsByte<EPathFollowingResult::Type>, Result, AAIController*, AIController);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAITask_MoveToOnRequestFailed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAITask_MoveToOnMoveFinished, TEnumAsByte<EPathFollowingResult::Type>, Result, AAIController*, AIController);
 
 UCLASS()
 class AIMODULE_API UAITask_MoveTo : public UAITask {

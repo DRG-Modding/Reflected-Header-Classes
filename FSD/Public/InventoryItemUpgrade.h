@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "InventoryItemUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UInventoryItemUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EInventoryItemUpgradeType upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EInventoryItemUpgradeType NewUpgradeType);
     
     UInventoryItemUpgrade();

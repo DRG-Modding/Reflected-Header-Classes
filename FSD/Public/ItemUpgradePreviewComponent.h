@@ -5,7 +5,7 @@
 
 class UItemUpgrade;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradePreviewComponentOnPreviewUpgradeChanged, UItemUpgrade*, PreviewUpgrade);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradePreviewComponentOnPreviewUpgradeChanged, UItemUpgrade*, PreviewUpgrade);
 
 UCLASS(BlueprintType)
 class UItemUpgradePreviewComponent : public UActorComponent {

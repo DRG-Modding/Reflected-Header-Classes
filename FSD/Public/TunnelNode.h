@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RoomNodeBase.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "RoomEntrance.h"
 #include "TunnelPath.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "TunnelNode.generated.h"
 
 class UTunnelParameters;

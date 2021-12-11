@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnvTraceData.h"
 #include "EnvQueryTest.h"
+#include "EnvTraceData.h"
 #include "EnvQueryTest_Project.generated.h"
 
 UCLASS(MinimalAPI)

@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
 #include "EndTurnCallbackProxy.generated.h"
 
-class APlayerController;
 class UEndTurnCallbackProxy;
 class UObject;
+class APlayerController;
 class UTurnBasedMatchInterface;
 class ITurnBasedMatchInterface;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndTurnCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndTurnCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndTurnCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndTurnCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UEndTurnCallbackProxy : public UOnlineBlueprintCallProxyBase {

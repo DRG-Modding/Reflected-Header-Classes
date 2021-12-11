@@ -5,14 +5,14 @@
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "FSDEvent.generated.h"
 
-class UFSDEvent;
-class ADebrisDataActor;
 class UObject;
 class UWorld;
+class UFSDEvent;
+class ADebrisDataActor;
 class UCampaign;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDEventOnActiveChanged, const UFSDEvent*, InFsdEvent, bool, InIsActive);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDEventOnActiveChanged, const UFSDEvent*, InFsdEvent, bool, InIsActive);
 
 UCLASS(BlueprintType)
 class FSD_API UFSDEvent : public UDataAsset {
@@ -51,17 +51,17 @@ public:
     void MarkClaimableRewardsSeen(UObject* WorldContext);
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsFsdEventActive(UObject* WorldContext, const UFSDEvent* FSDEvent);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasUnseenClaimableRewards(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable)
     bool GiveRewards(APlayerController* PlayerController);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsActive(UObject* WorldContext) const;
     
     UFSDEvent();

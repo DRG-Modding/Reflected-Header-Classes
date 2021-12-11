@@ -28,7 +28,7 @@ public:
     void SetControlledByDropShip(bool Control);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRep_IsDown();
     
 public:

@@ -5,9 +5,9 @@
 #include "UpgradeValues.h"
 #include "ArmorStatUpgrade.generated.h"
 
+class AActor;
 class UPawnStat;
 class AFSDPlayerState;
-class AActor;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UArmorStatUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     UPawnStat* Stat;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedStatValue(AFSDPlayerState* Player, TSubclassOf<AActor> armorClass, UPawnStat* NewStat);
     
     UArmorStatUpgrade();

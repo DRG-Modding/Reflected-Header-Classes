@@ -2,21 +2,21 @@
 #include "Templates/SubclassOf.h"
 
 class UTutorialContentWidget;
+class UTemporaryBuff;
+class UDrinkableDataAsset;
+class UTreasureRewarder;
 class UTexture2D;
+class AActor;
 class UFSDAchievement;
 class UPlayerCharacterID;
-class AActor;
-class UItemID;
-class UTemporaryBuff;
 class APlayerCharacter;
 class AFSDPlayerState;
 class USoundCue;
 class UResourceData;
-class UTreasureRewarder;
 class UVanityItem;
 class UVictoryPose;
-class UDrinkableDataAsset;
 class UItemSkin;
+class UItemID;
 class UPickaxePart;
 
 void AFSDPlayerController::ToggleVoiceOn(bool Enabled) {

@@ -4,9 +4,9 @@
 #include "BlueprintFriend.h"
 #include "FSDFriendsAndInvites.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDFriendsAndInvitesOnFriendsChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDFriendsAndInvitesOnFriendInvitesChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDFriendsAndInvitesOnRequestRefresh);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDFriendsAndInvitesOnFriendsChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDFriendsAndInvitesOnFriendInvitesChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDFriendsAndInvitesOnRequestRefresh);
 
 UCLASS(Blueprintable)
 class UFSDFriendsAndInvites : public UObject {
@@ -27,7 +27,7 @@ public:
     UPROPERTY(BlueprintReadWrite, Transient)
     TArray<FBlueprintFriend> FriendInvites;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Init();
     
     UFSDFriendsAndInvites();

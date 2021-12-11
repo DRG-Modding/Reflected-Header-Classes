@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
 #include "CreateSessionCallbackProxy.generated.h"
 
-class APlayerController;
 class UCreateSessionCallbackProxy;
 class UObject;
+class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCreateSessionCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCreateSessionCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCreateSessionCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCreateSessionCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UCreateSessionCallbackProxy : public UOnlineBlueprintCallProxyBase {

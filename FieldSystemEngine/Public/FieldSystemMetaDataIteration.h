@@ -12,7 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 Iterations;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UFieldSystemMetaDataIteration* SetMetaDataIteration(int32 NewIterations);
     
     UFieldSystemMetaDataIteration();

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneObjectPathChannelKeyValue.h"
 #include "MovieSceneChannel.h"
+#include "MovieSceneObjectPathChannelKeyValue.h"
 //CROSS-MODULE INCLUDE: CoreUObject FrameNumber
 #include "MovieSceneObjectPathChannel.generated.h"
 

@@ -40,7 +40,7 @@ protected:
     UPROPERTY(EditAnywhere)
     bool AutomaticFlushNetDormancy;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Damage(float oldDamage);
     
 public:

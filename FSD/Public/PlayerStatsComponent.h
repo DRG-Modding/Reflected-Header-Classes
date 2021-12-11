@@ -8,8 +8,8 @@
 class APlayerCharacter;
 class UCappedResource;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerStatsComponentOnKillAdded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerStatsComponentOnEndMissionResultReady, const FEndMissionResult&, Result);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerStatsComponentOnKillAdded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerStatsComponentOnEndMissionResultReady, const FEndMissionResult&, Result);
 
 UCLASS(BlueprintType)
 class UPlayerStatsComponent : public UActorComponent {
@@ -59,21 +59,21 @@ public:
     UFUNCTION(BlueprintCallable)
     void SendMissionAnalytics(bool trackMorkite);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void SendEndMissionResult(const FEndMissionResult& Result);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceMined(UCappedResource* Resource, float Amount);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EndMissionResult();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEndMissionResultReady() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetSurvivedInPod() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

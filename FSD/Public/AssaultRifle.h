@@ -22,13 +22,13 @@ protected:
     UPROPERTY(EditAnywhere)
     TSubclassOf<UStatusEffect> KillTriggeredStatusEffect;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTimerElapsed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnemyKilled(AActor* Target, UFSDPhysicalMaterial* PhysMat);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_ResetAccuracy();
     
 public:

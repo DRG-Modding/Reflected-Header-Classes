@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore SlateWidgetStyleContainerBase
 //CROSS-MODULE INCLUDE: SlateCore ScrollBoxStyle
+//CROSS-MODULE INCLUDE: SlateCore SlateWidgetStyleContainerBase
 #include "ScrollBoxWidgetStyle.generated.h"
 
 UCLASS(MinimalAPI)

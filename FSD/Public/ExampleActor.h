@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE: Engine Actor
 #include "ExampleActor.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FExampleActorOnExampleUpdatedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FExampleActorOnExampleUpdatedEvent);
 
 UCLASS()
 class AExampleActor : public AActor {
@@ -17,13 +17,13 @@ protected:
     float Field;
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ExampleFunction();
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_ExampleFunction();
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ExampleFunction();
     
     AExampleActor();

@@ -1,8 +1,8 @@
 #include "DoubleDrillItem.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
 class UFSDPhysicalMaterial;
+class AActor;
 
 void ADoubleDrillItem::Server_StopMining_Implementation() {
 }

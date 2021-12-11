@@ -7,8 +7,8 @@ class UFSDCreateSessionCallbackProxy;
 class UObject;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDCreateSessionCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDCreateSessionCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDCreateSessionCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDCreateSessionCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UFSDCreateSessionCallbackProxy : public UOnlineBlueprintCallProxyBase {

@@ -2,11 +2,11 @@
 #include "Templates/SubclassOf.h"
 
 class UAsyncManager;
-class UPlayerCharacterID;
 class UObject;
+class UPlayerCharacterID;
 class APlayerCharacter;
-class UDifficultySetting;
 class UInventoryList;
+class UDifficultySetting;
 class UPerkAsset;
 class UHUDVisibilityGroup;
 class UMissionStat;

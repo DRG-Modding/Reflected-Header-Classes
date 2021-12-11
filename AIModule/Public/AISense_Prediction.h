@@ -5,8 +5,8 @@
 #include "AISense_Prediction.generated.h"
 
 class AAIController;
-class AActor;
 class APawn;
+class AActor;
 
 UCLASS()
 class AIMODULE_API UAISense_Prediction : public UAISense {

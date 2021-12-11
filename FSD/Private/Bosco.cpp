@@ -1,11 +1,11 @@
 #include "Bosco.h"
 #include "Net/UnrealNetwork.h"
 
-class UUpgradableBoscoComponent;
 class UPrimitiveComponent;
-class UTerrainMaterial;
 class UFSDPhysicalMaterial;
+class UTerrainMaterial;
 class UBoscoAbillityComponent;
+class UUpgradableBoscoComponent;
 
 void ABosco::UseABillity() {
 }

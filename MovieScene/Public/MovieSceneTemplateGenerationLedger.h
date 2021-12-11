@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneTrackIdentifier.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "MovieSceneTrackIdentifier.h"
 #include "MovieSceneFrameRange.h"
 #include "MovieSceneTemplateGenerationLedger.generated.h"
 

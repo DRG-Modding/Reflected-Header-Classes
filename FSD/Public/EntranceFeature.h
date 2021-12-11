@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RoomFeature.h"
+#include "ECaveEntrancePriority.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "ECaveEntranceType.h"
-#include "ECaveEntrancePriority.h"
 #include "EntranceFeature.generated.h"
 
 UCLASS(EditInlineNew)

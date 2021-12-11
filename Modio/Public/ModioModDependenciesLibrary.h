@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioPagedResult.h"
 //CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+#include "ModioPagedResult.h"
 #include "ModioModDependencyList.h"
 #include "ModioModDependency.h"
 #include "ModioModDependenciesLibrary.generated.h"
@@ -11,10 +11,10 @@ class MODIO_API UModioModDependenciesLibrary : public UBlueprintFunctionLibrary 
     GENERATED_BODY()
 public:
 private:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioPagedResult GetPagedResult(const FModioModDependencyList& ModTags);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<FModioModDependency> GetDependencies(const FModioModDependencyList& ModTags);
     
 public:

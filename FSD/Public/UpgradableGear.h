@@ -14,7 +14,7 @@ class UUpgradableGear : public UInterface {
 class IUpgradableGear : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void GetGearStatEntry(AFSDPlayerState* PlayerState, UPARAM(Ref) TArray<FGearStatEntry>& Stats) const;
     
 };

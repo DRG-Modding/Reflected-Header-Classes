@@ -9,5 +9,7 @@ class FSD_API USchematicBankBase : public UDataAsset, public ISchematicBankInter
     GENERATED_BODY()
 public:
     USchematicBankBase();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

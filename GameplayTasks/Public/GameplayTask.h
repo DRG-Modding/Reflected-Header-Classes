@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-#include "GameplayTaskOwnerInterface.h"
 #include "ETaskResourceOverlapPolicy.h"
+#include "GameplayTaskOwnerInterface.h"
 #include "GameplayTask.generated.h"
 
 class UGameplayTask;
@@ -29,5 +29,7 @@ public:
     void EndTask();
     
     UGameplayTask();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

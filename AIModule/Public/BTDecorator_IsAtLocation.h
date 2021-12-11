@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FAIDistanceType.h"
-#include "BTDecorator_BlackboardBase.h"
 #include "AIDataProviderFloatValue.h"
+#include "BTDecorator_BlackboardBase.h"
+#include "FAIDistanceType.h"
 #include "BTDecorator_IsAtLocation.generated.h"
 
 UCLASS()

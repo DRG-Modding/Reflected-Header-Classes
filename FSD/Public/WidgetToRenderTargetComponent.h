@@ -7,10 +7,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "WidgetToRenderTargetComponent.generated.h"
 
-class UTextureRenderTarget2D;
+class UUserWidget;
 class ULocalPlayer;
 class UMaterialInterface;
-class UUserWidget;
+class UTextureRenderTarget2D;
 class UMaterialInstanceDynamic;
 
 UCLASS(BlueprintType, EditInlineNew)
@@ -94,16 +94,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void RequestRedraw();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UUserWidget* GetUserWidgetObject() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTextureRenderTarget2D* GetRenderTarget() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ULocalPlayer* GetOwnerPlayer() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInstanceDynamic* GetMaterialInstance() const;
     
     UWidgetToRenderTargetComponent();

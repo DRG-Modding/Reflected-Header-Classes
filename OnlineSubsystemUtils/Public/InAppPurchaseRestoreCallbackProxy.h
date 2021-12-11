@@ -9,8 +9,8 @@
 class UInAppPurchaseRestoreCallbackProxy;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInAppPurchaseRestoreCallbackProxyOnSuccess, TEnumAsByte<EInAppPurchaseState::Type>, CompletionStatus, const TArray<FInAppPurchaseRestoreInfo>&, InAppRestorePurchaseInformation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInAppPurchaseRestoreCallbackProxyOnFailure, TEnumAsByte<EInAppPurchaseState::Type>, CompletionStatus, const TArray<FInAppPurchaseRestoreInfo>&, InAppRestorePurchaseInformation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInAppPurchaseRestoreCallbackProxyOnSuccess, TEnumAsByte<EInAppPurchaseState::Type>, CompletionStatus, const TArray<FInAppPurchaseRestoreInfo>&, InAppRestorePurchaseInformation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInAppPurchaseRestoreCallbackProxyOnFailure, TEnumAsByte<EInAppPurchaseState::Type>, CompletionStatus, const TArray<FInAppPurchaseRestoreInfo>&, InAppRestorePurchaseInformation);
 
 UCLASS(BlueprintType, MinimalAPI)
 class UInAppPurchaseRestoreCallbackProxy : public UObject {

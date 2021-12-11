@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE: Engine AnimInstance
 #include "AnimSharingStateInstance.generated.h"
 
-class AActor;
 class UAnimSequence;
 class UAnimSharingInstance;
+class AActor;
 
 UCLASS(NonTransient)
 class ANIMATIONSHARING_API UAnimSharingStateInstance : public UAnimInstance {

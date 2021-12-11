@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
 #include "ProjectileLauncherBaseComponent.generated.h"
 
-class UItemUpgrade;
 class AProjectileBase;
+class UItemUpgrade;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FProjectileLauncherBaseComponentOnProjectileSpawned, AProjectileBase*, Projectile);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FProjectileLauncherBaseComponentOnProjectileSpawned, AProjectileBase*, Projectile);
 
 UCLASS(Abstract)
 class UProjectileLauncherBaseComponent : public UWeaponFireComponent {
@@ -39,13 +39,13 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     bool CameraToMuzzleFireCheck;
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_StopFire();
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_Fire(FVector Origin, FVector_NetQuantizeNormal Direction, FVector_NetQuantizeNormal initialBonusVelocity, AProjectileBase* DormentProjectile, bool notifyClients);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_ShowHit();
     
 public:

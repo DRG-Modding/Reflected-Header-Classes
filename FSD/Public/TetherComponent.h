@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
+#include "TetherMessageSettings.h"
 #include "ETetherMessageDirection.h"
 #include "ETetherConnectionMode.h"
-#include "TetherMessageSettings.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "TetherComponent.generated.h"
 
-class UMeshComponent;
 class UTetherComponent;
+class UMeshComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTetherComponentOnPowerChanged, bool, hasPower);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTetherComponentOnConnectionRangeUpdated, float, range);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTetherComponentOnConnectionChanged, UTetherComponent*, frontConnection, UTetherComponent*, backConnection);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTetherComponentOnTetherMessage, const FName&, Message);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTetherComponentOnPowerChanged, bool, hasPower);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTetherComponentOnConnectionRangeUpdated, float, range);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTetherComponentOnConnectionChanged, UTetherComponent*, frontConnection, UTetherComponent*, backConnection);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTetherComponentOnTetherMessage, const FName&, Message);
 
 UCLASS(BlueprintType)
 class FSD_API UTetherComponent : public UActorComponent {
@@ -91,13 +91,13 @@ public:
     void ResetConnectionHistory();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_HasPower();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ForwardConnection();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_BackConnection();
     
 public:
@@ -105,35 +105,35 @@ public:
     void MessageTetherLine(const FName& Message, float Delay, ETetherMessageDirection messageDirection);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void MessageBody(const FTetherMessageSettings& Message);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsStartOfLine() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFullyConnected() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEndOfLine() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsConnected() const;
     
     UFUNCTION(BlueprintCallable)
     UTetherComponent* GetTetherlineEnd(bool front);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasPower() const;
     
     UFUNCTION(BlueprintCallable)
     UTetherComponent* GetForwardConnection();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetConnectionRange() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetConnectionPoint() const;
     
     UFUNCTION(BlueprintCallable)

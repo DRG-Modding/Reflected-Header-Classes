@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraTestStructInner.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "NiagaraTestStructInner.h"
 #include "NiagaraTestStruct.generated.h"
 
 USTRUCT()

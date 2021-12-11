@@ -4,12 +4,12 @@
 #include "BlueprintSessionResult.h"
 #include "FindSessionsCallbackProxy.generated.h"
 
-class UObject;
 class UFindSessionsCallbackProxy;
+class UObject;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindSessionsCallbackProxyOnSuccess, const TArray<FBlueprintSessionResult>&, Results);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindSessionsCallbackProxyOnFailure, const TArray<FBlueprintSessionResult>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindSessionsCallbackProxyOnSuccess, const TArray<FBlueprintSessionResult>&, Results);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindSessionsCallbackProxyOnFailure, const TArray<FBlueprintSessionResult>&, Results);
 
 UCLASS(MinimalAPI)
 class UFindSessionsCallbackProxy : public UOnlineBlueprintCallProxyBase {
@@ -21,16 +21,16 @@ public:
     UPROPERTY(BlueprintAssignable)
     FFindSessionsCallbackProxyOnFailure OnFailure;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetServerName(const FBlueprintSessionResult& Result);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetPingInMs(const FBlueprintSessionResult& Result);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetMaxPlayers(const FBlueprintSessionResult& Result);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetCurrentPlayers(const FBlueprintSessionResult& Result);
     
     UFUNCTION(BlueprintCallable)

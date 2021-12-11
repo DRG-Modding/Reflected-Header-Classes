@@ -11,7 +11,7 @@ class INTERACTIVETOOLSFRAMEWORK_API UGizmoClickTarget : public UInterface {
 class INTERACTIVETOOLSFRAMEWORK_API IGizmoClickTarget : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     virtual void UpdateHoverState(bool bHovering) const PURE_VIRTUAL(UpdateHoverState,);
     
 };

@@ -1,7 +1,7 @@
 #include "AISense_Hearing.h"
 
-class AActor;
 class UObject;
+class AActor;
 
 void UAISense_Hearing::ReportNoiseEvent(UObject* WorldContextObject, FVector NoiseLocation, float Loudness, AActor* Instigator, float MaxRange, FName Tag) {
 }

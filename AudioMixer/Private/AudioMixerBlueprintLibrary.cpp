@@ -1,9 +1,9 @@
 #include "AudioMixerBlueprintLibrary.h"
 
-class USoundWave;
 class UObject;
 class USoundSubmix;
 class USoundEffectSourcePresetChain;
+class USoundWave;
 class USoundEffectSubmixPreset;
 class USoundCue;
 

@@ -3,11 +3,11 @@
 
 class ADebrisDataActor;
 class UTerrainMaterial;
-class UParticleSystem;
 class AActor;
 class UTexture2D;
-class USoundCue;
+class UParticleSystem;
 class UUserWidget;
+class USoundCue;
 
 UTerrainMaterial* UBiome::GetRockMaterial() const {
     return NULL;

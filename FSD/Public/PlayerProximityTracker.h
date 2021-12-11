@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "PlayerSphere.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "ProximityTriggerItem.h"
-#include "PlayerSphere.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "PlayerProximityTracker.generated.h"
 
-class APlayerCharacter;
 class UObject;
+class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FPlayerProximityTrackerProximityCallback, APlayerCharacter*, Player, bool, enteredTrigger);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FPlayerProximityTrackerProximityCallback, APlayerCharacter*, Player, bool, enteredTrigger);
 
 UCLASS(BlueprintType)
 class UPlayerProximityTracker : public UActorComponent {
@@ -38,10 +38,10 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void Receive_RegisterForAnyPlayerProximity(UObject* WorldContextObject, const FVector& Location, float Distance, const FPlayerProximityTrackerProximityCallback& proximityCallback, bool triggerOnlyOnce);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FPlayerSphere GetPrimarySphere() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FPlayerSphere> GetPlayerSpheres() const;
     
     UPlayerProximityTracker();

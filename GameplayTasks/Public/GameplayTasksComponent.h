@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameplayResourceSet.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "GameplayTaskOwnerInterface.h"
+#include "GameplayResourceSet.h"
 #include "EGameplayTaskRunResult.h"
 #include "GameplayTasksComponent.generated.h"
 
 class UGameplayTask;
 class UGameplayTaskResource;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameplayTasksComponentOnClaimedResourcesChange, FGameplayResourceSet, NewlyClaimed, FGameplayResourceSet, FreshlyReleased);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameplayTasksComponentOnClaimedResourcesChange, FGameplayResourceSet, NewlyClaimed, FGameplayResourceSet, FreshlyReleased);
 
 UCLASS(BlueprintType, EditInlineNew)
 class GAMEPLAYTASKS_API UGameplayTasksComponent : public UActorComponent, public IGameplayTaskOwnerInterface {
@@ -36,7 +36,7 @@ public:
     UPROPERTY(BlueprintReadWrite)
     FGameplayTasksComponentOnClaimedResourcesChange OnClaimedResourcesChange;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SimulatedTasks();
     
     UFUNCTION(BlueprintCallable)
@@ -45,5 +45,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UGameplayTasksComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

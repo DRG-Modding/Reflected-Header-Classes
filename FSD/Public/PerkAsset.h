@@ -3,18 +3,18 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "EPerkHUDActivationLocation.h"
 #include "EPerkUsageType.h"
 #include "EPerkTierState.h"
-#include "EPerkHUDActivationLocation.h"
 #include "PerkAsset.generated.h"
 
 class UPerkHUDActivationWidget;
+class UObject;
 class UTexture2D;
 class UDialogDataAsset;
 class UPerkLogic;
-class APlayerController;
 class UPerkHUDIconWidget;
-class UObject;
+class APlayerController;
 class UPlayerCharacterID;
 class UPerkAsset;
 class UPerkDelegateItem;
@@ -72,80 +72,80 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetCharacterPerks(UObject* WorldContext, UPlayerCharacterID* characterID, const TArray<UPerkAsset*>& perks);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUsageType(EPerkUsageType InType) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPerkAvailableInTier(int32 Tier) const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEquippedBy(UObject* WorldContext, UPlayerCharacterID* characterID) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetUseCoolDownTimeLeft(APlayerController* PlayerController) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetUseCoolDownProgress(APlayerController* PlayerController) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetUseCoolDownDuration(APlayerController* PlayerController) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EPerkUsageType GetUsageType() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EPerkTierState GetStateAtTier(UObject* WorldContext, int32 Tier) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetRemainingUseCharges(APlayerController* PlayerController) const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetRankTier(int32 Rank) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetRankDescription(int32 Rank) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetRankCost(int32 Rank) const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetRankAtTier(const int32 Tier, int32& Rank) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxUseCharges(APlayerController* PlayerController) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<UPerkHUDIconWidget> GetHudIconWidgetClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSubclassOf<UPerkHUDActivationWidget>> GetHudActivationWidgets(EPerkHUDActivationLocation Location) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPerkDelegateItem* GetDelegates(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCurrentRank(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetChargesUsed(APlayerController* PlayerController) const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetAdditionalRankDescription(int32 Rank) const;
     
     UFUNCTION(BlueprintCallable)
     bool Equip(UObject* WorldContext, UPlayerCharacterID* characterID);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanUseCharge(APlayerController* PlayerController) const;
     
 protected:

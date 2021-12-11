@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "StandardItemUpgrade.h"
 #include "EPlasmaCarbineUpgrades.h"
+#include "StandardItemUpgrade.h"
 #include "UpgradeValues.h"
 #include "PlasmaCarbineUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UPlasmaCarbineUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EPlasmaCarbineUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EPlasmaCarbineUpgrades NewUpgradeType);
     
     UPlasmaCarbineUpgrade();

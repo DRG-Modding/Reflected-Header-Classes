@@ -5,10 +5,10 @@
 #include "EliminationDescriptors.h"
 #include "EliminationObjective.generated.h"
 
-class UCaveInfluencer;
+class UDebrisPositioning;
 class AActor;
 class AFSDPawn;
-class UDebrisPositioning;
+class UCaveInfluencer;
 class UDebrisBase;
 class UHealthComponentBase;
 class UEnemyDescriptor;
@@ -62,16 +62,16 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTargetSpawned();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTargetKilled();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetKilled(UHealthComponentBase* Health);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EnemiesToKill(int32 prevAmount);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_EnemiesKilled(int32 prevAmount);
     
 public:

@@ -17,10 +17,10 @@ public:
     UPROPERTY(EditAnywhere)
     float PixelHitDistanceThreshold;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UpdateWorldLocalState(bool bWorldIn);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UpdateHoverState(bool bHoveringIn);
     
     UGizmoBaseComponent();

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Margin.h"
 #include "SlateWidgetStyle.h"
 #include "ButtonStyle.h"
 #include "TextBlockStyle.h"
-#include "Margin.h"
 #include "HyperlinkStyle.generated.h"
 
 USTRUCT(BlueprintType)

@@ -6,8 +6,8 @@
 
 class USoundWave;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynthSamplePlayerOnSampleLoaded);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSynthSamplePlayerOnSamplePlaybackProgress, float, ProgressPercent, float, ProgressTimeSeconds);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynthSamplePlayerOnSampleLoaded);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSynthSamplePlayerOnSamplePlaybackProgress, float, ProgressPercent, float, ProgressTimeSeconds);
 
 UCLASS()
 class SYNTHESIS_API USynthSamplePlayer : public USynthComponent {
@@ -37,16 +37,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void SeekToTime(float TimeSec, ESamplePlayerSeekType SeekType, bool bWrap);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLoaded() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSampleDuration() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentPlaybackProgressTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentPlaybackProgressPercent() const;
     
     USynthSamplePlayer();

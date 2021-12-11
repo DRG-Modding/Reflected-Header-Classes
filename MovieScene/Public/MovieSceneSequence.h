@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneSignedObject.h"
-#include "MovieSceneEvaluationTemplate.h"
 #include "EMovieSceneCompletionMode.h"
+#include "MovieSceneEvaluationTemplate.h"
 #include "MovieSceneObjectBindingID.h"
 #include "MovieSceneSequence.generated.h"
 
@@ -24,10 +24,10 @@ protected:
     bool bPlayableDirectly;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FMovieSceneObjectBindingID> FindBindingsByTag(FName InBindingName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FMovieSceneObjectBindingID FindBindingByTag(FName InBindingName) const;
     
     UMovieSceneSequence();

@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE: Engine DataAsset
 #include "MissionWarning.generated.h"
 
-class UMissionStat;
 class UMutator;
-class UTexture2D;
 class URunningMissionBP;
 class UObjective;
 class UMissionMutator;
+class UMissionStat;
+class UTexture2D;
 
 UCLASS(BlueprintType)
 class UMissionWarning : public UDataAsset {

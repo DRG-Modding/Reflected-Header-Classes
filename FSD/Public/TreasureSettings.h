@@ -5,8 +5,8 @@
 #include "ETreasureType.h"
 #include "TreasureSettings.generated.h"
 
-class UDrinkableDataAsset;
 class UItemSkinSet;
+class UDrinkableDataAsset;
 class USpecialEvent;
 class UVictoryPose;
 class UItemAquisitionSource;

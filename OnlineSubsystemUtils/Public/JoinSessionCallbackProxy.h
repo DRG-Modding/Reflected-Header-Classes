@@ -8,8 +8,8 @@ class UJoinSessionCallbackProxy;
 class UObject;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FJoinSessionCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FJoinSessionCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FJoinSessionCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FJoinSessionCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UJoinSessionCallbackProxy : public UOnlineBlueprintCallProxyBase {

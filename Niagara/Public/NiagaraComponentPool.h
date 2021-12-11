@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NCPool.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
+#include "NCPool.h"
 #include "NiagaraComponentPool.generated.h"
 
 class UNiagaraSystem;

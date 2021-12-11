@@ -7,15 +7,15 @@
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "WoodLouse.generated.h"
 
-class AProjectile;
 class USceneComponent;
+class UStatusEffect;
 class UPawnSensingComponent;
 class UFakeMoverSettings;
-class UStatusEffect;
+class AProjectile;
 class AActor;
+class UAudioComponent;
 class USoundBase;
 class UDamageClass;
-class UAudioComponent;
 class APawn;
 
 UCLASS()
@@ -193,7 +193,7 @@ private:
     bool CanStandOnAnySurface;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SwitchedState(EWoodLouseState NewCurrentState);
     
     UFUNCTION(BlueprintCallable)
@@ -215,21 +215,21 @@ public:
     void SetRotateToTarget(bool aRotateToTarget);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SeePawn(APawn* aSenPawn);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_LastHit();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EWoodLouseState GetRollerState() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BumpedTarget();
     
 public:

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: Slate EStretch
 //CROSS-MODULE INCLUDE: Slate EStretchDirection
+//CROSS-MODULE INCLUDE: Slate EStretch
 #include "ScaleBox.generated.h"
 
 UCLASS()

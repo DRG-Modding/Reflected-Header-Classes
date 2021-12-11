@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "NavCollisionCylinder.h"
 //CROSS-MODULE INCLUDE: Engine NavCollisionBase
+#include "NavCollisionCylinder.h"
 #include "NavCollisionBox.h"
 #include "NavCollision.generated.h"
 

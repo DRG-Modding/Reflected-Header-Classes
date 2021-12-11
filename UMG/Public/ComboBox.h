@@ -5,7 +5,7 @@
 
 class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FComboBoxOnGenerateWidgetEvent, UObject*, Item);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FComboBoxOnGenerateWidgetEvent, UObject*, Item);
 
 UCLASS()
 class UMG_API UComboBox : public UWidget {

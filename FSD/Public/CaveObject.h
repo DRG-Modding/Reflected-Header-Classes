@@ -17,7 +17,7 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ResumeNetworkUpdates();
     
-    UFUNCTION(BlueprintAuthorityOnly, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void Recieve_OnGameStarted();
     
     UFUNCTION(BlueprintCallable)

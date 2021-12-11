@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine PrimitiveComponent
 #include "ECaveEntranceType.h"
+//CROSS-MODULE INCLUDE: Engine PrimitiveComponent
 #include "ECaveEntrancePriority.h"
 #include "CaveEntranceComponent.generated.h"
 

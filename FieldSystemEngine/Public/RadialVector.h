@@ -16,7 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FVector Position;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     URadialVector* SetRadialVector(float NewMagnitude, FVector NewPosition);
     
     URadialVector();

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TransformParameterNameAndCurves.h"
+#include "ColorParameterNameAndCurves.h"
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneEvalTemplate
 #include "BoolParameterNameAndCurve.h"
 #include "ScalarParameterNameAndCurve.h"
 #include "Vector2DParameterNameAndCurves.h"
 #include "VectorParameterNameAndCurves.h"
-#include "ColorParameterNameAndCurves.h"
-#include "TransformParameterNameAndCurves.h"
 #include "MovieSceneParameterSectionTemplate.generated.h"
 
 USTRUCT()

@@ -23,16 +23,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetDisplayText(const FText& NewDisplayText);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UVariant* GetVariantByName(const FString& VariantName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UVariant* GetVariant(int32 VariantIndex);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumVariants();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetDisplayText() const;
     
     UVariantSet();

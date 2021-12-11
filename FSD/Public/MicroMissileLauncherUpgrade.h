@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "MicroMissileLauncherUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UMicroMissileLauncherUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EMicroMissileLauncherUpgrades upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EMicroMissileLauncherUpgrades NewUpgradeType);
     
     UMicroMissileLauncherUpgrade();

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
-//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 #include "EEasingFuncType.h"
 #include "ERotationComponent.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 #include "RotationRetargetingInfo.generated.h"
 
 USTRUCT(BlueprintType)

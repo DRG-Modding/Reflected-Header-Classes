@@ -1,7 +1,7 @@
 #include "WrapBox.h"
 
-class UWrapBoxSlot;
 class UWidget;
+class UWrapBoxSlot;
 
 void UWrapBox::SetInnerSlotPadding(FVector2D InPadding) {
 }

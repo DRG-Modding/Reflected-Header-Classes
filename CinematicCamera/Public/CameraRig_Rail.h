@@ -27,7 +27,7 @@ private:
     USceneComponent* RailCameraMount;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USplineComponent* GetRailSplineComponent();
     
     ACameraRig_Rail();

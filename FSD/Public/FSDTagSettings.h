@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "FSDTagsRoot.h"
+//CROSS-MODULE INCLUDE: Engine DataAsset
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
 #include "FSDTagSettings.generated.h"
 

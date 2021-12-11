@@ -4,17 +4,17 @@
 //CROSS-MODULE INCLUDE: Engine CheatManager
 #include "FSDCheatManager.generated.h"
 
-class AFSDAIController;
 class UObject;
 class AActor;
+class UResourceData;
+class UBaseCritterDescriptor;
 class UPlayerCharacterID;
 class UEnemyDescriptor;
-class UBaseCritterDescriptor;
 class APawn;
+class AFSDAIController;
 class APlayerCharacter;
-class UResourceData;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDCheatManagerToggleHoopGameMovement);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDCheatManagerToggleHoopGameMovement);
 
 UCLASS()
 class UFSDCheatManager : public UCheatManager {
@@ -126,7 +126,7 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void R_AddCredits(int32 Number);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void R_AddCraftingResource(int32 Amount, int32 Type);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -149,19 +149,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void DestroyAllInstances(TSubclassOf<AActor> destroy);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void D_Rejoin_RestoreState();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void D_MovieModeStartWithCameraShake(bool Value);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void D_MovieModeStartAtOrigin(bool Value);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void D_EnableMovieModeInSpacerig(bool Value);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void D_EnableMovieMode(bool Value);
     
     UFUNCTION(BlueprintCallable)
@@ -239,10 +239,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void Cheat_AddCredits(UObject* WorldContextObject, int32 Amount);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Windows_PrintStack() const;
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Windows_CloseAll() const;
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -251,52 +251,52 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_WeaponUpgrades();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_WeaponSkins_Paintjobs();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_WeaponSkins_Frameworks();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_WeaponSkins();
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_Weapons();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_StoreVanity();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_Poses_ForAll();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_Poses();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_PickaxeParts();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_Perks();
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_Drinks();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_Beers();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll_ArmorMats();
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_UnlockAll();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Unlock_Facility();
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_Treasures_Track(bool Track);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Treasures_Reward(int32 count);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -341,7 +341,7 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_SetPlayers(int32 Number);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_SetHealth(float Health);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -392,19 +392,19 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_ScoutFlareInfiniteDuration(bool Enabled);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Schematics_UnlockAll();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Schematics_ResetAll();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Schematics_ForgeAll();
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_Schematics_ClearHasSeenFirstMessage();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Schematic_GiveRandom();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -422,31 +422,31 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_ResetCheatedResources(int32 newAmount);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_ResetAll_Vanity();
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_ResetAchievements();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Reset_YearTwoGifts();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Reset_WeaponSkinsAndUpgrades();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Reset_WeaponSkins_Paintjobs();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Reset_WeaponSkins_Framworks();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Reset_WeaponSkins();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Reset_PickaxeParts();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Reset_Perks();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -464,7 +464,7 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_RemoveAllWidgets();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_RefreshDailyDeal(int32 Seed);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -485,13 +485,13 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_Promotion_ClearRewardsSeen();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_ProjectileDrawPaths();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_ProjectileDebugPrintToggle();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_MissionMap_TestDistribution();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -503,7 +503,7 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_MissionMap_DoubleWarning(int32 indexA, int32 indexB);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_MinersManual_EnableWorkInProgress(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -536,13 +536,13 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_GiveAllGenericHeroItems();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_GameDLC_ResetAnnouncements();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_FSDEvent_SetDebugEvent(const FString& EventName);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_FSDEvent_ClearSeenRewards();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -557,19 +557,19 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_FailMission();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     static void C_FadeFromBlack(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, Exec)
     void C_Facility_DisableShields();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Escort_ShowSmartRockDebug(bool shouldShow);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Escort_SetMuleSpeed(UObject* WorldContextObject, float Speed);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Escort_JumpToNextPhase(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -614,7 +614,7 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void C_Campaign_CompleteMain();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void C_Campaign_CompleteCurrent();
     
     UFUNCTION(BlueprintCallable, Exec)

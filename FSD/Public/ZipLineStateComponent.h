@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ZipLine.h"
 #include "CharacterStateComponent.h"
 #include "ZipLineConnectorHandler.h"
-#include "ZipLine.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ZipLineStateComponent.generated.h"
 
-class UAudioComponent;
-class USoundBase;
 class UDialogDataAsset;
 class UDamageClass;
+class USoundBase;
+class UAudioComponent;
 class AZipLineProjectile;
 class AActor;
 
@@ -111,37 +111,37 @@ protected:
     UPROPERTY(Export)
     UAudioComponent* AudioComponent;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetSpeedBoostActivated(bool InBoostActivated);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerJumpPressed(bool JumpForward);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerForwardInputChanged(float Input);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerChangeDirection();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveSpeedBoostDeactivated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveSpeedBoostActivated();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ZipLine();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerHit(float Damage, UDamageClass* DamageClass, AActor* DamageCauser, bool anyHealthLost);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetSpeedBoostActivated() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FVector GetJumpVector(FVector LookVector, FVector CurrentVelocity);
     
-    UFUNCTION(NetMulticast, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable, WithValidation)
     void All_SpeedBoostChanged(bool bActive);
     
 public:

@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAREnvironmentCaptureProbeType.h"
-#include "EARFaceTrackingUpdate.h"
-#include "EARFrameSyncMode.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
-#include "EARWorldAlignment.h"
 #include "EARSessionType.h"
-#include "EARLightEstimationMode.h"
+#include "EARWorldAlignment.h"
 #include "EARPlaneDetectionMode.h"
+#include "EARFrameSyncMode.h"
+#include "EARLightEstimationMode.h"
+#include "EAREnvironmentCaptureProbeType.h"
 #include "ARVideoFormat.h"
 #include "EARFaceTrackingDirection.h"
+#include "EARFaceTrackingUpdate.h"
 #include "EARSessionTrackingFeature.h"
 #include "ARSessionConfig.generated.h"
 
-class UARCandidateImage;
 class UARCandidateObject;
+class UARCandidateImage;
 
 UCLASS(BlueprintType)
 class AUGMENTEDREALITY_API UARSessionConfig : public UDataAsset {
@@ -109,19 +109,19 @@ protected:
     EARSessionTrackingFeature EnabledSessionTrackingFeature;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldResetTrackedObjects() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldResetCameraTracking() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldRenderCameraOverlay() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldEnableCameraTracking() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldEnableAutoFocus() const;
     
     UFUNCTION(BlueprintCallable)
@@ -151,46 +151,46 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCandidateObjectList(const TArray<UARCandidateObject*>& InCandidateObjects);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<uint8> GetWorldMapData() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARWorldAlignment GetWorldAlignment() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARSessionType GetSessionType() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARPlaneDetectionMode GetPlaneDetectionMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxNumSimultaneousImagesTracked() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARLightEstimationMode GetLightEstimationMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARFrameSyncMode GetFrameSyncMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARFaceTrackingUpdate GetFaceTrackingUpdate() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARFaceTrackingDirection GetFaceTrackingDirection() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EAREnvironmentCaptureProbeType GetEnvironmentCaptureProbeType() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARSessionTrackingFeature GetEnabledSessionTrackingFeature() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FARVideoFormat GetDesiredVideoFormat() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UARCandidateObject*> GetCandidateObjectList() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UARCandidateImage*> GetCandidateImageList() const;
     
     UFUNCTION(BlueprintCallable)

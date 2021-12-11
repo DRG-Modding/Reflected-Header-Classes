@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine UniqueNetIdRepl
-#include "EChatMessageType.h"
 #include "EChatSenderType.h"
+#include "EChatMessageType.h"
+//CROSS-MODULE INCLUDE: Engine UniqueNetIdRepl
 #include "FSDChatMessage.generated.h"
 
 USTRUCT(BlueprintType)

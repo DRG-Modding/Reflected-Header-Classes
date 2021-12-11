@@ -6,8 +6,8 @@
 class UObject;
 class UARSaveWorldAsyncTaskBlueprintProxy;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARSaveWorldAsyncTaskBlueprintProxyOnFailed, const TArray<uint8>&, SavedWorld);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARSaveWorldAsyncTaskBlueprintProxyOnSuccess, const TArray<uint8>&, SavedWorld);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARSaveWorldAsyncTaskBlueprintProxyOnFailed, const TArray<uint8>&, SavedWorld);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARSaveWorldAsyncTaskBlueprintProxyOnSuccess, const TArray<uint8>&, SavedWorld);
 
 UCLASS()
 class UARSaveWorldAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy {

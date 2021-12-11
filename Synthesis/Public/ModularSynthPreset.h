@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: Engine TableRowBase
+#include "ESynth1OscType.h"
+#include "ESynthModEnvPatch.h"
+#include "ESynthLFOPatchType.h"
 #include "ESynthLFOMode.h"
 #include "ESynthLFOType.h"
-//CROSS-MODULE INCLUDE: Engine TableRowBase
-#include "ESynthLFOPatchType.h"
-#include "ESynth1OscType.h"
-#include "EpicSynth1Patch.h"
-#include "ESynthModEnvPatch.h"
 #include "ESynthFilterType.h"
+#include "ESynthStereoDelayMode.h"
 #include "ESynthModEnvBiasPatch.h"
 #include "ESynthFilterAlgorithm.h"
-#include "ESynthStereoDelayMode.h"
+#include "EpicSynth1Patch.h"
 #include "ModularSynthPreset.generated.h"
 
 USTRUCT(BlueprintType)

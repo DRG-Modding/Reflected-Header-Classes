@@ -6,8 +6,8 @@
 #include "UpgradeValues.h"
 #include "FlameThrowerUpgrade.generated.h"
 
-class AItem;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UFlameThrowerUpgrade : public UStandardItemUpgrade {
@@ -18,7 +18,7 @@ protected:
     EFlameThrowerUpgradeType upgradeType;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, EFlameThrowerUpgradeType NewUpgradeType);
     
     UFlameThrowerUpgrade();

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
-//CROSS-MODULE INCLUDE: CoreUObject RandomStream
 #include "RoomGeneratorGroupInstance.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
+//CROSS-MODULE INCLUDE: CoreUObject RandomStream
 #include "RoomGeneratorGroup.generated.h"
 
 class URoomGenerator;
@@ -21,7 +21,7 @@ public:
     UFUNCTION(BlueprintCallable)
     URoomGenerator* GetRandomRoom(UPARAM(Ref) FRandomStream& RandomStream);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRoomGeneratorGroupInstance CreateGroupInstance() const;
     
     URoomGeneratorGroup();

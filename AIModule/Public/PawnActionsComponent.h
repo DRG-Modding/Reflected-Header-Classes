@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "PawnActionStack.h"
-#include "PawnActionEvent.h"
+//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "EAIRequestPriority.h"
+#include "PawnActionEvent.h"
 #include "EPawnActionAbortState.h"
 #include "PawnActionsComponent.generated.h"
 

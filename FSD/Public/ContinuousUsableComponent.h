@@ -6,7 +6,7 @@
 
 class APlayerCharacter;
 
-UDELEGATE(BlueprintAuthorityOnly) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FContinuousUsableComponentUseTick, APlayerCharacter*, User, EInputKeys, Key);
+UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FContinuousUsableComponentUseTick, APlayerCharacter*, User, EInputKeys, Key);
 
 UCLASS()
 class UContinuousUsableComponent : public UUsableComponent {

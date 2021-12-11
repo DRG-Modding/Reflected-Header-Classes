@@ -20,10 +20,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SelectOption(int32 OptionIndex);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSelectedOption() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AActor*> GetOptions() const;
     
     ASwitchActor();

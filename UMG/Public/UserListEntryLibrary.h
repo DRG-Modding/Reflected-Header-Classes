@@ -11,13 +11,13 @@ UCLASS(BlueprintType)
 class UMG_API UUserListEntryLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsListItemSelected(TScriptInterface<IUserListEntry> UserListEntry);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsListItemExpanded(TScriptInterface<IUserListEntry> UserListEntry);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UListViewBase* GetOwningListView(TScriptInterface<IUserListEntry> UserListEntry);
     
     UUserListEntryLibrary();

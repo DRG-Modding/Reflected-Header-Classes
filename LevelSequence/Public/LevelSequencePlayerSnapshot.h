@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE: MovieScene MovieSceneSequenceID
 #include "LevelSequencePlayerSnapshot.generated.h"
 
-class UCameraComponent;
 class ULevelSequence;
+class UCameraComponent;
 
 USTRUCT(BlueprintType)
 struct FLevelSequencePlayerSnapshot {

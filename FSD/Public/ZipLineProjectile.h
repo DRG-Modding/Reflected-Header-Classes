@@ -11,7 +11,7 @@ class UMaterialInstanceDynamic;
 class UPointLightComponent;
 class UStatusEffect;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FZipLineProjectileCallback, float, Output);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FZipLineProjectileCallback, float, Output);
 
 UCLASS(Abstract)
 class AZipLineProjectile : public AActor {
@@ -45,10 +45,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TSubclassOf<UStatusEffect> OnReleaseStatusEffect;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTimelineTick(float NewValue);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShoot(FVector Origin, FVector EndLocation);
     
 public:

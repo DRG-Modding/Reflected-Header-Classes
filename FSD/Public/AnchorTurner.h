@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: Engine HitResult
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine HitResult
 #include "AnchorTurner.generated.h"
 
 class USceneComponent;
 class USkeletalMeshComponent;
-class UPrimitiveComponent;
 class USphereComponent;
+class UPrimitiveComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAnchorTurnerOnSpunUp);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAnchorTurnerOnSpunUp);
 
 UCLASS()
 class AAnchorTurner : public AActor {
@@ -62,17 +62,17 @@ protected:
     UPROPERTY(EditAnywhere)
     float DecaySpeed;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Finished();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnLeftPushpoint(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEnteredPushpoint(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void GeneratorSpunUp();
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

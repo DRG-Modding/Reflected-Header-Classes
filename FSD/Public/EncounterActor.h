@@ -10,7 +10,7 @@ class AEncounterActor : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void Receive_EncounterHasSpawned(APawn* spawnedPawn);
     
 public:

@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "ENiagaraSortMode.h"
 #include "NiagaraRendererProperties.h"
-#include "ENiagaraSpriteFacingMode.h"
-#include "ENiagaraSpriteAlignment.h"
 #include "NiagaraUserParameterBinding.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "ENiagaraSpriteAlignment.h"
 #include "NiagaraVariableAttributeBinding.h"
+#include "ENiagaraSpriteFacingMode.h"
 #include "NiagaraSpriteRendererProperties.generated.h"
 
 class UMaterialInterface;

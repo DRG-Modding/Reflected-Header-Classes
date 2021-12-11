@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "PlayerAfflictionOverlayWidget.generated.h"
 
-class UTexture2D;
 class UPlayerAfflictionOverlay;
+class UTexture2D;
 
 UCLASS(EditInlineNew)
 class UPlayerAfflictionOverlayWidget : public UUserWidget {
@@ -18,10 +18,10 @@ protected:
     UPROPERTY(BlueprintReadOnly)
     UPlayerAfflictionOverlay* Overlay;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveEndOverlay();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveBeginOverlay(UTexture2D* InTexture, FLinearColor InTint);
     
 public:

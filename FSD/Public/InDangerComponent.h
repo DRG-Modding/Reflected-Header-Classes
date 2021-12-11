@@ -5,7 +5,7 @@
 
 class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FInDangerComponentOnInDanger);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FInDangerComponentOnInDanger);
 
 UCLASS(BlueprintType)
 class UInDangerComponent : public UActorComponent {
@@ -31,10 +31,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIsActive(bool aFlag);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDamage(float Amount);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsActive() const;
     
     UInDangerComponent();

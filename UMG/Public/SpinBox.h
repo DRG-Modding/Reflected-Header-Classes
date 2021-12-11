@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore ETextCommit
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "Widget.h"
 //CROSS-MODULE INCLUDE: SlateCore SpinBoxStyle
+//CROSS-MODULE INCLUDE: SlateCore ETextCommit
 //CROSS-MODULE INCLUDE: Slate ETextJustify
 //CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
 #include "SpinBox.generated.h"
 
 class USlateWidgetStyleAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(float, FSpinBoxValueDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpinBoxOnEndSliderMovement, float, InValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSpinBoxOnBeginSliderMovement);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpinBoxOnValueChanged, float, InValue);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSpinBoxOnValueCommitted, float, InValue, TEnumAsByte<ETextCommit::Type>, CommitMethod);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(float, FSpinBoxValueDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpinBoxOnEndSliderMovement, float, InValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSpinBoxOnBeginSliderMovement);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpinBoxOnValueChanged, float, InValue);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSpinBoxOnValueCommitted, float, InValue, TEnumAsByte<ETextCommit::Type>, CommitMethod);
 
 UCLASS()
 class UMG_API USpinBox : public UWidget {
@@ -133,31 +133,31 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAlwaysUsesDeltaSnap(bool bNewValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMinValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMinSliderValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMinFractionalDigits() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMaxValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMaxSliderValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxFractionalDigits() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDelta() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetAlwaysUsesDeltaSnap() const;
     
     UFUNCTION(BlueprintCallable)

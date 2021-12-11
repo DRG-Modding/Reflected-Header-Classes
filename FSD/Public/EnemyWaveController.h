@@ -15,7 +15,7 @@ protected:
     bool IsSuitableForSolo;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StartWave();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -24,7 +24,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PauseWave();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnWaveCompleted();
     
     UEnemyWaveController();

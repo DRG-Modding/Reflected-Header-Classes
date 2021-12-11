@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOffsetFrom.h"
-//CROSS-MODULE INCLUDE: Engine PawnMovementComponent
-#include "AsyncPathRequestsInterface.h"
 //CROSS-MODULE INCLUDE: FSDEngine DeepPathFinderPreference
 //CROSS-MODULE INCLUDE: FSDEngine DeepPathFinderType
 //CROSS-MODULE INCLUDE: FSDEngine DeepPathFinderSize
-//CROSS-MODULE INCLUDE: Engine ETeleportType
-#include "EDeepMovementState.h"
-#include "DeepRepPath.h"
-//CROSS-MODULE INCLUDE: Engine LatentActionInfo
+//CROSS-MODULE INCLUDE: Engine PawnMovementComponent
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-#include "EDeepMovementMode.h"
+//CROSS-MODULE INCLUDE: Engine ETeleportType
+#include "AsyncPathRequestsInterface.h"
+#include "EDeepMovementState.h"
 #include "HandleRotationOptions.h"
+#include "DeepRepPath.h"
+#include "EDeepMovementMode.h"
 #include "FakeMoverState.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE: Engine LatentActionInfo
+#include "EOffsetFrom.h"
 //CROSS-MODULE INCLUDE: CoreUObject Quat
 #include "DeepPathfinderMovement.generated.h"
 
@@ -23,11 +23,11 @@ class UFakeMoverSettings;
 class AActor;
 class UPawnStatsComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepPathfinderMovementOnPathBegin);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepPathfinderMovementOnPauseMovementElapsed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeepPathfinderMovementOnPathFinished, bool, success);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepPathfinderMovementOnRefreshDestination);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeepPathfinderMovementOnStateChanged, EDeepMovementState, State);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepPathfinderMovementOnPathBegin);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepPathfinderMovementOnPauseMovementElapsed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeepPathfinderMovementOnPathFinished, bool, success);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeepPathfinderMovementOnRefreshDestination);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeepPathfinderMovementOnStateChanged, EDeepMovementState, State);
 
 UCLASS()
 class UDeepPathfinderMovement : public UPawnMovementComponent, public IAsyncPathRequestsInterface {
@@ -278,17 +278,17 @@ public:
     bool PathExistsBetween(const FVector& From, const FVector& to);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PathMovedDist(uint32 lastPathMovedDist);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Path(const FDeepRepPath& oldPath);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_MoveSettings(const UFakeMoverSettings* NewMoveSettings);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFreezeAlignmentSet() const;
     
     UFUNCTION(BlueprintCallable)
@@ -306,13 +306,13 @@ public:
     UFUNCTION(BlueprintCallable)
     FVector GetPathForwardDirection();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     DeepPathFinderType GetPathfinderType() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     DeepPathFinderSize GetPathfinderSize() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EDeepMovementState GetMovementState() const;
     
     UFUNCTION(BlueprintCallable)
@@ -345,7 +345,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void FindNearestPathfinderPoint_Async(const FVector& Pos, float MaxDistance, bool& success, FVector& outPos, FLatentActionInfo LatentInfo);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector FindNearestPathfinderPoint(const FVector& Pos, float MaxDistance) const;
     
     UFUNCTION(BlueprintCallable)
@@ -363,5 +363,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UDeepPathfinderMovement();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

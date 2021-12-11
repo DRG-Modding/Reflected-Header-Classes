@@ -1,8 +1,8 @@
 #include "FSDFindSessionsCallbackProxy.h"
 
+class UFSDFindSessionsCallbackProxy;
 class UObject;
 class APlayerController;
-class UFSDFindSessionsCallbackProxy;
 
 void UFSDFindSessionsCallbackProxy::OnFSDCompleted(bool bSuccess, const TArray<FBlueprintSessionResult>& Results) {
 }

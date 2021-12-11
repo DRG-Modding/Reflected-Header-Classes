@@ -15,11 +15,11 @@ protected:
     TSet<UGameDLC*> StoreDLCs;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UGameDLC*> GetStoreDLCs(UObject* WorldContext);
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UGameDLC*> GetAnnouncableDLCs(UObject* WorldContext);
     
 public:

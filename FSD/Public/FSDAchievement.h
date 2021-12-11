@@ -4,9 +4,9 @@
 #include "EFSDAchievementType.h"
 #include "FSDAchievement.generated.h"
 
-class UFSDAchievement;
 class UObject;
 class AFSDPlayerController;
+class UFSDAchievement;
 
 UCLASS()
 class UFSDAchievement : public USavableDataAsset {
@@ -38,7 +38,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void ResetStatForAchievement(UFSDAchievement* AchievementToReset, const AFSDPlayerController* Player);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAchievementTargetValue();
     
     UFSDAchievement();

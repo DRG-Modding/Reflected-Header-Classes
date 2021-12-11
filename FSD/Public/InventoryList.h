@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EItemCategory.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
+#include "EItemCategory.h"
 #include "InventoryList.generated.h"
 
+class UObject;
 class UTexture2D;
+class AActor;
 class UMaterialInterface;
 class UItemID;
-class AActor;
-class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FInventoryListFilter, TSubclassOf<AActor>, itemClass, bool&, Result);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FInventoryListFilter, TSubclassOf<AActor>, itemClass, bool&, Result);
 
 UCLASS(BlueprintType)
 class FSD_API UInventoryList : public UDataAsset {
@@ -64,34 +64,34 @@ protected:
     TArray<UItemID*> MiningTools;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemID* GetPreviousUnlockedItem(UObject* WorldContextObject, EItemCategory Category, UItemID* currentItem) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemID* GetPreviousItem(EItemCategory Category, UItemID* currentItem) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumberOfItems(EItemCategory Category) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemID* GetNextUnlockedItem(UObject* WorldContextObject, EItemCategory Category, UItemID* currentItem) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemID* GetNextItem(EItemCategory Category, UItemID* currentItem) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSubclassOf<AActor>> GetLoadedItemListFiltered(EItemCategory Category, FInventoryListFilter Filter) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSubclassOf<AActor>> GetLoadedItemList(EItemCategory Category) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UItemID*> GetItemList(EItemCategory Category) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetItemIndex(EItemCategory Category, UItemID* Item) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UItemID*> GetAllItemsList() const;
     
     UFUNCTION(BlueprintCallable)

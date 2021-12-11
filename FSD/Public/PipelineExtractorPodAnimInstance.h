@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPipelineBuildState.h"
 //CROSS-MODULE INCLUDE: Engine AnimInstance
+#include "EPipelineBuildState.h"
 #include "EPipelineExtractorPodAnimState.h"
 #include "ERessuplyPodState.h"
 #include "ERefineryState.h"

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DestructableBodypartItem.h"
 #include "BaseArmorDamageComponent.h"
+#include "DestructableBodypartItem.h"
 #include "SimpleArmorDamageComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSimpleArmorDamageComponentOnRadialArmorPartsDestroyedEvent, const TArray<uint8>&, destroyedParts);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSimpleArmorDamageComponentOnRadialArmorPartsDestroyedEvent, const TArray<uint8>&, destroyedParts);
 
 UCLASS()
 class USimpleArmorDamageComponent : public UBaseArmorDamageComponent {
@@ -23,10 +23,10 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_ArmorDamageIndexMask)
     uint32 ArmorDamageIndexMask;
     
-    UFUNCTION(Reliable, Server)
+    UFUNCTION(BlueprintCallable, Reliable, Server)
     void Server_SetArmorIndexDestroyed(int32 Index, bool Disolved);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ArmorDamageIndexMask(uint32 OldIndexMask);
     
 public:

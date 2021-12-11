@@ -87,14 +87,14 @@ protected:
     void SetupAimindicator(UParticleSystemComponent* NewAimIndicator, UParticleSystemComponent* NewAimIndicatorLock);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsLockedOn();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IndicatorMode();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLockedOn(bool lockedOn);
     
 public:

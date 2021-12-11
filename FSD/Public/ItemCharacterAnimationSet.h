@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ItemLoadoutAnimations.h"
 //CROSS-MODULE INCLUDE: Engine DataAsset
+#include "ItemLoadoutAnimations.h"
 #include "ItemCharacterAnimationSet.generated.h"
 
 class UAnimSequence;
-class UAnimMontage;
 class UBlendSpace1D;
+class UAnimMontage;
 class UItemCharacterAnimationSet;
 
 UCLASS(BlueprintType)

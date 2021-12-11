@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject IntPoint
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 //CROSS-MODULE INCLUDE: Engine StaticMeshComponent
+//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: CoreUObject IntPoint
 #include "LandscapeMeshProxyComponent.generated.h"
 
 UCLASS(EditInlineNew, MinimalAPI)

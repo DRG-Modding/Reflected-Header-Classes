@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine GameInstanceSubsystem
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "SeasonMissionResult.h"
 //CROSS-MODULE INCLUDE: CoreUObject Timespan
+//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "SeasonLevel.h"
 #include "ChallengeInfo.h"
-#include "EPickaxePartLocation.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "EPickaxePartLocation.h"
 #include "SeasonsSubsystem.generated.h"
 
+class UMissionStat;
 class UObject;
 class UDataAsset;
-class UMissionStat;
+class UItemSkin;
 class AFSDPlayerState;
+class UVanityItem;
 class USeasonChallenge;
 class UTextureRenderTarget2D;
-class UVanityItem;
 class UPlayerCharacterID;
-class USeasonEventData;
-class UItemSkin;
 class UPickaxePart;
+class USeasonEventData;
 class AFSDPlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSeasonsSubsystemOnTokensChanged, int32, NumberOfTokens, int32, Change);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSeasonsSubsystemOnXPChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSeasonsSubsystemOnVanityTreeReset);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSeasonsSubsystemOnScripChallengeUpdated);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSeasonsSubsystemOnClaimStatusChanged, bool, AllClaimed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSeasonsSubsystemOnTokensChanged, int32, NumberOfTokens, int32, Change);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSeasonsSubsystemOnXPChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSeasonsSubsystemOnVanityTreeReset);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSeasonsSubsystemOnScripChallengeUpdated);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSeasonsSubsystemOnClaimStatusChanged, bool, AllClaimed);
 
 UCLASS(BlueprintType)
 class USeasonsSubsystem : public UGameInstanceSubsystem {
@@ -66,74 +66,74 @@ public:
     void RerollChallenge(int32 Index);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStatChanged(UMissionStat* Stat, float Value);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnScripChallengeCompleted(UMissionStat* Stat, float Value);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void IsRewardClaimed(int32 Level, bool& isNormalClaimed, bool& isSpecialClaimed);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNodeUnlocked(int32 TreeOfVanityNodeID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsNodeBought(int32 TreeOfVanityNodeID);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InitliazeStats();
     
     UFUNCTION(BlueprintCallable)
     bool HasClaimedLevelRewards(int32 startLevel, int32 numberOfLevels);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasClaimedAllRewards();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSeasonXPFromMissionXP(AFSDPlayerState* PlayerState);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSeasonXP();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSeasonNumber() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetSeasonName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSeasonMissionResult GetSeasonMissionResult();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetSeasonLevelFromXP(int32 XP, int32& Level, float& currentLevelPercent, int32& currentLevelXP, int32& levelXPTotal);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetSeasonLevel(int32& Level, float& currentLevelPercent, int32& currentLevelXP, int32& levelXPTotal);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetSeasonBought(bool& isBought);
     
     UFUNCTION(BlueprintCallable)
     void GetScriptChallengeInfo(int32& Completed, int32& claimed, int32& Total);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumberOfTokens(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumberOfSeasonLevels();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSeasonLevel GetNextReward();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetLevelXP(int32 Level);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FSeasonLevel GetLevelReward(int32 Level);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetLevelProgress(int32 Level, float& levelPercent, int32& levelXP, int32& levelXPTotal);
     
     UFUNCTION(BlueprintCallable)
@@ -172,7 +172,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void CHEAT_AddChallenge();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanRerollChallenge();
     
     UFUNCTION(BlueprintCallable)

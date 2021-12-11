@@ -12,7 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 Magnitude;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UUniformInteger* SetUniformInteger(int32 NewMagnitude);
     
     UUniformInteger();

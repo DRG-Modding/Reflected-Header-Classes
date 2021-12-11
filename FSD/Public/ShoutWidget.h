@@ -22,18 +22,18 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     bool IsSubtitle;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnShout();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetTimeString(int32 Seconds);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void GetSplitTimeString(int32 Seconds, FString& MinutesString, FString& SecondsString);
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetCountDownString(int32 Seconds) const;
     
 public:

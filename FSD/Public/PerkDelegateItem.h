@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "PerkDelegateItem.generated.h"
 
-class UPlayerCharacterID;
 class UPerkAsset;
+class UPlayerCharacterID;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnPerkClaimed, UPerkAsset*, Perk, int32, ClaimedTier);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnPerkHighlighted, UPerkAsset*, Perk, bool, IsHighlighted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnPerkEquipped, UPerkAsset*, Perk, UPlayerCharacterID*, CharacterClass);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnPerkUnequipped, UPerkAsset*, Perk, UPlayerCharacterID*, CharacterClass);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnChargesUsedChanged, UPerkAsset*, Perk, int32, Value);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnPerkClaimed, UPerkAsset*, Perk, int32, ClaimedTier);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnPerkHighlighted, UPerkAsset*, Perk, bool, IsHighlighted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnPerkEquipped, UPerkAsset*, Perk, UPlayerCharacterID*, CharacterClass);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnPerkUnequipped, UPerkAsset*, Perk, UPlayerCharacterID*, CharacterClass);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FPerkDelegateItemOnChargesUsedChanged, UPerkAsset*, Perk, int32, Value);
 
 UCLASS()
 class UPerkDelegateItem : public UObject {

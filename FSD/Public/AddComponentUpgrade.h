@@ -4,9 +4,9 @@
 #include "ItemUpgrade.h"
 #include "AddComponentUpgrade.generated.h"
 
-class AItem;
 class UActorComponent;
 class AFSDPlayerState;
+class AItem;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UAddComponentUpgrade : public UItemUpgrade {
@@ -20,7 +20,7 @@ protected:
     bool ServerOnly;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetUpgradedValue(TSubclassOf<AItem> Item, AFSDPlayerState* Player, TSubclassOf<UActorComponent> NewComponentClass, bool includePreview);
     
     UAddComponentUpgrade();

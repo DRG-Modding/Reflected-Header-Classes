@@ -1,11 +1,11 @@
 #include "SchematicBlueprintLibrary.h"
 
-class UItemUpgrade;
-class UPlayerCharacterID;
 class UObject;
 class UItemSkinSchematicCollection;
 class USchematic;
+class UPlayerCharacterID;
 class USchematicCategory;
+class UItemUpgrade;
 
 void USchematicBlueprintLibrary::PriceAllSchematics(bool lockPrices) {
 }

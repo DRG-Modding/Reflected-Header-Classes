@@ -4,15 +4,15 @@
 //CROSS-MODULE INCLUDE: SlateCore ButtonStyle
 //CROSS-MODULE INCLUDE: SlateCore TextBlockStyle
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: Slate InputChord
 //CROSS-MODULE INCLUDE: SlateCore Margin
+//CROSS-MODULE INCLUDE: Slate InputChord
 //CROSS-MODULE INCLUDE: InputCore Key
 //CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
 #include "ESlateVisibility.h"
 #include "InputKeySelector.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInputKeySelectorOnKeySelected, FInputChord, SelectedKey);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FInputKeySelectorOnIsSelectingKeyChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInputKeySelectorOnKeySelected, FInputChord, SelectedKey);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FInputKeySelectorOnIsSelectingKeyChanged);
 
 UCLASS()
 class UMG_API UInputKeySelector : public UWidget {
@@ -78,7 +78,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAllowGamepadKeys(bool bInAllowGamepadKeys);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsSelectingKey() const;
     
     UInputKeySelector();

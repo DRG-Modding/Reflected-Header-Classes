@@ -1,9 +1,9 @@
 #include "FlyingLifter.h"
 #include "Net/UnrealNetwork.h"
 
-class UPrimitiveComponent;
 class UPointLightComponent;
 class AActor;
+class UPrimitiveComponent;
 
 void AFlyingLifter::SetLight(UPointLightComponent* ALight) {
 }

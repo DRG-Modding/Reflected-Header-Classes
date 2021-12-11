@@ -17,7 +17,7 @@ protected:
     float UnitsPerCarver;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCarvedResourceCreator* LoadResourceCreator() const;
     
     UCarvedResourceData();

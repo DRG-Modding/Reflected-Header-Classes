@@ -4,17 +4,17 @@
 #include "FSDMatchmakingCallbackProxy.generated.h"
 
 class UMissionTemplate;
+class UObject;
 class UBiome;
-class UDifficultySetting;
 class APlayerController;
 class UFSDMatchmakingCallbackProxy;
-class UObject;
+class UDifficultySetting;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDMatchmakingCallbackProxyOnCancelled);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDMatchmakingCallbackProxyOnSuccess);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDMatchmakingCallbackProxyOnFailure);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FFSDMatchmakingCallbackProxyFailDelegateHandle, const FString&, Description, int32, Status);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_TwoParams(FFSDMatchmakingCallbackProxyFailDelegate, const FString&, Description, int32, Status);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDMatchmakingCallbackProxyOnCancelled);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDMatchmakingCallbackProxyOnSuccess);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDMatchmakingCallbackProxyOnFailure);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FFSDMatchmakingCallbackProxyFailDelegateHandle, const FString&, Description, int32, Status);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FFSDMatchmakingCallbackProxyFailDelegate, const FString&, Description, int32, Status);
 
 UCLASS(MinimalAPI)
 class UFSDMatchmakingCallbackProxy : public UOnlineBlueprintCallProxyBase {

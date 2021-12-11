@@ -38,7 +38,7 @@ protected:
     bool bRegisterEnemy;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMaxHealth() const;
     
     UEnemyHealthComponent();

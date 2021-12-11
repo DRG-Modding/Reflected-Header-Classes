@@ -12,13 +12,13 @@ UCLASS(BlueprintType)
 class UStatusEffectsFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetMaxResistance(TSubclassOf<UStatusEffect> StatusEffect);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UDamageClass* GetDamageClass(TSubclassOf<UStatusEffect> StatusEffect);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool CanTrigger(TSubclassOf<UStatusEffect> StatusEffect, AActor* OtherActor);
     
     UStatusEffectsFunctionLibrary();

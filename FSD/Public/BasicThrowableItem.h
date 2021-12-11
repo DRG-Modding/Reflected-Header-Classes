@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine HitResult
 #include "CarriableItem.h"
+//CROSS-MODULE INCLUDE: Engine HitResult
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EInputKeys.h"
 #include "BasicThrowableItem.generated.h"
 
-class UPrimitiveComponent;
 class UFirstPersonStaticMeshComponent;
 class USphereComponent;
-class UCarriableComponent;
 class UBoxComponent;
+class UCarriableComponent;
 class USoundCue;
+class UPrimitiveComponent;
 class UInstantUsable;
 class UStaticMeshComponent;
 class APlayerCharacter;
@@ -57,23 +57,23 @@ public:
     void ThrowItem(const FVector& throwForce);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ResetImpactSound();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUsed(APlayerCharacter* User, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUsableChanged(bool CanUse);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPickedUp();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDropped();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnComponentHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
     
     ABasicThrowableItem();

@@ -6,14 +6,14 @@
 #include "MilestoneAsset.generated.h"
 
 class UFSDGameInstance;
+class UObject;
 class UMissionStat;
 class UTexture2D;
 class UMilestoneAsset;
 class UPlayerCharacterID;
-class UObject;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMilestoneAssetOnMilestoneClaimed, UMilestoneAsset*, Milestone, int32, ClaimedTier);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMilestoneAssetOnMilestoneReached, UMilestoneAsset*, Milestone, int32, ReachedTier);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMilestoneAssetOnMilestoneClaimed, UMilestoneAsset*, Milestone, int32, ClaimedTier);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMilestoneAssetOnMilestoneReached, UMilestoneAsset*, Milestone, int32, ReachedTier);
 
 UCLASS(BlueprintType)
 class UMilestoneAsset : public UDataAsset {
@@ -64,35 +64,35 @@ public:
     static TArray<UMilestoneAsset*> SortMilestonesByProgress(UObject* WorldContext, UPARAM(Ref) TArray<UMilestoneAsset*>& Milestones);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMissionStatChanged(UMissionStat* Stat, float Value);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCompleted(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsClaimable(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTitleForTier(int32 Tier) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTitle(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNextPerkPointsReward(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetCurrentProgress(UObject* WorldContext, int32& Tier, float& Progress, float& CurrentCount, float& TargetCount);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetClaimedTier(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetClaimedProgress(UObject* WorldContext, int32& Tier, float& Progress, float& CurrentCount, float& TargetCount);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetCategoryIcon() const;
     
 protected:

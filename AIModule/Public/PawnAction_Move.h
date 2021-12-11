@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "PawnAction_Move.generated.h"
 
-class UNavigationQueryFilter;
 class AActor;
+class UNavigationQueryFilter;
 
 UCLASS(EditInlineNew)
 class AIMODULE_API UPawnAction_Move : public UPawnAction {

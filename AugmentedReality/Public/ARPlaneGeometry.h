@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ARTrackedGeometry.h"
 #include "EARPlaneOrientation.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "ARPlaneGeometry.generated.h"
 
 class UARPlaneGeometry;
@@ -25,19 +25,19 @@ private:
     UARPlaneGeometry* SubsumedBy;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UARPlaneGeometry* GetSubsumedBy() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EARPlaneOrientation GetOrientation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetExtent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetCenter() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FVector> GetBoundaryPolygonInLocalSpace() const;
     
     UARPlaneGeometry();

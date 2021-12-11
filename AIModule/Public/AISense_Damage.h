@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "AISense_Damage.generated.h"
 
-class AActor;
 class UObject;
+class AActor;
 
 UCLASS()
 class AIMODULE_API UAISense_Damage : public UAISense {

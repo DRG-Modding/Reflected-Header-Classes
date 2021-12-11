@@ -2,9 +2,9 @@
 #include "Net/UnrealNetwork.h"
 
 class AActor;
+class AFSDAIController;
 class USkeletalMeshComponent;
 class UHealthComponentBase;
-class AFSDAIController;
 
 void AFSDPawn::UnFreeze() {
 }

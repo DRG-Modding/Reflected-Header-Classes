@@ -2,25 +2,25 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "HealthComponent.h"
-#include "HealthRegenerationParams.h"
 #include "RejoinListener.h"
+#include "HealthRegenerationParams.h"
 #include "AudioWithCooldown.h"
 #include "PlayerHealthComponent.generated.h"
 
+class AActor;
+class APlayerCharacter;
 class UDamageClass;
 class UCurveFloat;
-class APlayerCharacter;
 class UParticleSystem;
-class AActor;
 class UParticleSystemComponent;
 class UPlayerDamageTakenMutator;
 class UStatusEffect;
 class AController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FPlayerHealthComponentOnPlayerHit, float, Damage, UDamageClass*, DamageClass, AActor*, DamageCauser, bool, anyHealthLost);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerHealthComponentOnFullHealthCannotHeal);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerHealthComponentOnHealedFromCrystalEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerHealthComponentOnHealthRegeneratingChanged, bool, isRegenerating);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FPlayerHealthComponentOnPlayerHit, float, Damage, UDamageClass*, DamageClass, AActor*, DamageCauser, bool, anyHealthLost);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerHealthComponentOnFullHealthCannotHeal);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FPlayerHealthComponentOnHealedFromCrystalEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerHealthComponentOnHealthRegeneratingChanged, bool, isRegenerating);
 
 UCLASS()
 class UPlayerHealthComponent : public UHealthComponent, public IRejoinListener {
@@ -110,47 +110,49 @@ public:
     void Server_TryActivateIronWill();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_MaxHealth();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_MaxArmor();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ArmorDamage(float oldDamage);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLowHealth() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRemainingIronWillActivationTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsHealthRegenerating() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIronWillActive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHealthRegeneratingTargetRatio() const;
     
 protected:
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void Client_SetHealthRegenerating(bool isRegenerating);
     
-    UFUNCTION(Client, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Unreliable, WithValidation)
     void Client_OnFriendlyFire(AController* EventInstigator, AActor* DamageCauser);
     
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void Client_HealthFullCannotHeal();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanActivateIronWill() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UPlayerHealthComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

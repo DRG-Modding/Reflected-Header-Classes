@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "NavRelevantComponent.h"
-#include "NavLinkCustomInterface.h"
-//CROSS-MODULE INCLUDE: Engine ECollisionChannel
 //CROSS-MODULE INCLUDE: Engine ENavLinkDirection
+#include "NavRelevantComponent.h"
+//CROSS-MODULE INCLUDE: Engine ECollisionChannel
+#include "NavLinkCustomInterface.h"
 //CROSS-MODULE INCLUDE: Engine NavAgentSelector
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "NavLinkCustomComponent.generated.h"
@@ -69,5 +69,7 @@ protected:
     
 public:
     UNavLinkCustomComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

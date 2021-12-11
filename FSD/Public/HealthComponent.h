@@ -5,20 +5,20 @@
 #include "HealthComponent.generated.h"
 
 class UFSDPhysicalMaterial;
-class UDamageClass;
-class UHealthComponent;
-class AActor;
-class USubHealthComponent;
 class AController;
+class AActor;
 class UDamageTag;
+class UHealthComponent;
+class UDamageClass;
+class USubHealthComponent;
 class UPawnStat;
 class UPawnStatsComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentOnArmorChanged, float, Health);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_EightParams(FHealthComponentOnDeathDetailed, UHealthComponent*, HealthComponent, float, damageAmount, UDamageClass*, DamageClass, AActor*, damageCause, AController*, Instigator, UFSDPhysicalMaterial*, PhysicalMaterial, bool, IsRadial, const TArray<UDamageTag*>&, Tags);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentOnArmorDamaged, float, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentOnArmorHealed, float, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHealthComponentOnNewHealthSegment, int32, currSegment, int32, prevSegment);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentOnArmorChanged, float, Health);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_EightParams(FHealthComponentOnDeathDetailed, UHealthComponent*, HealthComponent, float, damageAmount, UDamageClass*, DamageClass, AActor*, damageCause, AController*, Instigator, UFSDPhysicalMaterial*, PhysicalMaterial, bool, IsRadial, const TArray<UDamageTag*>&, Tags);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentOnArmorDamaged, float, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentOnArmorHealed, float, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHealthComponentOnNewHealthSegment, int32, currSegment, int32, prevSegment);
 
 UCLASS()
 class UHealthComponent : public UHealthComponentBase {
@@ -71,40 +71,40 @@ protected:
     UPawnStatsComponent* PawnStats;
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ToggleCanTakeDamage();
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Resupply(float percentage);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Damage(float oldDamage);
     
 public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void HealArmor(float Amount);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasArmor() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMaxArmor() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EHealthbarType GetHealthbarType() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetCurrentHealthSegment(int32& Segment, float& segmentHealth, float& segmentHealthPercent);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetArmorPct() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetArmor() const;
     
 protected:
-    UFUNCTION(Client, Unreliable)
+    UFUNCTION(BlueprintCallable, Client, Unreliable)
     void Client_ReceivedHit(float Amount, UDamageClass* DamageClass, AActor* DamageCauser, bool anyHealthLost);
     
 public:

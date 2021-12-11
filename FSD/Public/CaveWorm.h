@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "DeepPathfinderCharacter.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "CaveWorm.generated.h"
 
 class UHealthComponentBase;
@@ -30,10 +30,10 @@ public:
     static AResourceChunk* SpawnResource(UObject* WorldContext, UResourceData* Data, float Size, FTransform Transform, FVector Impulse, FVector DropOffset);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Search();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void IncrementKillCount(UHealthComponentBase* HealthComponent);
     
 public:

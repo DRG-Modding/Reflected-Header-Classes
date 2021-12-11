@@ -4,8 +4,8 @@
 #include "GlowPlant.generated.h"
 
 class UStaticMeshComponent;
-class UPrimitiveComponent;
 class UPointLightComponent;
+class UPrimitiveComponent;
 
 UCLASS(Abstract)
 class AGlowPlant : public AActor {

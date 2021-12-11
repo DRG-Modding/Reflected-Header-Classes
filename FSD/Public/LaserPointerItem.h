@@ -1,31 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ELaserPointerMarkerType.h"
-#include "LaserPointerData.h"
-#include "ELaserPointerTargetType.h"
 #include "AnimatedItem.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
+#include "ELaserPointerTargetType.h"
 //CROSS-MODULE INCLUDE: Engine HitResult
+#include "LaserPointerData.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "ELaserPointerMarkerType.h"
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "LaserPointerItem.generated.h"
 
-class UTexture2D;
-class UObject;
-class ALaserPointerMarker;
 class AActor;
-class ALaserPointerWaypoint;
+class ALaserPointerMarker;
 class UDialogDataAsset;
+class ALaserPointerWaypoint;
 class USceneComponent;
 class UObjectInfoComponent;
 class UTerrainMaterial;
 class AFSDGameState;
+class UObject;
 class UPrimitiveComponent;
+class UTexture2D;
 class UHealthComponentBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FLaserPointerItemOnMarkerPlaced, FVector, Location, const FText&, Name, FLinearColor, Color, AActor*, Target, ELaserPointerTargetType, TypeOfTarget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FLaserPointerItemOnMarkerPlaced, FVector, Location, const FText&, Name, FLinearColor, Color, AActor*, Target, ELaserPointerTargetType, TypeOfTarget);
 
 UCLASS(Abstract)
 class ALaserPointerItem : public AAnimatedItem {
@@ -102,23 +102,23 @@ protected:
     void UnlockToMinersManual(UObject* WorldContextObject, FGuid ObjectID);
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void ToggleLaserVisible(bool aVisible);
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerPlaceMarker(FVector Location, AActor* Actor, UPrimitiveComponent* Cmponent, UTerrainMaterial* TerrainMaterial, ELaserPointerMarkerType eMarkerType);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SecondaryUse();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPointOfInterest(AActor* TargetActor, FVector TargetLocation, UTexture2D* TargetIcon);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* Health);
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     void GetPointTransform(FTransform& PointTransform);
     
 public:

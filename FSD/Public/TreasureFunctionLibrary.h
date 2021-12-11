@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "TreasureFunctionLibrary.generated.h"
 
-class UObject;
-class UItemID;
-class AProceduralSetup;
 class UItemSkin;
+class UObject;
+class AProceduralSetup;
+class UItemID;
 
 UCLASS(BlueprintType)
 class UTreasureFunctionLibrary : public UBlueprintFunctionLibrary {

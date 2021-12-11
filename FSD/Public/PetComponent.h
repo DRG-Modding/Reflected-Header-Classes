@@ -13,7 +13,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere, ReplicatedUsing=ReceiveOwningPlayerChanged)
     TWeakObjectPtr<APlayerCharacter> OwningPlayer;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOwningPlayerChanged();
     
 public:

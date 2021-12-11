@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine AnimNode_Base
-//CROSS-MODULE INCLUDE: Engine EAlphaBlendOption
 //CROSS-MODULE INCLUDE: Engine PoseLink
 #include "EBlendListTransitionType.h"
+//CROSS-MODULE INCLUDE: Engine EAlphaBlendOption
 #include "AnimNode_BlendListBase.generated.h"
 
-class UCurveFloat;
 class UBlendProfile;
+class UCurveFloat;
 
 USTRUCT(BlueprintType)
 struct ANIMGRAPHRUNTIME_API FAnimNode_BlendListBase : public FAnimNode_Base {

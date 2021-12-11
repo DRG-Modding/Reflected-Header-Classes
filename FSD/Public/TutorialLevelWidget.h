@@ -15,21 +15,21 @@ protected:
     float DelayBetweenTutorials;
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ShowTutorialWidget(TSubclassOf<UTutorialContentWidget> TutorialWidget, bool ignoreQueue);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RemoveTutorialWidget(UTutorialContentWidget* TutorialWidget);
     
     UFUNCTION(BlueprintCallable)
     void RemoveAllTutorials();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTutorialFinished(UTutorialContentWidget* TutorialWidget);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnNewActiveTutorial(UTutorialContentWidget* Widget);
     
     UTutorialLevelWidget();

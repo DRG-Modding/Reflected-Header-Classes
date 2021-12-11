@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore SlateWidgetStyleContainerBase
 //CROSS-MODULE INCLUDE: SlateCore ComboBoxStyle
+//CROSS-MODULE INCLUDE: SlateCore SlateWidgetStyleContainerBase
 #include "ComboBoxWidgetStyle.generated.h"
 
 UCLASS(MinimalAPI)

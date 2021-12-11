@@ -2,32 +2,32 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Item.h"
-#include "PickaxeMeshInstance.h"
 #include "UpgradableGear.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "PickaxePartEquip.h"
 #include "CoolDownProgressStyle.h"
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
 #include "EPickaxeState.h"
 #include "EPickaxePartLocation.h"
+#include "PickaxeMeshInstance.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
 //CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
 #include "PickaxeItem.generated.h"
 
 class UAnimMontage;
-class UPlayerAnimInstance;
-class UItemCharacterAnimationSet;
-class UDamageComponent;
-class UStatusEffect;
-class USceneComponent;
-class USoundCue;
 class UForceFeedbackEffect;
+class UDamageComponent;
+class UPlayerAnimInstance;
+class USceneComponent;
+class UItemCharacterAnimationSet;
+class UStatusEffect;
+class USoundCue;
 class UMaterialInterface;
 class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
 class UParticleSystem;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPickaxeItemActiveMiningEvent, bool, success);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPickaxeItemActiveMiningEvent, bool, success);
 
 UCLASS(Abstract)
 class APickaxeItem : public AItem, public IUpgradableGear, public IPickaxePartEquip {
@@ -181,7 +181,7 @@ protected:
     UPROPERTY(Transient)
     UMaterialInterface* EquippedMaterial;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SpecialTargetDamageEffects(const FVector& ImpactPoint, const FVector& ImpactNormal);
     
 public:
@@ -189,25 +189,25 @@ public:
     void SetSpecialCoolDownDuration(float newCooldownDuration);
     
 protected:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_TriggerBezerk();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetState(EPickaxeState NewState);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_RemoveDebrisInstance(FVector_NetQuantize HitPos, int32 DebrisIndex, int32 remappedIndex);
     
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void Server_HitBlock(FVector_NetQuantize Position, int32 Material, bool removeDebris, bool isSpecial);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_DoPowerAttack();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_DigBlock2(FVector carvePos, FVector carveDirection, int32 TerrainMaterial, bool isSpecial);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_DamageTarget(UPrimitiveComponent* TargetComponent, bool isSpecial, const FVector_NetQuantize& ImpactPoint, const FVector_NetQuantizeNormal& ImpactNormal, UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex);
     
 public:
@@ -215,35 +215,37 @@ public:
     void RefreshSpecialCooldown();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State(EPickaxeState oldState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnLoadoutChanged();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSpecialCooldownProgress() const;
     
 protected:
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SimulateHitBlock(FVector_NetQuantize Position, int32 materia, bool removeDebris, bool isSpecial);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SimulateDigDebris(FVector_NetQuantize Position, UParticleSystem* Particles, USoundCue* cue);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SimulateDigBlock(FVector_NetQuantize Position, bool spawnParticles, int32 Material, float Density, bool isSpecial);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_SimulateDamageTarget(UPrimitiveComponent* TargetComponent, bool isSpecial, const FVector_NetQuantize& ImpactPoint, const FVector_NetQuantizeNormal& ImpactNormal, UFSDPhysicalMaterial* PhysMaterial, uint8 BoneIndex);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_DoPowerAttack();
     
 public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     APickaxeItem();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -3,8 +3,8 @@
 #include "Visual.h"
 #include "PanelSlot.generated.h"
 
-class UPanelWidget;
 class UWidget;
+class UPanelWidget;
 
 UCLASS()
 class UMG_API UPanelSlot : public UVisual {

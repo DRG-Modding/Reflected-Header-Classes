@@ -18,7 +18,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FIRandRange Amount;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<UResourceData*, float> GetRewards(AFSDPlayerController* Player) const;
     
 public:

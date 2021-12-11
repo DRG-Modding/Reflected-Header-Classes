@@ -5,19 +5,19 @@
 #include "ESchematicState.h"
 #include "Schematic.generated.h"
 
-class USchematicPricingTier;
 class USchematic;
 class USchematicCategory;
-class UResourceData;
+class USchematicPricingTier;
 class USchematicRarity;
+class UResourceData;
 class UPlayerCharacterID;
-class USchematicItem;
 class UObject;
+class USchematicItem;
 class UTexture;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSchematicOnSchematicAddedToInventory, USchematic*, Schematic);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSchematicOnSchematicReset, USchematic*, Schematic);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSchematicOnSchematicBuilt, USchematic*, Schematic);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSchematicOnSchematicAddedToInventory, USchematic*, Schematic);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSchematicOnSchematicReset, USchematic*, Schematic);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSchematicOnSchematicBuilt, USchematic*, Schematic);
 
 UCLASS(EditInlineNew)
 class FSD_API USchematic : public USavableDataAsset {
@@ -58,40 +58,40 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCraftingMaterialCost();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetCostLocked(bool IsLocked);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasBeenForged(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasBeenAwardedOrForged(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasBeenAwarded(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTitle() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESchematicState GetSchematicState(UObject* WorldContext) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USchematicItem* GetSchematicItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<UResourceData*, int32> GetResourceCost() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FColor GetIconTint() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture* GetIcon(UObject* WorldContextObject) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetDescription() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanAffordSchematic(UObject* WorldContext) const;
     
     UFUNCTION(BlueprintCallable)

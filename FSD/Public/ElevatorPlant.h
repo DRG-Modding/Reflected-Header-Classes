@@ -6,13 +6,13 @@
 #include "ElevatorPlant.generated.h"
 
 class USceneComponent;
-class UAudioComponent;
 class USoundCue;
-class UCurveFloat;
+class UAudioComponent;
 class USplineMeshComponent;
+class UCurveFloat;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FElevatorPlantOnStartTimelineEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FElevatorPlantCOnStateChangedEvent, bool, IsIdling);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FElevatorPlantOnStartTimelineEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FElevatorPlantCOnStateChangedEvent, bool, IsIdling);
 
 UCLASS()
 class AElevatorPlant : public AActor {
@@ -106,37 +106,37 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetBaseTangentDirectionOffset(const FVector& aVector);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_RelavtiveDestinationLocation();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Open();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMatchStarted();
     
     UFUNCTION(BlueprintCallable)
     void MoreTick(const FVector& DipOffset, float aValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVineMovementAlpha() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetRelativeRestLocation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetRelativeDestinationLocation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLeafLocationNoiseSize() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsMoving() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsExtended() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetInitialTangentLenth() const;
     
 public:

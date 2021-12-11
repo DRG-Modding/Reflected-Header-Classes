@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE: FSDEngine DeepPathFinderType
 #include "BaseCritterDescriptor.generated.h"
 
-class UDebrisPositioning;
-class AFSDPawn;
 class UBiome;
+class AFSDPawn;
+class UDebrisPositioning;
 
 UCLASS(Abstract)
 class UBaseCritterDescriptor : public UDataAsset {

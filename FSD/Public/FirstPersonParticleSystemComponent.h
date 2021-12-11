@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ParticleSystemComponent
-//CROSS-MODULE INCLUDE: Engine EAttachLocation
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE: Engine EAttachLocation
 #include "FirstPersonParticleSystemComponent.generated.h"
 
-class USceneComponent;
 class UParticleSystem;
+class USceneComponent;
 
 UCLASS(EditInlineNew)
 class UFirstPersonParticleSystemComponent : public UParticleSystemComponent {

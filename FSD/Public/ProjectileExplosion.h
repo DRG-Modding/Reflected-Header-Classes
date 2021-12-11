@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine HitResult
-#include "ExplosionBaseComponent.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "ExplosionBaseComponent.h"
 #include "ScaledEffect.h"
+//CROSS-MODULE INCLUDE: Engine HitResult
 #include "ProjectileExplosion.generated.h"
 
 class UForceFeedbackEffect;

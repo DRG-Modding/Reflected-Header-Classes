@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: SlateCore SlateBrush
 //CROSS-MODULE INCLUDE: SlateCore SlateColor
-//CROSS-MODULE INCLUDE: SlateCore Geometry
 #include "Widget.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "EventReply.h"
 //CROSS-MODULE INCLUDE: SlateCore PointerEvent
 //CROSS-MODULE INCLUDE: CoreUObject LinearColor
-#include "EventReply.h"
+//CROSS-MODULE INCLUDE: SlateCore Geometry
 #include "Image.generated.h"
 
 class UObject;
@@ -19,9 +19,9 @@ class ISlateTextureAtlasInterface;
 class USlateBrushAsset;
 class UMaterialInstanceDynamic;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateBrush, FImageBrushDelegate);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FImageOnMouseButtonDownEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FImageColorAndOpacityDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateBrush, FImageBrushDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FImageOnMouseButtonDownEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FImageColorAndOpacityDelegate);
 
 UCLASS()
 class UMG_API UImage : public UWidget {

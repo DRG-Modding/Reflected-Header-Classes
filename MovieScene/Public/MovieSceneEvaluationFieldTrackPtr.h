@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneTrackIdentifier.h"
 #include "MovieSceneSequenceID.h"
+#include "MovieSceneTrackIdentifier.h"
 #include "MovieSceneEvaluationFieldTrackPtr.generated.h"
 
 USTRUCT()

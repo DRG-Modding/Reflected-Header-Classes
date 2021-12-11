@@ -23,10 +23,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetSequencePath(const FString& Path);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetSequencePath() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetProxies(TArray<FString>& OutProxies) const;
     
     UImgMediaSource();

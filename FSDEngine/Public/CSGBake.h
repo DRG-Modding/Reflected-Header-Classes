@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE: CoreUObject Box
 //CROSS-MODULE INCLUDE: Engine DataAsset
 #include "BakeSettings.h"
 #include "BakeEntry.h"
-//CROSS-MODULE INCLUDE: CoreUObject Box
 #include "CSGBake.generated.h"
 
-class ACSGBuilder;
 class UBakeConfig;
+class ACSGBuilder;
 
 UCLASS(BlueprintType, MinimalAPI)
 class UCSGBake : public UDataAsset {

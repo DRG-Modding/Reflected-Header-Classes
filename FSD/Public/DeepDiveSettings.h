@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "DeepDiveLoaderSequence.h"
+//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "DeepDiveSettings.generated.h"
 
 class UMutator;
 class UMissionWarning;
-class UDeepDiveTemplate;
 class UMissionMutator;
+class UDeepDiveTemplate;
 class UMissionNameBank;
 class UDialogDataAsset;
 

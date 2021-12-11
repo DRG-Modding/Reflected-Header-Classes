@@ -9,7 +9,7 @@ UCLASS()
 class USeasonReplicatorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void CompleteSeasonEvent(USeasonEventData* inEvent);
     
     USeasonReplicatorComponent();

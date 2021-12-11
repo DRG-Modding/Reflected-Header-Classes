@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "Throwable.h"
 #include "EUseRestriction.h"
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "CarriableComponent.generated.h"
 
 class APlayerCharacter;
 class UDialogDataAsset;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCarriableComponentOnPickedUp);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCarriableComponentOnDropped);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCarriableComponentOnPickedUp);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCarriableComponentOnDropped);
 
 UCLASS(BlueprintType)
 class UCarriableComponent : public UActorComponent, public IThrowable {
@@ -40,18 +40,20 @@ public:
     bool PickupItem(APlayerCharacter* byCharacter);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CarriedBy();
     
 public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void DropItem();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AttachChanged(bool Attached, const FVector PrevScale);
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UCarriableComponent();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

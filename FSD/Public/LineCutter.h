@@ -30,24 +30,24 @@ protected:
     UPROPERTY(EditAnywhere)
     float MinExplosiveGoodbyeActivationTimme;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_StopRotatingProjectile();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_ReverseLastProjectile();
     
 public:
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void Server_DestroyOldProjectile();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_LastProjectile() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnProjectileLaunched(AProjectileBase* Projectile);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFireWhileLastProjectileAlive(ALineCutterProjectile* Projectile);
     
 public:

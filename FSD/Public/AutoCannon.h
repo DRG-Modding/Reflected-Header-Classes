@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 #include "AutoCannon.generated.h"
 
-class UAnimMontage;
 class UStatusEffect;
+class UAnimMontage;
 
 UCLASS(Abstract)
 class AAutoCannon : public AAmmoDrivenWeapon {
@@ -52,7 +52,7 @@ protected:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float CurrentFireTime;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SetStatusActive(bool IsActive);
     
 public:

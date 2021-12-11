@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Volume
 //CROSS-MODULE INCLUDE: Engine NavAgentSelector
+//CROSS-MODULE INCLUDE: Engine Volume
 #include "NavMeshBoundsVolume.generated.h"
 
 UCLASS()

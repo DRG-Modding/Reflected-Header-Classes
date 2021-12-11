@@ -15,16 +15,16 @@ protected:
     UPROPERTY(BlueprintReadOnly, Transient)
     TWeakObjectPtr<AFSDRefinery> Refinery;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveRefinerySpawned(AFSDRefinery* InRefinery);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePipelineSegmentPlaced(APipelineSegment* InSegment);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveExtractorPodSpawned(APipelineExtractorPod* InExtractorPod);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRefinerySpawned(AFSDRefinery* InRefinery);
     
 public:

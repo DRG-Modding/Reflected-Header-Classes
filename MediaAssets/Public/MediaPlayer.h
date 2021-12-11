@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject FloatRange
-//CROSS-MODULE INCLUDE: MediaUtils MediaPlayerOptions
 //CROSS-MODULE INCLUDE: CoreUObject Object
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: CoreUObject Timespan
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE: MediaUtils MediaPlayerOptions
 #include "EMediaPlayerTrack.h"
 //CROSS-MODULE INCLUDE: Engine LatentActionInfo
+//CROSS-MODULE INCLUDE: CoreUObject FloatRange
 //CROSS-MODULE INCLUDE: CoreUObject IntPoint
 #include "MediaPlayer.generated.h"
 
 class UMediaPlaylist;
 class UMediaSource;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMediaPlayerOnMediaOpenFailed, const FString&, FailedUrl);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnEndReached);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnTracksChanged);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnMediaClosed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMediaPlayerOnMediaOpened, const FString&, OpenedUrl);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnPlaybackResumed);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnPlaybackSuspended);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnSeekCompleted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMediaPlayerOnMediaOpenFailed, const FString&, FailedUrl);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnEndReached);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnTracksChanged);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnMediaClosed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMediaPlayerOnMediaOpened, const FString&, OpenedUrl);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnPlaybackResumed);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnPlaybackSuspended);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnSeekCompleted);
 
 UCLASS(BlueprintType)
 class MEDIAASSETS_API UMediaPlayer : public UObject {
@@ -96,13 +96,13 @@ private:
     FGuid PlayerGuid;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool SupportsSeeking() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool SupportsScrubbing() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool SupportsRate(float Rate, bool Unthinned) const;
     
     UFUNCTION(BlueprintCallable)
@@ -186,121 +186,121 @@ public:
     UFUNCTION(BlueprintCallable)
     bool Next();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsReady() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPreparing() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlaying() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPaused() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLooping() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsConnecting() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsClosed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBuffering() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasError() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetViewRotation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetVideoTrackType(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FFloatRange GetVideoTrackFrameRates(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVideoTrackFrameRate(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FIntPoint GetVideoTrackDimensions(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVideoTrackAspectRatio(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVerticalFieldOfView() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetUrl() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetTrackLanguage(EMediaPlayerTrack TrackType, int32 TrackIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTrackFormat(EMediaPlayerTrack TrackType, int32 TrackIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTrackDisplayName(EMediaPlayerTrack TrackType, int32 TrackIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetTimeDelay() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetSupportedRates(TArray<FFloatRange>& OutRates, bool Unthinned) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSelectedTrack(EMediaPlayerTrack TrackType) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRate() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPlaylistIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMediaPlaylist* GetPlaylist() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetPlayerName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumTracks(EMediaPlayerTrack TrackType) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumTrackFormats(EMediaPlayerTrack TrackType, int32 TrackIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetMediaName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetLastVideoSampleProcessedTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetLastAudioSampleProcessedTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHorizontalFieldOfView() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetDuration() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetDesiredPlayerName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetAudioTrackType(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetAudioTrackSampleRate(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetAudioTrackChannels(int32 TrackIndex, int32 FormatIndex) const;
     
     UFUNCTION(BlueprintCallable)
@@ -312,7 +312,7 @@ public:
     UFUNCTION(BlueprintCallable)
     bool CanPlaySource(UMediaSource* MediaSource);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanPause() const;
     
     UMediaPlayer();

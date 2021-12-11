@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Box
 //CROSS-MODULE INCLUDE: CoreUObject Object
-#include "LandscapeSplineSegmentConnection.h"
 //CROSS-MODULE INCLUDE: CoreUObject InterpCurveVector
+#include "LandscapeSplineSegmentConnection.h"
 #include "LandscapeSplineInterpPoint.h"
 #include "LandscapeSplineSegment.generated.h"
 

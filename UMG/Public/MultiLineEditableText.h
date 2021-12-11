@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore ETextCommit
 #include "TextLayoutWidget.h"
-//CROSS-MODULE INCLUDE: Slate EVirtualKeyboardDismissAction
 //CROSS-MODULE INCLUDE: SlateCore TextBlockStyle
 //CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
 //CROSS-MODULE INCLUDE: Slate VirtualKeyboardOptions
+//CROSS-MODULE INCLUDE: Slate EVirtualKeyboardDismissAction
+//CROSS-MODULE INCLUDE: SlateCore ETextCommit
 #include "MultiLineEditableText.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FMultiLineEditableTextHintTextDelegate);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiLineEditableTextOnTextChanged, const FText&, Text);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMultiLineEditableTextOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FMultiLineEditableTextHintTextDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiLineEditableTextOnTextChanged, const FText&, Text);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMultiLineEditableTextOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
 
 UCLASS()
 class UMG_API UMultiLineEditableText : public UTextLayoutWidget {
@@ -73,10 +73,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetHintText(FText InHintText);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetText() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetHintText() const;
     
     UMultiLineEditableText();

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ChaosEventListenerComponent.h"
 #include "ChaosHandlerSet.h"
+#include "ChaosEventListenerComponent.h"
 #include "BreakEventCallbackWrapper.h"
 #include "ChaosGameplayEventDispatcher.generated.h"
 

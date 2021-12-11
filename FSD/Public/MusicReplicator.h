@@ -12,7 +12,7 @@ protected:
     UPROPERTY(Transient, ReplicatedUsing=OnRep_ActiveMusic)
     TArray<FActiveMusicItem> ActiveMusic;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ActiveMusic();
     
 public:

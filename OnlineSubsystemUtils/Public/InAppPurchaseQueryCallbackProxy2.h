@@ -4,11 +4,11 @@
 #include "OnlineProxyStoreOffer.h"
 #include "InAppPurchaseQueryCallbackProxy2.generated.h"
 
-class UInAppPurchaseQueryCallbackProxy2;
 class APlayerController;
+class UInAppPurchaseQueryCallbackProxy2;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInAppPurchaseQueryCallbackProxy2OnSuccess, const TArray<FOnlineProxyStoreOffer>&, InAppOfferInformation);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInAppPurchaseQueryCallbackProxy2OnFailure, const TArray<FOnlineProxyStoreOffer>&, InAppOfferInformation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInAppPurchaseQueryCallbackProxy2OnSuccess, const TArray<FOnlineProxyStoreOffer>&, InAppOfferInformation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInAppPurchaseQueryCallbackProxy2OnFailure, const TArray<FOnlineProxyStoreOffer>&, InAppOfferInformation);
 
 UCLASS(BlueprintType, MinimalAPI)
 class UInAppPurchaseQueryCallbackProxy2 : public UObject {

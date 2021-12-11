@@ -23,10 +23,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void UpdateProgress(float Progress);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveUpdateProgress(float InProgress);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveInitWidget();
     
     UFUNCTION(BlueprintCallable)

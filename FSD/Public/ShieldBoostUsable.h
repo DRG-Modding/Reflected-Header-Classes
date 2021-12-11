@@ -11,7 +11,7 @@ class UShieldBoostUsable : public UInstantUsable {
     GENERATED_BODY()
 public:
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCharacterBoosted(APlayerCharacter* User, EInputKeys Key);
     
 public:

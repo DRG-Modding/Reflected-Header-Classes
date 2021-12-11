@@ -16,13 +16,13 @@ class INetMontageAble : public IInterface {
     GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable)
-    virtual  return 0.0f; QueueMontage(UAnimMontage* Montage) PURE_VIRTUAL(QueueMontage,);
+    virtual float QueueMontage(UAnimMontage* Montage) PURE_VIRTUAL(QueueMontage, return 0.0f;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return NULL; GetSkeletalMesh() const PURE_VIRTUAL(GetSkeletalMesh,);
+    virtual USkeletalMeshComponent* GetSkeletalMesh() const PURE_VIRTUAL(GetSkeletalMesh, return NULL;);
     
     UFUNCTION(BlueprintCallable)
-    virtual  return NULL; GetAnimInstance() const PURE_VIRTUAL(GetAnimInstance,);
+    virtual UAnimInstance* GetAnimInstance() const PURE_VIRTUAL(GetAnimInstance, return NULL;);
     
 };
 

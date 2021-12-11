@@ -3,13 +3,13 @@
 #include "ItemAggregator.h"
 #include "ClipBasedItemAggregator.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FClipBasedItemAggregatorOnReloadStarted);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FClipBasedItemAggregatorOnReloadComplete);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnClipAmountChanged, int32, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnMaxAmmoCapacityChanged, int32, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnTotalAmountChanged, int32, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnClipAndTotalChanged, int32, Amount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnReloadTimeChanged, float, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FClipBasedItemAggregatorOnReloadStarted);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FClipBasedItemAggregatorOnReloadComplete);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnClipAmountChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnMaxAmmoCapacityChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnTotalAmountChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnClipAndTotalChanged, int32, Amount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClipBasedItemAggregatorOnReloadTimeChanged, float, Amount);
 
 UCLASS()
 class UClipBasedItemAggregator : public UItemAggregator {
@@ -39,16 +39,16 @@ public:
     UPROPERTY(BlueprintReadOnly, EditAnywhere)
     bool ShowTotalAmount;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ReloadStarted();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ReloadComplete();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTotalAmount() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetClipAmount() const;
     
     UClipBasedItemAggregator();

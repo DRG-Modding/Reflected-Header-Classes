@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EImplicitTypeEnum
-//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore ECollisionTypeEnum
 //CROSS-MODULE INCLUDE: CoreUObject Object
 #include "GeometryCollectionSizeSpecificData.h"
+//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore EImplicitTypeEnum
+//CROSS-MODULE INCLUDE: GeometryCollectionSimulationCore ECollisionTypeEnum
 //CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "GeometryCollection.generated.h"
 

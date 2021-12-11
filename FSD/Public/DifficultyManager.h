@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "DifficultyManager.generated.h"
 
-class UDifficultySetting;
 class AFSDGameMode;
 class AFSDGameState;
+class UDifficultySetting;
 
 UCLASS(BlueprintType)
 class UDifficultyManager : public UActorComponent {
@@ -34,37 +34,37 @@ public:
     UFUNCTION(BlueprintCallable)
     UDifficultySetting* SelectDifficulty(int32 Index);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSmallEnemyDamageResistance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPointExtractionScaler() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetExtraLargeEnemyDamageResistanceD() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetExtraLargeEnemyDamageResistanceC() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetExtraLargeEnemyDamageResistanceB() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetExtraLargeEnemyDamageResistance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEnemyDamageResistance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEnemyDamageModifier() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEnemyCountModifier() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDifficultySetting* GetCurrentDifficulty() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBossDifficultyScaler() const;
     
     UDifficultyManager();

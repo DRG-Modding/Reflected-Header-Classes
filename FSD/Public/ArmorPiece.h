@@ -1,17 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-#include "SaveGameIDInterface.h"
 #include "LoadoutItem.h"
 #include "ItemIDInterface.h"
+//CROSS-MODULE INCLUDE: Engine Actor
+#include "SaveGameIDInterface.h"
 #include "ArmorPiece.generated.h"
 
-class UPawnStat;
-class UUpgradableGearComponent;
-class UItemID;
-class ALoadoutItemProxy;
 class AArmorPiece;
+class UItemID;
+class AItem;
+class UUpgradableGearComponent;
+class UPawnStat;
+class ALoadoutItemProxy;
 
 UCLASS(Abstract)
 class AArmorPiece : public AActor, public ISaveGameIDInterface, public IItemIDInterface, public ILoadoutItem {
@@ -34,12 +35,17 @@ protected:
     TSubclassOf<AActor> WeaponPreviewClass;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetWeaponViewClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AArmorPiece* GetArmorPieceDefaultObject(TSubclassOf<AArmorPiece> armorPieceClass);
     
     AArmorPiece();
+    
+    // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    TSubclassOf<AItem> GetLoadoutItemClass() const override PURE_VIRTUAL(GetLoadoutItemClass, return NULL;);
+    
 };
 

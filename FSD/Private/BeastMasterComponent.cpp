@@ -2,9 +2,9 @@
 #include "Templates/SubclassOf.h"
 
 class UDamageComponent;
-class APlayerCharacter;
 class UActorComponent;
 class AFSDPawn;
+class APlayerCharacter;
 
 void UBeastMasterComponent::SetDamage(UDamageComponent* cmp, float dmg) {
 }

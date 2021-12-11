@@ -3,25 +3,25 @@
 #include "Templates/SubclassOf.h"
 #include "DropPod.h"
 #include "ERefineryState.h"
-#include "EPipelineBuildState.h"
+#include "EInputKeys.h"
 //CROSS-MODULE INCLUDE: CoreUObject FloatRange
 //CROSS-MODULE INCLUDE: CoreUObject Int32Range
-#include "EInputKeys.h"
+#include "EPipelineBuildState.h"
 #include "FSDRefinery.generated.h"
 
 class APipelineExtractorPod;
-class USingleUsableComponent;
 class APipelineStart;
 class APipelineSegment;
-class APlayerCharacter;
+class USingleUsableComponent;
 class UDialogDataAsset;
 class ATrackBuilderItem;
+class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnRefineryStateChanged, ERefineryState, InRefineryState);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnRefineryProgressChanged, float, InProgress01);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnPipelineRegistered, APipelineStart*, InPipelineStart);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnPipelineSegmentPlaced, APipelineSegment*, InSegment);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnExtractorPodSpawned, APipelineExtractorPod*, InExtractorPod);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnRefineryStateChanged, ERefineryState, InRefineryState);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnRefineryProgressChanged, float, InProgress01);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnPipelineRegistered, APipelineStart*, InPipelineStart);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnPipelineSegmentPlaced, APipelineSegment*, InSegment);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDRefineryOnExtractorPodSpawned, APipelineExtractorPod*, InExtractorPod);
 
 UCLASS()
 class AFSDRefinery : public ADropPod {
@@ -88,35 +88,35 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetRefineryState(ERefineryState InState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveRefineryStateChanged(ERefineryState InState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePipelineStateChanged(APipelineStart* InPipeline, EPipelineBuildState InState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePipelineStartReady(APipelineStart* InPipelineStart);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStartRefiningPressed(APlayerCharacter* InCharacter, EInputKeys Key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_RefineryState(ERefineryState InOldState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerCharacterRegistered(APlayerCharacter* InCharacter);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPipelineStateChanged(APipelineStart* InPipelineStart, EPipelineBuildState InPipelineState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnObjectivesChanged();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnLaunchRocketPressed(APlayerCharacter* InCharacter, EInputKeys Key);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRefiningProgress() const;
     
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

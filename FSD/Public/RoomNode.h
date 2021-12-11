@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RoomNodeBase.h"
 #include "ERoomType.h"
-#include "RoomEntrance.h"
+#include "RoomNodeBase.h"
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "RoomEntrance.h"
 #include "GeneratedRoom.h"
 #include "RoomGeneratorItem.h"
 #include "RoomNode.generated.h"

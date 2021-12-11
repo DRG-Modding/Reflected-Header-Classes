@@ -2,13 +2,13 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "ItemUpgrade.h"
-#include "ProjectileSwitch.h"
 #include "UpgradeValues.h"
+#include "ProjectileSwitch.h"
 #include "WeaponSwitchProjectileUpgrade.generated.h"
 
-class UWeaponHitCounterComponent;
-class AActor;
 class AFSDPlayerState;
+class AActor;
+class UWeaponHitCounterComponent;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UWeaponSwitchProjectileUpgrade : public UItemUpgrade {
@@ -19,7 +19,7 @@ protected:
     FProjectileSwitch Projectile;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetUpgradedValue(AFSDPlayerState* Player, TSubclassOf<AActor> Item, TSubclassOf<UWeaponHitCounterComponent> ComponentClass);
     
     UWeaponSwitchProjectileUpgrade();

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
-#include "EHUDVisibilityMode.h"
 #include "EHUDVisibilityPresets.h"
 #include "EHUDVisibilityGroups.h"
+//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "HUDVisibilityRegisteredWidget.h"
+#include "EHUDVisibilityMode.h"
 //CROSS-MODULE INCLUDE: UMG ESlateVisibility
 #include "HUDVisibilityGroup.generated.h"
 
-class UWidget;
 class UHUDVisibilityGroup;
+class UWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHUDVisibilityGroupOnModeChanged, UHUDVisibilityGroup*, Group, EHUDVisibilityMode, Mode);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHUDVisibilityGroupOnVisibilityChanged, UHUDVisibilityGroup*, Group, bool, IsVisible);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHUDVisibilityGroupOnModeChanged, UHUDVisibilityGroup*, Group, EHUDVisibilityMode, Mode);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHUDVisibilityGroupOnVisibilityChanged, UHUDVisibilityGroup*, Group, bool, IsVisible);
 
 UCLASS(BlueprintType)
 class FSD_API UHUDVisibilityGroup : public UDataAsset {
@@ -71,26 +71,26 @@ protected:
     UFUNCTION(BlueprintCallable)
     static void RegisterMultipleWidgetsWithVisibilityGroup(TArray<UWidget*> Widgets, UHUDVisibilityGroup* Group, ESlateVisibility VisibleMode, ESlateVisibility HiddenMode);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsModeAllowed(EHUDVisibilityMode InMode) const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInDynamicMode() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsHudGroupVisible(UHUDVisibilityGroup* Group);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsGroupVisible() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EHUDVisibilityMode GetMode() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<EHUDVisibilityMode> GetAllowedModes() const;
     
 public:

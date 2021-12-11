@@ -54,7 +54,7 @@ public:
     UPROPERTY(BlueprintReadWrite)
     bool WasSuccess;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetWarningBonusSum();
     
     UMissionResultInfo();

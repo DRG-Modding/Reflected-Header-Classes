@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 //CROSS-MODULE INCLUDE: CoreUObject Color
 //CROSS-MODULE INCLUDE: Engine SceneComponent
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "EMeshTrackerVertexColorMode.h"
+//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "MockDataMeshTrackerComponent.generated.h"
 
 class UMRMeshComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FMockDataMeshTrackerComponentOnMeshTrackerUpdated, int32, Index, const TArray<FVector>&, Vertices, const TArray<int32>&, Triangles, const TArray<FVector>&, Normals, const TArray<float>&, Confidence);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FMockDataMeshTrackerComponentOnMeshTrackerUpdated, int32, Index, const TArray<FVector>&, Vertices, const TArray<int32>&, Triangles, const TArray<FVector>&, Normals, const TArray<float>&, Confidence);
 
 UCLASS(BlueprintType, EditInlineNew)
 class MRMESH_API UMockDataMeshTrackerComponent : public USceneComponent {

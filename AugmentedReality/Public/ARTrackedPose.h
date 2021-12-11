@@ -8,7 +8,7 @@ UCLASS()
 class AUGMENTEDREALITY_API UARTrackedPose : public UARTrackedGeometry {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FARPose3D GetTrackedPoseData() const;
     
     UARTrackedPose();

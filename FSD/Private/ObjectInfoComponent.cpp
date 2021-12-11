@@ -1,10 +1,10 @@
 #include "ObjectInfoComponent.h"
 
+class APlayerController;
 class UPrimitiveComponent;
 class UDialogDataAsset;
-class UActorContextWidget;
 class UTexture2D;
-class APlayerController;
+class UActorContextWidget;
 
 UDialogDataAsset* UObjectInfoComponent::GetLookAtShout(const UPrimitiveComponent* TargetComponent) const {
     return NULL;

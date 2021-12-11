@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "NoiseFunctionLibrary.generated.h"
 
+class UObject;
 class AActor;
 class USceneComponent;
-class UObject;
 
 UCLASS(BlueprintType)
 class UNoiseFunctionLibrary : public UBlueprintFunctionLibrary {
@@ -19,19 +19,19 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SphericalNoiseMovementActor(UObject* WorldContextObject, AActor* Actor, FVector Center, float Radius, float Speed, float TimeOffset);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector NoiseSphere3D(UObject* WorldContextObject, float Time, float Radius);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector2D NoiseSphere2D(UObject* WorldContextObject, float Time, float Radius);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float Noise3D(UObject* WorldContextObject, float X, float Y, float Z);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float Noise2D(UObject* WorldContextObject, float X, float Y);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float Noise(UObject* WorldContextObject, float X);
     
     UNoiseFunctionLibrary();

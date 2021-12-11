@@ -4,24 +4,24 @@
 //CROSS-MODULE INCLUDE: Engine ActorComponent
 //CROSS-MODULE INCLUDE: GameplayTags GameplayTag
 #include "EDamageComponentType.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 //CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "DamageComponent.generated.h"
 
-class UDamageClass;
+class UDamageTag;
+class AActor;
 class UHealthComponentBase;
 class UFSDPhysicalMaterial;
-class AActor;
 class UPrimitiveComponent;
+class UDamageClass;
 class UDamageBonusBase;
 class UDamageModifier;
-class UDamageTag;
 class UDamageComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDamageComponentOnTargetKilledEvent, AActor*, Target, UFSDPhysicalMaterial*, PhysicalMaterial);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDamageComponentOnTargetDamagedEvent, UHealthComponentBase*, Health, float, Amount, UPrimitiveComponent*, Component, UFSDPhysicalMaterial*, PhysicalMaterial);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDamageComponentOnNoTargetHitEvent);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDamageComponentOnHitDeadTarget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDamageComponentOnTargetKilledEvent, AActor*, Target, UFSDPhysicalMaterial*, PhysicalMaterial);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDamageComponentOnTargetDamagedEvent, UHealthComponentBase*, Health, float, Amount, UPrimitiveComponent*, Component, UFSDPhysicalMaterial*, PhysicalMaterial);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDamageComponentOnNoTargetHitEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDamageComponentOnHitDeadTarget);
 
 UCLASS(BlueprintType, EditInlineNew)
 class UDamageComponent : public UActorComponent {
@@ -116,10 +116,10 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void PreTestDamageConditions();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UDamageComponent* GetDamageComponentCDO(TSubclassOf<UDamageComponent> DamageComponent);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDamage() const;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure=false)
@@ -134,7 +134,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void DamageArmor_All(AActor* Target, UPrimitiveComponent* collider, int32 BoneIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ArmorSupportsLocalOnlyCall(AActor* Target) const;
     
     UDamageComponent();

@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EUpgradeTiers.h"
 #include "SavableDataAsset.h"
 #include "RefundableInterface.h"
+#include "EUpgradeTiers.h"
+#include "EUpgradeClass.h"
 #include "CraftingCost.h"
 #include "ItemUpgradeStatText.h"
-#include "EUpgradeClass.h"
 #include "UpgradeValues.h"
 #include "ItemUpgrade.generated.h"
 
 class UItemUpgradeElement;
 class UItemUpgrade;
+class UItemID;
 class UItemUpgradeCategory;
 class UResourceData;
 class AActor;
 class AFSDPlayerState;
-class UItemID;
 class AFSDPlayerController;
 class APlayerCharacter;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradeOnCrafted, UItemUpgrade*, Upgrade);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradeOnEquipped, UItemUpgrade*, Upgrade);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradeOnUnequipped, UItemUpgrade*, Upgrade);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradeOnCrafted, UItemUpgrade*, Upgrade);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradeOnEquipped, UItemUpgrade*, Upgrade);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FItemUpgradeOnUnequipped, UItemUpgrade*, Upgrade);
 
 UCLASS(EditInlineNew)
 class FSD_API UItemUpgrade : public USavableDataAsset, public IRefundableInterface {
@@ -75,22 +75,22 @@ public:
     UFUNCTION(BlueprintCallable)
     void UnequipUpgrade(TSubclassOf<AActor> itemClass, AFSDPlayerState* PlayerState);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FItemUpgradeStatText> GetUpgradeStatTexts() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetUpgradeName(UItemUpgrade* Upgrade);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FCraftingCost> GetUpgradeCost() const;
     
     UFUNCTION(BlueprintCallable)
     FString GetSourceName();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FUpgradeValues GetGenericUpgradedValue(TSubclassOf<AActor> Item, AFSDPlayerState* Player, UItemUpgrade* NewUpgradeClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCreditsCost() const;
     
     UFUNCTION(BlueprintCallable)
@@ -100,5 +100,7 @@ public:
     void CraftItem(UItemID* ItemID, AFSDPlayerController* PlayerController, TSubclassOf<APlayerCharacter> previewedCharacter);
     
     UItemUpgrade();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

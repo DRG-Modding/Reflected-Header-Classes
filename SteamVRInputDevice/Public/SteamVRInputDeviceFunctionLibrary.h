@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "SteamVRAction.h"
+#include "EControllerFidelity.h"
 #include "SteamVRActionSet.h"
-#include "SteamVRInputOriginInfo.h"
 #include "ESteamVRHand.h"
+#include "SteamVRInputOriginInfo.h"
 #include "SteamVRInputBindingInfo.h"
 #include "ESteamVRInputStringBits.h"
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "SteamVRSkeletonTransform.h"
 #include "EHand.h"
-#include "SteamVRFingerCurls.h"
 #include "SteamVRFingerSplays.h"
+#include "SteamVRFingerCurls.h"
 #include "ESkeletalSummaryDataType.h"
-#include "EControllerFidelity.h"
 #include "SteamVRInputDeviceFunctionLibrary.generated.h"
 
 UCLASS(BlueprintType)

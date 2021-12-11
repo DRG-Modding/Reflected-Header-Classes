@@ -4,7 +4,7 @@
 #include "FSDChatMessage.h"
 #include "MessagingSubSystem.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMessagingSubSystemOnNewMessage, const FFSDChatMessage&, Message);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMessagingSubSystemOnNewMessage, const FFSDChatMessage&, Message);
 
 UCLASS(BlueprintType)
 class UMessagingSubSystem : public UGameInstanceSubsystem {

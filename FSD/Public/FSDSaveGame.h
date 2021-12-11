@@ -1,71 +1,71 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "UnLockedMissionParameters.h"
-//CROSS-MODULE INCLUDE: Engine SaveGame
 #include "MilestoneSave.h"
+//CROSS-MODULE INCLUDE: Engine SaveGame
+#include "GDKWinOptionsInSaveGame.h"
+#include "ConsoleOptionsInSaveGame.h"
 #include "MissionStatSave.h"
-#include "EItemCategory.h"
+#include "ESonyInputSettingsFloats.h"
 //CROSS-MODULE INCLUDE: CoreUObject DateTime
+#include "ResourcesSave.h"
 #include "PerkClaimsSave.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "CharacterPerksSave.h"
 #include "AchievementSave.h"
 #include "SchematicSave.h"
-#include "FSDEventRewardsSave.h"
+#include "WatchedTutorial.h"
 #include "PromotionRewardsSave.h"
-#include "ESonyControllerLightMode.h"
-#include "EFSDFaction.h"
-#include "GameDLCSave.h"
+#include "FSDEventRewardsSave.h"
+#include "OptionsInSaveGame.h"
 #include "SeasonSave.h"
+#include "GameDLCSave.h"
+#include "UnLockedMissionParameters.h"
+#include "EFSDFaction.h"
+//CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "ESonyControllerLightMode.h"
 #include "CampaignSave.h"
-#include "DeepDiveSave.h"
 #include "ESonyInputSettingsBools.h"
+#include "DeepDiveSave.h"
 #include "CharacterSave.h"
-#include "ForgingSave.h"
 #include "DrinkSave.h"
+#include "ForgingSave.h"
 #include "ItemUpgradeSelection.h"
 #include "UpgradeLoadout.h"
 #include "ItemNotificationInfo.h"
 #include "SkinList.h"
 #include "EventRewardSave.h"
 #include "ItemUINotifications.h"
-#include "WatchedTutorial.h"
-#include "ResourcesSave.h"
-#include "ConsoleOptionsInSaveGame.h"
-#include "OptionsInSaveGame.h"
-#include "GDKWinOptionsInSaveGame.h"
 #include "SonyInputSettings.h"
 #include "ESonyControllerMotionMapping.h"
-#include "ESonyInputSettingsFloats.h"
+#include "EItemCategory.h"
 #include "FSDSaveGame.generated.h"
 
 class APlayerCharacter;
 class UResourceData;
 class UItemSkin;
 class UItemID;
-class UFSDSaveGame;
-class AActor;
-class UPlayerCharacterID;
-class UVanityItem;
 class UFSDGameInstance;
+class UVanityItem;
+class UPlayerCharacterID;
+class UFSDSaveGame;
 class UObject;
+class AActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnPlayerProgressChanged, int32, Rank, int32, Stars);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnResourceAmountChanged, UResourceData*, Resource, float, currentAmount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnCreditsChanged, int32, Credits);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDSaveGameOnTutorialsReset);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FFSDSaveGameOnCharacterSaveChanged, TSubclassOf<APlayerCharacter>, CharacterClass, int32, Level, float, Progress);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnCharacterRetired, TSubclassOf<APlayerCharacter>, CharacterClass, int32, RetirementCount);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnCharacterCanRetire, TSubclassOf<APlayerCharacter>, CharacterClass);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnPersonalMetricsChanged, bool, AllowPersonalMetrics);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnSkinUnlocked, UItemSkin*, Skin, UItemID*, ItemID);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnAnonymousMetricsChanged, bool, AllowAnonymousMetrics);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDSaveGameOnItemUnlocked);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDSaveGameOnItemPurchased);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDSaveGameOnItemUINotificationChange);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnForgingXPChanged, float, XP);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnPerkPointsChanged, int32, PerkPoints, int32, Change);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnPlayerProgressChanged, int32, Rank, int32, Stars);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnResourceAmountChanged, UResourceData*, Resource, float, currentAmount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnCreditsChanged, int32, Credits);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDSaveGameOnTutorialsReset);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FFSDSaveGameOnCharacterSaveChanged, TSubclassOf<APlayerCharacter>, CharacterClass, int32, Level, float, Progress);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnCharacterRetired, TSubclassOf<APlayerCharacter>, CharacterClass, int32, RetirementCount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnCharacterCanRetire, TSubclassOf<APlayerCharacter>, CharacterClass);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnPersonalMetricsChanged, bool, AllowPersonalMetrics);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnSkinUnlocked, UItemSkin*, Skin, UItemID*, ItemID);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnAnonymousMetricsChanged, bool, AllowAnonymousMetrics);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDSaveGameOnItemUnlocked);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDSaveGameOnItemPurchased);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDSaveGameOnItemUINotificationChange);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFSDSaveGameOnForgingXPChanged, float, XP);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDSaveGameOnPerkPointsChanged, int32, PerkPoints, int32, Change);
 
 UCLASS(BlueprintType)
 class UFSDSaveGame : public USaveGame {
@@ -385,7 +385,7 @@ public:
     UFUNCTION(BlueprintCallable)
     bool TryBuyResource(UResourceData* Resource, int32 Amount, int32& Price);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldDisplayFirstSchematicMessage() const;
     
     UFUNCTION(BlueprintCallable)
@@ -466,7 +466,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void RefreshLoadoutFromCharacter(UPlayerCharacterID* characterID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool RecievedDiscordReward();
     
     UFUNCTION(BlueprintCallable)
@@ -478,102 +478,102 @@ public:
     UFUNCTION(BlueprintCallable)
     void MarkFirstSchematicMessageSeen();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsObsolete() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInMinersManual(FGuid ObjectID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFirstRejoinAttempt();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasSeenRetirementRewardScreen() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasCharacterRetired(UPlayerCharacterID* characterID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasCharacterCompletedRetirementCampaign(UPlayerCharacterID* characterID) const;
     
     UFUNCTION(BlueprintCallable)
     static bool HasBackupWithMoreProgress(UFSDGameInstance* GameInstance);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasAnyCharacterRetired() const;
     
     UFUNCTION(BlueprintCallable)
     int32 GetTotalGamesPlayed();
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTotalCharacterXP() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESonyControllerMotionMapping GetSonyInputSettingMotionXMapping() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESonyControllerLightMode GetSonyInputSettingLightMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSonyInputSettingFloat(ESonyInputSettingsFloats Setting) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetSonyInputSettingBool(ESonyInputSettingsBools Setting) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FDateTime GetSlotTimeStamp() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetSlotLoadedFrom() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSelectedLoadoutIndex(UPlayerCharacterID* characterID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetSaveSlotName(int32 NewUserIdx);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetResourceSellingPrice(UResourceData* Resource, int32 Amount) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetResourceBuyingPrice(UResourceData* Resource, int32 Amount) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetResourceAmount(const UResourceData* Resource) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetRequiredXPForLevel(int32 Level) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetRejoinSessionId();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPurchasableItemCount() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPlayerRetirementRank() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPlayerRank() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPerkPoints() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetName();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetMaxSaveSlots();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetMainSaves(UFSDGameInstance* GameInstance, TArray<UFSDSaveGame*>& outMainSaves);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsModded();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex();
     
     UFUNCTION(BlueprintCallable)
@@ -582,31 +582,31 @@ public:
     UFUNCTION(BlueprintCallable)
     bool GetHasClaimedSteamGroupLoot();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EFSDFaction GetFaction();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UItemID* GetEquippedItemID(EItemCategory Category, UPlayerCharacterID* PlayerId) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<AActor> GetEquippedItem(EItemCategory Category, UPlayerCharacterID* PlayerId) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCredits() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetClassXP(UPlayerCharacterID* characterID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetClassLevel(UPlayerCharacterID* characterID) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetCharacterRetirementCount(const FGuid& PlayerId) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetBoscoAllowed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetAvailableUserSlotIndex(UFSDGameInstance* GameInstance);
     
     UFUNCTION(BlueprintCallable)
@@ -627,7 +627,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void CheckPromotionAchievementProgress(UObject* WorldContext, bool IsRetroactive);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanAfford(const TMap<UResourceData*, int32>& NewResources) const;
     
     UFUNCTION(BlueprintCallable)

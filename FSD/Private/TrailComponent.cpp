@@ -1,7 +1,7 @@
 #include "TrailComponent.h"
 
-class UWorld;
 class UTrailComponent;
+class UWorld;
 
 int32 UTrailComponent::TrailLength() const {
     return 0;

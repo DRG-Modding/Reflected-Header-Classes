@@ -8,8 +8,8 @@
 #include "MovieSceneCapture.generated.h"
 
 class UMovieSceneCaptureProtocolBase;
-class UMovieSceneAudioCaptureProtocolBase;
 class UMovieSceneImageCaptureProtocolBase;
+class UMovieSceneAudioCaptureProtocolBase;
 
 UCLASS(BlueprintType, PerObjectConfig, Config=EditorPerProjectUserSettings)
 class MOVIESCENECAPTURE_API UMovieSceneCapture : public UObject, public IMovieSceneCaptureInterface {
@@ -55,5 +55,7 @@ public:
     UMovieSceneCaptureProtocolBase* GetAudioCaptureProtocol();
     
     UMovieSceneCapture();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

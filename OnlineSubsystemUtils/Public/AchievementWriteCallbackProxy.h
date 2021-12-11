@@ -7,8 +7,8 @@ class UAchievementWriteCallbackProxy;
 class UObject;
 class APlayerController;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FAchievementWriteCallbackProxyOnSuccess, FName, WrittenAchievementName, float, WrittenProgress, int32, WrittenUserTag);
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FAchievementWriteCallbackProxyOnFailure, FName, WrittenAchievementName, float, WrittenProgress, int32, WrittenUserTag);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FAchievementWriteCallbackProxyOnSuccess, FName, WrittenAchievementName, float, WrittenProgress, int32, WrittenUserTag);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FAchievementWriteCallbackProxyOnFailure, FName, WrittenAchievementName, float, WrittenProgress, int32, WrittenUserTag);
 
 UCLASS(MinimalAPI)
 class UAchievementWriteCallbackProxy : public UOnlineBlueprintCallProxyBase {

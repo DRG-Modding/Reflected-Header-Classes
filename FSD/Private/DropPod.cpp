@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-class UObject;
 class ADropPod;
+class UObject;
 
 void ADropPod::StartDrilling() {
 }

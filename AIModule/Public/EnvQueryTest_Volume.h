@@ -4,8 +4,8 @@
 #include "EnvQueryTest.h"
 #include "EnvQueryTest_Volume.generated.h"
 
-class AVolume;
 class UEnvQueryContext;
+class AVolume;
 
 UCLASS(MinimalAPI)
 class UEnvQueryTest_Volume : public UEnvQueryTest {

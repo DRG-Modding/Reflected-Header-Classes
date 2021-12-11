@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "RandomFiringGuntowerModule.generated.h"
 
-class UStaticMeshComponent;
-class UParticleSystemComponent;
 class UAudioComponent;
-class UParticleSystem;
+class UStaticMeshComponent;
 class UDamageComponent;
+class UParticleSystemComponent;
+class UParticleSystem;
 
 UCLASS()
 class ARandomFiringGuntowerModule : public AHostileGuntowerModule {

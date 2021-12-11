@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESectionEvaluationFlags.h"
 //CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "ESectionEvaluationFlags.h"
 #include "MovieSceneSubSectionData.generated.h"
 
 class UMovieSceneSubSection;

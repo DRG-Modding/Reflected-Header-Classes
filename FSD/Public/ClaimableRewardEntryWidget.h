@@ -6,7 +6,7 @@
 
 class UClaimableRewardEntryWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClaimableRewardEntryWidgetOnRewardClaimed, UClaimableRewardEntryWidget*, EntryWidget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FClaimableRewardEntryWidgetOnRewardClaimed, UClaimableRewardEntryWidget*, EntryWidget);
 
 UCLASS(EditInlineNew)
 class UClaimableRewardEntryWidget : public UUserWidget {
@@ -27,7 +27,7 @@ public:
     void SetData(FClaimableRewardEntry InData);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveDataChanged();
     
 public:

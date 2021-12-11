@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 //CROSS-MODULE INCLUDE: MovieSceneTracks MovieSceneTransformOrigin
+//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "DefaultLevelSequenceInstanceData.generated.h"
 
 class AActor;
@@ -18,5 +18,7 @@ public:
     FTransform TransformOrigin;
     
     UDefaultLevelSequenceInstanceData();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE: Engine AnimNode_Base
+//CROSS-MODULE INCLUDE: CoreUObject Rotator
 //CROSS-MODULE INCLUDE: Engine PoseLink
 //CROSS-MODULE INCLUDE: Engine InputScaleBiasClamp
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "AnimNode_RotateRootBone.generated.h"
 
 USTRUCT(BlueprintType)

@@ -14,7 +14,7 @@ class UMG_API IUserObjectListEntry : public IUserListEntry {
     GENERATED_BODY()
 public:
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnListItemObjectSet(UObject* ListItemObject);
     
 };

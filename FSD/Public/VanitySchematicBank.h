@@ -4,8 +4,8 @@
 #include "SchematicBankItem.h"
 #include "VanitySchematicBank.generated.h"
 
-class USchematicCategory;
 class UVanityItem;
+class USchematicCategory;
 
 UCLASS()
 class FSD_API UVanitySchematicBank : public USchematicBankBase {
@@ -17,7 +17,7 @@ public:
     UPROPERTY(EditAnywhere)
     TMap<UVanityItem*, FSchematicBankItem> vanityItems;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AppendItems(TArray<UVanityItem*>& toArray) const;
     
     UVanitySchematicBank();

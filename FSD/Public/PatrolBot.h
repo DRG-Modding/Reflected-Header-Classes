@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WeaponFireOwner.h"
 #include "EnemyDeepPathfinderCharacter.h"
+#include "WeaponFireOwner.h"
+//CROSS-MODULE INCLUDE: Engine HitResult
 #include "EPatrolBotState.h"
 #include "EPatrolBotControlState.h"
 //CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
 #include "EDeepMovementState.h"
-//CROSS-MODULE INCLUDE: Engine HitResult
 #include "PatrolBot.generated.h"
 
 class UHackingUsableComponent;
+class UPawnAlertComponent;
 class UParticleSystemComponent;
+class UDamageComponent;
 class UPawnSensingComponent;
 class USphereComponent;
-class UAudioComponent;
 class UEnemyComponent;
-class UDamageComponent;
-class UPawnAlertComponent;
 class UPlayerImpactCooldownComponent;
 class UAvoidCeilingComponent;
+class UAudioComponent;
 class UProjectileAttackComponent;
 class USoundCue;
 class UFakeMoverSettings;
@@ -230,85 +230,85 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void ReviveDrone();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnStateChangedEvent(EPatrolBotState CurrentState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnSpawnRocketsEvent();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRocketsEnded();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRevived();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_State();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsLockedOn();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_FiringRockets();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_ControlState(EPatrolBotControlState oldState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnProjectileSpawned();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMovementStateChanged(EDeepMovementState NewState);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLockedOn();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLandedEvent();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnJumpEvent();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFireRockets();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDroneHacked();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDroneAlerted();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDisabled();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeath(UHealthComponentBase* aHealthComponent);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnControlStateChanged(EPatrolBotControlState NewControlState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCollided(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void Jumped();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsHacked() const;
     
-    UFUNCTION(NetMulticast, Unreliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void ImpactSound();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void EndFireRockets();
     
 public:
@@ -318,5 +318,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     APatrolBot();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

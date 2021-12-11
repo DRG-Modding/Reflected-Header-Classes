@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MovieSceneEvaluationMetaData.h"
 #include "MovieSceneFrameRange.h"
 #include "MovieSceneEvaluationGroup.h"
-#include "MovieSceneEvaluationMetaData.h"
 #include "MovieSceneEvaluationField.generated.h"
 
 USTRUCT()

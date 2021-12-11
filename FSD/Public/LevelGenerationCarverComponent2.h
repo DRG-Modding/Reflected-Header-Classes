@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: FSDEngine BakeSettings
 //CROSS-MODULE INCLUDE: Engine PrimitiveComponent
+//CROSS-MODULE INCLUDE: FSDEngine BakeSettings
 #include "LevelGenerationCarverComponent2.generated.h"
 
 class ACSGBuilder;

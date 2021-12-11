@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CSGChildInstanceProperties.h"
 #include "CSGBase.h"
 #include "DeepCSGTree.h"
-#include "GeneralTerrainMaterialCombiner.h"
 //CROSS-MODULE INCLUDE: CoreUObject Box
+#include "GeneralTerrainMaterialCombiner.h"
+#include "CSGChildInstanceProperties.h"
 //CROSS-MODULE INCLUDE: CoreUObject Matrix
 #include "DeepCSGFloatTree.h"
 #include "CSGChildInstance.generated.h"

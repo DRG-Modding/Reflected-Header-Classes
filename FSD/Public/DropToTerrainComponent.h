@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "DropToTerrainComponent.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDropToTerrainComponentOnFallToTerrainStateChanged, bool, IsFalling);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDropToTerrainComponentOnFallToTerrainStateChanged, bool, IsFalling);
 
 UCLASS(BlueprintType)
 class UDropToTerrainComponent : public UActorComponent {
@@ -32,10 +32,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void StopDropDetection(bool stopFalling);
     
-    UFUNCTION(NetMulticast, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable, WithValidation)
     void SetParentPositionOnAll(FVector CurrentParentLocation);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTerrainRemoved();
     
     UFUNCTION(BlueprintCallable)

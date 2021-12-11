@@ -13,7 +13,7 @@ protected:
     UPROPERTY(Export, Transient, ReplicatedUsing=OnRep_Grabber)
     TWeakObjectPtr<UGrabberComponent> CurrentGrabber;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Grabber();
     
 public:
