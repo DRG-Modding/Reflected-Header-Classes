@@ -9,5 +9,7 @@ enum class EARTrackingQualityReason : uint8 {
     Relocalizing,
     ExcessiveMotion,
     InsufficientFeatures,
+    InsufficientLight,
+    BadState,
 };
 

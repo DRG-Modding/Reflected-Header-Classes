@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FBehaviorTreeTemplateInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UBehaviorTree* Asset;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UBTCompositeNode* Template;
     
     AIMODULE_API FBehaviorTreeTemplateInfo();

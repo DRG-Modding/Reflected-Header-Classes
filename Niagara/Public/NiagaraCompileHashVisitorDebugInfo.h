@@ -6,13 +6,13 @@ USTRUCT()
 struct NIAGARA_API FNiagaraCompileHashVisitorDebugInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Object;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FString> PropertyKeys;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FString> PropertyValues;
     
     FNiagaraCompileHashVisitorDebugInfo();

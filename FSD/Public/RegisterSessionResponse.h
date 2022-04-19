@@ -6,7 +6,7 @@ USTRUCT()
 struct FRegisterSessionResponse {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString SessionKey;
     
     FSD_API FRegisterSessionResponse();

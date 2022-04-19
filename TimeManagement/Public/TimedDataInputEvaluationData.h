@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct TIMEMANAGEMENT_API FTimedDataInputEvaluationData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float DistanceToNewestSampleSeconds;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float DistanceToOldestSampleSeconds;
     
     FTimedDataInputEvaluationData();

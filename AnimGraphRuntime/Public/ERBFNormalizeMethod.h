@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ERBFNormalizeMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ERBFNormalizeMethod : uint8 {
     OnlyNormalizeAboveOne,
     AlwaysNormalize,

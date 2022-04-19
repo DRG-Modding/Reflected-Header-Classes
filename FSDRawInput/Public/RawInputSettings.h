@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DeveloperSettings
+//CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "RawInputDeviceConfiguration.h"
 #include "RawInputSettings.generated.h"
 
@@ -8,10 +8,10 @@ UCLASS(DefaultConfig, Config=Input)
 class URawInputSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRawInputDeviceConfiguration> DeviceConfigurations;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRegisterDefaultDevice;
     
     URawInputSettings();

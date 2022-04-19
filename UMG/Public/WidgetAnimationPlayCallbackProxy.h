@@ -1,29 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "EUMGSequencePlayMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "WidgetAnimationResultDelegate.h"
 #include "WidgetAnimationPlayCallbackProxy.generated.h"
 
 class UWidgetAnimationPlayCallbackProxy;
-class UWidgetAnimation;
-class UUserWidget;
 class UUMGSequencePlayer;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FWidgetAnimationPlayCallbackProxyFinished);
+class UUserWidget;
+class UWidgetAnimation;
 
 UCLASS(BlueprintType, MinimalAPI)
 class UWidgetAnimationPlayCallbackProxy : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FWidgetAnimationPlayCallbackProxyFinished Finished;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FWidgetAnimationResult Finished;
     
+    UWidgetAnimationPlayCallbackProxy();
     UFUNCTION(BlueprintCallable)
     static UWidgetAnimationPlayCallbackProxy* CreatePlayAnimationTimeRangeProxyObject(UUMGSequencePlayer*& Result, UUserWidget* Widget, UWidgetAnimation* InAnimation, float StartAtTime, float EndAtTime, int32 NumLoopsToPlay, TEnumAsByte<EUMGSequencePlayMode::Type> PlayMode, float PlaybackSpeed);
     
     UFUNCTION(BlueprintCallable)
     static UWidgetAnimationPlayCallbackProxy* CreatePlayAnimationProxyObject(UUMGSequencePlayer*& Result, UUserWidget* Widget, UWidgetAnimation* InAnimation, float StartAtTime, int32 NumLoopsToPlay, TEnumAsByte<EUMGSequencePlayMode::Type> PlayMode, float PlaybackSpeed);
     
-    UWidgetAnimationPlayCallbackProxy();
 };
 

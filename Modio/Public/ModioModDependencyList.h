@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct MODIO_API FModioModDependencyList {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FModioPagedResult PagedResult;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FModioModDependency> InternalList;
     
     FModioModDependencyList();

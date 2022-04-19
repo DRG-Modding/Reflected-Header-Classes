@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "LandscapeWeightmapUsage.generated.h"
 
 class ULandscapeComponent;
@@ -10,10 +10,10 @@ UCLASS(MinimalAPI)
 class ULandscapeWeightmapUsage : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     ULandscapeComponent* ChannelUsage[4];
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid LayerGuid;
     
     ULandscapeWeightmapUsage();

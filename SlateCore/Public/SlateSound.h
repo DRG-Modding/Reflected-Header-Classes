@@ -9,7 +9,7 @@ struct SLATECORE_API FSlateSound {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UObject* ResourceObject;
     
 public:

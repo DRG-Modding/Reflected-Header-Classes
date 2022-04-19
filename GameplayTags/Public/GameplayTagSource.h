@@ -7,21 +7,21 @@ class UGameplayTagsList;
 class URestrictedGameplayTagsList;
 
 USTRUCT(BlueprintType)
-struct FGameplayTagSource {
+struct GAMEPLAYTAGS_API FGameplayTagSource {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName SourceName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EGameplayTagSourceType SourceType;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UGameplayTagsList* SourceTagList;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     URestrictedGameplayTagsList* SourceRestrictedTagList;
     
-    GAMEPLAYTAGS_API FGameplayTagSource();
+    FGameplayTagSource();
 };
 

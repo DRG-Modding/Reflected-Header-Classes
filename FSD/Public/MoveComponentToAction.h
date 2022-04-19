@@ -1,31 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "TickableActionBase.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
-//CROSS-MODULE INCLUDE: Engine EEasingFunc
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EEasingFunc -FallbackName=EEasingFunc
 #include "MoveComponentToAction.generated.h"
 
 class UMoveComponentToAction;
 class USceneComponent;
 class UObject;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMoveComponentToActionCompleted, USceneComponent*, Component);
-
 UCLASS()
 class UMoveComponentToAction : public UTickableActionBase {
     GENERATED_BODY()
 public:
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCompletedDelegate, USceneComponent*, Component);
+    
 protected:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USceneComponent> Component;
     
-    UPROPERTY(BlueprintAssignable)
-    FMoveComponentToActionCompleted Completed;
-    
-    UFUNCTION(BlueprintCallable)
-    static UMoveComponentToAction* EaseComponentTo(UObject* WorldContext, USceneComponent* InComponent, FTransform InEndTransform, TEnumAsByte<EEasingFunc::Type> InEasingMode, bool InWorldSpace, float InDuration);
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FCompletedDelegate Completed;
     
 public:
     UMoveComponentToAction();
+protected:
+    UFUNCTION(BlueprintCallable)
+    static UMoveComponentToAction* EaseComponentTo(UObject* WorldContext, USceneComponent* InComponent, FTransform InEndTransform, TEnumAsByte<EEasingFunc::Type> InEasingMode, bool InWorldSpace, float InDuration);
+    
 };
 

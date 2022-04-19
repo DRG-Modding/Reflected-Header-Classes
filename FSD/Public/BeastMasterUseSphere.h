@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SphereComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 #include "BeastMasterUseSphere.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UBeastMasterUseSphere : public USphereComponent {
     GENERATED_BODY()
 public:

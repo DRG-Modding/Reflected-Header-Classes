@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Margin.h"
 #include "SlateWidgetStyle.h"
 #include "ButtonStyle.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "SlateBrush.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "Margin.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "ComboButtonStyle.generated.h"
 
 USTRUCT(BlueprintType)
 struct SLATECORE_API FComboButtonStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FButtonStyle ButtonStyle;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush DownArrowImage;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D ShadowOffset;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ShadowColorAndOpacity;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush MenuBorderBrush;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMargin MenuBorderPadding;
     
     FComboButtonStyle();

@@ -8,13 +8,13 @@ UCLASS()
 class DATASMITHCONTENT_API UDatasmithPostProcessVolumeTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FDatasmithPostProcessSettingsTemplate Settings;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bEnabled: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bUnbound: 1;
     
     UDatasmithPostProcessVolumeTemplate();

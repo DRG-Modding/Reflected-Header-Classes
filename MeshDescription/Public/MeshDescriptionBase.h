@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "VertexID.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "TriangleID.h"
 #include "PolygonID.h"
 #include "PolygonGroupID.h"
 #include "VertexInstanceID.h"
-#include "TriangleID.h"
 #include "EdgeID.h"
 #include "MeshDescriptionBase.generated.h"
 
@@ -14,6 +14,7 @@ UCLASS(BlueprintType)
 class MESHDESCRIPTION_API UMeshDescriptionBase : public UObject {
     GENERATED_BODY()
 public:
+    UMeshDescriptionBase();
     UFUNCTION(BlueprintCallable)
     void SetVertexPosition(FVertexID VertexID, const FVector& Position);
     
@@ -269,6 +270,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ComputePolygonTriangulation(FPolygonID PolygonID);
     
-    UMeshDescriptionBase();
 };
 

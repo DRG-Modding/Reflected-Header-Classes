@@ -1,30 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: OnlineSubsystem EInAppPurchaseState
-//CROSS-MODULE INCLUDE: OnlineSubsystem InAppPurchaseRestoreInfo
-//CROSS-MODULE INCLUDE: OnlineSubsystem InAppPurchaseProductRequest
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "InAppPurchaseRestoreResultDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystem -ObjectName=InAppPurchaseProductRequest -FallbackName=InAppPurchaseProductRequest
 #include "InAppPurchaseRestoreCallbackProxy.generated.h"
 
-class UInAppPurchaseRestoreCallbackProxy;
 class APlayerController;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInAppPurchaseRestoreCallbackProxyOnSuccess, TEnumAsByte<EInAppPurchaseState::Type>, CompletionStatus, const TArray<FInAppPurchaseRestoreInfo>&, InAppRestorePurchaseInformation);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInAppPurchaseRestoreCallbackProxyOnFailure, TEnumAsByte<EInAppPurchaseState::Type>, CompletionStatus, const TArray<FInAppPurchaseRestoreInfo>&, InAppRestorePurchaseInformation);
+class UInAppPurchaseRestoreCallbackProxy;
 
 UCLASS(BlueprintType, MinimalAPI)
 class UInAppPurchaseRestoreCallbackProxy : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FInAppPurchaseRestoreCallbackProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FInAppPurchaseRestoreResult OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FInAppPurchaseRestoreCallbackProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FInAppPurchaseRestoreResult OnFailure;
     
+    UInAppPurchaseRestoreCallbackProxy();
     UFUNCTION(BlueprintCallable)
     static UInAppPurchaseRestoreCallbackProxy* CreateProxyObjectForInAppPurchaseRestore(const TArray<FInAppPurchaseProductRequest>& ConsumableProductFlags, APlayerController* PlayerController);
     
-    UInAppPurchaseRestoreCallbackProxy();
 };
 

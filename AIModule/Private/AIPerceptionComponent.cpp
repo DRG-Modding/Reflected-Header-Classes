@@ -13,6 +13,9 @@ void UAIPerceptionComponent::RequestStimuliListenerUpdate() {
 void UAIPerceptionComponent::OnOwnerEndPlay(AActor* Actor, TEnumAsByte<EEndPlayReason::Type> EndPlayReason) {
 }
 
+void UAIPerceptionComponent::GetPerceivedHostileActorsBySense(const TSubclassOf<UAISense> SenseToUse, TArray<AActor*>& OutActors) const {
+}
+
 void UAIPerceptionComponent::GetPerceivedHostileActors(TArray<AActor*>& OutActors) const {
 }
 

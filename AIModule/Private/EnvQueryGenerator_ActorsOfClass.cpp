@@ -1,5 +1,5 @@
 #include "EnvQueryGenerator_ActorsOfClass.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EnvQueryContext_Querier.h"
 
 UEnvQueryGenerator_ActorsOfClass::UEnvQueryGenerator_ActorsOfClass() {

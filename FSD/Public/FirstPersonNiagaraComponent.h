@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: Niagara NiagaraComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine EAttachLocation
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachLocation -FallbackName=EAttachLocation
+//CROSS-MODULE INCLUDE V2: -ModuleName=Niagara -ObjectName=NiagaraComponent -FallbackName=NiagaraComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "FirstPersonNiagaraComponent.generated.h"
 
-class UNiagaraSystem;
 class USceneComponent;
+class UNiagaraSystem;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UFirstPersonNiagaraComponent : public UNiagaraComponent {
     GENERATED_BODY()
 public:
+    UFirstPersonNiagaraComponent();
     UFUNCTION(BlueprintCallable)
     static UNiagaraComponent* SpawnFirstPersonEmitterAttached(UNiagaraSystem* inNiagaraSystem, USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, FVector Scale, TEnumAsByte<EAttachLocation::Type> LocationType, bool inAutoDestroy);
     
-    UFirstPersonNiagaraComponent();
 };
 

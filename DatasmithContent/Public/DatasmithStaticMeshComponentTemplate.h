@@ -10,10 +10,10 @@ UCLASS()
 class DATASMITHCONTENT_API UDatasmithStaticMeshComponentTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UStaticMesh* StaticMesh;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInterface*> OverrideMaterials;
     
     UDatasmithStaticMeshComponentTemplate();

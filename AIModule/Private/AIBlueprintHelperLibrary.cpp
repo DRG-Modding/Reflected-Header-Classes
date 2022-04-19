@@ -3,12 +3,12 @@
 
 class UAnimInstance;
 class UObject;
-class UBehaviorTree;
 class APawn;
+class UBehaviorTree;
 class AActor;
 class AController;
-class UNavigationPath;
 class UBlackboardComponent;
+class UNavigationPath;
 class AAIController;
 class UAIAsyncTaskBlueprintProxy;
 
@@ -41,6 +41,18 @@ bool UAIBlueprintHelperLibrary::IsValidAILocation(FVector Location) {
 
 bool UAIBlueprintHelperLibrary::IsValidAIDirection(FVector DirectionVector) {
     return false;
+}
+
+int32 UAIBlueprintHelperLibrary::GetNextNavLinkIndex(const AController* Controller) {
+    return 0;
+}
+
+TArray<FVector> UAIBlueprintHelperLibrary::GetCurrentPathPoints(AController* Controller) {
+    return TArray<FVector>();
+}
+
+int32 UAIBlueprintHelperLibrary::GetCurrentPathIndex(const AController* Controller) {
+    return 0;
 }
 
 UNavigationPath* UAIBlueprintHelperLibrary::GetCurrentPath(AController* Controller) {

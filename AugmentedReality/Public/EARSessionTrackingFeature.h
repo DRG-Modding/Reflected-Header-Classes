@@ -8,5 +8,7 @@ enum class EARSessionTrackingFeature : uint8 {
     PoseDetection2D,
     PersonSegmentation,
     PersonSegmentationWithDepth,
+    SceneDepth,
+    SmoothedSceneDepth,
 };
 

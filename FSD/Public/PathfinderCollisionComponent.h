@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine StaticMeshComponent
-//CROSS-MODULE INCLUDE: FSDEngine PFCollisionType
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=PFCollisionType -FallbackName=PFCollisionType
 #include "PathfinderCollisionComponent.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UPathfinderCollisionComponent : public UStaticMeshComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ActivatePFCollisionAtInit;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     PFCollisionType PFColiType;
     
+    UPathfinderCollisionComponent();
     UFUNCTION(BlueprintCallable)
     void DisablePFCollision();
     
     UFUNCTION(BlueprintCallable)
     void ActivatePFCollision();
     
-    UPathfinderCollisionComponent();
 };
 

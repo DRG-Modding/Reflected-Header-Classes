@@ -8,22 +8,22 @@ class AIMODULE_API UAISense_Sight : public UAISense {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     int32 MaxTracesPerTick;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     int32 MinQueriesPerTimeSliceCheck;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     double MaxTimeSlicePerTick;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     float HighImportanceQueryDistanceThreshold;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     float MaxQueryImportance;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     float SightLimitQueryImportance;
     
 public:

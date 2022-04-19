@@ -8,28 +8,31 @@ USTRUCT()
 struct FNiagaraEmitterCompiledData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FName> SpawnAttributes;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable EmitterSpawnIntervalVar;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable EmitterInterpSpawnStartDTVar;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable EmitterSpawnGroupVar;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable EmitterAgeVar;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable EmitterRandomSeedVar;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FNiagaraVariable EmitterInstanceSeedVar;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable EmitterTotalSpawnedParticlesVar;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraDataSetCompiledData DataSetCompiledData;
     
     NIAGARA_API FNiagaraEmitterCompiledData();

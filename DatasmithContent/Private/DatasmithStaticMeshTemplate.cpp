@@ -1,7 +1,7 @@
 #include "DatasmithStaticMeshTemplate.h"
 
 UDatasmithStaticMeshTemplate::UDatasmithStaticMeshTemplate() {
-    this->LightMapCoordinateIndex = 0;
+    this->LightMapCoordinateIndex = -1;
     this->LightMapResolution = 0;
 }
 

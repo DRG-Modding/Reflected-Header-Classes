@@ -1,5 +1,7 @@
 #include "FacilityGeneratorLine.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SplineComponent -FallbackName=SplineComponent
+#include "SplineDecoratorComponent.h"
 
 void AFacilityGeneratorLine::SetConnected(bool InConnected) {
 }
@@ -23,6 +25,8 @@ AFacilityGeneratorLine::AFacilityGeneratorLine() {
     this->HeightOffsetMax = 100.00f;
     this->MaxSegmentLength = 1000.00f;
     this->CarveRadius = 50.00f;
+    this->SplineComponent = CreateDefaultSubobject<USplineComponent>(TEXT("SplineComponent"));
+    this->SplineDecorator = CreateDefaultSubobject<USplineDecoratorComponent>(TEXT("SplineDecorator"));
     this->Station = NULL;
     this->MeshInstance = NULL;
     this->Connected = true;

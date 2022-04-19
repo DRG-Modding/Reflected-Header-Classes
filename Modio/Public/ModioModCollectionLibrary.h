@@ -1,16 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "ModioModCollectionEntry.h"
-#include "ModioModInfo.h"
-#include "EModioModState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ModioModID.h"
+#include "EModioModState.h"
+#include "ModioModInfo.h"
 #include "ModioModCollectionLibrary.generated.h"
 
 UCLASS(BlueprintType)
 class MODIO_API UModioModCollectionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UModioModCollectionLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetPath(const FModioModCollectionEntry& Entry);
     
@@ -23,6 +24,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioModID GetID(const FModioModCollectionEntry& Entry);
     
-    UModioModCollectionLibrary();
 };
 

@@ -1,45 +1,45 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: CoreUObject Box
 #include "BakeSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
 #include "CSGBuilderBase.generated.h"
 
-class UBakeConfig;
-class UCSGPreviewComponent;
 class UTerrainMaterialCore;
+class UCSGPreviewComponent;
+class UBakeConfig;
 
 UCLASS()
 class FSDENGINE_API ACSGBuilderBase : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBox BoundingBox;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 PreviewSeed;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBakeSettings PreviewSettings;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTerrainMaterialCore* EmptyMat;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTerrainMaterialCore* ErrorMat;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTerrainMaterialCore* SolidMat;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTerrainMaterialCore* BurnedMat;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UCSGPreviewComponent* PreviewComponent;
     
+    ACSGBuilderBase();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PreGenerate(UBakeConfig* builder);
     
-    ACSGBuilderBase();
 };
 

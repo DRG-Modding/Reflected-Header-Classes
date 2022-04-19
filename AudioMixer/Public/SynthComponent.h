@@ -1,97 +1,99 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SceneComponent
-//CROSS-MODULE INCLUDE: Engine SoundAttenuationSettings
-//CROSS-MODULE INCLUDE: Engine SoundSourceBusSendInfo
-//CROSS-MODULE INCLUDE: Engine SoundSubmixSendInfo
-//CROSS-MODULE INCLUDE: AudioExtensions SoundModulation
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundAttenuationSettings -FallbackName=SoundAttenuationSettings
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundSubmixSendInfo -FallbackName=SoundSubmixSendInfo
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundSourceBusSendInfo -FallbackName=SoundSourceBusSendInfo
+#include "OnSynthEnvelopeValueDelegate.h"
 #include "SynthComponent.generated.h"
 
-class USoundClass;
+class UAudioComponent;
 class USoundAttenuation;
 class USoundConcurrency;
+class USoundClass;
 class USoundEffectSourcePresetChain;
 class USoundSubmixBase;
 class USynthSound;
-class UAudioComponent;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynthComponentOnAudioEnvelopeValue, const float, EnvelopeValue);
-
-UCLASS(BlueprintType)
+UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))
 class AUDIOMIXER_API USynthComponent : public USceneComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bAutoDestroy: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bStopWhenOwnerDestroyed: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAllowSpatialization: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bOverrideAttenuation: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    uint8 bOutputToBusOnly: 1;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bEnableBusSends: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bEnableBaseSubmix: 1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bEnableSubmixSends: 1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundAttenuation* AttenuationSettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoundAttenuationSettings AttenuationOverrides;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USoundConcurrency* ConcurrencySettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<USoundConcurrency*> ConcurrencySet;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundClass* SoundClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundEffectSourcePresetChain* SourceEffectChain;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundSubmixBase* SoundSubmix;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSoundSubmixSendInfo> SoundSubmixSends;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSoundSourceBusSendInfo> BusSends;
     
-    UPROPERTY(EditAnywhere)
-    FSoundModulation Modulation;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSoundSourceBusSendInfo> PreEffectBusSends;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsUISound: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bIsPreviewSound: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 EnvelopeFollowerAttackTime;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 EnvelopeFollowerReleaseTime;
     
-    UPROPERTY(BlueprintAssignable)
-    FSynthComponentOnAudioEnvelopeValue OnAudioEnvelopeValue;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnSynthEnvelopeValue OnAudioEnvelopeValue;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     USynthSound* Synth;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UAudioComponent* AudioComponent;
     
 public:
+    USynthComponent();
     UFUNCTION(BlueprintCallable)
     void Stop();
     
@@ -104,9 +106,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetSubmixSend(USoundSubmixBase* Submix, float SendLevel);
     
+    UFUNCTION(BlueprintCallable)
+    void SetOutputToBusOnly(bool bInOutputToBusOnly);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetLowPassFilterFrequency(float InLowPassFilterFrequency);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetLowPassFilterEnabled(bool InLowPassFilterEnabled);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlaying() const;
     
-    USynthComponent();
 };
 

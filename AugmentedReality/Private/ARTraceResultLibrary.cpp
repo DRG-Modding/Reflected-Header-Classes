@@ -10,6 +10,10 @@ EARLineTraceChannels UARTraceResultLibrary::GetTraceChannel(const FARTraceResult
     return EARLineTraceChannels::None;
 }
 
+FTransform UARTraceResultLibrary::GetLocalTransform(const FARTraceResult& TraceResult) {
+    return FTransform{};
+}
+
 FTransform UARTraceResultLibrary::GetLocalToWorldTransform(const FARTraceResult& TraceResult) {
     return FTransform{};
 }

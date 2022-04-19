@@ -9,31 +9,31 @@ USTRUCT()
 struct FLandscapeEditToolRenderData {
     GENERATED_BODY()
 public:
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     UMaterialInterface* ToolMaterial;
     
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     UMaterialInterface* GizmoMaterial;
     
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     int32 SelectedType;
     
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     int32 DebugChannelR;
     
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     int32 DebugChannelG;
     
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     int32 DebugChannelB;
     
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     UTexture2D* DataTexture;
     
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     UTexture2D* LayerContributionTexture;
     
-    UPROPERTY(NonTransactional)
+    UPROPERTY(BlueprintReadWrite, NonTransactional, meta=(AllowPrivateAccess=true))
     UTexture2D* DirtyTexture;
     
     LANDSCAPE_API FLandscapeEditToolRenderData();

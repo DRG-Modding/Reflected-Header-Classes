@@ -1,5 +1,8 @@
 #include "AnchorTurner.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 class UPrimitiveComponent;
 class AActor;
@@ -22,6 +25,12 @@ void AAnchorTurner::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 }
 
 AAnchorTurner::AAnchorTurner() {
+    this->Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    this->Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+    this->PushCollider1 = CreateDefaultSubobject<USphereComponent>(TEXT("PushCollider1"));
+    this->PushCollider2 = CreateDefaultSubobject<USphereComponent>(TEXT("PushCollider2"));
+    this->PushCollider3 = CreateDefaultSubobject<USphereComponent>(TEXT("PushCollider3"));
+    this->PushCollider4 = CreateDefaultSubobject<USphereComponent>(TEXT("PushCollider4"));
     this->PerPlayerMultiplier = 1.00f;
     this->TurnSpeed = 0.00f;
     this->Progress = 0.00f;

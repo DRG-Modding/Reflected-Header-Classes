@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FMovieSceneObjectBindingIDs {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneObjectBindingID> IDs;
     
     MOVIESCENE_API FMovieSceneObjectBindingIDs();

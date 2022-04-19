@@ -1,21 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "BlackboardKeySelector.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "BTFunctionLibrary.generated.h"
 
-class UBTNode;
-class AActor;
-class UBlackboardComponent;
 class UObject;
+class AActor;
+class UBTNode;
+class UBlackboardComponent;
 class UBehaviorTreeComponent;
 
 UCLASS(BlueprintType)
 class AIMODULE_API UBTFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UBTFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static void StopUsingExternalEvent(UBTNode* NodeOwner);
     
@@ -97,6 +98,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void ClearBlackboardValue(UBTNode* NodeOwner, const FBlackboardKeySelector& Key);
     
-    UBTFunctionLibrary();
 };
 

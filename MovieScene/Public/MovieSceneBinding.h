@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "MovieSceneBinding.generated.h"
 
 class UMovieSceneTrack;
@@ -10,13 +10,13 @@ struct FMovieSceneBinding {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid ObjectGuid;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString BindingName;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UMovieSceneTrack*> Tracks;
     
 public:

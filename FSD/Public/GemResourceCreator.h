@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "GemResourceCreator.generated.h"
 
 class UGemResourceData;
 
-UCLASS(EditInlineNew)
+UCLASS(Abstract, EditInlineNew)
 class UGemResourceCreator : public UDataAsset {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UGemResourceData* ResourceData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CheckIfFreeSpaceAbove;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SearchSize;
     
 public:

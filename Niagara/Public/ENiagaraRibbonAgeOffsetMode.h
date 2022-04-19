@@ -3,7 +3,7 @@
 #include "ENiagaraRibbonAgeOffsetMode.generated.h"
 
 UENUM()
-enum class ENiagaraRibbonAgeOffsetMode : uint8 {
+enum class ENiagaraRibbonAgeOffsetMode {
     Scale,
     Clip,
 };

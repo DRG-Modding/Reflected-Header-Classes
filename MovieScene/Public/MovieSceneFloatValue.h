@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneTangentData.h"
-//CROSS-MODULE INCLUDE: Engine ERichCurveTangentMode
-//CROSS-MODULE INCLUDE: Engine ERichCurveInterpMode
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ERichCurveInterpMode -FallbackName=ERichCurveInterpMode
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ERichCurveTangentMode -FallbackName=ERichCurveTangentMode
 #include "MovieSceneFloatValue.generated.h"
 
 USTRUCT(BlueprintType)
 struct FMovieSceneFloatValue {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Value;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneTangentData Tangent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ERichCurveInterpMode> InterpMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ERichCurveTangentMode> TangentMode;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 PaddingByte;
     
     MOVIESCENE_API FMovieSceneFloatValue();

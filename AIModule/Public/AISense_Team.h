@@ -8,7 +8,7 @@ UCLASS()
 class AIMODULE_API UAISense_Team : public UAISense {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FAITeamStimulusEvent> RegisteredEvents;
     
     UAISense_Team();

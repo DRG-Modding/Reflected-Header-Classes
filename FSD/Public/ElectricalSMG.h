@@ -2,37 +2,40 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "AmmoDrivenWeapon.h"
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "ElectricalSMG.generated.h"
 
-class UStatusEffect;
-class UParticleSystem;
 class UPrimitiveComponent;
+class UStatusEffect;
 class USoundCue;
-class UFSDPhysicalMaterial;
+class UParticleSystem;
 class UHealthComponentBase;
+class UFSDPhysicalMaterial;
 
 UCLASS()
 class AElectricalSMG : public AAmmoDrivenWeapon {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UStatusEffect> AoEStatusEffect;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UParticleSystem* AoEParticle;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundCue* AoESound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AoEStatusEffectChance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AoEStatusEffectRange;
     
+public:
+    AElectricalSMG();
+protected:
     UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
@@ -42,7 +45,5 @@ protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
     void All_OnAoETriggered(const FVector_NetQuantize& Location, const FVector_NetQuantizeNormal& Normal) const;
     
-public:
-    AElectricalSMG();
 };
 

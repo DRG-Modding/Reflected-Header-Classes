@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneTrack
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneTrack -FallbackName=MovieSceneTrack
 #include "MovieScene3DConstraintTrack.generated.h"
 
 class UMovieSceneSection;
@@ -10,7 +10,7 @@ class UMovieScene3DConstraintTrack : public UMovieSceneTrack {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UMovieSceneSection*> ConstraintSections;
     
 public:

@@ -7,5 +7,6 @@ enum class ENiagaraDefaultMode {
     Value,
     Binding,
     Custom,
+    FailIfPreviouslyNotSet,
 };
 

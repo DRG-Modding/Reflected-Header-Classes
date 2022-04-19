@@ -1,37 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSequence
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequence -FallbackName=MovieSceneSequence
+#include "WidgetAnimationDynamicEventDelegate.h"
 #include "WidgetAnimationBinding.h"
 #include "WidgetAnimation.generated.h"
 
 class UMovieScene;
 class UUserWidget;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FWidgetAnimationDelegate);
-
 UCLASS(MinimalAPI)
 class UWidgetAnimation : public UMovieSceneSequence {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UMovieScene* MovieScene;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FWidgetAnimationBinding> AnimationBindings;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bLegacyFinishOnStop;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString DisplayLabel;
     
 public:
+    UWidgetAnimation();
     UFUNCTION(BlueprintCallable)
-    void UnbindFromAnimationStarted(UUserWidget* Widget, FWidgetAnimationDelegate Delegate);
+    void UnbindFromAnimationStarted(UUserWidget* Widget, FWidgetAnimationDynamicEvent Delegate);
     
     UFUNCTION(BlueprintCallable)
-    void UnbindFromAnimationFinished(UUserWidget* Widget, FWidgetAnimationDelegate Delegate);
+    void UnbindFromAnimationFinished(UUserWidget* Widget, FWidgetAnimationDynamicEvent Delegate);
     
     UFUNCTION(BlueprintCallable)
     void UnbindAllFromAnimationStarted(UUserWidget* Widget);
@@ -46,11 +46,10 @@ public:
     float GetEndTime() const;
     
     UFUNCTION(BlueprintCallable)
-    void BindToAnimationStarted(UUserWidget* Widget, FWidgetAnimationDelegate Delegate);
+    void BindToAnimationStarted(UUserWidget* Widget, FWidgetAnimationDynamicEvent Delegate);
     
     UFUNCTION(BlueprintCallable)
-    void BindToAnimationFinished(UUserWidget* Widget, FWidgetAnimationDelegate Delegate);
+    void BindToAnimationFinished(UUserWidget* Widget, FWidgetAnimationDynamicEvent Delegate);
     
-    UWidgetAnimation();
 };
 

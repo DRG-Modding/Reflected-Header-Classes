@@ -1,12 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneFloatSection.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneFloatChannel -FallbackName=MovieSceneFloatChannel
 #include "MovieSceneSlomoSection.generated.h"
 
 UCLASS(MinimalAPI)
-class UMovieSceneSlomoSection : public UMovieSceneFloatSection {
+class UMovieSceneSlomoSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FMovieSceneFloatChannel FloatCurve;
+    
     UMovieSceneSlomoSection();
 };
 

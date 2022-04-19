@@ -8,7 +8,7 @@ class MOVIESCENECAPTURE_API UMasterAudioSubmixCaptureProtocol : public UMovieSce
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Filename;
     
 public:

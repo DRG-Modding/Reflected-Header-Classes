@@ -1,4 +1,5 @@
 #include "SwitchActor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 class AActor;
 
@@ -14,6 +15,7 @@ TArray<AActor*> ASwitchActor::GetOptions() const {
 }
 
 ASwitchActor::ASwitchActor() {
+    this->SceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
     this->LastSelectedOption = 0;
 }
 

@@ -2,19 +2,19 @@
 #include "CoreMinimal.h"
 #include "FSDPawn.h"
 #include "EventParticipant.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "TowerEventModule.generated.h"
 
+class USoundCue;
 class USceneComponent;
 class USkeletalMeshComponent;
-class UWeakpointGlowComponent;
 class UParticleSystemComponent;
 class UEnemyHealthComponent;
-class USoundCue;
+class ATowerEventModule;
 class UArmorHealthDamageComponent;
+class UWeakpointGlowComponent;
 class USkeletalMesh;
 class UParticleSystem;
-class ATowerEventModule;
 class UStaticMesh;
 class UStaticMeshComponent;
 
@@ -22,61 +22,65 @@ UCLASS()
 class FSD_API ATowerEventModule : public AFSDPawn, public IEventParticipant {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USceneComponent* Root;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* Mesh;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UEnemyHealthComponent* Health;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UArmorHealthDamageComponent* ArmorDamage;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UWeakpointGlowComponent* WeakpointGlow;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UParticleSystemComponent* SmokeParticles;
     
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FRotator MainBodyRotation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USkeletalMesh* DestroyedMesh;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundCue* ExplosionSound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UParticleSystem* ExplosionEffect;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
     ATowerEventModule* PreviousModule;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
     ATowerEventModule* NextModule;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStaticMesh* ArmorMesh;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ArmorPieces;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ArmorLifetime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ArmorPopForce;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ArmorShedDelay;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<UStaticMeshComponent*> ArmorMeshes;
+    
+public:
+    ATowerEventModule();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -88,10 +92,6 @@ protected:
     UFUNCTION(BlueprintCallable)
     void DestroyArmor();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ATowerEventModule();
     
     // Fix for true pure virtual functions not being implemented
 };

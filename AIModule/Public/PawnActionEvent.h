@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct AIMODULE_API FPawnActionEvent {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UPawnAction* Action;
     
     FPawnActionEvent();

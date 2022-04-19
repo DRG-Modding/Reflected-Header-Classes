@@ -1,36 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SoundAttenuationSettings
-//CROSS-MODULE INCLUDE: AudioMixer SynthComponent
-#include "EMediaSoundComponentFFTSize.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundAttenuationSettings -FallbackName=SoundAttenuationSettings
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FloatRange -FallbackName=FloatRange
 #include "EMediaSoundChannels.h"
-//CROSS-MODULE INCLUDE: CoreUObject FloatRange
+#include "EMediaSoundComponentFFTSize.h"
 #include "MediaSoundComponentSpectralData.h"
 #include "MediaSoundComponent.generated.h"
 
 class UMediaPlayer;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class MEDIAASSETS_API UMediaSoundComponent : public USynthComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMediaSoundChannels Channels;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool DynamicRateAdjustment;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RateAdjustmentFactor;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange RateAdjustmentRange;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMediaPlayer* MediaPlayer;
     
 public:
+    UMediaSoundComponent();
     UFUNCTION(BlueprintCallable)
     void SetSpectralAnalysisSettings(TArray<float> InFrequenciesToAnalyze, EMediaSoundComponentFFTSize InFFTSize);
     
@@ -49,6 +50,9 @@ public:
     UFUNCTION(BlueprintCallable)
     TArray<FMediaSoundComponentSpectralData> GetSpectralData();
     
+    UFUNCTION(BlueprintCallable)
+    TArray<FMediaSoundComponentSpectralData> GetNormalizedSpectralData();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMediaPlayer* GetMediaPlayer() const;
     
@@ -58,6 +62,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool BP_GetAttenuationSettingsToApply(FSoundAttenuationSettings& OutAttenuationSettings);
     
-    UMediaSoundComponent();
 };
 

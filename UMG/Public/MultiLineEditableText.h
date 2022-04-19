@@ -1,66 +1,67 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "TextLayoutWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore TextBlockStyle
-//CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
-//CROSS-MODULE INCLUDE: Slate VirtualKeyboardOptions
-//CROSS-MODULE INCLUDE: Slate EVirtualKeyboardDismissAction
-//CROSS-MODULE INCLUDE: SlateCore ETextCommit
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=EVirtualKeyboardDismissAction -FallbackName=EVirtualKeyboardDismissAction
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=VirtualKeyboardOptions -FallbackName=VirtualKeyboardOptions
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ETextCommit -FallbackName=ETextCommit
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=TextBlockStyle -FallbackName=TextBlockStyle
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateFontInfo -FallbackName=SlateFontInfo
 #include "MultiLineEditableText.generated.h"
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FMultiLineEditableTextHintTextDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiLineEditableTextOnTextChanged, const FText&, Text);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMultiLineEditableTextOnTextCommitted, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
 
 UCLASS()
 class UMG_API UMultiLineEditableText : public UTextLayoutWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMultiLineEditableTextCommittedEvent, const FText&, Text, TEnumAsByte<ETextCommit::Type>, CommitMethod);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMultiLineEditableTextChangedEvent, const FText&, Text);
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Text;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText HintText;
     
-    UPROPERTY()
-    FMultiLineEditableTextHintTextDelegate HintTextDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetText HintTextDelegate;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTextBlockStyle WidgetStyle;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsReadOnly;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FSlateFontInfo Font;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool SelectAllTextWhenFocused;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ClearTextSelectionOnFocusLoss;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RevertTextOnEscape;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ClearKeyboardFocusOnCommit;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AllowContextMenu;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVirtualKeyboardOptions VirtualKeyboardOptions;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EVirtualKeyboardDismissAction VirtualKeyboardDismissAction;
     
-    UPROPERTY(BlueprintAssignable)
-    FMultiLineEditableTextOnTextChanged OnTextChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMultiLineEditableTextChangedEvent OnTextChanged;
     
-    UPROPERTY(BlueprintAssignable)
-    FMultiLineEditableTextOnTextCommitted OnTextCommitted;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMultiLineEditableTextCommittedEvent OnTextCommitted;
     
+    UMultiLineEditableText();
     UFUNCTION(BlueprintCallable)
     void SetWidgetStyle(const FTextBlockStyle& InWidgetStyle);
     
@@ -79,6 +80,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetHintText() const;
     
-    UMultiLineEditableText();
 };
 

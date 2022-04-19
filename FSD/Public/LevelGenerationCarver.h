@@ -1,44 +1,44 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
-//CROSS-MODULE INCLUDE: FSDEngine MatrixWithExactSync
-//CROSS-MODULE INCLUDE: FSDEngine CarveOptionsCellSize
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=MatrixWithExactSync -FallbackName=MatrixWithExactSync
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=CarveOptionsCellSize -FallbackName=CarveOptionsCellSize
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "LevelGenerationCarver.generated.h"
 
-class UTerrainMaterial;
 class USTLMeshCarver;
-class UStaticMeshCarver;
 class UStaticMesh;
+class UStaticMeshCarver;
+class UTerrainMaterial;
 
 USTRUCT()
 struct FLevelGenerationCarver {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMatrixWithExactSync Transform;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USTLMeshCarver* MeshCarver;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UStaticMesh* ConvexCarver;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UStaticMeshCarver* StaticMeshCarver;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float ConvexExpensiveNoise;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     CarveOptionsCellSize CarveCellSize;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTerrainMaterial* TerrainMaterial;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ECarveFilterType Filter;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool ToBeDiscarded;
     
     FSD_API FLevelGenerationCarver();

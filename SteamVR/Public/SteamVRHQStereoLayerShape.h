@@ -1,24 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine StereoLayerShapeQuad
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StereoLayerShapeQuad -FallbackName=StereoLayerShapeQuad
 #include "SteamVRHQStereoLayerShape.generated.h"
 
 UCLASS(BlueprintType, CollapseCategories, EditInlineNew)
 class STEAMVR_API USteamVRHQStereoLayerShape : public UStereoLayerShapeQuad {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     bool bCurved;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     bool bAntiAlias;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     float AutoCurveMinDistance;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     float AutoCurveMaxDistance;
     
+    USteamVRHQStereoLayerShape();
     UFUNCTION(BlueprintCallable)
     void SetCurved(bool InCurved);
     
@@ -31,6 +32,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAntiAlias(bool InAntiAlias);
     
-    USteamVRHQStereoLayerShape();
 };
 

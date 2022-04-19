@@ -7,7 +7,6 @@ public class ImgMedia : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
-            "AudioExtensions",
             "AudioMixer",
             "Core",
             "CoreUObject",

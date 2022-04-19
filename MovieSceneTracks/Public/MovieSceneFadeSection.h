@@ -1,17 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneFloatSection.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneFloatChannel -FallbackName=MovieSceneFloatChannel
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "MovieSceneFadeSection.generated.h"
 
 UCLASS(MinimalAPI)
-class UMovieSceneFadeSection : public UMovieSceneFloatSection {
+class UMovieSceneFadeSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FMovieSceneFloatChannel FloatCurve;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor FadeColor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bFadeAudio: 1;
     
     UMovieSceneFadeSection();

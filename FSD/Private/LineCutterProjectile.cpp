@@ -1,5 +1,8 @@
 #include "LineCutterProjectile.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
+#include "DamageComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 void ALineCutterProjectile::UpdateBeamLocations() {
 }
@@ -41,6 +44,7 @@ ALineCutterProjectile::ALineCutterProjectile() {
     this->FlyStraighTime = 0.20f;
     this->EletricDecalSize = EImpactDecalSize::Small;
     this->ImpactDecalSize = EImpactDecalSize::Small;
+    this->LineRoot = CreateDefaultSubobject<USceneComponent>(TEXT("LineRoot"));
     this->LeftSphere = NULL;
     this->RightSphere = NULL;
     this->LeftSphere2 = NULL;
@@ -50,6 +54,8 @@ ALineCutterProjectile::ALineCutterProjectile() {
     this->BeamParticle = NULL;
     this->BeamParticle2 = NULL;
     this->BeamParticle3 = NULL;
+    this->LeftHitParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("LeftImpact"));
+    this->RightHitParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("RightImpact"));
     this->RotationSpeed = 400.00f;
     this->RotationMode = ELineRotation::None;
     this->ShouldExplode = false;
@@ -60,6 +66,8 @@ ALineCutterProjectile::ALineCutterProjectile() {
     this->LineExpansionDelay = 0.25f;
     this->TimeToLineExpansion = 0.35f;
     this->FireRate = 0.01f;
+    this->DamageComponent = CreateDefaultSubobject<UDamageComponent>(TEXT("DamageComponent"));
+    this->InitialDamageComponent = CreateDefaultSubobject<UDamageComponent>(TEXT("InitialDamageComponent"));
     this->InitialHitDamageMultiplier = 5;
     this->InhibitImpactDecalsTime = 0.00f;
     this->MinTimeBetweenImpactDecals = 0.15f;

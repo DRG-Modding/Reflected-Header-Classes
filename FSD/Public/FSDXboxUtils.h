@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "FSDXboxUtils.generated.h"
 
 class UObject;
@@ -9,6 +9,7 @@ UCLASS(BlueprintType)
 class UFSDXboxUtils : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UFSDXboxUtils();
     UFUNCTION(BlueprintCallable)
     static void ShowStoreUIForStoreItem(UObject* WorldContextObject, const FString& storeItemName);
     
@@ -21,6 +22,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsDCLCheckComplete(UObject* WorldContextObject);
     
-    UFSDXboxUtils();
 };
 

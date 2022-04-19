@@ -9,6 +9,7 @@ public class GameplayTags : ModuleRules {
         PublicDependencyModuleNames.AddRange(new string[] {
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
         });
     }

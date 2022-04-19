@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: UMG UserWidget
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "CoolDownProgressStyle.h"
 #include "CoolDownProgressWidget.generated.h"
 
@@ -11,15 +11,18 @@ class UCoolDownProgressWidget : public UUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FCoolDownProgressStyle Style;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UObject> CoolDownObject;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bIsFinished;
     
+public:
+    UCoolDownProgressWidget();
+protected:
     UFUNCTION(BlueprintCallable)
     void UpdateProgress(float Progress);
     
@@ -32,7 +35,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void Init(UObject* InCoolDownObject, const FCoolDownProgressStyle& InStyle);
     
-public:
-    UCoolDownProgressWidget();
 };
 

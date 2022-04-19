@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FNiagaraDataSetID {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName Name;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ENiagaraDataSetType Type;
     
     NIAGARA_API FNiagaraDataSetID();

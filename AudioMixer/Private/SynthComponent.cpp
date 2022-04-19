@@ -14,6 +14,15 @@ void USynthComponent::SetVolumeMultiplier(float VolumeMultiplier) {
 void USynthComponent::SetSubmixSend(USoundSubmixBase* Submix, float SendLevel) {
 }
 
+void USynthComponent::SetOutputToBusOnly(bool bInOutputToBusOnly) {
+}
+
+void USynthComponent::SetLowPassFilterFrequency(float InLowPassFilterFrequency) {
+}
+
+void USynthComponent::SetLowPassFilterEnabled(bool InLowPassFilterEnabled) {
+}
+
 bool USynthComponent::IsPlaying() const {
     return false;
 }
@@ -23,9 +32,12 @@ USynthComponent::USynthComponent() {
     this->bStopWhenOwnerDestroyed = true;
     this->bAllowSpatialization = false;
     this->bOverrideAttenuation = false;
-    this->bOutputToBusOnly = false;
+    this->bEnableBusSends = true;
+    this->bEnableBaseSubmix = true;
+    this->bEnableSubmixSends = true;
     this->AttenuationSettings = NULL;
     this->ConcurrencySettings = NULL;
+    this->SoundClass = NULL;
     this->SourceEffectChain = NULL;
     this->SoundSubmix = NULL;
     this->bIsUISound = false;

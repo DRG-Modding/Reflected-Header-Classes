@@ -9,7 +9,7 @@ struct AIMODULE_API FPawnActionStack {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UPawnAction* TopAction;
     
 public:

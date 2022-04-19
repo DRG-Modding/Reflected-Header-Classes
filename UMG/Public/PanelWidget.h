@@ -10,10 +10,11 @@ class UMG_API UPanelWidget : public UWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UPanelSlot*> Slots;
     
 public:
+    UPanelWidget();
     UFUNCTION(BlueprintCallable)
     bool RemoveChildAt(int32 Index);
     
@@ -44,6 +45,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UPanelSlot* AddChild(UWidget* Content);
     
-    UPanelWidget();
 };
 

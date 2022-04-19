@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct DATASMITHCONTENT_API FDatasmithAssetImportOptions {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName PackagePath;
     
     FDatasmithAssetImportOptions();

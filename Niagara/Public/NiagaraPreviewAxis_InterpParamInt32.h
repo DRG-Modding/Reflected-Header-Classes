@@ -8,10 +8,10 @@ class UNiagaraPreviewAxis_InterpParamInt32 : public UNiagaraPreviewAxis_InterpPa
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Min;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Max;
     
 public:

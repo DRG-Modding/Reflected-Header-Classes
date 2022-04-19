@@ -1,64 +1,71 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "Widget.h"
 #include "TextLayoutWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore SlateBrush
-//CROSS-MODULE INCLUDE: SlateCore SlateColor
-//CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateFontInfo -FallbackName=SlateFontInfo
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ETextTransformPolicy -FallbackName=ETextTransformPolicy
 #include "TextBlock.generated.h"
 
 class UMaterialInstanceDynamic;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FTextBlockTextDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateColor, FTextBlockColorAndOpacityDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FTextBlockShadowColorAndOpacityDelegate);
 
 UCLASS()
 class UMG_API UTextBlock : public UTextLayoutWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Text;
     
-    UPROPERTY()
-    FTextBlockTextDelegate TextDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetText TextDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateColor ColorAndOpacity;
     
-    UPROPERTY()
-    FTextBlockColorAndOpacityDelegate ColorAndOpacityDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetSlateColor ColorAndOpacityDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateFontInfo Font;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush StrikeBrush;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D ShadowOffset;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ShadowColorAndOpacity;
     
-    UPROPERTY()
-    FTextBlockShadowColorAndOpacityDelegate ShadowColorAndOpacityDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetLinearColor ShadowColorAndOpacityDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinDesiredWidth;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bWrapWithInvalidationPanel;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bAutoWrapText;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ETextTransformPolicy TextTransformPolicy;
+    
 protected:
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSimpleTextMode;
     
 public:
+    UTextBlock();
+    UFUNCTION(BlueprintCallable)
+    void SetTextTransformPolicy(ETextTransformPolicy InTransformPolicy);
+    
     UFUNCTION(BlueprintCallable)
     void SetText(FText InText);
     
@@ -95,6 +102,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UMaterialInstanceDynamic* GetDynamicFontMaterial();
     
-    UTextBlock();
 };
 

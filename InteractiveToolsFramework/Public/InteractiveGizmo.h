@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "InputBehaviorSource.h"
 #include "InteractiveGizmo.generated.h"
 
@@ -11,7 +11,7 @@ class INTERACTIVETOOLSFRAMEWORK_API UInteractiveGizmo : public UObject, public I
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UInputBehaviorSet* InputBehaviors;
     
 public:

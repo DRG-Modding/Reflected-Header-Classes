@@ -8,7 +8,7 @@ UCLASS()
 class OVERLAY_API UBasicOverlays : public UOverlays {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FOverlayItem> Overlays;
     
     UBasicOverlays();

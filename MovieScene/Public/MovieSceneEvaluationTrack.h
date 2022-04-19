@@ -1,11 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-#include "MovieSceneEvaluationTrackSegments.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EEvaluationMethod.h"
-#include "MovieSceneEvalTemplatePtr.h"
-#include "SectionEvaluationDataTree.h"
 #include "MovieSceneTrackImplementationPtr.h"
+#include "MovieSceneEvalTemplatePtr.h"
 #include "MovieSceneEvaluationTrack.generated.h"
 
 class UMovieSceneTrack;
@@ -15,40 +13,34 @@ struct FMovieSceneEvaluationTrack {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
-    FGuid ObjectBindingID;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FGuid ObjectBindingId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint16 EvaluationPriority;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EEvaluationMethod EvaluationMethod;
     
-    UPROPERTY()
-    FMovieSceneEvaluationTrackSegments Segments;
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    TWeakObjectPtr<UMovieSceneTrack> SourceTrack;
     
-    UPROPERTY(Export)
-    UMovieSceneTrack* SourceTrack;
-    
-    UPROPERTY()
-    FSectionEvaluationDataTree EvaluationTree;
-    
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneEvalTemplatePtr> ChildTemplates;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneTrackImplementationPtr TrackTemplate;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName EvaluationGroup;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bEvaluateInPreroll: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bEvaluateInPostroll: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bTearDownPriority: 1;
     
 public:

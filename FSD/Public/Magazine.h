@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "Skinnable.h"
-//CROSS-MODULE INCLUDE: Engine HitResult
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "Magazine.generated.h"
 
 class USoundCue;
@@ -14,17 +14,18 @@ class AMagazine : public AActor, public ISkinnable {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundCue* ImpactGroundSound;
     
+public:
+    AMagazine();
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnItemSkinned(USkinEffect* Skin);
     
     UFUNCTION(BlueprintCallable)
     void ActorWasHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     
-public:
-    AMagazine();
     
     // Fix for true pure virtual functions not being implemented
 };

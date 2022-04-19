@@ -6,10 +6,10 @@ USTRUCT()
 struct FNiagaraStatScope {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName FullName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName FriendlyName;
     
     NIAGARA_API FNiagaraStatScope();

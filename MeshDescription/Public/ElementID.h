@@ -7,7 +7,7 @@ struct FElementID {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 IDValue;
     
 public:

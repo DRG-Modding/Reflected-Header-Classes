@@ -7,7 +7,6 @@ public class AudioMixer : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
-            "AudioExtensions",
             "Core",
             "CoreUObject",
             "Engine",

@@ -1,7 +1,7 @@
 #include "ChaosDestructionListener.h"
 
-class AChaosSolverActor;
 class AGeometryCollectionActor;
+class AChaosSolverActor;
 
 void UChaosDestructionListener::SortTrailingEvents(TArray<FChaosTrailingEventData>& TrailingEvents, EChaosTrailingSortMethod SortMethod) {
 }

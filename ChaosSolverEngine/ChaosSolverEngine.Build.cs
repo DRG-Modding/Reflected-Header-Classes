@@ -7,9 +7,10 @@ public class ChaosSolverEngine : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
-            "ChaosSolvers",
+            "Chaos",
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
         });
     }

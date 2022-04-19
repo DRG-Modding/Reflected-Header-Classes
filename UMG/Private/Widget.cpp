@@ -1,8 +1,8 @@
 #include "Widget.h"
 
 class APlayerController;
-class UPanelWidget;
 class UWidget;
+class UPanelWidget;
 class ULocalPlayer;
 class UGameInstance;
 
@@ -42,10 +42,10 @@ void UWidget::SetRenderOpacity(float InOpacity) {
 void UWidget::SetNavigationRuleExplicit(EUINavigation Direction, UWidget* InWidget) {
 }
 
-void UWidget::SetNavigationRuleCustomBoundary(EUINavigation Direction, FWidgetInCustomDelegate InCustomDelegate) {
+void UWidget::SetNavigationRuleCustomBoundary(EUINavigation Direction, FCustomWidgetNavigationDelegate InCustomDelegate) {
 }
 
-void UWidget::SetNavigationRuleCustom(EUINavigation Direction, FWidgetInCustomDelegate InCustomDelegate) {
+void UWidget::SetNavigationRuleCustom(EUINavigation Direction, FCustomWidgetNavigationDelegate InCustomDelegate) {
 }
 
 void UWidget::SetNavigationRuleBase(EUINavigation Direction, EUINavigationRule Rule) {
@@ -167,6 +167,14 @@ EWidgetClipping UWidget::GetClipping() const {
 
 FGeometry UWidget::GetCachedGeometry() const {
     return FGeometry{};
+}
+
+FText UWidget::GetAccessibleText() const {
+    return FText::GetEmpty();
+}
+
+FText UWidget::GetAccessibleSummaryText() const {
+    return FText::GetEmpty();
 }
 
 void UWidget::ForceVolatile(bool bForce) {

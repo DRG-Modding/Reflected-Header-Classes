@@ -4,7 +4,7 @@
 #include "AnimatedItem.h"
 #include "Upgradable.h"
 #include "PlaceableInterface.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "PlaceableItem.generated.h"
 
 class AActor;
@@ -16,15 +16,18 @@ class APlaceableItem : public AAnimatedItem, public IUpgradable, public IPlaceab
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UCapacityHoldingItemAggregator* Capacity;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UItemPlacerAggregator* ItemPlacer;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> PlacableClass;
     
+public:
+    APlaceableItem();
+protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_SpawnItem(FVector Location);
     
@@ -34,8 +37,6 @@ protected:
     UFUNCTION(BlueprintCallable)
     void OnCarriedAmountChanged(int32 newAmount);
     
-public:
-    APlaceableItem();
     
     // Fix for true pure virtual functions not being implemented
 };

@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FNiagaraPlatformSetConflictEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName ProfileName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 QualityLevelMask;
     
     NIAGARA_API FNiagaraPlatformSetConflictEntry();

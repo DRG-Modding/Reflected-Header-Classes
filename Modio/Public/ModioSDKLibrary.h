@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ModioInitializeOptions.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "ModioApiKey.h"
 #include "ModioGameID.h"
 #include "EModioEnvironment.h"
-#include "ModioApiKey.h"
 #include "EFileSizeUnit.h"
 #include "ModioSDKLibrary.generated.h"
 
@@ -12,6 +12,7 @@ UCLASS(BlueprintType, MinimalAPI)
 class UModioSDKLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UModioSDKLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static float Pct_Int64Int64(int64 Dividend, int64 Divisor);
     
@@ -42,6 +43,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString Conv_Int64ToString(int64 inInt);
     
-    UModioSDKLibrary();
 };
 

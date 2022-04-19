@@ -7,7 +7,7 @@ UCLASS()
 class AIMODULE_API UBTDecorator_Cooldown : public UBTDecorator {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CoolDownTime;
     
     UBTDecorator_Cooldown();

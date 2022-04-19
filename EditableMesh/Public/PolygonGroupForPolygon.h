@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MeshDescription PolygonID
-//CROSS-MODULE INCLUDE: MeshDescription PolygonGroupID
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=PolygonID -FallbackName=PolygonID
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=PolygonGroupID -FallbackName=PolygonGroupID
 #include "PolygonGroupForPolygon.generated.h"
 
 USTRUCT(BlueprintType)
 struct FPolygonGroupForPolygon {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FPolygonID PolygonID;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FPolygonGroupID PolygonGroupID;
     
     EDITABLEMESH_API FPolygonGroupForPolygon();

@@ -2,24 +2,25 @@
 #include "CoreMinimal.h"
 #include "PanelSlot.h"
 #include "AnchorData.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: SlateCore Margin
-//CROSS-MODULE INCLUDE: Slate Anchors
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=Anchors -FallbackName=Anchors
 #include "CanvasPanelSlot.generated.h"
 
 UCLASS(BlueprintType)
 class UMG_API UCanvasPanelSlot : public UPanelSlot {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnchorData LayoutData;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAutoSize;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ZOrder;
     
+    UCanvasPanelSlot();
     UFUNCTION(BlueprintCallable)
     void SetZOrder(int32 InZOrder);
     
@@ -74,6 +75,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetAlignment() const;
     
-    UCanvasPanelSlot();
 };
 

@@ -6,13 +6,13 @@ USTRUCT(BlueprintType)
 struct FInAppPurchaseRestoreInfo2 {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ItemName;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ItemID;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ValidationInfo;
     
     ONLINESUBSYSTEMUTILS_API FInAppPurchaseRestoreInfo2();

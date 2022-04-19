@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FVertexInstancesForPolygonHole {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FVertexIndexAndInstanceID> VertexIndicesAndInstanceIDs;
     
     EDITABLEMESH_API FVertexInstancesForPolygonHole();

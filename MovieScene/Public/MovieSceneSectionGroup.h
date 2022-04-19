@@ -9,7 +9,7 @@ struct FMovieSceneSectionGroup {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<UMovieSceneSection>> Sections;
     
 public:

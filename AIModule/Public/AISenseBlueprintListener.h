@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine UserDefinedStruct
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UserDefinedStruct -FallbackName=UserDefinedStruct
 #include "AISenseBlueprintListener.generated.h"
 
 UCLASS()

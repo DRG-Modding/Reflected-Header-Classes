@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "LoadoutItem.h"
-#include "ItemIDInterface.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "SaveGameIDInterface.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-//CROSS-MODULE INCLUDE: Engine HitResult
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "ItemIDInterface.h"
+#include "LoadoutItem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "Grenade.generated.h"
 
+class UGrenadeAnimationSet;
 class UProjectileMovementComponent;
+class USoundCue;
 class ALoadoutItemProxy;
 class UItemID;
 class UStaticMesh;
-class USoundCue;
 class UParticleSystem;
-class UGrenadeAnimationSet;
 class AGrenade;
 class AItem;
 
@@ -25,51 +25,56 @@ class AGrenade : public AActor, public ISaveGameIDInterface, public IItemIDInter
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UProjectileMovementComponent* Movement;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Duration;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ExplosionDelay;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ExplodeOnImpact;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxGrenades;
     
-    UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_HasExploded)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_HasExploded, meta=(AllowPrivateAccess=true))
     bool HasExploded;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool EnableDangerousSaveGameIDEditing;
     
-    UPROPERTY(EditAnywhere)
-    FGuid SaveGameID;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGuid SavegameID;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UItemID* ItemID;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> WeaponPreviewClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ALoadoutItemProxy> LoadoutProxy;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStaticMesh* HandAttachMesh;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundCue* ImpactGroundSound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UParticleSystem* ImpactGroundParticles;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGrenadeAnimationSet* GrenadeAnimationSetOverride;
     
+public:
+    AGrenade();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_HasExploded();
     
@@ -93,12 +98,9 @@ protected:
     UFUNCTION(BlueprintCallable)
     void ActorWasHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AGrenade();
     
     // Fix for true pure virtual functions not being implemented
+public:
     UFUNCTION(BlueprintCallable)
     TSubclassOf<AItem> GetLoadoutItemClass() const override PURE_VIRTUAL(GetLoadoutItemClass, return NULL;);
     

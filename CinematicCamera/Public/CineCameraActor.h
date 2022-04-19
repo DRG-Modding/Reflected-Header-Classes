@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine CameraActor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraActor -FallbackName=CameraActor
 #include "CameraLookatTrackingSettings.h"
 #include "CineCameraActor.generated.h"
 
@@ -10,12 +10,12 @@ UCLASS()
 class CINEMATICCAMERA_API ACineCameraActor : public ACameraActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCameraLookatTrackingSettings LookatTrackingSettings;
     
+    ACineCameraActor();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UCineCameraComponent* GetCineCameraComponent() const;
     
-    ACineCameraActor();
 };
 

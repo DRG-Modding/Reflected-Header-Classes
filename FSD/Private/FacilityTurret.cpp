@@ -1,5 +1,7 @@
 #include "FacilityTurret.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
 void AFacilityTurret::SetIsAttacking(bool IsAttacking) {
 }
@@ -22,6 +24,8 @@ void AFacilityTurret::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
 }
 
 AFacilityTurret::AFacilityTurret() {
+    this->Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    this->Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("TurretMesh"));
     this->IndicatorActivationDelay = 2.00f;
     this->FinishAttackIgnoreLoS = false;
     this->InvulnerableOnInactive = true;

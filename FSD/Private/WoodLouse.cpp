@@ -1,5 +1,7 @@
 #include "WoodLouse.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
 
 class APawn;
 
@@ -45,6 +47,8 @@ void AWoodLouse::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifeti
 }
 
 AWoodLouse::AWoodLouse() {
+    this->RollingCenter = CreateDefaultSubobject<USceneComponent>(TEXT("RollingCenter"));
+    this->PawnSensing = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("Sensing"));
     this->forceState = EWoodLouseState::Size;
     this->RollingCenterOffsetOnStanding = 60.00f;
     this->RollingCenterOffsetOnFold = 80.00f;

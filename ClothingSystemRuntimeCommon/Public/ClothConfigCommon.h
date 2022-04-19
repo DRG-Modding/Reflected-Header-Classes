@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: ClothingSystemRuntimeInterface ClothConfigBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=ClothingSystemRuntimeInterface -ObjectName=ClothConfigBase -FallbackName=ClothConfigBase
 #include "ClothConfigCommon.generated.h"
 
 UCLASS(Abstract)

@@ -1,38 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: Engine BranchingPointNotifyPayload
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "OnMontagePlayDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BranchingPointNotifyPayload -FallbackName=BranchingPointNotifyPayload
 #include "PlayMontageCallbackProxy.generated.h"
 
-class UPlayMontageCallbackProxy;
 class UAnimMontage;
+class UPlayMontageCallbackProxy;
 class USkeletalMeshComponent;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnCompleted, FName, NotifyName);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnBlendOut, FName, NotifyName);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnInterrupted, FName, NotifyName);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnNotifyEnd, FName, NotifyName);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayMontageCallbackProxyOnNotifyBegin, FName, NotifyName);
 
 UCLASS(BlueprintType, MinimalAPI)
 class UPlayMontageCallbackProxy : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FPlayMontageCallbackProxyOnCompleted OnCompleted;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMontagePlayDelegate OnCompleted;
     
-    UPROPERTY(BlueprintAssignable)
-    FPlayMontageCallbackProxyOnBlendOut OnBlendOut;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMontagePlayDelegate OnBlendOut;
     
-    UPROPERTY(BlueprintAssignable)
-    FPlayMontageCallbackProxyOnInterrupted OnInterrupted;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMontagePlayDelegate OnInterrupted;
     
-    UPROPERTY(BlueprintAssignable)
-    FPlayMontageCallbackProxyOnNotifyBegin OnNotifyBegin;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMontagePlayDelegate OnNotifyBegin;
     
-    UPROPERTY(BlueprintAssignable)
-    FPlayMontageCallbackProxyOnNotifyEnd OnNotifyEnd;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMontagePlayDelegate OnNotifyEnd;
     
+    UPlayMontageCallbackProxy();
 protected:
     UFUNCTION(BlueprintCallable)
     void OnNotifyEndReceived(FName NotifyName, const FBranchingPointNotifyPayload& BranchingPointNotifyPayload);
@@ -50,6 +46,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UPlayMontageCallbackProxy* CreateProxyObjectForPlayMontage(USkeletalMeshComponent* InSkeletalMeshComponent, UAnimMontage* MontageToPlay, float PlayRate, float StartingPosition, FName StartingSection);
     
-    UPlayMontageCallbackProxy();
 };
 

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioUserID.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-#include "EModioPortal.h"
 #include "ModioInitializeOptions.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "EModioPortal.h"
 #include "EModioEnvironment.h"
+#include "ModioUserID.h"
 #include "ModioGameID.h"
-#include "ModioAuthenticationParams.h"
-#include "ModioModID.h"
-#include "ModioEmailAddress.h"
 #include "ModioApiKey.h"
+#include "ModioAuthenticationParams.h"
 #include "ModioEmailAuthCode.h"
+#include "ModioEmailAddress.h"
+#include "ModioModID.h"
 #include "ModioFileMetadataID.h"
 #include "ModioCommonTypesLibrary.generated.h"
 
@@ -18,6 +18,7 @@ UCLASS(BlueprintType)
 class MODIO_API UModioCommonTypesLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UModioCommonTypesLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioInitializeOptions SetPortal(const FModioInitializeOptions& options, EModioPortal PortalToUse);
     
@@ -60,6 +61,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString Conv_ApiKeyToString(FModioApiKey ApiKey);
     
-    UModioCommonTypesLibrary();
 };
 

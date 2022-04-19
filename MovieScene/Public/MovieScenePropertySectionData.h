@@ -6,17 +6,11 @@ USTRUCT(BlueprintType)
 struct FMovieScenePropertySectionData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName PropertyName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString PropertyPath;
-    
-    UPROPERTY()
-    FName FunctionName;
-    
-    UPROPERTY()
-    FName NotifyFunctionName;
     
     MOVIESCENE_API FMovieScenePropertySectionData();
 };

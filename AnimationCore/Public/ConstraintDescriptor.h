@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FConstraintDescriptor {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EConstraintType Type;
     
     ANIMATIONCORE_API FConstraintDescriptor();

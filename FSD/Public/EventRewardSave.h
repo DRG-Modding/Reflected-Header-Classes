@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "EventRewardSaveItem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EventRewardSave.generated.h"
 
 USTRUCT(BlueprintType)
 struct FEventRewardSave {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<FGuid, FEventRewardSaveItem> PendingRewards;
     
     FSD_API FEventRewardSave();

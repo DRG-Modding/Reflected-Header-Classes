@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "FormationsManagerComponent.generated.h"
 
-class UEnemySpawnManager;
 class UFormationData;
+class UEnemySpawnManager;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UFormationsManagerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UEnemySpawnManager* SpawnManager;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UFormationData*> FormationData;
     
 public:

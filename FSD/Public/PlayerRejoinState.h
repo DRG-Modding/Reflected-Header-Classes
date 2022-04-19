@@ -1,15 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "RejoinInt.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "RejoinFloat.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "PlayerRejoinState.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UPlayerRejoinState : public UActorComponent {
     GENERATED_BODY()
 public:
+    UPlayerRejoinState();
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_Reset();
     
@@ -23,7 +24,5 @@ protected:
     UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_SetValues(const TArray<FRejoinFloat>& floatValues, const TArray<FRejoinInt>& intValues);
     
-public:
-    UPlayerRejoinState();
 };
 

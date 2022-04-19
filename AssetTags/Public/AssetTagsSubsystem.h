@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine EngineSubsystem
-//CROSS-MODULE INCLUDE: AssetRegistry AssetData
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EngineSubsystem -FallbackName=EngineSubsystem
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=AssetData -FallbackName=AssetData
 #include "AssetTagsSubsystem.generated.h"
 
 class UObject;
@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class ASSETTAGS_API UAssetTagsSubsystem : public UEngineSubsystem {
     GENERATED_BODY()
 public:
+    UAssetTagsSubsystem();
     UFUNCTION(BlueprintCallable)
     TArray<FName> GetCollectionsContainingAssetPtr(const UObject* AssetPtr);
     
@@ -28,6 +29,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool CollectionExists(const FName Name);
     
-    UAssetTagsSubsystem();
 };
 

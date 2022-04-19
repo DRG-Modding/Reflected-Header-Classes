@@ -1,8 +1,9 @@
 #include "NiagaraComponent.h"
 
+class UTextureRenderTarget;
+class UObject;
 class UMaterialInterface;
 class AActor;
-class UObject;
 class UNiagaraSystem;
 class UNiagaraDataInterface;
 
@@ -13,6 +14,9 @@ void UNiagaraComponent::SetVariableVec3(FName InVariableName, FVector InValue) {
 }
 
 void UNiagaraComponent::SetVariableVec2(FName InVariableName, FVector2D InValue) {
+}
+
+void UNiagaraComponent::SetVariableTextureRenderTarget(FName InVariableName, UTextureRenderTarget* TextureRenderTarget) {
 }
 
 void UNiagaraComponent::SetVariableQuat(FName InVariableName, const FQuat& InValue) {
@@ -39,10 +43,16 @@ void UNiagaraComponent::SetVariableBool(FName InVariableName, bool InValue) {
 void UNiagaraComponent::SetVariableActor(FName InVariableName, AActor* Actor) {
 }
 
+void UNiagaraComponent::SetTickBehavior(ENiagaraTickBehavior NewTickBehavior) {
+}
+
 void UNiagaraComponent::SetSeekDelta(float InSeekDelta) {
 }
 
 void UNiagaraComponent::SetRenderingEnabled(bool bInRenderingEnabled) {
+}
+
+void UNiagaraComponent::SetRandomSeedOffset(int32 NewRandomSeedOffset) {
 }
 
 void UNiagaraComponent::SetPreviewLODDistance(bool bEnablePreviewLODDistance, float PreviewLODDistance) {
@@ -84,6 +94,12 @@ void UNiagaraComponent::SetNiagaraVariableActor(const FString& InVariableName, A
 void UNiagaraComponent::SetMaxSimTime(float InMaxTime) {
 }
 
+void UNiagaraComponent::SetLockDesiredAgeDeltaTimeToSeekDelta(bool bLock) {
+}
+
+void UNiagaraComponent::SetGpuComputeDebug(bool bEnableDebug) {
+}
+
 void UNiagaraComponent::SetForceSolo(bool bInForceSolo) {
 }
 
@@ -96,7 +112,7 @@ void UNiagaraComponent::SetCanRenderWhileSeeking(bool bInCanRenderWhileSeeking) 
 void UNiagaraComponent::SetAutoDestroy(bool bInAutoDestroy) {
 }
 
-void UNiagaraComponent::SetAsset(UNiagaraSystem* InAsset) {
+void UNiagaraComponent::SetAsset(UNiagaraSystem* InAsset, bool bResetExistingOverrideParameters) {
 }
 
 void UNiagaraComponent::SetAllowScalability(bool bAllow) {
@@ -118,16 +134,27 @@ bool UNiagaraComponent::IsPaused() const {
     return false;
 }
 
+void UNiagaraComponent::InitForPerformanceBaseline() {
+}
+
+ENiagaraTickBehavior UNiagaraComponent::GetTickBehavior() const {
+    return ENiagaraTickBehavior::UsePrereqs;
+}
+
 float UNiagaraComponent::GetSeekDelta() const {
     return 0.0f;
+}
+
+int32 UNiagaraComponent::GetRandomSeedOffset() const {
+    return 0;
 }
 
 bool UNiagaraComponent::GetPreviewLODDistanceEnabled() const {
     return false;
 }
 
-int32 UNiagaraComponent::GetPreviewLODDistance() const {
-    return 0;
+float UNiagaraComponent::GetPreviewLODDistance() const {
+    return 0.0f;
 }
 
 TArray<FVector> UNiagaraComponent::GetNiagaraParticleValueVec3_DebugOnly(const FString& InEmitterName, const FString& InValueName) {
@@ -144,6 +171,10 @@ TArray<FVector> UNiagaraComponent::GetNiagaraParticlePositions_DebugOnly(const F
 
 float UNiagaraComponent::GetMaxSimTime() const {
     return 0.0f;
+}
+
+bool UNiagaraComponent::GetLockDesiredAgeDeltaTimeToSeekDelta() const {
+    return false;
 }
 
 bool UNiagaraComponent::GetForceSolo() const {
@@ -175,7 +206,9 @@ void UNiagaraComponent::AdvanceSimulation(int32 TickCount, float TickDeltaSecond
 UNiagaraComponent::UNiagaraComponent() {
     this->Asset = NULL;
     this->TickBehavior = ENiagaraTickBehavior::UsePrereqs;
+    this->RandomSeedOffset = 0;
     this->bForceSolo = false;
+    this->bEnableGpuComputeDebug = false;
     this->bAutoDestroy = false;
     this->bRenderingEnabled = true;
     this->bAutoManageAttachment = false;

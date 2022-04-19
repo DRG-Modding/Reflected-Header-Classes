@@ -3,20 +3,12 @@
 #include "NCPoolElement.h"
 #include "NCPool.generated.h"
 
-class UNiagaraComponent;
-
 USTRUCT(BlueprintType)
 struct FNCPool {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FNCPoolElement> FreeElements;
-    
-    UPROPERTY(Export, Transient)
-    TArray<UNiagaraComponent*> InUseComponents_Auto;
-    
-    UPROPERTY(Export, Transient)
-    TArray<UNiagaraComponent*> InUseComponents_Manual;
     
     NIAGARA_API FNCPool();
 };

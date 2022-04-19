@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EModioAvatarSize.h"
-#include "EModioLogoSize.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-#include "EModioGallerySize.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ModioImage.h"
+#include "OnLoadImageDelegateDelegate.h"
 #include "EModioImageState.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "EModioLogoSize.h"
+#include "EModioGallerySize.h"
+#include "EModioAvatarSize.h"
 #include "ModioImageLibrary.generated.h"
 
-class UTexture;
 class UTexture2DDynamic;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FModioImageLibraryOnImageLoaded, UTexture2DDynamic*, Texture);
+class UTexture;
 
 UCLASS(BlueprintType)
 class MODIO_API UModioImageLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UModioImageLibrary();
     UFUNCTION(BlueprintCallable)
-    static void LoadAsync(const FModioImage& Image, FModioImageLibraryOnImageLoaded OnImageLoaded);
+    static void LoadAsync(const FModioImage& Image, FOnLoadImageDelegate OnImageLoaded);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UTexture2DDynamic* GetTexture(const FModioImage& Image);
@@ -36,6 +36,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector2D GetAvatarSize(UTexture* avatar, EModioAvatarSize AvatarSize);
     
-    UModioImageLibrary();
 };
 

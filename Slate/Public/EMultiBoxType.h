@@ -10,6 +10,5 @@ enum class EMultiBoxType {
     UniformToolBar,
     Menu,
     ButtonRow,
-    ToolMenuBar,
 };
 

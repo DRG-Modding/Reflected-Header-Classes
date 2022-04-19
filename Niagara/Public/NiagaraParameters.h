@@ -7,7 +7,7 @@ USTRUCT()
 struct FNiagaraParameters {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, EditFixedSize)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, EditFixedSize, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraVariable> Parameters;
     
     NIAGARA_API FNiagaraParameters();

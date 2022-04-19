@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SceneComponentInstanceData
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponentInstanceData -FallbackName=SceneComponentInstanceData
 #include "WidgetComponentInstanceData.generated.h"
 
 USTRUCT()

@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FMovieSceneExpansionState {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bExpanded;
     
     MOVIESCENE_API FMovieSceneExpansionState();

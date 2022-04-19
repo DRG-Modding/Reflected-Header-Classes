@@ -11,9 +11,12 @@ FSubmixEffectDynamicsProcessorSettings::FSubmixEffectDynamicsProcessorSettings()
     this->LookAheadMsec = 0.00f;
     this->AttackTimeMsec = 0.00f;
     this->ReleaseTimeMsec = 0.00f;
+    this->KeySource = ESubmixEffectDynamicsKeySource::Default;
+    this->ExternalAudioBus = NULL;
     this->ExternalSubmix = NULL;
     this->bChannelLinked = false;
     this->bAnalogMode = false;
+    this->bBypass = false;
     this->bKeyAudition = false;
     this->KeyGainDb = 0.00f;
     this->OutputGainDb = 0.00f;

@@ -1,138 +1,143 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine PrimitiveComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector4
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimitiveComponent -FallbackName=PrimitiveComponent
 #include "LandscapeComponentMaterialOverride.h"
-//CROSS-MODULE INCLUDE: CoreUObject Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector4 -FallbackName=Vector4
 #include "WeightmapLayerAllocationInfo.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "LandscapeComponent.generated.h"
 
-class UMaterialInstanceConstant;
-class UMaterialInterface;
 class UMaterialInstanceDynamic;
+class UMaterialInterface;
+class UMaterialInstanceConstant;
 class UTexture2D;
+class ULandscapeLODStreamingProxy;
 class ULandscapeHeightfieldCollisionComponent;
 class ULandscapeLayerInfoObject;
 
-UCLASS(MinimalAPI, Within=LandscapeProxy)
+UCLASS(MinimalAPI, Within=LandscapeProxy, meta=(BlueprintSpawnableComponent))
 class ULandscapeComponent : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     int32 SectionBaseX;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     int32 SectionBaseY;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 ComponentSizeQuads;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 SubsectionSizeQuads;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 NumSubsections;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* OverrideMaterial;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* OverrideHoleMaterial;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FLandscapeComponentMaterialOverride> OverrideMaterials;
     
-    UPROPERTY(TextExportTransient)
+    UPROPERTY(BlueprintReadWrite, TextExportTransient, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInstanceConstant*> MaterialInstances;
     
-    UPROPERTY(TextExportTransient, Transient)
+    UPROPERTY(BlueprintReadWrite, TextExportTransient, Transient, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInstanceDynamic*> MaterialInstancesDynamic;
     
-    UPROPERTY(TextExportTransient)
+    UPROPERTY(BlueprintReadWrite, TextExportTransient, meta=(AllowPrivateAccess=true))
     TArray<int8> LODIndexToMaterialIndex;
     
-    UPROPERTY(TextExportTransient)
+    UPROPERTY(BlueprintReadWrite, TextExportTransient, meta=(AllowPrivateAccess=true))
     TArray<int8> MaterialIndexToDisabledTessellationMaterial;
     
-    UPROPERTY(TextExportTransient)
+    UPROPERTY(BlueprintReadWrite, TextExportTransient, meta=(AllowPrivateAccess=true))
     UTexture2D* XYOffsetmapTexture;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FVector4 WeightmapScaleBias;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float WeightmapSubsectionOffset;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FVector4 HeightmapScaleBias;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FBox CachedLocalBox;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TLazyObjectPtr<ULandscapeHeightfieldCollisionComponent> CollisionComponent;
     
 private:
-    UPROPERTY(TextExportTransient)
+    UPROPERTY(BlueprintReadWrite, TextExportTransient, meta=(AllowPrivateAccess=true))
     UTexture2D* HeightmapTexture;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FWeightmapLayerAllocationInfo> WeightmapLayerAllocations;
     
-    UPROPERTY(TextExportTransient)
+    UPROPERTY(BlueprintReadWrite, TextExportTransient, meta=(AllowPrivateAccess=true))
     TArray<UTexture2D*> WeightmapTextures;
     
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    ULandscapeLODStreamingProxy* LODStreamingProxy;
+    
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid MapBuildDataId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FGuid> IrrelevantLights;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 CollisionMipLevel;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SimpleCollisionMipLevel;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NegativeZBoundsExtension;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PositiveZBoundsExtension;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float StaticLightingResolution;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ForcedLOD;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LODBias;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid StateId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid BakedTextureMaterialGuid;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* GIBakedBaseColorTexture;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 MobileBlendableLayerMask;
     
-    UPROPERTY(NonPIEDuplicateTransient)
+    UPROPERTY(BlueprintReadWrite, NonPIEDuplicateTransient, meta=(AllowPrivateAccess=true))
     UMaterialInterface* MobileMaterialInterface;
     
-    UPROPERTY(NonPIEDuplicateTransient)
+    UPROPERTY(BlueprintReadWrite, NonPIEDuplicateTransient, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInterface*> MobileMaterialInterfaces;
     
-    UPROPERTY(NonPIEDuplicateTransient)
+    UPROPERTY(BlueprintReadWrite, NonPIEDuplicateTransient, meta=(AllowPrivateAccess=true))
     TArray<UTexture2D*> MobileWeightmapTextures;
     
+    ULandscapeComponent();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInstanceDynamic* GetMaterialInstanceDynamic(int32 InIndex) const;
     
@@ -142,6 +147,5 @@ public:
     UFUNCTION(BlueprintCallable)
     float EditorGetPaintLayerWeightAtLocation(const FVector& InLocation, ULandscapeLayerInfoObject* PaintLayer);
     
-    ULandscapeComponent();
 };
 

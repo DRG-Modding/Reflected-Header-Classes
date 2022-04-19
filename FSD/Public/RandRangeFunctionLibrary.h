@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "IRandRange.h"
-//CROSS-MODULE INCLUDE: CoreUObject RandomStream
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
 #include "RandRange.h"
 #include "RandRangeFunctionLibrary.generated.h"
 
@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class URandRangeFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    URandRangeFunctionLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool TryPickRandomText(const TArray<FText>& TextArray, UPARAM(Ref) FRandomStream& RandomStream, FText& OutResult);
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetFloatFromStream(FRandRange RandRange, UPARAM(Ref) FRandomStream& RandomStream);
     
-    URandRangeFunctionLibrary();
 };
 

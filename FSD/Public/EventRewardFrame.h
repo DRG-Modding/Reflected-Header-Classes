@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EventRewardFrame.generated.h"
 
 class USpecialEventUsableComponent;
@@ -10,20 +10,23 @@ UCLASS()
 class AEventRewardFrame : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USpecialEventUsableComponent* EventUsable;
     
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<AEventRewardDispenser*> Dispensers;
     
-    UPROPERTY(BlueprintReadOnly, Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
     bool keyInserted;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TArray<FString> EventPlayerIDs;
     
 public:
+    AEventRewardFrame();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void TurnOff();
     
@@ -41,8 +44,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetDispensRewards() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AEventRewardFrame();
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "SwitchActor.generated.h"
 
 class USceneComponent;
@@ -10,13 +10,14 @@ class VARIANTMANAGERCONTENT_API ASwitchActor : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USceneComponent* SceneComponent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 LastSelectedOption;
     
 public:
+    ASwitchActor();
     UFUNCTION(BlueprintCallable)
     void SelectOption(int32 OptionIndex);
     
@@ -26,6 +27,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AActor*> GetOptions() const;
     
-    ASwitchActor();
 };
 

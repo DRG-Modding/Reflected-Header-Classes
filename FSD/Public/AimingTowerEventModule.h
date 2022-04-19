@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "TowerEventModule.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "AimingTowerEventModule.generated.h"
 
 class AActor;
@@ -11,10 +11,10 @@ class AAimingTowerEventModule : public ATowerEventModule {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FRotator AimRotation;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AActor* CurrentTarget;
     
 public:

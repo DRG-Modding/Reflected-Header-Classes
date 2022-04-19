@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FChaosHandlerSet {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSet<UObject*> ChaosHandlers;
     
     CHAOSSOLVERENGINE_API FChaosHandlerSet();

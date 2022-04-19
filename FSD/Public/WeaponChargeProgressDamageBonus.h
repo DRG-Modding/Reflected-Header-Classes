@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ItemUpgrade.h"
-//CROSS-MODULE INCLUDE: CoreUObject FloatInterval
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FloatInterval -FallbackName=FloatInterval
 #include "WeaponChargeProgressDamageBonus.generated.h"
 
 class UDamageClass;
@@ -11,13 +11,13 @@ class UWeaponChargeProgressDamageBonus : public UItemUpgrade {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDamageClass* DamageClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatInterval ChargeRange;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatInterval DamageBonusRange;
     
 public:

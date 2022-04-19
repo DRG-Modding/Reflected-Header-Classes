@@ -7,17 +7,16 @@ public class EditableMesh : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
+            "Chaos",
             "ChaosSolverEngine",
-            "ChaosSolvers",
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
-            "FieldSystemCore",
             "FieldSystemEngine",
-            "GeometryCollectionCore",
             "GeometryCollectionEngine",
-            "GeometryCollectionSimulationCore",
             "MeshDescription",
+            "PhysicsCore",
         });
     }
 }

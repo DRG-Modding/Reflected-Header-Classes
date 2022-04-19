@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SoundEffectSourcePreset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSourcePreset -FallbackName=SoundEffectSourcePreset
 #include "SourceEffectEnvelopeFollowerSettings.h"
 #include "SourceEffectEnvelopeFollowerPreset.generated.h"
 
@@ -10,9 +10,10 @@ UCLASS(BlueprintType, EditInlineNew)
 class SYNTHESIS_API USourceEffectEnvelopeFollowerPreset : public USoundEffectSourcePreset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSourceEffectEnvelopeFollowerSettings Settings;
     
+    USourceEffectEnvelopeFollowerPreset();
     UFUNCTION(BlueprintCallable)
     void UnregisterEnvelopeFollowerListener(UEnvelopeFollowerListener* EnvelopeFollowerListener);
     
@@ -22,6 +23,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void RegisterEnvelopeFollowerListener(UEnvelopeFollowerListener* EnvelopeFollowerListener);
     
-    USourceEffectEnvelopeFollowerPreset();
 };
 

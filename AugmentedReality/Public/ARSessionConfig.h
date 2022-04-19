@@ -1,114 +1,182 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
-#include "EARSessionType.h"
-#include "EARWorldAlignment.h"
-#include "EARPlaneDetectionMode.h"
-#include "EARFrameSyncMode.h"
-#include "EARLightEstimationMode.h"
-#include "EAREnvironmentCaptureProbeType.h"
-#include "ARVideoFormat.h"
+#include "Templates/SubclassOf.h"
 #include "EARFaceTrackingDirection.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "EARWorldAlignment.h"
+#include "EARSessionType.h"
+#include "EARLightEstimationMode.h"
+#include "EARPlaneDetectionMode.h"
+#include "EAREnvironmentCaptureProbeType.h"
+#include "EARFrameSyncMode.h"
+#include "ARVideoFormat.h"
 #include "EARFaceTrackingUpdate.h"
+#include "EARSceneReconstruction.h"
 #include "EARSessionTrackingFeature.h"
 #include "ARSessionConfig.generated.h"
 
-class UARCandidateObject;
+class UARQRCodeComponent;
+class UARImageComponent;
 class UARCandidateImage;
+class UARObjectComponent;
+class UARCandidateObject;
+class UARPlaneComponent;
+class UARPointComponent;
+class UARFaceComponent;
+class UARPoseComponent;
+class UAREnvironmentProbeComponent;
+class UARMeshComponent;
+class UARGeoAnchorComponent;
+class UMaterialInterface;
 
 UCLASS(BlueprintType)
 class AUGMENTEDREALITY_API UARSessionConfig : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bGenerateMeshDataFromTrackedGeometry;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bGenerateCollisionForMeshData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bGenerateNavMeshForMeshData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseMeshDataForOcclusion;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRenderMeshDataInWireframe;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTrackSceneObjects;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUsePersonSegmentationForOcclusion;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseSceneDepthForOcclusion;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseAutomaticImageScaleEstimation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseStandardOnboardingUX;
+    
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARWorldAlignment WorldAlignment;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARSessionType SessionType;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARPlaneDetectionMode PlaneDetectionMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHorizontalPlaneDetection;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bVerticalPlaneDetection;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableAutoFocus;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARLightEstimationMode LightEstimationMode;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARFrameSyncMode FrameSyncMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableAutomaticCameraOverlay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableAutomaticCameraTracking;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bResetCameraTracking;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bResetTrackedObjects;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UARCandidateImage*> CandidateImages;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxNumSimultaneousImagesTracked;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAREnvironmentCaptureProbeType EnvironmentCaptureProbeType;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     TArray<uint8> WorldMapData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UARCandidateObject*> CandidateObjects;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FARVideoFormat DesiredVideoFormat;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUseOptimalVideoFormat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARFaceTrackingDirection FaceTrackingDirection;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARFaceTrackingUpdate FaceTrackingUpdate;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 MaxNumberOfTrackedFaces;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<uint8> SerializedARCandidateImageDatabase;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARSessionTrackingFeature EnabledSessionTrackingFeature;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EARSceneReconstruction SceneReconstructionMethod;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARPlaneComponent> PlaneComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARPointComponent> PointComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARFaceComponent> FaceComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARImageComponent> ImageComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARQRCodeComponent> QRCodeComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARPoseComponent> PoseComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UAREnvironmentProbeComponent> EnvironmentProbeComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARObjectComponent> ObjectComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARMeshComponent> MeshComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UARGeoAnchorComponent> GeoAnchorComponentClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UMaterialInterface* DefaultMeshMaterial;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UMaterialInterface* DefaultWireframeMeshMaterial;
+    
 public:
+    UARSessionConfig();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldResetTrackedObjects() const;
     
@@ -129,6 +197,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetSessionTrackingFeatureToEnable(EARSessionTrackingFeature InSessionTrackingFeature);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetSceneReconstructionMethod(EARSceneReconstruction InSceneReconstructionMethod);
     
     UFUNCTION(BlueprintCallable)
     void SetResetTrackedObjects(bool bNewValue);
@@ -159,6 +230,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EARSessionType GetSessionType() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    EARSceneReconstruction GetSceneReconstructionMethod() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EARPlaneDetectionMode GetPlaneDetectionMode() const;
@@ -199,6 +273,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddCandidateImage(UARCandidateImage* NewCandidateImage);
     
-    UARSessionConfig();
 };
 

@@ -2,25 +2,16 @@
 
 class UTexture2D;
 
-void UOculusFunctionLibrary::ShowLoadingSplashScreen() {
-}
-
-void UOculusFunctionLibrary::ShowLoadingIcon(UTexture2D* Texture) {
-}
-
 void UOculusFunctionLibrary::SetReorientHMDOnControllerRecenter(bool recenterMode) {
 }
 
 void UOculusFunctionLibrary::SetPositionScale3D(FVector PosScale3D) {
 }
 
-void UOculusFunctionLibrary::SetLoadingSplashParams(const FString& TexturePath, FVector DistanceInMeters, FVector2D SizeInMeters, FVector RotationAxis, float RotationDeltaInDeg) {
-}
-
 void UOculusFunctionLibrary::SetGuardianVisibility(bool GuardianVisible) {
 }
 
-void UOculusFunctionLibrary::SetFixedFoveatedRenderingLevel(EFixedFoveatedRenderingLevel Level) {
+void UOculusFunctionLibrary::SetFixedFoveatedRenderingLevel(EFixedFoveatedRenderingLevel Level, bool isDynamic) {
 }
 
 void UOculusFunctionLibrary::SetDisplayFrequency(float RequestedFrequency) {
@@ -32,14 +23,13 @@ void UOculusFunctionLibrary::SetCPUAndGPULevels(int32 CPULevel, int32 GPULevel) 
 void UOculusFunctionLibrary::SetColorScaleAndOffset(FLinearColor ColorScale, FLinearColor ColorOffset, bool bApplyToAllLayers) {
 }
 
+void UOculusFunctionLibrary::SetClientColorDesc(EColorSpace ColorSpace) {
+}
+
 void UOculusFunctionLibrary::SetBaseRotationAndPositionOffset(FRotator BaseRot, FVector PosOffset, TEnumAsByte<EOrientPositionSelector::Type> options) {
 }
 
 void UOculusFunctionLibrary::SetBaseRotationAndBaseOffsetInMeters(FRotator Rotation, FVector BaseOffsetInMeters, TEnumAsByte<EOrientPositionSelector::Type> options) {
-}
-
-bool UOculusFunctionLibrary::IsLoadingIconEnabled() {
-    return false;
 }
 
 bool UOculusFunctionLibrary::IsGuardianDisplayed() {
@@ -54,16 +44,6 @@ bool UOculusFunctionLibrary::IsDeviceTracked(ETrackedDeviceType DeviceType) {
     return false;
 }
 
-bool UOculusFunctionLibrary::IsAutoLoadingSplashScreenEnabled() {
-    return false;
-}
-
-void UOculusFunctionLibrary::HideLoadingSplashScreen(bool bClear) {
-}
-
-void UOculusFunctionLibrary::HideLoadingIcon() {
-}
-
 bool UOculusFunctionLibrary::HasSystemOverlayPresent() {
     return false;
 }
@@ -73,6 +53,10 @@ bool UOculusFunctionLibrary::HasInputFocus() {
 }
 
 bool UOculusFunctionLibrary::GetUserProfile(FHmdUserProfile& Profile) {
+    return false;
+}
+
+bool UOculusFunctionLibrary::GetSystemHmd3DofModeEnabled() {
     return false;
 }
 
@@ -94,7 +78,8 @@ FGuardianTestResult UOculusFunctionLibrary::GetNodeGuardianIntersection(ETracked
     return FGuardianTestResult{};
 }
 
-void UOculusFunctionLibrary::GetLoadingSplashParams(FString& TexturePath, FVector& DistanceInMeters, FVector2D& SizeInMeters, FVector& RotationAxis, float& RotationDeltaInDeg) {
+EColorSpace UOculusFunctionLibrary::GetHmdColorDesc() {
+    return EColorSpace::Unknown;
 }
 
 TArray<FVector> UOculusFunctionLibrary::GetGuardianPoints(EBoundaryType BoundaryType, bool UsePawnSpace) {
@@ -114,6 +99,10 @@ float UOculusFunctionLibrary::GetGPUFrameTime() {
 
 EFixedFoveatedRenderingLevel UOculusFunctionLibrary::GetFixedFoveatedRenderingLevel() {
     return EFixedFoveatedRenderingLevel::FFR_Off;
+}
+
+EOculusDeviceType UOculusFunctionLibrary::GetDeviceType() {
+    return EOculusDeviceType::OculusMobile_Deprecated0;
 }
 
 FString UOculusFunctionLibrary::GetDeviceName() {
@@ -138,9 +127,6 @@ void UOculusFunctionLibrary::EnablePositionTracking(bool bPositionTracking) {
 }
 
 void UOculusFunctionLibrary::EnableOrientationTracking(bool bOrientationTracking) {
-}
-
-void UOculusFunctionLibrary::EnableAutoLoadingSplashScreen(bool bAutoShowEnabled) {
 }
 
 void UOculusFunctionLibrary::ClearLoadingSplashScreens() {

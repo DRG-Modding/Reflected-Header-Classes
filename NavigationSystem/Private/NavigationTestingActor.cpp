@@ -1,6 +1,10 @@
 #include "NavigationTestingActor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CapsuleComponent -FallbackName=CapsuleComponent
+#include "NavigationInvokerComponent.h"
 
 ANavigationTestingActor::ANavigationTestingActor() {
+    this->CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CollisionCylinder"));
+    this->InvokerComponent = CreateDefaultSubobject<UNavigationInvokerComponent>(TEXT("InvokerComponent"));
     this->bActAsNavigationInvoker = false;
     this->MyNavData = NULL;
     this->bProjectedLocationValid = false;

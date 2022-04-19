@@ -1,23 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "PawnStatEntriesArray.h"
 #include "PawnStatsComponent.generated.h"
 
 class UPawnStat;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UPawnStatsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
     FPawnStatEntriesArray Stats;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UseDormancy;
     
 public:
+    UPawnStatsComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void RemoveModifier(UPawnStat* Stat, float Value);
     
@@ -30,8 +33,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     int32 AddModifier(UPawnStat* Stat, float Value);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPawnStatsComponent();
 };
 

@@ -8,7 +8,7 @@ UCLASS(CollapseCategories, EditInlineNew, NonTransient)
 class UEditableGameplayTagQueryExpression_NoTagsMatch : public UEditableGameplayTagQueryExpression {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer Tags;
     
     UEditableGameplayTagQueryExpression_NoTagsMatch();

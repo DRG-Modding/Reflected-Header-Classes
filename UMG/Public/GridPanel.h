@@ -3,19 +3,20 @@
 #include "PanelWidget.h"
 #include "GridPanel.generated.h"
 
-class UWidget;
 class UGridSlot;
+class UWidget;
 
 UCLASS()
 class UMG_API UGridPanel : public UPanelWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> ColumnFill;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> RowFill;
     
+    UGridPanel();
     UFUNCTION(BlueprintCallable)
     void SetRowFill(int32 ColumnIndex, float Coefficient);
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UGridSlot* AddChildToGrid(UWidget* Content, int32 InRow, int32 InColumn);
     
-    UGridPanel();
 };
 

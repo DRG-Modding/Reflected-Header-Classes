@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GizmoFloatParameterChange.h"
 #include "GizmoBaseFloatParameterSource.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "GizmoFloatParameterChange.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "GizmoAxisTranslationParameterSource.generated.h"
 
 class UGizmoAxisSource;
@@ -15,25 +15,25 @@ UCLASS()
 class INTERACTIVETOOLSFRAMEWORK_API UGizmoAxisTranslationParameterSource : public UGizmoBaseFloatParameterSource {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TScriptInterface<IGizmoAxisSource> AxisSource;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TScriptInterface<IGizmoTransformSource> TransformSource;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float Parameter;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGizmoFloatParameterChange LastChange;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FVector CurTranslationAxis;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FVector CurTranslationOrigin;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTransform InitialTransform;
     
     UGizmoAxisTranslationParameterSource();

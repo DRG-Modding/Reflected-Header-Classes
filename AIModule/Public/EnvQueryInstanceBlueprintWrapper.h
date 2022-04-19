@@ -1,36 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EEnvQueryStatus.h"
 #include "EQSQueryResultSourceInterface.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EnvQueryInstanceBlueprintWrapper.generated.h"
 
+class UEnvQueryInstanceBlueprintWrapper;
 class AActor;
 class UEnvQueryItemType;
-class UEnvQueryInstanceBlueprintWrapper;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEnvQueryInstanceBlueprintWrapperOnQueryFinishedEvent, UEnvQueryInstanceBlueprintWrapper*, QueryInstance, TEnumAsByte<EEnvQueryStatus::Type>, QueryStatus);
 
 UCLASS(BlueprintType)
 class AIMODULE_API UEnvQueryInstanceBlueprintWrapper : public UObject, public IEQSQueryResultSourceInterface {
     GENERATED_BODY()
 public:
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEQSQueryDoneSignature, UEnvQueryInstanceBlueprintWrapper*, QueryInstance, TEnumAsByte<EEnvQueryStatus::Type>, QueryStatus);
+    
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 QueryID;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryItemType> ItemType;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 OptionIndex;
     
-    UPROPERTY(BlueprintAssignable)
-    FEnvQueryInstanceBlueprintWrapperOnQueryFinishedEvent OnQueryFinishedEvent;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEQSQueryDoneSignature OnQueryFinishedEvent;
     
 public:
+    UEnvQueryInstanceBlueprintWrapper();
     UFUNCTION(BlueprintCallable)
     void SetNamedParam(FName ParamName, float Value);
     
@@ -49,7 +50,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetItemScore(int32 ItemIndex) const;
     
-    UEnvQueryInstanceBlueprintWrapper();
     
     // Fix for true pure virtual functions not being implemented
 };

@@ -6,19 +6,19 @@ USTRUCT()
 struct FRegisterSessionRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY()
-    FString serverName;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FString ServerName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 NumPlayers;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString LobbyId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString P2PAddr;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 P2PPORT;
     
     FSD_API FRegisterSessionRequest();

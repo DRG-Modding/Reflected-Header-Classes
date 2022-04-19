@@ -4,8 +4,13 @@
 
 UENUM(BlueprintType)
 enum class EARTextureType : uint8 {
+    Unknown,
     CameraImage,
     CameraDepth,
     EnvironmentCapture,
+    PersonSegmentationImage,
+    PersonSegmentationDepth,
+    SceneDepthMap,
+    SceneDepthConfidenceMap,
 };
 

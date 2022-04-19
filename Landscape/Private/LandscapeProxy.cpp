@@ -1,9 +1,10 @@
 #include "LandscapeProxy.h"
 
-class ULandscapeLayerInfoObject;
-class UTexture;
+class UTextureRenderTarget2D;
 class UMaterialInterface;
+class UTexture;
 class USplineComponent;
+class ULandscapeLayerInfoObject;
 
 void ALandscapeProxy::SetLandscapeMaterialVectorParameterValue(FName ParameterName, FLinearColor Value) {
 }
@@ -14,10 +15,14 @@ void ALandscapeProxy::SetLandscapeMaterialTextureParameterValue(FName ParameterN
 void ALandscapeProxy::SetLandscapeMaterialScalarParameterValue(FName ParameterName, float Value) {
 }
 
+bool ALandscapeProxy::LandscapeExportHeightmapToRenderTarget(UTextureRenderTarget2D* InRenderTarget, bool InExportHeightIntoRGChannel, bool InExportLandscapeProxies) {
+    return false;
+}
+
 void ALandscapeProxy::EditorSetLandscapeMaterial(UMaterialInterface* NewLandscapeMaterial) {
 }
 
-void ALandscapeProxy::EditorApplySpline(USplineComponent* InSplineComponent, float StartWidth, float EndWidth, float StartSideFalloff, float EndSideFalloff, float StartRoll, float EndRoll, int32 NumSubdivisions, bool bRaiseHeights, bool bLowerHeights, ULandscapeLayerInfoObject* PaintLayer) {
+void ALandscapeProxy::EditorApplySpline(USplineComponent* InSplineComponent, float StartWidth, float EndWidth, float StartSideFalloff, float EndSideFalloff, float StartRoll, float EndRoll, int32 NumSubdivisions, bool bRaiseHeights, bool bLowerHeights, ULandscapeLayerInfoObject* PaintLayer, FName EditLayerName) {
 }
 
 void ALandscapeProxy::ChangeUseTessellationComponentScreenSizeFalloff(bool InComponentScreenSizeToUseSubSections) {
@@ -62,12 +67,16 @@ ALandscapeProxy::ALandscapeProxy() {
     this->PositiveZBoundsExtension = 0.00f;
     this->bHasLandscapeGrass = true;
     this->StaticLightingResolution = 1.00f;
+    this->CastShadow = true;
+    this->bCastDynamicShadow = true;
     this->bCastStaticShadow = true;
-    this->bCastShadowAsTwoSided = false;
     this->bCastFarShadow = true;
+    this->bCastHiddenShadow = false;
+    this->bCastShadowAsTwoSided = false;
     this->bAffectDistanceFieldLighting = true;
     this->bUseMaterialPositionOffsetInStaticLighting = false;
     this->bRenderCustomDepth = false;
+    this->CustomDepthStencilWriteMask = ERendererStencilMask::ERSM_Default;
     this->CustomDepthStencilValue = 0;
     this->LDMaxDrawDistance = 0.00f;
     this->CollisionMipLevel = 0;

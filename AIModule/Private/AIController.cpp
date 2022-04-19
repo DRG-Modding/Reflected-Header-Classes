@@ -1,12 +1,13 @@
 #include "AIController.h"
 #include "Templates/SubclassOf.h"
+#include "PathFollowingComponent.h"
+#include "PawnActionsComponent.h"
 
 class UBlackboardData;
-class UPathFollowingComponent;
 class UBlackboardComponent;
+class UNavigationQueryFilter;
 class UGameplayTaskResource;
 class UBehaviorTree;
-class UNavigationQueryFilter;
 class AActor;
 class UAIPerceptionComponent;
 
@@ -91,8 +92,10 @@ AAIController::AAIController() {
     this->bAllowStrafe = false;
     this->bWantsPlayerState = false;
     this->bSetControlRotationFromPawnOrientation = true;
+    this->PathFollowingComponent = CreateDefaultSubobject<UPathFollowingComponent>(TEXT("PathFollowingComponent"));
     this->BrainComponent = NULL;
     this->PerceptionComponent = NULL;
+    this->ActionsComp = CreateDefaultSubobject<UPawnActionsComponent>(TEXT("ActionsComp"));
     this->Blackboard = NULL;
     this->CachedGameplayTasksComponent = NULL;
     this->DefaultNavigationFilterClass = NULL;

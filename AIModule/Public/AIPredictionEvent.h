@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct AIMODULE_API FAIPredictionEvent {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     AActor* Requestor;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     AActor* PredictedActor;
     
     FAIPredictionEvent();

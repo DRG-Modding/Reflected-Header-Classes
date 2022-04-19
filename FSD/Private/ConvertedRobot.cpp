@@ -1,9 +1,20 @@
 #include "ConvertedRobot.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+#include "OutlineComponent.h"
+#include "EnemyComponent.h"
+#include "PawnStatsComponent.h"
+#include "HitscanComponent.h"
+#include "SingleUsableComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PointLightComponent -FallbackName=PointLightComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+#include "DamageComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpotLightComponent -FallbackName=SpotLightComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 
-class APawn;
 class APlayerCharacter;
-class USceneComponent;
+class APawn;
 class AActor;
 
 void AConvertedRobot::UpdateGunsInsideTerrain() {
@@ -90,7 +101,23 @@ void AConvertedRobot::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
 }
 
 AConvertedRobot::AConvertedRobot() {
+    this->EnemyComponent = CreateDefaultSubobject<UEnemyComponent>(TEXT("enemy"));
+    this->PawnStats = CreateDefaultSubobject<UPawnStatsComponent>(TEXT("PawnStats"));
+    this->outline = CreateDefaultSubobject<UOutlineComponent>(TEXT("outline"));
+    this->HitScan = CreateDefaultSubobject<UHitscanComponent>(TEXT("HitScan"));
+    this->Usable = CreateDefaultSubobject<USingleUsableComponent>(TEXT("Usable"));
+    this->TurretRoot = CreateDefaultSubobject<USceneComponent>(TEXT("TurretRoot"));
+    this->TurretMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("TurretMesh"));
+    this->MuzzleFlash = CreateDefaultSubobject<UPointLightComponent>(TEXT("MuzzleFlash"));
+    this->SpotLight = CreateDefaultSubobject<USpotLightComponent>(TEXT("FloodLight"));
+    this->LightCone = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LightCone"));
+    this->LaserBeam = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserBeam"));
+    this->ShieldRoot = CreateDefaultSubobject<USceneComponent>(TEXT("ShieldRoot"));
+    this->InnerShield = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("InnerShield"));
+    this->OuterShield = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("OuterShieldLayer"));
+    this->PulsatingSoundComp = CreateDefaultSubobject<UAudioComponent>(TEXT("PulsatingSoundComponent"));
     this->LaserWarningSound = NULL;
+    this->Damage = CreateDefaultSubobject<UDamageComponent>(TEXT("DamageComponent"));
     this->ForceSit = false;
     this->LaserSound = NULL;
     this->LastPowerDownSound = NULL;

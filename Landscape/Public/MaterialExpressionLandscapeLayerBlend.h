@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MaterialExpression -FallbackName=MaterialExpression
 #include "LayerBlendInput.h"
-//CROSS-MODULE INCLUDE: Engine MaterialExpression
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "MaterialExpressionLandscapeLayerBlend.generated.h"
 
 UCLASS(CollapseCategories)
 class LANDSCAPE_API UMaterialExpressionLandscapeLayerBlend : public UMaterialExpression {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FLayerBlendInput> Layers;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid ExpressionGUID;
     
     UMaterialExpressionLandscapeLayerBlend();

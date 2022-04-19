@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine WorldSubsystem
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=WorldSubsystem -FallbackName=WorldSubsystem
 #include "PerkSubsystem.generated.h"
 
-class UPerkAsset;
 class UPerkDelegateItem;
+class UPerkAsset;
 
 UCLASS(BlueprintType)
-class UPerkSubsystem : public UWorldSubsystem {
+class FSD_API UPerkSubsystem : public UWorldSubsystem {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TMap<UPerkAsset*, UPerkDelegateItem*> PerkDelegates;
     
 public:
+    UPerkSubsystem();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UPerkDelegateItem* GetPerkDelegates(UPerkAsset* Perk);
     
-    UPerkSubsystem();
 };
 

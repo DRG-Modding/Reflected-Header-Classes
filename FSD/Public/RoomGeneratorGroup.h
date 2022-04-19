@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "RoomGeneratorGroupInstance.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
-//CROSS-MODULE INCLUDE: CoreUObject RandomStream
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
 #include "RoomGeneratorGroup.generated.h"
 
 class URoomGenerator;
@@ -12,9 +12,10 @@ UCLASS(BlueprintType)
 class URoomGeneratorGroup : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<URoomGenerator*> Rooms;
     
+    URoomGeneratorGroup();
     UFUNCTION(BlueprintCallable)
     static URoomGenerator* GetRandomRoomWithTags(UPARAM(Ref) FRoomGeneratorGroupInstance& groupInstance, const FGameplayTagQuery& queury, UPARAM(Ref) FRandomStream& RandomStream);
     
@@ -24,6 +25,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FRoomGeneratorGroupInstance CreateGroupInstance() const;
     
-    URoomGeneratorGroup();
 };
 

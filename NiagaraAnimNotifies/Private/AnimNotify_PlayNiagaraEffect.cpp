@@ -8,6 +8,7 @@ UFXSystemComponent* UAnimNotify_PlayNiagaraEffect::GetSpawnedEffect() const {
 
 UAnimNotify_PlayNiagaraEffect::UAnimNotify_PlayNiagaraEffect() {
     this->Template = NULL;
+    this->bAbsoluteScale = false;
     this->Attached = true;
 }
 

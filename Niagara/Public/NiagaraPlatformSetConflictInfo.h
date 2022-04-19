@@ -7,13 +7,13 @@ USTRUCT()
 struct FNiagaraPlatformSetConflictInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 SetAIndex;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 SetBIndex;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraPlatformSetConflictEntry> Conflicts;
     
     NIAGARA_API FNiagaraPlatformSetConflictInfo();

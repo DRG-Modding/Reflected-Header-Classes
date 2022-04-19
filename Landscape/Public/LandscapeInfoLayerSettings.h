@@ -8,10 +8,10 @@ USTRUCT()
 struct FLandscapeInfoLayerSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ULandscapeLayerInfoObject* LayerInfoObj;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName LayerName;
     
     LANDSCAPE_API FLandscapeInfoLayerSettings();

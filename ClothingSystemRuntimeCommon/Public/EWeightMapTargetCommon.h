@@ -8,6 +8,7 @@ enum class EWeightMapTargetCommon : uint8 {
     MaxDistance,
     BackstopDistance,
     BackstopRadius,
-    AnimDriveMultiplier,
+    AnimDriveStiffness,
+    AnimDriveDamping,
 };
 

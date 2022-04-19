@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraTypeDefinition.h"
+#include "NiagaraTypeDefinitionHandle.h"
 #include "NiagaraVariableBase.generated.h"
 
 USTRUCT()
@@ -8,11 +8,11 @@ struct FNiagaraVariableBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName Name;
     
-    UPROPERTY(EditAnywhere)
-    FNiagaraTypeDefinition TypeDef;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNiagaraTypeDefinitionHandle TypeDefHandle;
     
 public:
     NIAGARA_API FNiagaraVariableBase();

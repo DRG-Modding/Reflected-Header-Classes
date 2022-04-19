@@ -1,28 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine StaticMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "TerrainScannerStaticMesh.generated.h"
 
 class UHealthComponentBase;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class FSD_API UTerrainScannerStaticMesh : public UStaticMeshComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bVisibleAtBeginPlay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHideOnDeath;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseFogOfWar;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool bVisibleOnScanner;
     
 public:
+    UTerrainScannerStaticMesh();
     UFUNCTION(BlueprintCallable)
     void SetVisibleOnScanner(bool InShowOnScanner);
     
@@ -30,7 +31,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void OnOwnerDeath(UHealthComponentBase* InHealthComponent);
     
-public:
-    UTerrainScannerStaticMesh();
 };
 

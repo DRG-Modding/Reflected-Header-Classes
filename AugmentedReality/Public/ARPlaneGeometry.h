@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ARTrackedGeometry.h"
 #include "EARPlaneOrientation.h"
 #include "ARPlaneGeometry.generated.h"
@@ -12,19 +12,23 @@ class AUGMENTEDREALITY_API UARPlaneGeometry : public UARTrackedGeometry {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARPlaneOrientation Orientation;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FVector Center;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FVector Extent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    TArray<FVector> BoundaryPolygon;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UARPlaneGeometry* SubsumedBy;
     
 public:
+    UARPlaneGeometry();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UARPlaneGeometry* GetSubsumedBy() const;
     
@@ -40,6 +44,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FVector> GetBoundaryPolygonInLocalSpace() const;
     
-    UARPlaneGeometry();
 };
 

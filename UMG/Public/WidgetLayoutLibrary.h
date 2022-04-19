@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: SlateCore Geometry
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Geometry -FallbackName=Geometry
 #include "WidgetLayoutLibrary.generated.h"
 
-class UWidget;
 class UWrapBoxSlot;
-class USizeBoxSlot;
 class UVerticalBoxSlot;
 class UWidgetSwitcherSlot;
-class UScrollBoxSlot;
-class UUniformGridSlot;
+class UBorderSlot;
 class UScaleBoxSlot;
+class UWidget;
+class UUniformGridSlot;
+class UCanvasPanelSlot;
+class USizeBoxSlot;
+class UScrollBoxSlot;
 class USafeZoneSlot;
 class UOverlaySlot;
 class UHorizontalBoxSlot;
 class UGridSlot;
-class UCanvasPanelSlot;
-class UBorderSlot;
 class UObject;
 class APlayerController;
 
@@ -27,6 +27,7 @@ UCLASS(BlueprintType)
 class UMG_API UWidgetLayoutLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UWidgetLayoutLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UWrapBoxSlot* SlotAsWrapBoxSlot(UWidget* Widget);
     
@@ -93,6 +94,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static FVector2D GetMousePositionOnPlatform();
     
-    UWidgetLayoutLibrary();
 };
 

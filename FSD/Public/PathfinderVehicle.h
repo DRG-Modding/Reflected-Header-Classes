@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Pawn
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Pawn -FallbackName=Pawn
 #include "Targetable.h"
 #include "Steerable.h"
 #include "PathfinderVehicle.generated.h"
 
-class UHealthComponent;
-class UDeepPathfinderMovement;
 class USkeletalMeshComponent;
+class UDeepPathfinderMovement;
+class UHealthComponent;
 
 UCLASS()
 class APathfinderVehicle : public APawn, public ITargetable, public ISteerable {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UDeepPathfinderMovement* PathfinderMovement;
     
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* Mesh;
     
 protected:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UHealthComponent* HealthComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Speed;
     
 public:

@@ -3,18 +3,18 @@
 #include "CapturedPropSegment.generated.h"
 
 USTRUCT(BlueprintType)
-struct FCapturedPropSegment {
+struct VARIANTMANAGERCONTENT_API FCapturedPropSegment {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString PropertyName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 PropertyIndex;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ComponentName;
     
-    VARIANTMANAGERCONTENT_API FCapturedPropSegment();
+    FCapturedPropSegment();
 };
 

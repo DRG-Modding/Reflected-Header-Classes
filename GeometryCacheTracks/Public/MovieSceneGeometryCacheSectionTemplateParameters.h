@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneGeometryCacheParams.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
 #include "MovieSceneGeometryCacheSectionTemplateParameters.generated.h"
 
 USTRUCT(BlueprintType)
 struct FMovieSceneGeometryCacheSectionTemplateParameters : public FMovieSceneGeometryCacheParams {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FFrameNumber SectionStartTime;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FFrameNumber SectionEndTime;
     
     GEOMETRYCACHETRACKS_API FMovieSceneGeometryCacheSectionTemplateParameters();

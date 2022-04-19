@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "EARCandidateImageOrientation.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ARCandidateImage.generated.h"
 
 class UTexture2D;
@@ -11,22 +11,23 @@ class AUGMENTEDREALITY_API UARCandidateImage : public UDataAsset {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* CandidateTexture;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString FriendlyName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Width;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Height;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARCandidateImageOrientation Orientation;
     
 public:
+    UARCandidateImage();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPhysicalWidth() const;
     
@@ -42,6 +43,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetCandidateTexture() const;
     
-    UARCandidateImage();
 };
 

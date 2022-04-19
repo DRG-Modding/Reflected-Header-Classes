@@ -1,16 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneByteChannel
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneByteChannel -FallbackName=MovieSceneByteChannel
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneEntityProvider -FallbackName=MovieSceneEntityProvider
 #include "MovieSceneByteSection.generated.h"
 
 UCLASS(MinimalAPI)
-class UMovieSceneByteSection : public UMovieSceneSection {
+class UMovieSceneByteSection : public UMovieSceneSection, public IMovieSceneEntityProvider {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneByteChannel ByteCurve;
     
     UMovieSceneByteSection();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

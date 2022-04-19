@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: InputCore EControllerHand
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=EControllerHand -FallbackName=EControllerHand
 #include "MotionTrackedDeviceFunctionLibrary.generated.h"
 
 class UMotionControllerComponent;
@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class HEADMOUNTEDDISPLAY_API UMotionTrackedDeviceFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UMotionTrackedDeviceFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static void SetIsControllerMotionTrackingEnabledByDefault(bool Enable);
     
@@ -64,6 +65,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void DisableMotionTrackingForComponent(const UMotionControllerComponent* MotionControllerComponent);
     
-    UMotionTrackedDeviceFunctionLibrary();
 };
 

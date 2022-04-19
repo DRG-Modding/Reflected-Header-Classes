@@ -1,64 +1,63 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore ButtonStyle
-//CROSS-MODULE INCLUDE: SlateCore EButtonTouchMethod
-//CROSS-MODULE INCLUDE: SlateCore EButtonClickMethod
-//CROSS-MODULE INCLUDE: SlateCore EButtonPressMethod
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ButtonStyle -FallbackName=ButtonStyle
+#include "OnButtonClickedEventDelegate.h"
+#include "OnButtonReleasedEventDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonPressMethod -FallbackName=EButtonPressMethod
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonTouchMethod -FallbackName=EButtonTouchMethod
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonClickMethod -FallbackName=EButtonClickMethod
+#include "OnButtonPressedEventDelegate.h"
+#include "OnButtonHoverEventDelegate.h"
 #include "Button.generated.h"
 
 class USlateWidgetStyleAsset;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnHovered);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnClicked);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnPressed);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnReleased);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FButtonOnUnhovered);
 
 UCLASS()
 class UMG_API UButton : public UContentWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateWidgetStyleAsset* Style;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FButtonStyle WidgetStyle;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ColorAndOpacity;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor BackgroundColor;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EButtonClickMethod::Type> ClickMethod;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EButtonTouchMethod::Type> TouchMethod;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EButtonPressMethod::Type> PressMethod;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsFocusable;
     
-    UPROPERTY(BlueprintAssignable)
-    FButtonOnClicked OnClicked;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnButtonClickedEvent OnClicked;
     
-    UPROPERTY(BlueprintAssignable)
-    FButtonOnPressed OnPressed;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnButtonPressedEvent OnPressed;
     
-    UPROPERTY(BlueprintAssignable)
-    FButtonOnReleased OnReleased;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnButtonReleasedEvent OnReleased;
     
-    UPROPERTY(BlueprintAssignable)
-    FButtonOnHovered OnHovered;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnButtonHoverEvent OnHovered;
     
-    UPROPERTY(BlueprintAssignable)
-    FButtonOnUnhovered OnUnhovered;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnButtonHoverEvent OnUnhovered;
     
+    UButton();
     UFUNCTION(BlueprintCallable)
     void SetTouchMethod(TEnumAsByte<EButtonTouchMethod::Type> InTouchMethod);
     
@@ -80,6 +79,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPressed() const;
     
-    UButton();
 };
 

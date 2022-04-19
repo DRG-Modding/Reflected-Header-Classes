@@ -1,48 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "VRNotificationsComponent.generated.h"
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentHMDTrackingInitializingAndNeedsHMDToBeTrackedDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentHMDTrackingInitializedDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentHMDRecenteredDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentHMDRemovedFromHeadDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentHMDLostDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentHMDPutOnHeadDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentHMDReconnectedDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentHMDConnectCanceledDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVRNotificationsComponentVRControllerRecenteredDelegate);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class HEADMOUNTEDDISPLAY_API UVRNotificationsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentHMDTrackingInitializingAndNeedsHMDToBeTrackedDelegate HMDTrackingInitializingAndNeedsHMDToBeTrackedDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate HMDTrackingInitializingAndNeedsHMDToBeTrackedDelegate;
     
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentHMDTrackingInitializedDelegate HMDTrackingInitializedDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate HMDTrackingInitializedDelegate;
     
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentHMDRecenteredDelegate HMDRecenteredDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate HMDRecenteredDelegate;
     
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentHMDLostDelegate HMDLostDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate HMDLostDelegate;
     
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentHMDReconnectedDelegate HMDReconnectedDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate HMDReconnectedDelegate;
     
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentHMDConnectCanceledDelegate HMDConnectCanceledDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate HMDConnectCanceledDelegate;
     
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentHMDPutOnHeadDelegate HMDPutOnHeadDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate HMDPutOnHeadDelegate;
     
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentHMDRemovedFromHeadDelegate HMDRemovedFromHeadDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate HMDRemovedFromHeadDelegate;
     
-    UPROPERTY(BlueprintAssignable)
-    FVRNotificationsComponentVRControllerRecenteredDelegate VRControllerRecenteredDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FVRNotificationsDelegate VRControllerRecenteredDelegate;
     
     UVRNotificationsComponent();
 };

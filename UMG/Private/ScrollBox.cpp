@@ -5,6 +5,9 @@ class UWidget;
 void UScrollBox::SetWheelScrollMultiplier(float NewWheelScrollMultiplier) {
 }
 
+void UScrollBox::SetScrollWhenFocusChanges(EScrollWhenFocusChanges NewScrollWhenFocusChanges) {
+}
+
 void UScrollBox::SetScrollOffset(float NewScrollOffset) {
 }
 

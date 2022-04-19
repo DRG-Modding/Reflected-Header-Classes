@@ -10,7 +10,7 @@ UCLASS(EditInlineNew)
 class AIMODULE_API UAISenseConfig_Damage : public UAISenseConfig {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Config, EditDefaultsOnly, NoClear)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, NoClear, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAISense_Damage> Implementation;
     
     UAISenseConfig_Damage();

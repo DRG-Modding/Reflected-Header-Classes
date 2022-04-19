@@ -1,4 +1,6 @@
 #include "CaveVine.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SplineMeshComponent -FallbackName=SplineMeshComponent
 
 
 
@@ -10,5 +12,7 @@ ACaveVine::ACaveVine() {
     this->GroundOffset = 150.00f;
     this->NoiseRadius = 40.00f;
     this->NoiseSpeed = 0.20f;
+    this->SplineMeshComponent = CreateDefaultSubobject<USplineMeshComponent>(TEXT("SplineMeshComponent"));
+    this->VineHead = CreateDefaultSubobject<USceneComponent>(TEXT("VineHead"));
 }
 

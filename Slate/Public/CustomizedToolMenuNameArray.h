@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FCustomizedToolMenuNameArray {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FName> Names;
     
     SLATE_API FCustomizedToolMenuNameArray();

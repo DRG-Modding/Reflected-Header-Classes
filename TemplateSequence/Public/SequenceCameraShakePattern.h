@@ -1,0 +1,45 @@
+#pragma once
+#include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraShakePattern -FallbackName=CameraShakePattern
+#include "SequenceCameraShakePattern.generated.h"
+
+class UCameraAnimationSequence;
+class USequenceCameraShakeSequencePlayer;
+class USequenceCameraShakeCameraStandIn;
+
+UCLASS(EditInlineNew)
+class TEMPLATESEQUENCE_API USequenceCameraShakePattern : public UCameraShakePattern {
+    GENERATED_BODY()
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UCameraAnimationSequence* Sequence;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float PlayRate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float Scale;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float BlendInTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float BlendOutTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float RandomSegmentDuration;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bRandomSegment;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USequenceCameraShakeSequencePlayer* Player;
+    
+    UPROPERTY(BlueprintReadWrite, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    USequenceCameraShakeCameraStandIn* CameraStandIn;
+    
+public:
+    USequenceCameraShakePattern();
+};
+

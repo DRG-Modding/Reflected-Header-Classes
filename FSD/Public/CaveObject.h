@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "CaveObject.generated.h"
 
 UCLASS(Abstract)
@@ -8,9 +8,12 @@ class ACaveObject : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CanCharacterStandOn;
     
+public:
+    ACaveObject();
+protected:
     UFUNCTION(BlueprintCallable)
     void TriggerNetworkUpdate();
     
@@ -23,7 +26,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void PauseNetworkUpdates();
     
-public:
-    ACaveObject();
 };
 

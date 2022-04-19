@@ -8,7 +8,7 @@ class GEOMETRYCACHE_API UGeometryCacheCodecRaw : public UGeometryCacheCodecBase 
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     int32 DummyProperty;
     
 public:

@@ -1,51 +1,52 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "DecalData.h"
 #include "StickyFlame.generated.h"
 
+class UStatusEffectTriggerComponent;
 class UParticleSystemComponent;
 class UAudioComponent;
-class UStatusEffectTriggerComponent;
 
 UCLASS()
 class AStickyFlame : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UParticleSystemComponent* FlameParticles;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UAudioComponent* Audio;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UStatusEffectTriggerComponent* StatusTriggerComponent;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDecalData Decal;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FlameLifetime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FlameExtinguishTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AudioFadeOutTime;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_IsActive)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_IsActive, meta=(AllowPrivateAccess=true))
     bool IsActive;
     
+public:
+    AStickyFlame();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_IsActive();
     
     UFUNCTION(BlueprintCallable)
     void OnExtinguisFlame();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AStickyFlame();
 };
 

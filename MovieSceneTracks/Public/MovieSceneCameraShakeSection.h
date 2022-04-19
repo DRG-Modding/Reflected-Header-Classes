@@ -1,31 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine ECameraAnimPlaySpace
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECameraShakePlaySpace -FallbackName=ECameraShakePlaySpace
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
 #include "MovieSceneCameraShakeSectionData.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "MovieSceneCameraShakeSection.generated.h"
 
-class UCameraShake;
+class UCameraShakeBase;
 
 UCLASS(MinimalAPI)
 class UMovieSceneCameraShakeSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneCameraShakeSectionData ShakeData;
     
-    UPROPERTY()
-    TSubclassOf<UCameraShake> ShakeClass;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UCameraShakeBase> ShakeClass;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float PlayScale;
     
-    UPROPERTY()
-    TEnumAsByte<ECameraAnimPlaySpace::Type> PlaySpace;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    ECameraShakePlaySpace PlaySpace;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FRotator UserDefinedPlaySpace;
     
     UMovieSceneCameraShakeSection();

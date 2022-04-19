@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FMediaSoundComponentSpectralData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FrequencyHz;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Magnitude;
     
     MEDIAASSETS_API FMediaSoundComponentSpectralData();

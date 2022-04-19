@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct DATASMITHCONTENT_API FDatasmithMeshSectionInfoTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 MaterialIndex;
     
     FDatasmithMeshSectionInfoTemplate();

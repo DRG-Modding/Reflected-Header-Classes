@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FMovieSceneSequenceHierarchyNode {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneSequenceID ParentID;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneSequenceID> Children;
     
     MOVIESCENE_API FMovieSceneSequenceHierarchyNode();

@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "NiagaraID.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraID {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 Index;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 AcquireTag;
     
     NIAGARA_API FNiagaraID();

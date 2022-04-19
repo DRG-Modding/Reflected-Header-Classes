@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EEnvQueryRunMode.h"
 #include "AIDynamicParam.h"
 #include "BlackboardKeySelector.h"
-#include "EEnvQueryRunMode.h"
 #include "EQSParametrizedQueryExecutionRequest.generated.h"
 
 class UEnvQuery;
@@ -11,19 +11,19 @@ USTRUCT(BlueprintType)
 struct AIMODULE_API FEQSParametrizedQueryExecutionRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UEnvQuery* QueryTemplate;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIDynamicParam> QueryConfig;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector EQSQueryBlackboardKey;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EEnvQueryRunMode::Type> RunMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bUseBBKeyForQueryTemplate: 1;
     
     FEQSParametrizedQueryExecutionRequest();

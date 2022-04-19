@@ -1,18 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
 #include "LevelVariantSetsActor.generated.h"
 
+class ULevelVariantSetsFunctionDirector;
 class ULevelVariantSets;
 
 UCLASS()
 class VARIANTMANAGERCONTENT_API ALevelVariantSetsActor : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath LevelVariantSets;
     
+private:
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    TMap<UClass*, ULevelVariantSetsFunctionDirector*> DirectorInstances;
+    
+public:
+    ALevelVariantSetsActor();
     UFUNCTION(BlueprintCallable)
     bool SwitchOnVariantByName(const FString& VariantSetName, const FString& VariantName);
     
@@ -25,6 +32,5 @@ public:
     UFUNCTION(BlueprintCallable)
     ULevelVariantSets* GetLevelVariantSets(bool bLoad);
     
-    ALevelVariantSetsActor();
 };
 

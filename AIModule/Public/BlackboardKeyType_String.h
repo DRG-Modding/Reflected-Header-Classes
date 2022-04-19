@@ -7,7 +7,7 @@ UCLASS(CollapseCategories, EditInlineNew)
 class AIMODULE_API UBlackboardKeyType_String : public UBlackboardKeyType {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString StringValue;
     
     UBlackboardKeyType_String();

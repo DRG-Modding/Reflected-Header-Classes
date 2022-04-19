@@ -1,52 +1,53 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ENiagaraPreviewGridResetMode.h"
 #include "NiagaraPreviewGrid.generated.h"
 
-class UChildActorComponent;
-class ANiagaraPreviewBase;
 class UNiagaraSystem;
 class UNiagaraPreviewAxis;
 class UNiagaraComponent;
+class ANiagaraPreviewBase;
+class UChildActorComponent;
 
 UCLASS()
 class ANiagaraPreviewGrid : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UNiagaraSystem* System;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraPreviewGridResetMode ResetMode;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UNiagaraPreviewAxis* PreviewAxisX;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UNiagaraPreviewAxis* PreviewAxisY;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ANiagaraPreviewBase> PreviewClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SpacingX;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SpacingY;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 NumX;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 NumY;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<UChildActorComponent*> PreviewComponents;
     
 public:
+    ANiagaraPreviewGrid();
     UFUNCTION(BlueprintCallable)
     void SetPaused(bool bPaused);
     
@@ -59,6 +60,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ActivatePreviews(bool bReset);
     
-    ANiagaraPreviewGrid();
 };
 

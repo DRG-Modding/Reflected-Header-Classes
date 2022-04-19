@@ -9,11 +9,11 @@ UCLASS(Abstract)
 class AIMODULE_API UBTTaskNode : public UBTNode {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UBTService*> Services;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIgnoreRestartSelf: 1;
     
 public:

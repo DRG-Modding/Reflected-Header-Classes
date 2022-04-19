@@ -9,20 +9,20 @@ USTRUCT(BlueprintType)
 struct AIMODULE_API FBlackboardKeySelector {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UBlackboardKeyType*> AllowedTypes;
     
-    UPROPERTY(BlueprintReadWrite, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, meta=(AllowPrivateAccess=true))
     FName SelectedKeyName;
     
-    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Transient, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBlackboardKeyType> SelectedKeyType;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Transient, meta=(AllowPrivateAccess=true))
     uint8 SelectedKeyID;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bNoneIsAllowedValue: 1;
     
 public:

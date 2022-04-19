@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RunningMissionBP.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagContainer
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "ExterminationReward.generated.h"
 
 class UResourceData;
@@ -12,19 +12,20 @@ class UExterminationReward : public URunningMissionBP {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UResourceData* Resource;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AwardSize;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer AllowedFilter;
-    
-    UFUNCTION(BlueprintCallable)
-    void OnEnemyKilled(const FGameplayTagContainer& GameplayTags, AActor* killedEnemy);
     
 public:
     UExterminationReward();
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnEnemyKilled(const FGameplayTagContainer& GameplayTags, AActor* killedEnemy);
+    
 };
 

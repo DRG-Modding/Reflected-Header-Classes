@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
-//CROSS-MODULE INCLUDE: Engine PrimitiveComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimitiveComponent -FallbackName=PrimitiveComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "STLMeshCarverComponent.generated.h"
 
-class UTerrainMaterialBase;
 class USTLMeshCarver;
+class UTerrainMaterialBase;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class USTLMeshCarverComponent : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTerrainMaterialBase* TerrainMaterial;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USTLMeshCarver* MeshCarver;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECarveFilterType Filter;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PreviewEnabled;
     
     USTLMeshCarverComponent();

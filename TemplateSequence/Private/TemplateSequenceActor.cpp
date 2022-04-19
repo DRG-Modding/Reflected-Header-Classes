@@ -1,14 +1,14 @@
 #include "TemplateSequenceActor.h"
 #include "Net/UnrealNetwork.h"
+#include "TemplateSequencePlayer.h"
 
 class UTemplateSequence;
 class AActor;
-class UTemplateSequencePlayer;
 
 void ATemplateSequenceActor::SetSequence(UTemplateSequence* InSequence) {
 }
 
-void ATemplateSequenceActor::SetBinding(AActor* Actor) {
+void ATemplateSequenceActor::SetBinding(AActor* Actor, bool bOverridesDefault) {
 }
 
 UTemplateSequence* ATemplateSequenceActor::LoadSequence() const {
@@ -30,5 +30,6 @@ void ATemplateSequenceActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 }
 
 ATemplateSequenceActor::ATemplateSequenceActor() {
+    this->SequencePlayer = CreateDefaultSubobject<UTemplateSequencePlayer>(TEXT("AnimationPlayer"));
 }
 

@@ -7,12 +7,12 @@ public class FieldSystemEngine : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
+            "Chaos",
             "ChaosSolverEngine",
-            "ChaosSolvers",
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
-            "FieldSystemCore",
         });
     }
 }

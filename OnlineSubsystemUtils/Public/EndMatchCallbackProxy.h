@@ -1,31 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: OnlineSubsystem EMPMatchOutcome
-//CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineBlueprintCallProxyBase -FallbackName=OnlineBlueprintCallProxyBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystem -ObjectName=EMPMatchOutcome -FallbackName=EMPMatchOutcome
 #include "EndMatchCallbackProxy.generated.h"
 
-class APlayerController;
 class UEndMatchCallbackProxy;
 class UObject;
+class APlayerController;
 class UTurnBasedMatchInterface;
 class ITurnBasedMatchInterface;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndMatchCallbackProxyOnSuccess);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEndMatchCallbackProxyOnFailure);
 
 UCLASS(MinimalAPI)
 class UEndMatchCallbackProxy : public UOnlineBlueprintCallProxyBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FEndMatchCallbackProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEmptyOnlineDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FEndMatchCallbackProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEmptyOnlineDelegate OnFailure;
     
+    UEndMatchCallbackProxy();
     UFUNCTION(BlueprintCallable)
     static UEndMatchCallbackProxy* EndMatch(UObject* WorldContextObject, APlayerController* PlayerController, TScriptInterface<ITurnBasedMatchInterface> MatchActor, const FString& MatchID, TEnumAsByte<EMPMatchOutcome::Type> LocalPlayerOutcome, TEnumAsByte<EMPMatchOutcome::Type> OtherPlayersOutcome);
     
-    UEndMatchCallbackProxy();
 };
 

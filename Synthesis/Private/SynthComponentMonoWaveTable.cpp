@@ -42,9 +42,6 @@ void USynthComponentMonoWaveTable::SetPositionEnvelopeAttackTime(const float InA
 void USynthComponentMonoWaveTable::SetLowPassFilterResonance(float InNewQ) {
 }
 
-void USynthComponentMonoWaveTable::SetLowPassFilterFrequency(float InNewFrequency) {
-}
-
 void USynthComponentMonoWaveTable::SetFrequencyWithMidiNote(const float InMidiNote) {
 }
 

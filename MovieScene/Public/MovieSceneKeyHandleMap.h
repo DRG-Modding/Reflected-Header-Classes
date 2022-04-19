@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine KeyHandleLookupTable
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=KeyHandleLookupTable -FallbackName=KeyHandleLookupTable
 #include "MovieSceneKeyHandleMap.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "LevelVariantSets.generated.h"
 
 class UVariantSet;
@@ -10,13 +10,14 @@ class VARIANTMANAGERCONTENT_API ULevelVariantSets : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UClass* DirectorClass;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UVariantSet*> VariantSets;
     
 public:
+    ULevelVariantSets();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UVariantSet* GetVariantSetByName(const FString& VariantSetName);
     
@@ -26,6 +27,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetNumVariantSets();
     
-    ULevelVariantSets();
 };
 

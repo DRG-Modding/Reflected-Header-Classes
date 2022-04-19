@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FSubmixEffectSubmixEQSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSubmixEffectEQBand> EQBands;
     
     AUDIOMIXER_API FSubmixEffectSubmixEQSettings();

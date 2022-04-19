@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=AIStimulus -FallbackName=AIStimulus
 #include "FSDAIController.h"
-//CROSS-MODULE INCLUDE: AIModule AIStimulus
 #include "HostileGuntowerModuleController.generated.h"
 
 class UAIPerceptionComponent;
@@ -11,12 +11,12 @@ UCLASS()
 class AHostileGuntowerModuleController : public AFSDAIController {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UAIPerceptionComponent* Perception;
     
+    AHostileGuntowerModuleController();
     UFUNCTION(BlueprintCallable)
     void OnPerceptionUpdated(AActor* sensedActor, FAIStimulus Stimulus);
     
-    AHostileGuntowerModuleController();
 };
 

@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FNavGraphNode {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UObject* Owner;
     
     NAVIGATIONSYSTEM_API FNavGraphNode();

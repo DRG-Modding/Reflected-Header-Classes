@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FMovieSceneEvaluationKey {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneSequenceID SequenceID;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneTrackIdentifier TrackIdentifier;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint32 SectionIndex;
     
     MOVIESCENE_API FMovieSceneEvaluationKey();

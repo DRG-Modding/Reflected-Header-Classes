@@ -7,14 +7,14 @@ UCLASS()
 class AIMODULE_API UBTTask_MoveDirectlyToward : public UBTTask_MoveTo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bDisablePathUpdateOnGoalLocationChange: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bProjectVectorGoalToNavigation: 1;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bUpdatedDeprecatedProperties: 1;
     
 public:

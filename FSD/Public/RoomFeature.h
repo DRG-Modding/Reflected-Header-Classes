@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "RoomFeature.generated.h"
 
 class URoomFeature;
@@ -10,7 +10,7 @@ class URoomFeature : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     TArray<URoomFeature*> RoomFeatures;
     
 public:

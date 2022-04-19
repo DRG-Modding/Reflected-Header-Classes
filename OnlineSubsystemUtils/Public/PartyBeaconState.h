@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "PartyBeaconCrossplayPlatformMapping.h"
 #include "PartyReservation.h"
 #include "PartyBeaconState.generated.h"
 
@@ -9,37 +10,43 @@ class ONLINESUBSYSTEMUTILS_API UPartyBeaconState : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FName SessionName;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 NumConsumedReservations;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 MaxReservations;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 NumTeams;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 NumPlayersPerTeam;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FName TeamAssignmentMethod;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 ReservedHostTeamNum;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     int32 ForceTeamNum;
     
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     bool bRestrictCrossConsole;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
+    TArray<FString> PlatformCrossplayRestrictions;
+    
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
+    TArray<FPartyBeaconCrossplayPlatformMapping> PlatformTypeMapping;
+    
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool bEnableRemovalRequests;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FPartyReservation> Reservations;
     
 public:

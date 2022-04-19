@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "NamedInterface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "NamedInterfaceDef.h"
 #include "NamedInterfaces.generated.h"
 
@@ -10,10 +10,10 @@ class UNamedInterfaces : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNamedInterface> NamedInterfaces;
     
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     TArray<FNamedInterfaceDef> NamedInterfaceDefs;
     
 public:

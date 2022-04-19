@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CSGTriangleMapper.h"
-//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "DebrisBase.generated.h"
 
 class UObject;
@@ -11,20 +11,20 @@ UCLASS(Abstract, EditInlineNew)
 class FSD_API UDebrisBase : public UCSGTriangleMapper {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UObject* CaveInfluencer;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve InfluencerDensityCurve;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve InfluencerSizeCurve;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UCurveFloat* CaveInfluenceCurve;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UCurveFloat* CaveInflunceSizeCurve;
     
 public:

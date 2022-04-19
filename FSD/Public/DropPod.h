@@ -2,57 +2,60 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "EDropPodState.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DropPod.generated.h"
 
-class UAutoCarverComponent;
 class UCurveFloat;
+class UAutoCarverComponent;
 class UObject;
 class ADropPod;
 
 UCLASS()
-class ADropPod : public AActor {
+class FSD_API ADropPod : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DropHeight;
     
-    UPROPERTY(BlueprintReadOnly, EditInstanceOnly, Replicated)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Replicated, meta=(AllowPrivateAccess=true))
     FVector TargetLocation;
     
 protected:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UAutoCarverComponent* AutoCarver;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* DepartCurve;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CarverRotationSpeed;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector CarverScale;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DepartureTime;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FVector StartLocation;
     
-    UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_State)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_State, meta=(AllowPrivateAccess=true))
     EDropPodState State;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DrillSpeed;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FreeFallAcceleration;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FreeFallSpeed;
     
 public:
+    ADropPod();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void StartDrilling();
     
@@ -82,8 +85,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Depart();
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ADropPod();
 };
 

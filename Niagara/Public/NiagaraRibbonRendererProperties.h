@@ -1,116 +1,136 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraRendererProperties.h"
-#include "ENiagaraRibbonAgeOffsetMode.h"
-#include "ENiagaraRibbonTessellationMode.h"
-#include "ENiagaraRibbonDrawDirection.h"
-#include "NiagaraUserParameterBinding.h"
+#include "NiagaraRibbonShapeCustomVertex.h"
 #include "ENiagaraRibbonFacingMode.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "ENiagaraRibbonShapeMode.h"
+#include "NiagaraUserParameterBinding.h"
+#include "NiagaraRibbonUVSettings.h"
+#include "ENiagaraRibbonDrawDirection.h"
+#include "ENiagaraRibbonTessellationMode.h"
 #include "NiagaraVariableAttributeBinding.h"
+#include "NiagaraMaterialAttributeBinding.h"
 #include "NiagaraRibbonRendererProperties.generated.h"
 
 class UMaterialInterface;
 
 UCLASS(EditInlineNew)
-class UNiagaraRibbonRendererProperties : public UNiagaraRendererProperties {
+class NIAGARA_API UNiagaraRibbonRendererProperties : public UNiagaraRendererProperties {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* Material;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraUserParameterBinding MaterialUserParamBinding;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraRibbonFacingMode FacingMode;
     
-    UPROPERTY(EditAnywhere)
-    float UV0TilingDistance;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNiagaraRibbonUVSettings UV0Settings;
     
-    UPROPERTY(EditAnywhere)
-    FVector2D UV0Scale;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNiagaraRibbonUVSettings UV1Settings;
     
-    UPROPERTY(EditAnywhere)
-    FVector2D UV0Offset;
-    
-    UPROPERTY(EditAnywhere)
-    ENiagaraRibbonAgeOffsetMode UV0AgeOffsetMode;
-    
-    UPROPERTY(EditAnywhere)
-    float UV1TilingDistance;
-    
-    UPROPERTY(EditAnywhere)
-    FVector2D UV1Scale;
-    
-    UPROPERTY(EditAnywhere)
-    FVector2D UV1Offset;
-    
-    UPROPERTY(EditAnywhere)
-    ENiagaraRibbonAgeOffsetMode UV1AgeOffsetMode;
-    
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraRibbonDrawDirection DrawDirection;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ENiagaraRibbonShapeMode Shape;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bEnableAccurateGeometry;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 WidthSegmentationCount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 MultiPlaneCount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 TubeSubdivisions;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FNiagaraRibbonShapeCustomVertex> CustomVertices;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CurveTension;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraRibbonTessellationMode TessellationMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 TessellationFactor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseConstantFactor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TessellationAngle;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bScreenSpaceTessellation;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding PositionBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding ColorBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding VelocityBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding NormalizedAgeBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding RibbonTwistBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding RibbonWidthBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding RibbonFacingBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding RibbonIdBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding RibbonLinkOrderBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding MaterialRandomBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding DynamicMaterialBinding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding DynamicMaterial1Binding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding DynamicMaterial2Binding;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding DynamicMaterial3Binding;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNiagaraVariableAttributeBinding RibbonUVDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNiagaraVariableAttributeBinding U0OverrideBinding;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNiagaraVariableAttributeBinding V0RangeOverrideBinding;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNiagaraVariableAttributeBinding U1OverrideBinding;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FNiagaraVariableAttributeBinding V1RangeOverrideBinding;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FNiagaraMaterialAttributeBinding> MaterialParameterBindings;
     
     UNiagaraRibbonRendererProperties();
 };

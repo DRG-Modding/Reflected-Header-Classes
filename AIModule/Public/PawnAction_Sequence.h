@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPawnActionFailHandling.h"
 #include "PawnAction.h"
+#include "EPawnActionFailHandling.h"
 #include "PawnAction_Sequence.generated.h"
 
 UCLASS(EditInlineNew)
 class AIMODULE_API UPawnAction_Sequence : public UPawnAction {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UPawnAction*> ActionSequence;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EPawnActionFailHandling::Type> ChildFailureHandlingMode;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UPawnAction* RecentActionCopy;
     
     UPawnAction_Sequence();

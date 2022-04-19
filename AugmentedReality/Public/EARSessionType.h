@@ -11,5 +11,6 @@ enum class EARSessionType : uint8 {
     Image,
     ObjectScanning,
     PoseTracking,
+    GeoTracking,
 };
 

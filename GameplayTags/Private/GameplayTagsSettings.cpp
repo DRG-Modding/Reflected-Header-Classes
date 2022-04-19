@@ -3,6 +3,7 @@
 UGameplayTagsSettings::UGameplayTagsSettings() {
     this->ImportTagsFromConfig = true;
     this->WarnOnInvalidTags = true;
+    this->ClearInvalidTags = false;
     this->FastReplication = true;
     this->InvalidTagCharacters = TEXT("\"',");
     this->GameplayTagRedirects.AddDefaulted(7);

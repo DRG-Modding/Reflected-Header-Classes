@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "WebBrowserAssetManager.generated.h"
 
 class UMaterial;
@@ -10,7 +10,7 @@ class WEBBROWSERWIDGET_API UWebBrowserAssetManager : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UMaterial> DefaultMaterial;
     
 public:

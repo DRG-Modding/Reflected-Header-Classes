@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct STEAMVRINPUTDEVICE_API FSteamVRActionSet {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Path;
     
     FSteamVRActionSet();

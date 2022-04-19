@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimationSharingScalability.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "PerSkeletonAnimationSharingSetup.h"
+#include "AnimationSharingScalability.h"
 #include "AnimationSharingSetup.generated.h"
 
 UCLASS()
 class ANIMATIONSHARING_API UAnimationSharingSetup : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FPerSkeletonAnimationSharingSetup> SkeletonSetups;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimationSharingScalability ScalabilitySettings;
     
     UAnimationSharingSetup();

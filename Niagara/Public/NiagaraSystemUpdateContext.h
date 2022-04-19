@@ -10,13 +10,16 @@ struct NIAGARA_API FNiagaraSystemUpdateContext {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<UNiagaraComponent*> ComponentsToReset;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<UNiagaraComponent*> ComponentsToReInit;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    TArray<UNiagaraComponent*> ComponentsToNotifySimDestroy;
+    
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UNiagaraSystem*> SystemSimsToDestroy;
     
 public:

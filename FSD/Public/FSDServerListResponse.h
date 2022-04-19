@@ -7,7 +7,7 @@ USTRUCT()
 struct FFSDServerListResponse {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FFSDServerListEntryModel> Lobbies;
     
     FSD_API FFSDServerListResponse();

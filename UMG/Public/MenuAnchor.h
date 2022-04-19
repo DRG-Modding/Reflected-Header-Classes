@@ -1,42 +1,46 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore EMenuPlacement
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EMenuPlacement -FallbackName=EMenuPlacement
+#include "OnMenuOpenChangedEventDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "MenuAnchor.generated.h"
 
-class UWidget;
 class UUserWidget;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(UWidget*, FMenuAnchorOnGetMenuContentEvent);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMenuAnchorOnMenuOpenChanged, bool, bIsOpen);
 
 UCLASS()
 class UMG_API UMenuAnchor : public UContentWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    DECLARE_DYNAMIC_DELEGATE_RetVal(UUserWidget*, FGetUserWidget);
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UUserWidget> MenuClass;
     
-    UPROPERTY(EditAnywhere)
-    FMenuAnchorOnGetMenuContentEvent OnGetMenuContentEvent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UWidget::FGetWidget OnGetMenuContentEvent;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGetUserWidget OnGetUserMenuContentEvent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EMenuPlacement> Placement;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bFitInWindow;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShouldDeferPaintingAfterWindowContent;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UseApplicationMenuStack;
     
-    UPROPERTY(BlueprintAssignable)
-    FMenuAnchorOnMenuOpenChanged OnMenuOpenChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMenuOpenChangedEvent OnMenuOpenChanged;
     
+    UMenuAnchor();
     UFUNCTION(BlueprintCallable)
     void ToggleOpen(bool bFocusOnOpen);
     
@@ -64,6 +68,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Close();
     
-    UMenuAnchor();
 };
 

@@ -1,27 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintAsyncActionBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintAsyncActionBase -FallbackName=BlueprintAsyncActionBase
+#include "DownloadImageDelegateDelegate.h"
 #include "AsyncTaskDownloadImage.generated.h"
 
-class UTexture2DDynamic;
 class UAsyncTaskDownloadImage;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTaskDownloadImageOnSuccess, UTexture2DDynamic*, Texture);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTaskDownloadImageOnFail, UTexture2DDynamic*, Texture);
 
 UCLASS()
 class UMG_API UAsyncTaskDownloadImage : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FAsyncTaskDownloadImageOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FDownloadImageDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FAsyncTaskDownloadImageOnFail OnFail;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FDownloadImageDelegate OnFail;
     
+    UAsyncTaskDownloadImage();
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskDownloadImage* DownloadImage(const FString& URL);
     
-    UAsyncTaskDownloadImage();
 };
 

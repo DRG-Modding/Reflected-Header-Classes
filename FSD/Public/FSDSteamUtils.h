@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ESteamBranch.h"
 #include "FSDSteamUtils.generated.h"
 
@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class UFSDSteamUtils : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UFSDSteamUtils();
     UFUNCTION(BlueprintCallable)
     static bool PlayerIsFollowingUsOnSteam();
     
@@ -58,6 +59,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString FilterProfanityText(const FString& inputMessage);
     
-    UFSDSteamUtils();
 };
 

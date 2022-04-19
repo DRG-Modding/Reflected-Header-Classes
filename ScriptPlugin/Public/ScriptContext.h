@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "ScriptContext.generated.h"
 
 UCLASS(BlueprintType, DefaultToInstanced)
 class SCRIPTPLUGIN_API UScriptContext : public UObject {
     GENERATED_BODY()
 public:
+    UScriptContext();
     UFUNCTION(BlueprintCallable)
     void CallScriptFunction(const FString& FunctionName);
     
-    UScriptContext();
 };
 

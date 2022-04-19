@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct AIMODULE_API FAIDataProviderIntValue : public FAIDataProviderTypedValue {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 DefaultValue;
     
     FAIDataProviderIntValue();

@@ -3,6 +3,6 @@
 UMovieSceneEventTrack::UMovieSceneEventTrack() {
     this->bFireEventsWhenForwards = true;
     this->bFireEventsWhenBackwards = true;
-    this->EventPosition = EFireEventsAtPosition::AfterSpawn;
+    this->EventPosition = EFireEventsAtPosition::AtEndOfEvaluation;
 }
 

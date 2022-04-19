@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MeshDescription VertexID
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=VertexID -FallbackName=VertexID
 #include "MeshElementAttributeList.h"
-//CROSS-MODULE INCLUDE: MeshDescription VertexInstanceID
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=VertexInstanceID -FallbackName=VertexInstanceID
 #include "VertexInstanceToCreate.generated.h"
 
 USTRUCT(BlueprintType)
 struct FVertexInstanceToCreate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FVertexID VertexID;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMeshElementAttributeList VertexInstanceAttributes;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FVertexInstanceID OriginalVertexInstanceID;
     
     EDITABLEMESH_API FVertexInstanceToCreate();

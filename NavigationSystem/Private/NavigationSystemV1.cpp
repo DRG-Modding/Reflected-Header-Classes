@@ -4,8 +4,8 @@
 class AActor;
 class AController;
 class UNavigationQueryFilter;
-class ANavMeshBoundsVolume;
 class UObject;
+class ANavMeshBoundsVolume;
 class ANavigationData;
 class UNavArea;
 class UNavigationSystemV1;
@@ -110,9 +110,10 @@ UNavigationSystemV1::UNavigationSystemV1() {
     this->bSupportRebuilding = false;
     this->bInitialBuildingLocked = false;
     this->bSkipAgentHeightCheckWhenPickingNavData = false;
-    this->DataGatheringMode = ENavDataGatheringModeConfig::Instant;
     this->bGenerateNavigationOnlyAroundNavigationInvokers = false;
     this->ActiveTilesUpdateInterval = 1.00f;
+    this->DataGatheringMode = ENavDataGatheringModeConfig::Instant;
+    this->DirtyAreaWarningSizeThreshold = -1.00f;
     this->OperationMode = FNavigationSystemRunMode::InvalidMode;
     this->DirtyAreasUpdateFreq = 60.00f;
 }

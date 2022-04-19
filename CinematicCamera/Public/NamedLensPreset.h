@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FNamedLensPreset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Name;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FCameraLensSettings LensSettings;
     
     CINEMATICCAMERA_API FNamedLensPreset();

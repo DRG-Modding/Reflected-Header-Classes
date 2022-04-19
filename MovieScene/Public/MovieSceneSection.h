@@ -1,70 +1,71 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneFrameRange.h"
-#include "MovieSceneSectionEvalOptions.h"
 #include "MovieSceneSignedObject.h"
-#include "MovieSceneEasingSettings.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
-#include "EMovieSceneBlendType.h"
-#include "OptionalMovieSceneBlendType.h"
+#include "MovieSceneSectionEvalOptions.h"
 #include "EMovieSceneCompletionMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
+#include "MovieSceneEasingSettings.h"
+#include "EMovieSceneBlendType.h"
+#include "MovieSceneFrameRange.h"
+#include "OptionalMovieSceneBlendType.h"
 #include "MovieSceneSection.generated.h"
 
 UCLASS(Abstract, BlueprintType, DefaultToInstanced, MinimalAPI)
 class UMovieSceneSection : public UMovieSceneSignedObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneSectionEvalOptions EvalOptions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneEasingSettings Easing;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneFrameRange SectionRange;
     
 private:
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFrameNumber PreRollFrames;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFrameNumber PostRollFrames;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 RowIndex;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 OverlapPriority;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsActive: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsLocked: 1;
     
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float StartTime;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float EndTime;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float PrerollTime;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float PostrollTime;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bIsInfinite: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bSupportsInfiniteRange;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FOptionalMovieSceneBlendType BlendType;
     
 public:
+    UMovieSceneSection();
     UFUNCTION(BlueprintCallable)
     void SetRowIndex(int32 NewRowIndex);
     
@@ -113,6 +114,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FOptionalMovieSceneBlendType GetBlendType() const;
     
-    UMovieSceneSection();
 };
 

@@ -1,29 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: UMG Widget
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=Widget -FallbackName=Widget
 #include "WebBrowser.generated.h"
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FWebBrowserOnUrlChanged, const FText&, Text);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FWebBrowserOnBeforePopup, const FString&, URL, const FString&, Frame);
 
 UCLASS()
 class WEBBROWSERWIDGET_API UWebBrowser : public UWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FWebBrowserOnUrlChanged OnUrlChanged;
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUrlChanged, const FText&, Text);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnBeforePopup, const FString&, URL, const FString&, Frame);
     
-    UPROPERTY(BlueprintAssignable)
-    FWebBrowserOnBeforePopup OnBeforePopup;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnUrlChanged OnUrlChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnBeforePopup OnBeforePopup;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString InitialURL;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSupportsTransparency;
     
 public:
+    UWebBrowser();
     UFUNCTION(BlueprintCallable)
     void LoadURL(const FString& NewURL);
     
@@ -39,6 +40,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ExecuteJavascript(const FString& ScriptText);
     
-    UWebBrowser();
 };
 

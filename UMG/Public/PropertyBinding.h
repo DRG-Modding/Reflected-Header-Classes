@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "DynamicPropertyPath.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "PropertyBinding.generated.h"
 
 UCLASS()
 class UMG_API UPropertyBinding : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UObject> SourceObject;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FDynamicPropertyPath SourcePath;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName DestinationProperty;
     
     UPropertyBinding();

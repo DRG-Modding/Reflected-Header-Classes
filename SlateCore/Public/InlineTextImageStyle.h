@@ -8,10 +8,10 @@ USTRUCT()
 struct SLATECORE_API FInlineTextImageStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush Image;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int16 Baseline;
     
     FInlineTextImageStyle();

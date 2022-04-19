@@ -7,5 +7,7 @@ UAISenseConfig_Sight::UAISenseConfig_Sight() {
     this->LoseSightRadius = 3500.00f;
     this->PeripheralVisionAngleDegrees = 90.00f;
     this->AutoSuccessRangeFromLastSeenLocation = -1.00f;
+    this->PointOfViewBackwardOffset = 0.00f;
+    this->NearClippingRadius = 0.00f;
 }
 

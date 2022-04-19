@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "PlanetZoneSetup.generated.h"
 
-class UBiome;
 class UPlanetZone;
+class UBiome;
 
 UCLASS(BlueprintType)
 class UPlanetZoneSetup : public UDataAsset {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UPlanetZone*> PlanetZones;
     
 public:
+    UPlanetZoneSetup();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlanetZone* GetPlanetZoneForBiome(UBiome* Biome) const;
     
-    UPlanetZoneSetup();
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine AnimInstance
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "AnimSharingTransitionInstance.generated.h"
 
 class USkeletalMeshComponent;
@@ -10,16 +10,16 @@ class UAnimSharingTransitionInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Export, Transient)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USkeletalMeshComponent> FromComponent;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Export, Transient)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USkeletalMeshComponent> ToComponent;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Transient, meta=(AllowPrivateAccess=true))
     float BlendTime;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Transient, meta=(AllowPrivateAccess=true))
     bool bBlendBool;
     
 public:

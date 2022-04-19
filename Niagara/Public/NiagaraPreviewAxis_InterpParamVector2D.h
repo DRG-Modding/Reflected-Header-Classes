@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraPreviewAxis_InterpParamBase.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "NiagaraPreviewAxis_InterpParamVector2D.generated.h"
 
 UCLASS(EditInlineNew)
@@ -9,10 +9,10 @@ class UNiagaraPreviewAxis_InterpParamVector2D : public UNiagaraPreviewAxis_Inter
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D Min;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D Max;
     
 public:

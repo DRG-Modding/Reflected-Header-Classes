@@ -1,50 +1,47 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore SlateBrush
-//CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "Widget.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-#include "EventReply.h"
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: SlateCore Geometry
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
+#include "Widget.h"
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "Image.generated.h"
 
-class UObject;
-class UTexture2DDynamic;
 class UTexture2D;
+class UObject;
 class UMaterialInterface;
+class UTexture2DDynamic;
 class USlateTextureAtlasInterface;
 class ISlateTextureAtlasInterface;
 class USlateBrushAsset;
 class UMaterialInstanceDynamic;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateBrush, FImageBrushDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FImageOnMouseButtonDownEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FImageColorAndOpacityDelegate);
-
 UCLASS()
 class UMG_API UImage : public UWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush Brush;
     
-    UPROPERTY()
-    FImageBrushDelegate BrushDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetSlateBrush BrushDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ColorAndOpacity;
     
-    UPROPERTY()
-    FImageColorAndOpacityDelegate ColorAndOpacityDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetLinearColor ColorAndOpacityDelegate;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bFlipForRightToLeftFlowDirection;
     
-    UPROPERTY(EditAnywhere)
-    FImageOnMouseButtonDownEvent OnMouseButtonDownEvent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UWidget::FOnPointerEvent OnMouseButtonDownEvent;
     
+    UImage();
     UFUNCTION(BlueprintCallable)
     void SetOpacity(float InOpacity);
     
@@ -87,6 +84,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UMaterialInstanceDynamic* GetDynamicMaterial();
     
-    UImage();
 };
 

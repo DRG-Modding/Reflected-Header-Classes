@@ -1,61 +1,61 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "ChaosCollisionEventRequestSettings.h"
+#include "OnChaosBreakingEventsDelegate.h"
 #include "ChaosBreakingEventRequestSettings.h"
 #include "ChaosTrailingEventRequestSettings.h"
+#include "OnChaosCollisionEventsDelegate.h"
+#include "OnChaosTrailingEventsDelegate.h"
+#include "ChaosTrailingEventData.h"
+#include "EChaosCollisionSortMethod.h"
+#include "EChaosTrailingSortMethod.h"
 #include "ChaosCollisionEventData.h"
 #include "ChaosBreakingEventData.h"
-#include "EChaosCollisionSortMethod.h"
-#include "ChaosTrailingEventData.h"
-#include "EChaosTrailingSortMethod.h"
 #include "EChaosBreakingSortMethod.h"
 #include "ChaosDestructionListener.generated.h"
 
-class AChaosSolverActor;
 class AGeometryCollectionActor;
+class AChaosSolverActor;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnCollisionEvents, const TArray<FChaosCollisionEventData>&, CollisionEvents);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnBreakingEvents, const TArray<FChaosBreakingEventData>&, BreakingEvents);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChaosDestructionListenerOnTrailingEvents, const TArray<FChaosTrailingEventData>&, TrailingEvents);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class GEOMETRYCOLLECTIONENGINE_API UChaosDestructionListener : public USceneComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsCollisionEventListeningEnabled: 1;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsBreakingEventListeningEnabled: 1;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsTrailingEventListeningEnabled: 1;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FChaosCollisionEventRequestSettings CollisionEventRequestSettings;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FChaosBreakingEventRequestSettings BreakingEventRequestSettings;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FChaosTrailingEventRequestSettings TrailingEventRequestSettings;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<AChaosSolverActor*> ChaosSolverActors;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<AGeometryCollectionActor*> GeometryCollectionActors;
     
-    UPROPERTY(BlueprintAssignable)
-    FChaosDestructionListenerOnCollisionEvents OnCollisionEvents;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnChaosCollisionEvents OnCollisionEvents;
     
-    UPROPERTY(BlueprintAssignable)
-    FChaosDestructionListenerOnBreakingEvents OnBreakingEvents;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnChaosBreakingEvents OnBreakingEvents;
     
-    UPROPERTY(BlueprintAssignable)
-    FChaosDestructionListenerOnTrailingEvents OnTrailingEvents;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnChaosTrailingEvents OnTrailingEvents;
     
+    UChaosDestructionListener();
     UFUNCTION(BlueprintCallable)
     void SortTrailingEvents(UPARAM(Ref) TArray<FChaosTrailingEventData>& TrailingEvents, EChaosTrailingSortMethod SortMethod);
     
@@ -98,6 +98,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddChaosSolverActor(AChaosSolverActor* ChaosSolverActor);
     
-    UChaosDestructionListener();
 };
 

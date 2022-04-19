@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FBiomeFeatures {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMinersManualData* Descriptions[2];
     
     FSD_API FBiomeFeatures();

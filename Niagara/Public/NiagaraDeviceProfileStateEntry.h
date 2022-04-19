@@ -6,13 +6,13 @@ USTRUCT(BlueprintType)
 struct FNiagaraDeviceProfileStateEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ProfileName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint32 QualityLevelMask;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint32 SetQualityLevelMask;
     
     NIAGARA_API FNiagaraDeviceProfileStateEntry();

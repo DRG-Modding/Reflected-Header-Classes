@@ -3,6 +3,7 @@
 UNiagaraSystem::UNiagaraSystem() {
     this->bDumpDebugSystemInfo = false;
     this->bDumpDebugEmitterInfo = false;
+    this->bRequireCurrentFrameData = true;
     this->bFixedBounds = false;
     this->EffectType = NULL;
     this->bOverrideScalabilitySettings = false;
@@ -13,5 +14,6 @@ UNiagaraSystem::UNiagaraSystem() {
     this->WarmupTickCount = 0;
     this->WarmupTickDelta = 0.07f;
     this->bHasSystemScriptDIsWithPerInstanceData = false;
+    this->bNeedsGPUContextInitForDataInterfaces = false;
 }
 

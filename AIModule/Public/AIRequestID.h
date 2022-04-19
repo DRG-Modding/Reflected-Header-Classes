@@ -7,7 +7,7 @@ struct AIMODULE_API FAIRequestID {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint32 RequestID;
     
 public:

@@ -1,19 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimaryDataAsset -FallbackName=PrimaryDataAsset
 #include "HeroInfo.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "PlayerCharacterData.generated.h"
 
+class UPlayerCharacterID;
 class UTexture2D;
 
 UCLASS(BlueprintType)
-class UPlayerCharacterData : public UDataAsset {
+class FSD_API UPlayerCharacterData : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPlayerCharacterID* characterID;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHeroInfo HeroInfo;
     
+    UPlayerCharacterData();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetSwitchToMessage() const;
     
@@ -38,6 +43,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FLinearColor GetColor() const;
     
-    UPlayerCharacterData();
 };
 

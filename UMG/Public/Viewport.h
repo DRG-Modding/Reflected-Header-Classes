@@ -1,22 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "Viewport.generated.h"
 
-class AActor;
 class UWorld;
+class AActor;
 
 UCLASS()
 class UMG_API UViewport : public UContentWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor BackgroundColor;
     
+    UViewport();
     UFUNCTION(BlueprintCallable)
     AActor* Spawn(TSubclassOf<AActor> ActorClass);
     
@@ -35,6 +36,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetViewLocation() const;
     
-    UViewport();
 };
 

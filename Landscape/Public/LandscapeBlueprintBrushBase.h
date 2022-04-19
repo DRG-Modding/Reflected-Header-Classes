@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: CoreUObject Transform
-//CROSS-MODULE INCLUDE: CoreUObject IntPoint
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "LandscapeBlueprintBrushBase.generated.h"
 
 class UTextureRenderTarget2D;
-class UTexture2D;
+class UObject;
 
 UCLASS(Abstract)
 class LANDSCAPE_API ALandscapeBlueprintBrushBase : public AActor {
     GENERATED_BODY()
 public:
+    ALandscapeBlueprintBrushBase();
     UFUNCTION(BlueprintCallable)
     void RequestLandscapeUpdate();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UTextureRenderTarget2D* Render(bool InIsHeightmap, UTextureRenderTarget2D* InCombinedResult, const FName& InWeightmapLayerName);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Initialize(const FTransform& InLandscapeTransform, const FIntPoint& InLandscapeSize, const FIntPoint& InLandscapeRenderTargetSize);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void GetBlueprintRenderDependencies(TArray<UTexture2D*>& OutStreamableAssets);
+    void GetBlueprintRenderDependencies(TArray<UObject*>& OutStreamableAssets);
     
-    ALandscapeBlueprintBrushBase();
 };
 

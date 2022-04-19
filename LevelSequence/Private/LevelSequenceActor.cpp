@@ -1,7 +1,10 @@
 #include "LevelSequenceActor.h"
 #include "Net/UnrealNetwork.h"
+#include "LevelSequencePlayer.h"
+#include "LevelSequenceBurnInOptions.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneBindingOverrides -FallbackName=MovieSceneBindingOverrides
+#include "DefaultLevelSequenceInstanceData.h"
 
-class ULevelSequencePlayer;
 class ULevelSequence;
 class AActor;
 
@@ -12,9 +15,6 @@ void ALevelSequenceActor::SetSequence(ULevelSequence* InSequence) {
 }
 
 void ALevelSequenceActor::SetReplicatePlayback(bool ReplicatePlayback) {
-}
-
-void ALevelSequenceActor::SetEventReceivers(TArray<AActor*> AdditionalReceivers) {
 }
 
 void ALevelSequenceActor::SetBindingByTag(FName BindingTag, const TArray<AActor*>& Actors, bool bAllowBindingsFromAsset) {
@@ -71,9 +71,13 @@ void ALevelSequenceActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 }
 
 ALevelSequenceActor::ALevelSequenceActor() {
+    this->SequencePlayer = CreateDefaultSubobject<ULevelSequencePlayer>(TEXT("AnimationPlayer"));
+    this->BurnInOptions = CreateDefaultSubobject<ULevelSequenceBurnInOptions>(TEXT("BurnInOptions"));
+    this->BindingOverrides = CreateDefaultSubobject<UMovieSceneBindingOverrides>(TEXT("BindingOverrides"));
     this->bAutoPlay = false;
     this->bOverrideInstanceData = false;
     this->bReplicatePlayback = false;
+    this->DefaultInstanceData = CreateDefaultSubobject<UDefaultLevelSequenceInstanceData>(TEXT("InstanceData"));
     this->BurnInInstance = NULL;
     this->bShowBurnin = true;
 }

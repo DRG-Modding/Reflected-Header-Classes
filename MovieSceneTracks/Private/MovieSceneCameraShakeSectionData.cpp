@@ -3,6 +3,6 @@
 FMovieSceneCameraShakeSectionData::FMovieSceneCameraShakeSectionData() {
     this->ShakeClass = NULL;
     this->PlayScale = 0.00f;
-    this->PlaySpace = ECameraAnimPlaySpace::CameraLocal;
+    this->PlaySpace = ECameraShakePlaySpace::CameraLocal;
 }
 

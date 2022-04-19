@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct INTERACTIVETOOLSFRAMEWORK_API FGizmoFloatParameterChange {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float InitialValue;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float CurrentValue;
     
     FGizmoFloatParameterChange();

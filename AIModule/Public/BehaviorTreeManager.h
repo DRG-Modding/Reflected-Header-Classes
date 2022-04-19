@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "BehaviorTreeTemplateInfo.h"
 #include "BehaviorTreeManager.generated.h"
 
@@ -10,14 +10,14 @@ UCLASS(Transient)
 class AIMODULE_API UBehaviorTreeManager : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     int32 MaxDebuggerSteps;
     
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FBehaviorTreeTemplateInfo> LoadedTemplates;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UBehaviorTreeComponent*> ActiveComponents;
     
 public:

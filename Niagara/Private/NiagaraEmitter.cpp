@@ -15,6 +15,7 @@ UNiagaraEmitter::UNiagaraEmitter() {
     this->bUseMaxDetailLevel = false;
     this->bOverrideGlobalSpawnCountScale = false;
     this->bRequiresPersistentIDs = false;
+    this->bCombineEventSpawn = false;
     this->MaxDeltaTimePerTick = 0.12f;
     this->DefaultShaderStageIndex = 0;
     this->MaxUpdateIterations = 1;

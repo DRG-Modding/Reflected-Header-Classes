@@ -9,13 +9,13 @@ UCLASS(NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API AIntervalGizmoActor : public AGizmoActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UGizmoLineHandleComponent* UpIntervalComponent;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UGizmoLineHandleComponent* DownIntervalComponent;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UGizmoLineHandleComponent* ForwardIntervalComponent;
     
     AIntervalGizmoActor();

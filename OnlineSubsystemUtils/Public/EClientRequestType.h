@@ -11,5 +11,6 @@ enum class EClientRequestType : uint8 {
     Reconnect,
     Abandon,
     ReservationRemoveMembers,
+    AddOrUpdateReservation,
 };
 

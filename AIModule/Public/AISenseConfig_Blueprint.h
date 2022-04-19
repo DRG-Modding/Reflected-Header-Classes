@@ -10,7 +10,7 @@ UCLASS(Abstract, EditInlineNew, HideDropdown)
 class AIMODULE_API UAISenseConfig_Blueprint : public UAISenseConfig {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Config, EditDefaultsOnly, NoClear)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, NoClear, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAISense_Blueprint> Implementation;
     
     UAISenseConfig_Blueprint();

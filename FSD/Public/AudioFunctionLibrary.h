@@ -1,16 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "AudioFunctionLibrary.generated.h"
 
-class USoundMix;
-class USoundClass;
 class UObject;
+class USoundClass;
+class USoundMix;
 
 UCLASS(BlueprintType)
 class UAudioFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAudioFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static float SetSoundClassVolume(USoundClass* SoundClass, float Volume);
     
@@ -20,6 +21,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetSoundClassVolume(USoundClass* SoundClass);
     
-    UAudioFunctionLibrary();
 };
 

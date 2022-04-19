@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: PropertyPath CachedPropertyPath
+//CROSS-MODULE INCLUDE V2: -ModuleName=PropertyPath -ObjectName=CachedPropertyPath -FallbackName=CachedPropertyPath
 #include "DynamicPropertyPath.generated.h"
 
 USTRUCT(BlueprintType)

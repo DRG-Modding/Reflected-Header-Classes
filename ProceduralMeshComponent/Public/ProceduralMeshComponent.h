@@ -1,46 +1,47 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine KConvexElem
-//CROSS-MODULE INCLUDE: Engine MeshComponent
-//CROSS-MODULE INCLUDE: CoreUObject BoxSphereBounds
-//CROSS-MODULE INCLUDE: Engine Interface_CollisionDataProvider
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Interface_CollisionDataProvider -FallbackName=Interface_CollisionDataProvider
 #include "ProcMeshSection.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=KConvexElem -FallbackName=KConvexElem
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=BoxSphereBounds -FallbackName=BoxSphereBounds
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ProcMeshTangent.h"
-//CROSS-MODULE INCLUDE: CoreUObject Color
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
 #include "ProceduralMeshComponent.generated.h"
 
 class UBodySetup;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class PROCEDURALMESHCOMPONENT_API UProceduralMeshComponent : public UMeshComponent, public IInterface_CollisionDataProvider {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseComplexAsSimpleCollision;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseAsyncCooking;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
     UBodySetup* ProcMeshBodySetup;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FProcMeshSection> ProcMeshSections;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FKConvexElem> CollisionConvexElems;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FBoxSphereBounds LocalBounds;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UBodySetup*> AsyncBodySetupQueue;
     
 public:
+    UProceduralMeshComponent();
     UFUNCTION(BlueprintCallable)
     void UpdateMeshSection_LinearColor(int32 SectionIndex, const TArray<FVector>& Vertices, const TArray<FVector>& Normals, const TArray<FVector2D>& UV0, const TArray<FVector2D>& UV1, const TArray<FVector2D>& UV2, const TArray<FVector2D>& UV3, const TArray<FLinearColor>& VertexColors, const TArray<FProcMeshTangent>& Tangents);
     
@@ -74,7 +75,6 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddCollisionConvexMesh(TArray<FVector> ConvexVerts);
     
-    UProceduralMeshComponent();
     
     // Fix for true pure virtual functions not being implemented
 };

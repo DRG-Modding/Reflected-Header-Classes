@@ -7,7 +7,7 @@ UCLASS(NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UClickDragInputBehavior : public UAnyButtonInputBehavior {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bUpdateModifiersDuringDrag;
     
     UClickDragInputBehavior();

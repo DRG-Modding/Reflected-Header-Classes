@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EUpdatePositionMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EUpdatePositionMethod : uint8 {
     Play,
     Jump,

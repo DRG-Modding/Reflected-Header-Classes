@@ -9,6 +9,6 @@ FMaterialQualityOverrides::FMaterialQualityOverrides() {
     this->bForceLQReflections = false;
     this->bForceDisablePreintegratedGF = false;
     this->bDisableMaterialNormalCalculation = false;
-    this->MobileCSMQuality = EMobileCSMQuality::NoFiltering;
+    this->MobileShadowQuality = EMobileShadowQuality::NoFiltering;
 }
 

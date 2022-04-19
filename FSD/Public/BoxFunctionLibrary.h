@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "BoxFunctionLibrary.generated.h"
 
 UCLASS(BlueprintType)
 class UBoxFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UBoxFunctionLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FBox CreateBoxAt(FVector Location, FVector Size);
     
@@ -24,6 +25,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector BoxCenter(FBox Box);
     
-    UBoxFunctionLibrary();
 };
 

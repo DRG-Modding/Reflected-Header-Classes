@@ -3,7 +3,7 @@
 class UFieldNodeBase;
 class UOperatorField;
 
-UOperatorField* UOperatorField::SetOperatorField(float NewMagnitude, const UFieldNodeBase* NewRightField, const UFieldNodeBase* NewLeftField, TEnumAsByte<EFieldOperationType> NewOperation) {
+UOperatorField* UOperatorField::SetOperatorField(float NewMagnitude, const UFieldNodeBase* NewLeftField, const UFieldNodeBase* NewRightField, TEnumAsByte<EFieldOperationType> NewOperation) {
     return NULL;
 }
 

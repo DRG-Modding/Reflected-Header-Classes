@@ -9,7 +9,7 @@ UCLASS(EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceAudioSubmix : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundSubmix* Submix;
     
     UNiagaraDataInterfaceAudioSubmix();

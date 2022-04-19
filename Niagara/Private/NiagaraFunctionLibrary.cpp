@@ -1,14 +1,15 @@
 #include "NiagaraFunctionLibrary.h"
 
-class USkeletalMeshComponent;
-class UNiagaraSystem;
-class USceneComponent;
-class UNiagaraComponent;
-class UStaticMesh;
 class UObject;
+class UNiagaraSystem;
+class UNiagaraComponent;
+class USceneComponent;
+class UStaticMesh;
 class UVolumeTexture;
 class UTexture;
+class UTexture2DArray;
 class UStaticMeshComponent;
+class USkeletalMeshComponent;
 class UNiagaraParameterCollection;
 class UNiagaraParameterCollectionInstance;
 
@@ -24,6 +25,12 @@ void UNiagaraFunctionLibrary::SetVolumeTextureObject(UNiagaraComponent* NiagaraS
 }
 
 void UNiagaraFunctionLibrary::SetTextureObject(UNiagaraComponent* NiagaraSystem, const FString& OverrideName, UTexture* Texture) {
+}
+
+void UNiagaraFunctionLibrary::SetTexture2DArrayObject(UNiagaraComponent* NiagaraSystem, const FString& OverrideName, UTexture2DArray* Texture) {
+}
+
+void UNiagaraFunctionLibrary::SetSkeletalMeshDataInterfaceSamplingRegions(UNiagaraComponent* NiagaraSystem, const FString& OverrideName, const TArray<FName>& SamplingRegions) {
 }
 
 void UNiagaraFunctionLibrary::OverrideSystemUserVariableStaticMeshComponent(UNiagaraComponent* NiagaraSystem, const FString& OverrideName, UStaticMeshComponent* StaticMeshComponent) {

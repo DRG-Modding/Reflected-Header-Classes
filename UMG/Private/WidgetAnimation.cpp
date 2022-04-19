@@ -2,10 +2,10 @@
 
 class UUserWidget;
 
-void UWidgetAnimation::UnbindFromAnimationStarted(UUserWidget* Widget, FWidgetAnimationDelegate Delegate) {
+void UWidgetAnimation::UnbindFromAnimationStarted(UUserWidget* Widget, FWidgetAnimationDynamicEvent Delegate) {
 }
 
-void UWidgetAnimation::UnbindFromAnimationFinished(UUserWidget* Widget, FWidgetAnimationDelegate Delegate) {
+void UWidgetAnimation::UnbindFromAnimationFinished(UUserWidget* Widget, FWidgetAnimationDynamicEvent Delegate) {
 }
 
 void UWidgetAnimation::UnbindAllFromAnimationStarted(UUserWidget* Widget) {
@@ -22,10 +22,10 @@ float UWidgetAnimation::GetEndTime() const {
     return 0.0f;
 }
 
-void UWidgetAnimation::BindToAnimationStarted(UUserWidget* Widget, FWidgetAnimationDelegate Delegate) {
+void UWidgetAnimation::BindToAnimationStarted(UUserWidget* Widget, FWidgetAnimationDynamicEvent Delegate) {
 }
 
-void UWidgetAnimation::BindToAnimationFinished(UUserWidget* Widget, FWidgetAnimationDelegate Delegate) {
+void UWidgetAnimation::BindToAnimationFinished(UUserWidget* Widget, FWidgetAnimationDynamicEvent Delegate) {
 }
 
 UWidgetAnimation::UWidgetAnimation() {

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "BuilderBase.h"
 #include "SDFBaseProperties.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "SDFBase.generated.h"
 
 UCLASS(Abstract)
-class USDFBase : public UBuilderBase {
+class FSDENGINE_API USDFBase : public UBuilderBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSDFBaseProperties BaseProperties;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTransform RelativeTransform;
     
     USDFBase();

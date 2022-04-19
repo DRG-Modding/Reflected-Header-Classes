@@ -12,18 +12,21 @@ class AIMODULE_API UBTService_BlueprintBase : public UBTService {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AAIController* AIOwner;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AActor* ActorOwner;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, meta=(AllowPrivateAccess=true))
     uint8 bShowPropertyDetails: 1;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, meta=(AllowPrivateAccess=true))
     uint8 bShowEventDetails: 1;
     
+public:
+    UBTService_BlueprintBase();
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTickAI(AAIController* OwnerController, APawn* ControlledPawn, float DeltaSeconds);
     
@@ -51,7 +54,5 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsServiceActive() const;
     
-public:
-    UBTService_BlueprintBase();
 };
 

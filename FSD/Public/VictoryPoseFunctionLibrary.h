@@ -1,16 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "VictoryPoseFunctionLibrary.generated.h"
 
-class UVictoryPose;
 class UObject;
+class UVictoryPose;
 class UPlayerCharacterID;
 
 UCLASS(BlueprintType)
 class UVictoryPoseFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UVictoryPoseFunctionLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsRandomVictoryPose(UVictoryPose* VictoryPose);
     
@@ -20,6 +21,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UVictoryPose* GetEquippedVictoryPose(UObject* WorldContextObject, UPlayerCharacterID* characterID);
     
-    UVictoryPoseFunctionLibrary();
 };
 

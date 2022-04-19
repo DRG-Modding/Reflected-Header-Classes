@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "IntervalCountdown.h"
 #include "BTTaskNode.h"
+#include "IntervalCountdown.h"
 #include "BTTask_BlueprintBase.generated.h"
 
 class AAIController;
@@ -13,18 +13,21 @@ class AIMODULE_API UBTTask_BlueprintBase : public UBTTaskNode {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AAIController* AIOwner;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AActor* ActorOwner;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIntervalCountdown TickInterval;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, meta=(AllowPrivateAccess=true))
     uint8 bShowPropertyDetails: 1;
     
+public:
+    UBTTask_BlueprintBase();
+protected:
     UFUNCTION(BlueprintCallable)
     void SetFinishOnMessageWithId(FName MessageName, int32 RequestID);
     
@@ -61,7 +64,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     void FinishAbort();
     
-public:
-    UBTTask_BlueprintBase();
 };
 

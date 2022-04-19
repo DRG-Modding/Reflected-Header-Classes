@@ -6,7 +6,7 @@ void UCineCameraComponent::SetLensPresetByName(const FString& InPresetName) {
 void UCineCameraComponent::SetFilmbackPresetByName(const FString& InPresetName) {
 }
 
-void UCineCameraComponent::SetCurrentFocalLength(const float& InFocalLength) {
+void UCineCameraComponent::SetCurrentFocalLength(float InFocalLength) {
 }
 
 float UCineCameraComponent::GetVerticalFieldOfView() const {
@@ -23,6 +23,10 @@ FString UCineCameraComponent::GetLensPresetName() const {
 
 float UCineCameraComponent::GetHorizontalFieldOfView() const {
     return 0.0f;
+}
+
+TArray<FNamedFilmbackPreset> UCineCameraComponent::GetFilmbackPresetsCopy() {
+    return TArray<FNamedFilmbackPreset>();
 }
 
 FString UCineCameraComponent::GetFilmbackPresetName() const {

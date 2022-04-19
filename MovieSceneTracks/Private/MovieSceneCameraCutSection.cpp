@@ -8,5 +8,7 @@ FMovieSceneObjectBindingID UMovieSceneCameraCutSection::GetCameraBindingID() con
 }
 
 UMovieSceneCameraCutSection::UMovieSceneCameraCutSection() {
+    this->bLockPreviousCamera = false;
+    this->bHasInitialCameraCutTransform = false;
 }
 

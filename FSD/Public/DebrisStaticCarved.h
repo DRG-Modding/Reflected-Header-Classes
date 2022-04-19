@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EDebrisCarvedType.h"
 #include "DebrisBase.h"
+#include "EDebrisCarvedType.h"
 #include "UDebrisStaticCarveMesh.h"
-//CROSS-MODULE INCLUDE: FSDEngine ECarveFilterType
 #include "DebrisInfluence.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "DebrisStaticCarved.generated.h"
 
 class UTerrainMaterial;
@@ -15,28 +15,28 @@ UCLASS(EditInlineNew)
 class UDebrisStaticCarved : public UDebrisBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
-    EDebrisCarvedType carverType;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EDebrisCarvedType CarverType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FUDebrisStaticCarveMesh> Meshes;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTerrainMaterial* TerrainMaterial;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDebrisInfluence CaveInfluenceToAdd;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECarveFilterType Filter;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CarveOffsetRadius;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> SpawnAttachClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AttachSpawnOffsetDistance;
     
     UDebrisStaticCarved();

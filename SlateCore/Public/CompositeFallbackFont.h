@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SLATECORE_API FCompositeFallbackFont {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTypeface Typeface;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float ScalingFactor;
     
     FCompositeFallbackFont();

@@ -6,7 +6,7 @@ USTRUCT()
 struct FEngineServiceTerminate {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Username;
     
     ENGINEMESSAGES_API FEngineServiceTerminate();

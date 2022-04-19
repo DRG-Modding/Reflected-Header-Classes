@@ -1,48 +1,48 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataSetCompiledData.h"
 #include "NiagaraParameterStore.h"
 #include "NiagaraParameterDataSetBindingCollection.h"
+#include "NiagaraDataSetCompiledData.h"
 #include "NiagaraSystemCompiledData.generated.h"
 
 USTRUCT(BlueprintType)
 struct FNiagaraSystemCompiledData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraParameterStore InstanceParamStore;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraDataSetCompiledData DataSetCompiledData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraDataSetCompiledData SpawnInstanceParamsDataSetCompiledData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraDataSetCompiledData UpdateInstanceParamsDataSetCompiledData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraParameterDataSetBindingCollection SpawnInstanceGlobalBinding;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraParameterDataSetBindingCollection SpawnInstanceSystemBinding;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraParameterDataSetBindingCollection SpawnInstanceOwnerBinding;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraParameterDataSetBindingCollection> SpawnInstanceEmitterBindings;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraParameterDataSetBindingCollection UpdateInstanceGlobalBinding;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraParameterDataSetBindingCollection UpdateInstanceSystemBinding;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraParameterDataSetBindingCollection UpdateInstanceOwnerBinding;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraParameterDataSetBindingCollection> UpdateInstanceEmitterBindings;
     
     NIAGARA_API FNiagaraSystemCompiledData();

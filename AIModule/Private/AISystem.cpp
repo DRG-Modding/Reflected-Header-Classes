@@ -17,6 +17,7 @@ UAISystem::UAISystem() {
     this->bAllowControllersAsEQSQuerier = false;
     this->bEnableDebuggerPlugin = false;
     this->bForgetStaleActors = false;
+    this->bAddBlackboardSelfKey = true;
     this->DefaultSightCollisionChannel = ECC_Visibility;
     this->BehaviorTreeManager = NULL;
     this->EnvironmentQueryManager = NULL;

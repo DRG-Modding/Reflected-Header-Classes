@@ -1,78 +1,68 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SceneCapture2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneCapture2D -FallbackName=SceneCapture2D
 #include "OculusMR_CastingCameraActor.generated.h"
 
-class UMaterialInstanceDynamic;
 class UVRNotificationsComponent;
 class UTexture2D;
 class UOculusMR_PlaneMeshComponent;
 class UMaterial;
-class AOculusMR_BoundaryActor;
-class UTextureRenderTarget2D;
 class UOculusMR_Settings;
+class UTextureRenderTarget2D;
+class UMaterialInstanceDynamic;
 class UOculusMR_State;
 
 UCLASS(NotPlaceable)
 class AOculusMR_CastingCameraActor : public ASceneCapture2D {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UVRNotificationsComponent* VRNotificationComponent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTexture2D* CameraColorTexture;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTexture2D* CameraDepthTexture;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UOculusMR_PlaneMeshComponent* PlaneMeshComponent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterial* ChromaKeyMaterial;
     
-    UPROPERTY()
-    UMaterial* ChromaKeyLitMaterial;
-    
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterial* OpaqueColoredMaterial;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInstanceDynamic* ChromaKeyMaterialInstance;
     
-    UPROPERTY()
-    UMaterialInstanceDynamic* ChromaKeyLitMaterialInstance;
-    
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInstanceDynamic* CameraFrameMaterialInstance;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInstanceDynamic* BackdropMaterialInstance;
     
-    UPROPERTY()
-    AOculusMR_BoundaryActor* BoundaryActor;
-    
-    UPROPERTY()
-    ASceneCapture2D* BoundarySceneCaptureActor;
-    
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTexture2D* DefaultTexture_White;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UTextureRenderTarget2D*> BackgroundRenderTargets;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ASceneCapture2D* ForegroundCaptureActor;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UTextureRenderTarget2D*> ForegroundRenderTargets;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    TArray<double> PoseTimes;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UOculusMR_Settings* MRSettings;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UOculusMR_State* MRState;
     
 public:

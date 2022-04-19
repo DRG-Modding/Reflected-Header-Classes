@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=ClothingSystemRuntimeInterface -ObjectName=ClothCollisionData -FallbackName=ClothCollisionData
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "ClothPhysicalMeshData.h"
-//CROSS-MODULE INCLUDE: ClothingSystemRuntimeInterface ClothCollisionData
 #include "ClothLODDataCommon_Legacy.generated.h"
 
 class UClothPhysicalMeshDataBase_Legacy;
@@ -11,13 +11,13 @@ UCLASS()
 class CLOTHINGSYSTEMRUNTIMECOMMON_API UClothLODDataCommon_Legacy : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UClothPhysicalMeshDataBase_Legacy* PhysicalMeshData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FClothPhysicalMeshData ClothPhysicalMeshData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FClothCollisionData CollisionData;
     
     UClothLODDataCommon_Legacy();

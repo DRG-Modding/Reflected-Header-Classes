@@ -7,7 +7,6 @@ namespace EMovieScenePlayerStatus {
     enum Type {
         Stopped,
         Playing,
-        Recording,
         Scrubbing,
         Jumping,
         Stepping,

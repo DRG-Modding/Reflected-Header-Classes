@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AudioExtensions AudioEndpointSettingsBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioExtensions -ObjectName=AudioEndpointSettingsBase -FallbackName=AudioEndpointSettingsBase
 #include "PS5MockExternalEndpointSettings.generated.h"
 
 UCLASS(EditInlineNew)

@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FHeightmapData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTexture2D* Texture;
     
     LANDSCAPE_API FHeightmapData();

@@ -1,10 +1,10 @@
 #include "BTFunctionLibrary.h"
 
-class UBTNode;
 class AActor;
-class UBlackboardComponent;
+class UBTNode;
 class UObject;
 class UBehaviorTreeComponent;
+class UBlackboardComponent;
 
 void UBTFunctionLibrary::StopUsingExternalEvent(UBTNode* NodeOwner) {
 }

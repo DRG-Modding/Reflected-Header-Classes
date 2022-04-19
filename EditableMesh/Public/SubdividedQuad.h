@@ -7,16 +7,16 @@ USTRUCT(BlueprintType)
 struct FSubdividedQuad {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FSubdividedQuadVertex QuadVertex0;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FSubdividedQuadVertex QuadVertex1;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FSubdividedQuadVertex QuadVertex2;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FSubdividedQuadVertex QuadVertex3;
     
     EDITABLEMESH_API FSubdividedQuad();

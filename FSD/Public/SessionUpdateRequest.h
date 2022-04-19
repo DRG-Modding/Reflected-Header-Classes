@@ -6,10 +6,10 @@ USTRUCT()
 struct FSessionUpdateRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString SessionKey;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 NumPlayers;
     
     FSD_API FSessionUpdateRequest();

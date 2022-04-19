@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine FastArraySerializer
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FastArraySerializer -FallbackName=FastArraySerializer
 #include "PawnStatEntry.h"
 #include "PawnStatEntriesArray.generated.h"
 
@@ -10,10 +10,10 @@ USTRUCT(BlueprintType)
 struct FPawnStatEntriesArray : public FFastArraySerializer {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FPawnStatEntry> Items;
     
-    UPROPERTY(Export, NotReplicated)
+    UPROPERTY(BlueprintReadWrite, Export, NotReplicated, meta=(AllowPrivateAccess=true))
     UPawnStatsComponent* Owner;
     
     FSD_API FPawnStatEntriesArray();

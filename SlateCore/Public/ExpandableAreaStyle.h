@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct SLATECORE_API FExpandableAreaStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush CollapsedImage;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush ExpandedImage;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RolloutAnimationSeconds;
     
     FExpandableAreaStyle();

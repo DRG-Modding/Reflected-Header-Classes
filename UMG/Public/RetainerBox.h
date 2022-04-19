@@ -3,35 +3,44 @@
 #include "ContentWidget.h"
 #include "RetainerBox.generated.h"
 
-class UMaterialInterface;
 class UMaterialInstanceDynamic;
+class UMaterialInterface;
 
 UCLASS()
 class UMG_API URetainerBox : public UContentWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bRetainRender;
+    
+public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RenderOnInvalidation;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RenderOnPhase;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Phase;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 PhaseCount;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* EffectMaterial;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName TextureParameter;
     
 public:
+    URetainerBox();
     UFUNCTION(BlueprintCallable)
     void SetTextureParameter(FName NewTextureParameter);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetRetainRendering(bool bInRetainRendering);
     
     UFUNCTION(BlueprintCallable)
     void SetRenderingPhase(int32 RenderPhase, int32 TotalPhases);
@@ -45,6 +54,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMaterialInstanceDynamic* GetEffectMaterial() const;
     
-    URetainerBox();
 };
 

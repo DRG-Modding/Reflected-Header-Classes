@@ -1,117 +1,125 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore SlateColor
 #include "Widget.h"
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=AnalogInputEvent -FallbackName=AnalogInputEvent
 #include "NamedSlotInterface.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: SlateCore Margin
-#include "NamedSlotBinding.h"
-#include "EUMGSequencePlayMode.h"
-#include "EWidgetTickFrequency.h"
-//CROSS-MODULE INCLUDE: SlateCore MotionEvent
-#include "AnimationEventBinding.h"
-//CROSS-MODULE INCLUDE: SlateCore Geometry
-//CROSS-MODULE INCLUDE: Engine EInputEvent
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: Slate Anchors
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
+#include "OnVisibilityChangedEventDelegate.h"
 #include "EventReply.h"
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
-//CROSS-MODULE INCLUDE: SlateCore FocusEvent
-//CROSS-MODULE INCLUDE: SlateCore KeyEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=CharacterEvent -FallbackName=CharacterEvent
+#include "NamedSlotBinding.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=MotionEvent -FallbackName=MotionEvent
+#include "EWidgetTickFrequency.h"
+#include "AnimationEventBinding.h"
+#include "WidgetAnimationDynamicEventDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Geometry -FallbackName=Geometry
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EInputEvent -FallbackName=EInputEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=Anchors -FallbackName=Anchors
+#include "EUMGSequencePlayMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=PointerEvent -FallbackName=PointerEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=FocusEvent -FallbackName=FocusEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=KeyEvent -FallbackName=KeyEvent
 #include "PaintContext.h"
-//CROSS-MODULE INCLUDE: SlateCore CharacterEvent
-//CROSS-MODULE INCLUDE: SlateCore AnalogInputEvent
+#include "OnInputActionDelegate.h"
 #include "EWidgetAnimationEvent.h"
 #include "UserWidget.generated.h"
 
 class UInputComponent;
+class UWidgetAnimation;
 class UUMGSequencePlayer;
+class UUMGSequenceTickManager;
 class UWidgetTree;
 class APlayerController;
-class UWidgetAnimation;
 class USoundBase;
 class UDragDropOperation;
 class APawn;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FUserWidgetColorAndOpacityDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FUserWidgetCallback);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateColor, FUserWidgetForegroundColorDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FUserWidgetDelegate);
+class APlayerCameraManager;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UMG_API UUserWidget : public UWidget, public INamedSlotInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ColorAndOpacity;
     
-    UPROPERTY()
-    FUserWidgetColorAndOpacityDelegate ColorAndOpacityDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetLinearColor ColorAndOpacityDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateColor ForegroundColor;
     
-    UPROPERTY()
-    FUserWidgetForegroundColorDelegate ForegroundColorDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetSlateColor ForegroundColorDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnVisibilityChangedEvent OnVisibilityChanged;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMargin Padding;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUMGSequencePlayer*> ActiveSequencePlayers;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UUMGSequenceTickManager* AnimationTickManager;
+    
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUMGSequencePlayer*> StoppedSequencePlayers;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNamedSlotBinding> NamedSlotBindings;
     
 public:
-    UPROPERTY(Instanced, TextExportTransient)
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, TextExportTransient, Transient, meta=(AllowPrivateAccess=true))
     UWidgetTree* WidgetTree;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Priority;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bSupportsKeyboardFocus: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsFocusable: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bStopAction: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bHasScriptImplementedTick: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bHasScriptImplementedPaint: 1;
     
-    UPROPERTY()
-    uint8 bCookedWidgetTree: 1;
-    
 private:
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     EWidgetTickFrequency TickFrequency;
     
 protected:
-    UPROPERTY(DuplicateTransient, Export, Transient)
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Export, Transient, meta=(AllowPrivateAccess=true))
     UInputComponent* InputComponent;
     
-    UPROPERTY(DuplicateTransient, Transient)
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Transient, meta=(AllowPrivateAccess=true))
     TArray<FAnimationEventBinding> AnimationCallbacks;
     
+public:
+    UUserWidget();
+protected:
     UFUNCTION(BlueprintCallable)
     void UnregisterInputComponent();
     
 public:
     UFUNCTION(BlueprintCallable)
-    void UnbindFromAnimationStarted(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate);
+    void UnbindFromAnimationStarted(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate);
     
     UFUNCTION(BlueprintCallable)
-    void UnbindFromAnimationFinished(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate);
+    void UnbindFromAnimationFinished(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate);
     
     UFUNCTION(BlueprintCallable)
     void UnbindAllFromAnimationStarted(UWidgetAnimation* Animation);
@@ -170,6 +178,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void SetColorAndOpacity(FLinearColor InColorAndOpacity);
+    
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic)
+    void SetAnimationCurrentTime(const UWidgetAnimation* InAnimation, float InTime);
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void SetAnchorsInViewport(FAnchors Anchors);
@@ -315,7 +326,7 @@ public:
     
 protected:
     UFUNCTION(BlueprintCallable)
-    void ListenForInputAction(FName ActionName, TEnumAsByte<EInputEvent> EventType, bool bConsume, FUserWidgetCallback Callback);
+    void ListenForInputAction(FName ActionName, TEnumAsByte<EInputEvent> EventType, bool bConsume, FOnInputAction Callback);
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -345,6 +356,9 @@ public:
     APawn* GetOwningPlayerPawn() const;
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
+    APlayerCameraManager* GetOwningPlayerCameraManager() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     bool GetIsVisible() const;
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
@@ -356,6 +370,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     FVector2D GetAlignmentInViewport() const;
     
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic)
+    void FlushAnimations();
+    
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void Destruct();
     
@@ -366,13 +383,13 @@ public:
     void CancelLatentActions();
     
     UFUNCTION(BlueprintCallable)
-    void BindToAnimationStarted(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate);
+    void BindToAnimationStarted(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate);
     
     UFUNCTION(BlueprintCallable)
-    void BindToAnimationFinished(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate);
+    void BindToAnimationFinished(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate);
     
     UFUNCTION(BlueprintCallable)
-    void BindToAnimationEvent(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate, EWidgetAnimationEvent AnimationEvent, FName UserTag);
+    void BindToAnimationEvent(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate, EWidgetAnimationEvent AnimationEvent, FName UserTag);
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     void AddToViewport(int32 ZOrder);
@@ -380,7 +397,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     bool AddToPlayerScreen(int32 ZOrder);
     
-    UUserWidget();
     
     // Fix for true pure virtual functions not being implemented
 };

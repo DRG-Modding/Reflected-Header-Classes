@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct MODIO_API FModioValidationError {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, meta=(AllowPrivateAccess=true))
     FString FieldName;
     
-    UPROPERTY(BlueprintReadOnly, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, meta=(AllowPrivateAccess=true))
     FString ValidationFailureDescription;
     
     FModioValidationError();

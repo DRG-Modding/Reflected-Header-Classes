@@ -11,10 +11,10 @@ UCLASS()
 class UEnvQueryTest_Distance : public UEnvQueryTest {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EEnvTestDistance::Type> TestMode;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> DistanceTo;
     
     UEnvQueryTest_Distance();

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneChannel.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
 #include "MovieSceneByteChannel.generated.h"
 
 class UEnum;
@@ -11,19 +11,19 @@ struct MOVIESCENE_API FMovieSceneByteChannel : public FMovieSceneChannel {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FFrameNumber> Times;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 DefaultValue;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bHasDefaultValue;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<uint8> Values;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UEnum* Enum;
     
 public:

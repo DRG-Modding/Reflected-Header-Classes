@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FWeightmapLayerAllocationInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ULandscapeLayerInfoObject* LayerInfo;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 WeightmapTextureIndex;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 WeightmapTextureChannel;
     
     LANDSCAPE_API FWeightmapLayerAllocationInfo();

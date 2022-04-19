@@ -1,6 +1,7 @@
 #include "MovieSceneSequencePlayer.h"
 #include "Net/UnrealNetwork.h"
 
+class UMovieSceneSequence;
 class UObject;
 
 void UMovieSceneSequencePlayer::StopAtCurrentTime() {
@@ -15,16 +16,13 @@ void UMovieSceneSequencePlayer::SetTimeRange(float NewStartTime, float Duration)
 void UMovieSceneSequencePlayer::SetPlayRate(float PlayRate) {
 }
 
-void UMovieSceneSequencePlayer::SetPlaybackRange(const float NewStartTime, const float NewEndTime) {
-}
-
-void UMovieSceneSequencePlayer::SetPlaybackPosition(float NewPlaybackPosition) {
+void UMovieSceneSequencePlayer::SetPlaybackPosition(FMovieSceneSequencePlaybackParams PlaybackParams) {
 }
 
 void UMovieSceneSequencePlayer::SetFrameRate(FFrameRate FrameRate) {
 }
 
-void UMovieSceneSequencePlayer::SetFrameRange(int32 StartFrame, int32 Duration) {
+void UMovieSceneSequencePlayer::SetFrameRange(int32 StartFrame, int32 Duration, float SubFrames) {
 }
 
 void UMovieSceneSequencePlayer::SetDisableCameraCuts(bool bInDisableCameraCuts) {
@@ -49,6 +47,9 @@ void UMovieSceneSequencePlayer::RPC_OnStopEvent_Implementation(FFrameTime Stoppe
 void UMovieSceneSequencePlayer::RPC_ExplicitServerUpdateEvent_Implementation(EUpdatePositionMethod Method, FFrameTime RelevantTime) {
 }
 
+void UMovieSceneSequencePlayer::RestoreState() {
+}
+
 void UMovieSceneSequencePlayer::PlayToSeconds(float TimeInSeconds) {
 }
 
@@ -57,6 +58,9 @@ bool UMovieSceneSequencePlayer::PlayToMarkedFrame(const FString& InLabel) {
 }
 
 void UMovieSceneSequencePlayer::PlayToFrame(FFrameTime NewPosition) {
+}
+
+void UMovieSceneSequencePlayer::PlayTo(FMovieSceneSequencePlaybackParams PlaybackParams) {
 }
 
 void UMovieSceneSequencePlayer::PlayReverse() {
@@ -72,9 +76,6 @@ void UMovieSceneSequencePlayer::Pause() {
 }
 
 void UMovieSceneSequencePlayer::JumpToSeconds(float TimeInSeconds) {
-}
-
-void UMovieSceneSequencePlayer::JumpToPosition(float NewPlaybackPosition) {
 }
 
 bool UMovieSceneSequencePlayer::JumpToMarkedFrame(const FString& InLabel) {
@@ -103,28 +104,16 @@ FQualifiedFrameTime UMovieSceneSequencePlayer::GetStartTime() const {
     return FQualifiedFrameTime{};
 }
 
+UMovieSceneSequence* UMovieSceneSequencePlayer::GetSequence() const {
+    return NULL;
+}
+
 float UMovieSceneSequencePlayer::GetPlayRate() const {
-    return 0.0f;
-}
-
-float UMovieSceneSequencePlayer::GetPlaybackStart() const {
-    return 0.0f;
-}
-
-float UMovieSceneSequencePlayer::GetPlaybackPosition() const {
-    return 0.0f;
-}
-
-float UMovieSceneSequencePlayer::GetPlaybackEnd() const {
     return 0.0f;
 }
 
 TArray<FMovieSceneObjectBindingID> UMovieSceneSequencePlayer::GetObjectBindings(UObject* InObject) {
     return TArray<FMovieSceneObjectBindingID>();
-}
-
-float UMovieSceneSequencePlayer::GetLength() const {
-    return 0.0f;
 }
 
 FFrameRate UMovieSceneSequencePlayer::GetFrameRate() const {
@@ -164,6 +153,7 @@ void UMovieSceneSequencePlayer::GetLifetimeReplicatedProps(TArray<FLifetimePrope
     DOREPLIFETIME(UMovieSceneSequencePlayer, bReversePlayback);
     DOREPLIFETIME(UMovieSceneSequencePlayer, StartTime);
     DOREPLIFETIME(UMovieSceneSequencePlayer, DurationFrames);
+    DOREPLIFETIME(UMovieSceneSequencePlayer, DurationSubFrames);
     DOREPLIFETIME(UMovieSceneSequencePlayer, PlaybackSettings);
     DOREPLIFETIME(UMovieSceneSequencePlayer, NetSyncProps);
 }
@@ -173,6 +163,8 @@ UMovieSceneSequencePlayer::UMovieSceneSequencePlayer() {
     this->bReversePlayback = false;
     this->Sequence = NULL;
     this->DurationFrames = 0;
+    this->DurationSubFrames = 0.00f;
     this->CurrentNumLoops = 0;
+    this->TickManager = NULL;
 }
 

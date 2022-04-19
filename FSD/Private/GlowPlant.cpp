@@ -1,4 +1,5 @@
 #include "GlowPlant.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 
 class UPrimitiveComponent;
 
@@ -9,6 +10,7 @@ void AGlowPlant::OnDamage_Implementation(UPrimitiveComponent* hitSphere) {
 }
 
 AGlowPlant::AGlowPlant() {
+    this->TrunkMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
     this->MainLight = NULL;
     this->IntensityBase = 0.00f;
     this->RadiusBase = 0.00f;

@@ -9,7 +9,7 @@ class UEnvQueryTest_Project : public UEnvQueryTest {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FEnvTraceData ProjectionData;
     
 public:

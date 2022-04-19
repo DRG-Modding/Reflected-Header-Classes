@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct AUGMENTEDREALITY_API FARSharedWorldReplicationState {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 PreviewImageOffset;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 ARWorldOffset;
     
     FARSharedWorldReplicationState();

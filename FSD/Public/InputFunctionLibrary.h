@@ -1,22 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: Engine InputActionKeyMapping
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=InputAxisKeyMapping -FallbackName=InputAxisKeyMapping
 #include "EKeyBindingAxis.h"
-//CROSS-MODULE INCLUDE: Engine InputAxisKeyMapping
-//CROSS-MODULE INCLUDE: SlateCore KeyEvent
-//CROSS-MODULE INCLUDE: InputCore Key
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=PointerEvent -FallbackName=PointerEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=KeyEvent -FallbackName=KeyEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=InputActionKeyMapping -FallbackName=InputActionKeyMapping
+//CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
 #include "EFSDInputSource.h"
 #include "InputDisplay.h"
 #include "InputFunctionLibrary.generated.h"
 
 class APlayerController;
+class UTexture2D;
 
 UCLASS(BlueprintType)
 class UInputFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UInputFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static void SetMouseSmoothingOn(bool smoothingOn);
     
@@ -50,6 +52,8 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool FindInputDisplay(const APlayerController* PlayerController, FName InputName, EFSDInputSource InputSource, int32 LayoutIndex, FInputDisplay& OutInputDisplay);
     
-    UInputFunctionLibrary();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UTexture2D* FindActionIcon(FName InActionName, bool InGamepadKeys);
+    
 };
 

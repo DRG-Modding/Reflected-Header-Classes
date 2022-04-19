@@ -1,9 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "EARTrackingState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+#include "EARSpatialMeshUsageFlags.h"
 #include "EARObjectClassification.h"
 #include "ARTrackedGeometry.generated.h"
 
@@ -13,35 +14,42 @@ UCLASS(BlueprintType)
 class AUGMENTEDREALITY_API UARTrackedGeometry : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid UniqueId;
     
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTransform LocalToTrackingTransform;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTransform LocalToAlignedTrackingTransform;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARTrackingState TrackingState;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UMRMeshComponent* UnderlyingMesh;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARObjectClassification ObjectClassification;
     
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    EARSpatialMeshUsageFlags SpatialMeshUsageFlags;
+    
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 LastUpdateFrameNumber;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName DebugName;
     
 public:
+    UARTrackedGeometry();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTracked() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HasSpatialMeshUsageFlag(const EARSpatialMeshUsageFlags InFlag) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMRMeshComponent* GetUnderlyingMesh();
@@ -51,6 +59,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EARObjectClassification GetObjectClassification() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FString GetName() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetLocalToWorldTransform() const;
@@ -67,6 +78,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetDebugName() const;
     
-    UARTrackedGeometry();
 };
 

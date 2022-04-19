@@ -1,101 +1,97 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: CoreUObject Timespan
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-//CROSS-MODULE INCLUDE: MediaUtils MediaPlayerOptions
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "OnMediaPlayerMediaOpenedDelegate.h"
+#include "OnMediaPlayerMediaEventDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FloatRange -FallbackName=FloatRange
+#include "OnMediaPlayerMediaOpenFailedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timespan -FallbackName=Timespan
 #include "EMediaPlayerTrack.h"
-//CROSS-MODULE INCLUDE: Engine LatentActionInfo
-//CROSS-MODULE INCLUDE: CoreUObject FloatRange
-//CROSS-MODULE INCLUDE: CoreUObject IntPoint
+//CROSS-MODULE INCLUDE V2: -ModuleName=MediaUtils -ObjectName=MediaPlayerOptions -FallbackName=MediaPlayerOptions
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
 #include "MediaPlayer.generated.h"
 
 class UMediaPlaylist;
 class UMediaSource;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMediaPlayerOnMediaOpenFailed, const FString&, FailedUrl);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnEndReached);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnTracksChanged);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnMediaClosed);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMediaPlayerOnMediaOpened, const FString&, OpenedUrl);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnPlaybackResumed);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnPlaybackSuspended);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMediaPlayerOnSeekCompleted);
+class UMediaTimeStampInfo;
 
 UCLASS(BlueprintType)
 class MEDIAASSETS_API UMediaPlayer : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FMediaPlayerOnEndReached OnEndReached;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMediaPlayerMediaEvent OnEndReached;
     
-    UPROPERTY(BlueprintAssignable)
-    FMediaPlayerOnMediaClosed OnMediaClosed;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMediaPlayerMediaEvent OnMediaClosed;
     
-    UPROPERTY(BlueprintAssignable)
-    FMediaPlayerOnMediaOpened OnMediaOpened;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMediaPlayerMediaOpened OnMediaOpened;
     
-    UPROPERTY(BlueprintAssignable)
-    FMediaPlayerOnMediaOpenFailed OnMediaOpenFailed;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMediaPlayerMediaOpenFailed OnMediaOpenFailed;
     
-    UPROPERTY(BlueprintAssignable)
-    FMediaPlayerOnPlaybackResumed OnPlaybackResumed;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMediaPlayerMediaEvent OnPlaybackResumed;
     
-    UPROPERTY(BlueprintAssignable)
-    FMediaPlayerOnPlaybackSuspended OnPlaybackSuspended;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMediaPlayerMediaEvent OnPlaybackSuspended;
     
-    UPROPERTY(BlueprintAssignable)
-    FMediaPlayerOnSeekCompleted OnSeekCompleted;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMediaPlayerMediaEvent OnSeekCompleted;
     
-    UPROPERTY(BlueprintAssignable)
-    FMediaPlayerOnTracksChanged OnTracksChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnMediaPlayerMediaEvent OnTracksChanged;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTimespan CacheAhead;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTimespan CacheBehind;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTimespan CacheBehindGame;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool NativeAudioOut;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PlayOnOpen;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 Shuffle: 1;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 Loop: 1;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UMediaPlaylist* Playlist;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 PlaylistIndex;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTimespan TimeDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HorizontalFieldOfView;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float VerticalFieldOfView;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRotator ViewRotation;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid PlayerGuid;
     
 public:
+    UMediaPlayer();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool SupportsSeeking() const;
     
@@ -247,6 +243,9 @@ public:
     FText GetTrackDisplayName(EMediaPlayerTrack TrackType, int32 TrackIndex) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    UMediaTimeStampInfo* GetTimeStamp() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetTimeDelay() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -280,12 +279,6 @@ public:
     FText GetMediaName() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    FTimespan GetLastVideoSampleProcessedTime() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    FTimespan GetLastAudioSampleProcessedTime() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHorizontalFieldOfView() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -315,6 +308,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanPause() const;
     
-    UMediaPlayer();
 };
 

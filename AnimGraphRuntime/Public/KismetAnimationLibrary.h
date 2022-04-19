@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject Transform
-//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
-//CROSS-MODULE INCLUDE: Engine ERelativeTransformSpace
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "PositionHistory.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ERelativeTransformSpace -FallbackName=ERelativeTransformSpace
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "EEasingFuncType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "KismetAnimationLibrary.generated.h"
 
 class USkeletalMeshComponent;
@@ -15,6 +15,7 @@ UCLASS(BlueprintType)
 class ANIMGRAPHRUNTIME_API UKismetAnimationLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UKismetAnimationLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void K2_TwoBoneIK(const FVector& RootPos, const FVector& JointPos, const FVector& EndPos, const FVector& JointTarget, const FVector& Effector, FVector& OutJointPos, FVector& OutEndPos, bool bAllowStretching, float StartStretchRatio, float MaxStretchScale);
     
@@ -45,6 +46,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static float K2_CalculateVelocityFromPositionHistory(float DeltaSeconds, FVector Position, UPARAM(Ref) FPositionHistory& History, int32 NumberOfSamples, float VelocityMin, float VelocityMax);
     
-    UKismetAnimationLibrary();
 };
 

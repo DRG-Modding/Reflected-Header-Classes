@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "LevelSequenceBindingReferenceArray.h"
 #include "LevelSequenceBindingReferences.generated.h"
 
@@ -9,10 +9,10 @@ struct FLevelSequenceBindingReferences {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<FGuid, FLevelSequenceBindingReferenceArray> BindingIdToReferences;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSet<FGuid> AnimSequenceInstances;
     
 public:

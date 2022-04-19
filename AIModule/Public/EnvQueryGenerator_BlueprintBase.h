@@ -2,27 +2,28 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "EnvQueryGenerator.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EnvQueryGenerator_BlueprintBase.generated.h"
 
 class UEnvQueryContext;
-class AActor;
 class UEnvQueryItemType;
 class UObject;
+class AActor;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class AIMODULE_API UEnvQueryGenerator_BlueprintBase : public UEnvQueryGenerator {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText GeneratorsActionDescription;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> Context;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryItemType> GeneratedItemType;
     
+    UEnvQueryGenerator_BlueprintBase();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UObject* GetQuerier() const;
     
@@ -35,6 +36,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void AddGeneratedActor(AActor* GeneratedActor) const;
     
-    UEnvQueryGenerator_BlueprintBase();
 };
 

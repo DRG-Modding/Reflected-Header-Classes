@@ -1,26 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
+#include "BlueprintFindSessionsResultDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineBlueprintCallProxyBase -FallbackName=OnlineBlueprintCallProxyBase
 #include "BlueprintSessionResult.h"
 #include "FindSessionsCallbackProxy.generated.h"
 
-class UFindSessionsCallbackProxy;
 class UObject;
+class UFindSessionsCallbackProxy;
 class APlayerController;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindSessionsCallbackProxyOnSuccess, const TArray<FBlueprintSessionResult>&, Results);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFindSessionsCallbackProxyOnFailure, const TArray<FBlueprintSessionResult>&, Results);
 
 UCLASS(MinimalAPI)
 class UFindSessionsCallbackProxy : public UOnlineBlueprintCallProxyBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FFindSessionsCallbackProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FBlueprintFindSessionsResultDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FFindSessionsCallbackProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FBlueprintFindSessionsResultDelegate OnFailure;
     
+    UFindSessionsCallbackProxy();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetServerName(const FBlueprintSessionResult& Result);
     
@@ -36,6 +35,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UFindSessionsCallbackProxy* FindSessions(UObject* WorldContextObject, APlayerController* PlayerController, int32 MaxResults, bool bUseLAN);
     
-    UFindSessionsCallbackProxy();
 };
 

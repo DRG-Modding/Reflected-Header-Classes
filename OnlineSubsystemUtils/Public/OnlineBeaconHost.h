@@ -9,11 +9,11 @@ UCLASS(NonTransient)
 class ONLINESUBSYSTEMUTILS_API AOnlineBeaconHost : public AOnlineBeacon {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     int32 ListenPort;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<AOnlineBeaconClient*> ClientActors;
     
 public:

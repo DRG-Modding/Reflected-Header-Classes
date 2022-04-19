@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "UserListEntryLibrary.generated.h"
 
 class UUserListEntry;
@@ -11,6 +11,7 @@ UCLASS(BlueprintType)
 class UMG_API UUserListEntryLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UUserListEntryLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsListItemSelected(TScriptInterface<IUserListEntry> UserListEntry);
     
@@ -20,6 +21,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UListViewBase* GetOwningListView(TScriptInterface<IUserListEntry> UserListEntry);
     
-    UUserListEntryLibrary();
 };
 

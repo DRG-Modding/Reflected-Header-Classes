@@ -9,7 +9,7 @@ class AIMODULE_API UBTService_RunEQS : public UBTService_BlackboardBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEQSParametrizedQueryExecutionRequest EQSRequest;
     
 public:

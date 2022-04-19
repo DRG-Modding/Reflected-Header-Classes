@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "AIBlueprintHelperLibrary.generated.h"
 
-class UAnimInstance;
-class UBehaviorTree;
-class APawn;
 class UObject;
-class AActor;
+class UAnimInstance;
+class APawn;
+class UBehaviorTree;
 class AController;
-class UNavigationPath;
+class AActor;
 class UBlackboardComponent;
+class UNavigationPath;
 class AAIController;
 class UAIAsyncTaskBlueprintProxy;
 
@@ -21,6 +21,7 @@ UCLASS(BlueprintType)
 class AIMODULE_API UAIBlueprintHelperLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAIBlueprintHelperLibrary();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void UnlockAIResourcesWithAnimation(UAnimInstance* AnimInstance, bool bUnlockMovement, bool UnlockAILogic);
     
@@ -49,6 +50,15 @@ public:
     static bool IsValidAIDirection(FVector DirectionVector);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 GetNextNavLinkIndex(const AController* Controller);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static TArray<FVector> GetCurrentPathPoints(AController* Controller);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 GetCurrentPathIndex(const AController* Controller);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UNavigationPath* GetCurrentPath(AController* Controller);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -60,6 +70,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UAIAsyncTaskBlueprintProxy* CreateMoveToProxyObject(UObject* WorldContextObject, APawn* Pawn, FVector Destination, AActor* TargetActor, float AcceptanceRadius, bool bStopOnOverlap);
     
-    UAIBlueprintHelperLibrary();
 };
 

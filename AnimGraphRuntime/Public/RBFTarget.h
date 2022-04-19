@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RBFEntry.h"
-//CROSS-MODULE INCLUDE: Engine RichCurve
 #include "ERBFFunctionType.h"
+#include "RBFEntry.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RichCurve -FallbackName=RichCurve
 #include "ERBFDistanceMethod.h"
 #include "RBFTarget.generated.h"
 
@@ -10,19 +10,19 @@ USTRUCT()
 struct ANIMGRAPHRUNTIME_API FRBFTarget : public FRBFEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ScaleFactor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bApplyCustomCurve;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRichCurve CustomCurve;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERBFDistanceMethod DistanceMethod;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERBFFunctionType FunctionType;
     
     FRBFTarget();

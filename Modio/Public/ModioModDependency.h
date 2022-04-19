@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct MODIO_API FModioModDependency {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FModioModID ModId;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ModName;
     
     FModioModDependency();

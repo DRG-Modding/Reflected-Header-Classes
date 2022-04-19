@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine AudioComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
 #include "FSDAudioComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UFSDAudioComponent : public UAudioComponent {
     GENERATED_BODY()
 public:

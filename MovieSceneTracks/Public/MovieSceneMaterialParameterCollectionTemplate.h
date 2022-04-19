@@ -10,7 +10,7 @@ struct FMovieSceneMaterialParameterCollectionTemplate : public FMovieSceneParame
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialParameterCollection* MPC;
     
 public:

@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine ECameraAnimPlaySpace
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECameraShakePlaySpace -FallbackName=ECameraShakePlaySpace
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "MovieSceneCameraShakeSectionData.generated.h"
 
-class UCameraShake;
+class UCameraShakeBase;
 
 USTRUCT(BlueprintType)
 struct FMovieSceneCameraShakeSectionData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
-    TSubclassOf<UCameraShake> ShakeClass;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<UCameraShakeBase> ShakeClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PlayScale;
     
-    UPROPERTY(EditAnywhere)
-    TEnumAsByte<ECameraAnimPlaySpace::Type> PlaySpace;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ECameraShakePlaySpace PlaySpace;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRotator UserDefinedPlaySpace;
     
     MOVIESCENETRACKS_API FMovieSceneCameraShakeSectionData();

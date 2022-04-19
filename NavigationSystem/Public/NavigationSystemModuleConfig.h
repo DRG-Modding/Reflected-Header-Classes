@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine NavigationSystemConfig
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavigationSystemConfig -FallbackName=NavigationSystemConfig
 #include "NavigationSystemModuleConfig.generated.h"
 
 UCLASS(CollapseCategories, EditInlineNew)
@@ -8,16 +8,16 @@ class NAVIGATIONSYSTEM_API UNavigationSystemModuleConfig : public UNavigationSys
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bStrictlyStatic: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bCreateOnClient: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAutoSpawnMissingNavData: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bSpawnNavDataInNavBoundsLevel: 1;
     
 public:

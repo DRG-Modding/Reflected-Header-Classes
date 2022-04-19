@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AudioMixer AudioGenerator
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=AudioGenerator -FallbackName=AudioGenerator
 #include "AudioCaptureDeviceInfo.h"
 #include "AudioCapture.generated.h"
 
@@ -8,6 +8,7 @@ UCLASS(BlueprintType)
 class AUDIOCAPTURE_API UAudioCapture : public UAudioGenerator {
     GENERATED_BODY()
 public:
+    UAudioCapture();
     UFUNCTION(BlueprintCallable)
     void StopCapturingAudio();
     
@@ -20,6 +21,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool GetAudioCaptureDeviceInfo(FAudioCaptureDeviceInfo& OutInfo);
     
-    UAudioCapture();
 };
 

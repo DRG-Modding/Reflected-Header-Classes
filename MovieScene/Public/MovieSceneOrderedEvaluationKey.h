@@ -7,13 +7,13 @@ USTRUCT(BlueprintType)
 struct FMovieSceneOrderedEvaluationKey {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneEvaluationKey Key;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint16 SetupIndex;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint16 TearDownIndex;
     
     MOVIESCENE_API FMovieSceneOrderedEvaluationKey();

@@ -1,6 +1,7 @@
 #include "DatasmithAreaLightActor.h"
 
 ADatasmithAreaLightActor::ADatasmithAreaLightActor() {
+    this->Mobility = EComponentMobility::Static;
     this->LightType = EDatasmithAreaLightActorType::Point;
     this->LightShape = EDatasmithAreaLightActorShape::Rectangle;
     this->Intensity = 10.00f;

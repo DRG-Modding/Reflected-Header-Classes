@@ -8,13 +8,14 @@ class UMG_API UInvalidationBox : public UContentWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCanCache;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool CacheRelativeTransforms;
     
 public:
+    UInvalidationBox();
     UFUNCTION(BlueprintCallable)
     void SetCanCache(bool CanCache);
     
@@ -24,6 +25,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCanCache() const;
     
-    UInvalidationBox();
 };
 

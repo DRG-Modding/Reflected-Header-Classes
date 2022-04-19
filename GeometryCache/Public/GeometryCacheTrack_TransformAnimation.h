@@ -8,9 +8,9 @@ UCLASS(CollapseCategories, Deprecated, NotPlaceable)
 class GEOMETRYCACHE_API UDEPRECATED_GeometryCacheTrack_TransformAnimation : public UGeometryCacheTrack {
     GENERATED_BODY()
 public:
+    UDEPRECATED_GeometryCacheTrack_TransformAnimation();
     UFUNCTION(BlueprintCallable)
     void SetMesh(const FGeometryCacheMeshData& NewMeshData);
     
-    UDEPRECATED_GeometryCacheTrack_TransformAnimation();
 };
 

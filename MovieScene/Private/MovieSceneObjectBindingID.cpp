@@ -2,6 +2,6 @@
 
 FMovieSceneObjectBindingID::FMovieSceneObjectBindingID() {
     this->SequenceID = 0;
-    this->Space = EMovieSceneObjectBindingSpace::Local;
+    this->ResolveParentIndex = 0;
 }
 

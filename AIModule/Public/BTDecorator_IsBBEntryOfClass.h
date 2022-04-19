@@ -8,7 +8,7 @@ class AIMODULE_API UBTDecorator_IsBBEntryOfClass : public UBTDecorator_Blackboar
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UClass* TestClass;
     
 public:

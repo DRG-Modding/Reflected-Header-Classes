@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine PlayerController
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerController -FallbackName=PlayerController
 #include "ARSharedWorldPlayerController.generated.h"
 
 UCLASS()
 class AUGMENTEDREALITY_API AARSharedWorldPlayerController : public APlayerController {
     GENERATED_BODY()
 public:
+    AARSharedWorldPlayerController();
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerMarkReadyForReceiving();
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientInitSharedWorld(int32 PreviewImageSize, int32 ARWorldDataSize);
     
-    AARSharedWorldPlayerController();
 };
 

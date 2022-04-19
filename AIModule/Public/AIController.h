@@ -1,89 +1,87 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "AIRequestID.h"
-//CROSS-MODULE INCLUDE: GameplayTasks GameplayTaskOwnerInterface
-//CROSS-MODULE INCLUDE: Engine Controller
-#include "EPathFollowingRequestResult.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Controller -FallbackName=Controller
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=VisualLoggerDebugSnapshotInterface -FallbackName=VisualLoggerDebugSnapshotInterface
 #include "AIPerceptionListenerInterface.h"
-//CROSS-MODULE INCLUDE: Engine VisualLoggerDebugSnapshotInterface
 #include "GenericTeamAgentInterface.h"
-#include "EPathFollowingResult.h"
-//CROSS-MODULE INCLUDE: GameplayTasks GameplayResourceSet
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTasks -ObjectName=GameplayTaskOwnerInterface -FallbackName=GameplayTaskOwnerInterface
+#include "EPathFollowingRequestResult.h"
+#include "AIMoveCompletedSignatureDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTasks -ObjectName=GameplayResourceSet -FallbackName=GameplayResourceSet
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EPathFollowingStatus.h"
 #include "AIController.generated.h"
 
-class UNavigationQueryFilter;
+class AActor;
 class UBrainComponent;
-class UAIPerceptionComponent;
 class UPathFollowingComponent;
+class UAIPerceptionComponent;
 class UPawnActionsComponent;
 class UBlackboardComponent;
 class UGameplayTasksComponent;
+class UNavigationQueryFilter;
 class UBlackboardData;
 class UGameplayTaskResource;
 class UBehaviorTree;
-class AActor;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAIControllerReceiveMoveCompleted, FAIRequestID, RequestID, TEnumAsByte<EPathFollowingResult::Type>, Result);
 
 UCLASS()
 class AIMODULE_API AAIController : public AController, public IAIPerceptionListenerInterface, public IGameplayTaskOwnerInterface, public IGenericTeamAgentInterface, public IVisualLoggerDebugSnapshotInterface {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bStartAILogicOnPossess: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bStopAILogicOnUnposses: 1;
     
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bLOSflag: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bSkipExtraLOSChecks: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAllowStrafe: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bWantsPlayerState: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bSetControlRotationFromPawnOrientation: 1;
     
 private:
-    UPROPERTY(Export, VisibleDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleDefaultsOnly, meta=(AllowPrivateAccess=true))
     UPathFollowingComponent* PathFollowingComponent;
     
 public:
-    UPROPERTY(BlueprintReadWrite, Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UBrainComponent* BrainComponent;
     
-    UPROPERTY(Export, VisibleDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleDefaultsOnly, meta=(AllowPrivateAccess=true))
     UAIPerceptionComponent* PerceptionComponent;
     
 private:
-    UPROPERTY(BlueprintReadOnly, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UPawnActionsComponent* ActionsComp;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UBlackboardComponent* Blackboard;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UGameplayTasksComponent* CachedGameplayTasksComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UNavigationQueryFilter> DefaultNavigationFilterClass;
     
 public:
-    UPROPERTY(BlueprintAssignable)
-    FAIControllerReceiveMoveCompleted ReceiveMoveCompleted;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FAIMoveCompletedSignature ReceiveMoveCompleted;
     
+    AAIController();
     UFUNCTION(BlueprintCallable)
     bool UseBlackboard(UBlackboardData* BlackboardAsset, UBlackboardComponent*& BlackboardComponent);
     
@@ -149,7 +147,6 @@ public:
     UFUNCTION(BlueprintCallable)
     void ClaimTaskResource(TSubclassOf<UGameplayTaskResource> ResourceClass);
     
-    AAIController();
     
     // Fix for true pure virtual functions not being implemented
 };

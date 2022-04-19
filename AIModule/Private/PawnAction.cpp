@@ -1,8 +1,8 @@
 #include "PawnAction.h"
 #include "Templates/SubclassOf.h"
 
-class UPawnAction;
 class UObject;
+class UPawnAction;
 
 TEnumAsByte<EAIRequestPriority::Type> UPawnAction::GetActionPriority() {
     return EAIRequestPriority::SoftScript;

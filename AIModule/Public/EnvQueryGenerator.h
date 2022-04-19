@@ -10,13 +10,13 @@ UCLASS(Abstract, EditInlineNew)
 class AIMODULE_API UEnvQueryGenerator : public UEnvQueryNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FString OptionName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryItemType> ItemType;
     
-    UPROPERTY(AdvancedDisplay, EditDefaultsOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     uint8 bAutoSortTests: 1;
     
     UEnvQueryGenerator();

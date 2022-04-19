@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneNameableTrack
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneNameableTrack -FallbackName=MovieSceneNameableTrack
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneTrackTemplateProducer -FallbackName=MovieSceneTrackTemplateProducer
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneDeterminismSource -FallbackName=MovieSceneDeterminismSource
 #include "EFireEventsAtPosition.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneObjectBindingID
 #include "MovieSceneEventTrack.generated.h"
 
 class UMovieSceneSection;
 
 UCLASS(MinimalAPI)
-class UMovieSceneEventTrack : public UMovieSceneNameableTrack {
+class UMovieSceneEventTrack : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer, public IMovieSceneDeterminismSource {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bFireEventsWhenForwards: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bFireEventsWhenBackwards: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFireEventsAtPosition EventPosition;
     
-    UPROPERTY(EditAnywhere)
-    TArray<FMovieSceneObjectBindingID> EventReceivers;
-    
 private:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UMovieSceneSection*> Sections;
     
 public:
     UMovieSceneEventTrack();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct TIMESYNTH_API FTimeSynthClipHandle {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ClipName;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ClipId;
     
     FTimeSynthClipHandle();

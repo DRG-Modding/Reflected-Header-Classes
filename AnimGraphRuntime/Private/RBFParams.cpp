@@ -4,6 +4,7 @@ FRBFParams::FRBFParams() {
     this->TargetDimensions = 0;
     this->SolverType = ERBFSolverType::Additive;
     this->Radius = 0.00f;
+    this->bAutomaticRadius = false;
     this->Function = ERBFFunctionType::Gaussian;
     this->DistanceMethod = ERBFDistanceMethod::Euclidean;
     this->TwistAxis = BA_X;

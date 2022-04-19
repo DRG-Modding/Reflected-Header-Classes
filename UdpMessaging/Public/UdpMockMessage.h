@@ -6,7 +6,7 @@ USTRUCT()
 struct FUdpMockMessage {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<uint8> Data;
     
     UDPMESSAGING_API FUdpMockMessage();

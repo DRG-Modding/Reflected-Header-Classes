@@ -1,70 +1,68 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ListViewBase.h"
-//CROSS-MODULE INCLUDE: SlateCore EOrientation
-//CROSS-MODULE INCLUDE: Slate ESelectionMode
-//CROSS-MODULE INCLUDE: SlateCore EConsumeMouseWheel
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EOrientation -FallbackName=EOrientation
+#include "OnItemIsHoveredChangedDynamicDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ESelectionMode -FallbackName=ESelectionMode
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EConsumeMouseWheel -FallbackName=EConsumeMouseWheel
+#include "SimpleListItemEventDynamicDelegate.h"
+#include "OnListEntryInitializedDynamicDelegate.h"
+#include "OnListItemSelectionChangedDynamicDelegate.h"
+#include "OnListItemScrolledIntoViewDynamicDelegate.h"
 #include "ListView.generated.h"
 
 class UObject;
-class UUserWidget;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemScrolledIntoView, UObject*, Item, UUserWidget*, Widget);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnEntryInitialized, UObject*, Item, UUserWidget*, Widget);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemIsHoveredChanged, UObject*, Item, bool, bIsHovered);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBP_OnItemClicked, UObject*, Item);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FListViewBP_OnItemSelectionChanged, UObject*, Item, bool, bIsSelected);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBP_OnItemDoubleClicked, UObject*, Item);
 
 UCLASS()
 class UMG_API UListView : public UListViewBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EOrientation> Orientation;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ESelectionMode::Type> SelectionMode;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EConsumeMouseWheel ConsumeMouseWheel;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bClearSelectionOnClick;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsFocusable;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float EntrySpacing;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bReturnFocusToSelection;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UObject*> ListItems;
     
 private:
-    UPROPERTY(BlueprintAssignable)
-    FListViewBP_OnEntryInitialized BP_OnEntryInitialized;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnListEntryInitializedDynamic BP_OnEntryInitialized;
     
-    UPROPERTY(BlueprintAssignable)
-    FListViewBP_OnItemClicked BP_OnItemClicked;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FSimpleListItemEventDynamic BP_OnItemClicked;
     
-    UPROPERTY(BlueprintAssignable)
-    FListViewBP_OnItemDoubleClicked BP_OnItemDoubleClicked;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FSimpleListItemEventDynamic BP_OnItemDoubleClicked;
     
-    UPROPERTY(BlueprintAssignable)
-    FListViewBP_OnItemIsHoveredChanged BP_OnItemIsHoveredChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnItemIsHoveredChangedDynamic BP_OnItemIsHoveredChanged;
     
-    UPROPERTY(BlueprintAssignable)
-    FListViewBP_OnItemSelectionChanged BP_OnItemSelectionChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnListItemSelectionChangedDynamic BP_OnItemSelectionChanged;
     
-    UPROPERTY(BlueprintAssignable)
-    FListViewBP_OnItemScrolledIntoView BP_OnItemScrolledIntoView;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnListItemScrolledIntoViewDynamic BP_OnItemScrolledIntoView;
     
 public:
+    UListView();
     UFUNCTION(BlueprintCallable)
     void SetSelectionMode(TEnumAsByte<ESelectionMode::Type> NewSelectionMode);
     
@@ -136,6 +134,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddItem(UObject* Item);
     
-    UListView();
 };
 

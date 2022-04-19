@@ -11,19 +11,19 @@ UCLASS(EditInlineNew)
 class AIMODULE_API UAISenseConfig_Hearing : public UAISenseConfig {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Config, EditDefaultsOnly, NoClear)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, NoClear, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAISense_Hearing> Implementation;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     float HearingRange;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     float LoSHearingRange;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     uint8 bUseLoSHearing: 1;
     
-    UPROPERTY(BlueprintReadOnly, Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FAISenseAffiliationFilter DetectionByAffiliation;
     
     UAISenseConfig_Hearing();

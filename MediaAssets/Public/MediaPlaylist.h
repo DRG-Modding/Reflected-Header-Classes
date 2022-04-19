@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "MediaPlaylist.generated.h"
 
 class UMediaSource;
@@ -10,10 +10,11 @@ class MEDIAASSETS_API UMediaPlaylist : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UMediaSource*> Items;
     
 public:
+    UMediaPlaylist();
     UFUNCTION(BlueprintCallable)
     bool Replace(int32 Index, UMediaSource* Replacement);
     
@@ -50,6 +51,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool Add(UMediaSource* MediaSource);
     
-    UMediaPlaylist();
 };
 

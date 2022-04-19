@@ -7,7 +7,7 @@ UCLASS(EditInlineNew)
 class DATASMITHCONTENT_API UDatasmithStaticMeshGLTFImportData : public UDatasmithStaticMeshImportData {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     FString SourceMeshName;
     
     UDatasmithStaticMeshGLTFImportData();

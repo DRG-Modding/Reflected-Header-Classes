@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UINotificationItem.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "ItemUINotifications.generated.h"
 
 class UFSDSaveGame;
@@ -11,13 +11,13 @@ struct FItemUINotifications {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FUINotificationItem> UINotifications;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TSet<FGuid> UINotificationSet;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UFSDSaveGame* SaveGame;
     
 public:

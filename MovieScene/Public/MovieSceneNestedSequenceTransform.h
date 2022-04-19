@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneTimeWarping.h"
 #include "MovieSceneTimeTransform.h"
+#include "MovieSceneTimeWarping.h"
 #include "MovieSceneNestedSequenceTransform.generated.h"
 
 USTRUCT(BlueprintType)
 struct FMovieSceneNestedSequenceTransform {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneTimeTransform LinearTransform;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneTimeWarping Warping;
     
     MOVIESCENE_API FMovieSceneNestedSequenceTransform();

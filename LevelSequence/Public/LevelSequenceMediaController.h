@@ -1,29 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneCustomClockSource
-//CROSS-MODULE INCLUDE: CoreUObject FrameTime
-//CROSS-MODULE INCLUDE: CoreUObject QualifiedFrameTime
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneCustomClockSource -FallbackName=MovieSceneCustomClockSource
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameTime -FallbackName=FrameTime
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=QualifiedFrameTime -FallbackName=QualifiedFrameTime
 #include "LevelSequenceMediaController.generated.h"
 
-class ALevelSequenceActor;
 class UMediaComponent;
+class ALevelSequenceActor;
 
 UCLASS()
 class LEVELSEQUENCE_API ALevelSequenceMediaController : public AActor, public IMovieSceneCustomClockSource {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ALevelSequenceActor* Sequence;
     
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UMediaComponent* MediaComponent;
     
-    UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_ServerStartTimeSeconds, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_ServerStartTimeSeconds, meta=(AllowPrivateAccess=true))
     float ServerStartTimeSeconds;
     
 public:
+    ALevelSequenceMediaController();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SynchronizeToServer(float DesyncThresholdSeconds);
     
@@ -41,9 +44,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMediaComponent* GetMediaComponent() const;
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ALevelSequenceMediaController();
     
     // Fix for true pure virtual functions not being implemented
     UFUNCTION(BlueprintCallable)

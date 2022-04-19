@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine WorldSubsystem
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TickableWorldSubsystem -FallbackName=TickableWorldSubsystem
 #include "LandscapeSubsystem.generated.h"
 
-UCLASS()
-class ULandscapeSubsystem : public UWorldSubsystem {
+UCLASS(MinimalAPI)
+class ULandscapeSubsystem : public UTickableWorldSubsystem {
     GENERATED_BODY()
 public:
     ULandscapeSubsystem();

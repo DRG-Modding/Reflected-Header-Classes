@@ -18,22 +18,22 @@ TMap<FModioModID, FModioModCollectionEntry> UModioSubsystem::QuerySystemInstalla
     return TMap<FModioModID, FModioModCollectionEntry>();
 }
 
-void UModioSubsystem::K2_UnsubscribeFromModAsync(FModioModID ModToUnsubscribeFrom, FModioSubsystemOnUnsubscribeComplete OnUnsubscribeComplete) {
+void UModioSubsystem::K2_UnsubscribeFromModAsync(FModioModID ModToUnsubscribeFrom, FOnErrorOnlyDelegate OnUnsubscribeComplete) {
 }
 
-void UModioSubsystem::K2_SubscribeToModAsync(FModioModID ModToSubscribeTo, FModioSubsystemOnSubscribeComplete OnSubscribeComplete) {
+void UModioSubsystem::K2_SubscribeToModAsync(FModioModID ModToSubscribeTo, FOnErrorOnlyDelegate OnSubscribeComplete) {
 }
 
-void UModioSubsystem::K2_SubmitModRatingAsync(FModioModID Mod, EModioRating Rating, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_SubmitModRatingAsync(FModioModID Mod, EModioRating Rating, FOnErrorOnlyDelegate Callback) {
 }
 
-void UModioSubsystem::K2_ShutdownAsync(FModioSubsystemOnShutdownComplete OnShutdownComplete) {
+void UModioSubsystem::K2_ShutdownAsync(FOnErrorOnlyDelegate OnShutdownComplete) {
 }
 
-void UModioSubsystem::K2_RequestEmailAuthCodeAsync(const FModioEmailAddress& EmailAddress, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_RequestEmailAuthCodeAsync(const FModioEmailAddress& EmailAddress, FOnErrorOnlyDelegate Callback) {
 }
 
-void UModioSubsystem::K2_ReportContentAsync(FModioReportParams Report, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_ReportContentAsync(FModioReportParams Report, FOnErrorOnlyDelegate Callback) {
 }
 
 FModioOptionalUser UModioSubsystem::K2_QueryUserProfile() {
@@ -44,49 +44,49 @@ FModioOptionalModProgressInfo UModioSubsystem::K2_QueryCurrentModUpdate() {
     return FModioOptionalModProgressInfo{};
 }
 
-void UModioSubsystem::K2_ListAllModsAsync(const FModioFilterParams& Filter, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_ListAllModsAsync(const FModioFilterParams& Filter, FOnListAllModsDelegate Callback) {
 }
 
-void UModioSubsystem::K2_InitializeAsync(const FModioInitializeOptions& InitializeOptions, FModioSubsystemOnInitComplete OnInitComplete) {
+void UModioSubsystem::K2_InitializeAsync(const FModioInitializeOptions& InitializeOptions, FOnErrorOnlyDelegate OnInitComplete) {
 }
 
-void UModioSubsystem::K2_GetUserMediaAvatarAsync(EModioAvatarSize AvatarSize, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_GetUserMediaAvatarAsync(EModioAvatarSize AvatarSize, FOnGetMediaDelegate Callback) {
 }
 
-void UModioSubsystem::K2_GetTermsOfUseAsync(EModioAuthenticationProvider Provider, EModioLanguage Locale, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_GetTermsOfUseAsync(EModioAuthenticationProvider Provider, EModioLanguage Locale, FOnGetTermsOfUseDelegate Callback) {
 }
 
-void UModioSubsystem::K2_GetModTagOptionsAsync(FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_GetModTagOptionsAsync(FOnGetModTagOptionsDelegate Callback) {
 }
 
-void UModioSubsystem::K2_GetModMediaLogoAsync(FModioModID ModId, EModioLogoSize LogoSize, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_GetModMediaLogoAsync(FModioModID ModId, EModioLogoSize LogoSize, FOnGetMediaDelegate Callback) {
 }
 
-void UModioSubsystem::K2_GetModMediaGalleryImageAsync(FModioModID ModId, EModioGallerySize GallerySize, int32 Index, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_GetModMediaGalleryImageAsync(FModioModID ModId, EModioGallerySize GallerySize, int32 Index, FOnGetMediaDelegate Callback) {
 }
 
-void UModioSubsystem::K2_GetModMediaAvatarAsync(FModioModID ModId, EModioAvatarSize AvatarSize, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_GetModMediaAvatarAsync(FModioModID ModId, EModioAvatarSize AvatarSize, FOnGetMediaDelegate Callback) {
 }
 
-void UModioSubsystem::K2_GetModInfoAsync(FModioModID ModId, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_GetModInfoAsync(FModioModID ModId, FOnGetModInfoDelegate Callback) {
 }
 
-void UModioSubsystem::K2_GetModDependenciesAsync(FModioModID ModId, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_GetModDependenciesAsync(FModioModID ModId, FOnGetModDependenciesDelegate Callback) {
 }
 
-void UModioSubsystem::K2_FetchExternalUpdatesAsync(FModioSubsystemOnFetchDone OnFetchDone) {
+void UModioSubsystem::K2_FetchExternalUpdatesAsync(FOnErrorOnlyDelegate OnFetchDone) {
 }
 
-void UModioSubsystem::K2_EnableModManagement(FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_EnableModManagement(FOnModManagementDelegate Callback) {
 }
 
-void UModioSubsystem::K2_ClearUserDataAsync(FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_ClearUserDataAsync(FOnErrorOnlyDelegate Callback) {
 }
 
-void UModioSubsystem::K2_AuthenticateUserExternalAsync(const FModioAuthenticationParams& User, EModioAuthenticationProvider Provider, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_AuthenticateUserExternalAsync(const FModioAuthenticationParams& User, EModioAuthenticationProvider Provider, FOnErrorOnlyDelegate Callback) {
 }
 
-void UModioSubsystem::K2_AuthenticateUserEmailAsync(const FModioEmailAuthCode& AuthenticationCode, FModioSubsystemCallback Callback) {
+void UModioSubsystem::K2_AuthenticateUserEmailAsync(const FModioEmailAuthCode& AuthenticationCode, FOnErrorOnlyDelegate Callback) {
 }
 
 bool UModioSubsystem::IsModManagementBusy() {
@@ -97,7 +97,7 @@ TArray<FModioValidationError> UModioSubsystem::GetLastValidationError() {
     return TArray<FModioValidationError>();
 }
 
-void UModioSubsystem::ForceUninstallModAsync(FModioModID ModToRemove, FModioSubsystemCallback Callback) {
+void UModioSubsystem::ForceUninstallModAsync(FModioModID ModToRemove, FOnErrorOnlyDelegate Callback) {
 }
 
 void UModioSubsystem::DisableModManagement() {

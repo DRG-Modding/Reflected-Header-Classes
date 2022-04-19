@@ -8,7 +8,7 @@ class AIMODULE_API UBTService_DefaultFocus : public UBTService_BlackboardBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 FocusPriority;
     
 public:

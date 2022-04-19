@@ -1,23 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "AIPerceptionStimuliSourceComponent.generated.h"
 
 class UAISense;
 
-UCLASS(BlueprintType, Config=Game)
+UCLASS(BlueprintType, Config=Game, meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UAIPerceptionStimuliSourceComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAutoRegisterAsSource: 1;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UAISense>> RegisterAsSourceForSenses;
     
 public:
+    UAIPerceptionStimuliSourceComponent();
     UFUNCTION(BlueprintCallable)
     void UnregisterFromSense(TSubclassOf<UAISense> SenseClass);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void RegisterForSense(TSubclassOf<UAISense> SenseClass);
     
-    UAIPerceptionStimuliSourceComponent();
 };
 

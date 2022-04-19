@@ -1,18 +1,18 @@
 #include "WidgetBlueprintLibrary.h"
 #include "Templates/SubclassOf.h"
 
-class UFont;
-class UWidget;
 class APlayerController;
-class UObject;
-class UInterface;
-class IInterface;
+class UWidget;
 class UTexture2D;
+class UObject;
 class UMaterialInterface;
 class USlateBrushAsset;
-class UDragDropOperation;
-class UMaterialInstanceDynamic;
 class UUserWidget;
+class UMaterialInstanceDynamic;
+class UDragDropOperation;
+class UInterface;
+class IInterface;
+class UFont;
 
 FEventReply UWidgetBlueprintLibrary::UnlockMouse(FEventReply& Reply) {
     return FEventReply{};
@@ -25,7 +25,7 @@ FEventReply UWidgetBlueprintLibrary::Unhandled() {
 void UWidgetBlueprintLibrary::SetWindowTitleBarState(UWidget* TitleBarContent, EWindowTitleBarMode Mode, bool bTitleBarDragEnabled, bool bWindowButtonsVisible, bool bTitleBarVisible) {
 }
 
-void UWidgetBlueprintLibrary::SetWindowTitleBarOnCloseClickedDelegate(FWidgetBlueprintLibraryDelegate Delegate) {
+void UWidgetBlueprintLibrary::SetWindowTitleBarOnCloseClickedDelegate(UWidgetBlueprintLibrary::FOnGameWindowCloseButtonClickedDelegate Delegate) {
 }
 
 void UWidgetBlueprintLibrary::SetWindowTitleBarCloseButtonActive(bool bActive) {

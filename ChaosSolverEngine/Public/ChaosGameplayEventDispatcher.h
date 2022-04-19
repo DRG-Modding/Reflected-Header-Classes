@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ChaosHandlerSet.h"
 #include "ChaosEventListenerComponent.h"
+#include "ChaosHandlerSet.h"
 #include "BreakEventCallbackWrapper.h"
 #include "ChaosGameplayEventDispatcher.generated.h"
 
 class UPrimitiveComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class CHAOSSOLVERENGINE_API UChaosGameplayEventDispatcher : public UChaosEventListenerComponent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<UPrimitiveComponent*, FChaosHandlerSet> CollisionEventRegistrations;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<UPrimitiveComponent*, FBreakEventCallbackWrapper> BreakEventRegistrations;
     
 public:

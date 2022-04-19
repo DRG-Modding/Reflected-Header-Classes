@@ -8,7 +8,7 @@ UCLASS(MinimalAPI)
 class UEnvQueryTest_Overlap : public UEnvQueryTest {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FEnvOverlapData OverlapData;
     
     UEnvQueryTest_Overlap();

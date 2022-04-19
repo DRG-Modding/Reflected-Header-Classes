@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
 #include "DoubleDrillDamageItem.generated.h"
 
 class UPrimitiveComponent;
@@ -11,22 +11,22 @@ USTRUCT(BlueprintType)
 struct FDoubleDrillDamageItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UPrimitiveComponent> Target;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FVector_NetQuantize Location;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FVector_NetQuantizeNormal Normal;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UFSDPhysicalMaterial* Material;
     
-    UPROPERTY(NotReplicated)
+    UPROPERTY(BlueprintReadWrite, NotReplicated, meta=(AllowPrivateAccess=true))
     FName BoneName;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     uint8 BoneIndex;
     
     FSD_API FDoubleDrillDamageItem();

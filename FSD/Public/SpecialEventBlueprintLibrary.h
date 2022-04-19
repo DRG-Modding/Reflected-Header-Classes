@@ -1,16 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ESchematicType.h"
 #include "SpecialEventBlueprintLibrary.generated.h"
 
-class USchematic;
 class UObject;
+class USchematic;
+class UPlayerCharacterID;
 
 UCLASS(BlueprintType)
 class USpecialEventBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    USpecialEventBlueprintLibrary();
     UFUNCTION(BlueprintCallable)
     static USchematic* TryGivePendingReward(UObject* WorldContextObject);
     
@@ -27,8 +30,10 @@ public:
     static TArray<USchematic*> GetSpecialEventsRewardSchematics(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable)
+    static USchematic* FindRandomSchematicForCharacter(UObject* WorldContextObject, UPlayerCharacterID* characterID, ESchematicType SchematicType);
+    
+    UFUNCTION(BlueprintCallable)
     static void ClearPendingReward(UObject* WorldContextObject);
     
-    USpecialEventBlueprintLibrary();
 };
 

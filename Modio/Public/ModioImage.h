@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct MODIO_API FModioImage {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString ImagePath;
     
     FModioImage();

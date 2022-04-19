@@ -1,40 +1,41 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "GameplayTaskOwnerInterface.h"
-#include "GameplayResourceSet.h"
 #include "EGameplayTaskRunResult.h"
+#include "OnClaimedResourcesChangeSignatureDelegate.h"
 #include "GameplayTasksComponent.generated.h"
 
 class UGameplayTask;
 class UGameplayTaskResource;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FGameplayTasksComponentOnClaimedResourcesChange, FGameplayResourceSet, NewlyClaimed, FGameplayResourceSet, FreshlyReleased);
-
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
 class GAMEPLAYTASKS_API UGameplayTasksComponent : public UActorComponent, public IGameplayTaskOwnerInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bIsNetDirty: 1;
     
 protected:
-    UPROPERTY(ReplicatedUsing=OnRep_SimulatedTasks)
+    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_SimulatedTasks, meta=(AllowPrivateAccess=true))
     TArray<UGameplayTask*> SimulatedTasks;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UGameplayTask*> TaskPriorityQueue;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UGameplayTask*> TickingTasks;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UGameplayTask*> KnownTasks;
     
 public:
-    UPROPERTY(BlueprintReadWrite)
-    FGameplayTasksComponentOnClaimedResourcesChange OnClaimedResourcesChange;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnClaimedResourcesChangeSignature OnClaimedResourcesChange;
+    
+    UGameplayTasksComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UFUNCTION(BlueprintCallable)
     void OnRep_SimulatedTasks();
@@ -42,9 +43,6 @@ public:
     UFUNCTION(BlueprintCallable)
     static EGameplayTaskRunResult K2_RunGameplayTask(TScriptInterface<IGameplayTaskOwnerInterface> TaskOwner, UGameplayTask* Task, uint8 Priority, TArray<TSubclassOf<UGameplayTaskResource>> AdditionalRequiredResources, TArray<TSubclassOf<UGameplayTaskResource>> AdditionalClaimedResources);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UGameplayTasksComponent();
     
     // Fix for true pure virtual functions not being implemented
 };

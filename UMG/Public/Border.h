@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore EVerticalAlignment
-//CROSS-MODULE INCLUDE: SlateCore EHorizontalAlignment
-//CROSS-MODULE INCLUDE: SlateCore Margin
-//CROSS-MODULE INCLUDE: SlateCore SlateBrush
-//CROSS-MODULE INCLUDE: SlateCore Geometry
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
-#include "EventReply.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EVerticalAlignment -FallbackName=EVerticalAlignment
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EHorizontalAlignment -FallbackName=EHorizontalAlignment
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+#include "Widget.h"
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "Widget.h"
 #include "Border.generated.h"
 
 class UTexture2D;
@@ -17,66 +17,59 @@ class UMaterialInterface;
 class USlateBrushAsset;
 class UMaterialInstanceDynamic;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FSlateBrush, FBorderBackgroundDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FBorderContentColorAndOpacityDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FLinearColor, FBorderBrushColorDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseButtonDownEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseDoubleClickEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseButtonUpEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_TwoParams(FEventReply, FBorderOnMouseMoveEvent, FGeometry, MyGeometry, const FPointerEvent&, MouseEvent);
-
 UCLASS()
 class UMG_API UBorder : public UContentWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EHorizontalAlignment> HorizontalAlignment;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EVerticalAlignment> VerticalAlignment;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bShowEffectWhenDisabled: 1;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor ContentColorAndOpacity;
     
-    UPROPERTY()
-    FBorderContentColorAndOpacityDelegate ContentColorAndOpacityDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetLinearColor ContentColorAndOpacityDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMargin Padding;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush Background;
     
-    UPROPERTY()
-    FBorderBackgroundDelegate BackgroundDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetSlateBrush BackgroundDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor BrushColor;
     
-    UPROPERTY()
-    FBorderBrushColorDelegate BrushColorDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetLinearColor BrushColorDelegate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D DesiredSizeScale;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bFlipForRightToLeftFlowDirection;
     
-    UPROPERTY(EditAnywhere)
-    FBorderOnMouseButtonDownEvent OnMouseButtonDownEvent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UWidget::FOnPointerEvent OnMouseButtonDownEvent;
     
-    UPROPERTY(EditAnywhere)
-    FBorderOnMouseButtonUpEvent OnMouseButtonUpEvent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UWidget::FOnPointerEvent OnMouseButtonUpEvent;
     
-    UPROPERTY(EditAnywhere)
-    FBorderOnMouseMoveEvent OnMouseMoveEvent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UWidget::FOnPointerEvent OnMouseMoveEvent;
     
-    UPROPERTY(EditAnywhere)
-    FBorderOnMouseDoubleClickEvent OnMouseDoubleClickEvent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UWidget::FOnPointerEvent OnMouseDoubleClickEvent;
     
+    UBorder();
     UFUNCTION(BlueprintCallable)
     void SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment);
     
@@ -110,6 +103,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UMaterialInstanceDynamic* GetDynamicMaterial();
     
-    UBorder();
 };
 

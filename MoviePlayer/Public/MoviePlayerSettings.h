@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "MoviePlayerSettings.generated.h"
 
 UCLASS(DefaultConfig, Config=Game)
 class MOVIEPLAYER_API UMoviePlayerSettings : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, GlobalConfig)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     bool bWaitForMoviesToComplete;
     
-    UPROPERTY(EditAnywhere, GlobalConfig)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     bool bMoviesAreSkippable;
     
-    UPROPERTY(EditAnywhere, GlobalConfig)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     TArray<FString> StartupMovies;
     
     UMoviePlayerSettings();

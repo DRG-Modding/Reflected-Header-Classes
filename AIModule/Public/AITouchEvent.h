@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct AIMODULE_API FAITouchEvent {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     AActor* TouchReceiver;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     AActor* OtherActor;
     
     FAITouchEvent();

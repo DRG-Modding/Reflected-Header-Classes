@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "EnemyAnimInstance.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
 #include "FacilityTurretAnimInstance.generated.h"
 
 UCLASS(NonTransient)
@@ -9,10 +9,10 @@ class UFacilityTurretAnimInstance : public UEnemyAnimInstance {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FRotator AimRotation;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool IsEngaged;
     
 public:

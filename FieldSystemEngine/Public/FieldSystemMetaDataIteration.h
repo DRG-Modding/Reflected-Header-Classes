@@ -5,16 +5,16 @@
 
 class UFieldSystemMetaDataIteration;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UFieldSystemMetaDataIteration : public UFieldSystemMetaData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Iterations;
     
+    UFieldSystemMetaDataIteration();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UFieldSystemMetaDataIteration* SetMetaDataIteration(int32 NewIterations);
     
-    UFieldSystemMetaDataIteration();
 };
 

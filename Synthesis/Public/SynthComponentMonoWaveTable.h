@@ -1,30 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AudioMixer SynthComponent
-#include "ESynthLFOType.h"
 #include "CurveInterpolationType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
+#include "NumTablesChangedDelegate.h"
+#include "OnTableAlteredDelegate.h"
+#include "ESynthLFOType.h"
 #include "SynthComponentMonoWaveTable.generated.h"
 
 class UMonoWaveTableSynthPreset;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynthComponentMonoWaveTableOnNumTablesChanged);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSynthComponentMonoWaveTableOnTableAltered, int32, TableIndex);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class SYNTHESIS_API USynthComponentMonoWaveTable : public USynthComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FSynthComponentMonoWaveTableOnTableAltered OnTableAltered;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnTableAltered OnTableAltered;
     
-    UPROPERTY(BlueprintAssignable)
-    FSynthComponentMonoWaveTableOnNumTablesChanged OnNumTablesChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FNumTablesChanged OnNumTablesChanged;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMonoWaveTableSynthPreset* CurrentPreset;
     
 public:
+    USynthComponentMonoWaveTable();
     UFUNCTION(BlueprintCallable)
     void SetWaveTablePosition(float InPosition);
     
@@ -66,9 +66,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetLowPassFilterResonance(float InNewQ);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetLowPassFilterFrequency(float InNewFrequency);
     
     UFUNCTION(BlueprintCallable)
     void SetFrequencyWithMidiNote(const float InMidiNote);
@@ -160,6 +157,5 @@ public:
     UFUNCTION(BlueprintCallable)
     float GetCurveTangent(int32 TableIndex);
     
-    USynthComponentMonoWaveTable();
 };
 

@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "BurrowComponent.generated.h"
 
 class UAnimMontage;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UBurrowComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UBurrowComponent();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void Unburrow(UAnimMontage* customMontage);
     
@@ -18,6 +19,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintImplementableEvent)
     void Burrow(UAnimMontage* customMontage);
     
-    UBurrowComponent();
 };
 

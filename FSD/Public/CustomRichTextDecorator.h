@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: UMG RichTextBlockDecorator
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=RichTextBlockDecorator -FallbackName=RichTextBlockDecorator
 #include "CustomRichTextDecorator.generated.h"
 
 class URichTextBlock;
@@ -10,7 +10,7 @@ class UCustomRichTextDecorator : public URichTextBlockDecorator {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     URichTextBlock* RichTextBlock;
     
 public:

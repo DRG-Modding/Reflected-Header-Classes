@@ -1,9 +1,12 @@
 #include "RetainerBox.h"
 
-class UMaterialInterface;
 class UMaterialInstanceDynamic;
+class UMaterialInterface;
 
 void URetainerBox::SetTextureParameter(FName NewTextureParameter) {
+}
+
+void URetainerBox::SetRetainRendering(bool bInRetainRendering) {
 }
 
 void URetainerBox::SetRenderingPhase(int32 RenderPhase, int32 TotalPhases) {
@@ -20,6 +23,7 @@ UMaterialInstanceDynamic* URetainerBox::GetEffectMaterial() const {
 }
 
 URetainerBox::URetainerBox() {
+    this->bRetainRender = true;
     this->RenderOnInvalidation = false;
     this->RenderOnPhase = true;
     this->Phase = 0;

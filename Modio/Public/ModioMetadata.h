@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct MODIO_API FModioMetadata {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Key;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Value;
     
     FModioMetadata();

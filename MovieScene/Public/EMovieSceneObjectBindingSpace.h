@@ -3,8 +3,9 @@
 #include "EMovieSceneObjectBindingSpace.generated.h"
 
 UENUM()
-enum class EMovieSceneObjectBindingSpace : uint8 {
+enum class EMovieSceneObjectBindingSpace {
     Local,
     Root,
+    Unused,
 };
 

@@ -10,16 +10,16 @@ USTRUCT(BlueprintType)
 struct AIMODULE_API FEnvDirection {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> LineFrom;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> LineTo;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> Rotation;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EEnvDirection::Type> DirMode;
     
     FEnvDirection();

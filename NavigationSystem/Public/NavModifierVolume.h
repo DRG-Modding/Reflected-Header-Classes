@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine NavRelevantInterface
-//CROSS-MODULE INCLUDE: Engine Volume
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavRelevantInterface -FallbackName=NavRelevantInterface
 #include "NavModifierVolume.generated.h"
 
 class UNavArea;
@@ -12,14 +12,17 @@ class NAVIGATIONSYSTEM_API ANavModifierVolume : public AVolume, public INavRelev
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UNavArea> AreaClass;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bMaskFillCollisionUnderneathForNavmesh;
+    
 public:
+    ANavModifierVolume();
     UFUNCTION(BlueprintCallable)
     void SetAreaClass(TSubclassOf<UNavArea> NewAreaClass);
     
-    ANavModifierVolume();
     
     // Fix for true pure virtual functions not being implemented
 };

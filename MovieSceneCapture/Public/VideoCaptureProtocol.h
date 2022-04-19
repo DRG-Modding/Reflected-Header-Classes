@@ -7,10 +7,10 @@ UCLASS()
 class MOVIESCENECAPTURE_API UVideoCaptureProtocol : public UFrameGrabberProtocol {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseCompression;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CompressionQuality;
     
     UVideoCaptureProtocol();

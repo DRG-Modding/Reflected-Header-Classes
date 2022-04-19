@@ -1,17 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TapDelayInfo.h"
-//CROSS-MODULE INCLUDE: Engine SoundEffectSubmixPreset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
 #include "SubmixEffectTapDelaySettings.h"
+#include "TapDelayInfo.h"
 #include "SubmixEffectTapDelayPreset.generated.h"
 
 UCLASS(BlueprintType, EditInlineNew)
 class SYNTHESIS_API USubmixEffectTapDelayPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSubmixEffectTapDelaySettings Settings;
     
+    USubmixEffectTapDelayPreset();
     UFUNCTION(BlueprintCallable)
     void SetTap(int32 TapId, const FTapDelayInfo& TapInfo);
     
@@ -36,6 +37,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddTap(int32& TapId);
     
-    USubmixEffectTapDelayPreset();
 };
 

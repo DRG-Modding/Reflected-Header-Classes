@@ -7,12 +7,15 @@ public class Niagara : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
+            "Chaos",
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
             "MovieScene",
             "NiagaraCore",
             "NiagaraShader",
+            "PhysicsCore",
         });
     }
 }

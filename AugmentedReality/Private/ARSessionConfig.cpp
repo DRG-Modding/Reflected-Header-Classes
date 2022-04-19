@@ -1,4 +1,14 @@
 #include "ARSessionConfig.h"
+#include "ARObjectComponent.h"
+#include "ARImageComponent.h"
+#include "ARPlaneComponent.h"
+#include "ARPointComponent.h"
+#include "ARFaceComponent.h"
+#include "ARTrackedQRCode.h"
+#include "ARPoseComponent.h"
+#include "AREnvironmentProbeComponent.h"
+#include "ARMeshComponent.h"
+#include "ARGeoAnchorComponent.h"
 
 class UARCandidateObject;
 class UARCandidateImage;
@@ -27,6 +37,9 @@ void UARSessionConfig::SetWorldMapData(TArray<uint8> NewWorldMapData) {
 }
 
 void UARSessionConfig::SetSessionTrackingFeatureToEnable(EARSessionTrackingFeature InSessionTrackingFeature) {
+}
+
+void UARSessionConfig::SetSceneReconstructionMethod(EARSceneReconstruction InSceneReconstructionMethod) {
 }
 
 void UARSessionConfig::SetResetTrackedObjects(bool bNewValue) {
@@ -60,6 +73,10 @@ EARWorldAlignment UARSessionConfig::GetWorldAlignment() const {
 
 EARSessionType UARSessionConfig::GetSessionType() const {
     return EARSessionType::None;
+}
+
+EARSceneReconstruction UARSessionConfig::GetSceneReconstructionMethod() const {
+    return EARSceneReconstruction::None;
 }
 
 EARPlaneDetectionMode UARSessionConfig::GetPlaneDetectionMode() const {
@@ -120,6 +137,9 @@ UARSessionConfig::UARSessionConfig() {
     this->bRenderMeshDataInWireframe = false;
     this->bTrackSceneObjects = true;
     this->bUsePersonSegmentationForOcclusion = true;
+    this->bUseSceneDepthForOcclusion = false;
+    this->bUseAutomaticImageScaleEstimation = true;
+    this->bUseStandardOnboardingUX = false;
     this->WorldAlignment = EARWorldAlignment::Gravity;
     this->SessionType = EARSessionType::World;
     this->PlaneDetectionMode = EARPlaneDetectionMode::HorizontalPlaneDetection;
@@ -127,15 +147,28 @@ UARSessionConfig::UARSessionConfig() {
     this->bVerticalPlaneDetection = true;
     this->bEnableAutoFocus = true;
     this->LightEstimationMode = EARLightEstimationMode::AmbientLightEstimate;
-    this->FrameSyncMode = EARFrameSyncMode::SyncTickWithoutCameraImage;
+    this->FrameSyncMode = EARFrameSyncMode::SyncTickWithCameraImage;
     this->bEnableAutomaticCameraOverlay = true;
     this->bEnableAutomaticCameraTracking = true;
     this->bResetCameraTracking = true;
     this->bResetTrackedObjects = true;
     this->MaxNumSimultaneousImagesTracked = 1;
     this->EnvironmentCaptureProbeType = EAREnvironmentCaptureProbeType::None;
+    this->bUseOptimalVideoFormat = true;
     this->FaceTrackingDirection = EARFaceTrackingDirection::FaceRelative;
     this->FaceTrackingUpdate = EARFaceTrackingUpdate::CurvesAndGeo;
+    this->MaxNumberOfTrackedFaces = 1;
     this->EnabledSessionTrackingFeature = EARSessionTrackingFeature::None;
+    this->SceneReconstructionMethod = EARSceneReconstruction::None;
+    this->PlaneComponentClass = UARPlaneComponent::StaticClass();
+    this->PointComponentClass = UARPointComponent::StaticClass();
+    this->FaceComponentClass = UARFaceComponent::StaticClass();
+    this->ImageComponentClass = UARImageComponent::StaticClass();
+    this->QRCodeComponentClass = UARTrackedQRCode::StaticClass();
+    this->PoseComponentClass = UARPoseComponent::StaticClass();
+    this->EnvironmentProbeComponentClass = UAREnvironmentProbeComponent::StaticClass();
+    this->ObjectComponentClass = UARObjectComponent::StaticClass();
+    this->MeshComponentClass = UARMeshComponent::StaticClass();
+    this->GeoAnchorComponentClass = UARGeoAnchorComponent::StaticClass();
 }
 

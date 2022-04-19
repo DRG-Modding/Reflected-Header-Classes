@@ -7,7 +7,7 @@ USTRUCT()
 struct FConstraintDescriptionEx {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFilterOptionPerAxis AxesFilterOption;
     
     ANIMATIONCORE_API FConstraintDescriptionEx();

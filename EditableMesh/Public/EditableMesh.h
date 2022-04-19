@@ -1,34 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MeshDescription VertexID
-//CROSS-MODULE INCLUDE: CoreUObject Object
-#include "PolygonGroupForPolygon.h"
-//CROSS-MODULE INCLUDE: MeshDescription PolygonID
-#include "EMeshModificationType.h"
-//CROSS-MODULE INCLUDE: MeshDescription EdgeID
-#include "EInsetPolygonsMode.h"
-#include "ETriangleTessellationMode.h"
-//CROSS-MODULE INCLUDE: MeshDescription TriangleID
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EMeshTopologyChange.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-#include "PolygonToSplit.h"
-//CROSS-MODULE INCLUDE: CoreUObject Plane
-#include "AttributesForVertex.h"
-#include "AttributesForVertexInstance.h"
-#include "VertexAttributesForPolygon.h"
-#include "AttributesForEdge.h"
-#include "PolygonToCreate.h"
-#include "VertexToMove.h"
-//CROSS-MODULE INCLUDE: MeshDescription PolygonGroupID
-//CROSS-MODULE INCLUDE: MeshDescription VertexInstanceID
-#include "SubdivisionLimitData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=VertexID -FallbackName=VertexID
+#include "EMeshModificationType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=EdgeID -FallbackName=EdgeID
 #include "PolygonGroupToCreate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=PolygonID -FallbackName=PolygonID
+#include "ETriangleTessellationMode.h"
+#include "AttributesForVertex.h"
+#include "PolygonToSplit.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Plane -FallbackName=Plane
+#include "AttributesForVertexInstance.h"
 #include "VertexInstanceToCreate.h"
+#include "VertexAttributesForPolygon.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+#include "AttributesForEdge.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "VertexToMove.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=PolygonGroupID -FallbackName=PolygonGroupID
+#include "EInsetPolygonsMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=VertexInstanceID -FallbackName=VertexInstanceID
 #include "VertexToCreate.h"
+#include "SubdivisionLimitData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=TriangleID -FallbackName=TriangleID
+#include "PolygonToCreate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=BoxSphereBounds -FallbackName=BoxSphereBounds
 #include "EdgeToCreate.h"
-//CROSS-MODULE INCLUDE: CoreUObject BoxSphereBounds
-//CROSS-MODULE INCLUDE: CoreUObject Box
 #include "ChangeVertexInstancesForPolygon.h"
+#include "PolygonGroupForPolygon.h"
 #include "EditableMesh.generated.h"
 
 class UEditableMeshAdapter;
@@ -39,18 +39,19 @@ UCLASS(BlueprintType)
 class EDITABLEMESH_API UEditableMesh : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UEditableMeshAdapter*> Adapters;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 TextureCoordinateCount;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 PendingCompactCounter;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 SubdivisionCount;
     
+    UEditableMesh();
     UFUNCTION(BlueprintCallable)
     void WeldVertices(const TArray<FVertexID>& VertexIDs, FVertexID& OutNewVertexID);
     
@@ -124,7 +125,7 @@ public:
     void SearchSpatialDatabaseForPolygonsPotentiallyIntersectingLineSegment(const FVector LineSegmentStart, const FVector LineSegmentEnd, TArray<FPolygonID>& OutPolygons) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    void SearchSpatialDatabaseForPolygonsInVolume(const TArray<FPlane>& Planes, TArray<FPolygonID>& OutPolygons) const;
+    void SearchSpatialDatabaseForPolygonsInVolume(const TArray<FPlane>& planes, TArray<FPolygonID>& OutPolygons) const;
     
     UFUNCTION(BlueprintCallable)
     UEditableMesh* RevertInstance();
@@ -438,6 +439,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool AnyChangesToUndo() const;
     
-    UEditableMesh();
 };
 

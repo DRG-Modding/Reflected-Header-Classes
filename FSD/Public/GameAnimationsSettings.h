@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DeveloperSettings
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
+//CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
 #include "GameAnimationsSettings.generated.h"
 
 UCLASS(DefaultConfig, Config=Game)
@@ -9,10 +9,10 @@ class UGameAnimationsSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath FootstepTestingSound;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath FootstepTestingParticles;
     
 public:

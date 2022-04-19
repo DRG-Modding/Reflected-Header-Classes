@@ -1,21 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-#include "ProcMeshTangent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EProcMeshSliceCapOption.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "ProcMeshTangent.h"
 #include "KismetProceduralMeshLibrary.generated.h"
 
 class UProceduralMeshComponent;
-class UMaterialInterface;
 class UStaticMesh;
+class UMaterialInterface;
 class UStaticMeshComponent;
 
 UCLASS(BlueprintType)
 class PROCEDURALMESHCOMPONENT_API UKismetProceduralMeshLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UKismetProceduralMeshLibrary();
     UFUNCTION(BlueprintCallable)
     static void SliceProceduralMesh(UProceduralMeshComponent* InProcMesh, FVector PlanePosition, FVector PlaneNormal, bool bCreateOtherHalf, UProceduralMeshComponent*& OutOtherHalfProcMesh, EProcMeshSliceCapOption CapOption, UMaterialInterface* CapMaterial);
     
@@ -46,6 +47,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void CalculateTangentsForMesh(const TArray<FVector>& Vertices, const TArray<int32>& Triangles, const TArray<FVector2D>& UVs, TArray<FVector>& Normals, TArray<FProcMeshTangent>& Tangents);
     
-    UKismetProceduralMeshLibrary();
 };
 

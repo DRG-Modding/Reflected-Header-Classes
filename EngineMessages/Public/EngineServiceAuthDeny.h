@@ -6,10 +6,10 @@ USTRUCT()
 struct FEngineServiceAuthDeny {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Username;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString UserToDeny;
     
     ENGINEMESSAGES_API FEngineServiceAuthDeny();

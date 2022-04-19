@@ -1,40 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: Engine NavRelevantInterface
-//CROSS-MODULE INCLUDE: NavigationSystem NavLinkHostInterface
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine NavigationLink
-//CROSS-MODULE INCLUDE: Engine NavigationSegmentLink
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavigationSegmentLink -FallbackName=NavigationSegmentLink
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavigationLink -FallbackName=NavigationLink
+//CROSS-MODULE INCLUDE V2: -ModuleName=NavigationSystem -ObjectName=NavLinkHostInterface -FallbackName=NavLinkHostInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "SmartLinkReachedSignatureDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavRelevantInterface -FallbackName=NavRelevantInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "NavLinkProxy.generated.h"
 
 class UNavLinkCustomComponent;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FNavLinkProxyOnSmartLinkReached, AActor*, MovingActor, const FVector&, DestinationPoint);
 
 UCLASS()
 class AIMODULE_API ANavLinkProxy : public AActor, public INavLinkHostInterface, public INavRelevantInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNavigationLink> PointLinks;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNavigationSegmentLink> SegmentLinks;
     
 private:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UNavLinkCustomComponent* SmartLinkComp;
     
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSmartLinkIsRelevant;
     
 protected:
-    UPROPERTY(BlueprintAssignable)
-    FNavLinkProxyOnSmartLinkReached OnSmartLinkReached;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FSmartLinkReachedSignature OnSmartLinkReached;
     
 public:
+    ANavLinkProxy();
     UFUNCTION(BlueprintCallable)
     void SetSmartLinkEnabled(bool bEnabled);
     
@@ -50,7 +50,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasMovingAgents() const;
     
-    ANavLinkProxy();
     
     // Fix for true pure virtual functions not being implemented
 };

@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct MEDIAASSETS_API FMediaCaptureDevice {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FText DisplayName;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FString URL;
     
     FMediaCaptureDevice();

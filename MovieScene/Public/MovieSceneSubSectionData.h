@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "ESectionEvaluationFlags.h"
 #include "MovieSceneSubSectionData.generated.h"
 
@@ -10,13 +10,13 @@ USTRUCT()
 struct FMovieSceneSubSectionData {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UMovieSceneSubSection> Section;
     
-    UPROPERTY()
-    FGuid ObjectBindingID;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FGuid ObjectBindingId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ESectionEvaluationFlags Flags;
     
     MOVIESCENE_API FMovieSceneSubSectionData();

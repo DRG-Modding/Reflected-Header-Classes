@@ -1,17 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: OnlineSubsystemUtils BlueprintSessionResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "indSteamSessionsResultDelegate.h"
 #include "FSDFindSteamSessions.generated.h"
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FFSDFindSteamSessionsOnFindResult, bool, success, const TArray<FBlueprintSessionResult>&, Results);
 
 UCLASS()
 class UFSDFindSteamSessions : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
-    FFSDFindSteamSessionsOnFindResult OnFindResult;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FindSteamSessionsResult OnFindResult;
     
     UFSDFindSteamSessions();
 };

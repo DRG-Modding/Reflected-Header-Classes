@@ -1,46 +1,43 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=PointerEvent -FallbackName=PointerEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EDragPivot.h"
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "OnDragDropMulticastDelegate.h"
 #include "DragDropOperation.generated.h"
 
 class UWidget;
-class UDragDropOperation;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDrop, UDragDropOperation*, Operation);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDragCancelled, UDragDropOperation*, Operation);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDragDropOperationOnDragged, UDragDropOperation*, Operation);
 
 UCLASS(Blueprintable)
 class UMG_API UDragDropOperation : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Tag;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UObject* Payload;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UWidget* DefaultDragVisual;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDragPivot Pivot;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D Offset;
     
-    UPROPERTY(BlueprintAssignable)
-    FDragDropOperationOnDrop OnDrop;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnDragDropMulticast OnDrop;
     
-    UPROPERTY(BlueprintAssignable)
-    FDragDropOperationOnDragCancelled OnDragCancelled;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnDragDropMulticast OnDragCancelled;
     
-    UPROPERTY(BlueprintAssignable)
-    FDragDropOperationOnDragged OnDragged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnDragDropMulticast OnDragged;
     
+    UDragDropOperation();
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Drop(const FPointerEvent& PointerEvent);
     
@@ -50,6 +47,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void DragCancelled(const FPointerEvent& PointerEvent);
     
-    UDragDropOperation();
 };
 

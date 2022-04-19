@@ -1,18 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "ObjectInfoComponent.generated.h"
 
+class APlayerController;
 class UTexture2D;
 class UDialogDataAsset;
-class APlayerController;
 class UPrimitiveComponent;
 class UActorContextWidget;
 
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))
 class UObjectInfoComponent : public UActorComponent {
     GENERATED_BODY()
 public:
+    UObjectInfoComponent();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UDialogDataAsset* GetLookAtShout(const UPrimitiveComponent* TargetComponent) const;
     
@@ -31,6 +32,5 @@ public:
     UFUNCTION(BlueprintCallable)
     UActorContextWidget* GetContextWidget(APlayerController* InPlayerController);
     
-    UObjectInfoComponent();
 };
 

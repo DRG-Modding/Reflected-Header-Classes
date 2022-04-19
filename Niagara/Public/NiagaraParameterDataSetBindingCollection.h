@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FNiagaraParameterDataSetBindingCollection {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraParameterDataSetBinding> FloatOffsets;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraParameterDataSetBinding> Int32Offsets;
     
     NIAGARA_API FNiagaraParameterDataSetBindingCollection();

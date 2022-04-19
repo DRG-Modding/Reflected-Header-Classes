@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "InteractiveToolsContext.generated.h"
 
-class UInputRouter;
 class UInteractiveToolManager;
+class UInputRouter;
 class UInteractiveGizmoManager;
 
 UCLASS(Transient)
 class INTERACTIVETOOLSFRAMEWORK_API UInteractiveToolsContext : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UInputRouter* InputRouter;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UInteractiveToolManager* ToolManager;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UInteractiveGizmoManager* GizmoManager;
     
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UInteractiveToolManager> ToolManagerClass;
     
 public:

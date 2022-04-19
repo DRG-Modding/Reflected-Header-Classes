@@ -6,7 +6,7 @@ USTRUCT()
 struct JSONUTILITIES_API FJsonObjectWrapper {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString JsonString;
     
     FJsonObjectWrapper();

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine NavLinkDefinition
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavLinkDefinition -FallbackName=NavLinkDefinition
 #include "NavLinkTrivial.generated.h"
 
 UCLASS()

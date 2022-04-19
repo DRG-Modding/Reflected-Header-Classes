@@ -1,12 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ScalarParameterNameAndCurve.h"
-#include "BoolParameterNameAndCurve.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
-#include "Vector2DParameterNameAndCurves.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
 #include "VectorParameterNameAndCurves.h"
-#include "TransformParameterNameAndCurves.h"
 #include "ColorParameterNameAndCurves.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
+#include "BoolParameterNameAndCurve.h"
+#include "ScalarParameterNameAndCurve.h"
+#include "Vector2DParameterNameAndCurves.h"
+#include "TransformParameterNameAndCurves.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "MovieSceneParameterSection.generated.h"
 
 UCLASS()
@@ -14,25 +19,64 @@ class MOVIESCENETRACKS_API UMovieSceneParameterSection : public UMovieSceneSecti
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FBoolParameterNameAndCurve> BoolParameterNamesAndCurves;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FScalarParameterNameAndCurve> ScalarParameterNamesAndCurves;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FVector2DParameterNameAndCurves> Vector2DParameterNamesAndCurves;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FVectorParameterNameAndCurves> VectorParameterNamesAndCurves;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FColorParameterNameAndCurves> ColorParameterNamesAndCurves;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FTransformParameterNameAndCurves> TransformParameterNamesAndCurves;
     
 public:
     UMovieSceneParameterSection();
+    UFUNCTION(BlueprintCallable)
+    bool RemoveVectorParameter(FName InParameterName);
+    
+    UFUNCTION(BlueprintCallable)
+    bool RemoveVector2DParameter(FName InParameterName);
+    
+    UFUNCTION(BlueprintCallable)
+    bool RemoveTransformParameter(FName InParameterName);
+    
+    UFUNCTION(BlueprintCallable)
+    bool RemoveScalarParameter(FName InParameterName);
+    
+    UFUNCTION(BlueprintCallable)
+    bool RemoveColorParameter(FName InParameterName);
+    
+    UFUNCTION(BlueprintCallable)
+    bool RemoveBoolParameter(FName InParameterName);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    void GetParameterNames(TSet<FName>& ParameterNames) const;
+    
+    UFUNCTION(BlueprintCallable)
+    void AddVectorParameterKey(FName InParameterName, FFrameNumber InTime, FVector InValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void AddVector2DParameterKey(FName InParameterName, FFrameNumber InTime, FVector2D InValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void AddTransformParameterKey(FName InParameterName, FFrameNumber InTime, const FTransform& InValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void AddScalarParameterKey(FName InParameterName, FFrameNumber InTime, float InValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void AddColorParameterKey(FName InParameterName, FFrameNumber InTime, FLinearColor InValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void AddBoolParameterKey(FName InParameterName, FFrameNumber InTime, bool InValue);
+    
 };
 

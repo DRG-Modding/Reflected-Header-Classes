@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-#include "CustomDimension.h"
 #include "CustomMetric.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "CustomDimension.h"
 #include "GoogleAnalyticsBlueprintLibrary.generated.h"
 
 UCLASS(BlueprintType)
 class GOOGLEANALYTICS_API UGoogleAnalyticsBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UGoogleAnalyticsBlueprintLibrary();
     UFUNCTION(BlueprintCallable)
     static void SetTrackingId(const FString& TrackingId);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static FString GetTrackingId();
     
-    UGoogleAnalyticsBlueprintLibrary();
 };
 

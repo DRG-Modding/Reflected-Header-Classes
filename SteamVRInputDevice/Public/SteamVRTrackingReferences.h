@@ -1,40 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "ComponentTrackingActivatedSignatureDelegate.h"
+#include "ComponentTrackingDeactivatedSignatureDelegate.h"
 #include "SteamVRTrackingReferences.generated.h"
 
 class UStaticMesh;
 class UStaticMeshComponent;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FSteamVRTrackingReferencesOnTrackedDeviceActivated, int32, DeviceID, FName, DeviceClass, const FString&, DeviceModel);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FSteamVRTrackingReferencesOnTrackedDeviceDeactivated, int32, DeviceID, FName, DeviceClass, const FString&, DeviceModel);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class STEAMVRINPUTDEVICE_API USteamVRTrackingReferences : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FSteamVRTrackingReferencesOnTrackedDeviceActivated OnTrackedDeviceActivated;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FComponentTrackingActivatedSignature OnTrackedDeviceActivated;
     
-    UPROPERTY(BlueprintAssignable)
-    FSteamVRTrackingReferencesOnTrackedDeviceDeactivated OnTrackedDeviceDeactivated;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FComponentTrackingDeactivatedSignature OnTrackedDeviceDeactivated;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ActiveDevicePollFrequency;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector TrackingReferenceScale;
     
-    UPROPERTY(BlueprintReadOnly, Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UStaticMeshComponent*> TrackingReferences;
     
+    USteamVRTrackingReferences();
     UFUNCTION(BlueprintCallable)
     bool ShowTrackingReferences(UStaticMesh* TrackingReferenceMesh);
     
     UFUNCTION(BlueprintCallable)
     void HideTrackingReferences();
     
-    USteamVRTrackingReferences();
 };
 

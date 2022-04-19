@@ -1,27 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+#include "OnLeaderboardFlushedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "LeaderboardFlushCallbackProxy.generated.h"
 
 class ULeaderboardFlushCallbackProxy;
 class APlayerController;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardFlushCallbackProxyOnSuccess, FName, SessionName);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLeaderboardFlushCallbackProxyOnFailure, FName, SessionName);
-
 UCLASS(BlueprintType, MinimalAPI)
 class ULeaderboardFlushCallbackProxy : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FLeaderboardFlushCallbackProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnLeaderboardFlushed OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FLeaderboardFlushCallbackProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnLeaderboardFlushed OnFailure;
     
+    ULeaderboardFlushCallbackProxy();
     UFUNCTION(BlueprintCallable)
     static ULeaderboardFlushCallbackProxy* CreateProxyObjectForFlush(APlayerController* PlayerController, FName SessionName);
     
-    ULeaderboardFlushCallbackProxy();
 };
 

@@ -7,5 +7,6 @@ enum class EDescendantScrollDestination : uint8 {
     IntoView,
     TopOrLeft,
     Center,
+    BottomOrRight,
 };
 

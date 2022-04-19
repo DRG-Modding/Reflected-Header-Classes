@@ -5,26 +5,27 @@
 #include "AISense_Blueprint.generated.h"
 
 class UUserDefinedStruct;
-class APawn;
 class UAIPerceptionComponent;
 class UAISenseEvent;
 class AActor;
+class APawn;
 
 UCLASS(Abstract, Blueprintable, HideDropdown)
 class AIMODULE_API UAISense_Blueprint : public UAISense {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UUserDefinedStruct> ListenerDataType;
     
-    UPROPERTY(BlueprintReadOnly, Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UAIPerceptionComponent*> ListenerContainer;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UAISenseEvent*> UnprocessedEvents;
     
 public:
+    UAISense_Blueprint();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     float OnUpdate(const TArray<UAISenseEvent*>& EventsToProcess);
     
@@ -46,6 +47,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetAllListenerActors(TArray<AActor*>& ListenerActors) const;
     
-    UAISense_Blueprint();
 };
 

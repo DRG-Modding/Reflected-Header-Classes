@@ -6,16 +6,16 @@ USTRUCT(BlueprintType)
 struct FNiagaraScriptExecutionPaddingInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint16 SrcOffset;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint16 DestOffset;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint16 SrcSize;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint16 DestSize;
     
     NIAGARA_API FNiagaraScriptExecutionPaddingInfo();

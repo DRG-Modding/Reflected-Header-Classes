@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct MOVIESCENECAPTURE_API FCompositionGraphCapturePasses {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> Value;
     
     FCompositionGraphCapturePasses();

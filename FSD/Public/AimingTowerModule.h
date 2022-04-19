@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "TowerModuleBase.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "AimingTowerModule.generated.h"
 
 class AActor;
@@ -11,24 +11,24 @@ class AAimingTowerModule : public ATowerModuleBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Replicated)
+    UPROPERTY(BlueprintReadWrite, Replicated, meta=(AllowPrivateAccess=true))
     AActor* Target;
     
-    UPROPERTY(Replicated)
+    UPROPERTY(BlueprintReadWrite, Replicated, meta=(AllowPrivateAccess=true))
     FRotator AimRotation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BurstTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AttackTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 BurstSize;
     
 public:
+    AAimingTowerModule();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    AAimingTowerModule();
 };
 

@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: UMG TextBlock
-//CROSS-MODULE INCLUDE: Slate ETextWrappingPolicy
-//CROSS-MODULE INCLUDE: SlateCore Margin
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=TextBlock -FallbackName=TextBlock
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ETextWrappingPolicy -FallbackName=ETextWrappingPolicy
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
 #include "FSDLabelWidget.generated.h"
 
 UCLASS()
 class UFSDLabelWidget : public UTextBlock {
     GENERATED_BODY()
 public:
+    UFSDLabelWidget();
     UFUNCTION(BlueprintCallable)
     void SetWrapTextAt(float WrapAt);
     
@@ -27,6 +28,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetFontSize() const;
     
-    UFSDLabelWidget();
 };
 

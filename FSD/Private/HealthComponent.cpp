@@ -1,9 +1,6 @@
 #include "HealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UDamageClass;
-class AActor;
-
 void UHealthComponent::ToggleCanTakeDamage_Implementation() {
 }
 bool UHealthComponent::ToggleCanTakeDamage_Validate() {
@@ -42,7 +39,7 @@ float UHealthComponent::GetArmor() const {
     return 0.0f;
 }
 
-void UHealthComponent::Client_ReceivedHit_Implementation(float Amount, UDamageClass* DamageClass, AActor* DamageCauser, bool anyHealthLost) {
+void UHealthComponent::Client_ReceivedHit_Implementation(float Amount, const FDamageData& DamageData, bool anyHealthLost) {
 }
 
 void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

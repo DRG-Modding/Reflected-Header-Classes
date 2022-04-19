@@ -5,16 +5,16 @@
 
 class UUniformScalar;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UUniformScalar : public UFieldNodeFloat {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Magnitude;
     
+    UUniformScalar();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UUniformScalar* SetUniformScalar(float NewMagnitude);
     
-    UUniformScalar();
 };
 

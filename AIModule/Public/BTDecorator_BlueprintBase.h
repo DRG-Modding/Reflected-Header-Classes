@@ -13,24 +13,27 @@ class AIMODULE_API UBTDecorator_BlueprintBase : public UBTDecorator {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AAIController* AIOwner;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AActor* ActorOwner;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FName> ObservedKeyNames;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditInstanceOnly, meta=(AllowPrivateAccess=true))
     uint8 bShowPropertyDetails: 1;
     
-    UPROPERTY(AdvancedDisplay, EditDefaultsOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     uint8 bCheckConditionOnlyBlackBoardChanges: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bIsObservingBB: 1;
     
+public:
+    UBTDecorator_BlueprintBase();
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTickAI(AAIController* OwnerController, APawn* ControlledPawn, float DeltaSeconds);
     
@@ -73,7 +76,5 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDecoratorExecutionActive() const;
     
-public:
-    UBTDecorator_BlueprintBase();
 };
 

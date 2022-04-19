@@ -6,13 +6,13 @@ USTRUCT(BlueprintType)
 struct FCameraFilmbackSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float SensorWidth;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float SensorHeight;
     
-    UPROPERTY(BlueprintReadOnly, Interp, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Interp, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     float SensorAspectRatio;
     
     CINEMATICCAMERA_API FCameraFilmbackSettings();

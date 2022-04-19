@@ -1,20 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "ETemperatureIntensity.h"
 #include "TemperatureComponent.generated.h"
 
 class AActor;
 
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))
 class UTemperatureComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FrozenDamageBonusScale;
     
 public:
+    UTemperatureComponent();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static bool TryPushHeatSource(AActor* Target, float Temperature, ETemperatureIntensity Intensity);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void ChangeTemperature(float Degrees, AActor* Source);
     
-    UTemperatureComponent();
 };
 

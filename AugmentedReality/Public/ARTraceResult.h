@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "EARLineTraceChannels.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "ARTraceResult.generated.h"
 
 class UARTrackedGeometry;
@@ -11,16 +11,16 @@ struct AUGMENTEDREALITY_API FARTraceResult {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float DistanceFromCamera;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARLineTraceChannels TraceChannel;
     
-    UPROPERTY()
-    FTransform LocalToTrackingTransform;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FTransform LocalTransform;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UARTrackedGeometry* TrackedGeometry;
     
 public:

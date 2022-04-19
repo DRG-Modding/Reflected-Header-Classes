@@ -1,21 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "NiagaraVariableBase.h"
 #include "NiagaraVariable.h"
+#include "ENiagaraBindingSource.h"
 #include "NiagaraVariableAttributeBinding.generated.h"
 
 USTRUCT(BlueprintType)
 struct FNiagaraVariableAttributeBinding {
     GENERATED_BODY()
 public:
-    UPROPERTY()
-    FNiagaraVariable BoundVariable;
+protected:
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FNiagaraVariableBase ParamMapVariable;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable DataSetVariable;
     
-    UPROPERTY()
-    FNiagaraVariable DefaultValueIfNonExistent;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FNiagaraVariable RootVariable;
     
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    TEnumAsByte<ENiagaraBindingSource> BindingSourceMode;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    uint8 bBindingExistsOnSource: 1;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    uint8 bIsCachedParticleValue: 1;
+    
+public:
     NIAGARA_API FNiagaraVariableAttributeBinding();
 };
 

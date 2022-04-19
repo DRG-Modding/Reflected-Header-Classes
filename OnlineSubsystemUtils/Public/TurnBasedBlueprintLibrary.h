@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "TurnBasedBlueprintLibrary.generated.h"
 
 class UObject;
@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class ONLINESUBSYSTEMUTILS_API UTurnBasedBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UTurnBasedBlueprintLibrary();
     UFUNCTION(BlueprintCallable)
     static void RegisterTurnBasedMatchInterfaceObject(UObject* WorldContextObject, APlayerController* PlayerController, UObject* Object);
     
@@ -22,6 +23,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void GetIsMyTurn(UObject* WorldContextObject, APlayerController* PlayerController, const FString& MatchID, bool& bIsMyTurn);
     
-    UTurnBasedBlueprintLibrary();
 };
 

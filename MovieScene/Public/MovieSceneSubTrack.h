@@ -10,7 +10,7 @@ class MOVIESCENE_API UMovieSceneSubTrack : public UMovieSceneNameableTrack {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UMovieSceneSection*> Sections;
     
 public:

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FSubdivisionLimitSection {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FSubdividedQuad> SubdividedQuads;
     
     EDITABLEMESH_API FSubdivisionLimitSection();

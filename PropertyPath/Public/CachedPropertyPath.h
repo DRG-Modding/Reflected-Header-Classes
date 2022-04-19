@@ -10,10 +10,10 @@ struct PROPERTYPATH_API FCachedPropertyPath {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FPropertyPathSegment> Segments;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UFunction* CachedFunction;
     
 public:

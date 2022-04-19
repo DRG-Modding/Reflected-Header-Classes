@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneFrameRange.h"
 #include "MovieSceneSignedObject.h"
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
 #include "MovieSceneSpawnable.h"
 #include "MovieScenePossessable.h"
+#include "MovieSceneFrameRange.h"
 #include "MovieSceneBinding.h"
 #include "MovieSceneObjectBindingIDs.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameRate
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameRate -FallbackName=FrameRate
 #include "EMovieSceneEvaluationType.h"
 #include "EUpdateClockSource.h"
 #include "MovieSceneMarkedFrame.h"
@@ -20,46 +20,46 @@ class MOVIESCENE_API UMovieScene : public UMovieSceneSignedObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneSpawnable> Spawnables;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FMovieScenePossessable> Possessables;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneBinding> ObjectBindings;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<FName, FMovieSceneObjectBindingIDs> BindingGroups;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UMovieSceneTrack*> MasterTracks;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
     UMovieSceneTrack* CameraCutTrack;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneFrameRange SelectionRange;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneFrameRange PlaybackRange;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FFrameRate TickResolution;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FFrameRate DisplayRate;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EMovieSceneEvaluationType EvaluationType;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EUpdateClockSource ClockSource;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FSoftObjectPath CustomClockSourcePath;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneMarkedFrame> MarkedFrames;
     
 public:

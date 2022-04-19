@@ -11,16 +11,16 @@ USTRUCT(BlueprintType)
 struct FBTCompositeChild {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UBTCompositeNode* ChildComposite;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UBTTaskNode* ChildTask;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UBTDecorator*> Decorators;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FBTDecoratorLogic> DecoratorOps;
     
     AIMODULE_API FBTCompositeChild();

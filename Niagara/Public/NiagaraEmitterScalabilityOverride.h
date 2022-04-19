@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FNiagaraEmitterScalabilityOverride : public FNiagaraEmitterScalabilitySettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bOverrideSpawnCountScale: 1;
     
     NIAGARA_API FNiagaraEmitterScalabilityOverride();

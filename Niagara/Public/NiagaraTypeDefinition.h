@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct NIAGARA_API FNiagaraTypeDefinition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UObject* ClassStructOrEnum;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint16 UnderlyingType;
     
     FNiagaraTypeDefinition();

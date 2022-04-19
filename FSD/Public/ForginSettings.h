@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ESchematicType.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
 #include "ForginSettings.generated.h"
 
 UCLASS()
 class UForginSettings : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 XPRequiredPerLevel;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ESchematicType> MasteryRewardCycle;
     
     UForginSettings();

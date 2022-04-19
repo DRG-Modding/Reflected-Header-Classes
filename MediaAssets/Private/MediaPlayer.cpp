@@ -1,8 +1,9 @@
 #include "MediaPlayer.h"
 
-class UMediaPlaylist;
-class UMediaSource;
 class UObject;
+class UMediaSource;
+class UMediaTimeStampInfo;
+class UMediaPlaylist;
 
 bool UMediaPlayer::SupportsSeeking() const {
     return false;
@@ -198,6 +199,10 @@ FText UMediaPlayer::GetTrackDisplayName(EMediaPlayerTrack TrackType, int32 Track
     return FText::GetEmpty();
 }
 
+UMediaTimeStampInfo* UMediaPlayer::GetTimeStamp() const {
+    return NULL;
+}
+
 FTimespan UMediaPlayer::GetTimeDelay() const {
     return FTimespan{};
 }
@@ -239,14 +244,6 @@ int32 UMediaPlayer::GetNumTrackFormats(EMediaPlayerTrack TrackType, int32 TrackI
 
 FText UMediaPlayer::GetMediaName() const {
     return FText::GetEmpty();
-}
-
-FTimespan UMediaPlayer::GetLastVideoSampleProcessedTime() const {
-    return FTimespan{};
-}
-
-FTimespan UMediaPlayer::GetLastAudioSampleProcessedTime() const {
-    return FTimespan{};
 }
 
 float UMediaPlayer::GetHorizontalFieldOfView() const {

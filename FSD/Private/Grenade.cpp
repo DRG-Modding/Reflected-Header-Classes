@@ -1,6 +1,7 @@
 #include "Grenade.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ProjectileMovementComponent -FallbackName=ProjectileMovementComponent
 
 class AActor;
 class AGrenade;
@@ -35,6 +36,7 @@ void AGrenade::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetime
 }
 
 AGrenade::AGrenade() {
+    this->Movement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
     this->Duration = 0.00f;
     this->ExplosionDelay = 0.00f;
     this->ExplodeOnImpact = false;

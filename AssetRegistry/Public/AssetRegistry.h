@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Interface
-#include "ARFilter.h"
-#include "AssetData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "AssetRegistryDependencyOptions.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=AssetData -FallbackName=AssetData
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=ARFilter -FallbackName=ARFilter
 #include "AssetRegistry.generated.h"
 
 UINTERFACE(BlueprintType, MinimalAPI, meta=(CannotImplementInterfaceInBlueprint))
@@ -14,6 +14,9 @@ class UAssetRegistry : public UInterface {
 class IAssetRegistry : public IInterface {
     GENERATED_BODY()
 public:
+    UFUNCTION(BlueprintCallable)
+    virtual void WaitForCompletion() PURE_VIRTUAL(WaitForCompletion,);
+    
     UFUNCTION(BlueprintCallable)
     virtual void UseFilterToExcludeAssets(UPARAM(Ref) TArray<FAssetData>& AssetDataList, const FARFilter& Filter) const PURE_VIRTUAL(UseFilterToExcludeAssets,);
     

@@ -6,15 +6,15 @@
 class UMaterialInterface;
 
 USTRUCT(BlueprintType)
-struct FNiagaraMeshMaterialOverride {
+struct NIAGARA_API FNiagaraMeshMaterialOverride {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* ExplicitMat;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraUserParameterBinding UserParamBinding;
     
-    NIAGARA_API FNiagaraMeshMaterialOverride();
+    FNiagaraMeshMaterialOverride();
 };
 

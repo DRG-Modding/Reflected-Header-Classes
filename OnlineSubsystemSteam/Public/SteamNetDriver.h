@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: OnlineSubsystemUtils IpNetDriver
+//CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystemUtils -ObjectName=IpNetDriver -FallbackName=IpNetDriver
 #include "SteamNetDriver.generated.h"
 
 UCLASS(NonTransient)

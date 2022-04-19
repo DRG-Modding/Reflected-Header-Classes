@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "UserObjectListEntryLibrary.generated.h"
 
 class UObject;
@@ -11,9 +11,9 @@ UCLASS(BlueprintType)
 class UMG_API UUserObjectListEntryLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UUserObjectListEntryLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UObject* GetListItemObject(TScriptInterface<IUserObjectListEntry> UserObjectListEntry);
     
-    UUserObjectListEntryLibrary();
 };
 

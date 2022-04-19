@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: UMG UserWidget
-//CROSS-MODULE INCLUDE: UMG ESlateVisibility
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=ESlateVisibility -FallbackName=ESlateVisibility
 #include "OptionalUIWidget.generated.h"
 
 class UOptionalUICategory;
@@ -11,19 +11,20 @@ class UOptionalUIWidget : public UUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UOptionalUICategory* Category;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESlateVisibility VisibleFlag;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESlateVisibility HiddenFlag;
-    
-    UFUNCTION(BlueprintCallable)
-    void OnVisibilityChanged(UOptionalUICategory* UICategory, bool IsVisible);
     
 public:
     UOptionalUIWidget();
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnVisibilityChanged(UOptionalUICategory* UICategory, bool IsVisible);
+    
 };
 

@@ -5,16 +5,16 @@
 
 class URandomVector;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API URandomVector : public UFieldNodeVector {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Magnitude;
     
+    URandomVector();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     URandomVector* SetRandomVector(float NewMagnitude);
     
-    URandomVector();
 };
 

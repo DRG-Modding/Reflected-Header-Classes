@@ -10,6 +10,7 @@ UCLASS(Abstract, Blueprintable, EditInlineNew)
 class AIMODULE_API UPawnAction_BlueprintBase : public UPawnAction {
     GENERATED_BODY()
 public:
+    UPawnAction_BlueprintBase();
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ActionTick(APawn* ControlledPawn, float DeltaSeconds);
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ActionFinished(APawn* ControlledPawn, TEnumAsByte<EPawnActionResult::Type> WithResult);
     
-    UPawnAction_BlueprintBase();
 };
 

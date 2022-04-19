@@ -1,32 +1,51 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraSystemScalabilitySettingsArray.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "ENiagaraCullReaction.h"
 #include "ENiagaraScalabilityUpdateFrequency.h"
-#include "NiagaraSystemScalabilitySettings.h"
 #include "NiagaraEmitterScalabilitySettingsArray.h"
+#include "NiagaraSystemScalabilitySettings.h"
+#include "NiagaraSystemScalabilitySettingsArray.h"
+#include "NiagaraPerfBaselineStats.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "NiagaraEffectType.generated.h"
 
-UCLASS()
+class UNiagaraSignificanceHandler;
+class UNiagaraBaselineController;
+
+UCLASS(PerObjectConfig, Config=Niagara)
 class NIAGARA_API UNiagaraEffectType : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraScalabilityUpdateFrequency UpdateFrequency;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraCullReaction CullReaction;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UNiagaraSignificanceHandler* SignificanceHandler;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraSystemScalabilitySettings> DetailLevelScalabilitySettings;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraSystemScalabilitySettingsArray SystemScalabilitySettings;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraEmitterScalabilitySettingsArray EmitterScalabilitySettings;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UNiagaraBaselineController* PerformanceBaselineController;
+    
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
+    FNiagaraPerfBaselineStats PerfBaselineStats;
+    
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
+    FGuid PerfBaselineVersion;
+    
+public:
     UNiagaraEffectType();
 };
 

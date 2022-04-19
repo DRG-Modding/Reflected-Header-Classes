@@ -1,6 +1,15 @@
 #include "CheckBox.h"
 
+void UCheckBox::SetTouchMethod(TEnumAsByte<EButtonTouchMethod::Type> InTouchMethod) {
+}
+
+void UCheckBox::SetPressMethod(TEnumAsByte<EButtonPressMethod::Type> InPressMethod) {
+}
+
 void UCheckBox::SetIsChecked(bool InIsChecked) {
+}
+
+void UCheckBox::SetClickMethod(TEnumAsByte<EButtonClickMethod::Type> InClickMethod) {
 }
 
 void UCheckBox::SetCheckedState(ECheckBoxState InCheckedState) {
@@ -31,6 +40,9 @@ UCheckBox::UCheckBox() {
     this->UndeterminedHoveredImage = NULL;
     this->UndeterminedPressedImage = NULL;
     this->HorizontalAlignment = HAlign_Fill;
+    this->ClickMethod = EButtonClickMethod::DownAndUp;
+    this->TouchMethod = EButtonTouchMethod::DownAndUp;
+    this->PressMethod = EButtonPressMethod::DownAndUp;
     this->IsFocusable = true;
 }
 

@@ -1,18 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SoundEffectSubmixPreset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
 #include "SubmixEffectFilterSettings.h"
-#include "ESubmixFilterType.h"
 #include "ESubmixFilterAlgorithm.h"
+#include "ESubmixFilterType.h"
 #include "SubmixEffectFilterPreset.generated.h"
 
 UCLASS(BlueprintType, EditInlineNew)
 class SYNTHESIS_API USubmixEffectFilterPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSubmixEffectFilterSettings Settings;
     
+    USubmixEffectFilterPreset();
     UFUNCTION(BlueprintCallable)
     void SetSettings(const FSubmixEffectFilterSettings& InSettings);
     
@@ -34,6 +35,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetFilterAlgorithm(ESubmixFilterAlgorithm InAlgorithm);
     
-    USubmixEffectFilterPreset();
 };
 

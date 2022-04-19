@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
 #include "DeepCSGFloatTreePacked.h"
 #include "SmartTerrainMaterialVal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Box
 #include "BakeEntry.generated.h"
 
 class UTerrainMaterialCore;
@@ -11,16 +11,16 @@ USTRUCT(BlueprintType)
 struct FBakeEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FDeepCSGFloatTreePacked Tree;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     FBox AABB;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UTerrainMaterialCore*> Materials;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSmartTerrainMaterialVal> SmartMaterials;
     
     FSDENGINE_API FBakeEntry();

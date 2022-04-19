@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SYNTHESIS_API FModularSynthPresetBankEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString PresetName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FModularSynthPreset Preset;
     
     FModularSynthPresetBankEntry();

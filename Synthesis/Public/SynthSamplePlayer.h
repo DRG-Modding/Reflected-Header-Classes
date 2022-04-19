@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AudioMixer SynthComponent
 #include "ESamplePlayerSeekType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
+#include "OnSampleLoadedDelegate.h"
+#include "OnSamplePlaybackProgressDelegate.h"
 #include "SynthSamplePlayer.generated.h"
 
 class USoundWave;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSynthSamplePlayerOnSampleLoaded);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSynthSamplePlayerOnSamplePlaybackProgress, float, ProgressPercent, float, ProgressTimeSeconds);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class SYNTHESIS_API USynthSamplePlayer : public USynthComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundWave* SoundWave;
     
-    UPROPERTY(BlueprintAssignable)
-    FSynthSamplePlayerOnSampleLoaded OnSampleLoaded;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnSampleLoaded OnSampleLoaded;
     
-    UPROPERTY(BlueprintAssignable)
-    FSynthSamplePlayerOnSamplePlaybackProgress OnSamplePlaybackProgress;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnSamplePlaybackProgress OnSamplePlaybackProgress;
     
+    USynthSamplePlayer();
     UFUNCTION(BlueprintCallable)
     void SetSoundWave(USoundWave* InSoundWave);
     
@@ -49,6 +49,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentPlaybackProgressPercent() const;
     
-    USynthSamplePlayer();
 };
 

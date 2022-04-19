@@ -24,6 +24,12 @@ bool APartyBeaconClient::ServerCancelReservationRequest_Validate(const FUniqueNe
     return true;
 }
 
+void APartyBeaconClient::ServerAddOrUpdateReservationRequest_Implementation(const FString& sessionId, const FPartyReservation& Reservation) {
+}
+bool APartyBeaconClient::ServerAddOrUpdateReservationRequest_Validate(const FString& sessionId, const FPartyReservation& Reservation) {
+    return true;
+}
+
 void APartyBeaconClient::ClientSendReservationUpdates_Implementation(int32 NumRemainingReservations) {
 }
 

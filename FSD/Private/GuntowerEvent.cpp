@@ -1,5 +1,9 @@
 #include "GuntowerEvent.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+
+void AGuntowerEvent::SpawnModules() {
+}
 
 void AGuntowerEvent::OnRep_ModuleActive() {
 }
@@ -14,6 +18,7 @@ void AGuntowerEvent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 
 AGuntowerEvent::AGuntowerEvent() {
     this->Root = NULL;
+    this->BaseMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("TowerBase"));
     this->EndExplosionDamage = NULL;
     this->TowerExplodeDelay = 3.00f;
     this->DelayBetweenExplosions = 0.50f;

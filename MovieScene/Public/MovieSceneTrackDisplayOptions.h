@@ -6,7 +6,7 @@ USTRUCT()
 struct FMovieSceneTrackDisplayOptions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bShowVerticalFrames: 1;
     
     MOVIESCENE_API FMovieSceneTrackDisplayOptions();

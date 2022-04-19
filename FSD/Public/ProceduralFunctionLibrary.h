@@ -1,23 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "RoomNode.h"
 #include "ProceduralFunctionLibrary.generated.h"
 
+class UObject;
+class AProceduralSetup;
+class UFXSystemAsset;
 class UObjective;
 class UBiome;
-class UObject;
-class UFXSystemAsset;
-class AProceduralSetup;
 class UDebrisPositioning;
 
 UCLASS(BlueprintType)
 class UProceduralFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UProceduralFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static void SpawnTerrainImpact(UObject* WorldContextObject, UFXSystemAsset* particle, const FVector& Location, FRotator Rotation);
     
@@ -39,6 +40,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     static bool AllControllersFinishedTransitionToPlay(UObject* WorldContextObject);
     
-    UProceduralFunctionLibrary();
 };
 

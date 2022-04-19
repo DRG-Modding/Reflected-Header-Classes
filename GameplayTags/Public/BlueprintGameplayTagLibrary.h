@@ -1,21 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "GameplayTagQuery.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "GameplayTag.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagQuery.h"
 #include "BlueprintGameplayTagLibrary.generated.h"
 
+class UObject;
 class UGameplayTagAssetInterface;
 class IGameplayTagAssetInterface;
-class UObject;
 class AActor;
 
-UCLASS(BlueprintType, MinimalAPI)
-class UBlueprintGameplayTagLibrary : public UBlueprintFunctionLibrary {
+UCLASS(BlueprintType)
+class GAMEPLAYTAGS_API UBlueprintGameplayTagLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UBlueprintGameplayTagLibrary();
     UFUNCTION(BlueprintCallable)
     static bool RemoveGameplayTag(UPARAM(Ref) FGameplayTagContainer& TagContainer, FGameplayTag Tag);
     
@@ -106,6 +107,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void AddGameplayTag(UPARAM(Ref) FGameplayTagContainer& TagContainer, FGameplayTag Tag);
     
-    UBlueprintGameplayTagLibrary();
 };
 

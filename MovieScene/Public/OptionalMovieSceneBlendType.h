@@ -7,14 +7,12 @@ USTRUCT(BlueprintType)
 struct FOptionalMovieSceneBlendType {
     GENERATED_BODY()
 public:
-private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EMovieSceneBlendType BlendType;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bIsValid;
     
-public:
     MOVIESCENE_API FOptionalMovieSceneBlendType();
 };
 

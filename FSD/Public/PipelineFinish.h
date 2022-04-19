@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-#include "EInputKeys.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ERessuplyPodState.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "EInputKeys.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "PipelineFinish.generated.h"
 
-class ATrackBuilderSegment;
 class USingleUsableComponent;
 class UTrackBuilderConnectPoint;
 class APipelineExtractorPod;
 class ARessuplyPod;
 class APlayerCharacter;
+class ATrackBuilderSegment;
 class APipelineSegment;
 
 UCLASS(Abstract)
@@ -20,21 +20,26 @@ class FSD_API APipelineFinish : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UTrackBuilderConnectPoint* PipelineEndConnection;
     
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USingleUsableComponent* UsableOrderExtractor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<APipelineExtractorPod> ExtractPodClass;
     
-    UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_ExtractorPod)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_ExtractorPod, meta=(AllowPrivateAccess=true))
     APipelineExtractorPod* ExtractorPod;
     
-    UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_PipelineCompleted)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_PipelineCompleted, meta=(AllowPrivateAccess=true))
     bool bPipelineCompleted;
     
+public:
+    APipelineFinish();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceivePipelineCompleted();
     
@@ -62,9 +67,5 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FVector GetLandingOffset();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    APipelineFinish();
 };
 

@@ -10,7 +10,7 @@ class UMG_API URichTextBlockImageDecorator : public URichTextBlockDecorator {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDataTable* ImageSet;
     
 public:

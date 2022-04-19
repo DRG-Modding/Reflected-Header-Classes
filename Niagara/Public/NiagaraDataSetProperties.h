@@ -8,10 +8,10 @@ USTRUCT()
 struct FNiagaraDataSetProperties {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraDataSetID ID;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraVariable> Variables;
     
     NIAGARA_API FNiagaraDataSetProperties();

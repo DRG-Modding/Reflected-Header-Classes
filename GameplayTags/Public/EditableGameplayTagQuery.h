@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "GameplayTagQuery.h"
 #include "EditableGameplayTagQuery.generated.h"
 
@@ -10,14 +10,14 @@ UCLASS(CollapseCategories, EditInlineNew, Transient)
 class GAMEPLAYTAGS_API UEditableGameplayTagQuery : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FString UserDescription;
     
-    UPROPERTY(EditDefaultsOnly, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Instanced, meta=(AllowPrivateAccess=true))
     UEditableGameplayTagQueryExpression* RootExpression;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGameplayTagQuery TagQueryExportText_Helper;
     
 public:

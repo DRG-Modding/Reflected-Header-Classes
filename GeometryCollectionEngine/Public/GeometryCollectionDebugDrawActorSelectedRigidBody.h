@@ -9,13 +9,13 @@ USTRUCT(BlueprintType)
 struct FGeometryCollectionDebugDrawActorSelectedRigidBody {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ID;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AChaosSolverActor* Solver;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     AGeometryCollectionActor* GeometryCollection;
     
     GEOMETRYCOLLECTIONENGINE_API FGeometryCollectionDebugDrawActorSelectedRigidBody();

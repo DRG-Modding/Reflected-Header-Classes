@@ -10,13 +10,13 @@ class UEditableGeometryCollectionAdapter : public UEditableMeshAdapter {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UGeometryCollection* GeometryCollection;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UGeometryCollection* OriginalGeometryCollection;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 GeometryCollectionLODIndex;
     
 public:

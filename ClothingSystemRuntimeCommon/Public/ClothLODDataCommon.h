@@ -1,18 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ClothPhysicalMeshData.h"
-//CROSS-MODULE INCLUDE: ClothingSystemRuntimeInterface ClothCollisionData
+//CROSS-MODULE INCLUDE V2: -ModuleName=ClothingSystemRuntimeInterface -ObjectName=ClothCollisionData -FallbackName=ClothCollisionData
 #include "ClothLODDataCommon.generated.h"
 
 USTRUCT(BlueprintType)
 struct CLOTHINGSYSTEMRUNTIMECOMMON_API FClothLODDataCommon {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FClothPhysicalMeshData PhysicalMeshData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FClothCollisionData CollisionData;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    bool bUseMultipleInfluences;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    float SkinningKernelRadius;
     
     FClothLODDataCommon();
 };

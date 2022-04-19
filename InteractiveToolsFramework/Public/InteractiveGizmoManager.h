@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "ToolContextTransactionProvider.h"
 #include "ActiveGizmo.h"
 #include "InteractiveGizmoManager.generated.h"
@@ -12,10 +12,10 @@ class INTERACTIVETOOLSFRAMEWORK_API UInteractiveGizmoManager : public UObject, p
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FActiveGizmo> ActiveGizmos;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<FString, UInteractiveGizmoBuilder*> GizmoBuilders;
     
 public:

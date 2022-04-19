@@ -10,7 +10,7 @@ UCLASS()
 class INTERACTIVETOOLSFRAMEWORK_API UGizmoScaledTransformSource : public UGizmoBaseTransformSource {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TScriptInterface<IGizmoTransformSource> ChildTransformSource;
     
     UGizmoScaledTransformSource();

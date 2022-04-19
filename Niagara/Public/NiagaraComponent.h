@@ -1,78 +1,88 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine FXSystemComponent
+#include "NiagaraMaterialOverride.h"
 #include "ENiagaraTickBehavior.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FXSystemComponent -FallbackName=FXSystemComponent
 #include "NiagaraUserRedirectionParameterStore.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector4
-//CROSS-MODULE INCLUDE: Engine EAttachmentRule
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: CoreUObject Quat
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachmentRule -FallbackName=EAttachmentRule
+#include "OnNiagaraSystemFinishedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector4 -FallbackName=Vector4
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "ENiagaraAgeUpdateMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "NiagaraComponent.generated.h"
 
 class UNiagaraSystem;
-class UNiagaraComponent;
 class USceneComponent;
+class UTextureRenderTarget;
 class UObject;
-class AActor;
 class UMaterialInterface;
+class AActor;
 class UNiagaraDataInterface;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNiagaraComponentOnSystemFinished, UNiagaraComponent*, PSystem);
-
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class NIAGARA_API UNiagaraComponent : public UFXSystemComponent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UNiagaraSystem* Asset;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraTickBehavior TickBehavior;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 RandomSeedOffset;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraUserRedirectionParameterStore OverrideParameters;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bForceSolo: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 bEnableGpuComputeDebug: 1;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bAutoDestroy: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bRenderingEnabled: 1;
     
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAutoManageAttachment: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAutoAttachWeldSimulatedBodies: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float MaxTimeBeforeForceUpdateTransform;
     
-    UPROPERTY(BlueprintAssignable)
-    FNiagaraComponentOnSystemFinished OnSystemFinished;
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Transient, meta=(AllowPrivateAccess=true))
+    TArray<FNiagaraMaterialOverride> EmitterMaterials;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleInstanceOnly)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnNiagaraSystemFinished OnSystemFinished;
+    
+    UPROPERTY(BlueprintReadWrite, Export, VisibleInstanceOnly, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USceneComponent> AutoAttachParent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName AutoAttachSocketName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAttachmentRule AutoAttachLocationRule;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAttachmentRule AutoAttachRotationRule;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAttachmentRule AutoAttachScaleRule;
     
+    UNiagaraComponent();
     UFUNCTION(BlueprintCallable)
     void SetVariableVec4(FName InVariableName, const FVector4& InValue);
     
@@ -81,6 +91,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetVariableVec2(FName InVariableName, FVector2D InValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetVariableTextureRenderTarget(FName InVariableName, UTextureRenderTarget* TextureRenderTarget);
     
     UFUNCTION(BlueprintCallable)
     void SetVariableQuat(FName InVariableName, const FQuat& InValue);
@@ -107,10 +120,16 @@ public:
     void SetVariableActor(FName InVariableName, AActor* Actor);
     
     UFUNCTION(BlueprintCallable)
+    void SetTickBehavior(ENiagaraTickBehavior NewTickBehavior);
+    
+    UFUNCTION(BlueprintCallable)
     void SetSeekDelta(float InSeekDelta);
     
     UFUNCTION(BlueprintCallable)
     void SetRenderingEnabled(bool bInRenderingEnabled);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetRandomSeedOffset(int32 NewRandomSeedOffset);
     
     UFUNCTION(BlueprintCallable)
     void SetPreviewLODDistance(bool bEnablePreviewLODDistance, float PreviewLODDistance);
@@ -152,6 +171,12 @@ public:
     void SetMaxSimTime(float InMaxTime);
     
     UFUNCTION(BlueprintCallable)
+    void SetLockDesiredAgeDeltaTimeToSeekDelta(bool bLock);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetGpuComputeDebug(bool bEnableDebug);
+    
+    UFUNCTION(BlueprintCallable)
     void SetForceSolo(bool bInForceSolo);
     
     UFUNCTION(BlueprintCallable)
@@ -164,7 +189,7 @@ public:
     void SetAutoDestroy(bool bInAutoDestroy);
     
     UFUNCTION(BlueprintCallable)
-    void SetAsset(UNiagaraSystem* InAsset);
+    void SetAsset(UNiagaraSystem* InAsset, bool bResetExistingOverrideParameters);
     
     UFUNCTION(BlueprintCallable)
     void SetAllowScalability(bool bAllow);
@@ -184,14 +209,23 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPaused() const;
     
+    UFUNCTION(BlueprintCallable)
+    void InitForPerformanceBaseline();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    ENiagaraTickBehavior GetTickBehavior() const;
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSeekDelta() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetRandomSeedOffset() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPreviewLODDistanceEnabled() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetPreviewLODDistance() const;
+    float GetPreviewLODDistance() const;
     
     UFUNCTION(BlueprintCallable)
     TArray<FVector> GetNiagaraParticleValueVec3_DebugOnly(const FString& InEmitterName, const FString& InValueName);
@@ -204,6 +238,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMaxSimTime() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetLockDesiredAgeDeltaTimeToSeekDelta() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetForceSolo() const;
@@ -226,6 +263,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AdvanceSimulation(int32 TickCount, float TickDeltaSeconds);
     
-    UNiagaraComponent();
 };
 

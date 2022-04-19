@@ -1,21 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: FSDEngine DeepPathFinderSize
+#include "EnemySpawnedDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=DeepPathFinderSize -FallbackName=DeepPathFinderSize
 #include "SpawningBlueprintLibrary.generated.h"
 
 class UObject;
-class APawn;
 class UEnemyGroupDescriptor;
 class UEnemyDescriptor;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FSpawningBlueprintLibraryCallback, APawn*, enemy);
 
 UCLASS(BlueprintType)
 class FSD_API USpawningBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    USpawningBlueprintLibrary();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void SpawnEnemyGroupDescriptorSpreadOut(UObject* WorldContextObject, UEnemyGroupDescriptor* descriptor, float Difficulty, const TArray<FVector>& Locations, bool Alert, DeepPathFinderSize pfSize);
     
@@ -26,7 +25,7 @@ public:
     static void SpawnEnemiesFromPool(UObject* WorldContextObject, float Difficulty, const TArray<FVector>& Locations, bool Alert, bool isConstantPreassure);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    static void SpawnEnemiesAtLocationWithCallback(UObject* WorldContextObject, UEnemyDescriptor* EnemyDescriptor, int32 count, FVector Location, const FSpawningBlueprintLibraryCallback& Callback, bool Alert, bool scaleToDifficulty, DeepPathFinderSize pfSize);
+    static void SpawnEnemiesAtLocationWithCallback(UObject* WorldContextObject, UEnemyDescriptor* EnemyDescriptor, int32 count, FVector Location, const FEnemySpawnedDelegate& Callback, bool Alert, bool scaleToDifficulty, DeepPathFinderSize pfSize);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void SpawnEnemiesAtLocation(UObject* WorldContextObject, UEnemyDescriptor* EnemyDescriptor, int32 count, FVector Location, bool Alert, bool scaleToDifficulty, DeepPathFinderSize pfSize);
@@ -52,6 +51,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, BlueprintPure)
     static FVector GetSpawnPointFromLocation(UObject* WorldContextObject, FVector Location, float Distance, DeepPathFinderSize pfSize);
     
-    USpawningBlueprintLibrary();
 };
 

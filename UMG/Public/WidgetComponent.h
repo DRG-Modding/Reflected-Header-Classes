@@ -1,141 +1,147 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EWidgetGeometryMode.h"
-//CROSS-MODULE INCLUDE: Engine MeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
 #include "EWindowVisibility.h"
+#include "ETickMode.h"
 #include "EWidgetSpace.h"
 #include "EWidgetTimingPolicy.h"
-//CROSS-MODULE INCLUDE: CoreUObject IntPoint
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "EWidgetBlendMode.h"
+#include "EWidgetGeometryMode.h"
 #include "WidgetComponent.generated.h"
 
+class UUserWidget;
 class ULocalPlayer;
 class UBodySetup;
-class UUserWidget;
-class UMaterialInterface;
 class UTextureRenderTarget2D;
+class UMaterialInterface;
 class UMaterialInstanceDynamic;
 
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class UMG_API UWidgetComponent : public UMeshComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWidgetSpace Space;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWidgetTimingPolicy TimingPolicy;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UUserWidget> WidgetClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIntPoint DrawSize;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bManuallyRedraw;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bRedrawRequested;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RedrawTime;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FIntPoint CurrentDrawSize;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDrawAtDesiredSize;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D Pivot;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bReceiveHardwareInput;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bWindowFocusable;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWindowVisibility WindowVisibility;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bApplyGammaCorrection;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ULocalPlayer* OwnerPlayer;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor BackgroundColor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor TintColorAndOpacity;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float OpacityFromTexture;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWidgetBlendMode BlendMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsTwoSided;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool TickWhenOffscreen;
     
-    UPROPERTY(DuplicateTransient, Export, Transient)
-    UUserWidget* Widget;
-    
-    UPROPERTY(DuplicateTransient, Transient)
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Transient, meta=(AllowPrivateAccess=true))
     UBodySetup* BodySetup;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInterface* TranslucentMaterial;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInterface* TranslucentMaterial_OneSided;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInterface* OpaqueMaterial;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInterface* OpaqueMaterial_OneSided;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInterface* MaskedMaterial;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInterface* MaskedMaterial_OneSided;
     
-    UPROPERTY(DuplicateTransient, Transient)
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Transient, meta=(AllowPrivateAccess=true))
     UTextureRenderTarget2D* RenderTarget;
     
-    UPROPERTY(DuplicateTransient, Transient)
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Transient, meta=(AllowPrivateAccess=true))
     UMaterialInstanceDynamic* MaterialInstance;
     
-    UPROPERTY(DuplicateTransient, Transient)
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Transient, meta=(AllowPrivateAccess=true))
     bool bAddedToScreen;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bEditTimeUsable;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FName SharedLayerName;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     int32 LayerZOrder;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWidgetGeometryMode GeometryMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CylinderArcAngle;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ETickMode TickMode;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Export, Transient, meta=(AllowPrivateAccess=true))
+    UUserWidget* Widget;
+    
 public:
+    UWidgetComponent();
     UFUNCTION(BlueprintCallable)
     void SetWindowVisibility(EWindowVisibility InVisibility);
     
@@ -156,6 +162,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetTickWhenOffscreen(const bool bWantTickWhenOffscreen);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetTickMode(ETickMode InTickMode);
     
     UFUNCTION(BlueprintCallable)
     void SetRedrawTime(float InRedrawTime);
@@ -185,7 +194,13 @@ public:
     void SetBackgroundColor(const FLinearColor NewBackgroundColor);
     
     UFUNCTION(BlueprintCallable)
+    void RequestRenderUpdate();
+    
+    UFUNCTION(BlueprintCallable)
     void RequestRedraw();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsWidgetVisible() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EWindowVisibility GetWindowVisiblility() const;
@@ -195,6 +210,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EWidgetSpace GetWidgetSpace() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UUserWidget* GetWidget() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UUserWidget* GetUserWidgetObject() const;
@@ -238,6 +256,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector2D GetCurrentDrawSize() const;
     
-    UWidgetComponent();
 };
 

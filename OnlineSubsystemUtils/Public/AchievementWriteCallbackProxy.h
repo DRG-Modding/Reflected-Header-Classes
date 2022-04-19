@@ -1,28 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineBlueprintCallProxyBase -FallbackName=OnlineBlueprintCallProxyBase
+#include "AchievementWriteDelegateDelegate.h"
 #include "AchievementWriteCallbackProxy.generated.h"
 
 class UAchievementWriteCallbackProxy;
 class UObject;
 class APlayerController;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FAchievementWriteCallbackProxyOnSuccess, FName, WrittenAchievementName, float, WrittenProgress, int32, WrittenUserTag);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FAchievementWriteCallbackProxyOnFailure, FName, WrittenAchievementName, float, WrittenProgress, int32, WrittenUserTag);
-
 UCLASS(MinimalAPI)
 class UAchievementWriteCallbackProxy : public UOnlineBlueprintCallProxyBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FAchievementWriteCallbackProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FAchievementWriteDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FAchievementWriteCallbackProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FAchievementWriteDelegate OnFailure;
     
+    UAchievementWriteCallbackProxy();
     UFUNCTION(BlueprintCallable)
     static UAchievementWriteCallbackProxy* WriteAchievementProgress(UObject* WorldContextObject, APlayerController* PlayerController, FName AchievementName, float Progress, int32 UserTag);
     
-    UAchievementWriteCallbackProxy();
 };
 

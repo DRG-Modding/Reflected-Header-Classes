@@ -7,7 +7,7 @@ UCLASS(EditInlineNew)
 class AIMODULE_API UPawnAction_Wait : public UPawnAction {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float TimeToWait;
     
     UPawnAction_Wait();

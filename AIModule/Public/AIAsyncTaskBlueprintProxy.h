@@ -1,26 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-#include "EPathFollowingResult.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "OAISimpleDelegateDelegate.h"
 #include "AIRequestID.h"
+#include "EPathFollowingResult.h"
 #include "AIAsyncTaskBlueprintProxy.generated.h"
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAIAsyncTaskBlueprintProxyOnSuccess, TEnumAsByte<EPathFollowingResult::Type>, MovementResult);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAIAsyncTaskBlueprintProxyOnFail, TEnumAsByte<EPathFollowingResult::Type>, MovementResult);
 
 UCLASS(MinimalAPI)
 class UAIAsyncTaskBlueprintProxy : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FAIAsyncTaskBlueprintProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOAISimpleDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FAIAsyncTaskBlueprintProxyOnFail OnFail;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOAISimpleDelegate OnFail;
     
+    UAIAsyncTaskBlueprintProxy();
     UFUNCTION(BlueprintCallable)
     void OnMoveCompleted(FAIRequestID RequestID, TEnumAsByte<EPathFollowingResult::Type> MovementResult);
     
-    UAIAsyncTaskBlueprintProxy();
 };
 

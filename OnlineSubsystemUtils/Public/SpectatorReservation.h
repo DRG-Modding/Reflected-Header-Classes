@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine UniqueNetIdRepl
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "PlayerReservation.h"
 #include "SpectatorReservation.generated.h"
 
@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct ONLINESUBSYSTEMUTILS_API FSpectatorReservation {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FUniqueNetIdRepl SpectatorId;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FPlayerReservation Spectator;
     
     FSpectatorReservation();

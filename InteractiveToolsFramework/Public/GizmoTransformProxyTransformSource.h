@@ -9,7 +9,7 @@ UCLASS()
 class INTERACTIVETOOLSFRAMEWORK_API UGizmoTransformProxyTransformSource : public UGizmoBaseTransformSource {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTransformProxy* Proxy;
     
     UGizmoTransformProxyTransformSource();

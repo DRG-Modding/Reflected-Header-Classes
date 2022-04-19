@@ -1,4 +1,10 @@
 #include "BasicThrowableItem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+#include "CarriableComponent.h"
+#include "InstantUsable.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
+#include "FirstPersonStaticMeshComponent.h"
 
 class APlayerCharacter;
 class UPrimitiveComponent;
@@ -26,6 +32,12 @@ void ABasicThrowableItem::OnComponentHit(UPrimitiveComponent* HitComponent, AAct
 }
 
 ABasicThrowableItem::ABasicThrowableItem() {
+    this->BoxComp = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollision"));
+    this->UseSphere = CreateDefaultSubobject<USphereComponent>(TEXT("UseSphere"));
+    this->CarriableComp = CreateDefaultSubobject<UCarriableComponent>(TEXT("Carriable"));
+    this->UsableComp = CreateDefaultSubobject<UInstantUsable>(TEXT("Usable"));
+    this->WorldMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ThirdpersonMesh"));
+    this->ViewMeshComp = CreateDefaultSubobject<UFirstPersonStaticMeshComponent>(TEXT("FirstPersonMesh"));
     this->ImpactSound = NULL;
     this->SquaredMinImpactForce = 100.00f;
     this->ImpactAudioResetTime = 0.20f;

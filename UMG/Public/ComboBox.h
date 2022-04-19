@@ -1,23 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Widget.h"
+#include "Widget.h"
 #include "ComboBox.generated.h"
 
 class UObject;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(UWidget*, FComboBoxOnGenerateWidgetEvent, UObject*, Item);
 
 UCLASS()
 class UMG_API UComboBox : public UWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UObject*> Items;
     
-    UPROPERTY(EditAnywhere)
-    FComboBoxOnGenerateWidgetEvent OnGenerateWidgetEvent;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UWidget::FGenerateWidgetForObject OnGenerateWidgetEvent;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsFocusable;
     
     UComboBox();

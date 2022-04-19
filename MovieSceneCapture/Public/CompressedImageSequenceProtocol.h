@@ -7,7 +7,7 @@ UCLASS(Abstract)
 class MOVIESCENECAPTURE_API UCompressedImageSequenceProtocol : public UImageSequenceProtocol {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 CompressionQuality;
     
     UCompressedImageSequenceProtocol();

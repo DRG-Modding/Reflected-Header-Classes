@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EVanitySlot.h"
 #include "CharacterVanityLoadout.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "EVanitySlot.h"
 #include "CharacterVanitySave.generated.h"
 
 class UVanityItem;
@@ -12,43 +12,16 @@ struct FCharacterVanitySave {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FCharacterVanityLoadout> Loadouts;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FGuid> UnLockedVanityItemIDs;
     
-    UPROPERTY()
-    FGuid EquippedHeadItemID;
-    
-    UPROPERTY()
-    FGuid EquippedBeardItemID;
-    
-    UPROPERTY()
-    FGuid EquippedArmorItemID;
-    
-    UPROPERTY()
-    FGuid EquippedArmorMaterialItemID;
-    
-    UPROPERTY()
-    FGuid EquippedBeardColorItemID;
-    
-    UPROPERTY()
-    FGuid EquippedSkinColorItemID;
-    
-    UPROPERTY()
-    FGuid EquippedEyebrowsItemID;
-    
-    UPROPERTY()
-    FGuid EquippedMoustacheItemID;
-    
-    UPROPERTY()
-    FGuid EquippedSideburnsItemID;
-    
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UVanityItem*> UnLockedVanityItems;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<EVanitySlot, FGuid> NewVanityItems;
     
 public:

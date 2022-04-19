@@ -1,6 +1,6 @@
 #include "CameraRig_Rail.h"
-
-class USplineComponent;
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SplineComponent -FallbackName=SplineComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 USplineComponent* ACameraRig_Rail::GetRailSplineComponent() {
     return NULL;
@@ -9,5 +9,8 @@ USplineComponent* ACameraRig_Rail::GetRailSplineComponent() {
 ACameraRig_Rail::ACameraRig_Rail() {
     this->CurrentPositionOnRail = 0.00f;
     this->bLockOrientationToRail = false;
+    this->TransformComponent = CreateDefaultSubobject<USceneComponent>(TEXT("TransformComponent"));
+    this->RailSplineComponent = CreateDefaultSubobject<USplineComponent>(TEXT("RailSplineComponent"));
+    this->RailCameraMount = CreateDefaultSubobject<USceneComponent>(TEXT("RailCameraMount"));
 }
 

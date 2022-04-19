@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EARJointTransformSpace.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "ARSkeletonDefinition.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "EARJointTransformSpace.h"
 #include "ARPose3D.generated.h"
 
 USTRUCT(BlueprintType)
 struct AUGMENTEDREALITY_API FARPose3D {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FARSkeletonDefinition SkeletonDefinition;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FTransform> JointTransforms;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<bool> IsJointTracked;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARJointTransformSpace JointTransformSpace;
     
     FARPose3D();

@@ -1,26 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "BakeSettings.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject RandomStream
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "BakeConfig.generated.h"
 
 class UBuilderBase;
 
 UCLASS(BlueprintType)
-class UBakeConfig : public UObject {
+class FSDENGINE_API UBakeConfig : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FBakeSettings Settings;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TMap<FName, UBuilderBase*> Objects;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FString> Warnings;
     
+    UBakeConfig();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetVectorSetting(FName Name, FVector defaultVal);
     
@@ -39,6 +40,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetBoolSetting(FName Name, bool defaultVal);
     
-    UBakeConfig();
 };
 

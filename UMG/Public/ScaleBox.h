@@ -1,26 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: Slate EStretchDirection
-//CROSS-MODULE INCLUDE: Slate EStretch
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=EStretch -FallbackName=EStretch
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=EStretchDirection -FallbackName=EStretchDirection
 #include "ScaleBox.generated.h"
 
 UCLASS()
 class UMG_API UScaleBox : public UContentWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EStretch::Type> Stretch;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EStretchDirection::Type> StretchDirection;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float UserSpecifiedScale;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IgnoreInheritedScale;
     
+    UScaleBox();
     UFUNCTION(BlueprintCallable)
     void SetUserSpecifiedScale(float InUserSpecifiedScale);
     
@@ -33,6 +34,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIgnoreInheritedScale(bool bInIgnoreInheritedScale);
     
-    UScaleBox();
 };
 

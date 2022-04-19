@@ -6,7 +6,7 @@ USTRUCT()
 struct ANIMATIONCORE_API FNodeChain {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FName> Nodes;
     
     FNodeChain();

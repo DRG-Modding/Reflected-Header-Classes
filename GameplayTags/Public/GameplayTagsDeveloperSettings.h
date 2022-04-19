@@ -1,14 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "GameplayTagsDeveloperSettings.generated.h"
 
-UCLASS(NotPlaceable, Config=GameplayTags)
-class GAMEPLAYTAGS_API UGameplayTagsDeveloperSettings : public UObject {
+UCLASS(Config=EditorPerProjectUserSettings)
+class GAMEPLAYTAGS_API UGameplayTagsDeveloperSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString DeveloperConfigName;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName FavoriteTagSource;
     
     UGameplayTagsDeveloperSettings();
 };

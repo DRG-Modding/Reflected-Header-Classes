@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-#include "EDefendPointState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EInputKeys.h"
+#include "EDefendPointState.h"
 #include "DefensePointActor.generated.h"
 
-class AGameEvent;
 class USingleUsableComponent;
+class AGameEvent;
 class APlayerCharacter;
 
 UCLASS(Abstract)
@@ -15,19 +15,22 @@ class ADefensePointActor : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AGameEvent> DefenseEvent;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AGameEvent* ActiveDefenceEvent;
     
-    UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_DefendState)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_DefendState, meta=(AllowPrivateAccess=true))
     EDefendPointState DefendState;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USingleUsableComponent* DefendPointUsable;
     
 public:
+    ADefensePointActor();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void SetState(EDefendPointState State);
     
@@ -47,9 +50,5 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void DefenseComplete();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ADefensePointActor();
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "MovieSceneCaptureEnvironment.generated.h"
 
 class UMovieSceneImageCaptureProtocolBase;
@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class MOVIESCENECAPTURE_API UMovieSceneCaptureEnvironment : public UObject {
     GENERATED_BODY()
 public:
+    UMovieSceneCaptureEnvironment();
     UFUNCTION(BlueprintCallable)
     static bool IsCaptureInProgress();
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UMovieSceneAudioCaptureProtocolBase* FindAudioCaptureProtocol();
     
-    UMovieSceneCaptureEnvironment();
 };
 

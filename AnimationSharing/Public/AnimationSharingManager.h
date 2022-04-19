@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "AnimationSharingManager.generated.h"
 
-class UAnimationSharingSetup;
 class USkeleton;
 class UAnimSharingInstance;
+class UAnimationSharingSetup;
 class AActor;
 class UAnimationSharingManager;
 
@@ -14,13 +14,14 @@ class ANIMATIONSHARING_API UAnimationSharingManager : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<USkeleton*> Skeletons;
     
-    UPROPERTY(Transient, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Transient, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UAnimSharingInstance*> PerSkeletonData;
     
 public:
+    UAnimationSharingManager();
     UFUNCTION(BlueprintCallable)
     void RegisterActorWithSkeletonBP(AActor* InActor, const USkeleton* SharingSkeleton);
     
@@ -33,6 +34,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool AnimationSharingEnabled();
     
-    UAnimationSharingManager();
 };
 

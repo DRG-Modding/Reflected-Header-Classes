@@ -1,26 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "WidgetAnimationDynamicEventDelegate.h"
 #include "EWidgetAnimationEvent.h"
 #include "AnimationEventBinding.generated.h"
 
 class UWidgetAnimation;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FAnimationEventBindingDelegate);
-
 USTRUCT(BlueprintType)
 struct FAnimationEventBinding {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UWidgetAnimation* Animation;
     
-    UPROPERTY()
-    FAnimationEventBindingDelegate Delegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FWidgetAnimationDynamicEvent Delegate;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EWidgetAnimationEvent AnimationEvent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName UserTag;
     
     UMG_API FAnimationEventBinding();

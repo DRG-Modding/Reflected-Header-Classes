@@ -3,8 +3,8 @@
 #include "Templates/SubclassOf.h"
 #include "AnimatedItem.h"
 #include "Upgradable.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "RecallableItem.generated.h"
 
 class AActor;
@@ -15,12 +15,17 @@ class ARecallableItem : public AAnimatedItem, public IUpgradable {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ARecallableActor> ItemType;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_ActiveItems)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_ActiveItems, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<ARecallableActor>> ActiveItems;
     
+public:
+    ARecallableItem();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSpawnItem(const FVector& Location, const FRotator& Rotation);
     
@@ -36,10 +41,6 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool CanSpawnItem(const FVector& Location, const FRotator& Rotation);
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ARecallableItem();
     
     // Fix for true pure virtual functions not being implemented
 };

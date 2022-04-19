@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FTemplateSequenceBindingOverrideData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UObject> Object;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bOverridesDefault;
     
     TEMPLATESEQUENCE_API FTemplateSequenceBindingOverrideData();

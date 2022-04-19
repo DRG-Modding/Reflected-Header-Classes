@@ -1,86 +1,89 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-#include "ProjectileImpact.h"
 #include "EOnProjectileImpactBehaviourEnum.h"
-//CROSS-MODULE INCLUDE: Engine HitResult
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantize
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine Vector_NetQuantizeNormal
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "ProjectileImpact.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "ProjectileBase.generated.h"
 
-class UTerrainMaterial;
-class USphereComponent;
-class USoundCue;
 class UProjectileUpgradeElement;
-class UItemUpgrade;
+class USoundCue;
+class USphereComponent;
+class UTerrainMaterial;
 class UPrimitiveComponent;
 class AProjectileBase;
 class UDamageComponent;
+class UItemUpgrade;
 
 UCLASS(Abstract)
 class AProjectileBase : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_ProjectileImpact)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_ProjectileImpact, meta=(AllowPrivateAccess=true))
     FProjectileImpact ProjectileImpact;
     
-    UPROPERTY(BlueprintReadOnly, Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
     bool IsSpawnedFromWeapon;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool Exploded;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool DoOnImpact;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool DoOnImpact2;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool DoOnImpact3;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool DoOnSpawnVar;
     
-protected:
-    UPROPERTY(BlueprintReadOnly, Transient, ReplicatedUsing=OnRep_IsDorment)
-    bool IsDorment;
-    
-    UPROPERTY(BlueprintReadOnly, Export, VisibleDefaultsOnly)
-    USphereComponent* CollisionComponent;
-    
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    float LifeSpan;
-    
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    float VelocityMultiplier;
-    
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float GravityMultiplier;
     
-    UPROPERTY(EditAnywhere)
+protected:
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_IsDorment, meta=(AllowPrivateAccess=true))
+    bool IsDorment;
+    
+    UPROPERTY(BlueprintReadWrite, Export, VisibleDefaultsOnly, meta=(AllowPrivateAccess=true))
+    USphereComponent* CollisionComponent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float LifeSpan;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float VelocityMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AffectedByDifficultySpeedModifier;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool SetInitialSpeedToMaxSpeed;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AutoDisableCollisionOnImpact;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundCue* WhizbySound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float WhizByCooldown;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float WhizByStartDistance;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOnProjectileImpactBehaviourEnum EOnImpactBehaviour;
     
 public:
+    AProjectileBase();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTerrainMaterial* TryGetTerrainMaterial() const;
     
@@ -160,8 +163,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Activate(AActor* owningActor, FVector Origin, FVector_NetQuantizeNormal Direction, FVector_NetQuantizeNormal initialBonusVelocity);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AProjectileBase();
 };
 

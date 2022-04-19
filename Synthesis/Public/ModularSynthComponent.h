@@ -1,28 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AudioMixer SynthComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
+#include "ESynthLFOType.h"
 #include "ModularSynthPreset.h"
 #include "ESynthStereoDelayMode.h"
-#include "ESynthModEnvBiasPatch.h"
 #include "ESynthLFOPatchType.h"
-#include "ESynth1OscType.h"
+#include "ESynth1PatchSource.h"
 #include "ESynthModEnvPatch.h"
-#include "ESynthLFOType.h"
+#include "ESynth1OscType.h"
+#include "ESynthModEnvBiasPatch.h"
 #include "ESynthLFOMode.h"
 #include "ESynthFilterType.h"
 #include "ESynthFilterAlgorithm.h"
 #include "PatchId.h"
-#include "ESynth1PatchSource.h"
 #include "Synth1PatchCable.h"
 #include "ModularSynthComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class SYNTHESIS_API UModularSynthComponent : public USynthComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 VoiceCount;
     
+    UModularSynthComponent();
     UFUNCTION(BlueprintCallable)
     void SetSynthPreset(const FModularSynthPreset& SynthPreset);
     
@@ -200,6 +201,5 @@ public:
     UFUNCTION(BlueprintCallable)
     FPatchId CreatePatch(const ESynth1PatchSource PatchSource, const TArray<FSynth1PatchCable>& PatchCables, const bool bEnableByDefault);
     
-    UModularSynthComponent();
 };
 

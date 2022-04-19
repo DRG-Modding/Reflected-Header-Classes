@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FNDIStaticMeshSectionFilter {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<int32> AllowedMaterialSlots;
     
     NIAGARA_API FNDIStaticMeshSectionFilter();

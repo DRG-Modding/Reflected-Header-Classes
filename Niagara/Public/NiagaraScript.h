@@ -1,59 +1,56 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-#include "NiagaraBoundParameter.h"
-#include "NiagaraScriptExecutionParameterStore.h"
 #include "ENiagaraScriptUsage.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=NiagaraShader -ObjectName=NiagaraScriptBase -FallbackName=NiagaraScriptBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "NiagaraVMExecutableData.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-#include "NiagaraVMExecutableDataId.h"
 #include "NiagaraParameterStore.h"
+#include "NiagaraScriptExecutionParameterStore.h"
+#include "NiagaraBoundParameter.h"
+#include "NiagaraVMExecutableDataId.h"
 #include "NiagaraScriptDataInterfaceInfo.h"
 #include "NiagaraScript.generated.h"
 
 class UNiagaraParameterCollection;
 
 UCLASS(MinimalAPI)
-class UNiagaraScript : public UObject {
+class UNiagaraScript : public UNiagaraScriptBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(AssetRegistrySearchable)
+    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ENiagaraScriptUsage Usage;
     
-    UPROPERTY()
-    int32 UsageIndex;
-    
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid UsageId;
     
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraParameterStore RapidIterationParameters;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraScriptExecutionParameterStore ScriptExecutionParamStore;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraBoundParameter> ScriptExecutionBoundParameters;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVMExecutableDataId CachedScriptVMId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVMExecutableData CachedScriptVM;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UNiagaraParameterCollection*> CachedParameterCollectionReferences;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraScriptDataInterfaceInfo> CachedDefaultDataInterfaces;
     
 public:
+    UNiagaraScript();
     UFUNCTION(BlueprintCallable)
     void RaiseOnGPUCompilationComplete();
     
-    UNiagaraScript();
 };
 

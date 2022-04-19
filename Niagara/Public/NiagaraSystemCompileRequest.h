@@ -8,7 +8,7 @@ USTRUCT()
 struct FNiagaraSystemCompileRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UObject*> RootObjects;
     
     NIAGARA_API FNiagaraSystemCompileRequest();

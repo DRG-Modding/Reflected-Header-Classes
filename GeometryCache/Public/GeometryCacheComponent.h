@@ -1,43 +1,50 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine MeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
 #include "GeometryCacheComponent.generated.h"
 
 class UGeometryCache;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class GEOMETRYCACHE_API UGeometryCacheComponent : public UMeshComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGeometryCache* GeometryCache;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     bool bRunning;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     bool bLooping;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bExtrapolateFrames;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float StartTimeOffset;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float PlaybackSpeed;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float MotionVectorScale;
+    
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumTracks;
     
-    UPROPERTY(Transient, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Transient, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     float ElapsedTime;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float Duration;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bManualTick;
     
 public:
+    UGeometryCacheComponent();
     UFUNCTION(BlueprintCallable)
     void TickAtThisTime(const float Time, bool bInIsRunning, bool bInBackwards, bool bInIsLooping);
     
@@ -51,10 +58,16 @@ public:
     void SetPlaybackSpeed(const float NewPlaybackSpeed);
     
     UFUNCTION(BlueprintCallable)
+    void SetMotionVectorScale(const float NewMotionVectorScale);
+    
+    UFUNCTION(BlueprintCallable)
     void SetLooping(const bool bNewLooping);
     
     UFUNCTION(BlueprintCallable)
     bool SetGeometryCache(UGeometryCache* NewGeomCache);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetExtrapolateFrames(const bool bNewExtrapolating);
     
     UFUNCTION(BlueprintCallable)
     void PlayReversedFromEnd();
@@ -81,6 +94,9 @@ public:
     bool IsLooping() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsExtrapolatingFrames() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetStartTimeOffset() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -93,11 +109,13 @@ public:
     int32 GetNumberOfFrames() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetMotionVectorScale() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDuration() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAnimationTime() const;
     
-    UGeometryCacheComponent();
 };
 

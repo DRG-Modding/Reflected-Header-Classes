@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
 #include "DatasmithObjectTemplate.h"
 #include "DatasmithStaticParameterSetTemplate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "DatasmithMaterialInstanceTemplate.generated.h"
 
 class UMaterialInterface;
@@ -12,19 +12,19 @@ UCLASS()
 class DATASMITHCONTENT_API UDatasmithMaterialInstanceTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UMaterialInterface> ParentMaterial;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<FName, float> ScalarParameterValues;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<FName, FLinearColor> VectorParameterValues;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<FName, TSoftObjectPtr<UTexture>> TextureParameterValues;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FDatasmithStaticParameterSetTemplate StaticParameters;
     
     UDatasmithMaterialInstanceTemplate();

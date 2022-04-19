@@ -21,6 +21,10 @@ TArray<FMediaSoundComponentSpectralData> UMediaSoundComponent::GetSpectralData()
     return TArray<FMediaSoundComponentSpectralData>();
 }
 
+TArray<FMediaSoundComponentSpectralData> UMediaSoundComponent::GetNormalizedSpectralData() {
+    return TArray<FMediaSoundComponentSpectralData>();
+}
+
 UMediaPlayer* UMediaSoundComponent::GetMediaPlayer() const {
     return NULL;
 }

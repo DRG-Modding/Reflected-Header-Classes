@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct CLOTHINGSYSTEMRUNTIMECOMMON_API FPointWeightMap {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<float> Values;
     
     FPointWeightMap();

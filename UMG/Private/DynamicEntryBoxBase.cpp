@@ -2,6 +2,9 @@
 
 class UUserWidget;
 
+void UDynamicEntryBoxBase::SetRadialSettings(const FRadialBoxSettings& InSettings) {
+}
+
 void UDynamicEntryBoxBase::SetEntrySpacing(const FVector2D& InEntrySpacing) {
 }
 

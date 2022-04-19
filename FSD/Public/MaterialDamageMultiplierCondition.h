@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DamageCondition.h"
-//CROSS-MODULE INCLUDE: CoreUObject FloatInterval
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FloatInterval -FallbackName=FloatInterval
 #include "MaterialDamageMultiplierCondition.generated.h"
 
 UCLASS(EditInlineNew)
@@ -9,10 +9,10 @@ class UMaterialDamageMultiplierCondition : public UDamageCondition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatInterval MultiplierRangeRequired;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Invert;
     
 public:

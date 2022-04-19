@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EEndPlayReason -FallbackName=EEndPlayReason
 #include "AISubsystem.h"
 #include "AIStimulus.h"
-//CROSS-MODULE INCLUDE: Engine EEndPlayReason
 #include "AIPerceptionSystem.generated.h"
 
 class UObject;
@@ -16,13 +16,14 @@ class AIMODULE_API UAIPerceptionSystem : public UAISubsystem {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UAISense*> Senses;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PerceptionAgingRate;
     
 public:
+    UAIPerceptionSystem();
     UFUNCTION(BlueprintCallable)
     static void ReportPerceptionEvent(UObject* WorldContextObject, UAISenseEvent* PerceptionEvent);
     
@@ -40,6 +41,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static TSubclassOf<UAISense> GetSenseClassForStimulus(UObject* WorldContextObject, const FAIStimulus& Stimulus);
     
-    UAIPerceptionSystem();
 };
 

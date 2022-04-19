@@ -1,5 +1,7 @@
 #include "TetherStation.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 class AFacilityGeneratorLine;
 
@@ -29,6 +31,8 @@ void ATetherStation::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 }
 
 ATetherStation::ATetherStation() {
+    this->SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("SceneRoot"));
+    this->BaseMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BaseMesh"));
     this->FacilityGeneratorLineType = NULL;
     this->AreGeneratorsReady = false;
     this->FacilityActive = false;

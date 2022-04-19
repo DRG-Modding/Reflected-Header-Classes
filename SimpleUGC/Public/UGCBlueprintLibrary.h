@@ -1,18 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "UGCBlueprintLibrary.generated.h"
 
-class UUGCRegistry;
 class UObject;
+class UUGCSettings;
+class UUGCRegistry;
+class UUGCLatentActionManager;
 
 UCLASS(BlueprintType)
 class SIMPLEUGC_API UUGCBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UUGCBlueprintLibrary();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UUGCSettings* GetUGCSettings(UObject* WorldContextObject);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UUGCRegistry* GetUGCRegistry(UObject* WorldContextObject);
     
-    UUGCBlueprintLibrary();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UUGCLatentActionManager* GetUGCLatentActionManager(UObject* WorldContextObject);
+    
 };
 

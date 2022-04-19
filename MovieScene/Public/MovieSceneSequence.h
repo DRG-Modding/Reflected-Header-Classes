@@ -1,35 +1,42 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneSignedObject.h"
+#include "EMovieSceneSequenceFlags.h"
 #include "EMovieSceneCompletionMode.h"
-#include "MovieSceneEvaluationTemplate.h"
 #include "MovieSceneObjectBindingID.h"
 #include "MovieSceneSequence.generated.h"
 
-UCLASS(BlueprintType, MinimalAPI)
+class UMovieSceneCompiledData;
+
+UCLASS(Abstract, BlueprintType, MinimalAPI)
 class UMovieSceneSequence : public UMovieSceneSignedObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
-    FMovieSceneEvaluationTemplate PrecompiledEvaluationTemplate;
+private:
+    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
+    UMovieSceneCompiledData* CompiledData;
     
-    UPROPERTY(Config)
+public:
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     EMovieSceneCompletionMode DefaultCompletionMode;
     
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bParentContextsAreSignificant;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bPlayableDirectly;
     
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    EMovieSceneSequenceFlags SequenceFlags;
+    
 public:
+    UMovieSceneSequence();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FMovieSceneObjectBindingID> FindBindingsByTag(FName InBindingName) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FMovieSceneObjectBindingID FindBindingByTag(FName InBindingName) const;
     
-    UMovieSceneSequence();
 };
 

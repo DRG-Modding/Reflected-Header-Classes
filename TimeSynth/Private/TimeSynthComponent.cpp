@@ -57,6 +57,10 @@ TArray<FTimeSynthSpectralData> UTimeSynthComponent::GetSpectralData() const {
     return TArray<FTimeSynthSpectralData>();
 }
 
+int32 UTimeSynthComponent::GetMaxActiveClipLimit() const {
+    return 0;
+}
+
 float UTimeSynthComponent::GetEnvelopeFollowerValue() const {
     return 0.0f;
 }
@@ -65,7 +69,7 @@ int32 UTimeSynthComponent::GetBPM() const {
     return 0;
 }
 
-void UTimeSynthComponent::AddQuantizationEventDelegate(ETimeSynthEventQuantization QuantizationType, const FTimeSynthComponentOnQuantizationEvent& OnQuantizationEvent) {
+void UTimeSynthComponent::AddQuantizationEventDelegate(ETimeSynthEventQuantization QuantizationType, const FOnQuantizationEventBP& OnQuantizationEvent) {
 }
 
 UTimeSynthComponent::UTimeSynthComponent() {

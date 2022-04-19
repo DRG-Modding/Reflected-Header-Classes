@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine OnlineEngineInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineEngineInterface -FallbackName=OnlineEngineInterface
 #include "OnlineEngineInterfaceImpl.generated.h"
 
 UCLASS()
@@ -8,13 +8,13 @@ class ONLINESUBSYSTEMUTILS_API UOnlineEngineInterfaceImpl : public UOnlineEngine
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     TMap<FName, FName> MappedUniqueNetIdTypes;
     
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     TArray<FName> CompatibleUniqueNetIdTypes;
     
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     FName VoiceSubsystemNameOverride;
     
 public:

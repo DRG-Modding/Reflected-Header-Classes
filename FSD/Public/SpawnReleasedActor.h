@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Interface
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "SpawnReleasedActor.generated.h"
 
 class AActor;
@@ -14,10 +14,10 @@ class ISpawnReleasedActor : public IInterface {
     GENERATED_BODY()
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    bool Released();
+    bool OnSpawnRelease_Released();
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    bool Attached(AActor* Parent);
+    bool OnSpawnRelease_Attached(AActor* Parent);
     
 };
 

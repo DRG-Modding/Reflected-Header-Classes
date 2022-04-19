@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraPreviewAxis_InterpParamBase.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "NiagaraPreviewAxis_InterpParamLinearColor.generated.h"
 
 UCLASS(EditInlineNew)
@@ -9,10 +9,10 @@ class UNiagaraPreviewAxis_InterpParamLinearColor : public UNiagaraPreviewAxis_In
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor Min;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor Max;
     
 public:

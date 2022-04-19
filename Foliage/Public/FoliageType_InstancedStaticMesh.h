@@ -5,20 +5,20 @@
 #include "FoliageType_InstancedStaticMesh.generated.h"
 
 class UStaticMesh;
-class UMaterialInterface;
 class UFoliageInstancedStaticMeshComponent;
+class UMaterialInterface;
 
 UCLASS(EditInlineNew, MinimalAPI)
 class UFoliageType_InstancedStaticMesh : public UFoliageType {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStaticMesh* Mesh;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInterface*> OverrideMaterials;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UFoliageInstancedStaticMeshComponent> ComponentClass;
     
     UFoliageType_InstancedStaticMesh();

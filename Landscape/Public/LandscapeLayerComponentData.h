@@ -8,10 +8,10 @@ USTRUCT()
 struct FLandscapeLayerComponentData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FHeightmapData HeightmapData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FWeightmapData WeightmapData;
     
     LANDSCAPE_API FLandscapeLayerComponentData();

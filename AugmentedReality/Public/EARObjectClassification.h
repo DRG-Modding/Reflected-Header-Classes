@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARObjectClassification.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARObjectClassification : uint8 {
     NotApplicable,
     Unknown,
@@ -16,5 +16,7 @@ enum class EARObjectClassification : uint8 {
     World,
     SceneObject,
     HandMesh,
+    Door,
+    Window,
 };
 

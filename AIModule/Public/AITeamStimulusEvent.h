@@ -9,11 +9,11 @@ struct AIMODULE_API FAITeamStimulusEvent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     AActor* Broadcaster;
     
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     AActor* enemy;
     
     FAITeamStimulusEvent();

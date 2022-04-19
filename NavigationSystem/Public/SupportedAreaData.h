@@ -6,13 +6,13 @@ USTRUCT(BlueprintType)
 struct NAVIGATIONSYSTEM_API FSupportedAreaData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString AreaClassName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 AreaID;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UClass* AreaClass;
     
     FSupportedAreaData();

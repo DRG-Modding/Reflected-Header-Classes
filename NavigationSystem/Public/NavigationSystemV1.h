@@ -1,108 +1,110 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine NavigationSystemBase
-//CROSS-MODULE INCLUDE: Engine ENavDataGatheringModeConfig
-//CROSS-MODULE INCLUDE: Engine NavDataConfig
-//CROSS-MODULE INCLUDE: Engine FNavigationSystemRunMode
-//CROSS-MODULE INCLUDE: Engine NavAgentSelector
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine ENavigationQueryResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavAgentSelector -FallbackName=NavAgentSelector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavigationSystemBase -FallbackName=NavigationSystemBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavDataConfig -FallbackName=NavDataConfig
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FNavigationSystemRunMode -FallbackName=FNavigationSystemRunMode
+#include "OnNavDataGenericEventDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ENavDataGatheringModeConfig -FallbackName=ENavDataGatheringModeConfig
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ENavigationQueryResult -FallbackName=ENavigationQueryResult
 #include "NavigationSystemV1.generated.h"
 
 class ANavigationData;
 class UCrowdManagerBase;
-class AActor;
-class UNavArea;
+class UObject;
 class UNavigationQueryFilter;
 class AController;
-class UObject;
+class AActor;
 class ANavMeshBoundsVolume;
+class UNavArea;
 class UNavigationSystemV1;
 class UNavigationPath;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNavigationSystemV1OnNavDataRegisteredEvent, ANavigationData*, NavData);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FNavigationSystemV1OnNavigationGenerationFinishedDelegate, ANavigationData*, NavData);
 
 UCLASS(BlueprintType, NonTransient, Within=World)
 class NAVIGATIONSYSTEM_API UNavigationSystemV1 : public UNavigationSystemBase {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     ANavigationData* MainNavData;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     ANavigationData* AbstractNavData;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName DefaultAgentName;
     
-    UPROPERTY(BlueprintReadOnly, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UCrowdManagerBase> CrowdManagerClass;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAutoCreateNavigationData: 1;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bSpawnNavDataInNavBoundsLevel: 1;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAllowClientSideNavigation: 1;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bShouldDiscardSubLevelNavData: 1;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bTickWhilePaused: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bSupportRebuilding: 1;
     
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bInitialBuildingLocked: 1;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bSkipAgentHeightCheckWhenPickingNavData: 1;
     
 protected:
-    UPROPERTY(Config, EditDefaultsOnly)
-    ENavDataGatheringModeConfig DataGatheringMode;
-    
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     uint8 bGenerateNavigationOnlyAroundNavigationInvokers: 1;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ActiveTilesUpdateInterval;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    ENavDataGatheringModeConfig DataGatheringMode;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float DirtyAreaWarningSizeThreshold;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNavDataConfig> SupportedAgents;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNavAgentSelector SupportedAgentsMask;
     
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<ANavigationData*> NavDataSet;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<ANavigationData*> NavDataRegistrationQueue;
     
-    UPROPERTY(Transient)
-    FNavigationSystemV1OnNavDataRegisteredEvent OnNavDataRegisteredEvent;
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    FOnNavDataGenericEvent OnNavDataRegisteredEvent;
     
-    UPROPERTY(BlueprintAssignable, Transient)
-    FNavigationSystemV1OnNavigationGenerationFinishedDelegate OnNavigationGenerationFinishedDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    FOnNavDataGenericEvent OnNavigationGenerationFinishedDelegate;
     
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNavigationSystemRunMode OperationMode;
     
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DirtyAreasUpdateFreq;
     
+    UNavigationSystemV1();
     UFUNCTION(BlueprintCallable)
     void UnregisterNavigationInvoker(AActor* Invoker);
     
@@ -175,6 +177,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UNavigationPath* FindPathToActorSynchronously(UObject* WorldContextObject, const FVector& PathStart, AActor* GoalActor, float TetherDistance, AActor* PathfindingContext, TSubclassOf<UNavigationQueryFilter> FilterClass);
     
-    UNavigationSystemV1();
 };
 

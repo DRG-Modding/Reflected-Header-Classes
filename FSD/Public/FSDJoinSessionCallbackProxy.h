@@ -1,34 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
-//CROSS-MODULE INCLUDE: OnlineSubsystemUtils BlueprintSessionResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineBlueprintCallProxyBase -FallbackName=OnlineBlueprintCallProxyBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystemUtils -ObjectName=BlueprintSessionResult -FallbackName=BlueprintSessionResult
 #include "FSDJoinSessionCallbackProxy.generated.h"
 
 class UObject;
 class UFSDJoinSessionCallbackProxy;
 class APlayerController;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDJoinSessionCallbackProxyOnSuccess);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FFSDJoinSessionCallbackProxyOnFailure);
-
 UCLASS(MinimalAPI)
 class UFSDJoinSessionCallbackProxy : public UOnlineBlueprintCallProxyBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FFSDJoinSessionCallbackProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEmptyOnlineDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FFSDJoinSessionCallbackProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEmptyOnlineDelegate OnFailure;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UObject* WorldContextObject;
     
 public:
+    UFSDJoinSessionCallbackProxy();
     UFUNCTION(BlueprintCallable)
     static UFSDJoinSessionCallbackProxy* FSDJoinSession(UObject* NewWorldContextObject, APlayerController* PlayerController, const FBlueprintSessionResult& SearchResult, const FString& FSDPassword, bool fromInvite);
     
-    UFSDJoinSessionCallbackProxy();
 };
 

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETransformConstraintType.h"
 #include "ConstraintDescriptionEx.h"
+#include "ETransformConstraintType.h"
 #include "TransformConstraintDescription.generated.h"
 
 USTRUCT()
 struct ANIMATIONCORE_API FTransformConstraintDescription : public FConstraintDescriptionEx {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETransformConstraintType TransformType;
     
     FTransformConstraintDescription();

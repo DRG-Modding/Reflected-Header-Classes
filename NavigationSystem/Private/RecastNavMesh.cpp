@@ -17,6 +17,7 @@ ARecastNavMesh::ARecastNavMesh() {
     this->bDrawTileLabels = false;
     this->bDrawPolygonLabels = false;
     this->bDrawDefaultPolygonCost = false;
+    this->bDrawPolygonFlags = false;
     this->bDrawLabelsOnPathNodes = false;
     this->bDrawNavLinks = true;
     this->bDrawFailedNavLinks = false;
@@ -25,7 +26,6 @@ ARecastNavMesh::ARecastNavMesh() {
     this->bDrawOctreeDetails = true;
     this->bDrawMarkedForbiddenPolys = false;
     this->bDistinctlyDrawTilesBeingBuilt = true;
-    this->bDrawNavMesh = true;
     this->DrawOffset = 10.00f;
     this->bFixedTilePoolSize = false;
     this->TilePoolSize = 1024;
@@ -34,7 +34,6 @@ ARecastNavMesh::ARecastNavMesh() {
     this->CellHeight = 10.00f;
     this->AgentRadius = 34.00f;
     this->AgentHeight = 144.00f;
-    this->AgentMaxHeight = 160.00f;
     this->AgentMaxSlope = 44.00f;
     this->AgentMaxStepHeight = 35.00f;
     this->MinRegionArea = 0.00f;
@@ -55,6 +54,7 @@ ARecastNavMesh::ARecastNavMesh() {
     this->bSortNavigationAreasByCost = false;
     this->bPerformVoxelFiltering = true;
     this->bMarkLowHeightAreas = false;
+    this->bUseExtraTopCellWhenMarkingAreas = true;
     this->bFilterLowSpanSequences = false;
     this->bFilterLowSpanFromTileCache = false;
     this->bDoFullyAsyncNavDataGathering = false;

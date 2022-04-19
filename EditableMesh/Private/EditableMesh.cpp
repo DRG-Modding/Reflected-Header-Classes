@@ -75,7 +75,7 @@ void UEditableMesh::SearchSpatialDatabaseForPolygonsPotentiallyIntersectingPlane
 void UEditableMesh::SearchSpatialDatabaseForPolygonsPotentiallyIntersectingLineSegment(const FVector LineSegmentStart, const FVector LineSegmentEnd, TArray<FPolygonID>& OutPolygons) const {
 }
 
-void UEditableMesh::SearchSpatialDatabaseForPolygonsInVolume(const TArray<FPlane>& Planes, TArray<FPolygonID>& OutPolygons) const {
+void UEditableMesh::SearchSpatialDatabaseForPolygonsInVolume(const TArray<FPlane>& planes, TArray<FPolygonID>& OutPolygons) const {
 }
 
 UEditableMesh* UEditableMesh::RevertInstance() {

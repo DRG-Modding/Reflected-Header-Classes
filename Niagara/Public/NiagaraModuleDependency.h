@@ -8,16 +8,16 @@ USTRUCT()
 struct FNiagaraModuleDependency {
     GENERATED_BODY()
 public:
-    UPROPERTY(AssetRegistrySearchable, EditAnywhere)
+    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ID;
     
-    UPROPERTY(AssetRegistrySearchable, EditAnywhere)
+    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraModuleDependencyType Type;
     
-    UPROPERTY(AssetRegistrySearchable, EditAnywhere)
+    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraModuleDependencyScriptConstraint ScriptConstraint;
     
-    UPROPERTY(AssetRegistrySearchable, EditAnywhere)
+    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Description;
     
     NIAGARA_API FNiagaraModuleDependency();

@@ -1,4 +1,5 @@
 #include "ChaosSolverActor.h"
+#include "ChaosGameplayEventDispatcher.h"
 
 void AChaosSolverActor::SetSolverActive(bool bActive) {
 }
@@ -16,10 +17,11 @@ AChaosSolverActor::AChaosSolverActor() {
     this->DoGenerateCollisionData = true;
     this->DoGenerateBreakingData = true;
     this->DoGenerateTrailingData = true;
-    this->bHasFloor = true;
-    this->FloorHeight = 0.00f;
     this->MassScale = 1.00f;
     this->bGenerateContactGraph = true;
+    this->bHasFloor = true;
+    this->FloorHeight = 0.00f;
     this->SpriteComponent = NULL;
+    this->GameplayEventDispatcherComponent = CreateDefaultSubobject<UChaosGameplayEventDispatcher>(TEXT("GameplayEventDispatcher"));
 }
 

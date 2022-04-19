@@ -1,22 +1,28 @@
 #include "ARBlueprintLibrary.h"
+#include "Templates/SubclassOf.h"
 
 class USceneComponent;
-class UARSessionConfig;
-class UARTrackedPose;
-class UARPin;
-class UARTrackedGeometry;
-class UARTextureCameraImage;
-class UARLightEstimate;
-class UARTextureCameraDepth;
 class UARTrackedPoint;
-class UARPlaneGeometry;
-class UARTrackedImage;
-class UAREnvironmentCaptureProbe;
-class UObject;
-class UTexture2D;
+class UARPin;
 class UARCandidateImage;
+class UARTrackedImage;
+class UARSessionConfig;
+class UARLightEstimate;
+class UARTrackedGeometry;
+class UARPlaneGeometry;
+class UARTexture;
+class UARTextureCameraImage;
+class UARTextureCameraDepth;
+class UARTrackedPose;
+class UTexture2D;
+class UObject;
+class UAREnvironmentCaptureProbe;
 
 void UARBlueprintLibrary::UnpinComponent(USceneComponent* ComponentToUnpin) {
+}
+
+bool UARBlueprintLibrary::ToggleARCapture(const bool bOnOff, const EARCaptureType CaptureType) {
+    return false;
 }
 
 void UARBlueprintLibrary::StopARSession() {
@@ -25,14 +31,41 @@ void UARBlueprintLibrary::StopARSession() {
 void UARBlueprintLibrary::StartARSession(UARSessionConfig* SessionConfig) {
 }
 
+void UARBlueprintLibrary::SetEnabledXRCamera(bool bOnOff) {
+}
+
+void UARBlueprintLibrary::SetARWorldScale(float InWorldScale) {
+}
+
+void UARBlueprintLibrary::SetARWorldOriginLocationAndRotation(FVector OriginLocation, FRotator OriginRotation, bool bIsTransformInWorldSpace, bool bMaintainUpDirection) {
+}
+
 void UARBlueprintLibrary::SetAlignmentTransform(const FTransform& InAlignmentTransform) {
+}
+
+bool UARBlueprintLibrary::SaveARPinToLocalStore(FName InSaveName, UARPin* InPin) {
+    return false;
+}
+
+FIntPoint UARBlueprintLibrary::ResizeXRCamera(const FIntPoint& InSize) {
+    return FIntPoint{};
 }
 
 void UARBlueprintLibrary::RemovePin(UARPin* PinToRemove) {
 }
 
+void UARBlueprintLibrary::RemoveARPinFromLocalStore(FName InSaveName) {
+}
+
+void UARBlueprintLibrary::RemoveAllARPinsFromLocalStore() {
+}
+
 UARPin* UARBlueprintLibrary::PinComponentToTraceResult(USceneComponent* ComponentToPin, const FARTraceResult& TraceResult, const FName DebugName) {
     return NULL;
+}
+
+bool UARBlueprintLibrary::PinComponentToARPin(USceneComponent* ComponentToPin, UARPin* Pin) {
+    return false;
 }
 
 UARPin* UARBlueprintLibrary::PinComponent(USceneComponent* ComponentToPin, const FTransform& PinToWorldTransform, UARTrackedGeometry* TrackedGeometry, const FName DebugName) {
@@ -40,6 +73,10 @@ UARPin* UARBlueprintLibrary::PinComponent(USceneComponent* ComponentToPin, const
 }
 
 void UARBlueprintLibrary::PauseARSession() {
+}
+
+TMap<FName, UARPin*> UARBlueprintLibrary::LoadARPinsFromLocalStore() {
+    return TMap<FName, UARPin*>();
 }
 
 TArray<FARTraceResult> UARBlueprintLibrary::LineTraceTrackedObjects3D(const FVector Start, const FVector End, bool bTestFeaturePoints, bool bTestGroundPlane, bool bTestPlaneExtents, bool bTestPlaneBoundaryPolygon) {
@@ -58,7 +95,19 @@ bool UARBlueprintLibrary::IsSessionTrackingFeatureSupported(EARSessionType Sessi
     return false;
 }
 
+bool UARBlueprintLibrary::IsSceneReconstructionSupported(EARSessionType SessionType, EARSceneReconstruction SceneReconstructionMethod) {
+    return false;
+}
+
 bool UARBlueprintLibrary::IsARSupported() {
+    return false;
+}
+
+bool UARBlueprintLibrary::IsARPinLocalStoreSupported() {
+    return false;
+}
+
+bool UARBlueprintLibrary::IsARPinLocalStoreReady() {
     return false;
 }
 
@@ -86,16 +135,28 @@ TArray<FVector> UARBlueprintLibrary::GetPointCloud() {
     return TArray<FVector>();
 }
 
-UARTextureCameraImage* UARBlueprintLibrary::GetPersonSegmentationImage() {
+UARTexture* UARBlueprintLibrary::GetPersonSegmentationImage() {
     return NULL;
 }
 
-UARTextureCameraImage* UARBlueprintLibrary::GetPersonSegmentationDepthImage() {
+UARTexture* UARBlueprintLibrary::GetPersonSegmentationDepthImage() {
     return NULL;
+}
+
+bool UARBlueprintLibrary::GetObjectClassificationAtLocation(const FVector& InWorldLocation, EARObjectClassification& OutClassification, FVector& OutClassificationLocation, float MaxLocationDiff) {
+    return false;
+}
+
+int32 UARBlueprintLibrary::GetNumberOfTrackedFacesSupported() {
+    return 0;
 }
 
 UARLightEstimate* UARBlueprintLibrary::GetCurrentLightEstimate() {
     return NULL;
+}
+
+bool UARBlueprintLibrary::GetCameraIntrinsics(FARCameraIntrinsics& OutCameraIntrinsics) {
+    return false;
 }
 
 UARTextureCameraImage* UARBlueprintLibrary::GetCameraImage() {
@@ -103,6 +164,14 @@ UARTextureCameraImage* UARBlueprintLibrary::GetCameraImage() {
 }
 
 UARTextureCameraDepth* UARBlueprintLibrary::GetCameraDepth() {
+    return NULL;
+}
+
+float UARBlueprintLibrary::GetARWorldScale() {
+    return 0.0f;
+}
+
+UARTexture* UARBlueprintLibrary::GetARTexture(EARTextureType TextureType) {
     return NULL;
 }
 
@@ -138,14 +207,36 @@ TArray<UARPin*> UARBlueprintLibrary::GetAllPins() {
     return TArray<UARPin*>();
 }
 
+TArray<UARTrackedGeometry*> UARBlueprintLibrary::GetAllGeometriesByClass(TSubclassOf<UARTrackedGeometry> GeometryClass) {
+    return TArray<UARTrackedGeometry*>();
+}
+
 TArray<UARTrackedGeometry*> UARBlueprintLibrary::GetAllGeometries() {
     return TArray<UARTrackedGeometry*>();
+}
+
+FTransform UARBlueprintLibrary::GetAlignmentTransform() {
+    return FTransform{};
+}
+
+TArray<UARTrackedPoint*> UARBlueprintLibrary::FindTrackedPointsByName(const FString& PointName) {
+    return TArray<UARTrackedPoint*>();
 }
 
 void UARBlueprintLibrary::DebugDrawTrackedGeometry(UARTrackedGeometry* TrackedGeometry, UObject* WorldContextObject, FLinearColor Color, float OutlineThickness, float PersistForSeconds) {
 }
 
 void UARBlueprintLibrary::DebugDrawPin(UARPin* ARPin, UObject* WorldContextObject, FLinearColor Color, float Scale, float PersistForSeconds) {
+}
+
+void UARBlueprintLibrary::CalculateClosestIntersection(const TArray<FVector>& StartPoints, const TArray<FVector>& EndPoints, FVector& ClosestIntersection) {
+}
+
+void UARBlueprintLibrary::CalculateAlignmentTransform(const FTransform& TransformInFirstCoordinateSystem, const FTransform& TransformInSecondCoordinateSystem, FTransform& AlignmentTransform) {
+}
+
+bool UARBlueprintLibrary::AddTrackedPointWithName(const FTransform& WorldTransform, const FString& PointName, bool bDeletePointsWithSameName) {
+    return false;
 }
 
 UARCandidateImage* UARBlueprintLibrary::AddRuntimeCandidateImage(UARSessionConfig* SessionConfig, UTexture2D* CandidateTexture, const FString& FriendlyName, float PhysicalWidth) {

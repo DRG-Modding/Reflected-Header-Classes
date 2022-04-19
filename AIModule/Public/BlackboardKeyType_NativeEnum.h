@@ -9,10 +9,10 @@ UCLASS(CollapseCategories, EditInlineNew, HideDropdown)
 class AIMODULE_API UBlackboardKeyType_NativeEnum : public UBlackboardKeyType {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FString EnumName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UEnum* EnumType;
     
     UBlackboardKeyType_NativeEnum();

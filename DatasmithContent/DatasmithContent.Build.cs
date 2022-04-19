@@ -7,11 +7,11 @@ public class DatasmithContent : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
-            "AudioExtensions",
             "AudioMixer",
             "CinematicCamera",
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
             "InputCore",
             "LevelSequence",

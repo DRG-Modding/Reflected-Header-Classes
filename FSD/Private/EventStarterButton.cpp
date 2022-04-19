@@ -1,5 +1,7 @@
 #include "EventStarterButton.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+#include "SingleUsableComponent.h"
 
 class APlayerCharacter;
 
@@ -32,6 +34,8 @@ void AEventStarterButton::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 }
 
 AEventStarterButton::AEventStarterButton() {
+    this->Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    this->Usable = CreateDefaultSubobject<USingleUsableComponent>(TEXT("Usable"));
     this->Booted = false;
     this->IsOpenForUse = false;
     this->IsEventActive = true;

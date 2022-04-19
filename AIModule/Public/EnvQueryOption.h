@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EnvQueryOption.generated.h"
 
 class UEnvQueryTest;
@@ -10,10 +10,10 @@ UCLASS()
 class AIMODULE_API UEnvQueryOption : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UEnvQueryGenerator* Generator;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UEnvQueryTest*> Tests;
     
     UEnvQueryOption();

@@ -1,64 +1,64 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: AudioMixer SynthComponent
-#include "TimeSynthSpectralData.h"
-#include "TimeSynthQuantizationSettings.h"
-#include "TimeSynthTimeDef.h"
-#include "ETimeSynthEventClipQuantization.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
+#include "OnTimeSynthPlaybackTimeDelegate.h"
 #include "ETimeSynthFFTSize.h"
+#include "ETimeSynthFilter.h"
+#include "TimeSynthQuantizationSettings.h"
 #include "TimeSynthFilterSettings.h"
 #include "TimeSynthEnvelopeFollowerSettings.h"
+#include "ETimeSynthEventClipQuantization.h"
+#include "TimeSynthTimeDef.h"
 #include "TimeSynthClipHandle.h"
-#include "ETimeSynthFilter.h"
+#include "TimeSynthSpectralData.h"
 #include "ETimeSynthEventQuantization.h"
+#include "OnQuantizationEventBPDelegate.h"
 #include "TimeSynthComponent.generated.h"
 
 class UTimeSynthVolumeGroup;
 class UTimeSynthClip;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FTimeSynthComponentOnPlaybackTime, float, SynthPlaybackTimeSeconds);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_ThreeParams(FTimeSynthComponentOnQuantizationEvent, ETimeSynthEventQuantization, QuantizationType, int32, NumBars, float, Beat);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class TIMESYNTH_API UTimeSynthComponent : public USynthComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTimeSynthQuantizationSettings QuantizationSettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bEnableSpectralAnalysis: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> FrequenciesToAnalyze;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETimeSynthFFTSize FFTSize;
     
-    UPROPERTY(BlueprintAssignable)
-    FTimeSynthComponentOnPlaybackTime OnPlaybackTime;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnTimeSynthPlaybackTime OnPlaybackTime;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsFilterAEnabled: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsFilterBEnabled: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTimeSynthFilterSettings FilterASettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTimeSynthFilterSettings FilterBSettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bIsEnvelopeFollowerEnabled: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTimeSynthEnvelopeFollowerSettings EnvelopeFollowerSettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxPoolSize;
     
+    UTimeSynthComponent();
     UFUNCTION(BlueprintCallable)
     void StopSoundsOnVolumeGroupWithFadeOverride(UTimeSynthVolumeGroup* InVolumeGroup, ETimeSynthEventClipQuantization EventQuantization, const FTimeSynthTimeDef& FadeTime);
     
@@ -111,14 +111,16 @@ public:
     TArray<FTimeSynthSpectralData> GetSpectralData() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetMaxActiveClipLimit() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEnvelopeFollowerValue() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetBPM() const;
     
     UFUNCTION(BlueprintCallable)
-    void AddQuantizationEventDelegate(ETimeSynthEventQuantization QuantizationType, const FTimeSynthComponentOnQuantizationEvent& OnQuantizationEvent);
+    void AddQuantizationEventDelegate(ETimeSynthEventQuantization QuantizationType, const FOnQuantizationEventBP& OnQuantizationEvent);
     
-    UTimeSynthComponent();
 };
 

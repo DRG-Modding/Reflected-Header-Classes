@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Volume
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Volume -FallbackName=Volume
 #include "ProceduralFoliageBlockingVolume.generated.h"
 
 class AProceduralFoliageVolume;
@@ -9,7 +9,7 @@ UCLASS(MinimalAPI)
 class AProceduralFoliageBlockingVolume : public AVolume {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AProceduralFoliageVolume* ProceduralFoliageVolume;
     
     AProceduralFoliageBlockingVolume();

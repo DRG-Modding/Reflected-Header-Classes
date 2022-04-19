@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EModioModManagementEventType.h"
 #include "ModioModID.h"
+#include "EModioModManagementEventType.h"
 #include "ModioErrorCode.h"
 #include "ModioModManagementEvent.generated.h"
 
@@ -9,13 +9,13 @@ USTRUCT(BlueprintType)
 struct MODIO_API FModioModManagementEvent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FModioModID ID;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EModioModManagementEventType Event;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FModioErrorCode Status;
     
     FModioModManagementEvent();

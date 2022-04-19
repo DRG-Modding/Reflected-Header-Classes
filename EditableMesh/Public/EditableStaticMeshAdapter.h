@@ -10,13 +10,13 @@ class UEditableStaticMeshAdapter : public UEditableMeshAdapter {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UStaticMesh* StaticMesh;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UStaticMesh* OriginalStaticMesh;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 StaticMeshLODIndex;
     
 public:

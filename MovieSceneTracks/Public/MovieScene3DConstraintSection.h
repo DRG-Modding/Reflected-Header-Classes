@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneObjectBindingID
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneObjectBindingID -FallbackName=MovieSceneObjectBindingID
 #include "MovieScene3DConstraintSection.generated.h"
 
 UCLASS(MinimalAPI)
@@ -10,19 +10,19 @@ class UMovieScene3DConstraintSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid ConstraintId;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneObjectBindingID ConstraintBindingID;
     
 public:
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UMovieScene3DConstraintSection();
+    UFUNCTION(BlueprintCallable)
     void SetConstraintBindingID(const FMovieSceneObjectBindingID& InConstraintBindingID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FMovieSceneObjectBindingID GetConstraintBindingID() const;
     
-    UMovieScene3DConstraintSection();
 };
 

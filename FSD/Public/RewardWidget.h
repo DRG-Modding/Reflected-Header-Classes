@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: UMG UserWidget
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "RewardWidget.generated.h"
 
 class UReward;
@@ -10,13 +10,14 @@ class URewardWidget : public UUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UReward* Reward;
-    
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void PlayReceiveAnim();
     
 public:
     URewardWidget();
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void PlayReceiveAnim();
+    
 };
 

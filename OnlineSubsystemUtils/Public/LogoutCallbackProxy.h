@@ -1,28 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintAsyncActionBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintAsyncActionBase -FallbackName=BlueprintAsyncActionBase
+#include "OnlineLogoutResultDelegate.h"
 #include "LogoutCallbackProxy.generated.h"
 
 class ULogoutCallbackProxy;
-class APlayerController;
 class UObject;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLogoutCallbackProxyOnSuccess, APlayerController*, PlayerController);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLogoutCallbackProxyOnFailure, APlayerController*, PlayerController);
+class APlayerController;
 
 UCLASS(MinimalAPI)
 class ULogoutCallbackProxy : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FLogoutCallbackProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnlineLogoutResult OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FLogoutCallbackProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnlineLogoutResult OnFailure;
     
+    ULogoutCallbackProxy();
     UFUNCTION(BlueprintCallable)
     static ULogoutCallbackProxy* Logout(UObject* WorldContextObject, APlayerController* PlayerController);
     
-    ULogoutCallbackProxy();
 };
 

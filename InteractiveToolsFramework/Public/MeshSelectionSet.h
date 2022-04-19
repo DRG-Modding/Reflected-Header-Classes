@@ -7,16 +7,16 @@ UCLASS(NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UMeshSelectionSet : public USelectionSet {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<int32> Vertices;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<int32> Edges;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<int32> Faces;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<int32> Groups;
     
     UMeshSelectionSet();

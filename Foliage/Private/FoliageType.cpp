@@ -30,8 +30,11 @@ UFoliageType::UFoliageType() {
     this->OverriddenLightMapRes = 8;
     this->LightmapType = ELightmapType::Default;
     this->bUseAsOccluder = false;
+    this->bVisibleInRayTracing = true;
+    this->bEvaluateWorldPositionOffset = false;
     this->CustomNavigableGeometry = EHasCustomNavigableGeometry::No;
     this->bRenderCustomDepth = false;
+    this->CustomDepthStencilWriteMask = ERendererStencilMask::ERSM_Default;
     this->CustomDepthStencilValue = 0;
     this->TranslucencySortPriority = 0;
     this->CollisionRadius = 100.00f;
@@ -65,6 +68,7 @@ UFoliageType::UFoliageType() {
     this->ReapplyCollisionWithWorld = false;
     this->ReapplyVertexColorMask = false;
     this->bEnableDensityScaling = false;
+    this->bEnableDiscardOnLoad = false;
     this->VirtualTextureCullMips = 0;
     this->VirtualTextureRenderPassType = ERuntimeVirtualTextureMainPassType::Exclusive;
 }

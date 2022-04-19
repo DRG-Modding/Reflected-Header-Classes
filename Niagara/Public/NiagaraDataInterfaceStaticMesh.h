@@ -1,28 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraDataInterface.h"
+#include "ENDIStaticMesh_SourceMode.h"
 #include "NDIStaticMeshSectionFilter.h"
 #include "NiagaraDataInterfaceStaticMesh.generated.h"
 
-class UStaticMeshComponent;
 class UStaticMesh;
+class UStaticMeshComponent;
 class AActor;
 
 UCLASS(EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceStaticMesh : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ENDIStaticMesh_SourceMode SourceMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStaticMesh* DefaultMesh;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* Source;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* SourceComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNDIStaticMeshSectionFilter SectionFilter;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bUsePhysicsBodyVelocity;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FName> FilteredSockets;
     
     UNiagaraDataInterfaceStaticMesh();
 };

@@ -3,8 +3,8 @@
 #include "Templates/SubclassOf.h"
 #include "FoliageTypeObject.generated.h"
 
-class UObject;
 class UFoliageType;
+class UObject;
 class UFoliageType_InstancedStaticMesh;
 
 USTRUCT(BlueprintType)
@@ -12,16 +12,16 @@ struct FOLIAGE_API FFoliageTypeObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UObject* FoliageTypeObject;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UFoliageType* TypeInstance;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bIsAsset;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSubclassOf<UFoliageType_InstancedStaticMesh> Type;
     
 public:

@@ -9,7 +9,7 @@ class AIMODULE_API UBTDecorator_BlackboardBase : public UBTDecorator {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector BlackboardKey;
     
 public:

@@ -5,12 +5,12 @@
 
 class UNavLocalGridManager;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UGridPathFollowingComponent : public UPathFollowingComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UNavLocalGridManager* GridManager;
     
 public:

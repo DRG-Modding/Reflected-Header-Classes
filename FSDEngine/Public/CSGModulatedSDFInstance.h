@@ -2,10 +2,10 @@
 #include "CoreMinimal.h"
 #include "CSGBase.h"
 #include "CSGSDFModulatedInstanceProperties.h"
-#include "DeepCSGFloatTree.h"
 #include "BinaryTerrainMaterialCombiner.h"
-//CROSS-MODULE INCLUDE: CoreUObject Matrix
-//CROSS-MODULE INCLUDE: CoreUObject Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+#include "DeepCSGFloatTree.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Matrix -FallbackName=Matrix
 #include "CSGModulatedSDFInstance.generated.h"
 
 class USDFBase;
@@ -15,34 +15,34 @@ UCLASS(BlueprintType)
 class FSDENGINE_API UCSGModulatedSDFInstance : public UCSGBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCSGSDFModulatedInstanceProperties Properties;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBinaryTerrainMaterialCombiner Materials;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     USDFBase* CSGSDFInstanceRoot;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UBakeConfig* CurrentBakeConfig;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     USDFBase* CSGSDFModulatedInstanceRoot;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UBakeConfig* CurrentModulatedBakeConfig;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FBox ChildLocalSpaceBoundingBox;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FBox WorldSpaceBoundingBox;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FDeepCSGFloatTree BoundingTree;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FMatrix TransformMatInv;
     
     UCSGModulatedSDFInstance();

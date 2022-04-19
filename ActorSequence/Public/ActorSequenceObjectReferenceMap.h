@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "ActorSequenceObjectReferences.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "ActorSequenceObjectReferenceMap.generated.h"
 
 USTRUCT(BlueprintType)
@@ -9,10 +9,10 @@ struct FActorSequenceObjectReferenceMap {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FGuid> BindingIds;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FActorSequenceObjectReferences> References;
     
 public:

@@ -1,27 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ARBaseAsyncTaskBlueprintProxy.h"
+#include "ARSaveWorldPinDelegate.h"
 #include "ARSaveWorldAsyncTaskBlueprintProxy.generated.h"
 
-class UObject;
 class UARSaveWorldAsyncTaskBlueprintProxy;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARSaveWorldAsyncTaskBlueprintProxyOnFailed, const TArray<uint8>&, SavedWorld);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARSaveWorldAsyncTaskBlueprintProxyOnSuccess, const TArray<uint8>&, SavedWorld);
+class UObject;
 
 UCLASS()
 class UARSaveWorldAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FARSaveWorldAsyncTaskBlueprintProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FARSaveWorldPin OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FARSaveWorldAsyncTaskBlueprintProxyOnFailed OnFailed;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FARSaveWorldPin OnFailed;
     
+    UARSaveWorldAsyncTaskBlueprintProxy();
     UFUNCTION(BlueprintCallable)
     static UARSaveWorldAsyncTaskBlueprintProxy* ARSaveWorld(UObject* WorldContextObject);
     
-    UARSaveWorldAsyncTaskBlueprintProxy();
 };
 

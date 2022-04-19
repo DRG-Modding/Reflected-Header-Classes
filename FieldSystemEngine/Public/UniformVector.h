@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "FieldNodeVector.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "UniformVector.generated.h"
 
 class UUniformVector;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UUniformVector : public UFieldNodeVector {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Magnitude;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector Direction;
     
+    UUniformVector();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UUniformVector* SetUniformVector(float NewMagnitude, FVector NewDirection);
     
-    UUniformVector();
 };
 

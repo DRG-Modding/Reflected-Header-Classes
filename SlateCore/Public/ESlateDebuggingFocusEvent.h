@@ -7,5 +7,6 @@ enum class ESlateDebuggingFocusEvent {
     FocusChanging,
     FocusLost,
     FocusReceived,
+    MAX,
 };
 

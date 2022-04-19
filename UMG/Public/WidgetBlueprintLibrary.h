@@ -1,45 +1,46 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EventReply.h"
-//CROSS-MODULE INCLUDE: Engine EWindowTitleBarMode
-//CROSS-MODULE INCLUDE: Engine EMouseLockMode
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
-//CROSS-MODULE INCLUDE: CoreUObject EMouseCursor
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: SlateCore EColorVisionDeficiency
-//CROSS-MODULE INCLUDE: SlateCore SlateBrush
-//CROSS-MODULE INCLUDE: CoreUObject Vector4
-//CROSS-MODULE INCLUDE: SlateCore KeyEvent
-//CROSS-MODULE INCLUDE: SlateCore NavigationEvent
-//CROSS-MODULE INCLUDE: SlateCore AnalogInputEvent
-//CROSS-MODULE INCLUDE: SlateCore InputEvent
-//CROSS-MODULE INCLUDE: SlateCore PointerEvent
-//CROSS-MODULE INCLUDE: SlateCore CharacterEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EWindowTitleBarMode -FallbackName=EWindowTitleBarMode
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EMouseLockMode -FallbackName=EMouseLockMode
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=EMouseCursor -FallbackName=EMouseCursor
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EColorVisionDeficiency -FallbackName=EColorVisionDeficiency
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector4 -FallbackName=Vector4
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=KeyEvent -FallbackName=KeyEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=NavigationEvent -FallbackName=NavigationEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=AnalogInputEvent -FallbackName=AnalogInputEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=InputEvent -FallbackName=InputEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=PointerEvent -FallbackName=PointerEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=CharacterEvent -FallbackName=CharacterEvent
 #include "PaintContext.h"
-//CROSS-MODULE INCLUDE: InputCore Key
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "WidgetBlueprintLibrary.generated.h"
 
-class UFont;
-class UWidget;
 class APlayerController;
-class UObject;
-class UInterface;
-class IInterface;
+class UWidget;
 class UTexture2D;
+class UObject;
 class UMaterialInterface;
 class USlateBrushAsset;
-class UDragDropOperation;
-class UMaterialInstanceDynamic;
 class UUserWidget;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FWidgetBlueprintLibraryDelegate);
+class UMaterialInstanceDynamic;
+class UDragDropOperation;
+class UInterface;
+class IInterface;
+class UFont;
 
 UCLASS(BlueprintType)
 class UMG_API UWidgetBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    DECLARE_DYNAMIC_DELEGATE(FOnGameWindowCloseButtonClickedDelegate);
+    
+    UWidgetBlueprintLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FEventReply UnlockMouse(UPARAM(Ref) FEventReply& Reply);
     
@@ -50,7 +51,7 @@ public:
     static void SetWindowTitleBarState(UWidget* TitleBarContent, EWindowTitleBarMode Mode, bool bTitleBarDragEnabled, bool bWindowButtonsVisible, bool bTitleBarVisible);
     
     UFUNCTION(BlueprintCallable)
-    static void SetWindowTitleBarOnCloseClickedDelegate(FWidgetBlueprintLibraryDelegate Delegate);
+    static void SetWindowTitleBarOnCloseClickedDelegate(UWidgetBlueprintLibrary::FOnGameWindowCloseButtonClickedDelegate Delegate);
     
     UFUNCTION(BlueprintCallable)
     static void SetWindowTitleBarCloseButtonActive(bool bActive);
@@ -205,6 +206,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void CancelDragDrop();
     
-    UWidgetBlueprintLibrary();
 };
 

@@ -8,7 +8,7 @@ struct FMovieSceneComponentMaterialSectionTemplate : public FMovieSceneParameter
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 MaterialIndex;
     
 public:

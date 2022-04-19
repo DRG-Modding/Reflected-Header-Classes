@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MovieSceneImageCaptureProtocolBase.h"
 #include "CapturedPixels.h"
 #include "CapturedPixelsID.h"
-#include "MovieSceneImageCaptureProtocolBase.h"
 #include "FrameMetrics.h"
 #include "UserDefinedCaptureProtocol.generated.h"
 
@@ -14,10 +14,11 @@ class MOVIESCENECAPTURE_API UUserDefinedCaptureProtocol : public UMovieSceneImag
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UWorld* World;
     
 public:
+    UUserDefinedCaptureProtocol();
     UFUNCTION(BlueprintCallable)
     void StopCapturingFinalPixels();
     
@@ -68,6 +69,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GenerateFilename(const FFrameMetrics& InFrameMetrics) const;
     
-    UUserDefinedCaptureProtocol();
 };
 

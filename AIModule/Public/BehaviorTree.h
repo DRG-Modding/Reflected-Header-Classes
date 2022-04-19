@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-#include "BTDecoratorLogic.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "BlackboardAssetProvider.h"
+#include "BTDecoratorLogic.h"
 #include "BehaviorTree.generated.h"
 
 class UBTCompositeNode;
@@ -13,16 +13,16 @@ UCLASS()
 class AIMODULE_API UBehaviorTree : public UObject, public IBlackboardAssetProvider {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UBTCompositeNode* RootNode;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UBlackboardData* BlackboardAsset;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UBTDecorator*> RootDecorators;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FBTDecoratorLogic> RootDecoratorOps;
     
     UBehaviorTree();

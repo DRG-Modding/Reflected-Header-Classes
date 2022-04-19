@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Interface
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "BossFightInterface.generated.h"
 
-class UBossFightWidget;
 class AActor;
+class UBossFightWidget;
 
 UINTERFACE(Blueprintable)
 class UBossFightInterface : public UInterface {

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "FakeMoverState.h"
 #include "FakeMoveState.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "FakePhysicsMover.generated.h"
 
 class USceneComponent;
@@ -13,20 +13,23 @@ UCLASS()
 class AFakePhysicsMover : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USceneComponent* Root;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFakeMoverState MoverState;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_PosVel)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_PosVel, meta=(AllowPrivateAccess=true))
     FFakeMoveState posVel;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_MoveSettings)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_MoveSettings, meta=(AllowPrivateAccess=true))
     UFakeMoverSettings* MoveSettings;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     float SyncTime;
+    
+    AFakePhysicsMover();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void Teleport(const FVector& Pos, const FVector& Vel);
@@ -40,8 +43,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void ApplyImpulse(const FVector& Impulse);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    AFakePhysicsMover();
 };
 

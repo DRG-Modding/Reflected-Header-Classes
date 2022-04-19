@@ -1,69 +1,67 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "DamageSigDelegate.h"
 #include "Health.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "HealthChangedSigDelegate.h"
+#include "HitSigDelegate.h"
+#include "DeathSigDelegate.h"
+#include "BodypartHitSigDelegate.h"
+#include "DamageData.h"
+#include "OnRadialDamageDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EHealthbarType.h"
 #include "HealthComponentBase.generated.h"
 
-class UDamageClass;
 class AActor;
+class UDamageClass;
 class UPrimitiveComponent;
-class UHealthComponentBase;
-class UFSDPhysicalMaterial;
-class AController;
 class UParticleSystem;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentBaseOnCanTakeDamageChanged, bool, OutCanTakeDamage);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentBaseOnDamageTaken, float, Amount);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentBaseOnHealthChanged, float, Health);
-UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FHealthComponentBaseOnBodypartHit, float, Amount, float, BaseAmount, UPrimitiveComponent*, Component, UFSDPhysicalMaterial*, PhysMat, const FName&, BoneName);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentBaseOnDamageHealed, float, Amount);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FHealthComponentBaseOnHit, float, Damage, UDamageClass*, DamageClass, AActor*, DamageCauser, bool, anyHealthLost);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthComponentBaseOnDeath, UHealthComponentBase*, HealthComponent);
-UDELEGATE(BlueprintAuthorityOnly, BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FHealthComponentBaseOnRadialDamage, float, Damage, float, BaseDamage, const FVector&, Position, float, Radius);
-
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))
 class UHealthComponentBase : public UActorComponent, public IHealth {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FHealthComponentBaseOnHealthChanged OnHealthChanged;
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCanTakeDamageDelegate, bool, OutCanTakeDamage);
     
-    UPROPERTY(BlueprintAssignable)
-    FHealthComponentBaseOnDamageHealed OnDamageHealed;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FHealthChangedSig OnHealthChanged;
     
-    UPROPERTY(BlueprintAssignable)
-    FHealthComponentBaseOnDamageTaken OnDamageTaken;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FDamageSig OnDamageHealed;
     
-    UPROPERTY(BlueprintAssignable)
-    FHealthComponentBaseOnHit OnHit;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FDamageSig OnDamageTaken;
     
-    UPROPERTY(BlueprintAssignable)
-    FHealthComponentBaseOnBodypartHit OnBodypartHit;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FHitSig OnHit;
     
-    UPROPERTY(BlueprintAssignable)
-    FHealthComponentBaseOnDeath OnDeath;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FBodypartHitSig OnBodypartHit;
     
-    UPROPERTY(BlueprintAssignable)
-    FHealthComponentBaseOnRadialDamage OnRadialDamage;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FDeathSig OnDeath;
     
-    UPROPERTY(BlueprintAssignable)
-    FHealthComponentBaseOnCanTakeDamageChanged OnCanTakeDamageChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnRadialDamage OnRadialDamage;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FCanTakeDamageDelegate OnCanTakeDamageChanged;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowLaserPointMarkerWhenDead;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool canTakeDamage;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PassthroughTemperatureDamage;
     
 public:
+    UHealthComponentBase();
     UFUNCTION(BlueprintCallable)
-    float TakeRadialDamage(float damageAmount, FVector BlastCenter, float BlastRadius, float MaxDamageRadius, float MinDamagePct, AController* EventInstigator, AActor* DamageCauser, UPrimitiveComponent* HitComponent, UDamageClass* DamageClass);
+    float TakeRadialDamage(float damageAmount, FVector BlastCenter, float BlastRadius, float MaxDamageRadius, float MinDamagePct, FDamageData& DamageData);
     
     UFUNCTION(BlueprintCallable)
     void TakeDamageSimple(float damageAmount, AActor* DamageCauser, UDamageClass* DamageClass);
@@ -110,7 +108,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanTakeDamageFrom(UDamageClass* DamageClass) const;
     
-    UHealthComponentBase();
     
     // Fix for true pure virtual functions not being implemented
     UFUNCTION(BlueprintCallable)

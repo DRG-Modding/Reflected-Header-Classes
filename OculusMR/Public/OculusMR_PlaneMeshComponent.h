@@ -1,13 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine MeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
 #include "OculusMR_PlaneMeshTriangle.h"
 #include "OculusMR_PlaneMeshComponent.generated.h"
 
-UCLASS(EditInlineNew, NotPlaceable)
+UCLASS(EditInlineNew, NotPlaceable, meta=(BlueprintSpawnableComponent))
 class UOculusMR_PlaneMeshComponent : public UMeshComponent {
     GENERATED_BODY()
 public:
+    UOculusMR_PlaneMeshComponent();
     UFUNCTION(BlueprintCallable)
     bool SetCustomMeshTriangles(const TArray<FOculusMR_PlaneMeshTriangle>& Triangles);
     
@@ -17,6 +18,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddCustomMeshTriangles(const TArray<FOculusMR_PlaneMeshTriangle>& Triangles);
     
-    UOculusMR_PlaneMeshComponent();
 };
 

@@ -1,24 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "AIResourceInterface.h"
 #include "BrainComponent.generated.h"
 
-class UBlackboardComponent;
 class AAIController;
+class UBlackboardComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UBrainComponent : public UActorComponent, public IAIResourceInterface {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UBlackboardComponent* BlackboardComp;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     AAIController* AIOwner;
     
 public:
+    UBrainComponent();
     UFUNCTION(BlueprintCallable)
     void StopLogic(const FString& reason);
     
@@ -34,7 +35,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPaused() const;
     
-    UBrainComponent();
     
     // Fix for true pure virtual functions not being implemented
 };

@@ -9,9 +9,10 @@ UCLASS()
 class UMG_API UWidgetSwitcher : public UPanelWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ActiveWidgetIndex;
     
+    UWidgetSwitcher();
     UFUNCTION(BlueprintCallable)
     void SetActiveWidgetIndex(int32 Index);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UWidget* GetActiveWidget() const;
     
-    UWidgetSwitcher();
 };
 

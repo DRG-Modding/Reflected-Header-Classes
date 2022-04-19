@@ -10,10 +10,10 @@ UCLASS(EditInlineNew, MinimalAPI)
 class UFoliageType_Actor : public UFoliageType {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> ActorClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bShouldAttachToBaseComponent;
     
     UFoliageType_Actor();

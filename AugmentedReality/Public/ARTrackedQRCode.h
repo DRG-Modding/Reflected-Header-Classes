@@ -7,10 +7,10 @@ UCLASS()
 class AUGMENTEDREALITY_API UARTrackedQRCode : public UARTrackedImage {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString QRCode;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 Version;
     
     UARTrackedQRCode();

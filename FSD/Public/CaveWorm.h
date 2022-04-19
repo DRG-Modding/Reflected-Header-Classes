@@ -1,31 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "DeepPathfinderCharacter.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CaveWorm.generated.h"
 
-class UHealthComponentBase;
 class USimpleHealthComponent;
 class AResourceChunk;
-class UObject;
 class UResourceData;
+class UObject;
+class UHealthComponentBase;
 
 UCLASS(MinimalAPI)
 class ACaveWorm : public ADeepPathfinderCharacter {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USimpleHealthComponent* Health;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SearchChunksRadius;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SearchChunksInterval;
     
 public:
+    ACaveWorm();
     UFUNCTION(BlueprintCallable)
     static AResourceChunk* SpawnResource(UObject* WorldContext, UResourceData* Data, float Size, FTransform Transform, FVector Impulse, FVector DropOffset);
     
@@ -40,6 +41,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void DropResource(UResourceData* Data, float Size, FVector Impulse, FVector DropOffset);
     
-    ACaveWorm();
 };
 

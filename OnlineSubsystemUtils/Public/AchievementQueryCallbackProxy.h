@@ -1,31 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineBlueprintCallProxyBase -FallbackName=OnlineBlueprintCallProxyBase
 #include "AchievementQueryCallbackProxy.generated.h"
 
-class APlayerController;
-class UAchievementQueryCallbackProxy;
 class UObject;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAchievementQueryCallbackProxyOnSuccess);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAchievementQueryCallbackProxyOnFailure);
+class UAchievementQueryCallbackProxy;
+class APlayerController;
 
 UCLASS(MinimalAPI)
 class UAchievementQueryCallbackProxy : public UOnlineBlueprintCallProxyBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FAchievementQueryCallbackProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEmptyOnlineDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FAchievementQueryCallbackProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEmptyOnlineDelegate OnFailure;
     
+    UAchievementQueryCallbackProxy();
     UFUNCTION(BlueprintCallable)
     static UAchievementQueryCallbackProxy* CacheAchievements(UObject* WorldContextObject, APlayerController* PlayerController);
     
     UFUNCTION(BlueprintCallable)
     static UAchievementQueryCallbackProxy* CacheAchievementDescriptions(UObject* WorldContextObject, APlayerController* PlayerController);
     
-    UAchievementQueryCallbackProxy();
 };
 

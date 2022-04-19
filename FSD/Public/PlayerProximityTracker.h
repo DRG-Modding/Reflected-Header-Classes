@@ -1,42 +1,41 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "PlayerSphere.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "ProximityTriggerItem.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "PlayerProximityDelegateDelegate.h"
 #include "PlayerProximityTracker.generated.h"
 
 class UObject;
-class APlayerCharacter;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FPlayerProximityTrackerProximityCallback, APlayerCharacter*, Player, bool, enteredTrigger);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UPlayerProximityTracker : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxDistanceBetweenPlayers;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PlayerSpheresUpdateRatePerSecond;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FPlayerSphere> PlayerSpheres;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FProximityTriggerItem> LocalPlayerProximityTriggers;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FProximityTriggerItem> AnyPlayerProximityTriggers;
     
 public:
+    UPlayerProximityTracker();
     UFUNCTION(BlueprintCallable)
-    static void Receive_RegisterForLocalPlayerProximity(UObject* WorldContextObject, const FVector& Location, float Distance, const FPlayerProximityTrackerProximityCallback& proximityCallback, bool triggerOnlyOnce);
+    static void Receive_RegisterForLocalPlayerProximity(UObject* WorldContextObject, const FVector& Location, float Distance, const FPlayerProximityDelegate& proximityCallback, bool triggerOnlyOnce);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    static void Receive_RegisterForAnyPlayerProximity(UObject* WorldContextObject, const FVector& Location, float Distance, const FPlayerProximityTrackerProximityCallback& proximityCallback, bool triggerOnlyOnce);
+    static void Receive_RegisterForAnyPlayerProximity(UObject* WorldContextObject, const FVector& Location, float Distance, const FPlayerProximityDelegate& proximityCallback, bool triggerOnlyOnce);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FPlayerSphere GetPrimarySphere() const;
@@ -44,6 +43,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FPlayerSphere> GetPlayerSpheres() const;
     
-    UPlayerProximityTracker();
 };
 

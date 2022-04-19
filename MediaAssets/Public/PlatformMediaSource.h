@@ -8,7 +8,7 @@ class MEDIAASSETS_API UPlatformMediaSource : public UMediaSource {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMediaSource* MediaSource;
     
 public:

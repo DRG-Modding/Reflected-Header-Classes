@@ -1,34 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "PawnActionStack.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
-#include "EAIRequestPriority.h"
-#include "PawnActionEvent.h"
 #include "EPawnActionAbortState.h"
+#include "PawnActionEvent.h"
+#include "EAIRequestPriority.h"
 #include "PawnActionsComponent.generated.h"
 
-class UPawnAction;
 class APawn;
+class UPawnAction;
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UPawnActionsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     APawn* ControlledPawn;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FPawnActionStack> ActionStacks;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FPawnActionEvent> ActionEvents;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UPawnAction* CurrentAction;
     
 public:
+    UPawnActionsComponent();
     UFUNCTION(BlueprintCallable)
     bool K2_PushAction(UPawnAction* NewAction, TEnumAsByte<EAIRequestPriority::Type> Priority, UObject* Instigator);
     
@@ -41,6 +42,5 @@ public:
     UFUNCTION(BlueprintCallable)
     TEnumAsByte<EPawnActionAbortState::Type> K2_AbortAction(UPawnAction* ActionToAbort);
     
-    UPawnActionsComponent();
 };
 

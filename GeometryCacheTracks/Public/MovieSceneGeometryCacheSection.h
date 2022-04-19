@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
 #include "MovieSceneGeometryCacheParams.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
 #include "MovieSceneGeometryCacheSection.generated.h"
 
 UCLASS(MinimalAPI)
 class UMovieSceneGeometryCacheSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneGeometryCacheParams Params;
     
     UMovieSceneGeometryCacheSection();

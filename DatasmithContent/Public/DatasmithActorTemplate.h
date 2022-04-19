@@ -7,10 +7,10 @@ UCLASS()
 class DATASMITHCONTENT_API UDatasmithActorTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSet<FName> Layers;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSet<FName> Tags;
     
     UDatasmithActorTemplate();

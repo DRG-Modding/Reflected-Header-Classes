@@ -1,45 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EModioAuthenticationProvider.h"
-#include "ModioErrorCode.h"
+#include "ModioFilterParams.h"
 #include "EModioLogLevel.h"
-//CROSS-MODULE INCLUDE: Engine EngineSubsystem
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EngineSubsystem -FallbackName=EngineSubsystem
+#include "OnGetModInfoDelegateDelegate.h"
 #include "ModioModID.h"
-#include "ModioEmailAddress.h"
+#include "ModioInitializeOptions.h"
 #include "ModioModCollectionEntry.h"
+#include "OnErrorOnlyDelegateDelegate.h"
 #include "EModioRating.h"
 #include "ModioReportParams.h"
-#include "ModioValidationError.h"
+#include "ModioEmailAddress.h"
 #include "ModioOptionalUser.h"
-#include "ModioOptionalModProgressInfo.h"
-#include "ModioFilterParams.h"
-#include "ModioOptionalModInfo.h"
-#include "ModioOptionalModInfoList.h"
-#include "ModioInitializeOptions.h"
-#include "ModioOptionalModDependencyList.h"
 #include "EModioLogoSize.h"
-#include "ModioOptionalTerms.h"
-#include "EModioAvatarSize.h"
-#include "ModioOptionalImage.h"
-#include "EModioLanguage.h"
-#include "ModioOptionalModTagOptions.h"
-#include "EModioGallerySize.h"
-#include "ModioModManagementEvent.h"
+#include "OnGetMediaDelegateDelegate.h"
+#include "ModioOptionalModProgressInfo.h"
 #include "ModioAuthenticationParams.h"
+#include "OnListAllModsDelegateDelegate.h"
+#include "EModioAuthenticationProvider.h"
+#include "EModioAvatarSize.h"
+#include "EModioLanguage.h"
+#include "OnGetTermsOfUseDelegateDelegate.h"
+#include "OnGetModTagOptionsDelegateDelegate.h"
+#include "EModioGallerySize.h"
+#include "ModioValidationError.h"
+#include "OnGetModDependenciesDelegateDelegate.h"
+#include "OnModManagementDelegateDelegate.h"
 #include "ModioEmailAuthCode.h"
 #include "ModioSubsystem.generated.h"
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FModioSubsystemOnUnsubscribeComplete, FModioErrorCode, ErrorCode);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FModioSubsystemOnShutdownComplete, FModioErrorCode, ErrorCode);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FModioSubsystemOnSubscribeComplete, FModioErrorCode, ErrorCode);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FModioSubsystemCallback, FModioErrorCode, ErrorCode);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FModioSubsystemOnInitComplete, FModioErrorCode, ErrorCode);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FModioSubsystemOnFetchDone, FModioErrorCode, ErrorCode);
 
 UCLASS(BlueprintType, MinimalAPI)
 class UModioSubsystem : public UEngineSubsystem {
     GENERATED_BODY()
 public:
+    UModioSubsystem();
     UFUNCTION(BlueprintCallable)
     void SetLogLevel(EModioLogLevel UnrealLogLevel);
     
@@ -56,22 +50,22 @@ public:
     TMap<FModioModID, FModioModCollectionEntry> QuerySystemInstallations();
     
     UFUNCTION(BlueprintCallable)
-    void K2_UnsubscribeFromModAsync(FModioModID ModToUnsubscribeFrom, FModioSubsystemOnUnsubscribeComplete OnUnsubscribeComplete);
+    void K2_UnsubscribeFromModAsync(FModioModID ModToUnsubscribeFrom, FOnErrorOnlyDelegate OnUnsubscribeComplete);
     
     UFUNCTION(BlueprintCallable)
-    void K2_SubscribeToModAsync(FModioModID ModToSubscribeTo, FModioSubsystemOnSubscribeComplete OnSubscribeComplete);
+    void K2_SubscribeToModAsync(FModioModID ModToSubscribeTo, FOnErrorOnlyDelegate OnSubscribeComplete);
     
     UFUNCTION(BlueprintCallable)
-    void K2_SubmitModRatingAsync(FModioModID Mod, EModioRating Rating, FModioSubsystemCallback Callback);
+    void K2_SubmitModRatingAsync(FModioModID Mod, EModioRating Rating, FOnErrorOnlyDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_ShutdownAsync(FModioSubsystemOnShutdownComplete OnShutdownComplete);
+    void K2_ShutdownAsync(FOnErrorOnlyDelegate OnShutdownComplete);
     
     UFUNCTION(BlueprintCallable)
-    void K2_RequestEmailAuthCodeAsync(const FModioEmailAddress& EmailAddress, FModioSubsystemCallback Callback);
+    void K2_RequestEmailAuthCodeAsync(const FModioEmailAddress& EmailAddress, FOnErrorOnlyDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_ReportContentAsync(FModioReportParams Report, FModioSubsystemCallback Callback);
+    void K2_ReportContentAsync(FModioReportParams Report, FOnErrorOnlyDelegate Callback);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FModioOptionalUser K2_QueryUserProfile();
@@ -80,49 +74,49 @@ public:
     FModioOptionalModProgressInfo K2_QueryCurrentModUpdate();
     
     UFUNCTION(BlueprintCallable)
-    void K2_ListAllModsAsync(const FModioFilterParams& Filter, FModioSubsystemCallback Callback);
+    void K2_ListAllModsAsync(const FModioFilterParams& Filter, FOnListAllModsDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_InitializeAsync(const FModioInitializeOptions& InitializeOptions, FModioSubsystemOnInitComplete OnInitComplete);
+    void K2_InitializeAsync(const FModioInitializeOptions& InitializeOptions, FOnErrorOnlyDelegate OnInitComplete);
     
     UFUNCTION(BlueprintCallable)
-    void K2_GetUserMediaAvatarAsync(EModioAvatarSize AvatarSize, FModioSubsystemCallback Callback);
+    void K2_GetUserMediaAvatarAsync(EModioAvatarSize AvatarSize, FOnGetMediaDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_GetTermsOfUseAsync(EModioAuthenticationProvider Provider, EModioLanguage Locale, FModioSubsystemCallback Callback);
+    void K2_GetTermsOfUseAsync(EModioAuthenticationProvider Provider, EModioLanguage Locale, FOnGetTermsOfUseDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_GetModTagOptionsAsync(FModioSubsystemCallback Callback);
+    void K2_GetModTagOptionsAsync(FOnGetModTagOptionsDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_GetModMediaLogoAsync(FModioModID ModId, EModioLogoSize LogoSize, FModioSubsystemCallback Callback);
+    void K2_GetModMediaLogoAsync(FModioModID ModId, EModioLogoSize LogoSize, FOnGetMediaDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_GetModMediaGalleryImageAsync(FModioModID ModId, EModioGallerySize GallerySize, int32 Index, FModioSubsystemCallback Callback);
+    void K2_GetModMediaGalleryImageAsync(FModioModID ModId, EModioGallerySize GallerySize, int32 Index, FOnGetMediaDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_GetModMediaAvatarAsync(FModioModID ModId, EModioAvatarSize AvatarSize, FModioSubsystemCallback Callback);
+    void K2_GetModMediaAvatarAsync(FModioModID ModId, EModioAvatarSize AvatarSize, FOnGetMediaDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_GetModInfoAsync(FModioModID ModId, FModioSubsystemCallback Callback);
+    void K2_GetModInfoAsync(FModioModID ModId, FOnGetModInfoDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_GetModDependenciesAsync(FModioModID ModId, FModioSubsystemCallback Callback);
+    void K2_GetModDependenciesAsync(FModioModID ModId, FOnGetModDependenciesDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_FetchExternalUpdatesAsync(FModioSubsystemOnFetchDone OnFetchDone);
+    void K2_FetchExternalUpdatesAsync(FOnErrorOnlyDelegate OnFetchDone);
     
     UFUNCTION(BlueprintCallable)
-    void K2_EnableModManagement(FModioSubsystemCallback Callback);
+    void K2_EnableModManagement(FOnModManagementDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_ClearUserDataAsync(FModioSubsystemCallback Callback);
+    void K2_ClearUserDataAsync(FOnErrorOnlyDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_AuthenticateUserExternalAsync(const FModioAuthenticationParams& User, EModioAuthenticationProvider Provider, FModioSubsystemCallback Callback);
+    void K2_AuthenticateUserExternalAsync(const FModioAuthenticationParams& User, EModioAuthenticationProvider Provider, FOnErrorOnlyDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
-    void K2_AuthenticateUserEmailAsync(const FModioEmailAuthCode& AuthenticationCode, FModioSubsystemCallback Callback);
+    void K2_AuthenticateUserEmailAsync(const FModioEmailAuthCode& AuthenticationCode, FOnErrorOnlyDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
     bool IsModManagementBusy();
@@ -131,11 +125,10 @@ public:
     TArray<FModioValidationError> GetLastValidationError();
     
     UFUNCTION(BlueprintCallable)
-    void ForceUninstallModAsync(FModioModID ModToRemove, FModioSubsystemCallback Callback);
+    void ForceUninstallModAsync(FModioModID ModToRemove, FOnErrorOnlyDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
     void DisableModManagement();
     
-    UModioSubsystem();
 };
 

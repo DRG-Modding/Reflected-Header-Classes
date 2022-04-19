@@ -9,10 +9,9 @@ enum class EMultiBlockType {
     EditableText,
     Heading,
     MenuEntry,
-    MenuSeparator,
+    Separator,
     ToolBarButton,
     ToolBarComboButton,
-    ToolBarSeparator,
     Widget,
 };
 

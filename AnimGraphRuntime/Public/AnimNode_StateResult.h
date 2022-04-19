@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine AnimNode_Root
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimNode_Root -FallbackName=AnimNode_Root
 #include "AnimNode_StateResult.generated.h"
 
 USTRUCT(BlueprintType)

@@ -9,16 +9,16 @@
 class UNavigationQueryFilter;
 
 UCLASS(EditInlineNew)
-class UEnvQueryGenerator_PathingGrid : public UEnvQueryGenerator_SimpleGrid {
+class AIMODULE_API UEnvQueryGenerator_PathingGrid : public UEnvQueryGenerator_SimpleGrid {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FAIDataProviderBoolValue PathToItem;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TSubclassOf<UNavigationQueryFilter> NavigationFilter;
     
-    UPROPERTY(AdvancedDisplay, EditDefaultsOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FAIDataProviderFloatValue ScanRangeMultiplier;
     
     UEnvQueryGenerator_PathingGrid();

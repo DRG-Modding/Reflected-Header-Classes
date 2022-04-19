@@ -6,7 +6,7 @@ USTRUCT()
 struct FSessionUpdateResponse {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool success;
     
     FSD_API FSessionUpdateResponse();

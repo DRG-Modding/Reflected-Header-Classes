@@ -1,18 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "AttackCooldown.h"
 #include "AttackCooldownComponent.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class FSD_API UAttackCooldownComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAttackCooldown> AttackCooldowns;
     
 public:
+    UAttackCooldownComponent();
     UFUNCTION(BlueprintCallable)
     void SetCooldown(const FName& AttackName, float cooldownSeconds);
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void AttackUsed(const FName& Name);
     
-    UAttackCooldownComponent();
 };
 

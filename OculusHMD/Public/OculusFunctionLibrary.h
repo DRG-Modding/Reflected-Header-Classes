@@ -1,17 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "EColorSpace.h"
 #include "EFixedFoveatedRenderingLevel.h"
-#include "EBoundaryType.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: HeadMountedDisplay EOrientPositionSelector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=HeadMountedDisplay -ObjectName=EOrientPositionSelector -FallbackName=EOrientPositionSelector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ETrackedDeviceType.h"
 #include "HmdUserProfile.h"
 #include "GuardianTestResult.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "EBoundaryType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+#include "EOculusDeviceType.h"
 #include "OculusFunctionLibrary.generated.h"
 
 class UTexture2D;
@@ -20,12 +22,7 @@ UCLASS(BlueprintType)
 class OCULUSHMD_API UOculusFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintCallable)
-    static void ShowLoadingSplashScreen();
-    
-    UFUNCTION(BlueprintCallable)
-    static void ShowLoadingIcon(UTexture2D* Texture);
-    
+    UOculusFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static void SetReorientHMDOnControllerRecenter(bool recenterMode);
     
@@ -33,13 +30,10 @@ public:
     static void SetPositionScale3D(FVector PosScale3D);
     
     UFUNCTION(BlueprintCallable)
-    static void SetLoadingSplashParams(const FString& TexturePath, FVector DistanceInMeters, FVector2D SizeInMeters, FVector RotationAxis, float RotationDeltaInDeg);
-    
-    UFUNCTION(BlueprintCallable)
     static void SetGuardianVisibility(bool GuardianVisible);
     
     UFUNCTION(BlueprintCallable)
-    static void SetFixedFoveatedRenderingLevel(EFixedFoveatedRenderingLevel Level);
+    static void SetFixedFoveatedRenderingLevel(EFixedFoveatedRenderingLevel Level, bool isDynamic);
     
     UFUNCTION(BlueprintCallable)
     static void SetDisplayFrequency(float RequestedFrequency);
@@ -51,13 +45,13 @@ public:
     static void SetColorScaleAndOffset(FLinearColor ColorScale, FLinearColor ColorOffset, bool bApplyToAllLayers);
     
     UFUNCTION(BlueprintCallable)
+    static void SetClientColorDesc(EColorSpace ColorSpace);
+    
+    UFUNCTION(BlueprintCallable)
     static void SetBaseRotationAndPositionOffset(FRotator BaseRot, FVector PosOffset, TEnumAsByte<EOrientPositionSelector::Type> options);
     
     UFUNCTION(BlueprintCallable)
     static void SetBaseRotationAndBaseOffsetInMeters(FRotator Rotation, FVector BaseOffsetInMeters, TEnumAsByte<EOrientPositionSelector::Type> options);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    static bool IsLoadingIconEnabled();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsGuardianDisplayed();
@@ -69,15 +63,6 @@ public:
     static bool IsDeviceTracked(ETrackedDeviceType DeviceType);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static bool IsAutoLoadingSplashScreenEnabled();
-    
-    UFUNCTION(BlueprintCallable)
-    static void HideLoadingSplashScreen(bool bClear);
-    
-    UFUNCTION(BlueprintCallable)
-    static void HideLoadingIcon();
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool HasSystemOverlayPresent();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -85,6 +70,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetUserProfile(FHmdUserProfile& Profile);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool GetSystemHmd3DofModeEnabled();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void GetRawSensorData(FVector& AngularAcceleration, FVector& LinearAcceleration, FVector& AngularVelocity, FVector& LinearVelocity, float& TimeInSeconds, ETrackedDeviceType DeviceType);
@@ -102,7 +90,7 @@ public:
     static FGuardianTestResult GetNodeGuardianIntersection(ETrackedDeviceType DeviceType, EBoundaryType BoundaryType);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static void GetLoadingSplashParams(FString& TexturePath, FVector& DistanceInMeters, FVector2D& SizeInMeters, FVector& RotationAxis, float& RotationDeltaInDeg);
+    static EColorSpace GetHmdColorDesc();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<FVector> GetGuardianPoints(EBoundaryType BoundaryType, bool UsePawnSpace);
@@ -118,6 +106,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EFixedFoveatedRenderingLevel GetFixedFoveatedRenderingLevel();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static EOculusDeviceType GetDeviceType();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetDeviceName();
@@ -141,14 +132,10 @@ public:
     static void EnableOrientationTracking(bool bOrientationTracking);
     
     UFUNCTION(BlueprintCallable)
-    static void EnableAutoLoadingSplashScreen(bool bAutoShowEnabled);
-    
-    UFUNCTION(BlueprintCallable)
     static void ClearLoadingSplashScreens();
     
     UFUNCTION(BlueprintCallable)
     static void AddLoadingSplashScreen(UTexture2D* Texture, FVector TranslationInMeters, FRotator Rotation, FVector2D SizeInMeters, FRotator DeltaRotation, bool bClearBeforeAdd);
     
-    UOculusFunctionLibrary();
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine GameMode
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameMode -FallbackName=GameMode
 #include "ARSharedWorldGameMode.generated.h"
 
 class AARSharedWorldGameState;
@@ -9,9 +9,10 @@ UCLASS(NonTransient)
 class AUGMENTEDREALITY_API AARSharedWorldGameMode : public AGameMode {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 BufferSizePerChunk;
     
+    AARSharedWorldGameMode();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     void SetPreviewImageData(TArray<uint8> ImageData);
     
@@ -24,6 +25,5 @@ public:
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     AARSharedWorldGameState* GetARSharedWorldGameState();
     
-    AARSharedWorldGameMode();
 };
 

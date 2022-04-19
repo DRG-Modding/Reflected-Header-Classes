@@ -1,49 +1,50 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ECharacterState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "HeroInfo.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
-//CROSS-MODULE INCLUDE: Engine RuntimeFloatCurve
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "ActorFunctionLibrary.generated.h"
 
+class UEnemyComponent;
+class UTexture2D;
 class UObject;
-class UWindowWidget;
-class APlayerCharacter;
-class UMaterialInstanceDynamic;
-class USoundCue;
-class APlayerController;
-class UPathfinderCollisionComponent;
-class UUserWidget;
-class AFSDGameMode;
-class AActor;
 class USceneComponent;
+class USoundCue;
+class UPostProcessComponent;
+class UMaterialInstanceDynamic;
+class UItemID;
+class APlayerCharacter;
+class APlayerController;
 class UFXSystemAsset;
+class UWindowWidget;
+class UUserWidget;
+class AActor;
+class UPathfinderCollisionComponent;
 class UFSDPhysicalMaterial;
 class UPlayerCharacterID;
-class UEnemyComponent;
-class UItemID;
+class UMeshComponent;
 class UInventoryList;
 class UActorComponent;
-class UTexture2D;
-class UPostProcessComponent;
-class UHealthComponentBase;
 class UBlendableInterface;
 class IBlendableInterface;
-class UMeshComponent;
+class AFSDGameMode;
 class UDamageClass;
+class UHealthComponentBase;
 class AFSDGameState;
 
 UCLASS(BlueprintType)
 class FSD_API UActorFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UActorFunctionLibrary();
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    static void UnlockSpecificCharacters(UObject* WorldContextObject, TArray<APlayerCharacter*> Characters, ECharacterState UnlockIf, ECharacterState UnlockTo);
+    static void UnlockSpecificCharacters(TArray<APlayerCharacter*> Characters, ECharacterState UnlockIf, ECharacterState UnlockTo);
     
     UFUNCTION(BlueprintCallable)
     static void UnlockCharacters(UObject* WorldContextObject);
@@ -64,16 +65,16 @@ public:
     static float PingPong(float Time, float Length, bool normalize);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static float MoveTowards(float current, float End, float step);
+    static float MoveTowards(float Current, float End, float step);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    static void LockSpecificCharactersIfState(UObject* WorldContextObject, TArray<APlayerCharacter*> Characters, ECharacterState stateToLock);
+    static void LockSpecificCharactersIfState(TArray<APlayerCharacter*> Characters, ECharacterState stateToLock);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    static void LockSpecificCharacters(UObject* WorldContextObject, TArray<APlayerCharacter*> Characters);
+    static void LockSpecificCharacters(TArray<APlayerCharacter*> Characters);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
-    static bool LockSpecificCharacterIfState(UObject* WorldContextObject, APlayerCharacter* Character, ECharacterState LockIf, ECharacterState LockTo);
+    static bool LockSpecificCharacterIfState(APlayerCharacter* Character, ECharacterState LockIf, ECharacterState LockTo);
     
     UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable)
     static void LockCharacters(UObject* WorldContextObject);
@@ -228,6 +229,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool ActorMatchesTagQuery(const FGameplayTagQuery& Query, const AActor* InActor);
     
-    UActorFunctionLibrary();
 };
 

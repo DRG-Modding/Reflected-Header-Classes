@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "GeometryCollectionDebugDrawComponent.generated.h"
 
 class AGeometryCollectionDebugDrawActor;
 class AGeometryCollectionRenderLevelSetActor;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class GEOMETRYCOLLECTIONENGINE_API UGeometryCollectionDebugDrawComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AGeometryCollectionDebugDrawActor* GeometryCollectionDebugDrawActor;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AGeometryCollectionRenderLevelSetActor* GeometryCollectionRenderLevelSetActor;
     
     UGeometryCollectionDebugDrawComponent();

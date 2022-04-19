@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct ANIMGRAPHRUNTIME_API FSocketReference {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SocketName;
     
     FSocketReference();

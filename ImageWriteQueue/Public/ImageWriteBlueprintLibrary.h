@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ImageWriteOptions.h"
 #include "ImageWriteBlueprintLibrary.generated.h"
 
@@ -10,9 +10,9 @@ UCLASS(BlueprintType)
 class UImageWriteBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UImageWriteBlueprintLibrary();
     UFUNCTION(BlueprintCallable)
     static void ExportToDisk(UTexture* Texture, const FString& Filename, const FImageWriteOptions& options);
     
-    UImageWriteBlueprintLibrary();
 };
 

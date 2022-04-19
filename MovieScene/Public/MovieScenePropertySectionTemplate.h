@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneEvalTemplate.h"
 #include "MovieScenePropertySectionData.h"
+#include "MovieSceneEvalTemplate.h"
 #include "MovieScenePropertySectionTemplate.generated.h"
 
 USTRUCT()
@@ -9,7 +9,7 @@ struct MOVIESCENE_API FMovieScenePropertySectionTemplate : public FMovieSceneEva
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieScenePropertySectionData PropertyData;
     
 public:

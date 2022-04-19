@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct NIAGARA_API FNiagaraInputConditionMetadata {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName InputName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> TargetValues;
     
     FNiagaraInputConditionMetadata();

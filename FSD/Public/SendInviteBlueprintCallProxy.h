@@ -1,30 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine OnlineBlueprintCallProxyBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineBlueprintCallProxyBase -FallbackName=OnlineBlueprintCallProxyBase
 #include "SendInviteBlueprintCallProxy.generated.h"
 
 class UObject;
 class USendInviteBlueprintCallProxy;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSendInviteBlueprintCallProxyOnSuccess);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSendInviteBlueprintCallProxyOnFailure);
-
 UCLASS()
 class USendInviteBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FSendInviteBlueprintCallProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEmptyOnlineDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FSendInviteBlueprintCallProxyOnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FEmptyOnlineDelegate OnFailure;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UObject* WorldContextObject;
     
+    USendInviteBlueprintCallProxy();
     UFUNCTION(BlueprintCallable)
     static USendInviteBlueprintCallProxy* SendInvite(UObject* NewWorldContextObject, const FString& ListName, const FString& UserId);
     
-    USendInviteBlueprintCallProxy();
 };
 

@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ModioOptionalTerms.h"
-#include "ModioOptionalModDependencyList.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
 #include "ModioOptionalUser.h"
+#include "ModioModProgressInfo.h"
 #include "ModioOptionalModProgressInfo.h"
 #include "ModioOptionalModTagOptions.h"
 #include "ModioOptionalModInfoList.h"
 #include "ModioOptionalModInfo.h"
+#include "ModioOptionalModDependencyList.h"
+#include "ModioTerms.h"
 #include "ModioOptionalImage.h"
 #include "ModioUser.h"
-#include "ModioModInfoList.h"
-#include "ModioTerms.h"
 #include "ModioModTagOptions.h"
-#include "ModioModProgressInfo.h"
+#include "ModioModInfoList.h"
 #include "ModioModInfo.h"
 #include "ModioModDependencyList.h"
 #include "ModioImage.h"
@@ -23,6 +23,7 @@ UCLASS(BlueprintType)
 class MODIO_API UModioOptionalLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UModioOptionalLibrary();
 private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsSet_ModioOptionalUser(const FModioOptionalUser& OptionalUser);
@@ -72,7 +73,5 @@ private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetValue_ModioOptionalImage(const FModioOptionalImage& OptionalImage, FModioImage& Image);
     
-public:
-    UModioOptionalLibrary();
 };
 

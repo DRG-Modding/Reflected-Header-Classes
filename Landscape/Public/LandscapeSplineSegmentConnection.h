@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FLandscapeSplineSegmentConnection {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ULandscapeSplineControlPoint* ControlPoint;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TangentLen;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SocketName;
     
     LANDSCAPE_API FLandscapeSplineSegmentConnection();

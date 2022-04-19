@@ -1,5 +1,7 @@
 #include "Bomber.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
 
 class UPrimitiveComponent;
 class AActor;
@@ -47,6 +49,9 @@ void ABomber::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeP
 }
 
 ABomber::ABomber() {
+    this->GooSoundComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("GooAudioComponent"));
+    this->AcidEmitterLeft = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("GooEmitterLeft"));
+    this->AcidEmitterRight = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("GooEmitterRight"));
     this->AcidProjectile = NULL;
     this->deathParticles = NULL;
     this->deathSound = NULL;

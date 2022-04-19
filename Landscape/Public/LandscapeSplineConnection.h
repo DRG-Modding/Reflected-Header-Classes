@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FLandscapeSplineConnection {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ULandscapeSplineSegment* Segment;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 End: 1;
     
     LANDSCAPE_API FLandscapeSplineConnection();

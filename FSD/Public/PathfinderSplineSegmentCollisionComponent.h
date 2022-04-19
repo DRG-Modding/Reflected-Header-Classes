@@ -1,22 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: FSDEngine PFCollisionType
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=PFCollisionType -FallbackName=PFCollisionType
 #include "PathfinderSplineSegmentCollisionComponent.generated.h"
 
 class USplineComponent;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UPathfinderSplineSegmentCollisionComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Radius;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     PFCollisionType CollisionType;
     
+    UPathfinderSplineSegmentCollisionComponent();
     UFUNCTION(BlueprintCallable)
     void UpdateFromSpline(USplineComponent* SplineComponent, int32 StartIndex);
     
@@ -26,6 +27,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void Clear();
     
-    UPathfinderSplineSegmentCollisionComponent();
 };
 

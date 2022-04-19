@@ -1,4 +1,5 @@
 #include "NavLinkProxy.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=NavigationSystem -ObjectName=NavLinkCustomComponent -FallbackName=NavLinkCustomComponent
 
 class AActor;
 
@@ -19,6 +20,7 @@ bool ANavLinkProxy::HasMovingAgents() const {
 
 ANavLinkProxy::ANavLinkProxy() {
     this->PointLinks.AddDefaulted(1);
+    this->SmartLinkComp = CreateDefaultSubobject<UNavLinkCustomComponent>(TEXT("SmartLinkComp"));
     this->bSmartLinkIsRelevant = false;
 }
 

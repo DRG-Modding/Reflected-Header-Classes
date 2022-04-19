@@ -9,7 +9,7 @@ struct AIMODULE_API FAIMoveRequest {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     AActor* GoalActor;
     
 public:

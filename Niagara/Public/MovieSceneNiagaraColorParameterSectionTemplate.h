@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneNiagaraParameterSectionTemplate.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneFloatChannel -FallbackName=MovieSceneFloatChannel
 #include "MovieSceneNiagaraColorParameterSectionTemplate.generated.h"
 
 USTRUCT()
@@ -9,16 +9,16 @@ struct FMovieSceneNiagaraColorParameterSectionTemplate : public FMovieSceneNiaga
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel RedChannel;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel GreenChannel;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel BlueChannel;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel AlphaChannel;
     
 public:

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioGameID.h"
 #include "ModioApiKey.h"
+#include "ModioGameID.h"
 #include "EModioEnvironment.h"
 #include "EModioPortal.h"
 #include "ModioInitializeOptions.generated.h"
@@ -10,16 +10,16 @@ USTRUCT(BlueprintType)
 struct MODIO_API FModioInitializeOptions {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FModioGameID GameId;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FModioApiKey ApiKey;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EModioEnvironment GameEnvironment;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EModioPortal PortalInUse;
     
     FModioInitializeOptions();

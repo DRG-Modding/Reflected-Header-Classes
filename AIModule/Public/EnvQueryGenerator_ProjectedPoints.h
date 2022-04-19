@@ -8,7 +8,7 @@ UCLASS(Abstract, EditInlineNew)
 class AIMODULE_API UEnvQueryGenerator_ProjectedPoints : public UEnvQueryGenerator {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FEnvTraceData ProjectionData;
     
     UEnvQueryGenerator_ProjectedPoints();

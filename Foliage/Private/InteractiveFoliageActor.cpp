@@ -1,4 +1,5 @@
 #include "InteractiveFoliageActor.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CapsuleComponent -FallbackName=CapsuleComponent
 
 class UPrimitiveComponent;
 class AActor;
@@ -7,6 +8,7 @@ void AInteractiveFoliageActor::CapsuleTouched(UPrimitiveComponent* OverlappedCom
 }
 
 AInteractiveFoliageActor::AInteractiveFoliageActor() {
+    this->CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CollisionCylinder"));
     this->FoliageDamageImpulseScale = 20.00f;
     this->FoliageTouchImpulseScale = 10.00f;
     this->FoliageStiffness = 10.00f;

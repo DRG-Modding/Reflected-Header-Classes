@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FVertexAttributesForPolygonHole {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FMeshElementAttributeList> VertexAttributeList;
     
     EDITABLEMESH_API FVertexAttributesForPolygonHole();

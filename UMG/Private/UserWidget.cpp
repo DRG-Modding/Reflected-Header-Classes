@@ -5,14 +5,15 @@ class APlayerController;
 class USoundBase;
 class UUMGSequencePlayer;
 class APawn;
+class APlayerCameraManager;
 
 void UUserWidget::UnregisterInputComponent() {
 }
 
-void UUserWidget::UnbindFromAnimationStarted(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate) {
+void UUserWidget::UnbindFromAnimationStarted(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate) {
 }
 
-void UUserWidget::UnbindFromAnimationFinished(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate) {
+void UUserWidget::UnbindFromAnimationFinished(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate) {
 }
 
 void UUserWidget::UnbindAllFromAnimationStarted(UWidgetAnimation* Animation) {
@@ -65,6 +66,9 @@ void UUserWidget::SetDesiredSizeInViewport(FVector2D Size) {
 }
 
 void UUserWidget::SetColorAndOpacity(FLinearColor InColorAndOpacity) {
+}
+
+void UUserWidget::SetAnimationCurrentTime(const UWidgetAnimation* InAnimation, float InTime) {
 }
 
 void UUserWidget::SetAnchorsInViewport(FAnchors Anchors) {
@@ -144,7 +148,7 @@ void UUserWidget::OnAnimationFinished_Implementation(const UWidgetAnimation* Ani
 
 
 
-void UUserWidget::ListenForInputAction(FName ActionName, TEnumAsByte<EInputEvent> EventType, bool bConsume, FUserWidgetCallback Callback) {
+void UUserWidget::ListenForInputAction(FName ActionName, TEnumAsByte<EInputEvent> EventType, bool bConsume, FOnInputAction Callback) {
 }
 
 bool UUserWidget::IsPlayingAnimation() const {
@@ -176,6 +180,10 @@ APawn* UUserWidget::GetOwningPlayerPawn() const {
     return NULL;
 }
 
+APlayerCameraManager* UUserWidget::GetOwningPlayerCameraManager() const {
+    return NULL;
+}
+
 bool UUserWidget::GetIsVisible() const {
     return false;
 }
@@ -192,18 +200,21 @@ FVector2D UUserWidget::GetAlignmentInViewport() const {
     return FVector2D{};
 }
 
+void UUserWidget::FlushAnimations() {
+}
+
 
 
 void UUserWidget::CancelLatentActions() {
 }
 
-void UUserWidget::BindToAnimationStarted(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate) {
+void UUserWidget::BindToAnimationStarted(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate) {
 }
 
-void UUserWidget::BindToAnimationFinished(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate) {
+void UUserWidget::BindToAnimationFinished(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate) {
 }
 
-void UUserWidget::BindToAnimationEvent(UWidgetAnimation* Animation, FUserWidgetDelegate Delegate, EWidgetAnimationEvent AnimationEvent, FName UserTag) {
+void UUserWidget::BindToAnimationEvent(UWidgetAnimation* Animation, FWidgetAnimationDynamicEvent Delegate, EWidgetAnimationEvent AnimationEvent, FName UserTag) {
 }
 
 void UUserWidget::AddToViewport(int32 ZOrder) {
@@ -214,6 +225,7 @@ bool UUserWidget::AddToPlayerScreen(int32 ZOrder) {
 }
 
 UUserWidget::UUserWidget() {
+    this->AnimationTickManager = NULL;
     this->WidgetTree = NULL;
     this->Priority = 0;
     this->bSupportsKeyboardFocus = true;
@@ -221,7 +233,6 @@ UUserWidget::UUserWidget() {
     this->bStopAction = false;
     this->bHasScriptImplementedTick = true;
     this->bHasScriptImplementedPaint = true;
-    this->bCookedWidgetTree = false;
     this->TickFrequency = EWidgetTickFrequency::Auto;
     this->InputComponent = NULL;
 }

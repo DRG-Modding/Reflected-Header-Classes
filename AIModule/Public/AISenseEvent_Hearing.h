@@ -9,7 +9,7 @@ class AIMODULE_API UAISenseEvent_Hearing : public UAISenseEvent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAINoiseEvent Event;
     
 public:

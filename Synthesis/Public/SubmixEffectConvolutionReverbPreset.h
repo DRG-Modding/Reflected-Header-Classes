@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine SoundEffectSubmixPreset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
 #include "SubmixEffectConvolutionReverbSettings.h"
 #include "ESubmixEffectConvolutionReverbBlockSize.h"
 #include "SubmixEffectConvolutionReverbPreset.generated.h"
@@ -11,24 +11,24 @@ UCLASS(BlueprintType, EditInlineNew)
 class SYNTHESIS_API USubmixEffectConvolutionReverbPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    FSubmixEffectConvolutionReverbSettings Settings;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAudioImpulseResponse* ImpulseResponse;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSubmixEffectConvolutionReverbSettings Settings;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESubmixEffectConvolutionReverbBlockSize BlockSize;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableHardwareAcceleration;
     
+    USubmixEffectConvolutionReverbPreset();
     UFUNCTION(BlueprintCallable)
     void SetSettings(const FSubmixEffectConvolutionReverbSettings& InSettings);
     
     UFUNCTION(BlueprintCallable)
     void SetImpulseResponse(UAudioImpulseResponse* InImpulseResponse);
     
-    USubmixEffectConvolutionReverbPreset();
 };
 

@@ -4,6 +4,9 @@
 class UDataTable;
 class URichTextBlockDecorator;
 
+void URichTextBlock::SetTextTransformPolicy(ETextTransformPolicy InTransformPolicy) {
+}
+
 void URichTextBlock::SetTextStyleSet(UDataTable* NewTextStyleSet) {
 }
 
@@ -49,5 +52,6 @@ URichTextBlock::URichTextBlock() {
     this->TextStyleSet = NULL;
     this->bOverrideDefaultStyle = false;
     this->MinDesiredWidth = 0.00f;
+    this->TextTransformPolicy = ETextTransformPolicy::None;
 }
 

@@ -1,8 +1,12 @@
 #include "ExtractorItem.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
+#include "FSDAudioComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PointLightComponent -FallbackName=PointLightComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
 class AResourceChunk;
-class UBoxComponent;
 
 
 void AExtractorItem::Server_StopMining_Implementation() {
@@ -82,7 +86,17 @@ void AExtractorItem::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 }
 
 AExtractorItem::AExtractorItem() {
+    this->DroppedCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Root"));
+    this->DroppedMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("DropppedMesh"));
     this->FP_DrillParticles = NULL;
+    this->AudioComponent = CreateDefaultSubobject<UFSDAudioComponent>(TEXT("Audio"));
+    this->SurfaceLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("SurfaceLight"));
+    this->MeltingParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("MeltingEffect"));
+    this->InvalidSurfaceParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("InvalidSurfaceParticles"));
+    this->FPMuzzleParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("MuzzleEffect"));
+    this->FPMuzzleInvalidParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("MuzzleEInvalidffect"));
+    this->TPMuzzleParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("TPMuzzleEffect"));
+    this->TPMuzzleInvalidParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("TPMuzzleInvalidEffect"));
     this->FPMineMontage = NULL;
     this->TPMineMontage = NULL;
     this->FPGunsling = NULL;

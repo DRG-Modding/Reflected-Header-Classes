@@ -1,27 +1,44 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine PrimitiveComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: FieldSystemCore EFieldPhysicsType
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimitiveComponent -FallbackName=PrimitiveComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "FieldObjectCommands.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Chaos -ObjectName=EFieldPhysicsType -FallbackName=EFieldPhysicsType
 #include "FieldSystemComponent.generated.h"
 
-class AChaosSolverActor;
 class UFieldSystem;
-class UFieldNodeBase;
+class AChaosSolverActor;
 class UFieldSystemMetaData;
+class UFieldNodeBase;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UFieldSystemComponent : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFieldSystem* FieldSystem;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsWorldField;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsChaosField;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<AChaosSolverActor>> SupportedSolvers;
     
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FFieldObjectCommands ConstructionCommands;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FFieldObjectCommands BufferCommands;
+    
+    UFieldSystemComponent();
     UFUNCTION(BlueprintCallable)
     void ResetFieldSystem();
+    
+    UFUNCTION(BlueprintCallable)
+    void RemovePersistentFields();
     
     UFUNCTION(BlueprintCallable)
     void ApplyUniformVectorFalloffForce(bool Enabled, FVector Position, FVector Direction, float Radius, float Magnitude);
@@ -45,8 +62,10 @@ public:
     void ApplyLinearForce(bool Enabled, FVector Direction, float Magnitude);
     
     UFUNCTION(BlueprintCallable)
+    void AddPersistentField(bool Enabled, TEnumAsByte<EFieldPhysicsType> Target, UFieldSystemMetaData* MetaData, UFieldNodeBase* Field);
+    
+    UFUNCTION(BlueprintCallable)
     void AddFieldCommand(bool Enabled, TEnumAsByte<EFieldPhysicsType> Target, UFieldSystemMetaData* MetaData, UFieldNodeBase* Field);
     
-    UFieldSystemComponent();
 };
 

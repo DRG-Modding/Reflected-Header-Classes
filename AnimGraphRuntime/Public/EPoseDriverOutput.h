@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPoseDriverOutput.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPoseDriverOutput : uint8 {
     DrivePoses,
     DriveCurves,

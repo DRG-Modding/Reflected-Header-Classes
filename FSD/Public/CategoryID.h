@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "SaveGameIDInterface.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
 #include "CategoryID.generated.h"
 
 UCLASS()
@@ -10,8 +10,8 @@ class FSD_API UCategoryID : public UDataAsset, public ISaveGameIDInterface {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
-    FGuid SaveGameID;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGuid SavegameID;
     
 public:
     UCategoryID();

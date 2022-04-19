@@ -9,13 +9,13 @@ USTRUCT()
 struct FNiagaraVariableInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable Variable;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FText Definition;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UNiagaraDataInterface* DataInterface;
     
     NIAGARA_API FNiagaraVariableInfo();

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSequence
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequence -FallbackName=MovieSceneSequence
 #include "ActorSequenceObjectReferenceMap.h"
 #include "ActorSequence.generated.h"
 
@@ -11,10 +11,10 @@ class ACTORSEQUENCE_API UActorSequence : public UMovieSceneSequence {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
     UMovieScene* MovieScene;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FActorSequenceObjectReferenceMap ObjectReferences;
     
 public:

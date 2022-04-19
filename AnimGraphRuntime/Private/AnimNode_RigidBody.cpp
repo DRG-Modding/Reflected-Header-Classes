@@ -11,5 +11,7 @@ FAnimNode_RigidBody::FAnimNode_RigidBody() {
     this->bTransferBoneVelocities = false;
     this->bFreezeIncomingPoseOnStart = false;
     this->bClampLinearTranslationLimitToRefPose = false;
+    this->WorldSpaceMinimumScale = 0.00f;
+    this->EvaluationResetTime = 0.00f;
 }
 

@@ -11,7 +11,7 @@ class AIMODULE_API UEnvQueryGenerator_CurrentLocation : public UEnvQueryGenerato
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> QueryContext;
     
 public:

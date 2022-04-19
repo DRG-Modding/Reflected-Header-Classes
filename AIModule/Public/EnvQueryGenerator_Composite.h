@@ -10,16 +10,16 @@ UCLASS(EditInlineNew)
 class AIMODULE_API UEnvQueryGenerator_Composite : public UEnvQueryGenerator {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly, Export)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Export, meta=(AllowPrivateAccess=true))
     TArray<UEnvQueryGenerator*> generators;
     
-    UPROPERTY(AdvancedDisplay, EditDefaultsOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     uint8 bAllowDifferentItemTypes: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bHasMatchingItemType: 1;
     
-    UPROPERTY(AdvancedDisplay, EditDefaultsOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryItemType> ForcedItemType;
     
     UEnvQueryGenerator_Composite();

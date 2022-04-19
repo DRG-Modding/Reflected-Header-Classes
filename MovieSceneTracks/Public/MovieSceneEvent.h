@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FMovieSceneEvent {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneEventPtrs Ptrs;
     
     MOVIESCENETRACKS_API FMovieSceneEvent();

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "AnalyticsEventAttr.h"
 #include "AnalyticsBlueprintLibrary.generated.h"
 
@@ -8,6 +8,7 @@ UCLASS(BlueprintType)
 class UAnalyticsBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UAnalyticsBlueprintLibrary();
     UFUNCTION(BlueprintCallable)
     static bool StartSessionWithAttributes(const TArray<FAnalyticsEventAttr>& Attributes);
     
@@ -95,6 +96,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void EndSession();
     
-    UAnalyticsBlueprintLibrary();
 };
 

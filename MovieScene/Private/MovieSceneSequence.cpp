@@ -9,8 +9,10 @@ FMovieSceneObjectBindingID UMovieSceneSequence::FindBindingByTag(FName InBinding
 }
 
 UMovieSceneSequence::UMovieSceneSequence() {
+    this->CompiledData = NULL;
     this->DefaultCompletionMode = EMovieSceneCompletionMode::KeepState;
     this->bParentContextsAreSignificant = false;
     this->bPlayableDirectly = true;
+    this->SequenceFlags = EMovieSceneSequenceFlags::None;
 }
 

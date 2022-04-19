@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct GAMEPLAYTAGS_API FGameplayTagRedirect {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName OldTagName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName NewTagName;
     
     FGameplayTagRedirect();

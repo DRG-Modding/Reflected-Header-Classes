@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneTrackImplementation
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneTrackImplementation -FallbackName=MovieSceneTrackImplementation
 #include "ENiagaraSystemSpawnSectionStartBehavior.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
 #include "ENiagaraSystemSpawnSectionEndBehavior.h"
 #include "ENiagaraSystemSpawnSectionEvaluateBehavior.h"
 #include "ENiagaraAgeUpdateMode.h"
@@ -13,22 +13,22 @@ struct FMovieSceneNiagaraSystemTrackImplementation : public FMovieSceneTrackImpl
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FFrameNumber SpawnSectionStartFrame;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FFrameNumber SpawnSectionEndFrame;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ENiagaraSystemSpawnSectionStartBehavior SpawnSectionStartBehavior;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ENiagaraSystemSpawnSectionEvaluateBehavior SpawnSectionEvaluateBehavior;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ENiagaraSystemSpawnSectionEndBehavior SpawnSectionEndBehavior;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ENiagaraAgeUpdateMode AgeUpdateMode;
     
 public:

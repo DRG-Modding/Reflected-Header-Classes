@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieSceneTracks MovieSceneParameterSectionTemplate
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieSceneTracks -ObjectName=MovieSceneParameterSectionTemplate -FallbackName=MovieSceneParameterSectionTemplate
 #include "MovieSceneWidgetMaterialSectionTemplate.generated.h"
 
 USTRUCT()
@@ -8,7 +8,7 @@ struct FMovieSceneWidgetMaterialSectionTemplate : public FMovieSceneParameterSec
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FName> BrushPropertyNamePath;
     
 public:

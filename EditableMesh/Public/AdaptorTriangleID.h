@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MeshDescription ElementID
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=ElementID -FallbackName=ElementID
 #include "AdaptorTriangleID.generated.h"
 
 USTRUCT(BlueprintType)

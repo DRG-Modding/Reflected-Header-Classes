@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FCapturedPixelsID {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FName> Identifiers;
     
     MOVIESCENECAPTURE_API FCapturedPixelsID();

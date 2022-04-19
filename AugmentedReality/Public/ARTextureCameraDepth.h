@@ -9,13 +9,13 @@ UCLASS(Abstract)
 class AUGMENTEDREALITY_API UARTextureCameraDepth : public UARTexture {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARDepthQuality DepthQuality;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARDepthAccuracy DepthAccuracy;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bIsTemporallySmoothed;
     
     UARTextureCameraDepth();

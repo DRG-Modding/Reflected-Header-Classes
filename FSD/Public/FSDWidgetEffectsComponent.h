@@ -1,49 +1,49 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "WidgetPing.h"
+#include "EPingType.h"
 #include "WidgetFade.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
 #include "WidgetTextCounter.h"
 #include "CustomCounter.h"
 #include "WidgetMover.h"
-#include "EPingType.h"
+#include "CustomCounterDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EMoveType.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
 #include "FSDWidgetEffectsComponent.generated.h"
 
-class UObject;
 class UTextBlock;
+class UObject;
 class UWidget;
 class UUserWidget;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FFSDWidgetEffectsComponentOnCount, float, Value, float, NormalizedTime);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UFSDWidgetEffectsComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FWidgetPing> WidgetPings;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FWidgetFade> WidgetFades;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FWidgetTextCounter> WidgetTextCounters;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FCustomCounter> CustomCounters;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<FWidgetMover> WidgetMovers;
     
 public:
+    UFSDWidgetEffectsComponent();
     UFUNCTION(BlueprintCallable)
     static void StartTextCounter(UObject* WorldContext, UPARAM(Ref) UTextBlock*& Widget, float Start, float End, float Duration, int32 MaxDigits, float StartDelay);
     
     UFUNCTION(BlueprintCallable)
-    static void StartCounter(UObject* WorldContext, UObject* Owner, float Start, float End, float Duration, const FFSDWidgetEffectsComponentOnCount& OnCount, float StartDelay);
+    static void StartCounter(UObject* WorldContext, UObject* Owner, float Start, float End, float Duration, const FCustomCounterDelegate& OnCount, float StartDelay);
     
     UFUNCTION(BlueprintCallable)
     static void PingWidget(UObject* WorldContext, UWidget* Widget, float Amount, float Duration, EPingType PingType, float StartDelay);
@@ -66,6 +66,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void FadeInWidget(UObject* WorldContext, UUserWidget* Widget, float Duration, float StartDelay);
     
-    UFSDWidgetEffectsComponent();
 };
 

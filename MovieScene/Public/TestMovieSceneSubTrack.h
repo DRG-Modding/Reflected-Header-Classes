@@ -9,7 +9,7 @@ UCLASS(MinimalAPI)
 class UTestMovieSceneSubTrack : public UMovieSceneSubTrack {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UMovieSceneSection*> SectionArray;
     
     UTestMovieSceneSubTrack();

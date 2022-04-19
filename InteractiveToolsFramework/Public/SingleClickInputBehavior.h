@@ -7,7 +7,7 @@ UCLASS(NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API USingleClickInputBehavior : public UAnyButtonInputBehavior {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool HitTestOnRelease;
     
     USingleClickInputBehavior();

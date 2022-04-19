@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FBTDecoratorLogic {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EBTDecoratorLogic::Type> Operation;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint16 Number;
     
     AIMODULE_API FBTDecoratorLogic();

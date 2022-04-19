@@ -8,20 +8,18 @@ USTRUCT(BlueprintType)
 struct FNiagaraScriptExecutionParameterStore : public FNiagaraParameterStore {
     GENERATED_BODY()
 public:
-private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 ParameterSize;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint32 PaddedParameterSize;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraScriptExecutionPaddingInfo> PaddingInfo;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bInitialized: 1;
     
-public:
     NIAGARA_API FNiagaraScriptExecutionParameterStore();
 };
 

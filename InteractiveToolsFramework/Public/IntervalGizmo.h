@@ -3,32 +3,32 @@
 #include "InteractiveGizmo.h"
 #include "IntervalGizmo.generated.h"
 
-class UGizmoComponentAxisSource;
-class UGizmoTransformChangeStateTarget;
 class UTransformProxy;
+class UGizmoTransformChangeStateTarget;
+class UGizmoComponentAxisSource;
 class UPrimitiveComponent;
 
 UCLASS(NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UIntervalGizmo : public UInteractiveGizmo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UGizmoTransformChangeStateTarget* StateTarget;
     
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UTransformProxy* TransformProxy;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UPrimitiveComponent*> ActiveComponents;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UInteractiveGizmo*> ActiveGizmos;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UGizmoComponentAxisSource* AxisYSource;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UGizmoComponentAxisSource* AxisZSource;
     
 public:

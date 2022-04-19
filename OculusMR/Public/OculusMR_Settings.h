@@ -1,89 +1,67 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOculusMR_PostProcessEffects.h"
-#include "EOculusMR_ClippingReference.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Color
-#include "EOculusMR_DepthQuality.h"
-#include "EOculusMR_CompositionMethod.h"
-#include "EOculusMR_VirtualGreenScreenType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EOculusMR_CameraDeviceEnum.h"
+#include "EOculusMR_ClippingReference.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
+#include "EOculusMR_CompositionMethod.h"
+#include "EOculusMR_PostProcessEffects.h"
 #include "OculusMR_Settings.generated.h"
 
 UCLASS(BlueprintType)
 class UOculusMR_Settings : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOculusMR_ClippingReference ClippingReference;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseTrackedCameraResolution;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 WidthPerView;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 HeightPerView;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CastingLatency;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FColor BackdropColor;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HandPoseStateLatency;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FColor ChromaKeyColor;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChromaKeySimilarity;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChromaKeySmoothRange;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChromaKeySpillRange;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    EOculusMR_VirtualGreenScreenType VirtualGreenScreenType;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    float DynamicLightingDepthSmoothFactor;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    float DynamicLightingDepthVariationClampingValue;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOculusMR_PostProcessEffects ExternalCompositionPostProcessEffects;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bIsCasting;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EOculusMR_CompositionMethod CompositionMethod;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EOculusMR_CameraDeviceEnum CapturingCamera;
     
-    UPROPERTY()
-    bool bUseDynamicLighting;
-    
-    UPROPERTY()
-    EOculusMR_DepthQuality DepthQuality;
-    
 public:
-    UFUNCTION(BlueprintCallable)
-    void SetUseDynamicLighting(bool Val);
-    
+    UOculusMR_Settings();
     UFUNCTION(BlueprintCallable)
     void SetIsCasting(bool Val);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetDepthQuality(EOculusMR_DepthQuality Val);
     
     UFUNCTION(BlueprintCallable)
     void SetCompositionMethod(EOculusMR_CompositionMethod Val);
@@ -98,13 +76,7 @@ public:
     void LoadFromIni();
     
     UFUNCTION(BlueprintCallable)
-    bool GetUseDynamicLighting();
-    
-    UFUNCTION(BlueprintCallable)
     bool GetIsCasting();
-    
-    UFUNCTION(BlueprintCallable)
-    EOculusMR_DepthQuality GetDepthQuality();
     
     UFUNCTION(BlueprintCallable)
     EOculusMR_CompositionMethod GetCompositionMethod();
@@ -118,6 +90,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void BindToTrackedCameraIndexIfAvailable(int32 InTrackedCameraIndex);
     
-    UOculusMR_Settings();
 };
 

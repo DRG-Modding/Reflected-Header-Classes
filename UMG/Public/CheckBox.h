@@ -1,79 +1,100 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore CheckBoxStyle
 #include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore ECheckBoxState
-//CROSS-MODULE INCLUDE: SlateCore EHorizontalAlignment
-//CROSS-MODULE INCLUDE: SlateCore Margin
-//CROSS-MODULE INCLUDE: SlateCore SlateColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
+#include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EHorizontalAlignment -FallbackName=EHorizontalAlignment
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ECheckBoxState -FallbackName=ECheckBoxState
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=CheckBoxStyle -FallbackName=CheckBoxStyle
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonClickMethod -FallbackName=EButtonClickMethod
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonTouchMethod -FallbackName=EButtonTouchMethod
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonPressMethod -FallbackName=EButtonPressMethod
+#include "OnCheckBoxComponentStateChangedDelegate.h"
 #include "CheckBox.generated.h"
 
-class USlateBrushAsset;
 class USlateWidgetStyleAsset;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(ECheckBoxState, FCheckBoxCheckedStateDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCheckBoxOnCheckStateChanged, bool, bIsChecked);
+class USlateBrushAsset;
 
 UCLASS()
 class UMG_API UCheckBox : public UContentWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECheckBoxState CheckedState;
     
-    UPROPERTY()
-    FCheckBoxCheckedStateDelegate CheckedStateDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UWidget::FGetCheckBoxState CheckedStateDelegate;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCheckBoxStyle WidgetStyle;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateWidgetStyleAsset* Style;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* UncheckedImage;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* UncheckedHoveredImage;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* UncheckedPressedImage;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* CheckedImage;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* CheckedHoveredImage;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* CheckedPressedImage;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* UndeterminedImage;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* UndeterminedHoveredImage;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     USlateBrushAsset* UndeterminedPressedImage;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EHorizontalAlignment> HorizontalAlignment;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMargin Padding;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FSlateColor BorderBackgroundColor;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TEnumAsByte<EButtonClickMethod::Type> ClickMethod;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TEnumAsByte<EButtonTouchMethod::Type> TouchMethod;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TEnumAsByte<EButtonPressMethod::Type> PressMethod;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsFocusable;
     
-    UPROPERTY(BlueprintAssignable)
-    FCheckBoxOnCheckStateChanged OnCheckStateChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnCheckBoxComponentStateChanged OnCheckStateChanged;
+    
+    UCheckBox();
+    UFUNCTION(BlueprintCallable)
+    void SetTouchMethod(TEnumAsByte<EButtonTouchMethod::Type> InTouchMethod);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetPressMethod(TEnumAsByte<EButtonPressMethod::Type> InPressMethod);
     
     UFUNCTION(BlueprintCallable)
     void SetIsChecked(bool InIsChecked);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetClickMethod(TEnumAsByte<EButtonClickMethod::Type> InClickMethod);
     
     UFUNCTION(BlueprintCallable)
     void SetCheckedState(ECheckBoxState InCheckedState);
@@ -87,6 +108,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ECheckBoxState GetCheckedState() const;
     
-    UCheckBox();
 };
 

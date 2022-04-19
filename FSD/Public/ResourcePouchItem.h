@@ -8,7 +8,7 @@ USTRUCT()
 struct FResourcePouchItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UResourceData* Resource;
     
     FSD_API FResourcePouchItem();

@@ -1,57 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintGeneratedClass
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintGeneratedClass -FallbackName=BlueprintGeneratedClass
 #include "DelegateRuntimeBinding.h"
 #include "WidgetBlueprintGeneratedClass.generated.h"
 
 class UWidgetTree;
-class UUserWidget;
 class UWidgetAnimation;
 
 UCLASS()
 class UMG_API UWidgetBlueprintGeneratedClass : public UBlueprintGeneratedClass {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+private:
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UWidgetTree* WidgetTree;
     
-    UPROPERTY()
-    uint8 bAllowTemplate: 1;
-    
-    UPROPERTY()
-    uint8 bAllowDynamicCreation: 1;
-    
-private:
-    UPROPERTY()
-    uint8 bValidTemplate: 1;
-    
-    UPROPERTY(Transient)
-    uint8 bTemplateInitialized: 1;
-    
-    UPROPERTY(Transient)
-    uint8 bCookedTemplate: 1;
-    
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bClassRequiresNativeTick: 1;
     
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FDelegateRuntimeBinding> Bindings;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UWidgetAnimation*> Animations;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FName> NamedSlots;
     
-private:
-    UPROPERTY(Export)
-    TSoftObjectPtr<UUserWidget> TemplateAsset;
-    
-    UPROPERTY(Export, Transient)
-    UUserWidget* Template;
-    
-public:
     UWidgetBlueprintGeneratedClass();
 };
 

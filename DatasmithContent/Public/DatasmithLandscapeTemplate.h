@@ -9,10 +9,10 @@ UCLASS()
 class DATASMITHCONTENT_API UDatasmithLandscapeTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UMaterialInterface* LandscapeMaterial;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 StaticLightingLOD;
     
     UDatasmithLandscapeTemplate();

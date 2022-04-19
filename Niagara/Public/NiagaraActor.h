@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "NiagaraActor.generated.h"
 
 class UNiagaraComponent;
@@ -10,13 +10,14 @@ class ANiagaraActor : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UNiagaraComponent* NiagaraComponent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bDestroyOnSystemFinish: 1;
     
 public:
+    ANiagaraActor();
     UFUNCTION(BlueprintCallable)
     void SetDestroyOnSystemFinish(bool bShouldDestroyOnSystemFinish);
     
@@ -24,7 +25,5 @@ private:
     UFUNCTION(BlueprintCallable)
     void OnNiagaraSystemFinished(UNiagaraComponent* FinishedComponent);
     
-public:
-    ANiagaraActor();
 };
 

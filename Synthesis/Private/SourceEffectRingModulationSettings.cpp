@@ -6,5 +6,6 @@ FSourceEffectRingModulationSettings::FSourceEffectRingModulationSettings() {
     this->Depth = 0.00f;
     this->DryLevel = 0.00f;
     this->WetLevel = 0.00f;
+    this->AudioBusModulator = NULL;
 }
 

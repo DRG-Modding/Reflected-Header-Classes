@@ -10,7 +10,7 @@ class MOVIESCENETRACKS_API UMovieSceneByteTrack : public UMovieScenePropertyTrac
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UEnum* Enum;
     
 public:

@@ -1,30 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MaterialExpression -FallbackName=MaterialExpression
 #include "ELandscapeCustomizedCoordType.h"
 #include "ETerrainCoordMappingType.h"
-//CROSS-MODULE INCLUDE: Engine MaterialExpression
 #include "MaterialExpressionLandscapeLayerCoords.generated.h"
 
 UCLASS(CollapseCategories)
 class LANDSCAPE_API UMaterialExpressionLandscapeLayerCoords : public UMaterialExpression {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ETerrainCoordMappingType> MappingType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ELandscapeCustomizedCoordType> CustomUVType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MappingScale;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MappingRotation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MappingPanU;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MappingPanV;
     
     UMaterialExpressionLandscapeLayerCoords();

@@ -9,7 +9,7 @@ class AIMODULE_API UBTTask_BlackboardBase : public UBTTaskNode {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector BlackboardKey;
     
 public:

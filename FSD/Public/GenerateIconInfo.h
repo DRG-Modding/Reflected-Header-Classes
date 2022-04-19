@@ -1,45 +1,45 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPickaxePartLocation.h"
 #include "EGeneratorIconType.h"
 #include "PickaxeSet.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+#include "EPickaxePartLocation.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "GenerateIconInfo.generated.h"
 
-class UItemSkin;
 class UPickaxePart;
-class UPlayerCharacterID;
+class UItemSkin;
 class UVanityItem;
+class UPlayerCharacterID;
 
 USTRUCT(BlueprintType)
 struct FGenerateIconInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     EGeneratorIconType IconType;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UPickaxePart* PickaxePart;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FPickaxeSet PickaxeSet;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     EPickaxePartLocation PickaxePartLocation;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UItemSkin* ItemSkin;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UVanityItem* Item;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UPlayerCharacterID* Character;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FVector2D Size;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     bool bShowCloseUp;
     
     FSD_API FGenerateIconInfo();

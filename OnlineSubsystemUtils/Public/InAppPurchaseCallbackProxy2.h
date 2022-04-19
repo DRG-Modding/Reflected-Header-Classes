@@ -1,27 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "InAppPurchaseResult2Delegate.h"
 #include "InAppPurchaseProductRequest2.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-#include "InAppPurchaseReceiptInfo2.h"
-#include "EInAppPurchaseStatus.h"
 #include "InAppPurchaseCallbackProxy2.generated.h"
 
 class UInAppPurchaseCallbackProxy2;
 class APlayerController;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInAppPurchaseCallbackProxy2OnSuccess, EInAppPurchaseStatus, PurchaseStatus, const TArray<FInAppPurchaseReceiptInfo2>&, InAppPurchaseReceipts);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FInAppPurchaseCallbackProxy2OnFailure, EInAppPurchaseStatus, PurchaseStatus, const TArray<FInAppPurchaseReceiptInfo2>&, InAppPurchaseReceipts);
-
 UCLASS(BlueprintType, MinimalAPI)
 class UInAppPurchaseCallbackProxy2 : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FInAppPurchaseCallbackProxy2OnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FInAppPurchaseResult2 OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FInAppPurchaseCallbackProxy2OnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FInAppPurchaseResult2 OnFailure;
     
+    UInAppPurchaseCallbackProxy2();
     UFUNCTION(BlueprintCallable)
     static UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchaseUnprocessedPurchases(APlayerController* PlayerController);
     
@@ -31,6 +28,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UInAppPurchaseCallbackProxy2* CreateProxyObjectForInAppPurchase(APlayerController* PlayerController, const FInAppPurchaseProductRequest2& ProductRequest);
     
-    UInAppPurchaseCallbackProxy2();
 };
 

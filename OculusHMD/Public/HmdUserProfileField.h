@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FHmdUserProfileField {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString FieldName;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString FieldValue;
     
     OCULUSHMD_API FHmdUserProfileField();

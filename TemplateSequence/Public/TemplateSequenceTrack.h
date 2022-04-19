@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSubTrack
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSubTrack -FallbackName=MovieSceneSubTrack
 #include "TemplateSequenceTrack.generated.h"
 
 UCLASS(MinimalAPI)

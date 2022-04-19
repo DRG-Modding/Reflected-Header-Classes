@@ -8,7 +8,7 @@ class UMovieSceneColorTrack : public UMovieScenePropertyTrack {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bIsSlateColor;
     
 public:

@@ -6,7 +6,7 @@ USTRUCT()
 struct FMovieSceneEventPayloadVariable {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Value;
     
     MOVIESCENETRACKS_API FMovieSceneEventPayloadVariable();

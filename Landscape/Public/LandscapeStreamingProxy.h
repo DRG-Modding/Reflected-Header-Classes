@@ -5,11 +5,11 @@
 
 class ALandscape;
 
-UCLASS(MinimalAPI, NotPlaceable)
+UCLASS(MinimalAPI)
 class ALandscapeStreamingProxy : public ALandscapeProxy {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TLazyObjectPtr<ALandscape> LandscapeActor;
     
     ALandscapeStreamingProxy();

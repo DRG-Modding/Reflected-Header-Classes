@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "EffectSettings.generated.h"
 
 class UNiagaraSystem;
@@ -9,9 +9,10 @@ UCLASS(BlueprintType)
 class UEffectSettings : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UNiagaraSystem>> ParticlesForShaderGeneration;
     
+    UEffectSettings();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool NeedsShadeGeneration() const;
     
@@ -21,6 +22,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void CompileShaders();
     
-    UEffectSettings();
 };
 

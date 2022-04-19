@@ -7,13 +7,13 @@ UCLASS(Abstract, EditInlineNew)
 class MEDIAASSETS_API UTimeSynchronizableMediaSource : public UBaseMediaSource {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseTimeSynchronization;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 FrameDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     double TimeDelay;
     
     UTimeSynchronizableMediaSource();

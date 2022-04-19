@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MeshDescription PolygonID
-#include "VertexIndexAndInstanceID.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=PolygonID -FallbackName=PolygonID
 #include "VertexInstancesForPolygonHole.h"
+#include "VertexIndexAndInstanceID.h"
 #include "ChangeVertexInstancesForPolygon.generated.h"
 
 USTRUCT(BlueprintType)
 struct FChangeVertexInstancesForPolygon {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FPolygonID PolygonID;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FVertexIndexAndInstanceID> PerimeterVertexIndicesAndInstanceIDs;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FVertexInstancesForPolygonHole> VertexIndicesAndInstanceIDsForEachHole;
     
     EDITABLEMESH_API FChangeVertexInstancesForPolygon();

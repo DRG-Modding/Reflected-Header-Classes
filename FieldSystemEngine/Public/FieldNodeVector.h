@@ -3,7 +3,7 @@
 #include "FieldNodeBase.h"
 #include "FieldNodeVector.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UFieldNodeVector : public UFieldNodeBase {
     GENERATED_BODY()
 public:

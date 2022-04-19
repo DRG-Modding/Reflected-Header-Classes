@@ -1,36 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "ESlateAccessibleBehavior.h"
 #include "SlateAccessibleWidgetData.generated.h"
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FSlateAccessibleWidgetDataAccessibleTextDelegate);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FSlateAccessibleWidgetDataAccessibleSummaryTextDelegate);
 
 UCLASS(DefaultToInstanced)
 class USlateAccessibleWidgetData : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bCanChildrenBeAccessible;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ESlateAccessibleBehavior AccessibleBehavior;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     ESlateAccessibleBehavior AccessibleSummaryBehavior;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FText AccessibleText;
     
-    UPROPERTY()
-    FSlateAccessibleWidgetDataAccessibleTextDelegate AccessibleTextDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FGetText AccessibleTextDelegate;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FText AccessibleSummaryText;
     
-    UPROPERTY()
-    FSlateAccessibleWidgetDataAccessibleSummaryTextDelegate AccessibleSummaryTextDelegate;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FGetText AccessibleSummaryTextDelegate;
     
     USlateAccessibleWidgetData();
 };

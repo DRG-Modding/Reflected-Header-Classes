@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct GAMEPLAYTAGS_API FGameplayTagCategoryRemap {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString BaseCategory;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> RemapCategories;
     
     FGameplayTagCategoryRemap();

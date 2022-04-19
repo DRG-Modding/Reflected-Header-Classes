@@ -4,14 +4,14 @@
 #include "MovieSceneTrackIdentifier.h"
 #include "MovieSceneEvaluationFieldTrackPtr.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneEvaluationFieldTrackPtr {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneSequenceID SequenceID;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneTrackIdentifier TrackIdentifier;
     
     MOVIESCENE_API FMovieSceneEvaluationFieldTrackPtr();

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "DatasmithContentBlueprintLibrary.generated.h"
 
 class UObject;
@@ -10,6 +10,7 @@ UCLASS(BlueprintType)
 class DATASMITHCONTENT_API UDatasmithContentBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UDatasmithContentBlueprintLibrary();
     UFUNCTION(BlueprintCallable)
     static FString GetDatasmithUserDataValueForKey(UObject* Object, FName Key);
     
@@ -19,6 +20,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static UDatasmithAssetUserData* GetDatasmithUserData(UObject* Object);
     
-    UDatasmithContentBlueprintLibrary();
 };
 

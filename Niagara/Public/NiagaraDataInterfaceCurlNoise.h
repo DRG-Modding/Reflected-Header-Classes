@@ -7,7 +7,7 @@ UCLASS(EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceCurlNoise : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint32 Seed;
     
     UNiagaraDataInterfaceCurlNoise();

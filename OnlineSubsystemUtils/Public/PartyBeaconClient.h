@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "OnlineBeaconClient.h"
 #include "PartyReservation.h"
-//CROSS-MODULE INCLUDE: Engine UniqueNetIdRepl
 #include "EClientRequestType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "EPartyReservationResult.h"
 #include "PartyBeaconClient.generated.h"
 
@@ -12,21 +12,24 @@ class ONLINESUBSYSTEMUTILS_API APartyBeaconClient : public AOnlineBeaconClient {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString DestSessionId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FPartyReservation PendingReservation;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EClientRequestType requestType;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bPendingReservationSent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bCancelReservation;
     
+public:
+    APartyBeaconClient();
+protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerUpdateReservationRequest(const FString& sessionId, const FPartyReservation& ReservationUpdate);
     
@@ -38,6 +41,9 @@ protected:
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerCancelReservationRequest(const FUniqueNetIdRepl& PartyLeader);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void ServerAddOrUpdateReservationRequest(const FString& sessionId, const FPartyReservation& Reservation);
     
 public:
     UFUNCTION(BlueprintCallable, Client, Reliable)
@@ -52,6 +58,5 @@ public:
     UFUNCTION(BlueprintCallable, Client, Reliable)
     void ClientCancelReservationResponse(TEnumAsByte<EPartyReservationResult::Type> ReservationResponse);
     
-    APartyBeaconClient();
 };
 

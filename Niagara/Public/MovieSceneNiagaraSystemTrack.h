@@ -1,12 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneNiagaraTrack.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneTrackTemplateProducer -FallbackName=MovieSceneTrackTemplateProducer
 #include "MovieSceneNiagaraSystemTrack.generated.h"
 
 UCLASS(MinimalAPI)
-class UMovieSceneNiagaraSystemTrack : public UMovieSceneNiagaraTrack {
+class UMovieSceneNiagaraSystemTrack : public UMovieSceneNiagaraTrack, public IMovieSceneTrackTemplateProducer {
     GENERATED_BODY()
 public:
     UMovieSceneNiagaraSystemTrack();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

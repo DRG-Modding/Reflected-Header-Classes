@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneNameableTrack
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneNameableTrack -FallbackName=MovieSceneNameableTrack
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieScenePropertyBinding -FallbackName=MovieScenePropertyBinding
 #include "MovieScenePropertyTrack.generated.h"
 
 class UMovieSceneSection;
@@ -10,17 +11,14 @@ class MOVIESCENETRACKS_API UMovieScenePropertyTrack : public UMovieSceneNameable
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     UMovieSceneSection* SectionToKey;
     
 protected:
-    UPROPERTY()
-    FName PropertyName;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FMovieScenePropertyBinding PropertyBinding;
     
-    UPROPERTY()
-    FString PropertyPath;
-    
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<UMovieSceneSection*> Sections;
     
 public:

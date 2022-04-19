@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "CapturedPropSegment.h"
 #include "EPropertyValueCategory.h"
 #include "PropertyValue.generated.h"
@@ -10,37 +10,38 @@ class VARIANTMANAGERCONTENT_API UPropertyValue : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
-    TArray<TFieldPath<FNone>> Properties;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    TArray<TFieldPath<FProperty>> Properties;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<int32> PropertyIndices;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FCapturedPropSegment> CapturedPropSegments;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString FullDisplayString;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName PropertySetterName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TMap<FString, FString> PropertySetterParameterDefaults;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bHasRecordedData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UClass* LeafPropertyClass;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<uint8> ValueBytes;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EPropertyValueCategory PropCategory;
     
 public:
+    UPropertyValue();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasRecordedData() const;
     
@@ -50,6 +51,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetFullDisplayString() const;
     
-    UPropertyValue();
 };
 

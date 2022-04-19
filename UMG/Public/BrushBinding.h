@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
 #include "PropertyBinding.h"
-//CROSS-MODULE INCLUDE: SlateCore SlateBrush
 #include "BrushBinding.generated.h"
 
 UCLASS()
 class UMG_API UBrushBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
+    UBrushBinding();
     UFUNCTION(BlueprintCallable)
     FSlateBrush GetValue() const;
     
-    UBrushBinding();
 };
 

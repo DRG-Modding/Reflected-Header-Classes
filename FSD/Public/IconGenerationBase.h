@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "IconGenerationBase.generated.h"
 
 class UMaterialInterface;
@@ -11,10 +11,10 @@ class AIconGenerationBase : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     USceneCaptureComponent2D* ActiveCaptureComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* DownScaleMaterial;
     
 public:

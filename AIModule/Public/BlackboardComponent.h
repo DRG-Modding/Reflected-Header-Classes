@@ -1,33 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "BlackboardComponent.generated.h"
 
+class UBlackboardKeyType;
 class UBrainComponent;
 class UBlackboardData;
-class UBlackboardKeyType;
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UBlackboardComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UBrainComponent* BrainComp;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     UBlackboardData* DefaultBlackboardAsset;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     UBlackboardData* BlackboardAsset;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     TArray<UBlackboardKeyType*> KeyInstances;
     
 public:
+    UBlackboardComponent();
     UFUNCTION(BlueprintCallable)
     void SetValueAsVector(const FName& KeyName, FVector VectorValue);
     
@@ -100,6 +101,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void ClearValue(const FName& KeyName);
     
-    UBlackboardComponent();
 };
 

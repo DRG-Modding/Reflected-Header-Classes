@@ -10,16 +10,16 @@ class ONLINESUBSYSTEMUTILS_API APartyBeaconHost : public AOnlineBeaconHostObject
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UPartyBeaconState* State;
     
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
     bool bLogoutOnSessionTimeout;
     
-    UPROPERTY(Config, Transient)
+    UPROPERTY(BlueprintReadWrite, Config, Transient, meta=(AllowPrivateAccess=true))
     float SessionTimeoutSecs;
     
-    UPROPERTY(Config, Transient)
+    UPROPERTY(BlueprintReadWrite, Config, Transient, meta=(AllowPrivateAccess=true))
     float TravelSessionTimeoutSecs;
     
 public:

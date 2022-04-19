@@ -7,6 +7,7 @@ public class TemplateSequence : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
+            "CinematicCamera",
             "Core",
             "CoreUObject",
             "Engine",

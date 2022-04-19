@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FLandscapeMaterialTextureStreamingInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName TextureName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float TexelFactor;
     
     LANDSCAPE_API FLandscapeMaterialTextureStreamingInfo();

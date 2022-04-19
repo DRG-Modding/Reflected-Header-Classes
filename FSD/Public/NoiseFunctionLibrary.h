@@ -1,18 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "NoiseFunctionLibrary.generated.h"
 
 class UObject;
-class AActor;
 class USceneComponent;
+class AActor;
 
 UCLASS(BlueprintType)
 class UNoiseFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UNoiseFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static void SphericalNoiseMovementComponent(UObject* WorldContextObject, USceneComponent* Component, FVector Center, float Radius, float Speed, float TimeOffset);
     
@@ -34,6 +35,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static float Noise(UObject* WorldContextObject, float X);
     
-    UNoiseFunctionLibrary();
 };
 

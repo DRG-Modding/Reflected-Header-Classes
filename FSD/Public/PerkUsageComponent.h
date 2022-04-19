@@ -1,20 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "RejoinListener.h"
 #include "PerkUsage.h"
 #include "PerkUsageComponent.generated.h"
 
 class UPerkAsset;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class FSD_API UPerkUsageComponent : public UActorComponent, public IRejoinListener {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_PerkUsageReplicated)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_PerkUsageReplicated, meta=(AllowPrivateAccess=true))
     TArray<FPerkUsage> PerkUsageReplicated;
     
+public:
+    UPerkUsageComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_MarkPerkUsed(UPerkAsset* Perk);
     
@@ -24,10 +29,6 @@ protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_PerkUsageReplicated();
     
-public:
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UPerkUsageComponent();
     
     // Fix for true pure virtual functions not being implemented
 };

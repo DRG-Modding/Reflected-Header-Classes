@@ -4,12 +4,12 @@
 #include "NiagaraUserParameterBinding.generated.h"
 
 USTRUCT(BlueprintType)
-struct FNiagaraUserParameterBinding {
+struct NIAGARA_API FNiagaraUserParameterBinding {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariable Parameter;
     
-    NIAGARA_API FNiagaraUserParameterBinding();
+    FNiagaraUserParameterBinding();
 };
 

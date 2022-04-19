@@ -2,6 +2,9 @@
 
 class UMaterialInstanceDynamic;
 
+void UTextBlock::SetTextTransformPolicy(ETextTransformPolicy InTransformPolicy) {
+}
+
 void UTextBlock::SetText(FText InText) {
 }
 
@@ -45,6 +48,7 @@ UTextBlock::UTextBlock() {
     this->MinDesiredWidth = 0.00f;
     this->bWrapWithInvalidationPanel = false;
     this->bAutoWrapText = false;
+    this->TextTransformPolicy = ETextTransformPolicy::None;
     this->bSimpleTextMode = false;
 }
 

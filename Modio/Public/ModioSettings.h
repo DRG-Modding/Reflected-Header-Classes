@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EModioLogLevel.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EModioEnvironment.h"
+#include "EModioLogLevel.h"
 #include "EModioPortal.h"
 #include "ModioSettings.generated.h"
 
@@ -10,19 +10,19 @@ UCLASS(DefaultConfig, Config=Game)
 class MODIO_API UModioSettings : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     int64 GameId;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     FString ApiKey;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     EModioEnvironment Environment;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     EModioLogLevel LogLevel;
     
-    UPROPERTY(Config, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
     EModioPortal DefaultPortal;
     
     UModioSettings();

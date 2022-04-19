@@ -8,7 +8,7 @@ USTRUCT()
 struct FItemSkinOwners {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UItemID*> Items;
     
     FSD_API FItemSkinOwners();

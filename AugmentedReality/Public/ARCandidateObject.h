@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Box
-//CROSS-MODULE INCLUDE: Engine DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ARCandidateObject.generated.h"
 
 UCLASS(BlueprintType)
@@ -9,16 +9,17 @@ class AUGMENTEDREALITY_API UARCandidateObject : public UDataAsset {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<uint8> CandidateObjectData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString FriendlyName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBox BoundingBox;
     
 public:
+    UARCandidateObject();
     UFUNCTION(BlueprintCallable)
     void SetFriendlyName(const FString& NewName);
     
@@ -37,6 +38,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FBox GetBoundingBox() const;
     
-    UARCandidateObject();
 };
 

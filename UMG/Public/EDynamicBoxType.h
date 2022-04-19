@@ -7,6 +7,8 @@ enum class EDynamicBoxType : uint8 {
     Horizontal,
     Vertical,
     Wrap,
+    VerticalWrap,
+    Radial,
     Overlay,
 };
 

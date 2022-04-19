@@ -1,25 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "FloatPerkComponent.generated.h"
 
 class APlayerCharacter;
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract, Blueprintable, meta=(BlueprintSpawnableComponent))
 class UFloatPerkComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     float FloatValue;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     APlayerCharacter* PlayerCharacter;
-    
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void Receive_OnInitialized();
     
 public:
     UFloatPerkComponent();
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void Receive_OnInitialized();
+    
 };
 

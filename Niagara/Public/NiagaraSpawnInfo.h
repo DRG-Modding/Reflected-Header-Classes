@@ -2,20 +2,20 @@
 #include "CoreMinimal.h"
 #include "NiagaraSpawnInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraSpawnInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 count;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float InterpStartDt;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float IntervalDt;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 SpawnGroup;
     
     NIAGARA_API FNiagaraSpawnInfo();

@@ -1,16 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CampaignRequirement.h"
-//CROSS-MODULE INCLUDE: CoreUObject Timespan
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timespan -FallbackName=Timespan
 #include "WeeklyTimerCampaignRequirement.generated.h"
 
 class AFSDPlayerController;
 class UCampaign;
 
 UCLASS(EditInlineNew)
-class UWeeklyTimerCampaignRequirement : public UCampaignRequirement {
+class FSD_API UWeeklyTimerCampaignRequirement : public UCampaignRequirement {
     GENERATED_BODY()
 public:
+    UWeeklyTimerCampaignRequirement();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FTimespan GetWeeklyTimeLeft(AFSDPlayerController* Player) const;
     
@@ -20,6 +21,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetHasCompleted(UCampaign* Campaign, AFSDPlayerController* Player) const;
     
-    UWeeklyTimerCampaignRequirement();
 };
 

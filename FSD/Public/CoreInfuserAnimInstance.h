@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine AnimInstance
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "CoreInfuserAnimInstance.generated.h"
 
 UCLASS(NonTransient)
@@ -8,19 +8,20 @@ class UCoreInfuserAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool PoweredUp;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool IsOpen;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool IsRewardSelected;
-    
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnRewardSelected();
     
 public:
     UCoreInfuserAnimInstance();
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnRewardSelected();
+    
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Slate EListItemAlignment
 #include "ListView.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=EListItemAlignment -FallbackName=EListItemAlignment
 #include "TileView.generated.h"
 
 UCLASS()
@@ -9,25 +9,31 @@ class UMG_API UTileView : public UListView {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float EntryHeight;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float EntryWidth;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EListItemAlignment TileAlignment;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bWrapHorizontalNavigation;
     
 public:
+    UTileView();
     UFUNCTION(BlueprintCallable)
     void SetEntryWidth(float NewWidth);
     
     UFUNCTION(BlueprintCallable)
     void SetEntryHeight(float NewHeight);
     
-    UTileView();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetEntryWidth() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetEntryHeight() const;
+    
 };
 

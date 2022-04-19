@@ -2,41 +2,46 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "InstantUsable.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "TrackBuilderUsable.generated.h"
 
-class APlayerCharacter;
 class UTrackBuilderUsable;
-class AActor;
-class USceneComponent;
 class ATrackBuilderSegment;
 class ATrackBuilderItem;
+class APlayerCharacter;
+class USceneComponent;
+class AActor;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTrackBuilderUsableOnNextSegmentChanged, UTrackBuilderUsable*, InUsable, ATrackBuilderSegment*, InSegment);
-
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class FSD_API UTrackBuilderUsable : public UInstantUsable {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FTrackBuilderUsableOnNextSegmentChanged OnNextSegmentChanged;
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FSegmentDelegate, UTrackBuilderUsable*, InUsable, ATrackBuilderSegment*, InSegment);
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FSegmentDelegate OnNextSegmentChanged;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ATrackBuilderItem> BuilderItemType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ColliderName;
     
-    UPROPERTY(BlueprintReadWrite, Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     USceneComponent* TrackStartComponent;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_NextSegment)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_NextSegment, meta=(AllowPrivateAccess=true))
     ATrackBuilderSegment* NextSegment;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APlayerCharacter> InUseBy;
     
+public:
+    UTrackBuilderUsable();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_NextSegment();
     
@@ -50,8 +55,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void FinishUse(APlayerCharacter* User, ATrackBuilderSegment* InSegment);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTrackBuilderUsable();
 };
 

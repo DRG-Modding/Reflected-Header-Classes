@@ -1,35 +1,36 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: UMG UserWidget
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "EFSDInputSource.h"
-//CROSS-MODULE INCLUDE: SlateCore SlateFontInfo
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ActionIconMapping.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateFontInfo -FallbackName=SlateFontInfo
 #include "FSDAdvancedLabel.generated.h"
 
-class UHorizontalBox;
-class UTexture2D;
 class UTextBlock;
+class UTexture2D;
 class UImage;
+class UHorizontalBox;
 
 UCLASS(Abstract, EditInlineNew)
 class UFSDAdvancedLabel : public UUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText FormattedText;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText ControllerOverrideText;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UpperCase;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFSDInputSource PreviewAs;
     
 public:
+    UFSDAdvancedLabel();
     UFUNCTION(BlueprintCallable)
     void SetText(FText NewText, FText OverrideControllerText);
     
@@ -86,7 +87,5 @@ protected:
     UFUNCTION(BlueprintCallable)
     UHorizontalBox* CreateHorizontalBox();
     
-public:
-    UFSDAdvancedLabel();
 };
 

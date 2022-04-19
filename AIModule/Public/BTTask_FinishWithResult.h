@@ -9,7 +9,7 @@ class AIMODULE_API UBTTask_FinishWithResult : public UBTTaskNode {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EBTNodeResult::Type> Result;
     
 public:

@@ -1,8 +1,8 @@
 #include "LevelSequenceMediaController.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MediaAssets -ObjectName=MediaComponent -FallbackName=MediaComponent
 
 class ALevelSequenceActor;
-class UMediaComponent;
 
 void ALevelSequenceMediaController::SynchronizeToServer(float DesyncThresholdSeconds) {
 }
@@ -29,6 +29,7 @@ void ALevelSequenceMediaController::GetLifetimeReplicatedProps(TArray<FLifetimeP
 
 ALevelSequenceMediaController::ALevelSequenceMediaController() {
     this->Sequence = NULL;
+    this->MediaComponent = CreateDefaultSubobject<UMediaComponent>(TEXT("MediaComponent"));
     this->ServerStartTimeSeconds = -0.00f;
 }
 

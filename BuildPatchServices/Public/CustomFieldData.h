@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FCustomFieldData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Key;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString Value;
     
     BUILDPATCHSERVICES_API FCustomFieldData();

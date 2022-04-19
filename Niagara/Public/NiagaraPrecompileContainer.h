@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "NiagaraPrecompileContainer.generated.h"
 
-class UNiagaraScript;
 class UNiagaraSystem;
+class UNiagaraScript;
 
 UCLASS()
 class NIAGARA_API UNiagaraPrecompileContainer : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UNiagaraScript*> Scripts;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UNiagaraSystem* System;
     
     UNiagaraPrecompileContainer();

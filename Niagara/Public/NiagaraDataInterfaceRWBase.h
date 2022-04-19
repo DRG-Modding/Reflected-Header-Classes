@@ -7,10 +7,10 @@ UCLASS(Abstract, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceRWBase : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<int32> OutputShaderStages;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<int32> IterationShaderStages;
     
     UNiagaraDataInterfaceRWBase();

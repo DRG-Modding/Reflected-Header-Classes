@@ -1,7 +1,12 @@
 #include "GeometryCollection.h"
 
 UGeometryCollection::UGeometryCollection() {
-    this->CollisionType = ECollisionTypeEnum::Chaos_Surface_Volumetric;
+    this->EnableClustering = true;
+    this->ClusterGroupIndex = 0;
+    this->MaxClusterLevel = 100;
+    this->DamageThreshold.AddDefaulted(1);
+    this->ClusterConnectionType = EClusterConnectionTypeEnum::Chaos_PointImplicit;
+    this->CollisionType = ECollisionTypeEnum::Chaos_Volumetric;
     this->ImplicitType = EImplicitTypeEnum::Chaos_Implicit_Box;
     this->MinLevelSetResolution = 10;
     this->MaxLevelSetResolution = 10;

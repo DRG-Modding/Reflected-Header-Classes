@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct HEADMOUNTEDDISPLAY_API FXRDeviceId {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FName SystemName;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 DeviceID;
     
     FXRDeviceId();

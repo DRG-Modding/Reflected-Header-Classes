@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DeveloperSettings
+//CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "FSDTranslationProgress.h"
 #include "FSDLocalizationSettings.generated.h"
 
@@ -9,7 +9,7 @@ class UFSDLocalizationSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FFSDTranslationProgress> CommunityTranslationProgress;
     
 public:

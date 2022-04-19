@@ -9,10 +9,10 @@ struct UMG_API FUserWidgetPool {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUserWidget*> ActiveWidgets;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<UUserWidget*> InactiveWidgets;
     
 public:

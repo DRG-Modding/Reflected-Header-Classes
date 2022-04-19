@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct SYNTHESIS_API FPatchId {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 ID;
     
     FPatchId();

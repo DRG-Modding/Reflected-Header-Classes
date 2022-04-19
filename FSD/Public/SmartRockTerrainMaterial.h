@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: FSDEngine TerrainMaterialBase
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=TerrainMaterialBase -FallbackName=TerrainMaterialBase
 #include "SmartRockTerrainMaterial.generated.h"
 
 UCLASS()

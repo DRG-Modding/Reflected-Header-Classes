@@ -7,7 +7,6 @@ public class AssetTags : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
-            "AssetRegistry",
             "Core",
             "CoreUObject",
             "Engine",

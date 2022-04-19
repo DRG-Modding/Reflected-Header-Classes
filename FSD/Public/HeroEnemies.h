@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RunningMissionBP.h"
-//CROSS-MODULE INCLUDE: GameplayTags GameplayTagQuery
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
 #include "EliteEnemyEntry.h"
 #include "HeroEnemies.generated.h"
 
@@ -13,16 +13,17 @@ class UHeroEnemies : public URunningMissionBP {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagQuery AllowedQuery;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<UEnemyDescriptor*, FEliteEnemyEntry> Entries;
-    
-    UFUNCTION(BlueprintCallable)
-    void OnEnemySpawned(APawn* enemy, UEnemyDescriptor* descriptor);
     
 public:
     UHeroEnemies();
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnEnemySpawned(APawn* enemy, UEnemyDescriptor* descriptor);
+    
 };
 

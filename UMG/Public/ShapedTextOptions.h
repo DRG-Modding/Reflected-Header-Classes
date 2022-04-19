@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: SlateCore ETextShapingMethod
-//CROSS-MODULE INCLUDE: Slate ETextFlowDirection
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ETextFlowDirection -FallbackName=ETextFlowDirection
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ETextShapingMethod -FallbackName=ETextShapingMethod
 #include "ShapedTextOptions.generated.h"
 
 USTRUCT(BlueprintType)
 struct UMG_API FShapedTextOptions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bOverride_TextShapingMethod: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bOverride_TextFlowDirection: 1;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETextShapingMethod TextShapingMethod;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETextFlowDirection TextFlowDirection;
     
     FShapedTextOptions();

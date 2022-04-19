@@ -7,13 +7,13 @@ USTRUCT(BlueprintType)
 struct NIAGARASHADER_API FNiagaraDataInterfaceGPUParamInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString DataInterfaceHLSLSymbol;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString DIClassName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraDataInterfaceGeneratedFunction> GeneratedFunctions;
     
     FNiagaraDataInterfaceGPUParamInfo();

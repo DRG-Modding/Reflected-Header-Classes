@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataInterface.h"
+#include "NiagaraDataInterfaceRWBase.h"
 #include "NiagaraDataInterfaceParticleRead.generated.h"
 
 UCLASS(EditInlineNew)
-class NIAGARA_API UNiagaraDataInterfaceParticleRead : public UNiagaraDataInterface {
+class NIAGARA_API UNiagaraDataInterfaceParticleRead : public UNiagaraDataInterfaceRWBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString EmitterName;
     
     UNiagaraDataInterfaceParticleRead();

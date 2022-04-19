@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "GeometryCollectionActor.generated.h"
 
 class UGeometryCollectionComponent;
@@ -12,15 +12,15 @@ UCLASS()
 class GEOMETRYCOLLECTIONENGINE_API AGeometryCollectionActor : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UGeometryCollectionComponent* GeometryCollectionComponent;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UGeometryCollectionDebugDrawComponent* GeometryCollectionDebugDrawComponent;
     
+    AGeometryCollectionActor();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool RaycastSingle(FVector Start, FVector End, FHitResult& OutHit) const;
     
-    AGeometryCollectionActor();
 };
 

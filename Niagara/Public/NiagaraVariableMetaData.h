@@ -1,64 +1,49 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraInputConditionMetadata.h"
-#include "ENiagaraScriptParameterUsage.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "NiagaraVariableMetaData.generated.h"
 
 USTRUCT()
 struct NIAGARA_API FNiagaraVariableMetaData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Description;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText CategoryName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAdvancedDisplay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 EditorSortPriority;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bInlineEditConditionToggle;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraInputConditionMetadata EditCondition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraInputConditionMetadata VisibleCondition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FString> PropertyMetaData;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName ParentAttribute;
+    
 private:
-    UPROPERTY()
-    FName ScopeName;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FGuid VariableGuid;
     
-    UPROPERTY()
-    ENiagaraScriptParameterUsage Usage;
-    
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bIsStaticSwitch;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 StaticSwitchDefaultValue;
-    
-    UPROPERTY(Transient)
-    bool bAddedToNodeGraphDeepCopy;
-    
-    UPROPERTY()
-    bool bOutputIsPersistent;
-    
-    UPROPERTY()
-    FName CachedNamespacelessVariableName;
-    
-    UPROPERTY()
-    bool bCreatedInSystemEditor;
-    
-    UPROPERTY()
-    bool bUseLegacyNameString;
     
 public:
     FNiagaraVariableMetaData();

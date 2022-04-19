@@ -1,45 +1,45 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Transform
+#include "OnARTrackingStateChangedDelegate.h"
 #include "EARTrackingState.h"
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+#include "OnARTransformUpdatedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ARPin.generated.h"
 
 class UARTrackedGeometry;
 class USceneComponent;
 class UWorld;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARPinOnARTrackingStateChanged, EARTrackingState, NewTrackingState);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARPinOnARTransformUpdated, const FTransform&, OldToNewTransform);
-
 UCLASS(BlueprintType)
 class AUGMENTEDREALITY_API UARPin : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UARTrackedGeometry* TrackedGeometry;
     
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     USceneComponent* PinnedComponent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTransform LocalToTrackingTransform;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FTransform LocalToAlignedTrackingTransform;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     EARTrackingState TrackingState;
     
-    UPROPERTY(BlueprintAssignable)
-    FARPinOnARTrackingStateChanged OnARTrackingStateChanged;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnARTrackingStateChanged OnARTrackingStateChanged;
     
-    UPROPERTY(BlueprintAssignable)
-    FARPinOnARTransformUpdated OnARTransformUpdated;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnARTransformUpdated OnARTransformUpdated;
     
 public:
+    UARPin();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EARTrackingState GetTrackingState() const;
     
@@ -61,6 +61,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void DebugDraw(UWorld* World, const FLinearColor& Color, float Scale, float PersistForSeconds) const;
     
-    UARPin();
 };
 

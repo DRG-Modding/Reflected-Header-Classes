@@ -1,54 +1,55 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EMissionStatType.h"
 #include "MissionStat.generated.h"
 
-class UObject;
 class UMissionStat;
+class UTexture2D;
+class UObject;
 class UMissionStatCategory;
 class UFSDAchievement;
 class APlayerCharacter;
 class UPlayerCharacterID;
-class UTexture2D;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMissionStatOnCountChanged, UMissionStat*, MissionStat, float, Value);
 
 UCLASS(BlueprintType)
 class UMissionStat : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FMissionStatOnCountChanged OnCountChanged;
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FStatCountChanged, UObject*, WorldContext, UMissionStat*, MissionStat, float, Value);
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FStatCountChanged OnCountChanged;
     
 protected:
-    UPROPERTY(VisibleAnywhere)
-    FGuid SaveGameID;
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    FGuid SavegameID;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Title;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMissionStatCategory* Category;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFSDAchievement* StatAchievement;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMissionStatType MissionStatType;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool DoNotShowInMissionStatView;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowAllValuesCombined;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowHighestValue;
     
 public:
+    UMissionStat();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText MissionStatToText(EMissionStatType StatType, float Value);
     
@@ -91,6 +92,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetCategoryTitle() const;
     
-    UMissionStat();
 };
 

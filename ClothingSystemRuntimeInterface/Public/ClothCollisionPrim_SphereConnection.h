@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FClothCollisionPrim_SphereConnection {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 SphereIndices[2];
     
     CLOTHINGSYSTEMRUNTIMEINTERFACE_API FClothCollisionPrim_SphereConnection();

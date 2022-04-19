@@ -1,25 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine ActorComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "SteamVRChaperoneComponent.generated.h"
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSteamVRChaperoneComponentOnLeaveBounds);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSteamVRChaperoneComponentOnReturnToBounds);
-
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class STEAMVR_API USteamVRChaperoneComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FSteamVRChaperoneComponentOnLeaveBounds OnLeaveBounds;
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSteamVRChaperoneEvent);
     
-    UPROPERTY(BlueprintAssignable)
-    FSteamVRChaperoneComponentOnReturnToBounds OnReturnToBounds;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FSteamVRChaperoneEvent OnLeaveBounds;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FSteamVRChaperoneEvent OnReturnToBounds;
+    
+    USteamVRChaperoneComponent();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FVector> GetBounds() const;
     
-    USteamVRChaperoneComponent();
 };
 

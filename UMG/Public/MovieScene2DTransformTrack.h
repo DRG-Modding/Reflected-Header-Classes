@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieSceneTracks MovieScenePropertyTrack
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieSceneTracks -ObjectName=MovieScenePropertyTrack -FallbackName=MovieScenePropertyTrack
 #include "MovieScene2DTransformTrack.generated.h"
 
 UCLASS(MinimalAPI)

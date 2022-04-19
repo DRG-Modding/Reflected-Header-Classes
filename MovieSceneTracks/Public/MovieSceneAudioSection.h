@@ -1,71 +1,72 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneFloatChannel
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneFloatChannel -FallbackName=MovieSceneFloatChannel
 #include "MovieSceneActorReferenceData.h"
-//CROSS-MODULE INCLUDE: Engine SubtitleCue
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnQueueSubtitles__DelegateSignature -FallbackName=OnQueueSubtitlesDelegate
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnAudioFinished__DelegateSignature -FallbackName=OnAudioFinishedDelegate
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnAudioPlaybackPercent__DelegateSignature -FallbackName=OnAudioPlaybackPercentDelegate
 #include "MovieSceneAudioSection.generated.h"
 
-class USoundBase;
-class USoundWave;
 class USoundAttenuation;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_TwoParams(FMovieSceneAudioSectionOnQueueSubtitles, const TArray<FSubtitleCue>&, Subtitles, float, CueDuration);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMovieSceneAudioSectionOnAudioFinished);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMovieSceneAudioSectionOnAudioPlaybackPercent, const USoundWave*, PlayingSoundWave, const float, PlaybackPercent);
+class USoundBase;
 
 UCLASS()
 class MOVIESCENETRACKS_API UMovieSceneAudioSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* Sound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFrameNumber StartFrameOffset;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float StartOffset;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float AudioStartTime;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float AudioDilationFactor;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float AudioVolume;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel SoundVolume;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneFloatChannel PitchMultiplier;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneActorReferenceData AttachActorData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bLooping;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSuppressSubtitles;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bOverrideAttenuation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundAttenuation* AttenuationSettings;
     
-    UPROPERTY()
-    FMovieSceneAudioSectionOnQueueSubtitles OnQueueSubtitles;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnQueueSubtitles OnQueueSubtitles;
     
-    UPROPERTY()
-    FMovieSceneAudioSectionOnAudioFinished OnAudioFinished;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnAudioFinished OnAudioFinished;
     
-    UPROPERTY()
-    FMovieSceneAudioSectionOnAudioPlaybackPercent OnAudioPlaybackPercent;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnAudioPlaybackPercent OnAudioPlaybackPercent;
     
 public:
+    UMovieSceneAudioSection();
     UFUNCTION(BlueprintCallable)
     void SetStartOffset(FFrameNumber InStartOffset);
     
@@ -78,6 +79,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     USoundBase* GetSound() const;
     
-    UMovieSceneAudioSection();
 };
 

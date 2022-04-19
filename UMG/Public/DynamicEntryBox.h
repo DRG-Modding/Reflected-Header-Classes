@@ -11,10 +11,11 @@ class UMG_API UDynamicEntryBox : public UDynamicEntryBoxBase {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UUserWidget> EntryWidgetClass;
     
 public:
+    UDynamicEntryBox();
     UFUNCTION(BlueprintCallable)
     void Reset(bool bDeleteWidgets);
     
@@ -28,7 +29,5 @@ private:
     UFUNCTION(BlueprintCallable)
     UUserWidget* BP_CreateEntry();
     
-public:
-    UDynamicEntryBox();
 };
 

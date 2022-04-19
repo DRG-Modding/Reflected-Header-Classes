@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FEnvQueryInstanceCache {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UEnvQuery* Template;
     
     AIMODULE_API FEnvQueryInstanceCache();

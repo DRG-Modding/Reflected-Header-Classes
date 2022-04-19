@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-#include "ARFilter.h"
-#include "AssetData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=ARFilter -FallbackName=ARFilter
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "AssetRegistry.h"
 #include "AssetRegistryDependencyOptions.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=AssetData -FallbackName=AssetData
 #include "AssetRegistryImpl.generated.h"
 
 UCLASS(Transient)
@@ -14,6 +14,9 @@ public:
     UAssetRegistryImpl();
     
     // Fix for true pure virtual functions not being implemented
+    UFUNCTION(BlueprintCallable)
+    void WaitForCompletion() override PURE_VIRTUAL(WaitForCompletion,);
+    
     UFUNCTION(BlueprintCallable)
     void UseFilterToExcludeAssets(UPARAM(Ref) TArray<FAssetData>& AssetDataList, const FARFilter& Filter) const override PURE_VIRTUAL(UseFilterToExcludeAssets,);
     

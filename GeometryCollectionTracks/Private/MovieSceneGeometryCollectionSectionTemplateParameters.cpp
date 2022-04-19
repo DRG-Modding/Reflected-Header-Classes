@@ -1,5 +1,0 @@
-#include "MovieSceneGeometryCollectionSectionTemplateParameters.h"
-
-FMovieSceneGeometryCollectionSectionTemplateParameters::FMovieSceneGeometryCollectionSectionTemplateParameters() {
-}
-

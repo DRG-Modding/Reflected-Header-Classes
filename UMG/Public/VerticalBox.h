@@ -10,9 +10,9 @@ UCLASS()
 class UMG_API UVerticalBox : public UPanelWidget {
     GENERATED_BODY()
 public:
+    UVerticalBox();
     UFUNCTION(BlueprintCallable)
     UVerticalBoxSlot* AddChildToVerticalBox(UWidget* Content);
     
-    UVerticalBox();
 };
 

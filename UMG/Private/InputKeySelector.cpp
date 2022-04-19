@@ -26,8 +26,8 @@ bool UInputKeySelector::GetIsSelectingKey() const {
 }
 
 UInputKeySelector::UInputKeySelector() {
-    this->KeySelectionText = INVTEXT("...");
-    this->NoKeySpecifiedText = INVTEXT("Empty");
+    this->KeySelectionText = FText::FromString(TEXT("..."));
+    this->NoKeySpecifiedText = FText::FromString(TEXT("Empty"));
     this->bAllowModifierKeys = true;
     this->bAllowGamepadKeys = false;
     this->EscapeKeys.AddDefaulted(1);

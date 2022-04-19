@@ -6,10 +6,10 @@ USTRUCT()
 struct FEngineServiceExecuteCommand {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Command;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Username;
     
     ENGINEMESSAGES_API FEngineServiceExecuteCommand();

@@ -1,14 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "NavLocalGridManager.generated.h"
 
 UCLASS(BlueprintType)
 class AIMODULE_API UNavLocalGridManager : public UObject {
     GENERATED_BODY()
 public:
+    UNavLocalGridManager();
     UFUNCTION(BlueprintCallable)
     static bool SetLocalNavigationGridDensity(UObject* WorldContextObject, float CellSize);
     
@@ -30,6 +31,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static int32 AddLocalNavigationGridForBox(UObject* WorldContextObject, const FVector& Location, FVector Extent, FRotator Rotation, const int32 Radius2D, const float Height, bool bRebuildGrids);
     
-    UNavLocalGridManager();
 };
 

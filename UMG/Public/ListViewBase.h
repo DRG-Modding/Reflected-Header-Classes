@@ -1,47 +1,47 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "OnListEntryGeneratedDynamicDelegate.h"
 #include "Widget.h"
+#include "OnListEntryReleasedDynamicDelegate.h"
 #include "UserWidgetPool.h"
 #include "ESlateVisibility.h"
 #include "ListViewBase.generated.h"
 
 class UUserWidget;
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBaseBP_OnEntryGenerated, UUserWidget*, Widget);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FListViewBaseBP_OnEntryReleased, UUserWidget*, Widget);
-
 UCLASS(Abstract, HideDropdown)
 class UMG_API UListViewBase : public UWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UUserWidget> EntryWidgetClass;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float WheelScrollMultiplier;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableScrollAnimation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableFixedLineOffset;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FixedLineScrollOffset;
     
 private:
-    UPROPERTY(BlueprintAssignable)
-    FListViewBaseBP_OnEntryGenerated BP_OnEntryGenerated;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnListEntryGeneratedDynamic BP_OnEntryGenerated;
     
-    UPROPERTY(BlueprintAssignable)
-    FListViewBaseBP_OnEntryReleased BP_OnEntryReleased;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnListEntryReleasedDynamic BP_OnEntryReleased;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FUserWidgetPool EntryWidgetPool;
     
 public:
+    UListViewBase();
     UFUNCTION(BlueprintCallable)
     void SetWheelScrollMultiplier(float NewWheelScrollMultiplier);
     
@@ -66,6 +66,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UUserWidget*> GetDisplayedEntryWidgets() const;
     
-    UListViewBase();
 };
 

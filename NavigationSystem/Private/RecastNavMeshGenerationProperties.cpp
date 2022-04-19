@@ -20,6 +20,7 @@ FRecastNavMeshGenerationProperties::FRecastNavMeshGenerationProperties() {
     this->bSortNavigationAreasByCost = false;
     this->bPerformVoxelFiltering = false;
     this->bMarkLowHeightAreas = false;
+    this->bUseExtraTopCellWhenMarkingAreas = false;
     this->bFilterLowSpanSequences = false;
     this->bFilterLowSpanFromTileCache = false;
     this->bFixedTilePoolSize = false;

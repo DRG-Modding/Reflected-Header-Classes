@@ -1,46 +1,51 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SpecialDamageAttackComponent.h"
-//CROSS-MODULE INCLUDE: Engine HitResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "TremorAttackComponent.generated.h"
 
-class UParticleSystemComponent;
-class UBoxComponent;
-class UPrimitiveComponent;
 class AActor;
+class UBoxComponent;
+class UParticleSystemComponent;
+class UPrimitiveComponent;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class FSD_API UTremorAttackComponent : public USpecialDamageAttackComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_IsAttackActive)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_IsAttackActive, meta=(AllowPrivateAccess=true))
     bool IsAttackActive;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UBoxComponent* CollisionComponent;
     
-    UPROPERTY(Export, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
     UParticleSystemComponent* ParticlesComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float InitialParticlesDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PostParticleDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TargetMaxDistanceFromGround;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TimeBetweenDamageTicks;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float LaunchForce;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Duration;
     
+public:
+    UTremorAttackComponent();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
+protected:
     UFUNCTION(BlueprintCallable)
     void StopParticles();
     
@@ -65,8 +70,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void InitTremorAttack(UBoxComponent* Box, UParticleSystemComponent* Particles);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    UTremorAttackComponent();
 };
 

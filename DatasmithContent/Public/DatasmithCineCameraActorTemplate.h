@@ -8,7 +8,7 @@ UCLASS()
 class DATASMITHCONTENT_API UDatasmithCineCameraActorTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FDatasmithCameraLookatTrackingSettingsTemplate LookatTrackingSettings;
     
     UDatasmithCineCameraActorTemplate();

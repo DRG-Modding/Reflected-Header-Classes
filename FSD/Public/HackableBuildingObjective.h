@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
 #include "Objective.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "HackableBuildingObjective.generated.h"
 
-class UDebrisPositioning;
 class AProceduralSetup;
+class UDebrisPositioning;
 class ARessuplyPod;
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UHackableBuildingObjective : public UObjective {
     GENERATED_BODY()
 public:
+    UHackableBuildingObjective();
     UFUNCTION(BlueprintCallable)
     static void DropOverCharger(AProceduralSetup* setup, const FVector& buildingLocation, float idealRange, float idealZDistance, UDebrisPositioning* DebrisPositioning, TSubclassOf<ARessuplyPod> generatorClass);
     
-    UHackableBuildingObjective();
 };
 

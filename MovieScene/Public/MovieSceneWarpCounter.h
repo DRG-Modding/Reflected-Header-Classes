@@ -6,7 +6,7 @@ USTRUCT()
 struct FMovieSceneWarpCounter {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<uint32> WarpCounts;
     
     MOVIESCENE_API FMovieSceneWarpCounter();

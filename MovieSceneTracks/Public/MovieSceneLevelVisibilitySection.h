@@ -1,21 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneEntityProvider -FallbackName=MovieSceneEntityProvider
 #include "ELevelVisibility.h"
 #include "MovieSceneLevelVisibilitySection.generated.h"
 
 UCLASS()
-class MOVIESCENETRACKS_API UMovieSceneLevelVisibilitySection : public UMovieSceneSection {
+class MOVIESCENETRACKS_API UMovieSceneLevelVisibilitySection : public UMovieSceneSection, public IMovieSceneEntityProvider {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ELevelVisibility Visibility;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> LevelNames;
     
 public:
+    UMovieSceneLevelVisibilitySection();
     UFUNCTION(BlueprintCallable)
     void SetVisibility(ELevelVisibility InVisibility);
     
@@ -28,6 +30,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FName> GetLevelNames() const;
     
-    UMovieSceneLevelVisibilitySection();
+    
+    // Fix for true pure virtual functions not being implemented
 };
 

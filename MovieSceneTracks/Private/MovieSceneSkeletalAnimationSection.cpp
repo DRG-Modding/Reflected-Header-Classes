@@ -8,5 +8,11 @@ UMovieSceneSkeletalAnimationSection::UMovieSceneSkeletalAnimationSection() {
     this->PlayRate = 1.00f;
     this->bReverse = false;
     this->slotName = TEXT("DefaultSlot");
+    this->bMatchWithPrevious = true;
+    this->bMatchTranslation = true;
+    this->bMatchIncludeZHeight = false;
+    this->bMatchRotationYaw = true;
+    this->bMatchRotationPitch = false;
+    this->bMatchRotationRoll = false;
 }
 

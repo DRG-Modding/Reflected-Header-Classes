@@ -1,26 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
+#include "SteamVRInputOriginInfo.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ESteamVRInputStringBits.h"
+#include "SteamVRFingerSplays.h"
 #include "SteamVRAction.h"
-#include "EControllerFidelity.h"
 #include "SteamVRActionSet.h"
 #include "ESteamVRHand.h"
-#include "SteamVRInputOriginInfo.h"
 #include "SteamVRInputBindingInfo.h"
-#include "ESteamVRInputStringBits.h"
-//CROSS-MODULE INCLUDE: CoreUObject Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "SteamVRSkeletonTransform.h"
 #include "EHand.h"
-#include "SteamVRFingerSplays.h"
 #include "SteamVRFingerCurls.h"
 #include "ESkeletalSummaryDataType.h"
+#include "EControllerFidelity.h"
 #include "SteamVRInputDeviceFunctionLibrary.generated.h"
 
 UCLASS(BlueprintType)
 class STEAMVRINPUTDEVICE_API USteamVRInputDeviceFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    USteamVRInputDeviceFunctionLibrary();
     UFUNCTION(BlueprintCallable)
     static void ShowSteamVR_ActionOrigin(FSteamVRAction SteamVRAction, FSteamVRActionSet SteamVRActionSet);
     
@@ -102,6 +103,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static void FindSteamVR_Action(FName ActionName, bool& bResult, FSteamVRAction& FoundAction, FSteamVRActionSet& FoundActionSet, FName ActionSet);
     
-    USteamVRInputDeviceFunctionLibrary();
 };
 

@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct DATASMITHCONTENT_API FDatasmithCameraLookatTrackingSettingsTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bEnableLookAtTracking: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bAllowRoll: 1;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<AActor> ActorToTrack;
     
     FDatasmithCameraLookatTrackingSettingsTemplate();

@@ -6,7 +6,7 @@ USTRUCT()
 struct FMovieSceneTrackLabels {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FString> Strings;
     
     MOVIESCENE_API FMovieSceneTrackLabels();

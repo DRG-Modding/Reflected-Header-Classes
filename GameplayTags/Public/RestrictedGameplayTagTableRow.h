@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FRestrictedGameplayTagTableRow : public FGameplayTagTableRow {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAllowNonRestrictedChildren;
     
     GAMEPLAYTAGS_API FRestrictedGameplayTagTableRow();

@@ -2,22 +2,22 @@
 #include "CoreMinimal.h"
 #include "EnvQueryRequest.generated.h"
 
-class UWorld;
-class UEnvQuery;
 class UObject;
+class UEnvQuery;
+class UWorld;
 
 USTRUCT()
 struct AIMODULE_API FEnvQueryRequest {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UEnvQuery* QueryTemplate;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UObject* Owner;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UWorld* World;
     
 public:

@@ -7,10 +7,10 @@ UCLASS()
 class UDatasmithSpotLightComponentTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float InnerConeAngle;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     float OuterConeAngle;
     
     UDatasmithSpotLightComponentTemplate();

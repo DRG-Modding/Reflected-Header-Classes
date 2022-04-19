@@ -7,13 +7,13 @@ USTRUCT()
 struct FFSDSteamServerListRequest : public FFSDServerListRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString SteamTicket;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FString SteamPingLoc;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<int32> GameTypes;
     
     FSD_API FFSDSteamServerListRequest();

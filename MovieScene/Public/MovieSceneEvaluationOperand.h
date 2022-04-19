@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "MovieSceneSequenceID.h"
 #include "MovieSceneEvaluationOperand.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FMovieSceneEvaluationOperand {
     GENERATED_BODY()
 public:
-    UPROPERTY()
-    FGuid ObjectBindingID;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FGuid ObjectBindingId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneSequenceID SequenceID;
     
     MOVIESCENE_API FMovieSceneEvaluationOperand();

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "OculusSceneCaptureCubemap.generated.h"
 
 class USceneCaptureComponent2D;
@@ -10,7 +10,7 @@ class UOculusSceneCaptureCubemap : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     TArray<USceneCaptureComponent2D*> CaptureComponents;
     
 public:

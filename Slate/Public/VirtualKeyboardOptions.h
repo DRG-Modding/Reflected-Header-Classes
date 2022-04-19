@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FVirtualKeyboardOptions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEnableAutocorrect;
     
     SLATE_API FVirtualKeyboardOptions();

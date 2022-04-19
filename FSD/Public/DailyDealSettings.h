@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine DataAsset
-#include "DailyDealSetup.h"
 #include "DailyDeal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "DailyDealSetup.h"
 #include "DailyDealSettings.generated.h"
 
 class UObject;
@@ -11,9 +11,10 @@ UCLASS(BlueprintType)
 class UDailyDealSettings : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FDailyDealSetup> DailyDeals;
     
+    UDailyDealSettings();
     UFUNCTION(BlueprintCallable)
     static bool IsDailyDealBought(UObject* WorldContextObject);
     
@@ -29,6 +30,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool BuyDailyDeal(UObject* WorldContextObject);
     
-    UDailyDealSettings();
 };
 

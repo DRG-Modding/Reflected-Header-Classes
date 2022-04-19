@@ -3,7 +3,7 @@
 #include "ENiagaraExecutionState.generated.h"
 
 UENUM()
-enum class ENiagaraExecutionState {
+enum class ENiagaraExecutionState : uint32 {
     Active,
     Inactive,
     InactiveClear,

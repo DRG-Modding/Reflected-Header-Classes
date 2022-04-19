@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECaveEntranceType.h"
-//CROSS-MODULE INCLUDE: Engine PrimitiveComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimitiveComponent -FallbackName=PrimitiveComponent
 #include "ECaveEntrancePriority.h"
+#include "ECaveEntranceType.h"
 #include "CaveEntranceComponent.generated.h"
 
-UCLASS()
+UCLASS(meta=(BlueprintSpawnableComponent))
 class UCaveEntranceComponent : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECaveEntranceType Direction;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECaveEntrancePriority Priority;
     
 public:

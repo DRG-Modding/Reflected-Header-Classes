@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
 #include "MovieSceneStringChannel.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSection
 #include "MovieSceneStringSection.generated.h"
 
 UCLASS(MinimalAPI)
@@ -9,7 +9,7 @@ class UMovieSceneStringSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneStringChannel StringCurve;
     
 public:

@@ -1,8 +1,8 @@
 #include "WidgetComponent.h"
 
-class UTextureRenderTarget2D;
 class UUserWidget;
 class ULocalPlayer;
+class UTextureRenderTarget2D;
 class UMaterialInstanceDynamic;
 
 void UWidgetComponent::SetWindowVisibility(EWindowVisibility InVisibility) {
@@ -24,6 +24,9 @@ void UWidgetComponent::SetTintColorAndOpacity(const FLinearColor NewTintColorAnd
 }
 
 void UWidgetComponent::SetTickWhenOffscreen(const bool bWantTickWhenOffscreen) {
+}
+
+void UWidgetComponent::SetTickMode(ETickMode InTickMode) {
 }
 
 void UWidgetComponent::SetRedrawTime(float InRedrawTime) {
@@ -53,7 +56,14 @@ void UWidgetComponent::SetCylinderArcAngle(const float InCylinderArcAngle) {
 void UWidgetComponent::SetBackgroundColor(const FLinearColor NewBackgroundColor) {
 }
 
+void UWidgetComponent::RequestRenderUpdate() {
+}
+
 void UWidgetComponent::RequestRedraw() {
+}
+
+bool UWidgetComponent::IsWidgetVisible() const {
+    return false;
 }
 
 EWindowVisibility UWidgetComponent::GetWindowVisiblility() const {
@@ -66,6 +76,10 @@ bool UWidgetComponent::GetWindowFocusable() const {
 
 EWidgetSpace UWidgetComponent::GetWidgetSpace() const {
     return EWidgetSpace::World;
+}
+
+UUserWidget* UWidgetComponent::GetWidget() const {
+    return NULL;
 }
 
 UUserWidget* UWidgetComponent::GetUserWidgetObject() const {
@@ -141,7 +155,6 @@ UWidgetComponent::UWidgetComponent() {
     this->BlendMode = EWidgetBlendMode::Masked;
     this->bIsTwoSided = false;
     this->TickWhenOffscreen = false;
-    this->Widget = NULL;
     this->BodySetup = NULL;
     this->RenderTarget = NULL;
     this->MaterialInstance = NULL;
@@ -151,5 +164,7 @@ UWidgetComponent::UWidgetComponent() {
     this->LayerZOrder = -100;
     this->GeometryMode = EWidgetGeometryMode::Plane;
     this->CylinderArcAngle = 180.00f;
+    this->TickMode = ETickMode::Enabled;
+    this->Widget = NULL;
 }
 

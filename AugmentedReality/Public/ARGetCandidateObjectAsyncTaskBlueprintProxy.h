@@ -1,29 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ARBaseAsyncTaskBlueprintProxy.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+#include "ARGetCandidateObjectPinDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ARGetCandidateObjectAsyncTaskBlueprintProxy.generated.h"
 
-class UObject;
-class UARCandidateObject;
 class UARGetCandidateObjectAsyncTaskBlueprintProxy;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARGetCandidateObjectAsyncTaskBlueprintProxyOnFailed, UARCandidateObject*, SavedObject);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FARGetCandidateObjectAsyncTaskBlueprintProxyOnSuccess, UARCandidateObject*, SavedObject);
+class UObject;
 
 UCLASS()
 class UARGetCandidateObjectAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FARGetCandidateObjectAsyncTaskBlueprintProxyOnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FARGetCandidateObjectPin OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FARGetCandidateObjectAsyncTaskBlueprintProxyOnFailed OnFailed;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FARGetCandidateObjectPin OnFailed;
     
+    UARGetCandidateObjectAsyncTaskBlueprintProxy();
     UFUNCTION(BlueprintCallable)
     static UARGetCandidateObjectAsyncTaskBlueprintProxy* ARGetCandidateObject(UObject* WorldContextObject, FVector Location, FVector Extent);
     
-    UARGetCandidateObjectAsyncTaskBlueprintProxy();
 };
 

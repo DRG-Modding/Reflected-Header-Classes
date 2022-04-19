@@ -3,7 +3,7 @@
 class UTexture2DDynamic;
 class UTexture;
 
-void UModioImageLibrary::LoadAsync(const FModioImage& Image, FModioImageLibraryOnImageLoaded OnImageLoaded) {
+void UModioImageLibrary::LoadAsync(const FModioImage& Image, FOnLoadImageDelegate OnImageLoaded) {
 }
 
 UTexture2DDynamic* UModioImageLibrary::GetTexture(const FModioImage& Image) {

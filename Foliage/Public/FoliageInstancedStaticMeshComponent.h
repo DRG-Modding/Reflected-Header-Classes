@@ -1,29 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine HierarchicalInstancedStaticMeshComponent
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: CoreUObject Guid
+#include "InstancePointDamageSignatureDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HierarchicalInstancedStaticMeshComponent -FallbackName=HierarchicalInstancedStaticMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "InstanceRadialDamageSignatureDelegate.h"
 #include "FoliageInstancedStaticMeshComponent.generated.h"
 
-class AController;
-class UDamageType;
-class AActor;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_SevenParams(FFoliageInstancedStaticMeshComponentOnInstanceTakePointDamage, int32, InstanceIndex, float, Damage, AController*, InstigatedBy, FVector, HitLocation, FVector, ShotFromDirection, const UDamageType*, DamageType, AActor*, DamageCauser);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_SevenParams(FFoliageInstancedStaticMeshComponentOnInstanceTakeRadialDamage, const TArray<int32>&, Instances, const TArray<float>&, Damages, AController*, InstigatedBy, FVector, Origin, float, MaxRadius, const UDamageType*, DamageType, AActor*, DamageCauser);
-
-UCLASS(EditInlineNew)
+UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class FOLIAGE_API UFoliageInstancedStaticMeshComponent : public UHierarchicalInstancedStaticMeshComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FFoliageInstancedStaticMeshComponentOnInstanceTakePointDamage OnInstanceTakePointDamage;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FInstancePointDamageSignature OnInstanceTakePointDamage;
     
-    UPROPERTY(BlueprintAssignable)
-    FFoliageInstancedStaticMeshComponentOnInstanceTakeRadialDamage OnInstanceTakeRadialDamage;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FInstanceRadialDamageSignature OnInstanceTakeRadialDamage;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FGuid GenerationGuid;
     
 public:

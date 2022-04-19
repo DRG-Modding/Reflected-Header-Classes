@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RoomFeature.h"
-//CROSS-MODULE INCLUDE: CoreUObject Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "FloodFillProceduralPillar.generated.h"
 
 class UPillarSettings;
@@ -11,10 +11,10 @@ class UFloodFillProceduralPillar : public URoomFeature {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FVector> Points;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UPillarSettings* PillarSettings;
     
 public:

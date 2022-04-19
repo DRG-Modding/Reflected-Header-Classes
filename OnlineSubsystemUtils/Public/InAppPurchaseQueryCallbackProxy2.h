@@ -1,28 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-#include "OnlineProxyStoreOffer.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "InAppPurchaseQuery2ResultDelegate.h"
 #include "InAppPurchaseQueryCallbackProxy2.generated.h"
 
-class APlayerController;
 class UInAppPurchaseQueryCallbackProxy2;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInAppPurchaseQueryCallbackProxy2OnSuccess, const TArray<FOnlineProxyStoreOffer>&, InAppOfferInformation);
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInAppPurchaseQueryCallbackProxy2OnFailure, const TArray<FOnlineProxyStoreOffer>&, InAppOfferInformation);
+class APlayerController;
 
 UCLASS(BlueprintType, MinimalAPI)
 class UInAppPurchaseQueryCallbackProxy2 : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FInAppPurchaseQueryCallbackProxy2OnSuccess OnSuccess;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FInAppPurchaseQuery2Result OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    FInAppPurchaseQueryCallbackProxy2OnFailure OnFailure;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FInAppPurchaseQuery2Result OnFailure;
     
+    UInAppPurchaseQueryCallbackProxy2();
     UFUNCTION(BlueprintCallable)
     static UInAppPurchaseQueryCallbackProxy2* CreateProxyObjectForInAppPurchaseQuery(APlayerController* PlayerController, const TArray<FString>& ProductIdentifiers);
     
-    UInAppPurchaseQueryCallbackProxy2();
 };
 

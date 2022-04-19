@@ -1,5 +1,8 @@
 #include "HostileGuntowerModule.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
+#include "EnemyComponent.h"
 
 class UHealthComponentBase;
 
@@ -20,6 +23,9 @@ void AHostileGuntowerModule::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
 }
 
 AHostileGuntowerModule::AHostileGuntowerModule() {
+    this->DestroyedMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("DestroyedMesh"));
+    this->DestroyedSmoke = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("DestroyedSmoke"));
+    this->EnemyComponent = CreateDefaultSubobject<UEnemyComponent>(TEXT("EnemyComponent"));
     this->ModuleMaxHealth = 1.00f;
 }
 

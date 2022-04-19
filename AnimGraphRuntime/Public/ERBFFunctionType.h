@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ERBFFunctionType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ERBFFunctionType : uint8 {
     Gaussian,
     Exponential,

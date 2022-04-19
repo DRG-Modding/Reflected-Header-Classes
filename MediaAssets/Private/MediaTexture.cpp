@@ -9,6 +9,10 @@ int32 UMediaTexture::GetWidth() const {
     return 0;
 }
 
+int32 UMediaTexture::GetTextureNumMips() const {
+    return 0;
+}
+
 UMediaPlayer* UMediaTexture::GetMediaPlayer() const {
     return NULL;
 }
@@ -27,6 +31,10 @@ UMediaTexture::UMediaTexture() {
     this->AutoClear = false;
     this->EnableGenMips = false;
     this->NumMips = 1;
+    this->NewStyleOutput = false;
+    this->OutputFormat = MTOF_Default;
+    this->CurrentAspectRatio = 0.00f;
+    this->CurrentOrientation = MTORI_Original;
     this->MediaPlayer = NULL;
 }
 

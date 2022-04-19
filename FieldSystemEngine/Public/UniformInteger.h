@@ -5,16 +5,16 @@
 
 class UUniformInteger;
 
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UUniformInteger : public UFieldNodeInt {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Magnitude;
     
+    UUniformInteger();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UUniformInteger* SetUniformInteger(int32 NewMagnitude);
     
-    UUniformInteger();
 };
 

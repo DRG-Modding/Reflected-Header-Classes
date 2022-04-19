@@ -1,4 +1,5 @@
 #include "LandscapeComponent.h"
+#include "LandscapeLODStreamingProxy.h"
 
 class UMaterialInstanceDynamic;
 class ULandscapeLayerInfoObject;
@@ -28,6 +29,7 @@ ULandscapeComponent::ULandscapeComponent() {
     this->XYOffsetmapTexture = NULL;
     this->WeightmapSubsectionOffset = 0.00f;
     this->HeightmapTexture = NULL;
+    this->LODStreamingProxy = CreateDefaultSubobject<ULandscapeLODStreamingProxy>(TEXT("LandscapeLODStreamingProxy"));
     this->CollisionMipLevel = 0;
     this->SimpleCollisionMipLevel = 0;
     this->NegativeZBoundsExtension = 0.00f;

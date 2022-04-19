@@ -7,7 +7,7 @@ UCLASS(CollapseCategories, EditInlineNew, NonTransient)
 class UEditableGameplayTagQueryExpression_AllExprMatch : public UEditableGameplayTagQueryExpression {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<UEditableGameplayTagQueryExpression*> Expressions;
     
     UEditableGameplayTagQueryExpression_AllExprMatch();

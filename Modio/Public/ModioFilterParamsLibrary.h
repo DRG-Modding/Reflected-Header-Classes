@@ -1,17 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioFilterParams.h"
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-#include "EModioSortDirection.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "EModioSortFieldType.h"
+#include "ModioFilterParams.h"
+#include "EModioSortDirection.h"
 #include "ModioModID.h"
-//CROSS-MODULE INCLUDE: CoreUObject DateTime
 #include "ModioFilterParamsLibrary.generated.h"
 
 UCLASS(BlueprintType)
 class MODIO_API UModioFilterParamsLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UModioFilterParamsLibrary();
 private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioFilterParams WithTags(UPARAM(Ref) FModioFilterParams& Filter, const TArray<FString>& NewTags);
@@ -52,7 +53,5 @@ private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioFilterParams ExcludingIDs(UPARAM(Ref) FModioFilterParams& Filter, const TArray<FModioModID>& IDs);
     
-public:
-    UModioFilterParamsLibrary();
 };
 

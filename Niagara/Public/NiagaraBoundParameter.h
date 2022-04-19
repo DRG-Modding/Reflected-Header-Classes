@@ -7,13 +7,13 @@ USTRUCT(BlueprintType)
 struct FNiagaraBoundParameter {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FNiagaraVariable Parameter;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 SrcOffset;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 DestOffset;
     
     NIAGARA_API FNiagaraBoundParameter();

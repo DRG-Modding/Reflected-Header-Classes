@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FAutoCompleteCommand {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Command;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Desc;
     
     ENGINESETTINGS_API FAutoCompleteCommand();

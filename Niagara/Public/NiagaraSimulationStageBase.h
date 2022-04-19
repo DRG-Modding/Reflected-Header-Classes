@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: NiagaraCore NiagaraMergeable
+//CROSS-MODULE INCLUDE V2: -ModuleName=NiagaraCore -ObjectName=NiagaraMergeable -FallbackName=NiagaraMergeable
 #include "NiagaraSimulationStageBase.generated.h"
 
 class UNiagaraScript;
@@ -9,11 +9,14 @@ UCLASS()
 class NIAGARA_API UNiagaraSimulationStageBase : public UNiagaraMergeable {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UNiagaraScript* Script;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SimulationStageName;
+    
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    uint8 bEnabled: 1;
     
     UNiagaraSimulationStageBase();
 };

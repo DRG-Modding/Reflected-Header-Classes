@@ -1,66 +1,69 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
-//CROSS-MODULE INCLUDE: CoreUObject SoftObjectPath
-//CROSS-MODULE INCLUDE: MovieScene MovieScenePlaybackClient
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneSequencePlaybackSettings
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneBindingOwnerInterface
 #include "LevelSequenceCameraSettings.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneObjectBindingID
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequenceActor -FallbackName=MovieSceneSequenceActor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneBindingOwnerInterface -FallbackName=MovieSceneBindingOwnerInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieScenePlaybackClient -FallbackName=MovieScenePlaybackClient
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequencePlaybackSettings -FallbackName=MovieSceneSequencePlaybackSettings
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneObjectBindingID -FallbackName=MovieSceneObjectBindingID
 #include "LevelSequenceActor.generated.h"
 
 class ULevelSequencePlayer;
-class UObject;
 class ULevelSequenceBurnInOptions;
 class UMovieSceneBindingOverrides;
+class UObject;
 class ULevelSequenceBurnIn;
 class ULevelSequence;
 
 UCLASS()
-class LEVELSEQUENCE_API ALevelSequenceActor : public AActor, public IMovieScenePlaybackClient, public IMovieSceneBindingOwnerInterface {
+class LEVELSEQUENCE_API ALevelSequenceActor : public AActor, public IMovieSceneSequenceActor, public IMovieScenePlaybackClient, public IMovieSceneBindingOwnerInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    DECLARE_DYNAMIC_DELEGATE(FOnLevelSequenceLoaded);
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneSequencePlaybackSettings PlaybackSettings;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Instanced, Replicated, Transient, meta=(AllowPrivateAccess=true))
     ULevelSequencePlayer* SequencePlayer;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath LevelSequence;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    TArray<AActor*> AdditionalEventReceivers;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLevelSequenceCameraSettings CameraSettings;
     
-    UPROPERTY(BlueprintReadOnly, Instanced)
+    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
     ULevelSequenceBurnInOptions* BurnInOptions;
     
-    UPROPERTY(BlueprintReadOnly, Instanced)
+    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
     UMovieSceneBindingOverrides* BindingOverrides;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     uint8 bAutoPlay: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bOverrideInstanceData: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bReplicatePlayback: 1;
     
-    UPROPERTY(BlueprintReadWrite, Instanced)
+    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
     UObject* DefaultInstanceData;
     
 private:
-    UPROPERTY(Export)
+    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
     ULevelSequenceBurnIn* BurnInInstance;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     bool bShowBurnin;
     
 public:
+    ALevelSequenceActor();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     void ShowBurnin();
     
@@ -69,9 +72,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetReplicatePlayback(bool ReplicatePlayback);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetEventReceivers(TArray<AActor*> AdditionalReceivers);
     
     UFUNCTION(BlueprintCallable)
     void SetBindingByTag(FName BindingTag, const TArray<AActor*>& Actors, bool bAllowBindingsFromAsset);
@@ -115,9 +115,6 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddBinding(FMovieSceneObjectBindingID Binding, AActor* Actor, bool bAllowBindingsFromAsset);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ALevelSequenceActor();
     
     // Fix for true pure virtual functions not being implemented
 };

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FLevelSequenceBindingReferenceArray {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FLevelSequenceBindingReference> References;
     
     LEVELSEQUENCE_API FLevelSequenceBindingReferenceArray();

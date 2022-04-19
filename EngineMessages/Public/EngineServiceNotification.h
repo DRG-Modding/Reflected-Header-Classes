@@ -6,10 +6,10 @@ USTRUCT()
 struct FEngineServiceNotification {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Text;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     double TimeSeconds;
     
     ENGINEMESSAGES_API FEngineServiceNotification();

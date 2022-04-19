@@ -1,17 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject FrameNumber
-//CROSS-MODULE INCLUDE: Engine BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE: CoreUObject QualifiedFrameTime
-//CROSS-MODULE INCLUDE: CoreUObject FrameTime
-//CROSS-MODULE INCLUDE: CoreUObject FrameRate
-//CROSS-MODULE INCLUDE: CoreUObject Timecode
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=QualifiedFrameTime -FallbackName=QualifiedFrameTime
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameTime -FallbackName=FrameTime
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameRate -FallbackName=FrameRate
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timecode -FallbackName=Timecode
 #include "TimeManagementBlueprintLibrary.generated.h"
 
 UCLASS(BlueprintType)
 class TIMEMANAGEMENT_API UTimeManagementBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UTimeManagementBlueprintLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FFrameTime TransformTime(const FFrameTime& SourceTime, const FFrameRate& SourceRate, const FFrameRate& DestinationRate);
     
@@ -63,6 +64,5 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FFrameNumber Add_FrameNumberFrameNumber(FFrameNumber A, FFrameNumber B);
     
-    UTimeManagementBlueprintLibrary();
 };
 

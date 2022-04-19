@@ -1,21 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ContentWidget.h"
-//CROSS-MODULE INCLUDE: SlateCore EHorizontalAlignment
-//CROSS-MODULE INCLUDE: SlateCore EVerticalAlignment
-//CROSS-MODULE INCLUDE: SlateCore Margin
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EHorizontalAlignment -FallbackName=EHorizontalAlignment
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EVerticalAlignment -FallbackName=EVerticalAlignment
 #include "WindowTitleBarArea.generated.h"
 
 UCLASS()
 class UMG_API UWindowTitleBarArea : public UContentWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bWindowButtonsEnabled;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDoubleClickTogglesFullscreen;
     
+    UWindowTitleBarArea();
     UFUNCTION(BlueprintCallable)
     void SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment);
     
@@ -25,6 +26,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetHorizontalAlignment(TEnumAsByte<EHorizontalAlignment> InHorizontalAlignment);
     
-    UWindowTitleBarArea();
 };
 

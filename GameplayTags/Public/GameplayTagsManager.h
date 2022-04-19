@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
 #include "GameplayTagSource.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "GameplayTagsManager.generated.h"
 
 class UDataTable;
@@ -11,10 +11,10 @@ class GAMEPLAYTAGS_API UGameplayTagsManager : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
-    TArray<FGameplayTagSource> TagSources;
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    TMap<FName, FGameplayTagSource> TagSources;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<UDataTable*> GameplayTagTables;
     
 public:

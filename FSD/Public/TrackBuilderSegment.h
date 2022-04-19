@@ -1,38 +1,41 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: Engine Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "TrackBuilderPoint.h"
-//CROSS-MODULE INCLUDE: CoreUObject Transform
 #include "ETrackBuildPlacementState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "TrackBuilderSegment.generated.h"
 
-class ATrackBuilderSegment;
-class APlayerCharacter;
 class UTrackBuilderUsable;
-class AItem;
+class APlayerCharacter;
 class UTrackBuilderConnectPoint;
+class AItem;
+class ATrackBuilderSegment;
 
 UCLASS()
 class FSD_API ATrackBuilderSegment : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UTrackBuilderUsable* NextSegmentUsable;
     
-    UPROPERTY(BlueprintReadOnly, Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<APlayerCharacter> BuiltByCharacter;
     
-    UPROPERTY(BlueprintReadOnly, Export, Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, Export, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UTrackBuilderUsable> BuiltFromUsable;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
     FTrackBuilderPoint SegmentEndTransform;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_SegmentEndTransform)
+    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_SegmentEndTransform, meta=(AllowPrivateAccess=true))
     FTrackBuilderPoint ServerSegmentEndTransform;
     
 public:
+    ATrackBuilderSegment();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    
     UFUNCTION(BlueprintCallable)
     bool UpdatePlacement(const FTransform& InTransform, UTrackBuilderConnectPoint* InConnectPoint, bool InPlacementValid, AItem* PlaceableItem);
     
@@ -83,8 +86,5 @@ public:
     UFUNCTION(BlueprintCallable)
     bool CanPlaceAt(const FTransform& InCandidateTransform, UTrackBuilderConnectPoint* InConnectPoint, AItem* PlaceableItem);
     
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
-    ATrackBuilderSegment();
 };
 

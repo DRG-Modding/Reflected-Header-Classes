@@ -9,13 +9,13 @@ class GEOMETRYCACHE_API UDEPRECATED_GeometryCacheTrack_FlipbookAnimation : publi
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     uint32 NumMeshSamples;
     
 public:
+    UDEPRECATED_GeometryCacheTrack_FlipbookAnimation();
     UFUNCTION(BlueprintCallable)
     void AddMeshSample(const FGeometryCacheMeshData& MeshData, const float SampleTime);
     
-    UDEPRECATED_GeometryCacheTrack_FlipbookAnimation();
 };
 

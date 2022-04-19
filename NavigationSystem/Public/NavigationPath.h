@@ -1,29 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
-//CROSS-MODULE INCLUDE: Engine ENavPathEvent
-//CROSS-MODULE INCLUDE: CoreUObject Vector
-//CROSS-MODULE INCLUDE: Engine ENavigationOptionFlag
-//CROSS-MODULE INCLUDE: CoreUObject LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "OnNavigationPathUpdatedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ENavigationOptionFlag -FallbackName=ENavigationOptionFlag
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "NavigationPath.generated.h"
-
-class UNavigationPath;
-
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FNavigationPathPathUpdatedNotifier, UNavigationPath*, AffectedPath, TEnumAsByte<ENavPathEvent::Type>, PathEvent);
 
 UCLASS(BlueprintType)
 class NAVIGATIONSYSTEM_API UNavigationPath : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
-    FNavigationPathPathUpdatedNotifier PathUpdatedNotifier;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    FOnNavigationPathUpdated PathUpdatedNotifier;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TArray<FVector> PathPoints;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ENavigationOptionFlag::Type> RecalculateOnInvalidation;
     
+    UNavigationPath();
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsValid() const;
     
@@ -48,6 +45,5 @@ public:
     UFUNCTION(BlueprintCallable)
     void EnableDebugDrawing(bool bShouldDrawDebugData, FLinearColor PathColor);
     
-    UNavigationPath();
 };
 

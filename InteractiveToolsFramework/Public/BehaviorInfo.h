@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct INTERACTIVETOOLSFRAMEWORK_API FBehaviorInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     UInputBehavior* Behavior;
     
     FBehaviorInfo();

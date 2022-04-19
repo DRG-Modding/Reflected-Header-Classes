@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FNiagaraEmitterScalabilityOverrides {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraEmitterScalabilityOverride> Overrides;
     
     NIAGARA_API FNiagaraEmitterScalabilityOverrides();

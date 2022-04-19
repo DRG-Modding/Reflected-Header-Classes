@@ -6,10 +6,10 @@ USTRUCT()
 struct FEngineServiceAuthGrant {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Username;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString UserToGrant;
     
     ENGINEMESSAGES_API FEngineServiceAuthGrant();

@@ -6,13 +6,10 @@ USTRUCT(BlueprintType)
 struct FMovieSceneEvaluationGroupLUTIndex {
     GENERATED_BODY()
 public:
-    UPROPERTY()
-    int32 LUTOffset;
-    
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 NumInitPtrs;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     int32 NumEvalPtrs;
     
     MOVIESCENE_API FMovieSceneEvaluationGroupLUTIndex();

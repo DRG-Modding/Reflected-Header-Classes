@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: MovieScene MovieScenePropertySectionTemplate
-//CROSS-MODULE INCLUDE: MovieScene MovieSceneBoolChannel
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieScenePropertySectionTemplate -FallbackName=MovieScenePropertySectionTemplate
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneBoolChannel -FallbackName=MovieSceneBoolChannel
 #include "MovieSceneBoolPropertySectionTemplate.generated.h"
 
 USTRUCT()
@@ -9,7 +9,7 @@ struct FMovieSceneBoolPropertySectionTemplate : public FMovieScenePropertySectio
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
     FMovieSceneBoolChannel BoolCurve;
     
 public:

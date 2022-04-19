@@ -5,5 +5,6 @@
 UENUM()
 enum class ESceneSnapQueryType {
     Position = 0x1,
+    Rotation,
 };
 
