@@ -1,7 +1,7 @@
 #include "CanvasPanel.h"
 
-class UWidget;
 class UCanvasPanelSlot;
+class UWidget;
 
 UCanvasPanelSlot* UCanvasPanel::AddChildToCanvas(UWidget* Content) {
     return NULL;

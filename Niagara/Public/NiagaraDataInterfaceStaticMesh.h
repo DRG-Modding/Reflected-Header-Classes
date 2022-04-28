@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraDataInterface.h"
-#include "ENDIStaticMesh_SourceMode.h"
 #include "NDIStaticMeshSectionFilter.h"
+#include "ENDIStaticMesh_SourceMode.h"
 #include "NiagaraDataInterfaceStaticMesh.generated.h"
 
 class UStaticMesh;
-class UStaticMeshComponent;
 class AActor;
+class UStaticMeshComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceStaticMesh : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
@@ -22,7 +22,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* Source;
     
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* SourceComponent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

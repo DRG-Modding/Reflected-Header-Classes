@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=ClothingSystemRuntimeInterface -ObjectName=ClothConfigBase -FallbackName=ClothConfigBase
 #include "ClothConfigCommon.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class CLOTHINGSYSTEMRUNTIMECOMMON_API UClothConfigCommon : public UClothConfigBase {
     GENERATED_BODY()
 public:

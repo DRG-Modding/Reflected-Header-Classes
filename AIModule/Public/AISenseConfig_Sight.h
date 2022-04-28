@@ -7,32 +7,32 @@
 
 class UAISense_Sight;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AIMODULE_API UAISenseConfig_Sight : public UAISenseConfig {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, NoClear, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, NoClear, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAISense_Sight> Implementation;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float SightRadius;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float LoseSightRadius;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float PeripheralVisionAngleDegrees;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAISenseAffiliationFilter DetectionByAffiliation;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float AutoSuccessRangeFromLastSeenLocation;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float PointOfViewBackwardOffset;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float NearClippingRadius;
     
     UAISenseConfig_Sight();

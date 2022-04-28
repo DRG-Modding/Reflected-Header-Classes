@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ForgingPendingReward.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "ESchematicType.h"
 #include "ForgingResult.h"
+#include "ESchematicType.h"
+#include "ForgingPendingReward.h"
 #include "ForgingFunctionLibrary.generated.h"
 
 class UObject;
 class USchematic;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UForgingFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -32,7 +32,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static ESchematicType GetForgingMasteryRewardDefaultType(ESchematicType InType);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetForgingLevelProgress(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

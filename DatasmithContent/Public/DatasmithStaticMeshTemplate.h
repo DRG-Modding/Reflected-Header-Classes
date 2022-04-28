@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DatasmithMeshBuildSettingsTemplate.h"
 #include "DatasmithObjectTemplate.h"
 #include "DatasmithMeshSectionInfoMapTemplate.h"
 #include "DatasmithStaticMaterialTemplate.h"
-#include "DatasmithMeshBuildSettingsTemplate.h"
 #include "DatasmithStaticMeshTemplate.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class DATASMITHCONTENT_API UDatasmithStaticMeshTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDatasmithMeshSectionInfoMapTemplate SectionInfoMap;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LightMapCoordinateIndex;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LightMapResolution;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FDatasmithMeshBuildSettingsTemplate> BuildSettings;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FDatasmithStaticMaterialTemplate> StaticMaterials;
     
     UDatasmithStaticMeshTemplate();

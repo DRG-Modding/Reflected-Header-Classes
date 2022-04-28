@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "BTDecorator.h"
 #include "BlackboardKeySelector.h"
+#include "BTDecorator.h"
 #include "EPathExistanceQueryType.h"
 #include "BTDecorator_DoesPathExist.generated.h"
 
 class UNavigationQueryFilter;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTDecorator_DoesPathExist : public UBTDecorator {
     GENERATED_BODY()
 public:
@@ -20,10 +20,10 @@ protected:
     FBlackboardKeySelector BlackboardKeyB;
     
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bUseSelf: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EPathExistanceQueryType::Type> PathQueryType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -6,17 +6,17 @@
 
 class UPrimitiveComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class INTERACTIVETOOLSFRAMEWORK_API UGizmoComponentHitTarget : public UObject, public IGizmoClickTarget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UPrimitiveComponent* Component;
     
     UGizmoComponentHitTarget();
     
     // Fix for true pure virtual functions not being implemented
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void UpdateHoverState(bool bHovering) const override PURE_VIRTUAL(UpdateHoverState,);
     
 };

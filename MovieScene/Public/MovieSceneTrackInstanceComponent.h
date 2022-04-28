@@ -6,14 +6,14 @@
 class UMovieSceneSection;
 class UMovieSceneTrackInstance;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneTrackInstanceComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UMovieSceneSection* Owner;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UMovieSceneTrackInstance> TrackInstanceClass;
     
     MOVIESCENE_API FMovieSceneTrackInstanceComponent();

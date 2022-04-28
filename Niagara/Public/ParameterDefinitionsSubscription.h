@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ParameterDefinitionsSubscription.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FParameterDefinitionsSubscription {
     GENERATED_BODY()
 public:

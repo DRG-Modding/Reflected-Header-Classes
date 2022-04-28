@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "AROriginActor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API AAROriginActor : public AActor {
     GENERATED_BODY()
 public:

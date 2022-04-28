@@ -12,16 +12,16 @@ class INTERACTIVETOOLSFRAMEWORK_API UGizmoVec2ParameterSource : public UInterfac
 class INTERACTIVETOOLSFRAMEWORK_API IGizmoVec2ParameterSource : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual void SetParameter(const FVector2D& NewValue) PURE_VIRTUAL(SetParameter,);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual FVector2D GetParameter() const PURE_VIRTUAL(GetParameter, return FVector2D{};);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual void EndModify() PURE_VIRTUAL(EndModify,);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual void BeginModify() PURE_VIRTUAL(BeginModify,);
     
 };

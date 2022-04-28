@@ -3,7 +3,7 @@
 #include "BTDecorator_Blackboard.h"
 #include "BTDecorator_ConditionalLoop.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTDecorator_ConditionalLoop : public UBTDecorator_Blackboard {
     GENERATED_BODY()
 public:

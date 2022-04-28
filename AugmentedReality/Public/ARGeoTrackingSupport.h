@@ -2,13 +2,13 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EARGeoTrackingAccuracy.h"
-#include "EARGeoTrackingState.h"
 #include "EARGeoTrackingStateReason.h"
+#include "EARGeoTrackingState.h"
 #include "ARGeoTrackingSupport.generated.h"
 
 class UARGeoTrackingSupport;
 
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, Blueprintable)
 class AUGMENTEDREALITY_API UARGeoTrackingSupport : public UObject {
     GENERATED_BODY()
 public:

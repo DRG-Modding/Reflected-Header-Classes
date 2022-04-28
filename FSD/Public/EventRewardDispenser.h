@@ -1,32 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "EventRewardDispenser.generated.h"
 
-class AFSDPlayerState;
-class AEventRewardFrame;
 class USchematic;
+class AEventRewardFrame;
 class APlayerCharacter;
+class AFSDPlayerState;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AEventRewardDispenser : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_PlayerId, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_PlayerId, meta=(AllowPrivateAccess=true))
     FUniqueNetIdRepl PlayerId;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AEventRewardFrame* DispenserFrame;
     
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_PoweredUp, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_PoweredUp, meta=(AllowPrivateAccess=true))
     bool PoweredUp;
     
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_IsActivated, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsActivated, meta=(AllowPrivateAccess=true))
     bool IsActivated;
     
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_SelectedReward, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_SelectedReward, meta=(AllowPrivateAccess=true))
     USchematic* SelectedReward;
     
 public:

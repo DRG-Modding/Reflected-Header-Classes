@@ -6,12 +6,12 @@
 
 class UMovieScenePropertyInstantiatorSystem;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class MOVIESCENETRACKS_API UMovieScenePropertySystem : public UMovieSceneEntitySystem, public IMovieScenePreAnimatedStateSystemInterface {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMovieScenePropertyInstantiatorSystem* InstantiatorSystem;
     
 public:

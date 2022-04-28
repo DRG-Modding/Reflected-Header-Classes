@@ -4,7 +4,7 @@
 #include "SourceEffectEQSettings.h"
 #include "SourceEffectEQPreset.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USourceEffectEQPreset : public USoundEffectSourcePreset {
     GENERATED_BODY()
 public:

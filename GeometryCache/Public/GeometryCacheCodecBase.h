@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "GeometryCacheCodecBase.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class GEOMETRYCACHE_API UGeometryCacheCodecBase : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<int32> TopologyRanges;
     
 public:

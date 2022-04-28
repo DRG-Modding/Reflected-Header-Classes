@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Interface_AssetUserData -FallbackName=Interface_AssetUserData
 #include "DatasmithScene.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class DATASMITHCONTENT_API UDatasmithScene : public UObject, public IInterface_AssetUserData {
     GENERATED_BODY()
 public:

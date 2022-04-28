@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "ListViewDesignerPreviewItem.generated.h"
 
-UCLASS(Transient, Within=ListView)
+UCLASS(Blueprintable, Transient, Within=ListView)
 class UListViewDesignerPreviewItem : public UObject {
     GENERATED_BODY()
 public:

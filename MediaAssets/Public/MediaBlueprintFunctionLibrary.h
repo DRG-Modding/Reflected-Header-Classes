@@ -4,7 +4,7 @@
 #include "MediaCaptureDevice.h"
 #include "MediaBlueprintFunctionLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMediaBlueprintFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

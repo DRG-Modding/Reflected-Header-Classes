@@ -3,7 +3,7 @@
 #include "MovieSceneEntitySystem.h"
 #include "MovieSceneBlenderSystem.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class MOVIESCENE_API UMovieSceneBlenderSystem : public UMovieSceneEntitySystem {
     GENERATED_BODY()
 public:

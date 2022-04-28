@@ -7,14 +7,14 @@
 
 class UTextureRenderTargetCube;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceRenderTargetCube : public UNiagaraDataInterfaceRWBase {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Size;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<ETextureRenderTargetFormat> OverrideRenderTargetFormat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -27,7 +27,7 @@ public:
     FNiagaraUserParameterBinding RenderTargetUserParameter;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, EditAnywhere, Transient)
     TMap<uint64, UTextureRenderTargetCube*> ManagedRenderTargets;
     
 public:

@@ -6,7 +6,7 @@
 
 class UNavArea;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class NAVIGATIONSYSTEM_API UNavAreaMeta_SwitchByAgent : public UNavAreaMeta {
     GENERATED_BODY()
 public:

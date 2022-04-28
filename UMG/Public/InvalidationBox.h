@@ -3,7 +3,7 @@
 #include "ContentWidget.h"
 #include "InvalidationBox.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UInvalidationBox : public UContentWidget {
     GENERATED_BODY()
 public:
@@ -11,7 +11,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCanCache;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CacheRelativeTransforms;
     
 public:

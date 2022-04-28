@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "BehaviorTreeTypes.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBehaviorTreeTypes : public UObject {
     GENERATED_BODY()
 public:

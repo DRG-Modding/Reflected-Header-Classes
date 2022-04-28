@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FMovieSceneSequenceReplProperties {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFrameTime LastKnownPosition;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EMovieScenePlayerStatus::Type> LastKnownStatus;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LastKnownNumLoops;
     
     MOVIESCENE_API FMovieSceneSequenceReplProperties();

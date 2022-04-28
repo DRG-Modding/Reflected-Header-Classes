@@ -9,15 +9,15 @@ class UAnimationSharingSetup;
 class AActor;
 class UAnimationSharingManager;
 
-UCLASS(BlueprintType, DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig)
 class ANIMATIONSHARING_API UAnimationSharingManager : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<USkeleton*> Skeletons;
     
-    UPROPERTY(BlueprintReadWrite, Transient, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UAnimSharingInstance*> PerSkeletonData;
     
 public:

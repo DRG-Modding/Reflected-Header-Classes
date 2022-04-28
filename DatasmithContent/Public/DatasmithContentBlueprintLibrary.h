@@ -6,7 +6,7 @@
 class UObject;
 class UDatasmithAssetUserData;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class DATASMITHCONTENT_API UDatasmithContentBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

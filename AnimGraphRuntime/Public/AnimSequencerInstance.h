@@ -4,7 +4,7 @@
 #include "SequencerAnimationSupport.h"
 #include "AnimSequencerInstance.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class ANIMGRAPHRUNTIME_API UAnimSequencerInstance : public UAnimInstance, public ISequencerAnimationSupport {
     GENERATED_BODY()
 public:

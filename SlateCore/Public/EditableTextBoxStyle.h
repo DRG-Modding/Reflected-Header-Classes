@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SlateWidgetStyle.h"
-#include "SlateBrush.h"
 #include "ScrollBarStyle.h"
-#include "Margin.h"
+#include "SlateBrush.h"
 #include "SlateColor.h"
 #include "SlateFontInfo.h"
+#include "Margin.h"
 #include "EditableTextBoxStyle.generated.h"
 
 USTRUCT(BlueprintType)

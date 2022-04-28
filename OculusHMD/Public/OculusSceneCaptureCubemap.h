@@ -5,12 +5,12 @@
 
 class USceneCaptureComponent2D;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UOculusSceneCaptureCubemap : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<USceneCaptureComponent2D*> CaptureComponents;
     
 public:

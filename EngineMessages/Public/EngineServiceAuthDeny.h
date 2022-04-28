@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EngineServiceAuthDeny.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEngineServiceAuthDeny {
     GENERATED_BODY()
 public:

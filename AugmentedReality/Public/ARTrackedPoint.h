@@ -3,7 +3,7 @@
 #include "ARTrackedGeometry.h"
 #include "ARTrackedPoint.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UARTrackedPoint : public UARTrackedGeometry {
     GENERATED_BODY()
 public:

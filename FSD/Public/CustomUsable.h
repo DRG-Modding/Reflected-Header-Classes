@@ -5,14 +5,14 @@
 
 class UUsableComponentBase;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FCustomUsable {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UUsableComponentBase* Usable;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECustomUsableType TerminationType;
     
     FSD_API FCustomUsable();

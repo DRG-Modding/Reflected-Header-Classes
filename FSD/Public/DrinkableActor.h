@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "DrinkableActor.generated.h"
 
-class UDrinkableDataAsset;
 class APlayerCharacter;
+class UDrinkableDataAsset;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class ADrinkableActor : public AActor {
     GENERATED_BODY()
 public:

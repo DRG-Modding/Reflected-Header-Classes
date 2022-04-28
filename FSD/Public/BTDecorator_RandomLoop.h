@@ -3,11 +3,11 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BTDecorator -FallbackName=BTDecorator
 #include "BTDecorator_RandomLoop.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTDecorator_RandomLoop : public UBTDecorator {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float Chance;
     
     UBTDecorator_RandomLoop();

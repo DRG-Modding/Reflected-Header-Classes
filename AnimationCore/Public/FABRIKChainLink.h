@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "FABRIKChainLink.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FFABRIKChainLink {
     GENERATED_BODY()
 public:

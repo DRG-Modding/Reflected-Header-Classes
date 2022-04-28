@@ -1,5 +1,9 @@
 #include "ModioCommonTypesLibrary.h"
 
+FModioInitializeOptions UModioCommonTypesLibrary::SetSessionIdentifier(const FModioInitializeOptions& options, const FString& SessionIdentifier) {
+    return FModioInitializeOptions{};
+}
+
 FModioInitializeOptions UModioCommonTypesLibrary::SetPortal(const FModioInitializeOptions& options, EModioPortal PortalToUse) {
     return FModioInitializeOptions{};
 }

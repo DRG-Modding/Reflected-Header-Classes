@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "LandscapeEditorLayerSettings.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FLandscapeEditorLayerSettings {
     GENERATED_BODY()
 public:

@@ -4,12 +4,12 @@
 #include "NiagaraVariable.h"
 #include "MovieSceneNiagaraParameterTrack.generated.h"
 
-UCLASS(Abstract, MinimalAPI)
+UCLASS(Abstract, Blueprintable, MinimalAPI)
 class UMovieSceneNiagaraParameterTrack : public UMovieSceneNiagaraTrack {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariable Parameter;
     
 public:

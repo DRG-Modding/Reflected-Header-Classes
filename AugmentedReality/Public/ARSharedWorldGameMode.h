@@ -5,7 +5,7 @@
 
 class AARSharedWorldGameState;
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class AUGMENTEDREALITY_API AARSharedWorldGameMode : public AGameMode {
     GENERATED_BODY()
 public:

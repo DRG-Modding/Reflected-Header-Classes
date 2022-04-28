@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector4 -FallbackName=Vector4
 #include "MovieSceneVectorKeyStructBase.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector4 -FallbackName=Vector4
 #include "MovieSceneVector4KeyStruct.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneVector4KeyStruct : public FMovieSceneVectorKeyStructBase {
     GENERATED_BODY()
 public:

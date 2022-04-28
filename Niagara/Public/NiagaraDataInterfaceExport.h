@@ -5,7 +5,7 @@
 #include "ENDIExport_GPUAllocationMode.h"
 #include "NiagaraDataInterfaceExport.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceExport : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
@@ -18,7 +18,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 GPUAllocationFixedSize;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float GPUAllocationPerParticleSize;
     
     UNiagaraDataInterfaceExport();

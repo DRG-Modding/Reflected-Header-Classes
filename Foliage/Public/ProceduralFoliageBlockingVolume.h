@@ -5,7 +5,7 @@
 
 class AProceduralFoliageVolume;
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class AProceduralFoliageBlockingVolume : public AVolume {
     GENERATED_BODY()
 public:

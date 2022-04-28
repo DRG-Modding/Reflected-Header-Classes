@@ -24,6 +24,10 @@ bool UModioOptionalLibrary::IsSet_ModioOptionalModInfo(const FModioOptionalModIn
     return false;
 }
 
+bool UModioOptionalLibrary::IsSet_ModioOptionalModID(const FModioOptionalModID& OptionalID) {
+    return false;
+}
+
 bool UModioOptionalLibrary::IsSet_ModioOptionalModDependencyList(const FModioOptionalModDependencyList& OptionalDependencyList) {
     return false;
 }
@@ -56,11 +60,15 @@ bool UModioOptionalLibrary::GetValue_ModioOptionalModInfo(const FModioOptionalMo
     return false;
 }
 
+bool UModioOptionalLibrary::GetValue_ModioOptionalModID(const FModioOptionalModID& OptionalID, FModioModID& ID) {
+    return false;
+}
+
 bool UModioOptionalLibrary::GetValue_ModioOptionalModDependencyList(const FModioOptionalModDependencyList& OptionalDependencyList, FModioModDependencyList& DependencyList) {
     return false;
 }
 
-bool UModioOptionalLibrary::GetValue_ModioOptionalImage(const FModioOptionalImage& OptionalImage, FModioImage& Image) {
+bool UModioOptionalLibrary::GetValue_ModioOptionalImage(const FModioOptionalImage& OptionalImage, FModioImageWrapper& Image) {
     return false;
 }
 

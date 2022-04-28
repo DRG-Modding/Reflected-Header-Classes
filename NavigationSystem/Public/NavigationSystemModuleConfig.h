@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavigationSystemConfig -FallbackName=NavigationSystemConfig
 #include "NavigationSystemModuleConfig.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class NAVIGATIONSYSTEM_API UNavigationSystemModuleConfig : public UNavigationSystemConfig {
     GENERATED_BODY()
 public:

@@ -4,7 +4,7 @@
 #include "SlateWidgetStyleContainerInterface.h"
 #include "SlateWidgetStyleContainerBase.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SLATECORE_API USlateWidgetStyleContainerBase : public UObject, public ISlateWidgetStyleContainerInterface {
     GENERATED_BODY()
 public:

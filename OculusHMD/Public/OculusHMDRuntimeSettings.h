@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EFixedFoveatedRenderingLevel.h"
-#include "EColorSpace.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "OculusSplashDesc.h"
+#include "EColorSpace.h"
 #include "EHandTrackingSupport.h"
+#include "EFixedFoveatedRenderingLevel.h"
 #include "OculusHMDRuntimeSettings.generated.h"
 
-UCLASS(DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig)
 class OCULUSHMD_API UOculusHMDRuntimeSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -32,10 +32,10 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHQDistortion;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float PixelDensityMin;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float PixelDensityMax;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

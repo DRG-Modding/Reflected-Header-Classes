@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FClothCollisionPrim_ConvexFace {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPlane Plane;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<int32> Indices;
     
     CLOTHINGSYSTEMRUNTIMEINTERFACE_API FClothCollisionPrim_ConvexFace();

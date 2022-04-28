@@ -3,13 +3,13 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "ObjectInfoComponent.generated.h"
 
-class APlayerController;
-class UTexture2D;
 class UDialogDataAsset;
 class UPrimitiveComponent;
+class UTexture2D;
 class UActorContextWidget;
+class APlayerController;
 
-UCLASS(Abstract, BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UObjectInfoComponent : public UActorComponent {
     GENERATED_BODY()
 public:

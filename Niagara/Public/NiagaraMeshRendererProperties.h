@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ENiagaraMeshPivotOffsetSpace.h"
 #include "NiagaraRendererProperties.h"
+#include "ENiagaraMeshFacingMode.h"
 #include "NiagaraMeshRendererMeshProperties.h"
 #include "ENiagaraRendererSourceDataMode.h"
-#include "ENiagaraSortMode.h"
-#include "NiagaraMeshMaterialOverride.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "ENiagaraMeshLockedAxisSpace.h"
-#include "ENiagaraMeshFacingMode.h"
+#include "ENiagaraMeshPivotOffsetSpace.h"
+#include "ENiagaraSortMode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "NiagaraMeshMaterialOverride.h"
+#include "ENiagaraMeshLockedAxisSpace.h"
 #include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraMaterialAttributeBinding.h"
 #include "NiagaraMeshRendererProperties.generated.h"
 
 class UStaticMesh;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraMeshRendererProperties : public UNiagaraRendererProperties {
     GENERATED_BODY()
 public:
@@ -68,13 +68,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraMeshLockedAxisSpace LockedAxisSpace;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float MinCameraDistance;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float MaxCameraDistance;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 RendererVisibility;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -128,29 +128,29 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraMaterialAttributeBinding> MaterialParameterBindings;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding PrevPositionBinding;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding PrevScaleBinding;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding PrevMeshOrientationBinding;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding PrevCameraOffsetBinding;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNiagaraVariableAttributeBinding PrevVelocityBinding;
     
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStaticMesh* ParticleMesh;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector PivotOffset;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraMeshPivotOffsetSpace PivotOffsetSpace;
     
 public:

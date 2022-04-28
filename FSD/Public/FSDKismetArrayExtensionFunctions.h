@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=KismetArrayLibrary -FallbackName=KismetArrayLibrary
 #include "FSDKismetArrayExtensionFunctions.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UFSDKismetArrayExtensionFunctions : public UKismetArrayLibrary {
     GENERATED_BODY()
 public:

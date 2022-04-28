@@ -3,7 +3,7 @@
 #include "MovieSceneEntityInstantiatorSystem.h"
 #include "MovieSceneMasterInstantiatorSystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENE_API UMovieSceneMasterInstantiatorSystem : public UMovieSceneEntityInstantiatorSystem {
     GENERATED_BODY()
 public:

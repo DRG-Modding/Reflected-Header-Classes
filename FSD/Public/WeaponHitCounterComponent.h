@@ -3,13 +3,13 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "WeaponHitCounterComponent.generated.h"
 
+class UPrimitiveComponent;
 class UWeaponHitCountEffect;
 class UHealthComponentBase;
-class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
 class AActor;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UWeaponHitCounterComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -26,7 +26,7 @@ protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_OnReloading();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
     UFUNCTION(BlueprintCallable)
@@ -35,7 +35,7 @@ protected:
     UFUNCTION(BlueprintCallable)
     void OnReloading();
     
-    UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
+    UFUNCTION(NetMulticast, Unreliable)
     void All_ShowDamageEffects(const TArray<TWeakObjectPtr<AActor>>& Targets);
     
 };

@@ -4,7 +4,7 @@
 #include "MovieSceneGeometryCacheParams.h"
 #include "MovieSceneGeometryCacheSection.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneGeometryCacheSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:

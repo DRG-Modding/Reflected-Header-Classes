@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EngineServiceTerminate.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEngineServiceTerminate {
     GENERATED_BODY()
 public:

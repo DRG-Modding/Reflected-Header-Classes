@@ -10,7 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bOverrideAspectRatioAxisConstraint;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EAspectRatioAxisConstraint> AspectRatioAxisConstraint;
     
     LEVELSEQUENCE_API FLevelSequenceCameraSettings();

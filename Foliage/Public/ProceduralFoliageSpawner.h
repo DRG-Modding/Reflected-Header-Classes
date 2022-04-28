@@ -4,20 +4,20 @@
 #include "FoliageTypeObject.h"
 #include "ProceduralFoliageSpawner.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class FOLIAGE_API UProceduralFoliageSpawner : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 RandomSeed;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float TileSize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumUniqueTiles;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float MinimumQuadTreeSize;
     
 private:

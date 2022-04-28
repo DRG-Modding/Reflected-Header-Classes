@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "AnimLegIKData.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FAnimLegIKData {
     GENERATED_BODY()
 public:

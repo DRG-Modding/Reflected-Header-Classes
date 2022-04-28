@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CurveInterpolationType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
-#include "NumTablesChangedDelegate.h"
 #include "OnTableAlteredDelegate.h"
+#include "NumTablesChangedDelegate.h"
 #include "ESynthLFOType.h"
+#include "CurveInterpolationType.h"
 #include "SynthComponentMonoWaveTable.generated.h"
 
 class UMonoWaveTableSynthPreset;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SYNTHESIS_API USynthComponentMonoWaveTable : public USynthComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTableAltered OnTableAltered;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNumTablesChanged OnNumTablesChanged;
     
 protected:
@@ -151,7 +151,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxTableIndex() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     TArray<float> GetKeyFrameValuesForTable(float TableIndex) const;
     
     UFUNCTION(BlueprintCallable)

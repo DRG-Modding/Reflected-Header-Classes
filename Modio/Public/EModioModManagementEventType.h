@@ -7,5 +7,6 @@ enum class EModioModManagementEventType : uint8 {
     Installed,
     Uninstalled,
     Updated,
+    Uploaded,
 };
 

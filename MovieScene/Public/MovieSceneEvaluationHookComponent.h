@@ -5,11 +5,11 @@
 class UMovieSceneEvaluationHook;
 class IMovieSceneEvaluationHook;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneEvaluationHookComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TScriptInterface<IMovieSceneEvaluationHook> Interface;
     
     MOVIESCENE_API FMovieSceneEvaluationHookComponent();

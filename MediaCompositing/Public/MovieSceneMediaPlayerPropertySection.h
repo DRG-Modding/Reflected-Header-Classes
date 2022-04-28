@@ -5,7 +5,7 @@
 
 class UMediaSource;
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneMediaPlayerPropertySection : public UMovieSceneSection {
     GENERATED_BODY()
 public:

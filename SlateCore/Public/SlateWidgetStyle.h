@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "SlateWidgetStyle.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SLATECORE_API FSlateWidgetStyle {
     GENERATED_BODY()
 public:

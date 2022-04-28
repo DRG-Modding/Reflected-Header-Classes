@@ -9,13 +9,13 @@ USTRUCT(BlueprintType)
 struct FMovieSceneTemplateGenerationLedger {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneTrackIdentifier LastTrackIdentifier;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGuid, FMovieSceneTrackIdentifier> TrackSignatureToTrackIdentifier;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGuid, FMovieSceneFrameRange> SubSectionRanges;
     
     MOVIESCENE_API FMovieSceneTemplateGenerationLedger();

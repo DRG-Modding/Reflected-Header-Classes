@@ -5,7 +5,7 @@
 
 class APlayerController;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class ONLINESUBSYSTEMUTILS_API ULeaderboardBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

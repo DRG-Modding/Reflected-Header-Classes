@@ -24,6 +24,12 @@ void UModioSubsystem::K2_UnsubscribeFromModAsync(FModioModID ModToUnsubscribeFro
 void UModioSubsystem::K2_SubscribeToModAsync(FModioModID ModToSubscribeTo, FOnErrorOnlyDelegate OnSubscribeComplete) {
 }
 
+void UModioSubsystem::K2_SubmitNewModFileForMod(FModioModID Mod, FModioCreateModFileParams Params) {
+}
+
+void UModioSubsystem::K2_SubmitNewModAsync(FModioModCreationHandle Handle, FModioCreateModParams Params, FOnSubmitNewModDelegate Callback) {
+}
+
 void UModioSubsystem::K2_SubmitModRatingAsync(FModioModID Mod, EModioRating Rating, FOnErrorOnlyDelegate Callback) {
 }
 
@@ -74,6 +80,10 @@ void UModioSubsystem::K2_GetModInfoAsync(FModioModID ModId, FOnGetModInfoDelegat
 void UModioSubsystem::K2_GetModDependenciesAsync(FModioModID ModId, FOnGetModDependenciesDelegate Callback) {
 }
 
+FModioModCreationHandle UModioSubsystem::K2_GetModCreationHandle() {
+    return FModioModCreationHandle{};
+}
+
 void UModioSubsystem::K2_FetchExternalUpdatesAsync(FOnErrorOnlyDelegate OnFetchDone) {
 }
 
@@ -87,6 +97,9 @@ void UModioSubsystem::K2_AuthenticateUserExternalAsync(const FModioAuthenticatio
 }
 
 void UModioSubsystem::K2_AuthenticateUserEmailAsync(const FModioEmailAuthCode& AuthenticationCode, FOnErrorOnlyDelegate Callback) {
+}
+
+void UModioSubsystem::K2_ArchiveModAsync(FModioModID Mod, FOnErrorOnlyDelegate Callback) {
 }
 
 bool UModioSubsystem::IsModManagementBusy() {

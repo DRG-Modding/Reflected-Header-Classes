@@ -4,7 +4,7 @@
 #include "AnalyticsEventAttr.h"
 #include "AnalyticsBlueprintLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UAnalyticsBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

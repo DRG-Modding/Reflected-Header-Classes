@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "BlackboardKeySelector.h"
 #include "BTDecorator.h"
 #include "EBlackBoardEntryComparison.h"
-#include "BlackboardKeySelector.h"
 #include "BTDecorator_CompareBBEntries.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTDecorator_CompareBBEntries : public UBTDecorator {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EBlackBoardEntryComparison::Type> Operator;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

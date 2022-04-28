@@ -6,14 +6,14 @@
 
 class UBTService;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBTCompositeNode : public UBTNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBTCompositeChild> Children;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBTService*> Services;
     
 protected:

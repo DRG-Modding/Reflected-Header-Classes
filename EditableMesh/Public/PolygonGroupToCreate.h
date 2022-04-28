@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FPolygonGroupToCreate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMeshElementAttributeList PolygonGroupAttributes;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPolygonGroupID OriginalPolygonGroupID;
     
     EDITABLEMESH_API FPolygonGroupToCreate();

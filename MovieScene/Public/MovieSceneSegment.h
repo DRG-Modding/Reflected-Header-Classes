@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "MovieSceneSegment.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneSegment {
     GENERATED_BODY()
 public:

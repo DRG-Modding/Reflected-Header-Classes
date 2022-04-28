@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAREnvironmentProbeUpdatePayload {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTransform WorldTransform;
     
     AUGMENTEDREALITY_API FAREnvironmentProbeUpdatePayload();

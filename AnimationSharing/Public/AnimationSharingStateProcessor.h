@@ -14,7 +14,7 @@ public:
     TSoftObjectPtr<UEnum> AnimationStateEnum;
     
     UAnimationSharingStateProcessor();
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void ProcessActorState(int32& OutState, AActor* InActor, uint8 CurrentState, uint8 OnDemandState, bool& bShouldProcess);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

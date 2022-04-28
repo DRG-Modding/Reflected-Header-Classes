@@ -4,25 +4,25 @@
 #include "MovieSceneRootEvaluationTemplateInstance.generated.h"
 
 class UMovieSceneSequence;
+class UObject;
 class UMovieSceneCompiledDataManager;
 class UMovieSceneEntitySystemLinker;
-class UObject;
 
 USTRUCT(BlueprintType)
 struct FMovieSceneRootEvaluationTemplateInstance {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TWeakObjectPtr<UMovieSceneSequence> WeakRootSequence;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMovieSceneCompiledDataManager* CompiledDataManager;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMovieSceneEntitySystemLinker* EntitySystemLinker;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FMovieSceneSequenceID, UObject*> DirectorInstances;
     
 public:

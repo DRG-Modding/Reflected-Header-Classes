@@ -5,7 +5,7 @@
 
 class UTexture;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceTexture : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

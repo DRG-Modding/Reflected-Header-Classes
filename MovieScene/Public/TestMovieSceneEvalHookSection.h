@@ -3,7 +3,7 @@
 #include "MovieSceneHookSection.h"
 #include "TestMovieSceneEvalHookSection.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UTestMovieSceneEvalHookSection : public UMovieSceneHookSection {
     GENERATED_BODY()
 public:

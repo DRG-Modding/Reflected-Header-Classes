@@ -3,7 +3,7 @@
 #include "PropertyValue.h"
 #include "PropertyValueColor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class VARIANTMANAGERCONTENT_API UPropertyValueColor : public UPropertyValue {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "LandscapeGizmoActor.h"
 #include "LandscapeGizmoActiveActor.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class ALandscapeGizmoActiveActor : public ALandscapeGizmoActor {
     GENERATED_BODY()
 public:

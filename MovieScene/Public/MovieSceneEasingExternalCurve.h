@@ -6,7 +6,7 @@
 
 class UCurveFloat;
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENE_API UMovieSceneEasingExternalCurve : public UObject, public IMovieSceneEasingFunction {
     GENERATED_BODY()
 public:

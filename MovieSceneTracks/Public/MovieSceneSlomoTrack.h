@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneTrackTemplateProducer -FallbackName=MovieSceneTrackTemplateProducer
 #include "MovieSceneSlomoTrack.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneSlomoTrack : public UMovieSceneFloatTrack, public IMovieSceneTrackTemplateProducer {
     GENERATED_BODY()
 public:

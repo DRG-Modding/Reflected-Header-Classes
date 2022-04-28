@@ -1,11 +1,11 @@
 #include "Variant.h"
 
-class UObject;
-class UTexture2D;
 class AActor;
 class UVariantSet;
-class UVariant;
+class UTexture2D;
+class UObject;
 class ULevelVariantSets;
+class UVariant;
 
 void UVariant::SwitchOn() {
 }

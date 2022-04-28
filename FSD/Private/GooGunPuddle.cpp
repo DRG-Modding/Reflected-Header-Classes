@@ -1,11 +1,11 @@
 #include "GooGunPuddle.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 #include "SimpleHealthComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 
-class UPrimitiveComponent;
 class UStatusEffect;
+class UPrimitiveComponent;
 class AActor;
 
 void AGooGunPuddle::SetStatusEffect(TSubclassOf<UStatusEffect> NewStatusEffect) {

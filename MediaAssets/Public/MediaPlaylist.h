@@ -5,7 +5,7 @@
 
 class UMediaSource;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MEDIAASSETS_API UMediaPlaylist : public UObject {
     GENERATED_BODY()
 public:

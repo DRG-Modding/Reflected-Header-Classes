@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstanceProxy -FallbackName=AnimInstanceProxy
 #include "SpiderAnimInstanceProxy.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FSpiderAnimInstanceProxy : public FAnimInstanceProxy {
     GENERATED_BODY()
 public:

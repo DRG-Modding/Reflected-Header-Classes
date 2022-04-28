@@ -5,12 +5,12 @@
 
 class UPanelSlot;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class UMG_API UPanelWidget : public UWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<UPanelSlot*> Slots;
     
 public:

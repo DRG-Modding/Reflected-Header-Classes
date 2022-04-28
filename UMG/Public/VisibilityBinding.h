@@ -4,7 +4,7 @@
 #include "ESlateVisibility.h"
 #include "VisibilityBinding.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UVisibilityBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:

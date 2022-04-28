@@ -5,7 +5,7 @@
 
 class UBasicOverlays;
 
-UCLASS()
+UCLASS(Blueprintable)
 class OVERLAY_API ULocalizedOverlays : public UOverlays {
     GENERATED_BODY()
 public:

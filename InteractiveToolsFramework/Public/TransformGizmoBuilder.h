@@ -3,7 +3,7 @@
 #include "InteractiveGizmoBuilder.h"
 #include "TransformGizmoBuilder.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UTransformGizmoBuilder : public UInteractiveGizmoBuilder {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "NiagaraDataInterface.h"
 #include "NiagaraDataInterfaceGBuffer.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceGBuffer : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

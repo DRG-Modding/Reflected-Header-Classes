@@ -7,7 +7,7 @@
 
 class APlayerController;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class EYETRACKER_API UEyeTrackerFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

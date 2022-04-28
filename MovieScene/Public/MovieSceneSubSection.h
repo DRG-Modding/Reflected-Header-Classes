@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DirectoryPath -FallbackName=DirectoryPath
 #include "MovieSceneSection.h"
 #include "MovieSceneSectionParameters.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DirectoryPath -FallbackName=DirectoryPath
 #include "MovieSceneSubSection.generated.h"
 
 class UMovieSceneSequence;
 class AActor;
 
-UCLASS(Config=EditorPerProjectUserSettings)
+UCLASS(Blueprintable, Config=EditorPerProjectUserSettings)
 class MOVIESCENE_API UMovieSceneSubSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
@@ -16,16 +16,16 @@ public:
     FMovieSceneSectionParameters Parameters;
     
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float StartOffset;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float TimeScale;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float PrerollTime;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint8 NetworkMask;
     
 protected:

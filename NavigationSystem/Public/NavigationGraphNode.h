@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "NavigationGraphNode.generated.h"
 
-UCLASS(Abstract, MinimalAPI)
+UCLASS(Abstract, Blueprintable, MinimalAPI)
 class ANavigationGraphNode : public AActor {
     GENERATED_BODY()
 public:

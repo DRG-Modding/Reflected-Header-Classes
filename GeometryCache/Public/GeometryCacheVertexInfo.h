@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GeometryCacheVertexInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGeometryCacheVertexInfo {
     GENERATED_BODY()
 public:

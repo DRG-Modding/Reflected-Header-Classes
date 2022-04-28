@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EditableTextStyle -FallbackName=EditableTextStyle
 #include "EditableTextWidgetStyle.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UEditableTextWidgetStyle : public USlateWidgetStyleContainerBase {
     GENERATED_BODY()
 public:

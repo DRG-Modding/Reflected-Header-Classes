@@ -5,12 +5,12 @@
 
 class UAREnvironmentCaptureProbe;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API AARSkyLight : public ASkyLight {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAREnvironmentCaptureProbe* CaptureProbe;
     
 public:

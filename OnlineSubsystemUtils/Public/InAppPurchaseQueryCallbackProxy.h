@@ -4,17 +4,17 @@
 #include "InAppPurchaseQueryResultDelegate.h"
 #include "InAppPurchaseQueryCallbackProxy.generated.h"
 
-class UInAppPurchaseQueryCallbackProxy;
 class APlayerController;
+class UInAppPurchaseQueryCallbackProxy;
 
-UCLASS(BlueprintType, MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UInAppPurchaseQueryCallbackProxy : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInAppPurchaseQueryResult OnSuccess;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInAppPurchaseQueryResult OnFailure;
     
     UInAppPurchaseQueryCallbackProxy();

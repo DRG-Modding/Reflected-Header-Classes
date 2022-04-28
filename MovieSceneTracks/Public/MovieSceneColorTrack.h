@@ -3,12 +3,12 @@
 #include "MovieScenePropertyTrack.h"
 #include "MovieSceneColorTrack.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneColorTrack : public UMovieScenePropertyTrack {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsSlateColor;
     
 public:

@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneEntitySystem -FallbackName=MovieSceneEntitySystem
 #include "MovieSceneDeferredComponentMovementSystem.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneDeferredComponentMovementSystem : public UMovieSceneEntitySystem {
     GENERATED_BODY()
 public:

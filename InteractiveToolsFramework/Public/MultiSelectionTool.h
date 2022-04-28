@@ -3,7 +3,7 @@
 #include "InteractiveTool.h"
 #include "MultiSelectionTool.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UMultiSelectionTool : public UInteractiveTool {
     GENERATED_BODY()
 public:

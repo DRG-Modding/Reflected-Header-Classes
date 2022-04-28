@@ -3,7 +3,7 @@
 #include "MovieSceneEntitySystem.h"
 #include "MovieSceneEvalTimeSystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENE_API UMovieSceneEvalTimeSystem : public UMovieSceneEntitySystem {
     GENERATED_BODY()
 public:

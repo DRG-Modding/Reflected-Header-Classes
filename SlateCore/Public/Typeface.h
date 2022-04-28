@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct SLATECORE_API FTypeface {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FTypefaceEntry> Fonts;
     
     FTypeface();

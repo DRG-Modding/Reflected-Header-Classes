@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "MovieSceneWarpCounter.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneWarpCounter {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<uint32> WarpCounts;
     
     MOVIESCENE_API FMovieSceneWarpCounter();

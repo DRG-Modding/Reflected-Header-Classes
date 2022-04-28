@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MissionHazardSetting.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
-#include "MissionHazardSetting.h"
 #include "FSDMissionSettings.generated.h"
 
-class UObject;
 class UGeneratedMission;
+class UObject;
 class UDifficultySetting;
 
-UCLASS(BlueprintType, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class UFSDMissionSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -25,7 +25,7 @@ protected:
     
 public:
     UFSDMissionSettings();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetTotalHazardBonus(UObject* WorldContextObject, UGeneratedMission* mission, UDifficultySetting* DifficultySetting);
     
 };

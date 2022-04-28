@@ -6,7 +6,7 @@
 
 class UBlackboardData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBlackboardData : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -17,7 +17,7 @@ public:
     TArray<FBlackboardEntry> Keys;
     
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bHasSynchronizedKeys: 1;
     
 public:

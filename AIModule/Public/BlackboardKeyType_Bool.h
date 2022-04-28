@@ -3,7 +3,7 @@
 #include "BlackboardKeyType.h"
 #include "BlackboardKeyType_Bool.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class AIMODULE_API UBlackboardKeyType_Bool : public UBlackboardKeyType {
     GENERATED_BODY()
 public:

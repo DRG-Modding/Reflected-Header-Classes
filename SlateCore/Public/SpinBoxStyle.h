@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "SlateWidgetStyle.h"
 #include "SlateBrush.h"
-#include "SlateColor.h"
 #include "Margin.h"
+#include "SlateColor.h"
 #include "SpinBoxStyle.generated.h"
 
 USTRUCT(BlueprintType)
@@ -25,7 +25,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush ArrowsImage;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateColor ForegroundColor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

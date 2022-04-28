@@ -6,13 +6,13 @@ USTRUCT(BlueprintType)
 struct SYNTHESIS_API FSourceEffectFoldbackDistortionSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float InputGainDb;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float ThresholdDb;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float OutputGainDb;
     
     FSourceEffectFoldbackDistortionSettings();

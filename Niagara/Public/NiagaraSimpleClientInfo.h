@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "NiagaraSimpleClientInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct NIAGARA_API FNiagaraSimpleClientInfo {
     GENERATED_BODY()
 public:

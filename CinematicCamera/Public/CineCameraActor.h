@@ -6,7 +6,7 @@
 
 class UCineCameraComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class CINEMATICCAMERA_API ACineCameraActor : public ACameraActor {
     GENERATED_BODY()
 public:

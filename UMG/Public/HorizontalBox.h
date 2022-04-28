@@ -3,10 +3,10 @@
 #include "PanelWidget.h"
 #include "HorizontalBox.generated.h"
 
-class UHorizontalBoxSlot;
 class UWidget;
+class UHorizontalBoxSlot;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UHorizontalBox : public UPanelWidget {
     GENERATED_BODY()
 public:

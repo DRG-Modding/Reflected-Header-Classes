@@ -3,7 +3,7 @@
 #include "BTCompositeNode.h"
 #include "BTComposite_Sequence.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTComposite_Sequence : public UBTCompositeNode {
     GENERATED_BODY()
 public:

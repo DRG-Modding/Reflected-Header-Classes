@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "NiagaraBool.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraBool {
     GENERATED_BODY()
 public:

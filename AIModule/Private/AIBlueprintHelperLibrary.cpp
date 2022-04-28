@@ -3,12 +3,12 @@
 
 class UAnimInstance;
 class UObject;
-class APawn;
 class UBehaviorTree;
+class APawn;
 class AActor;
 class AController;
-class UBlackboardComponent;
 class UNavigationPath;
+class UBlackboardComponent;
 class AAIController;
 class UAIAsyncTaskBlueprintProxy;
 

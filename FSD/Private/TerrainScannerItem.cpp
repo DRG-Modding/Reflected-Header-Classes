@@ -1,7 +1,7 @@
 #include "TerrainScannerItem.h"
 #include "Net/UnrealNetwork.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneCaptureComponent2D -FallbackName=SceneCaptureComponent2D
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneCaptureComponent2D -FallbackName=SceneCaptureComponent2D
 
 void ATerrainScannerItem::Server_SetIslookingAtMap_Implementation(bool lookingAtMap) {
 }

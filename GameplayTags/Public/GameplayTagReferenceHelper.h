@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GameplayTagReferenceHelper.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGameplayTagReferenceHelper {
     GENERATED_BODY()
 public:

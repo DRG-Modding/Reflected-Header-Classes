@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BlackboardKeySelector -FallbackName=BlackboardKeySelector
 #include "BTService_CheckPathToTarget.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTService_CheckPathToTarget : public UBTService {
     GENERATED_BODY()
 public:

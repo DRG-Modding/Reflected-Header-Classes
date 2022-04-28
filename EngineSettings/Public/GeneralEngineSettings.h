@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "GeneralEngineSettings.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class ENGINESETTINGS_API UGeneralEngineSettings : public UObject {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "OnlineBeaconClient.h"
 #include "TestBeaconClient.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class ONLINESUBSYSTEMUTILS_API ATestBeaconClient : public AOnlineBeaconClient {
     GENERATED_BODY()
 public:

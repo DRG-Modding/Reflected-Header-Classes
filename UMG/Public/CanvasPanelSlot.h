@@ -7,7 +7,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=Anchors -FallbackName=Anchors
 #include "CanvasPanelSlot.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMG_API UCanvasPanelSlot : public UPanelSlot {
     GENERATED_BODY()
 public:

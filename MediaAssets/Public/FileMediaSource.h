@@ -3,7 +3,7 @@
 #include "BaseMediaSource.h"
 #include "FileMediaSource.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class MEDIAASSETS_API UFileMediaSource : public UBaseMediaSource {
     GENERATED_BODY()
 public:

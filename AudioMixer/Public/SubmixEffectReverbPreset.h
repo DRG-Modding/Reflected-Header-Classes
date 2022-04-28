@@ -6,7 +6,7 @@
 
 class UReverbEffect;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AUDIOMIXER_API USubmixEffectReverbPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:

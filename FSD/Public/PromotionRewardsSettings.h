@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ClaimableRewardEntry.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "PromotionRewardsRank.h"
 #include "PromotionRewardsSettings.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPromotionRewardsSettings : public UDataAsset {
     GENERATED_BODY()
 public:

@@ -5,7 +5,7 @@
 
 class UPawnAction;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTTask_PushPawnAction : public UBTTask_PawnActionBase {
     GENERATED_BODY()
 public:

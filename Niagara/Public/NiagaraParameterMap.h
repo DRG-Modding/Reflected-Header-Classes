@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "NiagaraParameterMap.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraParameterMap {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "InputBehavior.h"
 #include "KeyAsModifierInputBehavior.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UKeyAsModifierInputBehavior : public UInputBehavior {
     GENERATED_BODY()
 public:

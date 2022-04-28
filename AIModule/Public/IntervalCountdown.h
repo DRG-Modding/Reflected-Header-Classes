@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FIntervalCountdown {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float Interval;
     
     AIMODULE_API FIntervalCountdown();

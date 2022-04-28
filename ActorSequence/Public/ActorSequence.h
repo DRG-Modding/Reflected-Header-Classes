@@ -6,15 +6,15 @@
 
 class UMovieScene;
 
-UCLASS(DefaultToInstanced)
+UCLASS(Blueprintable, DefaultToInstanced)
 class ACTORSEQUENCE_API UActorSequence : public UMovieSceneSequence {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMovieScene* MovieScene;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FActorSequenceObjectReferenceMap ObjectReferences;
     
 public:

@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FSHAHashData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint8 Hash[20];
     
     BUILDPATCHSERVICES_API FSHAHashData();

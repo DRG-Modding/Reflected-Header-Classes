@@ -3,7 +3,7 @@
 #include "MovieSceneParameterSectionTemplate.h"
 #include "MovieSceneParticleParameterSectionTemplate.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneParticleParameterSectionTemplate : public FMovieSceneParameterSectionTemplate {
     GENERATED_BODY()
 public:

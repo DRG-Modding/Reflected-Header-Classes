@@ -5,15 +5,15 @@
 
 class UVariantSet;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class VARIANTMANAGERCONTENT_API ULevelVariantSets : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UClass* DirectorClass;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UVariantSet*> VariantSets;
     
 public:

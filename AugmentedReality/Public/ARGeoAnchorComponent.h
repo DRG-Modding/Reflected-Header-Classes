@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGeoAnchorComponentDebugMode.h"
 #include "ARComponent.h"
 #include "ARGeoAnchorUpdatePayload.h"
+#include "EGeoAnchorComponentDebugMode.h"
 #include "ARGeoAnchorComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class AUGMENTEDREALITY_API UARGeoAnchorComponent : public UARComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_Payload, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Payload, meta=(AllowPrivateAccess=true))
     FARGeoAnchorUpdatePayload ReplicatedPayload;
     
 public:

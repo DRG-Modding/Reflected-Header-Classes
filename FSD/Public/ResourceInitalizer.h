@@ -4,14 +4,14 @@
 
 class UResourceData;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FResourceInitalizer {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UResourceData* Resource;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float MaxAmount;
     
     FSD_API FResourceInitalizer();

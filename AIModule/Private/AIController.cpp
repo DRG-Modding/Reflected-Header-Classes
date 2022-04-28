@@ -4,10 +4,10 @@
 #include "PawnActionsComponent.h"
 
 class UBlackboardData;
+class UBehaviorTree;
 class UBlackboardComponent;
 class UNavigationQueryFilter;
 class UGameplayTaskResource;
-class UBehaviorTree;
 class AActor;
 class UAIPerceptionComponent;
 

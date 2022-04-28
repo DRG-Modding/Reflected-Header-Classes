@@ -2,8 +2,8 @@
 
 class UAnimationSharingSetup;
 class AActor;
-class UObject;
 class USkeleton;
+class UObject;
 class UAnimationSharingManager;
 
 void UAnimationSharingManager::RegisterActorWithSkeletonBP(AActor* InActor, const USkeleton* SharingSkeleton) {

@@ -5,7 +5,7 @@
 
 class UVectorField;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceVectorField : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

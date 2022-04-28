@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-#include "PillarSegment.h"
 #include "RandRange.h"
+#include "PillarSegment.h"
 #include "PillarSettings.generated.h"
 
 class UFloodFillSettings;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPillarSettings : public UDataAsset {
     GENERATED_BODY()
 public:

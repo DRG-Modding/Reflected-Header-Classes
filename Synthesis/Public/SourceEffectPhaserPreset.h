@@ -4,7 +4,7 @@
 #include "SourceEffectPhaserSettings.h"
 #include "SourceEffectPhaserPreset.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USourceEffectPhaserPreset : public USoundEffectSourcePreset {
     GENERATED_BODY()
 public:

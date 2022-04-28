@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FMovieSceneEvaluationMetaData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneSequenceID> ActiveSequences;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneOrderedEvaluationKey> ActiveEntities;
     
     MOVIESCENE_API FMovieSceneEvaluationMetaData();

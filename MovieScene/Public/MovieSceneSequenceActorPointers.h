@@ -10,10 +10,10 @@ USTRUCT(BlueprintType)
 struct FMovieSceneSequenceActorPointers {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* SequenceActor;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TScriptInterface<IMovieSceneSequenceActor> SequenceActorInterface;
     
     MOVIESCENE_API FMovieSceneSequenceActorPointers();

@@ -3,7 +3,7 @@
 #include "MovieSceneEntityInstantiatorSystem.h"
 #include "MovieSceneRestorePreAnimatedStateSystem.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneRestorePreAnimatedStateSystem : public UMovieSceneEntityInstantiatorSystem {
     GENERATED_BODY()
 public:

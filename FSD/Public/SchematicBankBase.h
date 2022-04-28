@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "SchematicBankInterface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "SchematicBankBase.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API USchematicBankBase : public UDataAsset, public ISchematicBankInterface {
     GENERATED_BODY()
 public:

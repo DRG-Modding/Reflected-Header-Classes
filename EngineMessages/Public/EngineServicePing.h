@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EngineServicePing.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEngineServicePing {
     GENERATED_BODY()
 public:

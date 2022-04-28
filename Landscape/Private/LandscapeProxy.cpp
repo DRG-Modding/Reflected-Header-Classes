@@ -1,8 +1,8 @@
 #include "LandscapeProxy.h"
 
+class UTexture;
 class UTextureRenderTarget2D;
 class UMaterialInterface;
-class UTexture;
 class USplineComponent;
 class ULandscapeLayerInfoObject;
 

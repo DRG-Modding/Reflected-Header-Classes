@@ -3,7 +3,7 @@
 #include "WebJSCallbackBase.h"
 #include "WebJSResponse.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct WEBBROWSER_API FWebJSResponse : public FWebJSCallbackBase {
     GENERATED_BODY()
 public:

@@ -9,7 +9,7 @@ class UGameplayTaskOwnerInterface;
 class IGameplayTaskOwnerInterface;
 class UGameplayTaskResource;
 
-UCLASS()
+UCLASS(Blueprintable)
 class GAMEPLAYTASKS_API UGameplayTask_ClaimResource : public UGameplayTask {
     GENERATED_BODY()
 public:

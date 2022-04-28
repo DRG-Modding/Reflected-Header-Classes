@@ -3,7 +3,7 @@
 #include "MovieSceneBoolTrack.h"
 #include "MovieSceneVisibilityTrack.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneVisibilityTrack : public UMovieSceneBoolTrack {
     GENERATED_BODY()
 public:

@@ -3,11 +3,11 @@
 #include "NiagaraDataInterfaceGrid3D.h"
 #include "NiagaraDataInterfaceNeighborGrid3D.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceNeighborGrid3D : public UNiagaraDataInterfaceGrid3D {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 MaxNeighborsPerCell;
     
     UNiagaraDataInterfaceNeighborGrid3D();

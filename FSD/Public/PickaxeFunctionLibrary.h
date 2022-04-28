@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "EPickaxePartLocation.h"
 #include "PickaxeSet.h"
+#include "EPickaxePartLocation.h"
 #include "PickaxeFunctionLibrary.generated.h"
 
 class UObject;
 class UPickaxePart;
 class UItemID;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UPickaxeFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

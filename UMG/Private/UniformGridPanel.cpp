@@ -1,7 +1,7 @@
 #include "UniformGridPanel.h"
 
-class UWidget;
 class UUniformGridSlot;
+class UWidget;
 
 void UUniformGridPanel::SetSlotPadding(FMargin InSlotPadding) {
 }

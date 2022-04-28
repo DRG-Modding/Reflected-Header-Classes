@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneBoolChannel.h"
 #include "MovieSceneSection.h"
+#include "MovieSceneBoolChannel.h"
 #include "MovieSceneBoolSection.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneBoolSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool DefaultValue;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneBoolChannel BoolCurve;
     
 public:

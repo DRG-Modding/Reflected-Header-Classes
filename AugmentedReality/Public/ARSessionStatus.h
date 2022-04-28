@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct AUGMENTEDREALITY_API FARSessionStatus {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString AdditionalInfo;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARSessionStatus Status;
     
     FARSessionStatus();

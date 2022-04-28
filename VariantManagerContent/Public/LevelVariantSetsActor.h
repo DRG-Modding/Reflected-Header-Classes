@@ -7,7 +7,7 @@
 class ULevelVariantSetsFunctionDirector;
 class ULevelVariantSets;
 
-UCLASS()
+UCLASS(Blueprintable)
 class VARIANTMANAGERCONTENT_API ALevelVariantSetsActor : public AActor {
     GENERATED_BODY()
 public:
@@ -15,7 +15,7 @@ public:
     FSoftObjectPath LevelVariantSets;
     
 private:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<UClass*, ULevelVariantSetsFunctionDirector*> DirectorInstances;
     
 public:

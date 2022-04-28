@@ -3,7 +3,7 @@
 #include "NiagaraSignificanceHandler.h"
 #include "NiagaraSignificanceHandlerAge.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraSignificanceHandlerAge : public UNiagaraSignificanceHandler {
     GENERATED_BODY()
 public:

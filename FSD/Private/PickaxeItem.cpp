@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 #include "DamageComponent.h"
 
-class USoundCue;
-class UParticleSystem;
 class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
+class USoundCue;
+class UParticleSystem;
 
 
 void APickaxeItem::SetSpecialCoolDownDuration(float newCooldownDuration) {

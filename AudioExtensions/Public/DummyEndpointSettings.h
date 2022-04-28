@@ -3,7 +3,7 @@
 #include "AudioEndpointSettingsBase.h"
 #include "DummyEndpointSettings.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UDummyEndpointSettings : public UAudioEndpointSettingsBase {
     GENERATED_BODY()
 public:

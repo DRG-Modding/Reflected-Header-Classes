@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "FSDPFPUtils.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UFSDPFPUtils : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

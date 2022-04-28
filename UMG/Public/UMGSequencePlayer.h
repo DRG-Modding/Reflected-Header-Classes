@@ -6,15 +6,15 @@
 
 class UWidgetAnimation;
 
-UCLASS(BlueprintType, Transient)
+UCLASS(Blueprintable, Transient)
 class UMG_API UUMGSequencePlayer : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UWidgetAnimation* Animation;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneRootEvaluationTemplateInstance RootTemplateInstance;
     
 public:

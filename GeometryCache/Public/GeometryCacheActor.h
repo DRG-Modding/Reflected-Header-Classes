@@ -5,12 +5,12 @@
 
 class UGeometryCacheComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class GEOMETRYCACHE_API AGeometryCacheActor : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UGeometryCacheComponent* GeometryCacheComponent;
     
 public:

@@ -4,11 +4,11 @@
 #include "EnvOverlapData.h"
 #include "EnvQueryTest_Overlap.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UEnvQueryTest_Overlap : public UEnvQueryTest {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEnvOverlapData OverlapData;
     
     UEnvQueryTest_Overlap();

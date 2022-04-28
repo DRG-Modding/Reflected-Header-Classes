@@ -3,7 +3,7 @@
 #include "MovieScenePropertySystem.h"
 #include "MovieSceneEnumPropertySystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENETRACKS_API UMovieSceneEnumPropertySystem : public UMovieScenePropertySystem {
     GENERATED_BODY()
 public:

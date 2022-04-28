@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "MonoWaveTableSynthPreset.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SYNTHESIS_API UMonoWaveTableSynthPreset : public UObject {
     GENERATED_BODY()
 public:

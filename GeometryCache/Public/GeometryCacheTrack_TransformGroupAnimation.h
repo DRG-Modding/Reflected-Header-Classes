@@ -4,7 +4,7 @@
 #include "GeometryCacheMeshData.h"
 #include "GeometryCacheTrack_TransformGroupAnimation.generated.h"
 
-UCLASS(CollapseCategories, Deprecated, NotPlaceable)
+UCLASS(Blueprintable, CollapseCategories, Deprecated, NotPlaceable)
 class GEOMETRYCACHE_API UDEPRECATED_GeometryCacheTrack_TransformGroupAnimation : public UGeometryCacheTrack {
     GENERATED_BODY()
 public:

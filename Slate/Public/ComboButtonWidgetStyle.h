@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ComboButtonStyle -FallbackName=ComboButtonStyle
 #include "ComboButtonWidgetStyle.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UComboButtonWidgetStyle : public USlateWidgetStyleContainerBase {
     GENERATED_BODY()
 public:

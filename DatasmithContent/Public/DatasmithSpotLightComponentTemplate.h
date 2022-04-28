@@ -3,14 +3,14 @@
 #include "DatasmithObjectTemplate.h"
 #include "DatasmithSpotLightComponentTemplate.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UDatasmithSpotLightComponentTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float InnerConeAngle;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float OuterConeAngle;
     
     UDatasmithSpotLightComponentTemplate();

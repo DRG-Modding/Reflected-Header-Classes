@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ForeignWorldSplineData.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FForeignWorldSplineData {
     GENERATED_BODY()
 public:

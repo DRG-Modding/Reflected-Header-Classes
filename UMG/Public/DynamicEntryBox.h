@@ -6,7 +6,7 @@
 
 class UUserWidget;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UDynamicEntryBox : public UDynamicEntryBoxBase {
     GENERATED_BODY()
 public:

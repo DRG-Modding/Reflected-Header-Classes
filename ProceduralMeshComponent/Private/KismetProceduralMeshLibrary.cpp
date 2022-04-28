@@ -1,8 +1,8 @@
 #include "KismetProceduralMeshLibrary.h"
 
 class UProceduralMeshComponent;
-class UStaticMesh;
 class UMaterialInterface;
+class UStaticMesh;
 class UStaticMeshComponent;
 
 void UKismetProceduralMeshLibrary::SliceProceduralMesh(UProceduralMeshComponent* InProcMesh, FVector PlanePosition, FVector PlaneNormal, bool bCreateOtherHalf, UProceduralMeshComponent*& OutOtherHalfProcMesh, EProcMeshSliceCapOption CapOption, UMaterialInterface* CapMaterial) {

@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavAgentSelector -FallbackName=NavAgentSelector
 #include "NavMeshBoundsVolume.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class NAVIGATIONSYSTEM_API ANavMeshBoundsVolume : public AVolume {
     GENERATED_BODY()
 public:

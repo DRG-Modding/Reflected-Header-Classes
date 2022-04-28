@@ -7,7 +7,7 @@
 class UEnvQueryContext;
 class AVolume;
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UEnvQueryTest_Volume : public UEnvQueryTest {
     GENERATED_BODY()
 public:

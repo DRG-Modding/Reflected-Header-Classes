@@ -4,7 +4,7 @@
 #include "OculusMR_PlaneMeshTriangle.h"
 #include "OculusMR_PlaneMeshComponent.generated.h"
 
-UCLASS(EditInlineNew, NotPlaceable, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, NotPlaceable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UOculusMR_PlaneMeshComponent : public UMeshComponent {
     GENERATED_BODY()
 public:

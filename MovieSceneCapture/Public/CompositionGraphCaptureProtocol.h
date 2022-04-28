@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneImageCaptureProtocolBase.h"
-#include "EHDRCaptureGamut.h"
 #include "CompositionGraphCapturePasses.h"
+#include "EHDRCaptureGamut.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
 #include "CompositionGraphCaptureProtocol.generated.h"
 
 class UMaterialInterface;
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENECAPTURE_API UCompositionGraphCaptureProtocol : public UMovieSceneImageCaptureProtocolBase {
     GENERATED_BODY()
 public:
@@ -21,7 +21,7 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 HDRCompressionQuality;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     TEnumAsByte<EHDRCaptureGamut> CaptureGamut;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -31,7 +31,7 @@ public:
     bool bDisableScreenPercentage;
     
 private:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UMaterialInterface* PostProcessingMaterialPtr;
     
 public:

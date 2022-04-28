@@ -3,10 +3,10 @@
 #include "PanelWidget.h"
 #include "Overlay.generated.h"
 
-class UOverlaySlot;
 class UWidget;
+class UOverlaySlot;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UOverlay : public UPanelWidget {
     GENERATED_BODY()
 public:

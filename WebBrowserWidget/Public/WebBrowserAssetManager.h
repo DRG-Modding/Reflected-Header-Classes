@@ -5,12 +5,12 @@
 
 class UMaterial;
 
-UCLASS()
+UCLASS(Blueprintable)
 class WEBBROWSERWIDGET_API UWebBrowserAssetManager : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UMaterial> DefaultMaterial;
     
 public:

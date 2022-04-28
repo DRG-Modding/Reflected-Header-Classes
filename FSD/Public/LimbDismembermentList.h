@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "LimbDismembermentList.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class ULimbDismembermentList : public UDataAsset {
     GENERATED_BODY()
 public:

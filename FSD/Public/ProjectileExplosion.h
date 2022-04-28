@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ExplosionBaseComponent.h"
-#include "ScaledEffect.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ExplosionBaseComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+#include "ScaledEffect.h"
 #include "ProjectileExplosion.generated.h"
 
-class UForceFeedbackEffect;
-class USoundCue;
 class UForceFeedbackAttenuation;
+class USoundCue;
+class UForceFeedbackEffect;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UProjectileExplosion : public UExplosionBaseComponent {
     GENERATED_BODY()
 public:

@@ -1,7 +1,7 @@
 #include "AsyncTask_LoadXRDeviceVisComponent.h"
 
-class UAsyncTask_LoadXRDeviceVisComponent;
 class AActor;
+class UAsyncTask_LoadXRDeviceVisComponent;
 class UPrimitiveComponent;
 
 UAsyncTask_LoadXRDeviceVisComponent* UAsyncTask_LoadXRDeviceVisComponent::AddNamedDeviceVisualizationComponentAsync(AActor* Target, const FName SystemName, const FName DeviceName, bool bManualAttachment, const FTransform& RelativeTransform, FXRDeviceId& XRDeviceId, UPrimitiveComponent*& NewComponent) {

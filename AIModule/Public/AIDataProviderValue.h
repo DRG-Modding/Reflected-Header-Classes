@@ -4,7 +4,7 @@
 
 class UAIDataProvider;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct AIMODULE_API FAIDataProviderValue {
     GENERATED_BODY()
 public:

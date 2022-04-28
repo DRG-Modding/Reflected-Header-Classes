@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GameplayTagNode.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGameplayTagNode {
     GENERATED_BODY()
 public:

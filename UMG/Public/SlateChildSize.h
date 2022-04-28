@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FSlateChildSize {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float Value;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<ESlateSizeRule::Type> SizeRule;
     
     UMG_API FSlateChildSize();

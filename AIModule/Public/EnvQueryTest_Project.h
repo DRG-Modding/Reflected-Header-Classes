@@ -4,12 +4,12 @@
 #include "EnvTraceData.h"
 #include "EnvQueryTest_Project.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UEnvQueryTest_Project : public UEnvQueryTest {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEnvTraceData ProjectionData;
     
 public:

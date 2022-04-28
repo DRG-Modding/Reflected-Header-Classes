@@ -3,7 +3,7 @@
 #include "MovieScenePropertySystem.h"
 #include "MovieSceneColorPropertySystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENETRACKS_API UMovieSceneColorPropertySystem : public UMovieScenePropertySystem {
     GENERATED_BODY()
 public:

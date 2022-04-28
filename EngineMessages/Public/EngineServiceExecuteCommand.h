@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EngineServiceExecuteCommand.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEngineServiceExecuteCommand {
     GENERATED_BODY()
 public:

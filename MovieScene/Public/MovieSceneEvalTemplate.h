@@ -6,15 +6,15 @@
 
 class UMovieSceneSection;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneEvalTemplate : public FMovieSceneEvalTemplateBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMovieSceneCompletionMode CompletionMode;
     
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, Export)
     TWeakObjectPtr<UMovieSceneSection> SourceSectionPtr;
     
 public:

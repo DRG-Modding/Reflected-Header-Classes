@@ -1,35 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EARFaceTrackingDirection.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "EARWorldAlignment.h"
-#include "EARSessionType.h"
-#include "EARLightEstimationMode.h"
 #include "EARPlaneDetectionMode.h"
+#include "EARSessionType.h"
 #include "EAREnvironmentCaptureProbeType.h"
 #include "EARFrameSyncMode.h"
+#include "EARLightEstimationMode.h"
 #include "ARVideoFormat.h"
+#include "EARFaceTrackingDirection.h"
 #include "EARFaceTrackingUpdate.h"
-#include "EARSceneReconstruction.h"
 #include "EARSessionTrackingFeature.h"
+#include "EARSceneReconstruction.h"
 #include "ARSessionConfig.generated.h"
 
-class UARQRCodeComponent;
-class UARImageComponent;
+class UAREnvironmentProbeComponent;
 class UARCandidateImage;
 class UARObjectComponent;
 class UARCandidateObject;
+class UMaterialInterface;
 class UARPlaneComponent;
 class UARPointComponent;
 class UARFaceComponent;
+class UARImageComponent;
+class UARQRCodeComponent;
 class UARPoseComponent;
-class UAREnvironmentProbeComponent;
 class UARMeshComponent;
 class UARGeoAnchorComponent;
-class UMaterialInterface;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UARSessionConfig : public UDataAsset {
     GENERATED_BODY()
 public:
@@ -70,7 +70,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARSessionType SessionType;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EARPlaneDetectionMode PlaneDetectionMode;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -109,7 +109,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAREnvironmentCaptureProbeType EnvironmentCaptureProbeType;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<uint8> WorldMapData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -130,7 +130,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxNumberOfTrackedFaces;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<uint8> SerializedARCandidateImageDatabase;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -222,7 +222,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCandidateObjectList(const TArray<UARCandidateObject*>& InCandidateObjects);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     TArray<uint8> GetWorldMapData() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

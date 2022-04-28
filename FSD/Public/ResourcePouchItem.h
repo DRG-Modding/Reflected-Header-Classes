@@ -4,11 +4,11 @@
 
 class UResourceData;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FResourcePouchItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UResourceData* Resource;
     
     FSD_API FResourcePouchItem();

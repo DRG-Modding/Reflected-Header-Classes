@@ -3,7 +3,7 @@
 #include "MovieSceneTrack.h"
 #include "MovieSceneNameableTrack.generated.h"
 
-UCLASS(Abstract, MinimalAPI)
+UCLASS(Abstract, Blueprintable, MinimalAPI)
 class UMovieSceneNameableTrack : public UMovieSceneTrack {
     GENERATED_BODY()
 public:

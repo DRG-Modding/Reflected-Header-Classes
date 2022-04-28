@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FCustomizedToolMenuSection {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     ECustomizedToolMenuVisibility Visibility;
     
     SLATE_API FCustomizedToolMenuSection();

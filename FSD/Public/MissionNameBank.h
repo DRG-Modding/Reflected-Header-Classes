@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
 #include "MissionNameBank.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMissionNameBank : public UDataAsset {
     GENERATED_BODY()
 public:

@@ -5,7 +5,7 @@
 
 class UAudioCapture;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class AUDIOCAPTURE_API UAudioCaptureFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

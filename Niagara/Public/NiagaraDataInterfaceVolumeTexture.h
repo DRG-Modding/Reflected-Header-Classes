@@ -5,7 +5,7 @@
 
 class UVolumeTexture;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceVolumeTexture : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

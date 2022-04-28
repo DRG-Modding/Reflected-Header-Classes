@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "GameplayTag.h"
 #include "GameplayTagContainer.h"
 #include "GameplayTagQuery.h"
+#include "GameplayTag.h"
 #include "BlueprintGameplayTagLibrary.generated.h"
 
 class UObject;
@@ -12,7 +12,7 @@ class UGameplayTagAssetInterface;
 class IGameplayTagAssetInterface;
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class GAMEPLAYTAGS_API UBlueprintGameplayTagLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

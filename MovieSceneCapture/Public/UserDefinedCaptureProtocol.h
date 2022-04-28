@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "CapturedPixelsID.h"
 #include "MovieSceneImageCaptureProtocolBase.h"
 #include "CapturedPixels.h"
-#include "CapturedPixelsID.h"
 #include "FrameMetrics.h"
 #include "UserDefinedCaptureProtocol.generated.h"
 
-class UWorld;
 class UTexture;
+class UWorld;
 
 UCLASS(Abstract, Blueprintable)
 class MOVIESCENECAPTURE_API UUserDefinedCaptureProtocol : public UMovieSceneImageCaptureProtocolBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UWorld* World;
     
 public:

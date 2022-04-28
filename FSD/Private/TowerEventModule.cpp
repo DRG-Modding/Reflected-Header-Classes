@@ -1,11 +1,11 @@
 #include "TowerEventModule.h"
 #include "Net/UnrealNetwork.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+#include "WeakpointGlowComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 #include "EnemyHealthComponent.h"
 #include "ArmorHealthDamageComponent.h"
-#include "WeakpointGlowComponent.h"
 
 
 void ATowerEventModule::HideArmorPlates() {

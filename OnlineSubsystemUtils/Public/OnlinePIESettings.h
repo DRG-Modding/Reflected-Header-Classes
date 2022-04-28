@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PIELoginSettingsInternal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
+#include "PIELoginSettingsInternal.h"
 #include "OnlinePIESettings.generated.h"
 
-UCLASS(Config=EditorPerProjectUserSettings)
+UCLASS(Blueprintable, Config=EditorPerProjectUserSettings)
 class UOnlinePIESettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:

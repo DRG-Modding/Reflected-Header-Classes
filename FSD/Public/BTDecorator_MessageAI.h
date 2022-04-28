@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BTDecorator -FallbackName=BTDecorator
 #include "BTDecorator_MessageAI.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTDecorator_MessageAI : public UBTDecorator {
     GENERATED_BODY()
 public:

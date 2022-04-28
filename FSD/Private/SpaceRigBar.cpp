@@ -1,10 +1,10 @@
 #include "SpaceRigBar.h"
 #include "Net/UnrealNetwork.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
 #include "InstantUsable.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
 
-class UDrinkableDataAsset;
 class APlayerCharacter;
+class UDrinkableDataAsset;
 
 void ASpaceRigBar::SpawnDrinkables(UDrinkableDataAsset* Drinkable, APlayerCharacter* User) {
 }

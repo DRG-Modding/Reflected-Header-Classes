@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEnvQueryRunMode.h"
 #include "AIDynamicParam.h"
 #include "BlackboardKeySelector.h"
+#include "EEnvQueryRunMode.h"
 #include "EQSParametrizedQueryExecutionRequest.generated.h"
 
 class UEnvQuery;
@@ -20,7 +20,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector EQSQueryBlackboardKey;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EEnvQueryRunMode::Type> RunMode;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

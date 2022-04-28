@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FMovieSceneFieldEntry_EvaluationTrack {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneEvaluationFieldTrackPtr TrackPtr;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint16 NumChildren;
     
     MOVIESCENE_API FMovieSceneFieldEntry_EvaluationTrack();

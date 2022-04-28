@@ -1,31 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioInitializeOptions.h"
+#include "ModioApiKey.h"
+#include "ModioEmailAuthCode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "ModioInitializeOptions.h"
+#include "ModioModID.h"
+#include "ModioAuthenticationParams.h"
 #include "EModioPortal.h"
 #include "EModioEnvironment.h"
-#include "ModioUserID.h"
 #include "ModioGameID.h"
-#include "ModioApiKey.h"
-#include "ModioAuthenticationParams.h"
-#include "ModioEmailAuthCode.h"
+#include "ModioUserID.h"
 #include "ModioEmailAddress.h"
-#include "ModioModID.h"
 #include "ModioFileMetadataID.h"
 #include "ModioCommonTypesLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MODIO_API UModioCommonTypesLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UModioCommonTypesLibrary();
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FModioInitializeOptions SetSessionIdentifier(const FModioInitializeOptions& options, const FString& SessionIdentifier);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioInitializeOptions SetPortal(const FModioInitializeOptions& options, EModioPortal PortalToUse);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FModioInitializeOptions MakeInitializeOptions(int64 GameId, const FString& ApiKey, EModioEnvironment GameEnvironment, EModioPortal PortalInUse);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FModioGameID MakeGameId(int64 GameId);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

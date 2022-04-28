@@ -3,11 +3,11 @@
 #include "NiagaraEventReceiverEmitterAction.h"
 #include "NiagaraEventReceiverEmitterAction_SpawnParticles.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UNiagaraEventReceiverEmitterAction_SpawnParticles : public UNiagaraEventReceiverEmitterAction {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 NumParticles;
     
     UNiagaraEventReceiverEmitterAction_SpawnParticles();

@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ButtonStyle -FallbackName=ButtonStyle
 #include "ButtonWidgetStyle.generated.h"
 
-UCLASS(BlueprintType, MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UButtonWidgetStyle : public USlateWidgetStyleContainerBase {
     GENERATED_BODY()
 public:

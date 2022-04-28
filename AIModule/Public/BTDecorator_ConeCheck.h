@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BTDecorator.h"
 #include "BlackboardKeySelector.h"
+#include "BTDecorator.h"
 #include "BTDecorator_ConeCheck.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTDecorator_ConeCheck : public UBTDecorator {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float ConeHalfAngle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

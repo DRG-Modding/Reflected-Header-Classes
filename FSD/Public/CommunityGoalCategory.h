@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "CommunityGoalCategory.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UCommunityGoalCategory : public UDataAsset {
     GENERATED_BODY()
 public:

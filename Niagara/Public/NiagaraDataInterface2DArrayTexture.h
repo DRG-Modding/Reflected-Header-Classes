@@ -5,7 +5,7 @@
 
 class UTexture2DArray;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterface2DArrayTexture : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

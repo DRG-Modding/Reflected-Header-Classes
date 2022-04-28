@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "WebJSCallbackBase.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct WEBBROWSER_API FWebJSCallbackBase {
     GENERATED_BODY()
 public:

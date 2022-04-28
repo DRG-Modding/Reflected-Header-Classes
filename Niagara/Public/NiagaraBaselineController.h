@@ -4,21 +4,21 @@
 #include "NiagaraPerfBaselineStats.h"
 #include "NiagaraBaselineController.generated.h"
 
+class UNiagaraEffectType;
 class UNiagaraSystem;
 class ANiagaraPerfBaselineActor;
-class UNiagaraEffectType;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraBaselineController : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float TestDuration;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UNiagaraEffectType* EffectType;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ANiagaraPerfBaselineActor* Owner;
     
 private:
@@ -30,7 +30,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool OnTickTest();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnOwnerTick(float DeltaTime);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

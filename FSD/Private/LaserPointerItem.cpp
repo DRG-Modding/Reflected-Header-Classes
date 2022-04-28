@@ -2,9 +2,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
 class UObject;
-class UTerrainMaterial;
 class AActor;
 class UPrimitiveComponent;
+class UTerrainMaterial;
 
 void ALaserPointerItem::UnlockToMinersManual(UObject* WorldContextObject, FGuid ObjectID) {
 }

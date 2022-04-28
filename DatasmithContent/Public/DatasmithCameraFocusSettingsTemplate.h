@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FDatasmithCameraFocusSettingsTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECameraFocusMethod FocusMethod;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float ManualFocusDistance;
     
     DATASMITHCONTENT_API FDatasmithCameraFocusSettingsTemplate();

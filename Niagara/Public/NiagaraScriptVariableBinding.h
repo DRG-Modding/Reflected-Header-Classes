@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "NiagaraScriptVariableBinding.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraScriptVariableBinding {
     GENERATED_BODY()
 public:

@@ -5,7 +5,7 @@
 #include "MovieSceneEvent.h"
 #include "MovieSceneEventRepeaterSection.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneEventRepeaterSection : public UMovieSceneEventSectionBase, public IMovieSceneEntityProvider {
     GENERATED_BODY()
 public:

@@ -1,6 +1,6 @@
 #include "DroneFlame.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 #include "DamageComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 
 ADroneFlame::ADroneFlame() {
     this->FlameParticles = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("FireParticles"));

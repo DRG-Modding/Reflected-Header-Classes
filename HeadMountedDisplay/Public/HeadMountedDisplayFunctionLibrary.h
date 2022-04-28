@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "XRTimedInputActionDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
-#include "XRTimedInputActionDelegateDelegate.h"
 #include "EOrientPositionSelector.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "XRDeviceOnDisconnectDelegateDelegate.h"
 #include "EHMDTrackingOrigin.h"
+#include "XRDeviceOnDisconnectDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "EXRTrackedDeviceType.h"
+#include "EXRDeviceConnectionResult.h"
 #include "ESpectatorScreenMode.h"
 #include "XRDeviceId.h"
-#include "EXRTrackedDeviceType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 //CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=EControllerHand -FallbackName=EControllerHand
 #include "XRMotionControllerData.h"
-#include "XRHMDData.h"
 #include "EHMDWornState.h"
+#include "XRHMDData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timespan -FallbackName=Timespan
-#include "EXRDeviceConnectionResult.h"
 #include "XRGestureConfig.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
 #include "HeadMountedDisplayFunctionLibrary.generated.h"
@@ -25,7 +25,7 @@
 class UObject;
 class UTexture;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class HEADMOUNTEDDISPLAY_API UHeadMountedDisplayFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -81,7 +81,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetXRSystemFlags();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetWorldToMetersScale(UObject* WorldContext);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -93,22 +93,22 @@ public:
     UFUNCTION(BlueprintCallable)
     static FTransform GetTrackingToWorldTransform(UObject* WorldContext);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void GetTrackingSensorParameters(FVector& Origin, FRotator& Rotation, float& LeftFOV, float& RightFOV, float& TopFOV, float& BottomFOV, float& Distance, float& NearPlane, float& FarPlane, bool& IsActive, int32 Index);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static TEnumAsByte<EHMDTrackingOrigin::Type> GetTrackingOrigin();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetScreenPercentage();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void GetPositionalTrackingCameraParameters(FVector& CameraOrigin, FRotator& CameraRotation, float& HFOV, float& VFOV, float& CameraDistance, float& NearPlane, float& FarPlane);
     
     UFUNCTION(BlueprintCallable)
     static FVector2D GetPlayAreaBounds(TEnumAsByte<EHMDTrackingOrigin::Type> Origin);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetPixelDensity();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -120,7 +120,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void GetMotionControllerData(UObject* WorldContext, const EControllerHand hand, FXRMotionControllerData& MotionControllerData);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static TEnumAsByte<EHMDWornState::Type> GetHMDWornState();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

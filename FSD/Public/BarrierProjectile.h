@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "BarrierProjectile.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API ABarrierProjectile : public AActor {
     GENERATED_BODY()
 public:

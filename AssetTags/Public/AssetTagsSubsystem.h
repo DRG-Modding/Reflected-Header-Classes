@@ -6,7 +6,7 @@
 
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class ASSETTAGS_API UAssetTagsSubsystem : public UEngineSubsystem {
     GENERATED_BODY()
 public:

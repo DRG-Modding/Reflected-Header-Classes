@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GrassInput.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MaterialExpressionCustomOutput -FallbackName=MaterialExpressionCustomOutput
+#include "GrassInput.h"
 #include "MaterialExpressionLandscapeGrassOutput.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class LANDSCAPE_API UMaterialExpressionLandscapeGrassOutput : public UMaterialExpressionCustomOutput {
     GENERATED_BODY()
 public:

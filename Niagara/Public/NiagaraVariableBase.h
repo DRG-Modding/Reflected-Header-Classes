@@ -3,7 +3,7 @@
 #include "NiagaraTypeDefinitionHandle.h"
 #include "NiagaraVariableBase.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraVariableBase {
     GENERATED_BODY()
 public:

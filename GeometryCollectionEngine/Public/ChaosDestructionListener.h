@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+#include "OnChaosCollisionEventsDelegate.h"
 #include "ChaosCollisionEventRequestSettings.h"
 #include "OnChaosBreakingEventsDelegate.h"
 #include "ChaosBreakingEventRequestSettings.h"
 #include "ChaosTrailingEventRequestSettings.h"
-#include "OnChaosCollisionEventsDelegate.h"
 #include "OnChaosTrailingEventsDelegate.h"
 #include "ChaosTrailingEventData.h"
-#include "EChaosCollisionSortMethod.h"
 #include "EChaosTrailingSortMethod.h"
-#include "ChaosCollisionEventData.h"
 #include "ChaosBreakingEventData.h"
+#include "ChaosCollisionEventData.h"
+#include "EChaosCollisionSortMethod.h"
 #include "EChaosBreakingSortMethod.h"
 #include "ChaosDestructionListener.generated.h"
 
 class AGeometryCollectionActor;
 class AChaosSolverActor;
 
-UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GEOMETRYCOLLECTIONENGINE_API UChaosDestructionListener : public USceneComponent {
     GENERATED_BODY()
 public:
@@ -46,13 +46,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<AGeometryCollectionActor*> GeometryCollectionActors;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnChaosCollisionEvents OnCollisionEvents;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnChaosBreakingEvents OnBreakingEvents;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnChaosTrailingEvents OnTrailingEvents;
     
     UChaosDestructionListener();

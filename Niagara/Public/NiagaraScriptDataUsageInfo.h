@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "NiagaraScriptDataUsageInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraScriptDataUsageInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bReadsAttributeData;
     
     NIAGARA_API FNiagaraScriptDataUsageInfo();

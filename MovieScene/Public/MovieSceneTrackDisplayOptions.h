@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "MovieSceneTrackDisplayOptions.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneTrackDisplayOptions {
     GENERATED_BODY()
 public:

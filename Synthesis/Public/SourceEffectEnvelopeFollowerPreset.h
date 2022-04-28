@@ -6,7 +6,7 @@
 
 class UEnvelopeFollowerListener;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USourceEffectEnvelopeFollowerPreset : public USoundEffectSourcePreset {
     GENERATED_BODY()
 public:

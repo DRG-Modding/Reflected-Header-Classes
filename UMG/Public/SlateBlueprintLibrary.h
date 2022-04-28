@@ -8,7 +8,7 @@
 
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMG_API USlateBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -19,10 +19,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector2D TransformVectorAbsoluteToLocal(const FGeometry& Geometry, FVector2D AbsoluteVector);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float TransformScalarLocalToAbsolute(const FGeometry& Geometry, float LocalScalar);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float TransformScalarAbsoluteToLocal(const FGeometry& Geometry, float AbsoluteScalar);
     
     UFUNCTION(BlueprintCallable)

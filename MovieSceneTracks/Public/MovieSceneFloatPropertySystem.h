@@ -3,7 +3,7 @@
 #include "MovieScenePropertySystem.h"
 #include "MovieSceneFloatPropertySystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENETRACKS_API UMovieSceneFloatPropertySystem : public UMovieScenePropertySystem {
     GENERATED_BODY()
 public:

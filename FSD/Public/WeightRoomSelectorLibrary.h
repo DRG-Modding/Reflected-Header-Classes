@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
 #include "WeightedRoomSelector.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
 #include "WeightRoomSelectorLibrary.generated.h"
 
 class URoomGenerator;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UWeightRoomSelectorLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

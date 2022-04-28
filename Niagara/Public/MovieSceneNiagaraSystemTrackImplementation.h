@@ -8,27 +8,27 @@
 #include "ENiagaraAgeUpdateMode.h"
 #include "MovieSceneNiagaraSystemTrackImplementation.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneNiagaraSystemTrackImplementation : public FMovieSceneTrackImplementation {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFrameNumber SpawnSectionStartFrame;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFrameNumber SpawnSectionEndFrame;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     ENiagaraSystemSpawnSectionStartBehavior SpawnSectionStartBehavior;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     ENiagaraSystemSpawnSectionEvaluateBehavior SpawnSectionEvaluateBehavior;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     ENiagaraSystemSpawnSectionEndBehavior SpawnSectionEndBehavior;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraAgeUpdateMode AgeUpdateMode;
     
 public:

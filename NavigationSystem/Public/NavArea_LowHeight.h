@@ -3,7 +3,7 @@
 #include "NavArea.h"
 #include "NavArea_LowHeight.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class NAVIGATIONSYSTEM_API UNavArea_LowHeight : public UNavArea {
     GENERATED_BODY()
 public:

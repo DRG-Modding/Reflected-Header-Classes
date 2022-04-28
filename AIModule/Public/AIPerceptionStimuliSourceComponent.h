@@ -6,7 +6,7 @@
 
 class UAISense;
 
-UCLASS(BlueprintType, Config=Game, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, Config=Game, meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UAIPerceptionStimuliSourceComponent : public UActorComponent {
     GENERATED_BODY()
 public:

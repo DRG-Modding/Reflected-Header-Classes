@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=TextBlockStyle -FallbackName=TextBlockStyle
 #include "RichTextStyleRow.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FRichTextStyleRow : public FTableRowBase {
     GENERATED_BODY()
 public:

@@ -8,7 +8,7 @@ struct FNiagaraVariable : public FNiagaraVariableBase {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<uint8> VarData;
     
 public:

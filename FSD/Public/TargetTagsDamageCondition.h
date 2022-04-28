@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
 #include "TargetTagsDamageCondition.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UTargetTagsDamageCondition : public UDamageCondition {
     GENERATED_BODY()
 public:

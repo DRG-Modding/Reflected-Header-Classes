@@ -5,17 +5,17 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "RandomizedInstantMeshCarver.generated.h"
 
-class UStaticMesh;
 class UTerrainMaterialBase;
 class USTLMeshCarver;
+class UStaticMesh;
 class UStaticMeshCarver;
 
-UCLASS()
+UCLASS(Blueprintable)
 class ARandomizedInstantMeshCarver : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UStaticMesh*> CarvingMeshes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

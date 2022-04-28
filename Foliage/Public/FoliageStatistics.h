@@ -8,7 +8,7 @@
 class UObject;
 class UStaticMesh;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class FOLIAGE_API UFoliageStatistics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

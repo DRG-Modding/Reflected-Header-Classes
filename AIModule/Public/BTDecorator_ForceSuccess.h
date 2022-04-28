@@ -3,7 +3,7 @@
 #include "BTDecorator.h"
 #include "BTDecorator_ForceSuccess.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTDecorator_ForceSuccess : public UBTDecorator {
     GENERATED_BODY()
 public:

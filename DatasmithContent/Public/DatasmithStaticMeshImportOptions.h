@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDatasmithImportLightmapMin.h"
 #include "EDatasmithImportLightmapMax.h"
+#include "EDatasmithImportLightmapMin.h"
 #include "DatasmithStaticMeshImportOptions.generated.h"
 
 USTRUCT(BlueprintType)
@@ -17,7 +17,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bGenerateLightmapUVs;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bRemoveDegenerates;
     
     FDatasmithStaticMeshImportOptions();

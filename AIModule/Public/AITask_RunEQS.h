@@ -7,7 +7,7 @@ class UEnvQuery;
 class UAITask_RunEQS;
 class AAIController;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UAITask_RunEQS : public UAITask {
     GENERATED_BODY()
 public:

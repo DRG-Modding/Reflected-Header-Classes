@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "LandscapeImportLayerInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FLandscapeImportLayerInfo {
     GENERATED_BODY()
 public:

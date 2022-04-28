@@ -6,7 +6,7 @@
 class UNiagaraBaselineController;
 class UTextRenderComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class NIAGARA_API ANiagaraPerfBaselineActor : public AActor {
     GENERATED_BODY()
 public:

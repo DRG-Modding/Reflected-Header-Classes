@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=DeepPathFinderType -FallbackName=DeepPathFinderType
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "BaseCritterDescriptor.generated.h"
 
 class UDebrisPositioning;
 class AFSDPawn;
 class UBiome;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class UBaseCritterDescriptor : public UDataAsset {
     GENERATED_BODY()
 public:

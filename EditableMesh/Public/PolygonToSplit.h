@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FPolygonToSplit {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPolygonID PolygonID;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FVertexPair> VertexPairsToSplitAt;
     
     EDITABLEMESH_API FPolygonToSplit();

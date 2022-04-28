@@ -3,17 +3,17 @@
 #include "Visual.h"
 #include "PanelSlot.generated.h"
 
-class UPanelWidget;
 class UWidget;
+class UPanelWidget;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UPanelSlot : public UVisual {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPanelWidget* Parent;
     
-    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UWidget* Content;
     
     UPanelSlot();

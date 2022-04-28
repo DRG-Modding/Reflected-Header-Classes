@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "LandscapeSettings.generated.h"
 
-UCLASS(DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig)
 class LANDSCAPE_API ULandscapeSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FMovieSceneEvaluationHookEventContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMovieSceneEvaluationHookEvent> Events;
     
     MOVIESCENE_API FMovieSceneEvaluationHookEventContainer();

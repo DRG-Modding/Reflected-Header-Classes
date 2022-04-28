@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TextStyleOverride.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=RichTextBlock -FallbackName=RichTextBlock
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateFontInfo -FallbackName=SlateFontInfo
-#include "TextStyleOverride.h"
 #include "RichTextStylable.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class URichTextStylable : public URichTextBlock {
     GENERATED_BODY()
 public:

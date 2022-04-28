@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StereoLayerShapeQuad -FallbackName=StereoLayerShapeQuad
 #include "SteamVRHQStereoLayerShape.generated.h"
 
-UCLASS(BlueprintType, CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class STEAMVR_API USteamVRHQStereoLayerShape : public UStereoLayerShapeQuad {
     GENERATED_BODY()
 public:
@@ -13,10 +13,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     bool bAntiAlias;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, Export)
     float AutoCurveMinDistance;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, Export)
     float AutoCurveMaxDistance;
     
     USteamVRHQStereoLayerShape();

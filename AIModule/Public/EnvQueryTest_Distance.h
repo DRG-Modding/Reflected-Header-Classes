@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EEnvTestDistance.h"
 #include "EnvQueryTest.h"
+#include "EEnvTestDistance.h"
 #include "EnvQueryTest_Distance.generated.h"
 
 class UEnvQueryContext;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UEnvQueryTest_Distance : public UEnvQueryTest {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EEnvTestDistance::Type> TestMode;
     
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> DistanceTo;
     
     UEnvQueryTest_Distance();

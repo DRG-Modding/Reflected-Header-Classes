@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Blueprint -FallbackName=Blueprint
 #include "ScriptBlueprint.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCRIPTPLUGIN_API UScriptBlueprint : public UBlueprint {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<uint8> ByteCode;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString SourceCode;
     
     UScriptBlueprint();

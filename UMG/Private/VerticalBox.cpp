@@ -1,7 +1,7 @@
 #include "VerticalBox.h"
 
-class UVerticalBoxSlot;
 class UWidget;
+class UVerticalBoxSlot;
 
 UVerticalBoxSlot* UVerticalBox::AddChildToVerticalBox(UWidget* Content) {
     return NULL;

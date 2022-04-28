@@ -1,18 +1,18 @@
 #include "Bosco.h"
 #include "Net/UnrealNetwork.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
+#include "BoscoAbillityComponent.h"
 #include "UpgradableBoscoComponent.h"
 #include "HealthComponent.h"
-#include "BoscoAbillityComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpotLightComponent -FallbackName=SpotLightComponent
 #include "DamageComponent.h"
 #include "DroneMiningToolBase.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
 #include "BobbingComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PointLightComponent -FallbackName=PointLightComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "HitscanComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpotLightComponent -FallbackName=SpotLightComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PointLightComponent -FallbackName=PointLightComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 #include "DroneSkinnableComponent.h"
 
 class UTerrainMaterial;

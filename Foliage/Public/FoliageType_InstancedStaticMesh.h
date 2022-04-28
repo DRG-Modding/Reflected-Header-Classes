@@ -8,7 +8,7 @@ class UStaticMesh;
 class UFoliageInstancedStaticMeshComponent;
 class UMaterialInterface;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UFoliageType_InstancedStaticMesh : public UFoliageType {
     GENERATED_BODY()
 public:

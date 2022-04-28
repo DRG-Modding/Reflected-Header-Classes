@@ -3,7 +3,7 @@
 #include "BTDecorator.h"
 #include "BTDecorator_ReachedMoveGoal.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTDecorator_ReachedMoveGoal : public UBTDecorator {
     GENERATED_BODY()
 public:

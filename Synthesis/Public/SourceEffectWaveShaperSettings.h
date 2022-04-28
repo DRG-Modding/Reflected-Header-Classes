@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct SYNTHESIS_API FSourceEffectWaveShaperSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float Amount;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float OutputGainDb;
     
     FSourceEffectWaveShaperSettings();

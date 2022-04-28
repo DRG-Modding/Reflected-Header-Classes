@@ -3,7 +3,7 @@
 #include "EnvQueryItemType_VectorBase.h"
 #include "EnvQueryItemType_ActorBase.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UEnvQueryItemType_ActorBase : public UEnvQueryItemType_VectorBase {
     GENERATED_BODY()
 public:

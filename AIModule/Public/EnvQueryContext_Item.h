@@ -3,7 +3,7 @@
 #include "EnvQueryContext.h"
 #include "EnvQueryContext_Item.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AIMODULE_API UEnvQueryContext_Item : public UEnvQueryContext {
     GENERATED_BODY()
 public:

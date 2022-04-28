@@ -1,7 +1,7 @@
 #include "OculusMRFunctionLibrary.h"
 
-class UOculusMR_Settings;
 class USceneComponent;
+class UOculusMR_Settings;
 
 bool UOculusMRFunctionLibrary::SetTrackingReferenceComponent(USceneComponent* Component) {
     return false;

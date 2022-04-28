@@ -3,7 +3,7 @@
 #include "AudioAnalyzerAsset.h"
 #include "AudioAnalyzerNRTSettings.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class AUDIOANALYZER_API UAudioAnalyzerNRTSettings : public UAudioAnalyzerAsset {
     GENERATED_BODY()
 public:

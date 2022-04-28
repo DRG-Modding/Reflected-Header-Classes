@@ -4,7 +4,7 @@
 #include "AIDamageEvent.h"
 #include "AISenseEvent_Damage.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AIMODULE_API UAISenseEvent_Damage : public UAISenseEvent {
     GENERATED_BODY()
 public:

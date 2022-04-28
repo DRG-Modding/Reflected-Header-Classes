@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraShakeBase -FallbackName=CameraShakeBase
 #include "DefaultCameraShakeBase.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class GAMEPLAYCAMERAS_API UDefaultCameraShakeBase : public UCameraShakeBase {
     GENERATED_BODY()
 public:

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraPreviewAxis_InterpParamBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "NiagaraPreviewAxis_InterpParamBase.h"
 #include "NiagaraPreviewAxis_InterpParamVector2D.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UNiagaraPreviewAxis_InterpParamVector2D : public UNiagaraPreviewAxis_InterpParamBase {
     GENERATED_BODY()
 public:

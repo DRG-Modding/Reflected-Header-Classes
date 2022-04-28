@@ -3,7 +3,7 @@
 #include "DatasmithSceneImportData.h"
 #include "DatasmithIFCSceneImportData.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class DATASMITHCONTENT_API UDatasmithIFCSceneImportData : public UDatasmithSceneImportData {
     GENERATED_BODY()
 public:

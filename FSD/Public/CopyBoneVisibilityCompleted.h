@@ -11,7 +11,7 @@ class UCopyBoneVisibilityCompleted : public UInterface {
 class ICopyBoneVisibilityCompleted : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual void CopyBoneVisibilityCompleted(int32 BoneIndex) PURE_VIRTUAL(CopyBoneVisibilityCompleted,);
     
 };

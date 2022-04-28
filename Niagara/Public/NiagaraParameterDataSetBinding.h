@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FNiagaraParameterDataSetBinding {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ParameterOffset;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 DataSetComponentOffset;
     
     NIAGARA_API FNiagaraParameterDataSetBinding();

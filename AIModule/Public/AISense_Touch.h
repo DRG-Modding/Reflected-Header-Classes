@@ -4,11 +4,11 @@
 #include "AITouchEvent.h"
 #include "AISense_Touch.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UAISense_Touch : public UAISense {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAITouchEvent> RegisteredEvents;
     
     UAISense_Touch();

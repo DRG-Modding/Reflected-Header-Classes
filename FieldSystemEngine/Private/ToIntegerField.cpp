@@ -1,7 +1,7 @@
 #include "ToIntegerField.h"
 
-class UFieldNodeFloat;
 class UToIntegerField;
+class UFieldNodeFloat;
 
 UToIntegerField* UToIntegerField::SetToIntegerField(const UFieldNodeFloat* NewFloatField) {
     return NULL;

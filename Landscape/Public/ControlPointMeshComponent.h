@@ -3,11 +3,11 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "ControlPointMeshComponent.generated.h"
 
-UCLASS(EditInlineNew, MinimalAPI, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UControlPointMeshComponent : public UStaticMeshComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float VirtualTextureMainPassMaxDrawDistance;
     
     UControlPointMeshComponent();

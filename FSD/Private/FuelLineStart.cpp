@@ -1,9 +1,9 @@
 #include "FuelLineStart.h"
 #include "Net/UnrealNetwork.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "FuelLineStartUsable.h"
-#include "OutlineComponent.h"
 #include "SimpleObjectInfoComponent.h"
+#include "OutlineComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 
 class UTrackBuilderUsable;
 class ATrackBuilderSegment;

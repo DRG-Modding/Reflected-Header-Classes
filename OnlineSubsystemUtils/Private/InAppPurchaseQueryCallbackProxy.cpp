@@ -1,7 +1,7 @@
 #include "InAppPurchaseQueryCallbackProxy.h"
 
-class APlayerController;
 class UInAppPurchaseQueryCallbackProxy;
+class APlayerController;
 
 UInAppPurchaseQueryCallbackProxy* UInAppPurchaseQueryCallbackProxy::CreateProxyObjectForInAppPurchaseQuery(APlayerController* PlayerController, const TArray<FString>& ProductIdentifiers) {
     return NULL;

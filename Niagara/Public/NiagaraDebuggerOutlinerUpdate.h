@@ -3,7 +3,7 @@
 #include "NiagaraOutlinerData.h"
 #include "NiagaraDebuggerOutlinerUpdate.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct NIAGARA_API FNiagaraDebuggerOutlinerUpdate {
     GENERATED_BODY()
 public:

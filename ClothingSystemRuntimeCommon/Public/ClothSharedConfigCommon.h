@@ -3,7 +3,7 @@
 #include "ClothConfigCommon.h"
 #include "ClothSharedConfigCommon.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class CLOTHINGSYSTEMRUNTIMECOMMON_API UClothSharedConfigCommon : public UClothConfigCommon {
     GENERATED_BODY()
 public:

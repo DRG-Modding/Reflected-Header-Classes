@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioErrorCode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "ModioErrorCode.h"
 #include "ModioErrorCodeLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MODIO_API UModioErrorCodeLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

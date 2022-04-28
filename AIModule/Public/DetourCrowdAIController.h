@@ -3,7 +3,7 @@
 #include "AIController.h"
 #include "DetourCrowdAIController.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class ADetourCrowdAIController : public AAIController {
     GENERATED_BODY()
 public:

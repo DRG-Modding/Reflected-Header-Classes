@@ -4,7 +4,7 @@
 #include "EBTFlowAbortMode.h"
 #include "BTDecorator.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBTDecorator : public UBTAuxiliaryNode {
     GENERATED_BODY()
 public:
@@ -13,7 +13,7 @@ private:
     uint8 bInverseCondition: 1;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EBTFlowAbortMode::Type> FlowAbortMode;
     
 public:

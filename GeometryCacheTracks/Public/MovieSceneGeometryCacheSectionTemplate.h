@@ -4,11 +4,11 @@
 #include "MovieSceneGeometryCacheSectionTemplateParameters.h"
 #include "MovieSceneGeometryCacheSectionTemplate.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneGeometryCacheSectionTemplate : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneGeometryCacheSectionTemplateParameters Params;
     
     GEOMETRYCACHETRACKS_API FMovieSceneGeometryCacheSectionTemplate();

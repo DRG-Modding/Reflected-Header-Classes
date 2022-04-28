@@ -4,11 +4,11 @@
 #include "MaterialQualityOverrides.h"
 #include "ShaderPlatformQualitySettings.generated.h"
 
-UCLASS(DefaultConfig, PerObjectConfig)
+UCLASS(Blueprintable, DefaultConfig, PerObjectConfig)
 class MATERIALSHADERQUALITYSETTINGS_API UShaderPlatformQualitySettings : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     FMaterialQualityOverrides QualityOverrides[4];
     
     UShaderPlatformQualitySettings();

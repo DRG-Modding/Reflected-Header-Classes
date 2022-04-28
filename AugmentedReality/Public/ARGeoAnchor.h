@@ -4,21 +4,21 @@
 #include "EARAltitudeSource.h"
 #include "ARGeoAnchor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UARGeoAnchor : public UARTrackedGeometry {
     GENERATED_BODY()
 public:
     UARGeoAnchor();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetLongitude() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetLatitude() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EARAltitudeSource GetAltitudeSource() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetAltitudeMeters() const;
     
 };

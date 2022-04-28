@@ -7,7 +7,7 @@ struct GAMEPLAYTAGS_API FGameplayTag {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName TagName;
     
 public:

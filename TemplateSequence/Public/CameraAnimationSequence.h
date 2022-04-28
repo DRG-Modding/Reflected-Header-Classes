@@ -3,7 +3,7 @@
 #include "TemplateSequence.h"
 #include "CameraAnimationSequence.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class TEMPLATESEQUENCE_API UCameraAnimationSequence : public UTemplateSequence {
     GENERATED_BODY()
 public:

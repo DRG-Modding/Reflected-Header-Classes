@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "BaseResource.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBaseResource : public UDataAsset {
     GENERATED_BODY()
 public:

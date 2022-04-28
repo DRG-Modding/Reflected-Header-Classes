@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameplayTagsList.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
 #include "GameplayTagCategoryRemap.h"
 #include "GameplayTagRedirect.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
 #include "RestrictedConfigInfo.h"
 #include "GameplayTagsSettings.generated.h"
 
-UCLASS(DefaultConfig, Config=GameplayTags)
+UCLASS(Blueprintable, DefaultConfig, Config=GameplayTags)
 class GAMEPLAYTAGS_API UGameplayTagsSettings : public UGameplayTagsList {
     GENERATED_BODY()
 public:

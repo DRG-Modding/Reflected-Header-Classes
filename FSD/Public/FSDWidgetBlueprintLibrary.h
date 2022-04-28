@@ -1,49 +1,49 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "SizeBoxSettings.h"
-#include "WidgetAnimationSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TimerHandle -FallbackName=TimerHandle
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "WidgetAnimationSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=PaintContext -FallbackName=PaintContext
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateFontInfo -FallbackName=SlateFontInfo
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TimerDynamicDelegate__DelegateSignature -FallbackName=TimerDynamicDelegateDelegate
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TimerHandle -FallbackName=TimerHandle
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=ESlateVisibility -FallbackName=ESlateVisibility
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateFontInfo -FallbackName=SlateFontInfo
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TimerDynamicDelegate__DelegateSignature -FallbackName=TimerDynamicDelegateDelegate
+#include "SizeBoxSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
 //CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ETextJustify -FallbackName=ETextJustify
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EHorizontalAlignment -FallbackName=EHorizontalAlignment
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EVerticalAlignment -FallbackName=EVerticalAlignment
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
 //CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=Anchors -FallbackName=Anchors
 #include "FSDWidgetBlueprintLibrary.generated.h"
 
-class UTexture2D;
+class UTextBlock;
 class UObject;
-class UWidget;
+class UHorizontalBox;
 class UUserWidget;
+class UWidget;
 class UWidgetAnimation;
-class UFSDCheatManager;
 class UCanvasPanel;
+class USizeBox;
+class UUniformGridSlot;
+class UFSDCheatManager;
+class UPanelWidget;
+class UImage;
+class UVerticalBox;
+class UWindowWidget;
 class APlayerController;
 class AFSDPlayerState;
-class USizeBox;
-class UPanelWidget;
-class UTextBlock;
-class UImage;
-class UWindowWidget;
-class UUniformGridSlot;
-class UVerticalBox;
 class USpacer;
-class UHorizontalBox;
+class UTexture2D;
 class UHorizontalBoxSlot;
 class UVerticalBoxSlot;
 class UUniformGridPanel;
 class UCanvasPanelSlot;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UFSDWidgetBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -103,7 +103,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void Line(FPaintContext& Context, FVector2D Pos1, FVector2D Pos2, FLinearColor Tint);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FLinearColor LerpColors(const TArray<FLinearColor>& Colors, bool Interpolate, float Progress01);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -142,10 +142,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetKeyName(const FKey& Key);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetFontMaxHeight(const FSlateFontInfo& Font);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetFontBaseline(const FSlateFontInfo& Font);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

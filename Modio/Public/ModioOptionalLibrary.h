@@ -1,25 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "ModioOptionalTerms.h"
-#include "ModioOptionalUser.h"
-#include "ModioModProgressInfo.h"
 #include "ModioOptionalModProgressInfo.h"
-#include "ModioOptionalModTagOptions.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "ModioOptionalModDependencyList.h"
+#include "ModioOptionalModID.h"
+#include "ModioOptionalUser.h"
 #include "ModioOptionalModInfoList.h"
 #include "ModioOptionalModInfo.h"
-#include "ModioOptionalModDependencyList.h"
-#include "ModioTerms.h"
+#include "ModioOptionalTerms.h"
+#include "ModioOptionalModTagOptions.h"
 #include "ModioOptionalImage.h"
 #include "ModioUser.h"
+#include "ModioTerms.h"
+#include "ModioModProgressInfo.h"
 #include "ModioModTagOptions.h"
 #include "ModioModInfoList.h"
 #include "ModioModInfo.h"
+#include "ModioModID.h"
 #include "ModioModDependencyList.h"
-#include "ModioImage.h"
+#include "ModioImageWrapper.h"
 #include "ModioOptionalLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MODIO_API UModioOptionalLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -42,6 +44,9 @@ private:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsSet_ModioOptionalModInfo(const FModioOptionalModInfo& OptionalModInfo);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool IsSet_ModioOptionalModID(const FModioOptionalModID& OptionalID);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsSet_ModioOptionalModDependencyList(const FModioOptionalModDependencyList& OptionalDependencyList);
@@ -68,10 +73,13 @@ private:
     static bool GetValue_ModioOptionalModInfo(const FModioOptionalModInfo& OptionalModInfo, FModioModInfo& ModInfo);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool GetValue_ModioOptionalModID(const FModioOptionalModID& OptionalID, FModioModID& ID);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetValue_ModioOptionalModDependencyList(const FModioOptionalModDependencyList& OptionalDependencyList, FModioModDependencyList& DependencyList);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static bool GetValue_ModioOptionalImage(const FModioOptionalImage& OptionalImage, FModioImage& Image);
+    static bool GetValue_ModioOptionalImage(const FModioOptionalImage& OptionalImage, FModioImageWrapper& Image);
     
 };
 

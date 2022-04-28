@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "MovieSceneSubSequenceTreeEntry.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneSubSequenceTreeEntry {
     GENERATED_BODY()
 public:

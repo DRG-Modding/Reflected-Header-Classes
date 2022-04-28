@@ -3,18 +3,18 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "UMGSequenceTickManager.generated.h"
 
-class UUserWidget;
 class UMovieSceneEntitySystemLinker;
+class UUserWidget;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UUMGSequenceTickManager : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TSet<TWeakObjectPtr<UUserWidget>> WeakUserWidgets;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UMovieSceneEntitySystemLinker* Linker;
     
 public:

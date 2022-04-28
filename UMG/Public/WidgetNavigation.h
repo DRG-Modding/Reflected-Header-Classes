@@ -4,7 +4,7 @@
 #include "WidgetNavigationData.h"
 #include "WidgetNavigation.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMG_API UWidgetNavigation : public UObject {
     GENERATED_BODY()
 public:

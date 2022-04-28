@@ -3,7 +3,7 @@
 #include "InteractiveToolBuilder.h"
 #include "ClickDragToolBuilder.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UClickDragToolBuilder : public UInteractiveToolBuilder {
     GENERATED_BODY()
 public:

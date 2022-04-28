@@ -3,12 +3,12 @@
 #include "NodeHierarchyData.h"
 #include "NodeHierarchyWithUserData.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNodeHierarchyWithUserData {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNodeHierarchyData Hierarchy;
     
 public:

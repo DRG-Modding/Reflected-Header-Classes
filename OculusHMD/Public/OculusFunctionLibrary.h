@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
-#include "EColorSpace.h"
-#include "EFixedFoveatedRenderingLevel.h"
+#include "ETrackedDeviceType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-//CROSS-MODULE INCLUDE V2: -ModuleName=HeadMountedDisplay -ObjectName=EOrientPositionSelector -FallbackName=EOrientPositionSelector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
-#include "ETrackedDeviceType.h"
+#include "EFixedFoveatedRenderingLevel.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=HeadMountedDisplay -ObjectName=EOrientPositionSelector -FallbackName=EOrientPositionSelector
+#include "EBoundaryType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "EColorSpace.h"
 #include "HmdUserProfile.h"
 #include "GuardianTestResult.h"
-#include "EBoundaryType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "EOculusDeviceType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "OculusFunctionLibrary.generated.h"
 
 class UTexture2D;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class OCULUSHMD_API UOculusFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -74,7 +74,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool GetSystemHmd3DofModeEnabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void GetRawSensorData(FVector& AngularAcceleration, FVector& LinearAcceleration, FVector& AngularVelocity, FVector& LinearVelocity, float& TimeInSeconds, ETrackedDeviceType DeviceType);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -98,10 +98,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector GetGuardianDimensions(EBoundaryType BoundaryType);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void GetGPUUtilization(bool& IsGPUAvailable, float& GPUUtilization);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetGPUFrameTime();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -113,7 +113,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetDeviceName();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetCurrentDisplayFrequency();
     
     UFUNCTION(BlueprintCallable)
@@ -122,7 +122,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void GetBaseRotationAndBaseOffsetInMeters(FRotator& OutRotation, FVector& OutBaseOffsetInMeters);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static TArray<float> GetAvailableDisplayFrequencies();
     
     UFUNCTION(BlueprintCallable)

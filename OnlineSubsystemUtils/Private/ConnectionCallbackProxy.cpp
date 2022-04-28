@@ -1,8 +1,8 @@
 #include "ConnectionCallbackProxy.h"
 
 class UObject;
-class UConnectionCallbackProxy;
 class APlayerController;
+class UConnectionCallbackProxy;
 
 UConnectionCallbackProxy* UConnectionCallbackProxy::ConnectToService(UObject* WorldContextObject, APlayerController* PlayerController) {
     return NULL;

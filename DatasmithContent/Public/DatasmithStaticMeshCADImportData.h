@@ -3,7 +3,7 @@
 #include "DatasmithStaticMeshImportData.h"
 #include "DatasmithStaticMeshCADImportData.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class DATASMITHCONTENT_API UDatasmithStaticMeshCADImportData : public UDatasmithStaticMeshImportData {
     GENERATED_BODY()
 public:

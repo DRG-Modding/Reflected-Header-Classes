@@ -3,7 +3,7 @@
 #include "ClickDragInputBehavior.h"
 #include "LocalClickDragInputBehavior.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API ULocalClickDragInputBehavior : public UClickDragInputBehavior {
     GENERATED_BODY()
 public:

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct CHAOS_API FRecordedTransformTrack {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRecordedFrame> Records;
     
     FRecordedTransformTrack();

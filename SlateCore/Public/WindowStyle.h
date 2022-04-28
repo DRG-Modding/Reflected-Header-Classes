@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TextBlockStyle.h"
 #include "SlateWidgetStyle.h"
 #include "ButtonStyle.h"
-#include "TextBlockStyle.h"
 #include "SlateBrush.h"
 #include "SlateColor.h"
 #include "WindowStyle.generated.h"

@@ -3,7 +3,7 @@
 #include "NavigationQueryFilter.h"
 #include "RecastFilter_UseDefaultArea.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class URecastFilter_UseDefaultArea : public UNavigationQueryFilter {
     GENERATED_BODY()
 public:

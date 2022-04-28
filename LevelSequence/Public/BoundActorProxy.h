@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "BoundActorProxy.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FBoundActorProxy {
     GENERATED_BODY()
 public:

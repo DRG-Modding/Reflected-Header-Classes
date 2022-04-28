@@ -7,16 +7,16 @@ USTRUCT(BlueprintType)
 struct MOVIESCENETRACKS_API FTransformParameterNameAndCurves {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ParameterName;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FMovieSceneFloatChannel Translation[3];
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FMovieSceneFloatChannel Rotation[3];
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FMovieSceneFloatChannel Scale[3];
     
     FTransformParameterNameAndCurves();

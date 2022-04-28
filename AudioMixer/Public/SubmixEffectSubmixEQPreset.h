@@ -4,7 +4,7 @@
 #include "SubmixEffectSubmixEQSettings.h"
 #include "SubmixEffectSubmixEQPreset.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AUDIOMIXER_API USubmixEffectSubmixEQPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:

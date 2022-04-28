@@ -1,37 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "StructSerializerSetTestStruct.h"
 #include "StructSerializerNumericTestStruct.h"
 #include "StructSerializerBooleanTestStruct.h"
-#include "StructSerializerArrayTestStruct.h"
 #include "StructSerializerObjectTestStruct.h"
-#include "StructSerializerMapTestStruct.h"
 #include "StructSerializerBuiltinTestStruct.h"
-#include "StructSerializerSetTestStruct.h"
+#include "StructSerializerArrayTestStruct.h"
+#include "StructSerializerMapTestStruct.h"
 #include "StructSerializerTestStruct.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FStructSerializerTestStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStructSerializerNumericTestStruct Numerics;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStructSerializerBooleanTestStruct Booleans;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStructSerializerObjectTestStruct Objects;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStructSerializerBuiltinTestStruct Builtins;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStructSerializerArrayTestStruct Arrays;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStructSerializerMapTestStruct Maps;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStructSerializerSetTestStruct Sets;
     
     SERIALIZATION_API FStructSerializerTestStruct();

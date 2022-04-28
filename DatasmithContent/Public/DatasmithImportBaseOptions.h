@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EDatasmithImportScene.h"
-#include "DatasmithStaticMeshImportOptions.h"
 #include "DatasmithAssetImportOptions.h"
+#include "DatasmithStaticMeshImportOptions.h"
 #include "DatasmithImportBaseOptions.generated.h"
 
 USTRUCT(BlueprintType)
 struct DATASMITHCONTENT_API FDatasmithImportBaseOptions {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     EDatasmithImportScene SceneHandling;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -27,7 +27,7 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIncludeAnimation;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDatasmithAssetImportOptions AssetOptions;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

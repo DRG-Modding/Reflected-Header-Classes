@@ -4,18 +4,18 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
 #include "BehaviorTreeComponent.generated.h"
 
-class UBTNode;
 class UBehaviorTree;
+class UBTNode;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UBehaviorTreeComponent : public UBrainComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UBTNode*> NodeInstances;
     
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBehaviorTree* DefaultBehaviorTreeAsset;
     
 public:
@@ -23,7 +23,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetDynamicSubtree(FGameplayTag InjectTag, UBehaviorTree* BehaviorAsset);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetTagCooldownEndTime(FGameplayTag CooldownTag) const;
     
     UFUNCTION(BlueprintCallable)

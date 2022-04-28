@@ -5,7 +5,7 @@
 
 class UNiagaraMeshRendererProperties;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceMeshRendererInfo : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

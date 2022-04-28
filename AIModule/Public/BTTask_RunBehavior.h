@@ -5,7 +5,7 @@
 
 class UBehaviorTree;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTTask_RunBehavior : public UBTTaskNode {
     GENERATED_BODY()
 public:

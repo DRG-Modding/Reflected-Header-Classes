@@ -5,7 +5,7 @@
 
 class UTextureCube;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceCubeTexture : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

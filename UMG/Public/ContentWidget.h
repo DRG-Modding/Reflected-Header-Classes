@@ -3,10 +3,10 @@
 #include "PanelWidget.h"
 #include "ContentWidget.generated.h"
 
-class UPanelSlot;
 class UWidget;
+class UPanelSlot;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class UMG_API UContentWidget : public UPanelWidget {
     GENERATED_BODY()
 public:

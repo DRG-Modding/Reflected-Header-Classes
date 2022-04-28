@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "MovieSceneEvalTemplatePtr.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneEvalTemplatePtr {
     GENERATED_BODY()
 public:

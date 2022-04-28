@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioInitializeOptions.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ModioApiKey.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "ModioInitializeOptions.h"
 #include "ModioGameID.h"
 #include "EModioEnvironment.h"
 #include "EFileSizeUnit.h"
 #include "ModioSDKLibrary.generated.h"
 
-UCLASS(BlueprintType, MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UModioSDKLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UModioSDKLibrary();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float Pct_Int64Int64(int64 Dividend, int64 Divisor);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -34,13 +34,13 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioApiKey GetProjectApiKey();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FText Filesize_ToString(int64 Filesize, int32 MaxDecimals, TEnumAsByte<EFileSizeUnit> Unit);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FText Conv_Int64ToText(int64 Value, bool bAlwaysSign, bool bUseGrouping, int32 MinimumIntegralDigits, int32 MaximumIntegralDigits);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString Conv_Int64ToString(int64 inInt);
     
 };

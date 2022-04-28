@@ -3,11 +3,11 @@
 #include "BTDecorator.h"
 #include "BTDecorator_TimeLimit.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTDecorator_TimeLimit : public UBTDecorator {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float TimeLimit;
     
     UBTDecorator_TimeLimit();

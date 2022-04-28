@@ -3,7 +3,7 @@
 #include "FilterOptionPerAxis.h"
 #include "ConstraintDescriptionEx.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FConstraintDescriptionEx {
     GENERATED_BODY()
 public:

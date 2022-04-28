@@ -3,7 +3,7 @@
 #include "InteractiveToolBuilder.h"
 #include "SingleClickToolBuilder.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API USingleClickToolBuilder : public UInteractiveToolBuilder {
     GENERATED_BODY()
 public:

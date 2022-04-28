@@ -4,8 +4,8 @@
 #include "EMotionRange.h"
 #include "EHandSkeleton.h"
 #include "EHand.h"
-#include "UE4RetargettingRefs.h"
 #include "SteamVRSkeletonTransform.h"
+#include "UE4RetargettingRefs.h"
 #include "AnimNode_SteamVRInputAnimPose.generated.h"
 
 USTRUCT(BlueprintType)
@@ -27,7 +27,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSteamVRSkeletonTransform SteamVRSkeletalTransform;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FUE4RetargettingRefs UE4RetargettingRefs;
     
     FAnimNode_SteamVRInputAnimPose();

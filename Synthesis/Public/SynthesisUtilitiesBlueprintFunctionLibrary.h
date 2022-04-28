@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "SynthesisUtilitiesBlueprintFunctionLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SYNTHESIS_API USynthesisUtilitiesBlueprintFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

@@ -4,11 +4,11 @@
 #include "MovieSceneParticleChannel.h"
 #include "MovieSceneParticleSectionTemplate.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneParticleSectionTemplate : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneParticleChannel ParticleKeys;
     
     MOVIESCENETRACKS_API FMovieSceneParticleSectionTemplate();

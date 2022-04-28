@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EMinersManualSection.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "EMinersManualSinglePage.h"
+#include "EMinersManualSection.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "MinersManualHandler.generated.h"
 

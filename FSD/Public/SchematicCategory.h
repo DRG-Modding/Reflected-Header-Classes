@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SavableDataAsset.h"
-#include "ESchematicType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+#include "ESchematicType.h"
 #include "SchematicCategory.generated.h"
 
-class UDialogDataAsset;
 class UTexture2D;
 class UEventRewardType;
+class UDialogDataAsset;
 
-UCLASS()
+UCLASS(Blueprintable)
 class USchematicCategory : public USavableDataAsset {
     GENERATED_BODY()
 public:

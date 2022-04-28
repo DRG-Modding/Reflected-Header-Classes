@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "SchematicBlueprintLibrary.generated.h"
 
-class UItemUpgrade;
 class UObject;
 class UItemSkinSchematicCollection;
 class USchematic;
 class UPlayerCharacterID;
 class USchematicCategory;
+class UItemUpgrade;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class USchematicBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

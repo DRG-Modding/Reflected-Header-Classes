@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "SaveGameIDInterface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "CategoryID.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API UCategoryID : public UDataAsset, public ISaveGameIDInterface {
     GENERATED_BODY()
 public:

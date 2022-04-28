@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "RenderingPolygonGroup.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FRenderingPolygonGroup {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 RenderingSectionIndex;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaterialIndex;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MaxTriangles;
     
     EDITABLEMESH_API FRenderingPolygonGroup();

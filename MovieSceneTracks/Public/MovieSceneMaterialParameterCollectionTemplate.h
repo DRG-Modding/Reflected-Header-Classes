@@ -5,12 +5,12 @@
 
 class UMaterialParameterCollection;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneMaterialParameterCollectionTemplate : public FMovieSceneParameterSectionTemplate {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialParameterCollection* MPC;
     
 public:

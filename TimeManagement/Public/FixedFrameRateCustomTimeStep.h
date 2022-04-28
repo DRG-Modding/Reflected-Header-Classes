@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EngineCustomTimeStep -FallbackName=EngineCustomTimeStep
 #include "FixedFrameRateCustomTimeStep.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class TIMEMANAGEMENT_API UFixedFrameRateCustomTimeStep : public UEngineCustomTimeStep {
     GENERATED_BODY()
 public:

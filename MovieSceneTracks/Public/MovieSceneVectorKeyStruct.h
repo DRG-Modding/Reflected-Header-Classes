@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "MovieSceneVectorKeyStruct.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneVectorKeyStruct : public FMovieSceneVectorKeyStructBase {
     GENERATED_BODY()
 public:

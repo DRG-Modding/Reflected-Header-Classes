@@ -3,7 +3,7 @@
 #include "MovieScenePropertySystem.h"
 #include "MovieSceneComponentTransformSystem.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneComponentTransformSystem : public UMovieScenePropertySystem {
     GENERATED_BODY()
 public:

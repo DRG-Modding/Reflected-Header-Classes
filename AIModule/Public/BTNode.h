@@ -7,7 +7,7 @@
 class UBehaviorTree;
 class UBTCompositeNode;
 
-UCLASS(Abstract, Config=Game)
+UCLASS(Abstract, Blueprintable, Config=Game)
 class AIMODULE_API UBTNode : public UObject, public IGameplayTaskOwnerInterface {
     GENERATED_BODY()
 public:
@@ -15,10 +15,10 @@ public:
     FString NodeName;
     
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBehaviorTree* TreeAsset;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBTCompositeNode* ParentNode;
     
 public:

@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlueprintFindSessionsResultDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnlineBlueprintCallProxyBase -FallbackName=OnlineBlueprintCallProxyBase
+#include "BlueprintFindSessionsResultDelegateDelegate.h"
 #include "BlueprintSessionResult.h"
 #include "FindSessionsCallbackProxy.generated.h"
 
-class UObject;
 class UFindSessionsCallbackProxy;
+class UObject;
 class APlayerController;
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UFindSessionsCallbackProxy : public UOnlineBlueprintCallProxyBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlueprintFindSessionsResultDelegate OnSuccess;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlueprintFindSessionsResultDelegate OnFailure;
     
     UFindSessionsCallbackProxy();

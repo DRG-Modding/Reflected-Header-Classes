@@ -1,8 +1,8 @@
 #include "AFlyingBug.h"
 #include "Net/UnrealNetwork.h"
-#include "OutlineComponent.h"
 #include "PawnStatsComponent.h"
 #include "EnemyComponent.h"
+#include "OutlineComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
 #include "PawnAlertComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
@@ -10,10 +10,10 @@
 #include "FrozenPawnImpactComponent.h"
 #include "HitReactionComponent.h"
 
+class UHealthComponent;
 class AActor;
 class UHealthComponentBase;
 class UDamageTag;
-class UHealthComponent;
 
 
 void AAFlyingBug::SetRotateTarget(AActor* aTarget) {

@@ -3,7 +3,7 @@
 #include "MovieScenePropertySystem.h"
 #include "MovieScene3DTransformPropertySystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENETRACKS_API UMovieScene3DTransformPropertySystem : public UMovieScenePropertySystem {
     GENERATED_BODY()
 public:

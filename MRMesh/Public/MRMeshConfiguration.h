@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "MRMeshConfiguration.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMRMeshConfiguration {
     GENERATED_BODY()
 public:

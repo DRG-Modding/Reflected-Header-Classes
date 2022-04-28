@@ -1,7 +1,7 @@
 #include "InAppPurchaseCallbackProxy.h"
 
-class UInAppPurchaseCallbackProxy;
 class APlayerController;
+class UInAppPurchaseCallbackProxy;
 
 UInAppPurchaseCallbackProxy* UInAppPurchaseCallbackProxy::CreateProxyObjectForInAppPurchase(APlayerController* PlayerController, const FInAppPurchaseProductRequest& ProductRequest) {
     return NULL;

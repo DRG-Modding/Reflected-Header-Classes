@@ -6,7 +6,7 @@
 class UWidget;
 class UVerticalBoxSlot;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UVerticalBox : public UPanelWidget {
     GENERATED_BODY()
 public:

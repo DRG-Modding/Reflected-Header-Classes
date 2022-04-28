@@ -3,7 +3,7 @@
 #include "AISenseConfig.h"
 #include "AISenseConfig_Prediction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AIMODULE_API UAISenseConfig_Prediction : public UAISenseConfig {
     GENERATED_BODY()
 public:

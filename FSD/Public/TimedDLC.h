@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
 #include "TimedDLC.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UTimedDLC : public UDLCBase {
     GENERATED_BODY()
 public:

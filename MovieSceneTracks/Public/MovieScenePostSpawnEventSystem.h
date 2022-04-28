@@ -3,7 +3,7 @@
 #include "MovieSceneEventSystem.h"
 #include "MovieScenePostSpawnEventSystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENETRACKS_API UMovieScenePostSpawnEventSystem : public UMovieSceneEventSystem {
     GENERATED_BODY()
 public:

@@ -8,15 +8,15 @@
 class UObject;
 class AActor;
 
-UCLASS(Config=Game)
+UCLASS(Blueprintable, Config=Game)
 class AIMODULE_API UAISense_Hearing : public UAISense {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAINoiseEvent> NoiseEvents;
     
-    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float SpeedOfSoundSq;
     
 public:

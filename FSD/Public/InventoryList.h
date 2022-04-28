@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ItemFilterDelegateDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "EItemCategory.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "ItemFilterDelegateDelegate.h"
 #include "InventoryList.generated.h"
 
-class UObject;
-class UTexture2D;
-class UItemID;
-class UMaterialInterface;
 class AActor;
+class UTexture2D;
+class UMaterialInterface;
+class UItemID;
+class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class FSD_API UInventoryList : public UDataAsset {
     GENERATED_BODY()
 public:

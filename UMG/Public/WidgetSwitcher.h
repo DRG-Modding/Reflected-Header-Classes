@@ -5,7 +5,7 @@
 
 class UWidget;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UWidgetSwitcher : public UPanelWidget {
     GENERATED_BODY()
 public:

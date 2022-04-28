@@ -3,7 +3,7 @@
 #include "MovieSceneEvalTemplate.h"
 #include "TestMovieSceneEvalTemplate.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FTestMovieSceneEvalTemplate : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:

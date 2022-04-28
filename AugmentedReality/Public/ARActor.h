@@ -7,7 +7,7 @@
 
 class UARComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API AARActor : public AActor {
     GENERATED_BODY()
 public:

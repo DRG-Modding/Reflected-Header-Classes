@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ForeignControlPointData.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FForeignControlPointData {
     GENERATED_BODY()
 public:

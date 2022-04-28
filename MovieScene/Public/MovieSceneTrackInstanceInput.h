@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FMovieSceneTrackInstanceInput {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UMovieSceneSection* Section;
     
     MOVIESCENE_API FMovieSceneTrackInstanceInput();

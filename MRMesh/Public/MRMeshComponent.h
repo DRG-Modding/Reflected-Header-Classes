@@ -8,7 +8,7 @@
 class UBodySetup;
 class UMaterialInterface;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class MRMESH_API UMRMeshComponent : public UPrimitiveComponent, public IInterface_CollisionDataProvider {
     GENERATED_BODY()
 public:
@@ -28,10 +28,10 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bNeverCreateCollisionMesh;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBodySetup* CachedBodySetup;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UBodySetup*> BodySetups;
     
 public:

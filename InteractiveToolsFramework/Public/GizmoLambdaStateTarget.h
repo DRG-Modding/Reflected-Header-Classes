@@ -4,17 +4,17 @@
 #include "GizmoStateTarget.h"
 #include "GizmoLambdaStateTarget.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class INTERACTIVETOOLSFRAMEWORK_API UGizmoLambdaStateTarget : public UObject, public IGizmoStateTarget {
     GENERATED_BODY()
 public:
     UGizmoLambdaStateTarget();
     
     // Fix for true pure virtual functions not being implemented
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void EndUpdate() override PURE_VIRTUAL(EndUpdate,);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void BeginUpdate() override PURE_VIRTUAL(BeginUpdate,);
     
 };

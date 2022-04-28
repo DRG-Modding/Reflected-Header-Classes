@@ -6,7 +6,7 @@
 class UMovieSceneImageCaptureProtocolBase;
 class UMovieSceneAudioCaptureProtocolBase;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MOVIESCENECAPTURE_API UMovieSceneCaptureEnvironment : public UObject {
     GENERATED_BODY()
 public:
@@ -17,7 +17,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetCaptureFrameNumber();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetCaptureElapsedTime();
     
     UFUNCTION(BlueprintCallable)

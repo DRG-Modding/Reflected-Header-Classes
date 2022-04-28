@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StreamableRenderAsset -FallbackName=StreamableRenderAsset
 #include "LandscapeLODStreamingProxy.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class ULandscapeLODStreamingProxy : public UStreamableRenderAsset {
     GENERATED_BODY()
 public:

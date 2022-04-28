@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "TimedDataChannelSampleTime.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FTimedDataChannelSampleTime {
     GENERATED_BODY()
 public:

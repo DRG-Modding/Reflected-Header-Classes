@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=TerrainMaterialBase -FallbackName=TerrainMaterialBase
 #include "SmartRockTerrainMaterial.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class USmartRockTerrainMaterial : public UTerrainMaterialBase {
     GENERATED_BODY()
 public:

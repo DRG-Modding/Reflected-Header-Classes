@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DPICustomScalingRule -FallbackName=DPICustomScalingRule
 #include "FSDCustomDPIScalingRule.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UFSDCustomDPIScalingRule : public UDPICustomScalingRule {
     GENERATED_BODY()
 public:

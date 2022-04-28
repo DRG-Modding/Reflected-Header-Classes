@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FNiagaraVariableDataInterfaceBinding {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraVariable BoundVariable;
     
     NIAGARA_API FNiagaraVariableDataInterfaceBinding();

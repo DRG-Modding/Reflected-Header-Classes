@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "PerSkeletonAnimationSharingSetup.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "AnimationSharingScalability.h"
 #include "AnimationSharingSetup.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class ANIMATIONSHARING_API UAnimationSharingSetup : public UObject {
     GENERATED_BODY()
 public:

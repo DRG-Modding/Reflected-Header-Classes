@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EngineServicePong.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEngineServicePong {
     GENERATED_BODY()
 public:
@@ -25,7 +25,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGuid sessionId;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float WorldTimeSeconds;
     
     ENGINEMESSAGES_API FEngineServicePong();

@@ -3,7 +3,7 @@
 #include "ARTexture.h"
 #include "ARTextureCameraImage.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AUGMENTEDREALITY_API UARTextureCameraImage : public UARTexture {
     GENERATED_BODY()
 public:

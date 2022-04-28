@@ -2,26 +2,26 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystemUtils -ObjectName=BlueprintSessionResult -FallbackName=BlueprintSessionResult
-#include "EServerSortOrder.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "EDisconnectReason.h"
 #include "EFSDNATType.h"
+#include "EFSDMissionStatus.h"
+#include "EServerSortOrder.h"
+#include "EDisconnectReason.h"
 #include "EMissionStructure.h"
 #include "FriendInfo.h"
-#include "EFSDMissionStatus.h"
-#include "EServerDistance.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
+#include "EServerDistance.h"
 #include "SessionHandling.generated.h"
 
 class UObject;
+class UBiome;
 class UFSDGameInstance;
 class UPlayerCharacterID;
 class APlayerCharacter;
 class UDifficultySetting;
-class UBiome;
 class UMissionTemplate;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class USessionHandling : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -179,7 +179,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 FSDGetGlobalMissionSeed(const FBlueprintSessionResult& Result);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float FSDGetDistanceFloat(const FBlueprintSessionResult& Result);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

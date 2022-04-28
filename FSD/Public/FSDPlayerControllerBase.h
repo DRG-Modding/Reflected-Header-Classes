@@ -1,38 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerController -FallbackName=PlayerController
-#include "LocalVoiceStatusDelegate.h"
 #include "PlatformComponent.h"
-#include "EHUDVisibilityReason.h"
+#include "LocalVoiceStatusDelegate.h"
 #include "EMinersManualSinglePage.h"
+#include "EHUDVisibilityReason.h"
 #include "EMinersManualSection.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EDisconnectReason.h"
 #include "FSDPlayerControllerBase.generated.h"
 
-class UWindowManager;
 class UMaterialParameterCollection;
-class UPlayerCharacterID;
+class UWindowManager;
 class UEscapeMenuWindow;
+class UPlayerCharacterID;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AFSDPlayerControllerBase : public APlayerController {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialParameterCollection* GlobalMaterialParameterCollection;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLocalVoiceStatus OnPlayerVoiceStatusChanged;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bStartWithBlackScreen;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UWindowManager* WindowManager;
     
-    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FPlatformComponent> PlatformComponentClasses;
     
 public:

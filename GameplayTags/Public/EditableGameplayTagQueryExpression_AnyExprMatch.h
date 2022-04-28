@@ -3,7 +3,7 @@
 #include "EditableGameplayTagQueryExpression.h"
 #include "EditableGameplayTagQueryExpression_AnyExprMatch.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew, NonTransient)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew, NonTransient)
 class UEditableGameplayTagQueryExpression_AnyExprMatch : public UEditableGameplayTagQueryExpression {
     GENERATED_BODY()
 public:

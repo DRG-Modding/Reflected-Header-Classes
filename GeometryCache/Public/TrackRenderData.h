@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "TrackRenderData.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FTrackRenderData {
     GENERATED_BODY()
 public:

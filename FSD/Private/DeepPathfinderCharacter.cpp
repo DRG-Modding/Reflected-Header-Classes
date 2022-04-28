@@ -1,7 +1,7 @@
 #include "DeepPathfinderCharacter.h"
-#include "DeepPathfinderMovement.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "DeepPatherFinderCharacterAfflictionComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+#include "DeepPathfinderMovement.h"
 
 bool ADeepPathfinderCharacter::TryJoinFormation() {
     return false;

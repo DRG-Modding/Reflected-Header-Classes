@@ -4,11 +4,11 @@
 #include "DatasmithCameraLookatTrackingSettingsTemplate.h"
 #include "DatasmithCineCameraActorTemplate.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class DATASMITHCONTENT_API UDatasmithCineCameraActorTemplate : public UDatasmithObjectTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDatasmithCameraLookatTrackingSettingsTemplate LookatTrackingSettings;
     
     UDatasmithCineCameraActorTemplate();

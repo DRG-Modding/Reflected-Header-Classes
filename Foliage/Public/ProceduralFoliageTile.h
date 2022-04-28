@@ -6,15 +6,15 @@
 
 class UProceduralFoliageSpawner;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FOLIAGE_API UProceduralFoliageTile : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UProceduralFoliageSpawner* FoliageSpawner;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FProceduralFoliageInstance> InstancesArray;
     
 public:

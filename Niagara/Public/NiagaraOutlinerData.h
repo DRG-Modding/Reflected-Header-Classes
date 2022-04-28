@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FNiagaraOutlinerData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FString, FNiagaraOutlinerWorldData> WorldData;
     
     NIAGARA_API FNiagaraOutlinerData();

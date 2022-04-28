@@ -6,7 +6,7 @@
 
 class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UComboBox : public UWidget {
     GENERATED_BODY()
 public:

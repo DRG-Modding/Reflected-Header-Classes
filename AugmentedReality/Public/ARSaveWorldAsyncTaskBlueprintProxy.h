@@ -7,14 +7,14 @@
 class UARSaveWorldAsyncTaskBlueprintProxy;
 class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UARSaveWorldAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FARSaveWorldPin OnSuccess;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FARSaveWorldPin OnFailed;
     
     UARSaveWorldAsyncTaskBlueprintProxy();

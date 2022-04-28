@@ -4,11 +4,11 @@
 #include "RestrictedGameplayTagTableRow.h"
 #include "RestrictedGameplayTagsList.generated.h"
 
-UCLASS(NotPlaceable, Config=GameplayTags)
+UCLASS(Blueprintable, NotPlaceable, Config=GameplayTags)
 class GAMEPLAYTAGS_API URestrictedGameplayTagsList : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ConfigFileName;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

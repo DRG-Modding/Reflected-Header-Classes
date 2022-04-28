@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ScrollBarStyle -FallbackName=ScrollBarStyle
 #include "ScrollBarWidgetStyle.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UScrollBarWidgetStyle : public USlateWidgetStyleContainerBase {
     GENERATED_BODY()
 public:

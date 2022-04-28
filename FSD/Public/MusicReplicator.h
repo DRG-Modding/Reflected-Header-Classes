@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ActiveMusicItem.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "ActiveMusicItem.h"
 #include "MusicReplicator.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AMusicReplicator : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_ActiveMusic, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_ActiveMusic, meta=(AllowPrivateAccess=true))
     TArray<FActiveMusicItem> ActiveMusic;
     
 public:

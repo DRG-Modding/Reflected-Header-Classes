@@ -3,7 +3,7 @@
 #include "MovieSceneBoolPropertySectionTemplate.h"
 #include "MovieSceneVisibilitySectionTemplate.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneVisibilitySectionTemplate : public FMovieSceneBoolPropertySectionTemplate {
     GENERATED_BODY()
 public:

@@ -4,7 +4,7 @@
 #include "BlackboardKeySelector.h"
 #include "BTTask_WaitBlackboardTime.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTTask_WaitBlackboardTime : public UBTTask_Wait {
     GENERATED_BODY()
 public:

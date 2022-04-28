@@ -3,7 +3,7 @@
 #include "FrameGrabberProtocol.h"
 #include "ImageSequenceProtocol.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class MOVIESCENECAPTURE_API UImageSequenceProtocol : public UFrameGrabberProtocol {
     GENERATED_BODY()
 public:

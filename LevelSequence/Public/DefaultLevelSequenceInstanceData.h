@@ -7,7 +7,7 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class LEVELSEQUENCE_API UDefaultLevelSequenceInstanceData : public UObject, public IMovieSceneTransformOrigin {
     GENERATED_BODY()
 public:

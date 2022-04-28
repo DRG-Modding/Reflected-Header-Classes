@@ -5,7 +5,7 @@
 
 class USoundCue;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTTask_PlaySound : public UBTTaskNode {
     GENERATED_BODY()
 public:

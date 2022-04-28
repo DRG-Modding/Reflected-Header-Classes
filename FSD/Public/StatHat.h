@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "StatHat.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UStatHat : public UGameInstanceSubsystem {
     GENERATED_BODY()
 public:

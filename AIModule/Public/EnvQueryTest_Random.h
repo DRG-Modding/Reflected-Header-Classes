@@ -3,7 +3,7 @@
 #include "EnvQueryTest.h"
 #include "EnvQueryTest_Random.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UEnvQueryTest_Random : public UEnvQueryTest {
     GENERATED_BODY()
 public:

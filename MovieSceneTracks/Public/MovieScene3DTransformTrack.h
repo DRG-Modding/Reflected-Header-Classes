@@ -3,7 +3,7 @@
 #include "MovieScenePropertyTrack.h"
 #include "MovieScene3DTransformTrack.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieScene3DTransformTrack : public UMovieScenePropertyTrack {
     GENERATED_BODY()
 public:

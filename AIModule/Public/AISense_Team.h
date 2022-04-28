@@ -4,11 +4,11 @@
 #include "AITeamStimulusEvent.h"
 #include "AISense_Team.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UAISense_Team : public UAISense {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAITeamStimulusEvent> RegisteredEvents;
     
     UAISense_Team();

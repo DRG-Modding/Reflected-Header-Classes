@@ -8,7 +8,7 @@ struct FPropertyAccessCopyBatch {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FPropertyAccessCopy> Copies;
     
 public:

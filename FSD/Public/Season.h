@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SavableDataAsset.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "SeasonLevel.h"
 #include "UnassignedReward.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "SeasonalEventEntry.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Int32Interval -FallbackName=Int32Interval
 #include "Season.generated.h"
@@ -14,7 +14,7 @@ class UMissionStat;
 class UMissionWarning;
 class UReward;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API USeason : public USavableDataAsset {
     GENERATED_BODY()
 public:
@@ -54,7 +54,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMissionWarning* SeasonWarning;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FInt32Interval SeasonWarningCount;
     
     USeason();

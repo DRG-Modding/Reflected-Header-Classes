@@ -3,11 +3,11 @@
 #include "NiagaraDataInterface.h"
 #include "NiagaraDataInterfaceCurlNoise.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceCurlNoise : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 Seed;
     
     UNiagaraDataInterfaceCurlNoise();

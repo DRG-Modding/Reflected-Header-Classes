@@ -3,11 +3,11 @@
 #include "PawnAction.h"
 #include "PawnAction_Wait.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AIMODULE_API UPawnAction_Wait : public UPawnAction {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float TimeToWait;
     
     UPawnAction_Wait();

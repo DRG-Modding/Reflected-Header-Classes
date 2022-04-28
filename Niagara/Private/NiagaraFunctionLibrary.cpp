@@ -1,17 +1,17 @@
 #include "NiagaraFunctionLibrary.h"
 
-class UObject;
 class UNiagaraSystem;
-class UNiagaraComponent;
+class UObject;
+class UNiagaraParameterCollectionInstance;
 class USceneComponent;
-class UStaticMesh;
+class UNiagaraComponent;
 class UVolumeTexture;
 class UTexture;
 class UTexture2DArray;
 class UStaticMeshComponent;
+class UStaticMesh;
 class USkeletalMeshComponent;
 class UNiagaraParameterCollection;
-class UNiagaraParameterCollectionInstance;
 
 UNiagaraComponent* UNiagaraFunctionLibrary::SpawnSystemAttached(UNiagaraSystem* SystemTemplate, USceneComponent* AttachToComponent, FName AttachPointName, FVector Location, FRotator Rotation, TEnumAsByte<EAttachLocation::Type> LocationType, bool bAutoDestroy, bool bAutoActivate, ENCPoolMethod PoolingMethod, bool bPreCullCheck) {
     return NULL;

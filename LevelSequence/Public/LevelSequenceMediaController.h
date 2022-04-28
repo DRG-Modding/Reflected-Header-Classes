@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneCustomClockSource -FallbackName=MovieSceneCustomClockSource
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameTime -FallbackName=FrameTime
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=QualifiedFrameTime -FallbackName=QualifiedFrameTime
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneCustomClockSource -FallbackName=MovieSceneCustomClockSource
 #include "LevelSequenceMediaController.generated.h"
 
 class UMediaComponent;
 class ALevelSequenceActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class LEVELSEQUENCE_API ALevelSequenceMediaController : public AActor, public IMovieSceneCustomClockSource {
     GENERATED_BODY()
 public:
@@ -17,10 +17,10 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ALevelSequenceActor* Sequence;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UMediaComponent* MediaComponent;
     
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_ServerStartTimeSeconds, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, ReplicatedUsing=OnRep_ServerStartTimeSeconds)
     float ServerStartTimeSeconds;
     
 public:
@@ -46,16 +46,16 @@ public:
     
     
     // Fix for true pure virtual functions not being implemented
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnTick(float DeltaSeconds, float InPlayRate) override PURE_VIRTUAL(OnTick,);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnStopPlaying(const FQualifiedFrameTime& InStopTime) override PURE_VIRTUAL(OnStopPlaying,);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnStartPlaying(const FQualifiedFrameTime& InStartTime) override PURE_VIRTUAL(OnStartPlaying,);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     FFrameTime OnRequestCurrentTime(const FQualifiedFrameTime& InCurrentTime, float InPlayRate) override PURE_VIRTUAL(OnRequestCurrentTime, return FFrameTime{};);
     
 };

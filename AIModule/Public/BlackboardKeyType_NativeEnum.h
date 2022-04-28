@@ -5,14 +5,14 @@
 
 class UEnum;
 
-UCLASS(CollapseCategories, EditInlineNew, HideDropdown)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew, HideDropdown)
 class AIMODULE_API UBlackboardKeyType_NativeEnum : public UBlackboardKeyType {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString EnumName;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UEnum* EnumType;
     
     UBlackboardKeyType_NativeEnum();

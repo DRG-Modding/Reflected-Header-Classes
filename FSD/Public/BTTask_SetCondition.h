@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BlackboardKeySelector -FallbackName=BlackboardKeySelector
 #include "BTTask_SetCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTTask_SetCondition : public UBTTaskNode {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "MovieScenePropertyTrack.h"
 #include "MovieSceneIntegerTrack.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENETRACKS_API UMovieSceneIntegerTrack : public UMovieScenePropertyTrack {
     GENERATED_BODY()
 public:

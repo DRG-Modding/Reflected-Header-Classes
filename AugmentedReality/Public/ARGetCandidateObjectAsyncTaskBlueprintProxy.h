@@ -8,14 +8,14 @@
 class UARGetCandidateObjectAsyncTaskBlueprintProxy;
 class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UARGetCandidateObjectAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FARGetCandidateObjectPin OnSuccess;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FARGetCandidateObjectPin OnFailed;
     
     UARGetCandidateObjectAsyncTaskBlueprintProxy();

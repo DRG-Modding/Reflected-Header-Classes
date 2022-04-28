@@ -5,12 +5,12 @@
 
 class UShaderPlatformQualitySettings;
 
-UCLASS()
+UCLASS(Blueprintable)
 class MATERIALSHADERQUALITYSETTINGS_API UMaterialShaderQualitySettings : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, UShaderPlatformQualitySettings*> ForwardSettingMap;
     
 public:

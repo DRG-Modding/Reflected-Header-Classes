@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioModCollectionEntry.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "ModioModID.h"
 #include "EModioModState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "ModioModCollectionEntry.h"
 #include "ModioModInfo.h"
+#include "ModioModID.h"
 #include "ModioModCollectionLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MODIO_API UModioModCollectionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

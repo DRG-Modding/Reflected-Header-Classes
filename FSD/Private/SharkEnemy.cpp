@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
+#include "DamageComponent.h"
 #include "InDangerComponent.h"
 #include "EnemyComponent.h"
-#include "DamageComponent.h"
 #include "FakePhysGrabberComponent.h"
 
 class AActor;
-class APawn;
 class UPrimitiveComponent;
+class APawn;
 class UHealthComponentBase;
 
 void ASharkEnemy::SetVulnerable() {

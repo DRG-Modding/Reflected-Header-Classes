@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "VersionedNiagaraScriptData.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct NIAGARA_API FVersionedNiagaraScriptData {
     GENERATED_BODY()
 public:

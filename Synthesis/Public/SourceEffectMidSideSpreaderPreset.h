@@ -4,7 +4,7 @@
 #include "SourceEffectMidSideSpreaderSettings.h"
 #include "SourceEffectMidSideSpreaderPreset.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USourceEffectMidSideSpreaderPreset : public USoundEffectSourcePreset {
     GENERATED_BODY()
 public:

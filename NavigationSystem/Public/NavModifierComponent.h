@@ -7,7 +7,7 @@
 
 class UNavArea;
 
-UCLASS(DefaultConfig, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, DefaultConfig, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class NAVIGATIONSYSTEM_API UNavModifierComponent : public UNavRelevantComponent {
     GENERATED_BODY()
 public:

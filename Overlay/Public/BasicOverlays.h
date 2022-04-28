@@ -4,7 +4,7 @@
 #include "OverlayItem.h"
 #include "BasicOverlays.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class OVERLAY_API UBasicOverlays : public UOverlays {
     GENERATED_BODY()
 public:

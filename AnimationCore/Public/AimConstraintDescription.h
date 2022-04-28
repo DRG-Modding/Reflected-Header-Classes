@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ConstraintDescriptionEx.h"
-#include "Axis.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "Axis.h"
 #include "AimConstraintDescription.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct ANIMATIONCORE_API FAimConstraintDescription : public FConstraintDescriptionEx {
     GENERATED_BODY()
 public:

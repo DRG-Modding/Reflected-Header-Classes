@@ -3,7 +3,7 @@
 #include "NiagaraDataInterfaceGrid2D.h"
 #include "NiagaraDataInterfaceGrid2DCollectionReader.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceGrid2DCollectionReader : public UNiagaraDataInterfaceGrid2D {
     GENERATED_BODY()
 public:

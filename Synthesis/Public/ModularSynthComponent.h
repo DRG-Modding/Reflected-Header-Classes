@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
-#include "ESynthLFOType.h"
-#include "ModularSynthPreset.h"
 #include "ESynthStereoDelayMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
+#include "ModularSynthPreset.h"
 #include "ESynthLFOPatchType.h"
-#include "ESynth1PatchSource.h"
 #include "ESynthModEnvPatch.h"
+#include "ESynth1PatchSource.h"
 #include "ESynth1OscType.h"
 #include "ESynthModEnvBiasPatch.h"
+#include "ESynthLFOType.h"
 #include "ESynthLFOMode.h"
 #include "ESynthFilterType.h"
 #include "ESynthFilterAlgorithm.h"
@@ -16,7 +16,7 @@
 #include "Synth1PatchCable.h"
 #include "ModularSynthComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SYNTHESIS_API UModularSynthComponent : public USynthComponent {
     GENERATED_BODY()
 public:

@@ -6,7 +6,7 @@
 
 class ULevelSequenceBurnInInitSettings;
 
-UCLASS(BlueprintType, DefaultToInstanced, PerObjectConfig, Config=EditorPerProjectUserSettings)
+UCLASS(Blueprintable, DefaultToInstanced, PerObjectConfig, Config=EditorPerProjectUserSettings)
 class LEVELSEQUENCE_API ULevelSequenceBurnInOptions : public UObject {
     GENERATED_BODY()
 public:

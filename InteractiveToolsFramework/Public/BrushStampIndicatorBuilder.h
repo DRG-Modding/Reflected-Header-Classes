@@ -3,7 +3,7 @@
 #include "InteractiveGizmoBuilder.h"
 #include "BrushStampIndicatorBuilder.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UBrushStampIndicatorBuilder : public UInteractiveGizmoBuilder {
     GENERATED_BODY()
 public:

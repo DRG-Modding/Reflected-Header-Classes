@@ -5,7 +5,7 @@
 
 class UNiagaraSystem;
 
-UCLASS(Abstract, Transient)
+UCLASS(Abstract, Blueprintable, Transient)
 class ANiagaraPreviewBase : public AActor {
     GENERATED_BODY()
 public:

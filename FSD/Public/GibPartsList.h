@@ -3,11 +3,11 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "GibPartsList.generated.h"
 
-class UStaticMesh;
 class UNiagaraComponent;
 class UMaterialInstance;
+class UStaticMesh;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UGibPartsList : public UDataAsset {
     GENERATED_BODY()
 public:

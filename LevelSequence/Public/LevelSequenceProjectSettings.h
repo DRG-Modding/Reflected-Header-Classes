@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=EUpdateClockSource -FallbackName=EUpdateClockSource
 #include "LevelSequenceProjectSettings.generated.h"
 
-UCLASS(DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig)
 class ULevelSequenceProjectSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:

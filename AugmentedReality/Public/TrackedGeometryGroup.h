@@ -2,21 +2,21 @@
 #include "CoreMinimal.h"
 #include "TrackedGeometryGroup.generated.h"
 
-class UARTrackedGeometry;
 class AARActor;
 class UARComponent;
+class UARTrackedGeometry;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct AUGMENTEDREALITY_API FTrackedGeometryGroup {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AARActor* ARActor;
     
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UARComponent* ARComponent;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UARTrackedGeometry* TrackedGeometry;
     
     FTrackedGeometryGroup();

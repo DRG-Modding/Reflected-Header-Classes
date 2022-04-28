@@ -3,7 +3,7 @@
 #include "PropertyValue.h"
 #include "PropertyValueMaterial.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class VARIANTMANAGERCONTENT_API UPropertyValueMaterial : public UPropertyValue {
     GENERATED_BODY()
 public:

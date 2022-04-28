@@ -6,7 +6,7 @@
 class UObject;
 class APlayerController;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class ONLINESUBSYSTEMUTILS_API UTurnBasedBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataInterfaceRWBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "NiagaraDataInterfaceRWBase.h"
 #include "NiagaraDataInterfaceGrid2D.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceGrid2D : public UNiagaraDataInterfaceRWBase {
     GENERATED_BODY()
 public:

@@ -7,7 +7,7 @@
 #include "SlateColor.h"
 #include "HeaderRowStyle.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SLATECORE_API FHeaderRowStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:

@@ -12,10 +12,10 @@ class INTERACTIVETOOLSFRAMEWORK_API UGizmoTransformSource : public UInterface {
 class INTERACTIVETOOLSFRAMEWORK_API IGizmoTransformSource : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual void SetTransform(const FTransform& NewTransform) PURE_VIRTUAL(SetTransform,);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual FTransform GetTransform() const PURE_VIRTUAL(GetTransform, return FTransform{};);
     
 };

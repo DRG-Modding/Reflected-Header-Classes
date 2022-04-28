@@ -7,7 +7,7 @@
 class UObject;
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class ULayersBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

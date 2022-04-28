@@ -5,7 +5,7 @@
 
 class UConstantQNRTSettings;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AUDIOSYNESTHESIA_API UConstantQNRT : public UAudioSynesthesiaNRT {
     GENERATED_BODY()
 public:
@@ -13,10 +13,10 @@ public:
     UConstantQNRTSettings* Settings;
     
     UConstantQNRT();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     void GetNormalizedChannelConstantQAtTime(const float InSeconds, const int32 InChannel, TArray<float>& OutConstantQ) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     void GetChannelConstantQAtTime(const float InSeconds, const int32 InChannel, TArray<float>& OutConstantQ) const;
     
 };

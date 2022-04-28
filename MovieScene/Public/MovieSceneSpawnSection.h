@@ -4,7 +4,7 @@
 #include "MovieSceneEntityProvider.h"
 #include "MovieSceneSpawnSection.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneSpawnSection : public UMovieSceneBoolSection, public IMovieSceneEntityProvider {
     GENERATED_BODY()
 public:

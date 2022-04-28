@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystemUtils -ObjectName=OnlineSessionClient -FallbackName=OnlineSessionClient
 #include "FSDOnlineSessionClient.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UFSDOnlineSessionClient : public UOnlineSessionClient {
     GENERATED_BODY()
 public:

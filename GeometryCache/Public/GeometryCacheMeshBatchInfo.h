@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GeometryCacheMeshBatchInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGeometryCacheMeshBatchInfo {
     GENERATED_BODY()
 public:

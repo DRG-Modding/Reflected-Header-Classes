@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "AutoCompleteCommand.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
 #include "ConsoleSettings.generated.h"
 
-UCLASS(DefaultConfig, Config=Input)
+UCLASS(Blueprintable, DefaultConfig, Config=Input)
 class ENGINESETTINGS_API UConsoleSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -18,7 +18,7 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> AutoCompleteMapPaths;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     float BackgroundOpacityPercentage;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

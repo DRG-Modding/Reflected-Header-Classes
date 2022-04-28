@@ -4,7 +4,7 @@
 #include "ModularSynthPresetBankEntry.h"
 #include "ModularSynthPresetBank.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SYNTHESIS_API UModularSynthPresetBank : public UObject {
     GENERATED_BODY()
 public:

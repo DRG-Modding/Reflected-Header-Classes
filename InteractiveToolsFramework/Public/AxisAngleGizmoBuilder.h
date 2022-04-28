@@ -3,7 +3,7 @@
 #include "InteractiveGizmoBuilder.h"
 #include "AxisAngleGizmoBuilder.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UAxisAngleGizmoBuilder : public UInteractiveGizmoBuilder {
     GENERATED_BODY()
 public:

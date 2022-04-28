@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "LinearCellId.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FLinearCellId {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint16 X;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint16 Y;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint16 Z;
     
     FSDENGINE_API FLinearCellId();

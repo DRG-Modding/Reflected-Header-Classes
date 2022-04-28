@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CustomMetric.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "CustomDimension.h"
+#include "CustomMetric.h"
 #include "GoogleAnalyticsBlueprintLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class GOOGLEANALYTICS_API UGoogleAnalyticsBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

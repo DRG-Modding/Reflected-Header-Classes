@@ -32,6 +32,10 @@ FModioFilterParams UModioFilterParamsLibrary::NameContains(FModioFilterParams& F
     return FModioFilterParams{};
 }
 
+FModioFilterParams UModioFilterParamsLibrary::MetadataLike(FModioFilterParams& Filter, const FString& SearchString) {
+    return FModioFilterParams{};
+}
+
 FModioFilterParams UModioFilterParamsLibrary::MatchingIDs(FModioFilterParams& Filter, const TArray<FModioModID>& IDs) {
     return FModioFilterParams{};
 }

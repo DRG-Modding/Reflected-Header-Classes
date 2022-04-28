@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "GoogleAnalyticsSettings.generated.h"
 
-UCLASS(DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig)
 class GOOGLEANALYTICS_API UGoogleAnalyticsSettings : public UObject {
     GENERATED_BODY()
 public:

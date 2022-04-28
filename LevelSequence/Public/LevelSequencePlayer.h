@@ -5,17 +5,17 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequencePlaybackSettings -FallbackName=MovieSceneSequencePlaybackSettings
 #include "LevelSequencePlayer.generated.h"
 
-class ULevelSequence;
+class UCameraComponent;
 class ULevelSequencePlayer;
 class ALevelSequenceActor;
 class UObject;
-class UCameraComponent;
+class ULevelSequence;
 
-UCLASS()
+UCLASS(Blueprintable)
 class LEVELSEQUENCE_API ULevelSequencePlayer : public UMovieSceneSequencePlayer {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnLevelSequencePlayerCameraCutEvent OnCameraCut;
     
     ULevelSequencePlayer();

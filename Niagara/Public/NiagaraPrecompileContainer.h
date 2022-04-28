@@ -6,14 +6,14 @@
 class UNiagaraSystem;
 class UNiagaraScript;
 
-UCLASS()
+UCLASS(Blueprintable)
 class NIAGARA_API UNiagaraPrecompileContainer : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UNiagaraScript*> Scripts;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UNiagaraSystem* System;
     
     UNiagaraPrecompileContainer();

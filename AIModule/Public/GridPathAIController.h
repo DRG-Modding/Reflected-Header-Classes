@@ -3,7 +3,7 @@
 #include "AIController.h"
 #include "GridPathAIController.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AGridPathAIController : public AAIController {
     GENERATED_BODY()
 public:

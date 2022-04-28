@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=TextBlockStyle -FallbackName=TextBlockStyle
 #include "EFSDInputSource.h"
-#include "InputDisplay.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "InputDisplay.h"
 #include "RichTextInputWidget.generated.h"
 
 class URichTextBlock;
 class UTextBlock;
 
-UCLASS(Abstract, EditInlineNew, HideDropdown)
+UCLASS(Abstract, Blueprintable, EditInlineNew, HideDropdown)
 class URichTextInputWidget : public UUserWidget {
     GENERATED_BODY()
 public:
@@ -30,7 +30,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFSDInputSource InputSource;
     
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     URichTextBlock* RichTextBlock;
     
 public:
@@ -51,10 +51,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void OnCustomKeyBindsChanged();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FVector2D MeasureTextSize(const FText& Text, float Scale) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetLineHeight() const;
     
     UFUNCTION(BlueprintCallable)

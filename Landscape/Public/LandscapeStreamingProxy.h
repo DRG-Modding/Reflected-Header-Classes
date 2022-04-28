@@ -5,7 +5,7 @@
 
 class ALandscape;
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class ALandscapeStreamingProxy : public ALandscapeProxy {
     GENERATED_BODY()
 public:

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EngineServiceAuthGrant.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEngineServiceAuthGrant {
     GENERATED_BODY()
 public:

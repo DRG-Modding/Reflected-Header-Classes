@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FSubdividedWireEdge {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 EdgeVertex0PositionIndex;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 EdgeVertex1PositionIndex;
     
     EDITABLEMESH_API FSubdividedWireEdge();

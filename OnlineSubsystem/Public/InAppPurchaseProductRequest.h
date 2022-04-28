@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FInAppPurchaseProductRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ProductIdentifier;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsConsumable;
     
     ONLINESUBSYSTEM_API FInAppPurchaseProductRequest();

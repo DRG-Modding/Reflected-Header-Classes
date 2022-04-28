@@ -3,7 +3,7 @@
 #include "GeometryCacheCodecBase.h"
 #include "GeometryCacheCodecV1.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class GEOMETRYCACHE_API UGeometryCacheCodecV1 : public UGeometryCacheCodecBase {
     GENERATED_BODY()
 public:

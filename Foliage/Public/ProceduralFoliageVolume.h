@@ -5,11 +5,11 @@
 
 class UProceduralFoliageComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FOLIAGE_API AProceduralFoliageVolume : public AVolume {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UProceduralFoliageComponent* ProceduralComponent;
     
     AProceduralFoliageVolume();

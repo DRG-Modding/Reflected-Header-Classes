@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Blueprint -FallbackName=Blueprint
 #include "LegacyLevelSequenceDirectorBlueprint.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class ULegacyLevelSequenceDirectorBlueprint : public UBlueprint {
     GENERATED_BODY()
 public:

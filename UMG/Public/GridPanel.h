@@ -3,17 +3,17 @@
 #include "PanelWidget.h"
 #include "GridPanel.generated.h"
 
-class UGridSlot;
 class UWidget;
+class UGridSlot;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UGridPanel : public UPanelWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<float> ColumnFill;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<float> RowFill;
     
     UGridPanel();

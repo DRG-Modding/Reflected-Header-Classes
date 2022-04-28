@@ -4,11 +4,11 @@
 #include "MovieSceneSegmentIdentifier.h"
 #include "MovieSceneEvaluationFieldSegmentPtr.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneEvaluationFieldSegmentPtr : public FMovieSceneEvaluationFieldTrackPtr {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneSegmentIdentifier SegmentID;
     
     MOVIESCENE_API FMovieSceneEvaluationFieldSegmentPtr();

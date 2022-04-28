@@ -3,11 +3,11 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "CommnuityRewardSetup.generated.h"
 
+class UResourceData;
 class UCommnuityRewardBundle;
 class UObject;
-class UResourceData;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UCommnuityRewardSetup : public UDataAsset {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector4 -FallbackName=Vector4
 #include "NiagaraMatrix.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraMatrix {
     GENERATED_BODY()
 public:

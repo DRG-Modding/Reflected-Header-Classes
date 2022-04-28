@@ -5,7 +5,7 @@
 
 class UUniformInteger;
 
-UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UUniformInteger : public UFieldNodeInt {
     GENERATED_BODY()
 public:

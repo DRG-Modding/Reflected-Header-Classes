@@ -2,13 +2,13 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavCollisionBase -FallbackName=NavCollisionBase
-#include "NavCollisionBox.h"
 #include "NavCollisionCylinder.h"
+#include "NavCollisionBox.h"
 #include "NavCollision.generated.h"
 
 class UNavArea;
 
-UCLASS()
+UCLASS(Blueprintable)
 class NAVIGATIONSYSTEM_API UNavCollision : public UNavCollisionBase {
     GENERATED_BODY()
 public:

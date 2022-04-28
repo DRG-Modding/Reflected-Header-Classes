@@ -5,7 +5,7 @@
 
 class UMRMeshComponent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MRMESH_API UMeshReconstructorBase : public UObject {
     GENERATED_BODY()
 public:

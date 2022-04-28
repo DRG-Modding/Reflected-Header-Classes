@@ -1,7 +1,7 @@
 #include "QuartzClockHandle.h"
 
-class UObject;
 class UQuartzClockHandle;
+class UObject;
 
 void UQuartzClockHandle::UnsubscribeFromTimeDivision(const UObject* WorldContextObject, EQuartzCommandQuantization InQuantizationBoundary, UQuartzClockHandle*& ClockHandle) {
 }

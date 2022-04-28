@@ -1,7 +1,7 @@
 #include "QuartzSubsystem.h"
 
-class UObject;
 class UQuartzClockHandle;
+class UObject;
 
 bool UQuartzSubsystem::IsQuartzEnabled() {
     return false;

@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "ITDSpatializationSourceSettings.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SPATIALIZATION_API UITDSpatializationSourceSettings : public USpatializationPluginSourceSettingsBase {
     GENERATED_BODY()
 public:

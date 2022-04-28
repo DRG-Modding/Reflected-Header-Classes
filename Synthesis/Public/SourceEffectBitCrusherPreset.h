@@ -7,7 +7,7 @@
 
 class USoundModulatorBase;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USourceEffectBitCrusherPreset : public USoundEffectSourcePreset {
     GENERATED_BODY()
 public:

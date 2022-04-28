@@ -7,7 +7,7 @@
 
 class UNavArea;
 
-UCLASS()
+UCLASS(Blueprintable)
 class NAVIGATIONSYSTEM_API ANavModifierVolume : public AVolume, public INavRelevantInterface {
     GENERATED_BODY()
 public:

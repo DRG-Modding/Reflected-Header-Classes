@@ -3,11 +3,11 @@
 #include "BTTaskNode.h"
 #include "BTTask_PlayAnimation.generated.h"
 
-class UBehaviorTreeComponent;
 class UAnimationAsset;
+class UBehaviorTreeComponent;
 class USkeletalMeshComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTTask_PlayAnimation : public UBTTaskNode {
     GENERATED_BODY()
 public:
@@ -20,10 +20,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bNonBlocking: 1;
     
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UBehaviorTreeComponent* MyOwnerComp;
     
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* CachedSkelMesh;
     
     UBTTask_PlayAnimation();

@@ -3,7 +3,7 @@
 #include "NiagaraPreviewAxis_InterpParamBase.h"
 #include "NiagaraPreviewAxis_InterpParamInt32.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UNiagaraPreviewAxis_InterpParamInt32 : public UNiagaraPreviewAxis_InterpParamBase {
     GENERATED_BODY()
 public:

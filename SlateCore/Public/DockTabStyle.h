@@ -3,11 +3,11 @@
 #include "SlateWidgetStyle.h"
 #include "ButtonStyle.h"
 #include "SlateBrush.h"
-#include "Margin.h"
 #include "SlateColor.h"
+#include "Margin.h"
 #include "DockTabStyle.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SLATECORE_API FDockTabStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:
@@ -41,7 +41,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMargin TabPadding;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float OverlapWidth;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

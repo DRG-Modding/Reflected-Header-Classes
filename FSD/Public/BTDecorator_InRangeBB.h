@@ -5,7 +5,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=FAIDistanceType -FallbackName=FAIDistanceType
 #include "BTDecorator_InRangeBB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTDecorator_InRangeBB : public UBTDecorator_BlackboardBase {
     GENERATED_BODY()
 public:

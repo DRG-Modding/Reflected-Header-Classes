@@ -6,7 +6,7 @@
 class AGeometryCollectionDebugDrawActor;
 class AGeometryCollectionRenderLevelSetActor;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GEOMETRYCOLLECTIONENGINE_API UGeometryCollectionDebugDrawComponent : public UActorComponent {
     GENERATED_BODY()
 public:

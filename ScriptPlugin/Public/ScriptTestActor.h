@@ -3,21 +3,21 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ScriptTestActor.generated.h"
 
-UCLASS(MinimalAPI, NotPlaceable)
+UCLASS(Blueprintable, MinimalAPI, NotPlaceable)
 class AScriptTestActor : public AActor {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString TestString;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float TestValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool TestBool;
     
     AScriptTestActor();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     float TestFunction(float InValue, float InFactor, bool bMultiply);
     
 };

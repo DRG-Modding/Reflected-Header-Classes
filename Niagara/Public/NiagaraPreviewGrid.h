@@ -6,12 +6,12 @@
 #include "NiagaraPreviewGrid.generated.h"
 
 class UNiagaraSystem;
-class UNiagaraPreviewAxis;
-class UNiagaraComponent;
-class ANiagaraPreviewBase;
 class UChildActorComponent;
+class UNiagaraPreviewAxis;
+class ANiagaraPreviewBase;
+class UNiagaraComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class ANiagaraPreviewGrid : public AActor {
     GENERATED_BODY()
 public:
@@ -30,20 +30,20 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ANiagaraPreviewBase> PreviewClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float SpacingX;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float SpacingY;
     
 private:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 NumX;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 NumY;
     
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<UChildActorComponent*> PreviewComponents;
     
 public:

@@ -8,7 +8,7 @@
 class UNiagaraParameterCollectionInstance;
 class UMaterialParameterCollection;
 
-UCLASS()
+UCLASS(Blueprintable)
 class NIAGARA_API UNiagaraParameterCollection : public UObject {
     GENERATED_BODY()
 public:
@@ -16,16 +16,16 @@ protected:
     UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName Namespace;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraVariable> Parameters;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialParameterCollection* SourceMaterialCollection;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UNiagaraParameterCollectionInstance* DefaultInstance;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGuid CompileId;
     
 public:

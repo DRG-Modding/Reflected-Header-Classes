@@ -6,7 +6,7 @@
 class UEditableMesh;
 class UPrimitiveComponent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class EDITABLEMESH_API UEditableMeshFactory : public UObject {
     GENERATED_BODY()
 public:

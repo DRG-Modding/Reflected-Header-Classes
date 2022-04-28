@@ -3,7 +3,7 @@
 #include "MovieSceneEvalTemplateBase.h"
 #include "MovieSceneTrackImplementation.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneTrackImplementation : public FMovieSceneEvalTemplateBase {
     GENERATED_BODY()
 public:

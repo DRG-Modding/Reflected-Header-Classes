@@ -6,16 +6,16 @@ USTRUCT(BlueprintType)
 struct FClothConstraintSetup_Legacy {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float Stiffness;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float StiffnessMultiplier;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float StretchLimit;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float CompressionLimit;
     
     CLOTHINGSYSTEMRUNTIMECOMMON_API FClothConstraintSetup_Legacy();

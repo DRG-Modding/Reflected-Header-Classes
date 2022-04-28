@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "IKChain.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FIKChain {
     GENERATED_BODY()
 public:

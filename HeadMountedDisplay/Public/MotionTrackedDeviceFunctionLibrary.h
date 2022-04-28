@@ -6,7 +6,7 @@
 
 class UMotionControllerComponent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class HEADMOUNTEDDISPLAY_API UMotionTrackedDeviceFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

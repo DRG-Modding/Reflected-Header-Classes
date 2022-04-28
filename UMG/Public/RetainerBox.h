@@ -3,10 +3,10 @@
 #include "ContentWidget.h"
 #include "RetainerBox.generated.h"
 
-class UMaterialInstanceDynamic;
 class UMaterialInterface;
+class UMaterialInstanceDynamic;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API URetainerBox : public UContentWidget {
     GENERATED_BODY()
 public:

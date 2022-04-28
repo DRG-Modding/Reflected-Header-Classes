@@ -3,7 +3,7 @@
 #include "NavArea.h"
 #include "NavArea_Null.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class NAVIGATIONSYSTEM_API UNavArea_Null : public UNavArea {
     GENERATED_BODY()
 public:

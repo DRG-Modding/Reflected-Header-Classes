@@ -3,12 +3,12 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BTTask_BlackboardBase -FallbackName=BTTask_BlackboardBase
 #include "BTTask_MoveToTarget.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTTask_MoveToTarget : public UBTTask_BlackboardBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float AcceptableRadius;
     
 public:

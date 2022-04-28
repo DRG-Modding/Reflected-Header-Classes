@@ -5,13 +5,13 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "GameDLC.generated.h"
 
-class UObject;
-class UResourceData;
+class UFileMediaSource;
 class UTexture2D;
 class UWindowWidget;
-class UFileMediaSource;
+class UResourceData;
+class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UGameDLC : public UDLCBase, public ISaveGameIDInterface {
     GENERATED_BODY()
 public:
@@ -46,7 +46,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UWindowWidget> AnnouncementWidget;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGuid SavegameID;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

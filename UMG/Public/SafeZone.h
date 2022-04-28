@@ -3,7 +3,7 @@
 #include "ContentWidget.h"
 #include "SafeZone.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API USafeZone : public UContentWidget {
     GENERATED_BODY()
 public:

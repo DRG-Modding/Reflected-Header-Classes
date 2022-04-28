@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "OldZiplineSalvage.generated.h"
 
 class AZipLineProjectile;
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API AOldZiplineSalvage : public AActor {
     GENERATED_BODY()
 public:

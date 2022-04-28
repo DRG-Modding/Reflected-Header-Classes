@@ -5,7 +5,7 @@
 
 class UDataTable;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class UMG_API URichTextBlockImageDecorator : public URichTextBlockDecorator {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "TreasureFunctionLibrary.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UTreasureFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

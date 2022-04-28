@@ -3,7 +3,7 @@
 #include "ContentWidget.h"
 #include "NamedSlot.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UNamedSlot : public UContentWidget {
     GENERATED_BODY()
 public:

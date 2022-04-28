@@ -11,10 +11,10 @@ class INTERACTIVETOOLSFRAMEWORK_API UGizmoStateTarget : public UInterface {
 class INTERACTIVETOOLSFRAMEWORK_API IGizmoStateTarget : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual void EndUpdate() PURE_VIRTUAL(EndUpdate,);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     virtual void BeginUpdate() PURE_VIRTUAL(BeginUpdate,);
     
 };

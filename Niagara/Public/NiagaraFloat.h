@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "NiagaraFloat.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraFloat {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float Value;
     
     NIAGARA_API FNiagaraFloat();

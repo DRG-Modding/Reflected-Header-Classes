@@ -5,7 +5,7 @@
 
 class USoundSubmix;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceAudioSubmix : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

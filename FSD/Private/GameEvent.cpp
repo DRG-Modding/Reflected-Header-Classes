@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
 
 class ARessuplyPod;
-class AProceduralSetup;
 class AActor;
-class UDebrisPositioning;
+class AProceduralSetup;
 class AEventStarterButton;
+class UDebrisPositioning;
 
 void AGameEvent::TrySetupGameEvent() {
 }

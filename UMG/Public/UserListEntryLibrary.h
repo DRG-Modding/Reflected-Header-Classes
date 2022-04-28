@@ -7,7 +7,7 @@ class UUserListEntry;
 class IUserListEntry;
 class UListViewBase;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMG_API UUserListEntryLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

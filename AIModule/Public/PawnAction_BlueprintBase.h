@@ -11,7 +11,7 @@ class AIMODULE_API UPawnAction_BlueprintBase : public UPawnAction {
     GENERATED_BODY()
 public:
     UPawnAction_BlueprintBase();
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void ActionTick(APawn* ControlledPawn, float DeltaSeconds);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -23,7 +23,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ActionPause(APawn* ControlledPawn);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void ActionFinished(APawn* ControlledPawn, TEnumAsByte<EPawnActionResult::Type> WithResult);
     
 };

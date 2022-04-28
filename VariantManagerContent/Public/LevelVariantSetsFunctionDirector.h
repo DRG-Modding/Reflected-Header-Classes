@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "LevelVariantSetsFunctionDirector.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class VARIANTMANAGERCONTENT_API ULevelVariantSetsFunctionDirector : public UObject {
     GENERATED_BODY()
 public:

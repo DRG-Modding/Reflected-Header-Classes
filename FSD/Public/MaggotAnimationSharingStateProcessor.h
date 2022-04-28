@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AnimationSharing -ObjectName=AnimationSharingStateProcessor -FallbackName=AnimationSharingStateProcessor
 #include "MaggotAnimationSharingStateProcessor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMaggotAnimationSharingStateProcessor : public UAnimationSharingStateProcessor {
     GENERATED_BODY()
 public:

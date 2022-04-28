@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "ScaledEffect.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DecalData.h"
 #include "FSDGameplayStatics.generated.h"
 
-class UObject;
 class UDecalComponent;
+class UObject;
+class UAudioComponent;
 class UFXSystemComponent;
 class AActor;
 class UMaterialInterface;
-class UAudioComponent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UFSDGameplayStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

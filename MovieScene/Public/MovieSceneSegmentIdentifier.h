@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FMovieSceneSegmentIdentifier {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 IdentifierIndex;
     
     MOVIESCENE_API FMovieSceneSegmentIdentifier();

@@ -4,14 +4,14 @@
 #include "SlateBrush.h"
 #include "InlineTextImageStyle.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SLATECORE_API FInlineTextImageStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateBrush Image;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     int16 Baseline;
     
     FInlineTextImageStyle();

@@ -6,7 +6,7 @@
 
 class UMaterialParameterCollection;
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENETRACKS_API UMovieSceneMaterialParameterCollectionTrack : public UMovieSceneMaterialTrack, public IMovieSceneTrackTemplateProducer {
     GENERATED_BODY()
 public:

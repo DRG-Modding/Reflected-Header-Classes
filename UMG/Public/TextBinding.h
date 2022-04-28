@@ -3,7 +3,7 @@
 #include "PropertyBinding.h"
 #include "TextBinding.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UTextBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:

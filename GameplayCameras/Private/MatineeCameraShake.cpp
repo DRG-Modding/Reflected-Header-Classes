@@ -2,8 +2,8 @@
 #include "Templates/SubclassOf.h"
 
 class APlayerCameraManager;
-class UCameraShakeSourceComponent;
 class UMatineeCameraShake;
+class UCameraShakeSourceComponent;
 
 UMatineeCameraShake* UMatineeCameraShake::StartMatineeCameraShakeFromSource(APlayerCameraManager* PlayerCameraManager, TSubclassOf<UMatineeCameraShake> ShakeClass, UCameraShakeSourceComponent* SourceComponent, float Scale, ECameraShakePlaySpace PlaySpace, FRotator UserPlaySpaceRot) {
     return NULL;

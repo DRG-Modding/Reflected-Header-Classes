@@ -4,17 +4,17 @@
 #include "GeometryCacheMeshData.h"
 #include "GeometryCacheTrack_FlipbookAnimation.generated.h"
 
-UCLASS(CollapseCategories, Deprecated, NotPlaceable)
+UCLASS(Blueprintable, CollapseCategories, Deprecated, NotPlaceable)
 class GEOMETRYCACHE_API UDEPRECATED_GeometryCacheTrack_FlipbookAnimation : public UGeometryCacheTrack {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 NumMeshSamples;
     
 public:
     UDEPRECATED_GeometryCacheTrack_FlipbookAnimation();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void AddMeshSample(const FGeometryCacheMeshData& MeshData, const float SampleTime);
     
 };

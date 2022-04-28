@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraDataInterface.h"
+#include "ENDISkeletalMesh_SkinningMode.h"
 #include "ENDISkeletalMesh_SourceMode.h"
 #include "NiagaraUserParameterBinding.h"
-#include "ENDISkeletalMesh_SkinningMode.h"
 #include "NiagaraDataInterfaceSkeletalMesh.generated.h"
 
-class USkeletalMeshComponent;
 class AActor;
+class USkeletalMeshComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceSkeletalMesh : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
@@ -22,7 +22,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraUserParameterBinding MeshUserParameter;
     
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* SourceComponent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

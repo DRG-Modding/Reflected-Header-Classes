@@ -4,11 +4,11 @@
 
 class UObject;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraSystemCompileRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UObject*> RootObjects;
     
     NIAGARA_API FNiagaraSystemCompileRequest();

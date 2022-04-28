@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SlateWidgetStyle.h"
-#include "SlateFontInfo.h"
-#include "EditableTextBoxStyle.h"
 #include "SlateBrush.h"
+#include "EditableTextBoxStyle.h"
 #include "Margin.h"
+#include "SlateFontInfo.h"
 #include "SearchBoxStyle.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SLATECORE_API FSearchBoxStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTasks -ObjectName=GameplayTaskResource -FallbackName=GameplayTaskResource
 #include "AIResource_Logic.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UAIResource_Logic : public UGameplayTaskResource {
     GENERATED_BODY()
 public:

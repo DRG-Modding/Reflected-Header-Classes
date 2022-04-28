@@ -1,9 +1,9 @@
 #include "DetPack.h"
 #include "Net/UnrealNetwork.h"
-#include "SimpleHealthComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ProjectileMovementComponent -FallbackName=ProjectileMovementComponent
-#include "ExplosionComponent.h"
 #include "SingleUsableComponent.h"
+#include "ExplosionComponent.h"
+#include "SimpleHealthComponent.h"
 
 class APlayerCharacter;
 class UHealthComponentBase;

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DamageSubsystemItem.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
+#include "DamageSubsystemItem.h"
 #include "DamageSubsystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UDamageSubsystem : public UGameInstanceSubsystem {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FDamageSubsystemItem> Items;
     
 public:

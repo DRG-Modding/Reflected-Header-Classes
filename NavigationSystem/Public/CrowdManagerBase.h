@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "CrowdManagerBase.generated.h"
 
-UCLASS(Abstract, Transient)
+UCLASS(Abstract, Blueprintable, Transient)
 class NAVIGATIONSYSTEM_API UCrowdManagerBase : public UObject {
     GENERATED_BODY()
 public:

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FActorSequenceObjectReferences {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FActorSequenceObjectReference> Array;
     
     ACTORSEQUENCE_API FActorSequenceObjectReferences();

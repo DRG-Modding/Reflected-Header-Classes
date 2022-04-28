@@ -6,7 +6,7 @@
 
 class UModularSynthPresetBank;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SYNTHESIS_API UModularSynthLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

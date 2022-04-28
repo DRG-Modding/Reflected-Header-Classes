@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "LostPack.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API ALostPack : public AActor {
     GENERATED_BODY()
 public:

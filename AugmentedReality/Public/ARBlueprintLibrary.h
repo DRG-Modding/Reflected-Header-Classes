@@ -1,47 +1,47 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "EARCaptureType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
 #include "ARTraceResult.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EARSessionType.h"
-#include "EARSceneReconstruction.h"
 #include "EARSessionTrackingFeature.h"
+#include "EARSceneReconstruction.h"
 #include "EARWorldMappingState.h"
-#include "EARTrackingQualityReason.h"
 #include "EARTrackingQuality.h"
+#include "EARTrackingQualityReason.h"
+#include "ARSessionStatus.h"
 #include "ARVideoFormat.h"
 #include "EARObjectClassification.h"
 #include "ARCameraIntrinsics.h"
 #include "EARTextureType.h"
-#include "ARSessionStatus.h"
 #include "ARPose2D.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ARBlueprintLibrary.generated.h"
 
-class UARTexture;
+class UAREnvironmentCaptureProbe;
 class USceneComponent;
-class UARTrackedPoint;
-class UARPin;
-class UARCandidateImage;
 class UARTrackedImage;
 class UARSessionConfig;
-class UARLightEstimate;
+class UARTrackedPoint;
+class UARPin;
 class UARTrackedGeometry;
-class UARPlaneGeometry;
+class UARTexture;
+class UARLightEstimate;
 class UARTextureCameraImage;
+class UTexture2D;
 class UARTextureCameraDepth;
 class UARTrackedPose;
-class UTexture2D;
+class UARPlaneGeometry;
 class UObject;
-class UAREnvironmentCaptureProbe;
+class UARCandidateImage;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UARBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -166,7 +166,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static UARTextureCameraDepth* GetCameraDepth();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetARWorldScale();
     
     UFUNCTION(BlueprintCallable)

@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EFFTPeakInterpolationMethod -FallbackName=EFFTPeakInterpolationMethod
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EFFTPeakInterpolationMethod -FallbackName=EFFTPeakInterpolationMethod
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EFFTSize -FallbackName=EFFTSize
+#include "OnSoundLoadCompleteDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAudioRecordingExportType -FallbackName=EAudioRecordingExportType
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SourceEffectChainEntry -FallbackName=SourceEffectChainEntry
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EFFTWindowType -FallbackName=EFFTWindowType
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAudioSpectrumType -FallbackName=EAudioSpectrumType
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAudioSpectrumBandPresetType -FallbackName=EAudioSpectrumBandPresetType
-#include "OnSoundLoadCompleteDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundSubmixSpectralAnalysisBandSettings -FallbackName=SoundSubmixSpectralAnalysisBandSettings
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAudioSpectrumBandPresetType -FallbackName=EAudioSpectrumBandPresetType
 #include "EMusicalNoteName.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SourceEffectChainEntry -FallbackName=SourceEffectChainEntry
 #include "AudioMixerBlueprintLibrary.generated.h"
 
 class UObject;
 class USoundWave;
-class USoundEffectSubmixPreset;
 class USoundSubmix;
 class UAudioBus;
-class USoundEffectSourcePresetChain;
 class USoundCue;
+class USoundEffectSubmixPreset;
+class USoundEffectSourcePresetChain;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class AUDIOMIXER_API UAudioMixerBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -95,7 +95,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<FSoundSubmixSpectralAnalysisBandSettings> MakeMusicalSpectralAnalysisBandSettings(int32 InNumSemitones, EMusicalNoteName InStartingMusicalNote, int32 InStartingOctave, int32 InAttackTimeMsec, int32 InReleaseTimeMsec);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static TArray<FSoundSubmixSpectralAnalysisBandSettings> MakeFullSpectrumSpectralAnalysisBandSettings(int32 InNumBands, float InMinimumFrequency, float InMaximumFrequency, int32 InAttackTimeMsec, int32 InReleaseTimeMsec);
     
     UFUNCTION(BlueprintCallable)

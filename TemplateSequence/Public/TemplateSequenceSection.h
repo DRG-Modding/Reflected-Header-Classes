@@ -5,11 +5,11 @@
 #include "TemplateSectionPropertyScale.h"
 #include "TemplateSequenceSection.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class TEMPLATESEQUENCE_API UTemplateSequenceSection : public UMovieSceneSubSection, public IMovieSceneEntityProvider {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FTemplateSectionPropertyScale> PropertyScales;
     
     UTemplateSequenceSection();

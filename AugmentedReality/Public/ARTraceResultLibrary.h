@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARTraceResult.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+#include "ARTraceResult.h"
 #include "EARLineTraceChannels.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "ARTraceResultLibrary.generated.h"
 
 class UARTrackedGeometry;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UARTraceResultLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -28,7 +28,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FTransform GetLocalToTrackingTransform(const FARTraceResult& TraceResult);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetDistanceFromCamera(const FARTraceResult& TraceResult);
     
 };

@@ -3,7 +3,7 @@
 #include "NiagaraParameterStore.h"
 #include "NiagaraScriptInstanceParameterStore.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraScriptInstanceParameterStore : public FNiagaraParameterStore {
     GENERATED_BODY()
 public:

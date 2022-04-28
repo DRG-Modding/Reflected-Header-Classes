@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+#include "ETrackingConfidence.h"
 #include "EOculusHandType.h"
 #include "OculusCapsuleCollider.h"
-#include "ETrackingConfidence.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "EBone.h"
 #include "OculusInputFunctionLibrary.generated.h"
 
 class USkinnedMeshComponent;
 class USkeletalMesh;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class OCULUSINPUT_API UOculusInputFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -35,7 +35,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool GetHandSkeletalMesh(USkeletalMesh* HandSkeletalMesh, EOculusHandType SkeletonType, EOculusHandType MeshType, const float WorldToMeters);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetHandScale(const EOculusHandType DeviceHand, const int32 ControllerIndex);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

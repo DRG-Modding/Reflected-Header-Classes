@@ -4,7 +4,7 @@
 #include "MovieSceneCameraShakeSectionData.h"
 #include "MovieSceneCameraShakeSourceShakeSection.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneCameraShakeSourceShakeSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:

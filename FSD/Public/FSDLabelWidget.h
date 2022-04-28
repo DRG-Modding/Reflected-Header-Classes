@@ -5,7 +5,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
 #include "FSDLabelWidget.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UFSDLabelWidget : public UTextBlock {
     GENERATED_BODY()
 public:

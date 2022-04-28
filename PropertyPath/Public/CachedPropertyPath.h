@@ -5,15 +5,15 @@
 
 class UFunction;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct PROPERTYPATH_API FCachedPropertyPath {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FPropertyPathSegment> Segments;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFunction* CachedFunction;
     
 public:

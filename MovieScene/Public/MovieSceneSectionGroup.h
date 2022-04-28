@@ -4,12 +4,12 @@
 
 class UMovieSceneSection;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneSectionGroup {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, Export)
     TArray<TWeakObjectPtr<UMovieSceneSection>> Sections;
     
 public:

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SlateWidgetStyle.h"
-#include "Margin.h"
+#include "SlateSound.h"
 #include "ESlateCheckBoxType.h"
 #include "SlateBrush.h"
 #include "SlateColor.h"
-#include "SlateSound.h"
+#include "Margin.h"
 #include "CheckBoxStyle.generated.h"
 
 USTRUCT(BlueprintType)
 struct SLATECORE_API FCheckBoxStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<ESlateCheckBoxType::Type> CheckBoxType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

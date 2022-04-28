@@ -7,7 +7,7 @@
 class USoundSubmix;
 class UAudioBus;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AUDIOMIXER_API USubmixEffectDynamicsProcessorPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:

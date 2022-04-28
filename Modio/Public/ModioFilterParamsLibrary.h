@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "EModioSortFieldType.h"
-#include "ModioFilterParams.h"
 #include "EModioSortDirection.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "ModioFilterParams.h"
+#include "EModioSortFieldType.h"
 #include "ModioModID.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
 #include "ModioFilterParamsLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MODIO_API UModioFilterParamsLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -29,7 +29,7 @@ private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioFilterParams SortBy(UPARAM(Ref) FModioFilterParams& Filter, EModioSortFieldType ByField, EModioSortDirection ByDirection);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FModioFilterParams PagedResults(UPARAM(Ref) FModioFilterParams& Filter, int64 PageNumber, int64 PageSize);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -37,6 +37,9 @@ private:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioFilterParams NameContains(UPARAM(Ref) FModioFilterParams& Filter, const FString& SearchString);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FModioFilterParams MetadataLike(UPARAM(Ref) FModioFilterParams& Filter, const FString& SearchString);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioFilterParams MatchingIDs(UPARAM(Ref) FModioFilterParams& Filter, const TArray<FModioModID>& IDs);
@@ -47,7 +50,7 @@ private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FModioFilterParams MarkedLiveAfter(UPARAM(Ref) FModioFilterParams& Filter, FDateTime LiveAfter);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FModioFilterParams IndexedResults(UPARAM(Ref) FModioFilterParams& Filter, int64 StartIndex, int64 ResultCount);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

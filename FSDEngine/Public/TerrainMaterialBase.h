@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimaryDataAsset -FallbackName=PrimaryDataAsset
 #include "TerrainMaterialBase.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSDENGINE_API UTerrainMaterialBase : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:

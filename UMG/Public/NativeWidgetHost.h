@@ -3,7 +3,7 @@
 #include "Widget.h"
 #include "NativeWidgetHost.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UNativeWidgetHost : public UWidget {
     GENERATED_BODY()
 public:

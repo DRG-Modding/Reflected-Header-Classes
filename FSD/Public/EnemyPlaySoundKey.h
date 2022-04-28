@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "EnemyPlaySoundKey.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UEnemyPlaySoundKey : public UDataAsset {
     GENERATED_BODY()
 public:

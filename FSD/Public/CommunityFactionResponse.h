@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "CommunityFactionResponse.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FCommunityFactionResponse {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> Goals;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<float> Values;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<float> Members;
     
     FSD_API FCommunityFactionResponse();

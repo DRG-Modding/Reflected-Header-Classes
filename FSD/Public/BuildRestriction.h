@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "BuildRestriction.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBuildRestriction : public UDataAsset {
     GENERATED_BODY()
 public:

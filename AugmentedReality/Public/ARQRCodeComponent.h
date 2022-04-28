@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ARComponent.h"
-#include "ARQRCodeUpdatePayload.h"
 #include "EQRCodeComponentDebugMode.h"
+#include "ARQRCodeUpdatePayload.h"
 #include "ARQRCodeComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class AUGMENTEDREALITY_API UARQRCodeComponent : public UARComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_Payload, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Payload, meta=(AllowPrivateAccess=true))
     FARQRCodeUpdatePayload ReplicatedPayload;
     
 public:

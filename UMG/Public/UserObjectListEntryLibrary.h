@@ -7,7 +7,7 @@ class UObject;
 class UUserObjectListEntry;
 class IUserObjectListEntry;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMG_API UUserObjectListEntryLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

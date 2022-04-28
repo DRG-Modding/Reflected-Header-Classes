@@ -3,7 +3,7 @@
 #include "FixedFrameRateCustomTimeStep.h"
 #include "GenlockedCustomTimeStep.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class TIMEMANAGEMENT_API UGenlockedCustomTimeStep : public UFixedFrameRateCustomTimeStep {
     GENERATED_BODY()
 public:

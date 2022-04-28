@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "LevelSequenceLegacyObjectReference.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FLevelSequenceLegacyObjectReference {
     GENERATED_BODY()
 public:

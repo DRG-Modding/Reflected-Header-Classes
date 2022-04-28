@@ -5,14 +5,14 @@
 class UNiagaraEffectType;
 class UNiagaraComponent;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraScalabilityManager {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UNiagaraEffectType* EffectType;
     
-    UPROPERTY(BlueprintReadWrite, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     TArray<UNiagaraComponent*> ManagedComponents;
     
     NIAGARA_API FNiagaraScalabilityManager();

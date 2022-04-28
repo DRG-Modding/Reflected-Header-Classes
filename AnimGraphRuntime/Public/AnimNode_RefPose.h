@@ -4,11 +4,11 @@
 #include "ERefPoseType.h"
 #include "AnimNode_RefPose.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct ANIMGRAPHRUNTIME_API FAnimNode_RefPose : public FAnimNode_Base {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<ERefPoseType> RefPoseType;
     
     FAnimNode_RefPose();

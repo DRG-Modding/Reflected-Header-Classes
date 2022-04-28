@@ -4,7 +4,7 @@
 #include "EHandKeypoint.h"
 #include "HandKeypointConversion.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class HEADMOUNTEDDISPLAY_API UHandKeypointConversion : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

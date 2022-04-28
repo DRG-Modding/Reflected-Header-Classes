@@ -3,7 +3,7 @@
 #include "NavArea.h"
 #include "NavArea_Obstacle.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class NAVIGATIONSYSTEM_API UNavArea_Obstacle : public UNavArea {
     GENERATED_BODY()
 public:

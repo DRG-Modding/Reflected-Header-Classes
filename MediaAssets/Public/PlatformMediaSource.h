@@ -3,12 +3,12 @@
 #include "MediaSource.h"
 #include "PlatformMediaSource.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class MEDIAASSETS_API UPlatformMediaSource : public UMediaSource {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMediaSource* MediaSource;
     
 public:

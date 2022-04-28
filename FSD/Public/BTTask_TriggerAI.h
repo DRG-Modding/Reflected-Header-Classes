@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BTTaskNode -FallbackName=BTTaskNode
 #include "BTTask_TriggerAI.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UBTTask_TriggerAI : public UBTTaskNode {
     GENERATED_BODY()
 public:

@@ -4,7 +4,7 @@
 #include "MovieSceneBindingOverrideData.h"
 #include "MovieSceneBindingOverrides.generated.h"
 
-UCLASS(DefaultToInstanced, EditInlineNew)
+UCLASS(Blueprintable, DefaultToInstanced, EditInlineNew)
 class MOVIESCENE_API UMovieSceneBindingOverrides : public UObject {
     GENERATED_BODY()
 public:

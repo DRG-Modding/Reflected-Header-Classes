@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "MineralTradeData.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UMineralTradeData : public UDataAsset {
     GENERATED_BODY()
 public:

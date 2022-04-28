@@ -5,24 +5,24 @@
 #include "BTDecoratorLogic.h"
 #include "BehaviorTree.generated.h"
 
+class UBTDecorator;
 class UBTCompositeNode;
 class UBlackboardData;
-class UBTDecorator;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBehaviorTree : public UObject, public IBlackboardAssetProvider {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBTCompositeNode* RootNode;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlackboardData* BlackboardAsset;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBTDecorator*> RootDecorators;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBTDecoratorLogic> RootDecoratorOps;
     
     UBehaviorTree();

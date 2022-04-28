@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDatasmithCADRetessellationRule.h"
 #include "DatasmithTessellationOptions.h"
+#include "EDatasmithCADRetessellationRule.h"
 #include "DatasmithRetessellationOptions.generated.h"
 
 USTRUCT(BlueprintType)

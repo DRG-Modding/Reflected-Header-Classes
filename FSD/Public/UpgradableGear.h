@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GearStatEntry.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
+#include "GearStatEntry.h"
 #include "UpgradableGear.generated.h"
 
 class AFSDPlayerState;

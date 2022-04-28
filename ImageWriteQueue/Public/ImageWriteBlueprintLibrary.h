@@ -6,7 +6,7 @@
 
 class UTexture;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UImageWriteBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

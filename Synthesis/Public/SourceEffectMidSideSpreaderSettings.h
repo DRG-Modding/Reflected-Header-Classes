@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct SYNTHESIS_API FSourceEffectMidSideSpreaderSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float SpreadAmount;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

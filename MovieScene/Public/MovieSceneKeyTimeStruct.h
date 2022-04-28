@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneKeyStruct.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
+#include "MovieSceneKeyStruct.h"
 #include "MovieSceneKeyTimeStruct.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneKeyTimeStruct : public FMovieSceneKeyStruct {
     GENERATED_BODY()
 public:

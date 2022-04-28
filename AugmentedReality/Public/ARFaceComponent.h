@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARComponent.h"
 #include "EFaceComponentDebugMode.h"
+#include "ARComponent.h"
 #include "EARFaceTransformMixing.h"
 #include "ARFaceUpdatePayload.h"
 #include "ARFaceComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class AUGMENTEDREALITY_API UARFaceComponent : public UARComponent {
     GENERATED_BODY()
 public:
@@ -20,7 +20,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bFaceOutOfScreen;
     
-    UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_Payload, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Payload, meta=(AllowPrivateAccess=true))
     FARFaceUpdatePayload ReplicatedPayload;
     
 public:

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "SessionServiceLogUnsubscribe.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FSessionServiceLogUnsubscribe {
     GENERATED_BODY()
 public:

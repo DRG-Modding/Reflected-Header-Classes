@@ -8,7 +8,7 @@ struct MOVIESCENE_API FMovieSceneEntitySystemGraph {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMovieSceneEntitySystemGraphNodes Nodes;
     
 public:

@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "EngineServiceNotification.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEngineServiceNotification {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Text;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     double TimeSeconds;
     
     ENGINEMESSAGES_API FEngineServiceNotification();

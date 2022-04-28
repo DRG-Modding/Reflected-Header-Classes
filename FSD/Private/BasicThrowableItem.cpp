@@ -1,14 +1,14 @@
 #include "BasicThrowableItem.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoxComponent -FallbackName=BoxComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 #include "CarriableComponent.h"
 #include "InstantUsable.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 #include "FirstPersonStaticMeshComponent.h"
 
-class APlayerCharacter;
-class UPrimitiveComponent;
 class AActor;
+class UPrimitiveComponent;
+class APlayerCharacter;
 
 void ABasicThrowableItem::ThrowItem(const FVector& throwForce) {
 }

@@ -3,8 +3,8 @@
 class AActor;
 class UBTNode;
 class UObject;
-class UBehaviorTreeComponent;
 class UBlackboardComponent;
+class UBehaviorTreeComponent;
 
 void UBTFunctionLibrary::StopUsingExternalEvent(UBTNode* NodeOwner) {
 }

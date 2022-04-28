@@ -3,7 +3,7 @@
 #include "MovieSceneCaptureProtocolBase.h"
 #include "MovieSceneAudioCaptureProtocolBase.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class MOVIESCENECAPTURE_API UMovieSceneAudioCaptureProtocolBase : public UMovieSceneCaptureProtocolBase {
     GENERATED_BODY()
 public:

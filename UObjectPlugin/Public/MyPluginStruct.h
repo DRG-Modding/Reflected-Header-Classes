@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FMyPluginStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString TestString;
     
     UOBJECTPLUGIN_API FMyPluginStruct();

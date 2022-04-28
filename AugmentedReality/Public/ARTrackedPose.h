@@ -4,12 +4,12 @@
 #include "ARPose3D.h"
 #include "ARTrackedPose.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UARTrackedPose : public UARTrackedGeometry {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FARPose3D TrackedPose;
     
 public:

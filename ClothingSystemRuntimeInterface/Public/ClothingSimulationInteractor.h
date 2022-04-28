@@ -6,11 +6,11 @@
 
 class UClothingInteractor;
 
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, Blueprintable)
 class CLOTHINGSYSTEMRUNTIMEINTERFACE_API UClothingSimulationInteractor : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, UClothingInteractor*> ClothingInteractors;
     
     UClothingSimulationInteractor();
@@ -26,7 +26,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void PhysicsAssetUpdated();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetSimulationTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

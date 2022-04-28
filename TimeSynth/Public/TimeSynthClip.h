@@ -2,12 +2,12 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "TimeSynthClipSound.h"
-#include "ETimeSynthEventClipQuantization.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "TimeSynthTimeDef.h"
+#include "ETimeSynthEventClipQuantization.h"
 #include "TimeSynthClip.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class TIMESYNTH_API UTimeSynthClip : public UObject {
     GENERATED_BODY()
 public:

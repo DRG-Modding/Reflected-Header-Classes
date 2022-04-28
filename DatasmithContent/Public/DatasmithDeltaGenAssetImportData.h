@@ -3,7 +3,7 @@
 #include "DatasmithAssetImportData.h"
 #include "DatasmithDeltaGenAssetImportData.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class DATASMITHCONTENT_API UDatasmithDeltaGenAssetImportData : public UDatasmithAssetImportData {
     GENERATED_BODY()
 public:

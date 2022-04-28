@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MediaTextureOrientation.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Texture -FallbackName=Texture
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TextureAddress -FallbackName=TextureAddress
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TextureAddress -FallbackName=TextureAddress
 #include "MediaTextureOutputFormat.h"
+#include "MediaTextureOrientation.h"
 #include "MediaTexture.generated.h"
 
 class UMediaPlayer;
 
-UCLASS()
+UCLASS(Blueprintable)
 class MEDIAASSETS_API UMediaTexture : public UTexture {
     GENERATED_BODY()
 public:
-    UPROPERTY(AdvancedDisplay, AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, AssetRegistrySearchable, EditAnywhere)
     TEnumAsByte<TextureAddress> AddressX;
     
-    UPROPERTY(AdvancedDisplay, AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, AssetRegistrySearchable, EditAnywhere)
     TEnumAsByte<TextureAddress> AddressY;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -28,19 +28,19 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool EnableGenMips;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint8 NumMips;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool NewStyleOutput;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<MediaTextureOutputFormat> OutputFormat;
     
-    UPROPERTY(BlueprintReadWrite, SkipSerialization, TextExportTransient, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, SkipSerialization, TextExportTransient, Transient)
     float CurrentAspectRatio;
     
-    UPROPERTY(BlueprintReadWrite, SkipSerialization, TextExportTransient, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, SkipSerialization, TextExportTransient, Transient)
     TEnumAsByte<MediaTextureOrientation> CurrentOrientation;
     
 protected:
@@ -64,7 +64,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetHeight() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetAspectRatio() const;
     
 };

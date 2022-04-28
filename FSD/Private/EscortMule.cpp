@@ -1,9 +1,9 @@
 #include "EscortMule.h"
 #include "Net/UnrealNetwork.h"
-#include "RestrictedResourceBank.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 #include "SimpleObjectInfoComponent.h"
 #include "FriendlyHealthComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+#include "RestrictedResourceBank.h"
 #include "OutlineComponent.h"
 
 class APlayerCharacter;

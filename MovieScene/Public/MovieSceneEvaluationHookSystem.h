@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MovieSceneEvaluationHookEventContainer.h"
 #include "MovieSceneEntitySystem.h"
 #include "MovieSceneEvaluationInstanceKey.h"
-#include "MovieSceneEvaluationHookEventContainer.h"
 #include "MovieSceneEvaluationHookSystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENE_API UMovieSceneEvaluationHookSystem : public UMovieSceneEntitySystem {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FMovieSceneEvaluationInstanceKey, FMovieSceneEvaluationHookEventContainer> PendingEventsByRootInstance;
     
 public:

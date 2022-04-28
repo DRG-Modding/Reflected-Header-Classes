@@ -3,7 +3,7 @@
 #include "AnyButtonInputBehavior.h"
 #include "MultiClickSequenceInputBehavior.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UMultiClickSequenceInputBehavior : public UAnyButtonInputBehavior {
     GENERATED_BODY()
 public:

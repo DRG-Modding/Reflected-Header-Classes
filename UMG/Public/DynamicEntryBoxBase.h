@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Widget.h"
-#include "SlateChildSize.h"
-#include "UserWidgetPool.h"
-#include "EDynamicBoxType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EVerticalAlignment -FallbackName=EVerticalAlignment
-#include "RadialBoxSettings.h"
+#include "Widget.h"
+#include "EDynamicBoxType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EHorizontalAlignment -FallbackName=EHorizontalAlignment
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "SlateChildSize.h"
+#include "RadialBoxSettings.h"
+#include "UserWidgetPool.h"
 #include "DynamicEntryBoxBase.generated.h"
 
 class UUserWidget;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class UMG_API UDynamicEntryBoxBase : public UWidget {
     GENERATED_BODY()
 public:
@@ -29,10 +29,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateChildSize EntrySizeRule;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EHorizontalAlignment> EntryHorizontalAlignment;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EVerticalAlignment> EntryVerticalAlignment;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -42,7 +42,7 @@ protected:
     FRadialBoxSettings RadialBoxSettings;
     
 private:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FUserWidgetPool EntryWidgetPool;
     
 public:

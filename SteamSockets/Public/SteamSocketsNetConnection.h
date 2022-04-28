@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NetConnection -FallbackName=NetConnection
 #include "SteamSocketsNetConnection.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class STEAMSOCKETS_API USteamSocketsNetConnection : public UNetConnection {
     GENERATED_BODY()
 public:

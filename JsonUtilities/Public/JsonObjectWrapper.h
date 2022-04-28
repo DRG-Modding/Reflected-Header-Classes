@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "JsonObjectWrapper.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct JSONUTILITIES_API FJsonObjectWrapper {
     GENERATED_BODY()
 public:

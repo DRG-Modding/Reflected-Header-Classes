@@ -6,7 +6,7 @@
 class UFieldNodeInt;
 class UToFloatField;
 
-UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UToFloatField : public UFieldNodeFloat {
     GENERATED_BODY()
 public:

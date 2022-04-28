@@ -3,11 +3,11 @@
 #include "BlackboardKeyType.h"
 #include "BlackboardKeyType_Class.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class AIMODULE_API UBlackboardKeyType_Class : public UBlackboardKeyType {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UClass* BaseClass;
     
     UBlackboardKeyType_Class();

@@ -4,12 +4,12 @@
 #include "MyPluginStruct.h"
 #include "MyPluginObject.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMyPluginObject : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMyPluginStruct MyStruct;
     
 public:

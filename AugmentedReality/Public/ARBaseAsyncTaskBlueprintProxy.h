@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintAsyncActionBase -FallbackName=BlueprintAsyncActionBase
 #include "ARBaseAsyncTaskBlueprintProxy.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AUGMENTEDREALITY_API UARBaseAsyncTaskBlueprintProxy : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:

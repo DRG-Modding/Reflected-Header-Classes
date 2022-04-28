@@ -4,12 +4,12 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=EMouseCursor -FallbackName=EMouseCursor
 #include "MouseCursorBinding.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UMouseCursorBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
     UMouseCursorBinding();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TEnumAsByte<EMouseCursor::Type> GetValue() const;
     
 };

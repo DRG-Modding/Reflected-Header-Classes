@@ -1,7 +1,7 @@
 #include "LeaderboardQueryCallbackProxy.h"
 
-class APlayerController;
 class ULeaderboardQueryCallbackProxy;
+class APlayerController;
 
 ULeaderboardQueryCallbackProxy* ULeaderboardQueryCallbackProxy::CreateProxyObjectForIntQuery(APlayerController* PlayerController, FName StatName) {
     return NULL;

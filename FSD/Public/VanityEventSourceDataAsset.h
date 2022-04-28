@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "VanityEventSourceDataAsset.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UVanityEventSourceDataAsset : public UDataAsset {
     GENERATED_BODY()
 public:

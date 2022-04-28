@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FNCPool {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FNCPoolElement> FreeElements;
     
     NIAGARA_API FNCPool();

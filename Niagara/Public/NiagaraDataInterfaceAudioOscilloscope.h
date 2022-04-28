@@ -5,7 +5,7 @@
 
 class USoundSubmix;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceAudioOscilloscope : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:
@@ -15,7 +15,7 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Resolution;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float ScopeInMilliseconds;
     
     UNiagaraDataInterfaceAudioOscilloscope();

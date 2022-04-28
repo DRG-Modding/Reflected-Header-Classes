@@ -4,14 +4,14 @@
 
 class UCaveInfluencer;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FInfluenceSphere {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCaveInfluencer* Influencer;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float Radius;
     
     FSD_API FInfluenceSphere();

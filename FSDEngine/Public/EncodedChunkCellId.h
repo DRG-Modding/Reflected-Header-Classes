@@ -3,14 +3,14 @@
 #include "EncodedChunkId.h"
 #include "EncodedChunkCellId.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEncodedChunkCellId {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEncodedChunkId ChunkId;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint16 cellOffset;
     
     FSDENGINE_API FEncodedChunkCellId();

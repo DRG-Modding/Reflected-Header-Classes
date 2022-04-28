@@ -5,7 +5,7 @@
 #include "TapDelayInfo.h"
 #include "SubmixEffectTapDelayPreset.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USubmixEffectTapDelayPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "InteractiveGizmoBuilder.h"
 #include "IntervalGizmoBuilder.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UIntervalGizmoBuilder : public UInteractiveGizmoBuilder {
     GENERATED_BODY()
 public:

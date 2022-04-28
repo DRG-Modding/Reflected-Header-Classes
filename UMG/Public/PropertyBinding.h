@@ -4,17 +4,17 @@
 #include "DynamicPropertyPath.h"
 #include "PropertyBinding.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UPropertyBinding : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, Transient)
     TWeakObjectPtr<UObject> SourceObject;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDynamicPropertyPath SourcePath;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName DestinationProperty;
     
     UPropertyBinding();

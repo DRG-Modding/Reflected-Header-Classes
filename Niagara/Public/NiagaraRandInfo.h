@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "NiagaraRandInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraRandInfo {
     GENERATED_BODY()
 public:

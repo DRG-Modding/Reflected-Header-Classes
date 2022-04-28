@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
-#include "GameplayTagContainer.h"
 #include "GameplayTag.h"
+#include "GameplayTagContainer.h"
 #include "GameplayTagAssetInterface.generated.h"
 
 UINTERFACE(BlueprintType, MinimalAPI, meta=(CannotImplementInterfaceInBlueprint))

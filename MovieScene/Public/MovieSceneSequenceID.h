@@ -7,7 +7,7 @@ struct FMovieSceneSequenceID {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 Value;
     
 public:

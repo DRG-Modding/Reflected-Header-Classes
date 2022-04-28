@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneEntitySystem -FallbackName=MovieSceneEntitySystem
 #include "TemplateSequencePropertyScalingInstantiatorSystem.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UTemplateSequencePropertyScalingInstantiatorSystem : public UMovieSceneEntitySystem {
     GENERATED_BODY()
 public:

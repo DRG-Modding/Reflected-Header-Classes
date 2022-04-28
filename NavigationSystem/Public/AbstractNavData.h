@@ -3,7 +3,7 @@
 #include "NavigationData.h"
 #include "AbstractNavData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class NAVIGATIONSYSTEM_API AAbstractNavData : public ANavigationData {
     GENERATED_BODY()
 public:

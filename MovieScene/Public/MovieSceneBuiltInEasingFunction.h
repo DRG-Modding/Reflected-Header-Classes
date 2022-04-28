@@ -5,7 +5,7 @@
 #include "EMovieSceneBuiltInEasing.h"
 #include "MovieSceneBuiltInEasingFunction.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENE_API UMovieSceneBuiltInEasingFunction : public UObject, public IMovieSceneEasingFunction {
     GENERATED_BODY()
 public:

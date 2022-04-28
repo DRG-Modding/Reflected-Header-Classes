@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "AvfMediaSettings.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AVFMEDIAFACTORY_API UAvfMediaSettings : public UObject {
     GENERATED_BODY()
 public:

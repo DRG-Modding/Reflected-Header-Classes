@@ -1,8 +1,8 @@
 #include "AchievementQueryCallbackProxy.h"
 
-class UAchievementQueryCallbackProxy;
 class UObject;
 class APlayerController;
+class UAchievementQueryCallbackProxy;
 
 UAchievementQueryCallbackProxy* UAchievementQueryCallbackProxy::CacheAchievements(UObject* WorldContextObject, APlayerController* PlayerController) {
     return NULL;

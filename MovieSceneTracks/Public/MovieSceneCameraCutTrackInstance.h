@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneTrackInstance -FallbackName=MovieSceneTrackInstance
 #include "MovieSceneCameraCutTrackInstance.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class UMovieSceneCameraCutTrackInstance : public UMovieSceneTrackInstance {
     GENERATED_BODY()
 public:

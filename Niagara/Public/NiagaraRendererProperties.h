@@ -5,7 +5,7 @@
 #include "ENiagaraRendererMotionVectorSetting.h"
 #include "NiagaraRendererProperties.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class NIAGARA_API UNiagaraRendererProperties : public UNiagaraMergeable {
     GENERATED_BODY()
 public:
@@ -15,14 +15,14 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SortOrderHint;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     ENiagaraRendererMotionVectorSetting MotionVectorSetting;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsEnabled;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bMotionBlurEnabled;
     
 public:

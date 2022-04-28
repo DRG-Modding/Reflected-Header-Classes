@@ -6,12 +6,12 @@
 
 class UNiagaraSystem;
 
-UCLASS(Transient)
+UCLASS(Blueprintable, Transient)
 class NIAGARA_API UNiagaraComponentPool : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<UNiagaraSystem*, FNCPool> WorldParticleSystemPools;
     
 public:

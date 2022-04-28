@@ -3,7 +3,7 @@
 #include "CompressedImageSequenceProtocol.h"
 #include "ImageSequenceProtocol_JPG.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENECAPTURE_API UImageSequenceProtocol_JPG : public UCompressedImageSequenceProtocol {
     GENERATED_BODY()
 public:

@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FDatasmithCameraLensSettingsTemplate {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float MaxFStop;
     
     DATASMITHCONTENT_API FDatasmithCameraLensSettingsTemplate();

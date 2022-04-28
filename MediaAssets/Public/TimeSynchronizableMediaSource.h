@@ -3,7 +3,7 @@
 #include "BaseMediaSource.h"
 #include "TimeSynchronizableMediaSource.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class MEDIAASSETS_API UTimeSynchronizableMediaSource : public UBaseMediaSource {
     GENERATED_BODY()
 public:
@@ -13,7 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 FrameDelay;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     double TimeDelay;
     
     UTimeSynchronizableMediaSource();

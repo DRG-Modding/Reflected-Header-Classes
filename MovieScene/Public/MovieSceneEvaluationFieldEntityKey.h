@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FMovieSceneEvaluationFieldEntityKey {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TWeakObjectPtr<UObject> EntityOwner;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 EntityID;
     
     MOVIESCENE_API FMovieSceneEvaluationFieldEntityKey();

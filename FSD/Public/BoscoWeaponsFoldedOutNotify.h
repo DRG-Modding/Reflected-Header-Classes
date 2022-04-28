@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimNotify -FallbackName=AnimNotify
 #include "BoscoWeaponsFoldedOutNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class UBoscoWeaponsFoldedOutNotify : public UAnimNotify {
     GENERATED_BODY()
 public:

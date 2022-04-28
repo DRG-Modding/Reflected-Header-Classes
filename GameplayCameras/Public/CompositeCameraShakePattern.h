@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraShakePattern -FallbackName=CameraShakePattern
 #include "CompositeCameraShakePattern.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class GAMEPLAYCAMERAS_API UCompositeCameraShakePattern : public UCameraShakePattern {
     GENERATED_BODY()
 public:

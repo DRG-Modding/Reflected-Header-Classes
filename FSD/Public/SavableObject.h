@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "SavableObject.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class USavableObject : public UObject {
     GENERATED_BODY()
 public:

@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "FSDDeepDiveResponse.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FFSDDeepDiveResponse {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     uint32 SeedV2;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ExpirationTime;
     
     FSD_API FFSDDeepDiveResponse();

@@ -3,17 +3,17 @@
 #include "GameplayTask.h"
 #include "GameplayTask_WaitDelay.generated.h"
 
+class UGameplayTask_WaitDelay;
 class UGameplayTaskOwnerInterface;
 class IGameplayTaskOwnerInterface;
-class UGameplayTask_WaitDelay;
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UGameplayTask_WaitDelay : public UGameplayTask {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTaskDelayDelegate);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTaskDelayDelegate OnFinish;
     
     UGameplayTask_WaitDelay();

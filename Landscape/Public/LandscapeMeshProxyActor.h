@@ -5,12 +5,12 @@
 
 class ULandscapeMeshProxyComponent;
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class ALandscapeMeshProxyActor : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     ULandscapeMeshProxyComponent* LandscapeMeshProxyComponent;
     
 public:

@@ -3,7 +3,7 @@
 #include "NiagaraDataInterfaceArray.h"
 #include "NiagaraDataInterfaceArrayBool.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceArrayBool : public UNiagaraDataInterfaceArray {
     GENERATED_BODY()
 public:

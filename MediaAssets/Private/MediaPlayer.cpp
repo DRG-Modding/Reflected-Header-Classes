@@ -2,8 +2,8 @@
 
 class UObject;
 class UMediaSource;
-class UMediaTimeStampInfo;
 class UMediaPlaylist;
+class UMediaTimeStampInfo;
 
 bool UMediaPlayer::SupportsSeeking() const {
     return false;

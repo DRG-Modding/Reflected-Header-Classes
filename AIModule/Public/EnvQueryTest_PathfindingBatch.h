@@ -4,11 +4,11 @@
 #include "AIDataProviderFloatValue.h"
 #include "EnvQueryTest_PathfindingBatch.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UEnvQueryTest_PathfindingBatch : public UEnvQueryTest_Pathfinding {
     GENERATED_BODY()
 public:
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditDefaultsOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIDataProviderFloatValue ScanRangeMultiplier;
     
     UEnvQueryTest_PathfindingBatch();

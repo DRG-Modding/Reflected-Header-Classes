@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneSignedObject.h"
-#include "EMovieSceneSequenceFlags.h"
 #include "EMovieSceneCompletionMode.h"
+#include "EMovieSceneSequenceFlags.h"
 #include "MovieSceneObjectBindingID.h"
 #include "MovieSceneSequence.generated.h"
 
 class UMovieSceneCompiledData;
 
-UCLASS(Abstract, BlueprintType, MinimalAPI)
+UCLASS(Abstract, Blueprintable, MinimalAPI)
 class UMovieSceneSequence : public UMovieSceneSignedObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMovieSceneCompiledData* CompiledData;
     
 public:
-    UPROPERTY(BlueprintReadWrite, Config, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMovieSceneCompletionMode DefaultCompletionMode;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bParentContextsAreSignificant;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bPlayableDirectly;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMovieSceneSequenceFlags SequenceFlags;
     
 public:

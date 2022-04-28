@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "MovieSceneKeyStruct.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneKeyStruct {
     GENERATED_BODY()
 public:

@@ -4,7 +4,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftClassPath -FallbackName=SoftClassPath
 #include "ChaosSolverSettings.generated.h"
 
-UCLASS(DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig)
 class CHAOSSOLVERENGINE_API UChaosSolverSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:

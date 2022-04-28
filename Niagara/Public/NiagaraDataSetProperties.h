@@ -4,14 +4,14 @@
 #include "NiagaraVariable.h"
 #include "NiagaraDataSetProperties.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraDataSetProperties {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNiagaraDataSetID ID;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraVariable> Variables;
     
     NIAGARA_API FNiagaraDataSetProperties();

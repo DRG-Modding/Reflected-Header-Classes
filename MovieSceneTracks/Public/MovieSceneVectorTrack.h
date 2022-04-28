@@ -3,12 +3,12 @@
 #include "MovieScenePropertyTrack.h"
 #include "MovieSceneVectorTrack.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneVectorTrack : public UMovieScenePropertyTrack {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumChannelsUsed;
     
 public:

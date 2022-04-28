@@ -4,7 +4,7 @@
 #include "AudioCaptureDeviceInfo.h"
 #include "AudioCapture.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class AUDIOCAPTURE_API UAudioCapture : public UAudioGenerator {
     GENERATED_BODY()
 public:

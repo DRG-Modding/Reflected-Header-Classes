@@ -1,35 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioFilterParams.h"
-#include "EModioLogLevel.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EngineSubsystem -FallbackName=EngineSubsystem
-#include "OnGetModInfoDelegateDelegate.h"
-#include "ModioModID.h"
-#include "ModioInitializeOptions.h"
-#include "ModioModCollectionEntry.h"
-#include "OnErrorOnlyDelegateDelegate.h"
-#include "EModioRating.h"
-#include "ModioReportParams.h"
-#include "ModioEmailAddress.h"
 #include "ModioOptionalUser.h"
-#include "EModioLogoSize.h"
-#include "OnGetMediaDelegateDelegate.h"
-#include "ModioOptionalModProgressInfo.h"
-#include "ModioAuthenticationParams.h"
-#include "OnListAllModsDelegateDelegate.h"
-#include "EModioAuthenticationProvider.h"
-#include "EModioAvatarSize.h"
-#include "EModioLanguage.h"
-#include "OnGetTermsOfUseDelegateDelegate.h"
-#include "OnGetModTagOptionsDelegateDelegate.h"
-#include "EModioGallerySize.h"
-#include "ModioValidationError.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EngineSubsystem -FallbackName=EngineSubsystem
 #include "OnGetModDependenciesDelegateDelegate.h"
+#include "EModioLogLevel.h"
+#include "ModioModCollectionEntry.h"
+#include "ModioAuthenticationParams.h"
+#include "ModioModID.h"
+#include "OnErrorOnlyDelegateDelegate.h"
+#include "EModioAuthenticationProvider.h"
+#include "ModioCreateModFileParams.h"
+#include "ModioModCreationHandle.h"
+#include "ModioCreateModParams.h"
+#include "EModioGallerySize.h"
+#include "OnSubmitNewModDelegateDelegate.h"
+#include "ModioEmailAddress.h"
+#include "EModioRating.h"
+#include "OnGetModInfoDelegateDelegate.h"
+#include "ModioReportParams.h"
+#include "ModioOptionalModProgressInfo.h"
+#include "ModioFilterParams.h"
+#include "OnListAllModsDelegateDelegate.h"
+#include "OnGetTermsOfUseDelegateDelegate.h"
+#include "ModioInitializeOptions.h"
+#include "EModioLanguage.h"
+#include "EModioAvatarSize.h"
+#include "OnGetMediaDelegateDelegate.h"
+#include "OnGetModTagOptionsDelegateDelegate.h"
+#include "EModioLogoSize.h"
 #include "OnModManagementDelegateDelegate.h"
 #include "ModioEmailAuthCode.h"
+#include "ModioValidationError.h"
 #include "ModioSubsystem.generated.h"
 
-UCLASS(BlueprintType, MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UModioSubsystem : public UEngineSubsystem {
     GENERATED_BODY()
 public:
@@ -54,6 +58,12 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void K2_SubscribeToModAsync(FModioModID ModToSubscribeTo, FOnErrorOnlyDelegate OnSubscribeComplete);
+    
+    UFUNCTION(BlueprintCallable)
+    void K2_SubmitNewModFileForMod(FModioModID Mod, FModioCreateModFileParams Params);
+    
+    UFUNCTION(BlueprintCallable)
+    void K2_SubmitNewModAsync(FModioModCreationHandle Handle, FModioCreateModParams Params, FOnSubmitNewModDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
     void K2_SubmitModRatingAsync(FModioModID Mod, EModioRating Rating, FOnErrorOnlyDelegate Callback);
@@ -104,6 +114,9 @@ public:
     void K2_GetModDependenciesAsync(FModioModID ModId, FOnGetModDependenciesDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
+    FModioModCreationHandle K2_GetModCreationHandle();
+    
+    UFUNCTION(BlueprintCallable)
     void K2_FetchExternalUpdatesAsync(FOnErrorOnlyDelegate OnFetchDone);
     
     UFUNCTION(BlueprintCallable)
@@ -117,6 +130,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void K2_AuthenticateUserEmailAsync(const FModioEmailAuthCode& AuthenticationCode, FOnErrorOnlyDelegate Callback);
+    
+    UFUNCTION(BlueprintCallable)
+    void K2_ArchiveModAsync(FModioModID Mod, FOnErrorOnlyDelegate Callback);
     
     UFUNCTION(BlueprintCallable)
     bool IsModManagementBusy();

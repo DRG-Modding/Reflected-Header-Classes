@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EmitterCompiledScriptPair.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEmitterCompiledScriptPair {
     GENERATED_BODY()
 public:

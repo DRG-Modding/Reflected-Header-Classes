@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "RemoveFloatingIslandOperationData.h"
 #include "GrenadeExplodeOperationData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "CarveWithColliderOperationData.h"
-#include "DrillOperationData.h"
 #include "CarveWithSTLMeshOperationData.h"
-#include "MeltOperationData.h"
 #include "PickaxeDigOperationData.h"
+#include "RemoveFloatingIslandOperationData.h"
+#include "DrillOperationData.h"
+#include "MeltOperationData.h"
 #include "SplineSegmentCarveOperationData.h"
 #include "CSGBuildOperationData.h"
 #include "TerrainLatejoinComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API UTerrainLatejoinComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -20,7 +20,7 @@ public:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_TerrainLateJoinPartReceived();
     
-    UFUNCTION(BlueprintCallable, Client, Reliable)
+    UFUNCTION(Client, Reliable)
     void Client_TerrainLateJoinVisibleChunks(const TArray<uint32>& VisibleChunks);
     
     UFUNCTION(BlueprintCallable, Client, Reliable)

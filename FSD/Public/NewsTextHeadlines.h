@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "NewsTextHeadlines.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UNewsTextHeadlines : public UDataAsset {
     GENERATED_BODY()
 public:

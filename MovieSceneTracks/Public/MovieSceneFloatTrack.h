@@ -3,7 +3,7 @@
 #include "MovieScenePropertyTrack.h"
 #include "MovieSceneFloatTrack.generated.h"
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneFloatTrack : public UMovieScenePropertyTrack {
     GENERATED_BODY()
 public:

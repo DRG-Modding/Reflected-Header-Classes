@@ -4,11 +4,11 @@
 
 class ULandscapeLayerInfoObject;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FLandscapeLayerStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ULandscapeLayerInfoObject* LayerInfoObj;
     
     LANDSCAPE_API FLandscapeLayerStruct();

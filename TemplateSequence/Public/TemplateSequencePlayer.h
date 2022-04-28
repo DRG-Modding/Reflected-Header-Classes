@@ -9,7 +9,7 @@ class UTemplateSequencePlayer;
 class UObject;
 class ATemplateSequenceActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class TEMPLATESEQUENCE_API UTemplateSequencePlayer : public UMovieSceneSequencePlayer {
     GENERATED_BODY()
 public:

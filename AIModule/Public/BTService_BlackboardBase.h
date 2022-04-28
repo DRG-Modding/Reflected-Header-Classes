@@ -4,7 +4,7 @@
 #include "BlackboardKeySelector.h"
 #include "BTService_BlackboardBase.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBTService_BlackboardBase : public UBTService {
     GENERATED_BODY()
 public:

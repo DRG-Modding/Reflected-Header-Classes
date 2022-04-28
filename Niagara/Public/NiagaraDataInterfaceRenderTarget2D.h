@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataInterfaceRWBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
-#include "ENiagaraMipMapGeneration.h"
+#include "NiagaraDataInterfaceRWBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETextureRenderTargetFormat -FallbackName=ETextureRenderTargetFormat
+#include "ENiagaraMipMapGeneration.h"
 #include "NiagaraUserParameterBinding.h"
 #include "NiagaraDataInterfaceRenderTarget2D.generated.h"
 
 class UTextureRenderTarget2D;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceRenderTarget2D : public UNiagaraDataInterfaceRWBase {
     GENERATED_BODY()
 public:
@@ -19,7 +19,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraMipMapGeneration MipMapGeneration;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<ETextureRenderTargetFormat> OverrideRenderTargetFormat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -32,7 +32,7 @@ public:
     FNiagaraUserParameterBinding RenderTargetUserParameter;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, EditAnywhere, Transient)
     TMap<uint64, UTextureRenderTarget2D*> ManagedRenderTargets;
     
 public:

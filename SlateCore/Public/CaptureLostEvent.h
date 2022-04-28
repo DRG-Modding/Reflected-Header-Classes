@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "CaptureLostEvent.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FCaptureLostEvent {
     GENERATED_BODY()
 public:

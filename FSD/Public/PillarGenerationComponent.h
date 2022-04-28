@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GenerationComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "GenerationComponent.h"
 #include "PillarGenerationComponent.generated.h"
 
 class UPillarSettings;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API UPillarGenerationComponent : public UGenerationComponent {
     GENERATED_BODY()
 public:

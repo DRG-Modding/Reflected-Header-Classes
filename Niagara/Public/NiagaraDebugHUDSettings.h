@@ -4,7 +4,7 @@
 #include "NiagaraDebugHUDSettingsData.h"
 #include "NiagaraDebugHUDSettings.generated.h"
 
-UCLASS(DefaultConfig, Config=EditorPerProjectUserSettings)
+UCLASS(Blueprintable, DefaultConfig, Config=EditorPerProjectUserSettings)
 class NIAGARA_API UNiagaraDebugHUDSettings : public UObject {
     GENERATED_BODY()
 public:

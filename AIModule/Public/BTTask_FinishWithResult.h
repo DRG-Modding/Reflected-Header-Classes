@@ -4,12 +4,12 @@
 #include "EBTNodeResult.h"
 #include "BTTask_FinishWithResult.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTTask_FinishWithResult : public UBTTaskNode {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TEnumAsByte<EBTNodeResult::Type> Result;
     
 public:

@@ -3,7 +3,7 @@
 #include "NiagaraPlatformSet.h"
 #include "NiagaraEmitterScalabilitySettings.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraEmitterScalabilitySettings {
     GENERATED_BODY()
 public:
@@ -13,7 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bScaleSpawnCount: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float SpawnCountScale;
     
     NIAGARA_API FNiagaraEmitterScalabilitySettings();

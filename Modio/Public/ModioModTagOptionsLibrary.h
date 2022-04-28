@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ModioModTagInfo.h"
-#include "ModioModTagOptions.h"
 #include "ModioPagedResult.h"
+#include "ModioModTagOptions.h"
 #include "ModioModTagOptionsLibrary.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class MODIO_API UModioModTagOptionsLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

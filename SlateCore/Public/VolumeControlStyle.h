@@ -5,7 +5,7 @@
 #include "SlateBrush.h"
 #include "VolumeControlStyle.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SLATECORE_API FVolumeControlStyle : public FSlateWidgetStyle {
     GENERATED_BODY()
 public:

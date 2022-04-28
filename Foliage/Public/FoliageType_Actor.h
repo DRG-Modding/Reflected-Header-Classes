@@ -6,7 +6,7 @@
 
 class AActor;
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UFoliageType_Actor : public UFoliageType {
     GENERATED_BODY()
 public:

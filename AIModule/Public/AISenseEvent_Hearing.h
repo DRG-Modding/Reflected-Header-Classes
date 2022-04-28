@@ -4,7 +4,7 @@
 #include "AINoiseEvent.h"
 #include "AISenseEvent_Hearing.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class AIMODULE_API UAISenseEvent_Hearing : public UAISenseEvent {
     GENERATED_BODY()
 public:

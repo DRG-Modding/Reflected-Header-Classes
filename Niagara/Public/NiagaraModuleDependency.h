@@ -4,7 +4,7 @@
 #include "ENiagaraModuleDependencyScriptConstraint.h"
 #include "NiagaraModuleDependency.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraModuleDependency {
     GENERATED_BODY()
 public:

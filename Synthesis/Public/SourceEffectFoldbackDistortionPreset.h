@@ -4,7 +4,7 @@
 #include "SourceEffectFoldbackDistortionSettings.h"
 #include "SourceEffectFoldbackDistortionPreset.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USourceEffectFoldbackDistortionPreset : public USoundEffectSourcePreset {
     GENERATED_BODY()
 public:

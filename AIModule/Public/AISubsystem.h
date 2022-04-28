@@ -5,12 +5,12 @@
 
 class UAISystem;
 
-UCLASS(DefaultConfig)
+UCLASS(Blueprintable, DefaultConfig)
 class AIMODULE_API UAISubsystem : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAISystem* AISystem;
     
 public:

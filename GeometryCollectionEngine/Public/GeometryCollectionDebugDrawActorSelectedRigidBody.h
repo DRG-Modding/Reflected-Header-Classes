@@ -15,7 +15,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AChaosSolverActor* Solver;
     
-    UPROPERTY(BlueprintReadWrite, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AGeometryCollectionActor* GeometryCollection;
     
     GEOMETRYCOLLECTIONENGINE_API FGeometryCollectionDebugDrawActorSelectedRigidBody();

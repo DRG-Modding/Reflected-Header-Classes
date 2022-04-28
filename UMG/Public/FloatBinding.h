@@ -3,12 +3,12 @@
 #include "PropertyBinding.h"
 #include "FloatBinding.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMG_API UFloatBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
     UFloatBinding();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     float GetValue() const;
     
 };

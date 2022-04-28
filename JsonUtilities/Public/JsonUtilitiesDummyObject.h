@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "JsonUtilitiesDummyObject.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UJsonUtilitiesDummyObject : public UObject {
     GENERATED_BODY()
 public:

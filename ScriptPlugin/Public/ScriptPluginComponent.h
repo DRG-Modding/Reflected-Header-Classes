@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "ScriptPluginComponent.generated.h"
 
-UCLASS(Abstract, BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
+UCLASS(Abstract, Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SCRIPTPLUGIN_API UScriptPluginComponent : public UActorComponent {
     GENERATED_BODY()
 public:

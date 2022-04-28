@@ -2,23 +2,23 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
 #include "OnTimeSynthPlaybackTimeDelegate.h"
-#include "ETimeSynthFFTSize.h"
-#include "ETimeSynthFilter.h"
+#include "ETimeSynthEventClipQuantization.h"
+#include "OnQuantizationEventBPDelegate.h"
 #include "TimeSynthQuantizationSettings.h"
+#include "ETimeSynthFFTSize.h"
 #include "TimeSynthFilterSettings.h"
 #include "TimeSynthEnvelopeFollowerSettings.h"
-#include "ETimeSynthEventClipQuantization.h"
 #include "TimeSynthTimeDef.h"
 #include "TimeSynthClipHandle.h"
+#include "ETimeSynthFilter.h"
 #include "TimeSynthSpectralData.h"
 #include "ETimeSynthEventQuantization.h"
-#include "OnQuantizationEventBPDelegate.h"
 #include "TimeSynthComponent.generated.h"
 
 class UTimeSynthVolumeGroup;
 class UTimeSynthClip;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class TIMESYNTH_API UTimeSynthComponent : public USynthComponent {
     GENERATED_BODY()
 public:
@@ -28,13 +28,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bEnableSpectralAnalysis: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<float> FrequenciesToAnalyze;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETimeSynthFFTSize FFTSize;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTimeSynthPlaybackTime OnPlaybackTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -113,7 +113,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxActiveClipLimit() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetEnvelopeFollowerValue() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

@@ -5,12 +5,12 @@
 
 class UControlPointMeshComponent;
 
-UCLASS(NotPlaceable)
+UCLASS(Blueprintable, NotPlaceable)
 class LANDSCAPE_API AControlPointMeshActor : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UControlPointMeshComponent* ControlPointMeshComponent;
     
 public:

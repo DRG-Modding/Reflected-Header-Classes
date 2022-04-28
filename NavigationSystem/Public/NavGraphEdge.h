@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "NavGraphEdge.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNavGraphEdge {
     GENERATED_BODY()
 public:

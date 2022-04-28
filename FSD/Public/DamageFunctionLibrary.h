@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "DamageData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DamageFunctionLibrary.generated.h"
 
+class UPawnStatsComponent;
 class UObject;
 class UDamageTag;
-class UPawnStatsComponent;
 class UDamageClass;
 class AActor;
 class UDamageImpulse;
 class USkeletalMeshComponent;
 class ULimbDismembermentList;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UDamageFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

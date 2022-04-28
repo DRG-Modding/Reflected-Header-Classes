@@ -5,7 +5,7 @@
 
 class UNiagaraComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraBaselineController_Basic : public UNiagaraBaselineController {
     GENERATED_BODY()
 public:
@@ -13,7 +13,7 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NumInstances;
     
-    UPROPERTY(BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<UNiagaraComponent*> SpawnedComponents;
     
 public:

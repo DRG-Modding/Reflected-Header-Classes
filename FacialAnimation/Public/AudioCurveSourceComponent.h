@@ -4,14 +4,14 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CurveSourceInterface -FallbackName=CurveSourceInterface
 #include "AudioCurveSourceComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FACIALANIMATION_API UAudioCurveSourceComponent : public UAudioComponent, public ICurveSourceInterface {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName CurveSourceBindingName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float CurveSyncOffset;
     
     UAudioCurveSourceComponent();

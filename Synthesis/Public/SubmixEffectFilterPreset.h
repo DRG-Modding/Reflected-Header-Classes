@@ -6,7 +6,7 @@
 #include "ESubmixFilterType.h"
 #include "SubmixEffectFilterPreset.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USubmixEffectFilterPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:

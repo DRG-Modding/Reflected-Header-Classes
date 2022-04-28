@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FNiagaraVariableWithOffset : public FNiagaraVariableBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Offset;
     
     NIAGARA_API FNiagaraVariableWithOffset();

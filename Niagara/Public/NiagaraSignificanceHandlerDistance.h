@@ -3,7 +3,7 @@
 #include "NiagaraSignificanceHandler.h"
 #include "NiagaraSignificanceHandlerDistance.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraSignificanceHandlerDistance : public UNiagaraSignificanceHandler {
     GENERATED_BODY()
 public:

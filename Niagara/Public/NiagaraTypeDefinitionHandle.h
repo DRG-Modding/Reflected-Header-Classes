@@ -7,7 +7,7 @@ struct FNiagaraTypeDefinitionHandle {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 RegisteredTypeIndex;
     
 public:

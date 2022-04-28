@@ -1,7 +1,7 @@
 #include "CullingField.h"
 
-class UFieldNodeBase;
 class UCullingField;
+class UFieldNodeBase;
 
 UCullingField* UCullingField::SetCullingField(const UFieldNodeBase* NewCulling, const UFieldNodeBase* NewField, TEnumAsByte<EFieldCullingOperationType> NewOperation) {
     return NULL;

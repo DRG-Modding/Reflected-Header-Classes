@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "SessionServicePong.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FSessionServicePong {
     GENERATED_BODY()
 public:

@@ -6,7 +6,7 @@
 
 class UNavigationSystemConfig;
 
-UCLASS()
+UCLASS(Blueprintable)
 class NAVIGATIONSYSTEM_API ANavSystemConfigOverride : public AActor {
     GENERATED_BODY()
 public:

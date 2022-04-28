@@ -4,7 +4,7 @@
 #include "EQSParametrizedQueryExecutionRequest.h"
 #include "BTService_RunEQS.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UBTService_RunEQS : public UBTService_BlackboardBase {
     GENERATED_BODY()
 public:

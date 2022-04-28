@@ -6,7 +6,7 @@
 class UMatineeCameraShake;
 class UCameraShakeBase;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class GAMEPLAYCAMERAS_API UMatineeCameraShakeFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

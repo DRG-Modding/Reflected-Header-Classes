@@ -6,7 +6,7 @@
 
 class AActor;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceSpline : public UNiagaraDataInterface {
     GENERATED_BODY()
 public:

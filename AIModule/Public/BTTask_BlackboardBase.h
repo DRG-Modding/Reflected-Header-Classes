@@ -4,7 +4,7 @@
 #include "BlackboardKeySelector.h"
 #include "BTTask_BlackboardBase.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBTTask_BlackboardBase : public UBTTaskNode {
     GENERATED_BODY()
 public:

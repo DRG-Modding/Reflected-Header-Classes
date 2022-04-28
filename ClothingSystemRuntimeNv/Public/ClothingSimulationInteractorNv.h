@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=ClothingSystemRuntimeInterface -ObjectName=ClothingSimulationInteractor -FallbackName=ClothingSimulationInteractor
 #include "ClothingSimulationInteractorNv.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class CLOTHINGSYSTEMRUNTIMENV_API UClothingSimulationInteractorNv : public UClothingSimulationInteractor {
     GENERATED_BODY()
 public:

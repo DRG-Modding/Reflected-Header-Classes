@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GameplayTagCreationWidgetHelper.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGameplayTagCreationWidgetHelper {
     GENERATED_BODY()
 public:

@@ -4,5 +4,5 @@
 #include "EPathFollowingResult.h"
 #include "AIMoveCompletedSignatureDelegate.generated.h"
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAIMoveCompletedSignature, FAIRequestID, RequestID, TEnumAsByte<EPathFollowingResult::Type>, Result);
+UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAIMoveCompletedSignature, FAIRequestID, RequestID, TEnumAsByte<EPathFollowingResult::Type>, Result);
 

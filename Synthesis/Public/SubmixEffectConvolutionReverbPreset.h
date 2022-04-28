@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
-#include "SubmixEffectConvolutionReverbSettings.h"
 #include "ESubmixEffectConvolutionReverbBlockSize.h"
+#include "SubmixEffectConvolutionReverbSettings.h"
 #include "SubmixEffectConvolutionReverbPreset.generated.h"
 
 class UAudioImpulseResponse;
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USubmixEffectConvolutionReverbPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:

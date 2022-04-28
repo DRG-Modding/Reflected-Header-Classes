@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GizmoSelectData.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGizmoSelectData {
     GENERATED_BODY()
 public:

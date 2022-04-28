@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PlayerProgress.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+#include "PlayerProgress.h"
 #include "CharacterProgress.h"
 #include "MissionPlayerAndCharacterWidget.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UMissionPlayerAndCharacterWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UMissionPlayerAndCharacterWidget();
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void UpdateValues(int32 PlayerRank, int32 PlayerStars, int32 CharacterLevel, float CharacterProgress);
     
     UFUNCTION(BlueprintCallable)

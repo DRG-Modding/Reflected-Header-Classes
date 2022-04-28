@@ -3,7 +3,7 @@
 #include "MovieScenePropertySystem.h"
 #include "MovieSceneEulerTransformPropertySystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class MOVIESCENETRACKS_API UMovieSceneEulerTransformPropertySystem : public UMovieScenePropertySystem {
     GENERATED_BODY()
 public:

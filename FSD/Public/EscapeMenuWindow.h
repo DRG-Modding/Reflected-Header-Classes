@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EMinersManualSection.h"
 #include "WindowWidget.h"
+#include "EMinersManualSection.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EscapeMenuWindow.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UEscapeMenuWindow : public UWindowWidget {
     GENERATED_BODY()
 public:

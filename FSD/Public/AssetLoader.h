@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "AssetLoader.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class FSD_API UAssetLoader : public UGameInstanceSubsystem {
     GENERATED_BODY()
 public:

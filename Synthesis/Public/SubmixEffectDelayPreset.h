@@ -4,14 +4,14 @@
 #include "SubmixEffectDelaySettings.h"
 #include "SubmixEffectDelayPreset.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SYNTHESIS_API USubmixEffectDelayPreset : public USoundEffectSubmixPreset {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSubmixEffectDelaySettings Settings;
     
-    UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FSubmixEffectDelaySettings DynamicSettings;
     
     USubmixEffectDelayPreset();

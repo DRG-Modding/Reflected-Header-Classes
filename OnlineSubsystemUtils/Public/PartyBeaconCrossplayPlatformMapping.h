@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FPartyBeaconCrossplayPlatformMapping {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString PlatformName;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString PlatformType;
     
     ONLINESUBSYSTEMUTILS_API FPartyBeaconCrossplayPlatformMapping();

@@ -3,7 +3,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TickFunction -FallbackName=TickFunction
 #include "NiagaraWorldManagerTickFunction.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNiagaraWorldManagerTickFunction : public FTickFunction {
     GENERATED_BODY()
 public:

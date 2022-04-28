@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AITask.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTasks -ObjectName=GameplayTask -FallbackName=GameplayTask
 #include "MoveTaskCompletedSignatureDelegate.h"
+#include "AITask.h"
 #include "AIMoveRequest.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTasks -ObjectName=GameplayTask -FallbackName=GameplayTask
 #include "EAIOptionFlag.h"
 #include "AITask_MoveTo.generated.h"
 
+class AActor;
 class UAITask_MoveTo;
 class AAIController;
-class AActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class AIMODULE_API UAITask_MoveTo : public UAITask {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGameplayTask::FGenericGameplayTaskDelegate OnRequestFailed;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMoveTaskCompletedSignature OnMoveFinished;
     
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIMoveRequest MoveRequest;
     
 public:

@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct MODIO_API FModioModTag {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Tag;
     
     FModioModTag();
