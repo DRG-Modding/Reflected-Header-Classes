@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARSessionPayload.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ARSessionPayload.h"
 #include "ARFaceUpdatePayload.generated.h"
 
 USTRUCT(BlueprintType)

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETextKeyOperation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ETextKeyOperation {
     enum Type {
         Equal,

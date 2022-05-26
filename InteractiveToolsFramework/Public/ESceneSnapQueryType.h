@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESceneSnapQueryType.generated.h"
 
-UENUM()
-enum class ESceneSnapQueryType {
+UENUM(BlueprintType)
+enum class ESceneSnapQueryType : uint8 {
     Position = 0x1,
     Rotation,
 };

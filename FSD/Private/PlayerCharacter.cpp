@@ -1,59 +1,59 @@
 #include "PlayerCharacter.h"
 #include "Net/UnrealNetwork.h"
-#include "PlayerReactiveTerrainTrackerComponent.h"
-#include "StatusEffectsComponent.h"
-#include "InventoryComponent.h"
+#include "PlayerAttackPositionComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
-#include "SingleUsableComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PointLightComponent -FallbackName=PointLightComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=WidgetInteractionComponent -FallbackName=WidgetInteractionComponent
-#include "PlayerAfflictionComponent.h"
-#include "InstantUsable.h"
-#include "ActorTrackingComponent.h"
-#include "CharacterUseComponent.h"
-#include "CommunicationComponent.h"
-#include "CharacterVanityComponent.h"
-#include "CharacterSightComponent.h"
-#include "FirstPersonSkeletalMeshComponent.h"
-#include "PlayerTemperatureComponent.h"
-#include "PlayerHealthComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
 #include "CharacterCameraController.h"
 #include "MissionStatsCollector.h"
+#include "PlayerAfflictionComponent.h"
+#include "CharacterSightComponent.h"
+#include "CharacterUseComponent.h"
+#include "PlayerTemperatureComponent.h"
+#include "CommunicationComponent.h"
+#include "InventoryComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
+#include "CharacterVanityComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=WidgetInteractionComponent -FallbackName=WidgetInteractionComponent
+#include "FirstPersonSkeletalMeshComponent.h"
+#include "ActorTrackingComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SpringArmComponent -FallbackName=SpringArmComponent
-#include "OutlineComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PointLightComponent -FallbackName=PointLightComponent
 #include "PawnStatsComponent.h"
+#include "PlayerHealthComponent.h"
+#include "SingleUsableComponent.h"
+#include "OutlineComponent.h"
 #include "CharacterRecoilComponent.h"
+#include "StatusEffectsComponent.h"
 #include "PlayerInfoComponent.h"
-#include "PlayerAttackPositionComponent.h"
+#include "PlayerReactiveTerrainTrackerComponent.h"
+#include "InstantUsable.h"
 
+class AFSDPhysicsActor;
+class AEventRewardDispenser;
 class AZipLineProjectile;
+class AActor;
+class UPlayerAnimInstance;
 class UPerkHUDActivationWidget;
 class USoundBase;
 class USoundAttenuation;
-class UPlayerTPAnimInstance;
 class USoundConcurrency;
 class UAudioComponent;
-class AFSDPlayerState;
 class APlayerController;
 class UMaterialInstanceDynamic;
+class UPlayerFPAnimInstance;
 class AShieldGeneratorActor;
 class UFSDPhysicalMaterial;
 class UAnimMontage;
-class AEventRewardDispenser;
-class UCappedResource;
 class USchematic;
 class APlayerCharacter;
-class UPlayerAnimInstance;
-class AFSDPhysicsActor;
-class AFSDPlayerController;
-class AActor;
-class AItem;
+class UCappedResource;
+class UObject;
 class UCharacterStateComponent;
+class AItem;
+class UPlayerTPAnimInstance;
+class AFSDPlayerState;
+class AFSDPlayerController;
 class UInventoryList;
 class UTexture2D;
-class UPlayerFPAnimInstance;
-class UObject;
 class UParticleSystem;
 
 void APlayerCharacter::UseZipLine(AZipLineProjectile* ZipLine, const FVector& Start, const FVector& End) {
@@ -653,8 +653,6 @@ APlayerCharacter::APlayerCharacter() {
     this->IdleTime = 0.00f;
     this->FPDrinkSalute = NULL;
     this->TPDrinkSalute = NULL;
-    this->SaluteShout = NULL;
-    this->DrinkShout = NULL;
     this->CurrentSaluteMontage = NULL;
     this->BlockTrackGrindOnLanded = false;
     this->RadarMaterialInstance = NULL;

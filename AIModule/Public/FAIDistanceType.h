@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "FAIDistanceType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class FAIDistanceType : uint8 {
     Distance3D,
     Distance2D,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFixedFoveatedRenderingLevel.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFixedFoveatedRenderingLevel : uint8 {
     FFR_Off,
     FFR_Low,

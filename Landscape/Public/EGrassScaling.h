@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGrassScaling.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGrassScaling : uint8 {
     Uniform,
     Free,

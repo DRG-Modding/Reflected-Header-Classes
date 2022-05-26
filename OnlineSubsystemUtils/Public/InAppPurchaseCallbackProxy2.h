@@ -5,8 +5,8 @@
 #include "InAppPurchaseResult2Delegate.h"
 #include "InAppPurchaseCallbackProxy2.generated.h"
 
-class UInAppPurchaseCallbackProxy2;
 class APlayerController;
+class UInAppPurchaseCallbackProxy2;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UInAppPurchaseCallbackProxy2 : public UObject {

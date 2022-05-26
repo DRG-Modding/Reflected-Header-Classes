@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraPythonUpdateScriptReference.generated.h"
 
-UENUM()
-enum class ENiagaraPythonUpdateScriptReference {
+UENUM(BlueprintType)
+enum class ENiagaraPythonUpdateScriptReference : uint8 {
     None,
     ScriptAsset,
     DirectTextEntry,

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARSessionPayload.h"
-#include "EARObjectClassification.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ARSessionPayload.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+#include "EARObjectClassification.h"
 #include "ARPlaneUpdatePayload.generated.h"
 
 USTRUCT(BlueprintType)

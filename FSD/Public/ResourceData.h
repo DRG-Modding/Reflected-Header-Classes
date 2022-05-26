@@ -6,8 +6,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "ResourceData.generated.h"
 
-class UObject;
 class UTexture2D;
+class UObject;
 class UMissionStat;
 class AResourceChunk;
 
@@ -78,7 +78,7 @@ protected:
     
 public:
     UResourceData();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetOwnedAmount(UObject* WorldContextObject) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

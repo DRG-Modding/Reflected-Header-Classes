@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ERadialImpulseFalloff.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ERadialImpulseFalloff {
     RIF_Constant,
     RIF_Linear,

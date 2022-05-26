@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELandscapeCustomizedCoordType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ELandscapeCustomizedCoordType {
     LCCT_None,
     LCCT_CustomUV0,

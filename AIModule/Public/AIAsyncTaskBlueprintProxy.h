@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OAISimpleDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "OAISimpleDelegateDelegate.h"
 #include "AIRequestID.h"
 #include "EPathFollowingResult.h"
 #include "AIAsyncTaskBlueprintProxy.generated.h"

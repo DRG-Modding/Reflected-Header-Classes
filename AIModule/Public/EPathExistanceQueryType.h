@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPathExistanceQueryType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPathExistanceQueryType {
     enum Type {
         NavmeshRaycast2D,

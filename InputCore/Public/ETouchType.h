@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETouchType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ETouchType {
     enum Type {
         Began,

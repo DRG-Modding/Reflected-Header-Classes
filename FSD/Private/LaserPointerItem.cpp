@@ -1,10 +1,10 @@
 #include "LaserPointerItem.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 
-class UObject;
-class AActor;
 class UPrimitiveComponent;
+class UObject;
 class UTerrainMaterial;
+class AActor;
 
 void ALaserPointerItem::UnlockToMinersManual(UObject* WorldContextObject, FGuid ObjectID) {
 }

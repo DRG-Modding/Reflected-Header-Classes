@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EUnusedAttributeBehaviour.generated.h"
 
-UENUM()
-enum class EUnusedAttributeBehaviour {
+UENUM(BlueprintType)
+enum class EUnusedAttributeBehaviour : uint8 {
     Copy,
     Zero,
     None,

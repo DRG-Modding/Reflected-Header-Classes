@@ -4,8 +4,8 @@
 #include "AnimSharingInstance.generated.h"
 
 class AActor;
-class UAnimationSharingStateProcessor;
 class UEnum;
+class UAnimationSharingStateProcessor;
 class UAnimSequence;
 
 UCLASS(Blueprintable)

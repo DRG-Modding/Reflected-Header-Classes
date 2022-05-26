@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDatasmithImportMaterialQuality.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDatasmithImportMaterialQuality : uint8 {
     UseNoFresnelCurves,
     UseSimplifierFresnelCurves,

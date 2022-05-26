@@ -3,8 +3,8 @@
 #include "SlateWidgetStyle.h"
 #include "TableColumnHeaderStyle.h"
 #include "SplitterStyle.h"
-#include "SlateBrush.h"
 #include "SlateColor.h"
+#include "SlateBrush.h"
 #include "HeaderRowStyle.generated.h"
 
 USTRUCT(BlueprintType)

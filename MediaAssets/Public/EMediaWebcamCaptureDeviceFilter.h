@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMediaWebcamCaptureDeviceFilter.generated.h"
 
-UENUM()
-enum class EMediaWebcamCaptureDeviceFilter {
+UENUM(BlueprintType)
+enum class EMediaWebcamCaptureDeviceFilter : uint8 {
     None,
     DepthSensor,
     Front,

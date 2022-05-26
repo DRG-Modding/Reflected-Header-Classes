@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PerSkeletonAnimationSharingSetup.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "PerSkeletonAnimationSharingSetup.h"
 #include "AnimationSharingScalability.h"
 #include "AnimationSharingSetup.generated.h"
 

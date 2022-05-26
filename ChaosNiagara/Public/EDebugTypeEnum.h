@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDebugTypeEnum.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDebugTypeEnum : uint8 {
     ChaosNiagara_DebugType_NoDebug,
     ChaosNiagara_DebugType_ColorBySolver,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraRendererSourceDataMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraRendererSourceDataMode : uint8 {
     Particles,
     Emitter,

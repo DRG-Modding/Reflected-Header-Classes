@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFieldScalarType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EFieldScalarType {
     Scalar_ExternalClusterStrain,
     Scalar_Kill,

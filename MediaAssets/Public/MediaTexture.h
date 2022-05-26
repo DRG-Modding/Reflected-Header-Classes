@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Texture -FallbackName=Texture
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Texture -FallbackName=Texture
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TextureAddress -FallbackName=TextureAddress
 #include "MediaTextureOutputFormat.h"
 #include "MediaTextureOrientation.h"
@@ -37,7 +37,7 @@ public:
     UPROPERTY(EditAnywhere)
     TEnumAsByte<MediaTextureOutputFormat> OutputFormat;
     
-    UPROPERTY(EditAnywhere, SkipSerialization, TextExportTransient, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, TextExportTransient, Transient, meta=(AllowPrivateAccess=true))
     float CurrentAspectRatio;
     
     UPROPERTY(EditAnywhere, SkipSerialization, TextExportTransient, Transient)
@@ -64,7 +64,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetHeight() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAspectRatio() const;
     
 };

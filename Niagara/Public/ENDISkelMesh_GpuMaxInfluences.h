@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENDISkelMesh_GpuMaxInfluences.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ENDISkelMesh_GpuMaxInfluences {
     enum Type {
         AllowMax4,

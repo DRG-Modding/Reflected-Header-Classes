@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavCollisionBase -FallbackName=NavCollisionBase
-#include "NavCollisionCylinder.h"
 #include "NavCollisionBox.h"
+#include "NavCollisionCylinder.h"
 #include "NavCollision.generated.h"
 
 class UNavArea;

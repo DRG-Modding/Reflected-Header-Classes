@@ -1,45 +1,45 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-#include "EDebrisItemPass.h"
-#include "VeinResource.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
-#include "EncountersSpawnedDelegateDelegate.h"
-#include "EncounterSpecialItem.h"
-#include "TunnelNode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
 #include "CarvedResource.h"
-#include "GemResourceAmount.h"
-#include "CollectableSpawnableItem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
+#include "EncounterSpecialItem.h"
+#include "EncountersSpawnedDelegateDelegate.h"
 #include "ESpawnSettings.h"
+#include "CollectableSpawnableItem.h"
+#include "TunnelNode.h"
+#include "GeneratedInstantCarvers.h"
+#include "VeinResource.h"
+#include "GemResourceAmount.h"
 #include "RoomNode.h"
 #include "GeneratedInfluenceSets.h"
-#include "GeneratedInstantCarvers.h"
 #include "GeneratedDebris.h"
 #include "PathObstacle.h"
 #include "InfluenceMap.h"
+#include "EDebrisItemPass.h"
 #include "EDebrisCarvedType.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
 #include "RandRange.h"
 #include "DebrisCapsule.h"
 #include "ProceduralSetup.generated.h"
 
-class UPLSEncounterComponent;
-class AFSDPlayerController;
-class UProceduralTunnelComponent;
 class USpecialEvent;
 class UNoisyPathfinderComponent;
+class UProceduralTunnelComponent;
+class UPLSEncounterComponent;
+class AFSDPlayerController;
 class UProceduralObjectColliders;
-class UCaveInfluencer;
 class ADeepCSGWorld;
 class UFloodFillSettings;
-class AProceduralSetup;
 class UMissionDNA;
 class UBiome;
 class UResourceData;
+class AProceduralSetup;
 class UTunnelParameters;
 class URoomGeneratorBase;
+class UCaveInfluencer;
 
 UCLASS(Blueprintable)
 class FSD_API AProceduralSetup : public AActor {
@@ -142,7 +142,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBiome* Biome;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float missionLength;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -154,7 +154,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UResourceData*> SpawnedResources;
     
-    UPROPERTY(EditAnywhere, Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     float CaveDepth;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -242,7 +242,7 @@ public:
     UMissionDNA* GetMissionDNA() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<FString, float> GetGemsResourceAmounts() const;
     
 public:
@@ -250,7 +250,7 @@ public:
     ADeepCSGWorld* GetCSGWorld() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<FString, float> GetCollectablesResourceAmounts() const;
     
 public:

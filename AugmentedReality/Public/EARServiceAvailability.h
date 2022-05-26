@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARServiceAvailability.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARServiceAvailability : uint8 {
     UnknownError,
     UnknownChecking,

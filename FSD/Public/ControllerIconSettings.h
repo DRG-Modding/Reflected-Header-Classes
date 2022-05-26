@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InputTranslationTable.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
-//CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
+#include "InputTranslationTable.h"
 #include "ActionIconMapping.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
 #include "ControllerIconSettings.generated.h"
 
 UCLASS(Blueprintable, DefaultConfig, Config=Game)

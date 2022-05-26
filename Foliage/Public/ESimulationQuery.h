@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESimulationQuery.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ESimulationQuery {
     enum Type {
         None,

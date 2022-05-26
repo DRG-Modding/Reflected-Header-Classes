@@ -3,8 +3,8 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "GameplayTaskOwnerInterface.h"
-#include "EGameplayTaskRunResult.h"
 #include "OnClaimedResourcesChangeSignatureDelegate.h"
+#include "EGameplayTaskRunResult.h"
 #include "GameplayTasksComponent.generated.h"
 
 class UGameplayTask;

@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
 #include "FSDLookupSessionId.generated.h"
 
-class UObject;
 class UFSDLookupSessionId;
+class UObject;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UFSDLookupSessionId : public UOnlineBlueprintCallProxyBase {

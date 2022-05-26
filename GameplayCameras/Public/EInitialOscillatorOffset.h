@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EInitialOscillatorOffset.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EInitialOscillatorOffset {
     EOO_OffsetRandom,
     EOO_OffsetZero,

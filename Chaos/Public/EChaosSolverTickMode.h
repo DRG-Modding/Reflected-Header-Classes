@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EChaosSolverTickMode.generated.h"
 
-UENUM()
-enum class EChaosSolverTickMode {
+UENUM(BlueprintType)
+enum class EChaosSolverTickMode : uint8 {
     Fixed,
     Variable,
     VariableCapped,

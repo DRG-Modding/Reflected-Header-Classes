@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FNiagaraOutlinerTimingData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float GameThread;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RenderThread;
     
     NIAGARA_API FNiagaraOutlinerTimingData();

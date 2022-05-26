@@ -1,7 +1,7 @@
 #include "FindTurnBasedMatchCallbackProxy.h"
 
-class UObject;
 class APlayerController;
+class UObject;
 class UTurnBasedMatchInterface;
 class ITurnBasedMatchInterface;
 class UFindTurnBasedMatchCallbackProxy;

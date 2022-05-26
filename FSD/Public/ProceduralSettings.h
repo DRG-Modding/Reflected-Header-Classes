@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ProceduralSettings.generated.h"
 
-class AProceduralSetup;
 class UBiome;
 class URoomDecorationObject;
 class UMissionTemplate;
+class AProceduralSetup;
 
 UCLASS(Blueprintable)
 class UProceduralSettings : public UDataAsset {

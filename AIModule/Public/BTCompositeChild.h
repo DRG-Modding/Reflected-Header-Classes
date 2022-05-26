@@ -3,9 +3,9 @@
 #include "BTDecoratorLogic.h"
 #include "BTCompositeChild.generated.h"
 
-class UBTDecorator;
 class UBTCompositeNode;
 class UBTTaskNode;
+class UBTDecorator;
 
 USTRUCT(BlueprintType)
 struct FBTCompositeChild {

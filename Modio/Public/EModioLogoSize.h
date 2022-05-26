@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioLogoSize.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioLogoSize : uint8 {
     Original,
     Thumb320,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFireEventsAtPosition.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFireEventsAtPosition : uint8 {
     AtStartOfEvaluation,
     AtEndOfEvaluation,

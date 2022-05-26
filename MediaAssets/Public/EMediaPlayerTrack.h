@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMediaPlayerTrack.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMediaPlayerTrack : uint8 {
     Audio,
     Caption,

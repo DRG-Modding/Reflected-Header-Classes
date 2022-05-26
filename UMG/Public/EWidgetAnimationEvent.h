@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWidgetAnimationEvent.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWidgetAnimationEvent : uint8 {
     Started,
     Finished,

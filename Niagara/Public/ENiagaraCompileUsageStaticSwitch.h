@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraCompileUsageStaticSwitch.generated.h"
 
-UENUM()
-enum class ENiagaraCompileUsageStaticSwitch {
+UENUM(BlueprintType)
+enum class ENiagaraCompileUsageStaticSwitch : uint8 {
     Spawn,
     Update,
     Event,

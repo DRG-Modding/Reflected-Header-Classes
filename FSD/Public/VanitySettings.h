@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-#include "ResourceSpawner.h"
 #include "VanitySlotCharacter.h"
 #include "VanityMasterySettings.h"
+#include "ResourceSpawner.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EVanitySlot.h"
 #include "VanitySettings.generated.h"

@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "CameraRig_Rail.generated.h"
 
-class USplineComponent;
 class USceneComponent;
+class USplineComponent;
 
 UCLASS(Blueprintable)
 class CINEMATICCAMERA_API ACameraRig_Rail : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float CurrentPositionOnRail;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMovieSceneBuiltInEasing.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMovieSceneBuiltInEasing : uint8 {
     Linear,
     SinIn,

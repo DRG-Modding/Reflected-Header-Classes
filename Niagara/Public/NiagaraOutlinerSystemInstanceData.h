@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraOutlinerEmitterInstanceData.h"
-#include "ENiagaraExecutionState.h"
 #include "NiagaraScalabilityState.h"
-#include "ENCPoolMethod.h"
+#include "ENiagaraExecutionState.h"
 #include "NiagaraOutlinerTimingData.h"
+#include "ENCPoolMethod.h"
 #include "NiagaraOutlinerSystemInstanceData.generated.h"
 
 USTRUCT(BlueprintType)

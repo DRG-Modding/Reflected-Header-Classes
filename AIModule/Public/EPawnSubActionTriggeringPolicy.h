@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPawnSubActionTriggeringPolicy.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPawnSubActionTriggeringPolicy {
     enum Type {
         CopyBeforeTriggering,

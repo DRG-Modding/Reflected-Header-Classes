@@ -1,7 +1,7 @@
 #include "LevelSequenceDirector.h"
 
-class UMovieSceneSequence;
 class UObject;
+class UMovieSceneSequence;
 class AActor;
 
 

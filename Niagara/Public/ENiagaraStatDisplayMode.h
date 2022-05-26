@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraStatDisplayMode.generated.h"
 
-UENUM()
-enum class ENiagaraStatDisplayMode {
+UENUM(BlueprintType)
+enum class ENiagaraStatDisplayMode : uint8 {
     Percent,
     Absolute,
 };

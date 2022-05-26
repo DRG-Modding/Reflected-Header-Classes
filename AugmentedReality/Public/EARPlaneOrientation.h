@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARPlaneOrientation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARPlaneOrientation : uint8 {
     Horizontal,
     Vertical,

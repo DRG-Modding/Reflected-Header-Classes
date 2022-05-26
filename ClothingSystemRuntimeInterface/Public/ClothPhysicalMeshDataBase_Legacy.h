@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ClothVertBoneData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ClothVertBoneData.h"
 #include "ClothPhysicalMeshDataBase_Legacy.generated.h"
 
 UCLASS(Blueprintable)
@@ -18,7 +18,7 @@ public:
     UPROPERTY(EditAnywhere)
     TArray<uint32> Indices;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> InverseMasses;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

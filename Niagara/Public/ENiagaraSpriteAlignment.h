@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraSpriteAlignment.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraSpriteAlignment : uint8 {
     Unaligned,
     VelocityAligned,

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataInterface.h"
-#include "ENDISkeletalMesh_SkinningMode.h"
-#include "ENDISkeletalMesh_SourceMode.h"
 #include "NiagaraUserParameterBinding.h"
+#include "NiagaraDataInterface.h"
+#include "ENDISkeletalMesh_SourceMode.h"
+#include "ENDISkeletalMesh_SkinningMode.h"
 #include "NiagaraDataInterfaceSkeletalMesh.generated.h"
 
 class AActor;

@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct AIMODULE_API FCrowdAvoidanceSamplingPattern {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> Angles;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> Radii;
     
     FCrowdAvoidanceSamplingPattern();

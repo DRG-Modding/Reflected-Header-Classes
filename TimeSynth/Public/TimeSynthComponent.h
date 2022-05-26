@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
 #include "OnTimeSynthPlaybackTimeDelegate.h"
-#include "ETimeSynthEventClipQuantization.h"
-#include "OnQuantizationEventBPDelegate.h"
 #include "TimeSynthQuantizationSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
 #include "ETimeSynthFFTSize.h"
+#include "ETimeSynthEventClipQuantization.h"
 #include "TimeSynthFilterSettings.h"
 #include "TimeSynthEnvelopeFollowerSettings.h"
+#include "ETimeSynthFilter.h"
 #include "TimeSynthTimeDef.h"
 #include "TimeSynthClipHandle.h"
-#include "ETimeSynthFilter.h"
 #include "TimeSynthSpectralData.h"
 #include "ETimeSynthEventQuantization.h"
+#include "OnQuantizationEventBPDelegate.h"
 #include "TimeSynthComponent.generated.h"
 
 class UTimeSynthVolumeGroup;
@@ -28,7 +28,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bEnableSpectralAnalysis: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> FrequenciesToAnalyze;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -113,7 +113,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxActiveClipLimit() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEnvelopeFollowerValue() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

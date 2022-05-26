@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvQueryStatus.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvQueryStatus {
     enum Type {
         Processing,

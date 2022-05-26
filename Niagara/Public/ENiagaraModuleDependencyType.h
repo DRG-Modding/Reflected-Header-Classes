@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraModuleDependencyType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraModuleDependencyType : uint8 {
     PreDependency,
     PostDependency,

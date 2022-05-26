@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "InfluenceTester.generated.h"
 
-class USphereComponent;
 class UCaveInfluencer;
+class USphereComponent;
 
 UCLASS(Blueprintable)
 class AInfluenceTester : public AActor {

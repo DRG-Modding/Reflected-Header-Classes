@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBTParallelMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EBTParallelMode {
     enum Type {
         AbortBackground,

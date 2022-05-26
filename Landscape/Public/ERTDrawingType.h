@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ERTDrawingType.generated.h"
 
-UENUM()
-enum class ERTDrawingType {
+UENUM(BlueprintType)
+enum class ERTDrawingType : uint8 {
     RTAtlas,
     RTAtlasToNonAtlas,
     RTNonAtlasToAtlas,

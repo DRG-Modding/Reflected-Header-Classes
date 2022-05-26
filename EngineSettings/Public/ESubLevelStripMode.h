@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESubLevelStripMode.generated.h"
 
-UENUM()
-enum class ESubLevelStripMode {
+UENUM(BlueprintType)
+enum class ESubLevelStripMode : uint8 {
     ExactClass,
     IsChildOf,
 };

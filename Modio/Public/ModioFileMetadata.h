@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EModioVirusStatus.h"
 #include "ModioFileMetadataID.h"
 #include "ModioModID.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
-#include "EModioVirusStatus.h"
 #include "EModioVirusScanStatus.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
 #include "ModioFileMetadata.generated.h"
 
 USTRUCT(BlueprintType)

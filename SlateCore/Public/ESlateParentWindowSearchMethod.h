@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESlateParentWindowSearchMethod.generated.h"
 
-UENUM()
-enum class ESlateParentWindowSearchMethod {
+UENUM(BlueprintType)
+enum class ESlateParentWindowSearchMethod : uint8 {
     ActiveWindow,
     MainWindow,
 };

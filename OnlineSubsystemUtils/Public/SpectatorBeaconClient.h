@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnlineBeaconClient.h"
-#include "SpectatorReservation.h"
-#include "ESpectatorClientRequestType.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "ESpectatorReservationResult.h"
+#include "OnlineBeaconClient.h"
+#include "ESpectatorClientRequestType.h"
+#include "SpectatorReservation.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "SpectatorBeaconClient.generated.h"
 
 UCLASS(Blueprintable, NonTransient)

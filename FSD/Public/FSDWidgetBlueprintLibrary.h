@@ -1,46 +1,46 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TimerHandle -FallbackName=TimerHandle
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "WidgetAnimationSettings.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=PaintContext -FallbackName=PaintContext
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateFontInfo -FallbackName=SlateFontInfo
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
-//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=ESlateVisibility -FallbackName=ESlateVisibility
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TimerDynamicDelegate__DelegateSignature -FallbackName=TimerDynamicDelegateDelegate
-#include "SizeBoxSettings.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
-//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ETextJustify -FallbackName=ETextJustify
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EHorizontalAlignment -FallbackName=EHorizontalAlignment
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EVerticalAlignment -FallbackName=EVerticalAlignment
+#include "WidgetAnimationSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=PaintContext -FallbackName=PaintContext
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TimerHandle -FallbackName=TimerHandle
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=TimerDynamicDelegate__DelegateSignature -FallbackName=TimerDynamicDelegateDelegate
+#include "SizeBoxSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=ESlateVisibility -FallbackName=ESlateVisibility
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateFontInfo -FallbackName=SlateFontInfo
+//CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ETextJustify -FallbackName=ETextJustify
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
 //CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=Anchors -FallbackName=Anchors
 #include "FSDWidgetBlueprintLibrary.generated.h"
 
-class UTextBlock;
-class UObject;
-class UHorizontalBox;
-class UUserWidget;
-class UWidget;
-class UWidgetAnimation;
-class UCanvasPanel;
 class USizeBox;
-class UUniformGridSlot;
-class UFSDCheatManager;
-class UPanelWidget;
-class UImage;
+class UUserWidget;
 class UVerticalBox;
+class UWidget;
+class UObject;
+class UWidgetAnimation;
+class UVerticalBoxSlot;
+class UImage;
+class UTexture2D;
+class AFSDPlayerState;
+class UPanelWidget;
+class UTextBlock;
+class USpacer;
 class UWindowWidget;
 class APlayerController;
-class AFSDPlayerState;
-class USpacer;
-class UTexture2D;
-class UHorizontalBoxSlot;
-class UVerticalBoxSlot;
+class UFSDCheatManager;
 class UUniformGridPanel;
+class UHorizontalBoxSlot;
+class UHorizontalBox;
+class UUniformGridSlot;
+class UCanvasPanel;
 class UCanvasPanelSlot;
 
 UCLASS(Blueprintable)
@@ -103,7 +103,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void Line(FPaintContext& Context, FVector2D Pos1, FVector2D Pos2, FLinearColor Tint);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FLinearColor LerpColors(const TArray<FLinearColor>& Colors, bool Interpolate, float Progress01);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -142,10 +142,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText GetKeyName(const FKey& Key);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetFontMaxHeight(const FSlateFontInfo& Font);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetFontBaseline(const FSlateFontInfo& Font);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

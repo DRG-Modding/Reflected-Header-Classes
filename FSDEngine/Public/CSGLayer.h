@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+#include "DeepCSGFloatTree.h"
 #include "CSGGroup.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Matrix -FallbackName=Matrix
-#include "DeepCSGTree.h"
 #include "MeshLayerProperties.h"
 #include "GeneralTerrainMaterialCombiner.h"
-#include "DeepCSGFloatTree.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+#include "DeepCSGTree.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Matrix -FallbackName=Matrix
 #include "CSGLayer.generated.h"
 
 UCLASS(Blueprintable)

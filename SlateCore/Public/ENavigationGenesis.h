@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENavigationGenesis.generated.h"
 
-UENUM()
-enum class ENavigationGenesis {
+UENUM(BlueprintType)
+enum class ENavigationGenesis : uint8 {
     Keyboard,
     Controller,
     User,

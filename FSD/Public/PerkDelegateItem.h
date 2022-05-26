@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PerkEquipDelegateDelegate.h"
 #include "PerkClaimedDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "PerkEquipDelegateDelegate.h"
 #include "PerkHighlightedDelegateDelegate.h"
 #include "PerkIntDelegateDelegate.h"
 #include "PerkDelegateItem.generated.h"

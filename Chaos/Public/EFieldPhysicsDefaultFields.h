@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFieldPhysicsDefaultFields.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EFieldPhysicsDefaultFields {
     Field_RadialIntMask,
     Field_RadialFalloff,

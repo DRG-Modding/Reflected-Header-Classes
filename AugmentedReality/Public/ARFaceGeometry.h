@@ -18,7 +18,7 @@ public:
     bool bIsTracked;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EARFaceBlendShape, float> BlendShapes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -35,10 +35,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetLocalSpaceEyeTransform(EAREye eye) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetBlendShapeValue(EARFaceBlendShape BlendShape) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<EARFaceBlendShape, float> GetBlendShapes() const;
     
 };

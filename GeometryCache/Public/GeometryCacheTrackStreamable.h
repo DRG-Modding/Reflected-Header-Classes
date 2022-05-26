@@ -13,7 +13,7 @@ public:
     UGeometryCacheCodecBase* Codec;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float StartSampleTime;
     
 public:

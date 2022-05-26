@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESlateAccessibleBehavior.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESlateAccessibleBehavior : uint8 {
     NotAccessible,
     Auto,

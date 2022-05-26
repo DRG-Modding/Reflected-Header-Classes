@@ -1,32 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "EARSceneReconstruction.h"
+#include "EARSessionTrackingFeature.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "EARWorldAlignment.h"
 #include "EARPlaneDetectionMode.h"
 #include "EARSessionType.h"
+#include "EARLightEstimationMode.h"
 #include "EAREnvironmentCaptureProbeType.h"
 #include "EARFrameSyncMode.h"
-#include "EARLightEstimationMode.h"
 #include "ARVideoFormat.h"
 #include "EARFaceTrackingDirection.h"
 #include "EARFaceTrackingUpdate.h"
-#include "EARSessionTrackingFeature.h"
-#include "EARSceneReconstruction.h"
 #include "ARSessionConfig.generated.h"
 
-class UAREnvironmentProbeComponent;
 class UARCandidateImage;
-class UARObjectComponent;
-class UARCandidateObject;
 class UMaterialInterface;
+class UARMeshComponent;
+class UARCandidateObject;
+class UARPoseComponent;
 class UARPlaneComponent;
 class UARPointComponent;
 class UARFaceComponent;
 class UARImageComponent;
 class UARQRCodeComponent;
-class UARPoseComponent;
-class UARMeshComponent;
+class UAREnvironmentProbeComponent;
+class UARObjectComponent;
 class UARGeoAnchorComponent;
 
 UCLASS(Blueprintable)

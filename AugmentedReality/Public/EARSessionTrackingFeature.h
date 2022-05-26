@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARSessionTrackingFeature.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARSessionTrackingFeature : uint8 {
     None,
     PoseDetection2D,

@@ -1,8 +1,8 @@
 #include "UserWidget.h"
 
+class UWidgetAnimation;
 class APlayerCameraManager;
 class APlayerController;
-class UWidgetAnimation;
 class USoundBase;
 class UUMGSequencePlayer;
 class APawn;

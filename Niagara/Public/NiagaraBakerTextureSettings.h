@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraBakerTextureSource.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
+#include "NiagaraBakerTextureSource.h"
 #include "NiagaraBakerTextureSettings.generated.h"
 
 class UTexture2D;

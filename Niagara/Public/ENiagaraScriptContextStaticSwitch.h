@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraScriptContextStaticSwitch.generated.h"
 
-UENUM()
-enum class ENiagaraScriptContextStaticSwitch {
+UENUM(BlueprintType)
+enum class ENiagaraScriptContextStaticSwitch : uint8 {
     System,
     Emitter,
     Particle,

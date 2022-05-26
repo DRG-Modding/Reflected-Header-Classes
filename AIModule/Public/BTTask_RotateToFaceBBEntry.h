@@ -8,7 +8,7 @@ class AIMODULE_API UBTTask_RotateToFaceBBEntry : public UBTTask_BlackboardBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Precision;
     
 public:

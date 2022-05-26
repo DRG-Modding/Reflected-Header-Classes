@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPawnActionAbortState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPawnActionAbortState {
     enum Type {
         NeverStarted,

@@ -3,13 +3,13 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "GameplayTagContainer.h"
-#include "GameplayTagQuery.h"
 #include "GameplayTag.h"
+#include "GameplayTagQuery.h"
 #include "BlueprintGameplayTagLibrary.generated.h"
 
-class UObject;
 class UGameplayTagAssetInterface;
 class IGameplayTagAssetInterface;
+class UObject;
 class AActor;
 
 UCLASS(Blueprintable)

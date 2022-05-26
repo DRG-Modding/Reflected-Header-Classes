@@ -3,14 +3,14 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneCapture2D -FallbackName=SceneCapture2D
 #include "OculusMR_CastingCameraActor.generated.h"
 
-class UMaterialInstanceDynamic;
 class UVRNotificationsComponent;
-class UTexture2D;
 class UOculusMR_PlaneMeshComponent;
+class UTexture2D;
 class UMaterial;
-class UTextureRenderTarget2D;
 class UOculusMR_Settings;
+class UMaterialInstanceDynamic;
 class UOculusMR_State;
+class UTextureRenderTarget2D;
 
 UCLASS(Blueprintable, NotPlaceable)
 class AOculusMR_CastingCameraActor : public ASceneCapture2D {

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARWorldAlignment.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARWorldAlignment : uint8 {
     Gravity,
     GravityAndHeading,

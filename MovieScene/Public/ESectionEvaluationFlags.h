@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESectionEvaluationFlags.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESectionEvaluationFlags : uint8 {
     None,
     PreRoll,

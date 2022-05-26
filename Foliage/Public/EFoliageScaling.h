@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFoliageScaling.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFoliageScaling : uint8 {
     Uniform,
     Free,

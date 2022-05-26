@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENCPoolMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENCPoolMethod : uint8 {
     None,
     AutoRelease,

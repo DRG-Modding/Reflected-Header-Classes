@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ETextShapingMethod -FallbackName=ETextShapingMethod
 //CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ETextFlowDirection -FallbackName=ETextFlowDirection
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ETextShapingMethod -FallbackName=ETextShapingMethod
 #include "ShapedTextOptions.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DatasmithStaticMaterialTemplate.h"
 #include "DatasmithMeshBuildSettingsTemplate.h"
 #include "DatasmithObjectTemplate.h"
 #include "DatasmithMeshSectionInfoMapTemplate.h"
-#include "DatasmithStaticMaterialTemplate.h"
 #include "DatasmithStaticMeshTemplate.generated.h"
 
 UCLASS(Blueprintable)

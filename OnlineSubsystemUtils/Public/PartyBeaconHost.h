@@ -16,10 +16,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bLogoutOnSessionTimeout;
     
-    UPROPERTY(Config, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float SessionTimeoutSecs;
     
-    UPROPERTY(Config, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float TravelSessionTimeoutSecs;
     
 public:

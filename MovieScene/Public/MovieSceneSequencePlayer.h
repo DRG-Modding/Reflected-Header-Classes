@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneSequencePlaybackSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-#include "OnMovieSceneSequencePlayerEventDelegate.h"
 #include "EMovieScenePlayerStatus.h"
-#include "MovieSceneRootEvaluationTemplateInstance.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
-#include "MovieSceneSequenceReplProperties.h"
 #include "MovieSceneSequencePlaybackParams.h"
+#include "OnMovieSceneSequencePlayerEventDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
+#include "MovieSceneSequencePlaybackSettings.h"
+#include "MovieSceneRootEvaluationTemplateInstance.h"
+#include "MovieSceneSequenceReplProperties.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameRate -FallbackName=FrameRate
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameTime -FallbackName=FrameTime
 #include "EUpdatePositionMethod.h"
@@ -55,7 +55,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     int32 DurationFrames;
     
-    UPROPERTY(EditAnywhere, Replicated)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     float DurationSubFrames;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -178,7 +178,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMovieSceneSequence* GetSequence() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPlayRate() const;
     
     UFUNCTION(BlueprintCallable)

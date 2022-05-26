@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESoundwaveSampleRateSettings.generated.h"
 
-UENUM()
-enum class ESoundwaveSampleRateSettings {
+UENUM(BlueprintType)
+enum class ESoundwaveSampleRateSettings : uint8 {
     Max,
     High,
     Medium,

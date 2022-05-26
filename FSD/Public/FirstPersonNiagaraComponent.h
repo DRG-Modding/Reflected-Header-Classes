@@ -6,8 +6,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachLocation -FallbackName=EAttachLocation
 #include "FirstPersonNiagaraComponent.generated.h"
 
-class UNiagaraSystem;
 class USceneComponent;
+class UNiagaraSystem;
 
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFirstPersonNiagaraComponent : public UNiagaraComponent {

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGeometryCollectionPhysicsTypeEnum.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGeometryCollectionPhysicsTypeEnum : uint8 {
     Chaos_AngularVelocity,
     Chaos_DynamicState,

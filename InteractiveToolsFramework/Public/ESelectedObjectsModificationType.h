@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESelectedObjectsModificationType.generated.h"
 
-UENUM()
-enum class ESelectedObjectsModificationType {
+UENUM(BlueprintType)
+enum class ESelectedObjectsModificationType : uint8 {
     Replace,
     Add,
     Remove,

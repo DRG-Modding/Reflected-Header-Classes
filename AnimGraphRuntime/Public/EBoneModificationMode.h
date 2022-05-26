@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBoneModificationMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EBoneModificationMode {
     BMM_Ignore,
     BMM_Replace,

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MaterialExpression -FallbackName=MaterialExpression
-#include "ETerrainCoordMappingType.h"
 #include "ELandscapeCustomizedCoordType.h"
+#include "ETerrainCoordMappingType.h"
 #include "MaterialExpressionLandscapeLayerCoords.generated.h"
 
 UCLASS(Blueprintable, CollapseCategories)
@@ -15,16 +15,16 @@ public:
     UPROPERTY(EditAnywhere)
     TEnumAsByte<ELandscapeCustomizedCoordType> CustomUVType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MappingScale;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MappingRotation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MappingPanU;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MappingPanV;
     
     UMaterialExpressionLandscapeLayerCoords();

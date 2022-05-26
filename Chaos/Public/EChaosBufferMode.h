@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EChaosBufferMode.generated.h"
 
-UENUM()
-enum class EChaosBufferMode {
+UENUM(BlueprintType)
+enum class EChaosBufferMode : uint8 {
     Double,
     Triple,
     Num,

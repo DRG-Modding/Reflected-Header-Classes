@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EInputCaptureRequestType.generated.h"
 
-UENUM()
-enum class EInputCaptureRequestType {
+UENUM(BlueprintType)
+enum class EInputCaptureRequestType : uint8 {
     Begin = 0x1,
     Ignore,
 };

@@ -17,7 +17,7 @@ protected:
     UPROPERTY(EditAnywhere, Transient)
     TWeakObjectPtr<UAnimSequence> AdditiveAnimation;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float alpha;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTestPathfinding.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTestPathfinding {
     enum Type {
         PathExist,

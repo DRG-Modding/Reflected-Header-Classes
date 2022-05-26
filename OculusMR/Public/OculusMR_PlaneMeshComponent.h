@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
 #include "OculusMR_PlaneMeshTriangle.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
 #include "OculusMR_PlaneMeshComponent.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew, NotPlaceable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

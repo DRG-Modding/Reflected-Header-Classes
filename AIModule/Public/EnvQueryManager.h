@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "AISubsystem.h"
-#include "EEnvQueryRunMode.h"
 #include "EnvQueryInstanceCache.h"
+#include "EEnvQueryRunMode.h"
 #include "EnvQueryManager.generated.h"
 
+class UObject;
 class UEnvQueryContext;
 class UEnvQueryInstanceBlueprintWrapper;
 class UEnvQuery;
-class UObject;
 
 UCLASS(Blueprintable, Transient, Config=Game)
 class AIMODULE_API UEnvQueryManager : public UAISubsystem {
@@ -25,7 +25,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UEnvQueryInstanceBlueprintWrapper*> GCShieldedWrappers;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxAllowedTestingTime;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "TreeOfVanityItemWidget.generated.h"
 
-class UReward;
 class UTreeOfVanityItemWidget;
+class UReward;
 
 UCLASS(Blueprintable, EditInlineNew)
 class FSD_API UTreeOfVanityItemWidget : public UUserWidget {

@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESynthStereoDelayMode.h"
+#include "ESynthModEnvBiasPatch.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
 #include "ModularSynthPreset.h"
+#include "ESynthStereoDelayMode.h"
 #include "ESynthLFOPatchType.h"
-#include "ESynthModEnvPatch.h"
-#include "ESynth1PatchSource.h"
 #include "ESynth1OscType.h"
-#include "ESynthModEnvBiasPatch.h"
+#include "ESynthModEnvPatch.h"
 #include "ESynthLFOType.h"
 #include "ESynthLFOMode.h"
 #include "ESynthFilterType.h"
+#include "ESynth1PatchSource.h"
 #include "ESynthFilterAlgorithm.h"
-#include "PatchId.h"
 #include "Synth1PatchCable.h"
+#include "PatchId.h"
 #include "ModularSynthComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

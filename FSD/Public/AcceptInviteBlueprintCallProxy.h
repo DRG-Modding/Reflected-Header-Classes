@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
 #include "AcceptInviteBlueprintCallProxy.generated.h"
 
-class UAcceptInviteBlueprintCallProxy;
 class UObject;
+class UAcceptInviteBlueprintCallProxy;
 
 UCLASS(Blueprintable)
 class UAcceptInviteBlueprintCallProxy : public UOnlineBlueprintCallProxyBase {

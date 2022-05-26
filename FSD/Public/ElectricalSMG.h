@@ -6,12 +6,12 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "ElectricalSMG.generated.h"
 
-class UPrimitiveComponent;
-class UFSDPhysicalMaterial;
-class UStatusEffect;
+class UHealthComponentBase;
 class USoundCue;
 class UParticleSystem;
-class UHealthComponentBase;
+class UStatusEffect;
+class UPrimitiveComponent;
+class UFSDPhysicalMaterial;
 
 UCLASS(Blueprintable)
 class AElectricalSMG : public AAmmoDrivenWeapon {
@@ -27,16 +27,16 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundCue* AoESound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AoEStatusEffectChance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AoEStatusEffectRange;
     
 public:
     AElectricalSMG();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetDamaged(UHealthComponentBase* Health, float Amount, UPrimitiveComponent* HitComponent, UFSDPhysicalMaterial* PhysicalMaterial);
     
     UFUNCTION(BlueprintCallable)

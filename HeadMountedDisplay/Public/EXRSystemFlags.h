@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EXRSystemFlags.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EXRSystemFlags {
     enum Type {
         NoFlags,

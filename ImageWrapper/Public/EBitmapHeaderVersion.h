@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EBitmapHeaderVersion.generated.h"
 
-UENUM()
-enum class EBitmapHeaderVersion {
+UENUM(BlueprintType)
+enum class EBitmapHeaderVersion : uint8 {
     BHV_BITMAPINFOHEADER,
     BHV_BITMAPV2INFOHEADER,
     BHV_BITMAPV3INFOHEADER,

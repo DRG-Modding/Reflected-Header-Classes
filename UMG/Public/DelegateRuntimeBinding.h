@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DynamicPropertyPath.h"
 #include "EBindingKind.h"
+#include "DynamicPropertyPath.h"
 #include "DelegateRuntimeBinding.generated.h"
 
 USTRUCT(BlueprintType)

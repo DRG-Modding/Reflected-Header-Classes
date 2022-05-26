@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvQueryParam.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvQueryParam {
     enum Type {
         Float,

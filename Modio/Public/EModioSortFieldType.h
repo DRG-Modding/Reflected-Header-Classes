@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioSortFieldType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioSortFieldType : uint8 {
     ID,
     DownloadsToday,

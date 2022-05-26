@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDatasmithImportActorPolicy.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDatasmithImportActorPolicy : uint8 {
     Update,
     Full,

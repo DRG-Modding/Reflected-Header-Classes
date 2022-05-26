@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "BoolParameterNameAndCurve.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneEvalTemplate -FallbackName=MovieSceneEvalTemplate
 #include "ScalarParameterNameAndCurve.h"
-#include "BoolParameterNameAndCurve.h"
 #include "Vector2DParameterNameAndCurves.h"
 #include "ColorParameterNameAndCurves.h"
 #include "VectorParameterNameAndCurves.h"

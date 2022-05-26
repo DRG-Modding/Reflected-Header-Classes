@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraStatEvaluationType.generated.h"
 
-UENUM()
-enum class ENiagaraStatEvaluationType {
+UENUM(BlueprintType)
+enum class ENiagaraStatEvaluationType : uint8 {
     Average,
     Maximum,
 };

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESpectatorClientRequestType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESpectatorClientRequestType : uint8 {
     NonePending,
     ExistingSessionReservation,

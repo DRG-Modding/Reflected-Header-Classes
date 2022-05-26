@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARPlaneDetectionMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARPlaneDetectionMode : uint8 {
     None,
     HorizontalPlaneDetection,

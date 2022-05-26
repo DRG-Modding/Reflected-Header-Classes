@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EToolMessageLevel.generated.h"
 
-UENUM()
-enum class EToolMessageLevel {
+UENUM(BlueprintType)
+enum class EToolMessageLevel : uint8 {
     Internal,
     UserMessage,
     UserNotification,

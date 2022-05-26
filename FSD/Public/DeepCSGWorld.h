@@ -1,50 +1,50 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=VisualLoggerDebugSnapshotInterface -FallbackName=VisualLoggerDebugSnapshotInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "TerrainBaseDoneDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=CarveOptionsCellSize -FallbackName=CarveOptionsCellSize
 #include "CSGRaycastHitInfo.h"
 #include "DebrisWhenCarving.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "CSGBuildOperationData.h"
 #include "TerrainLateJoinData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=EncodedChunkId -FallbackName=EncodedChunkId
 #include "PickaxeDigOperationData.h"
 #include "RemoveFloatingIslandOperationData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
 #include "MeltOperationData.h"
 #include "GrenadeExplodeOperationData.h"
 #include "DrillOperationData.h"
 #include "CarveWithSTLMeshOperationData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=CarveSplineSegment -FallbackName=CarveSplineSegment
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "SplineSegmentCarveOperationData.h"
 #include "CarveWithColliderOperationData.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ELandscapeCellFilter.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=EPreciousMaterialOptions -FallbackName=EPreciousMaterialOptions
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=CarveOptionsCellSize -FallbackName=CarveOptionsCellSize
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "DeepCSGWorld.generated.h"
 
-class UDebrisSet;
-class AProceduralSetup;
 class UTerrainMaterial;
-class UTerrainType;
-class UTerrainMaterialsCollection;
 class UDebrisBase;
-class UMaterialInterface;
-class ACSGBuilder;
+class UTerrainType;
 class ADebrisDataActor;
+class UTerrainMaterialsCollection;
+class UDebrisSet;
+class UMaterialInterface;
+class AProceduralSetup;
 class UObject;
 class UAsyncPathRequests;
+class USTLMeshCarver;
 class UDebrisInstances;
 class UPrimitiveComponent;
-class USTLMeshCarver;
-class UStaticMeshCarver;
 class ADeepCSGWorld;
 class UStaticMesh;
+class UStaticMeshCarver;
+class ACSGBuilder;
 
 UCLASS(Blueprintable)
 class FSD_API ADeepCSGWorld : public AActor, public IVisualLoggerDebugSnapshotInterface {
@@ -236,7 +236,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void RegisterScannerComponent(UPrimitiveComponent* Component, bool useFogOfWar);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool Raycast(FVector Start, FVector Direction, float MaxDistance, FCSGRaycastHitInfo& HitInfo, ELandscapeCellFilter Filter) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

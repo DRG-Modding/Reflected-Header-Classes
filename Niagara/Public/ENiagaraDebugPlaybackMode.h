@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraDebugPlaybackMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraDebugPlaybackMode : uint8 {
     Play,
     Loop,

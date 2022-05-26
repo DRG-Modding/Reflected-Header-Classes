@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TextBlockStyle.h"
 #include "SlateWidgetStyle.h"
 #include "EditableTextBoxStyle.h"
+#include "TextBlockStyle.h"
 #include "InlineEditableTextBlockStyle.generated.h"
 
 USTRUCT(BlueprintType)

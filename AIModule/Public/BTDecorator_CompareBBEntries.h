@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlackboardKeySelector.h"
 #include "BTDecorator.h"
 #include "EBlackBoardEntryComparison.h"
+#include "BlackboardKeySelector.h"
 #include "BTDecorator_CompareBBEntries.generated.h"
 
 UCLASS(Blueprintable)

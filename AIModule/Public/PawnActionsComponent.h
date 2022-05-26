@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "PawnActionStack.h"
-#include "PawnActionEvent.h"
 #include "EAIRequestPriority.h"
+#include "PawnActionEvent.h"
 #include "EPawnActionAbortState.h"
 #include "PawnActionsComponent.generated.h"
 

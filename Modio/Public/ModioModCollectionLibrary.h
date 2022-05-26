@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EModioModState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "EModioModState.h"
 #include "ModioModCollectionEntry.h"
 #include "ModioModInfo.h"
 #include "ModioModID.h"

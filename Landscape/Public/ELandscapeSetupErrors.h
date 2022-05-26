@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELandscapeSetupErrors.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ELandscapeSetupErrors {
     LSE_None,
     LSE_NoLandscapeInfo,

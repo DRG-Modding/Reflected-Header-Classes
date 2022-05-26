@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBasicKeyOperation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EBasicKeyOperation {
     enum Type {
         Set,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELandscapeClearMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ELandscapeClearMode {
     Clear_Weightmap = 0x1,
     Clear_Heightmap,

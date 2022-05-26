@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EFrameNumberDisplayFormats.generated.h"
 
-UENUM()
-enum class EFrameNumberDisplayFormats {
+UENUM(BlueprintType)
+enum class EFrameNumberDisplayFormats : uint8 {
     NonDropFrameTimecode,
     DropFrameTimecode,
     Seconds,

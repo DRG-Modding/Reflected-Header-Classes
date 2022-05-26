@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DatasmithObjectTemplate.h"
-#include "DatasmithCameraLensSettingsTemplate.h"
 #include "DatasmithCameraFilmbackSettingsTemplate.h"
+#include "DatasmithCameraLensSettingsTemplate.h"
 #include "DatasmithCameraFocusSettingsTemplate.h"
 #include "DatasmithPostProcessSettingsTemplate.h"
 #include "DatasmithCineCameraComponentTemplate.generated.h"
@@ -20,10 +20,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDatasmithCameraFocusSettingsTemplate FocusSettings;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CurrentFocalLength;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CurrentAperture;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

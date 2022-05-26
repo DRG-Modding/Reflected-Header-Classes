@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SoftMinersManualDescription.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "SoftMinersManualDescription.h"
 #include "MinersManualData.generated.h"
 
 class UTexture2D;

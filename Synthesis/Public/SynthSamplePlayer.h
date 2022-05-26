@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESamplePlayerSeekType.h"
 #include "OnSamplePlaybackProgressDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
 #include "OnSampleLoadedDelegate.h"
+#include "ESamplePlayerSeekType.h"
 #include "SynthSamplePlayer.generated.h"
 
 class USoundWave;
@@ -40,13 +40,13 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLoaded() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSampleDuration() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentPlaybackProgressTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCurrentPlaybackProgressPercent() const;
     
 };

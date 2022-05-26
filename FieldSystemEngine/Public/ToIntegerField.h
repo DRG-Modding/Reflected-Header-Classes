@@ -3,8 +3,8 @@
 #include "FieldNodeInt.h"
 #include "ToIntegerField.generated.h"
 
-class UToIntegerField;
 class UFieldNodeFloat;
+class UToIntegerField;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UToIntegerField : public UFieldNodeInt {

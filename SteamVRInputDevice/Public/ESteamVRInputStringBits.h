@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESteamVRInputStringBits.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESteamVRInputStringBits : uint8 {
     VR_InputString_Hand,
     VR_InputString_ControllerType,

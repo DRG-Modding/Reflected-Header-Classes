@@ -5,10 +5,10 @@
 #include "AISense_Blueprint.generated.h"
 
 class UUserDefinedStruct;
-class APawn;
+class AActor;
 class UAIPerceptionComponent;
 class UAISenseEvent;
-class AActor;
+class APawn;
 
 UCLASS(Abstract, Blueprintable, HideDropdown)
 class AIMODULE_API UAISense_Blueprint : public UAISense {
@@ -26,7 +26,7 @@ protected:
     
 public:
     UAISense_Blueprint();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     float OnUpdate(const TArray<UAISenseEvent*>& EventsToProcess);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

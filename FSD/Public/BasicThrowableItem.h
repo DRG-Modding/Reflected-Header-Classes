@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "CarriableItem.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EInputKeys.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "BasicThrowableItem.generated.h"
 
 class UStaticMeshComponent;
+class UInstantUsable;
 class UBoxComponent;
 class UFirstPersonStaticMeshComponent;
+class UCarriableComponent;
 class USphereComponent;
 class USoundCue;
-class UCarriableComponent;
-class UInstantUsable;
+class AActor;
 class APlayerCharacter;
 class UPrimitiveComponent;
-class AActor;
 
 UCLASS(Abstract, Blueprintable)
 class ABasicThrowableItem : public ACarriableItem {
@@ -43,13 +43,13 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundCue* ImpactSound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SquaredMinImpactForce;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ImpactAudioResetTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SquaredMinThrowforce;
     
 public:

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EViewInteractionState.generated.h"
 
-UENUM()
-enum class EViewInteractionState {
+UENUM(BlueprintType)
+enum class EViewInteractionState : uint8 {
     None,
     Hovered,
     Focused,

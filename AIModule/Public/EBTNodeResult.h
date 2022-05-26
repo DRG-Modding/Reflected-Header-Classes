@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBTNodeResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EBTNodeResult {
     enum Type {
         Succeeded,

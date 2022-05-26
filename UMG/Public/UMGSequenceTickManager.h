@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "UMGSequenceTickManager.generated.h"
 
-class UMovieSceneEntitySystemLinker;
 class UUserWidget;
+class UMovieSceneEntitySystemLinker;
 
 UCLASS(Blueprintable)
 class UMG_API UUMGSequenceTickManager : public UObject {

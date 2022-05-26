@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
 #include "EndTurnCallbackProxy.generated.h"
 
+class UEndTurnCallbackProxy;
+class APlayerController;
 class UObject;
 class UTurnBasedMatchInterface;
 class ITurnBasedMatchInterface;
-class UEndTurnCallbackProxy;
-class APlayerController;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UEndTurnCallbackProxy : public UOnlineBlueprintCallProxyBase {

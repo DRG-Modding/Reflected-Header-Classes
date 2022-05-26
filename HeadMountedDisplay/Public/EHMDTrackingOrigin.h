@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EHMDTrackingOrigin.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EHMDTrackingOrigin {
     enum Type {
         Floor,

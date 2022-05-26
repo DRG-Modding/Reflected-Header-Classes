@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
 #include "AchievementQueryCallbackProxy.generated.h"
 
-class UObject;
 class UAchievementQueryCallbackProxy;
 class APlayerController;
+class UObject;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UAchievementQueryCallbackProxy : public UOnlineBlueprintCallProxyBase {

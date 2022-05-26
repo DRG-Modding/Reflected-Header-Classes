@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWeightMapTargetCommon.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWeightMapTargetCommon : uint8 {
     None,
     MaxDistance,

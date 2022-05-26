@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EPoseDriverType.generated.h"
 
-UENUM()
-enum class EPoseDriverType {
+UENUM(BlueprintType)
+enum class EPoseDriverType : uint8 {
     SwingAndTwist,
     SwingOnly,
     Translation,

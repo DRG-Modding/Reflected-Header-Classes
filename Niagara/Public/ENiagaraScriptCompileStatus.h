@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraScriptCompileStatus.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraScriptCompileStatus : uint8 {
     NCS_Unknown,
     NCS_Dirty,

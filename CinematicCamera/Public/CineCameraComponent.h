@@ -2,10 +2,10 @@
 #include "CoreMinimal.h"
 #include "NamedLensPreset.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
+#include "NamedFilmbackPreset.h"
 #include "CameraFilmbackSettings.h"
 #include "CameraLensSettings.h"
 #include "CameraFocusSettings.h"
-#include "NamedFilmbackPreset.h"
 #include "CineCameraComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -24,13 +24,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCameraFocusSettings FocusSettings;
     
-    UPROPERTY(EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float CurrentFocalLength;
     
-    UPROPERTY(EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float CurrentAperture;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CurrentFocusDistance;
     
 protected:
@@ -49,10 +49,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString DefaultLensPresetName;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DefaultLensFocalLength;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DefaultLensFStop;
     
 public:
@@ -66,7 +66,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetCurrentFocalLength(float InFocalLength);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVerticalFieldOfView() const;
     
     UFUNCTION(BlueprintCallable)
@@ -75,7 +75,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetLensPresetName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHorizontalFieldOfView() const;
     
     UFUNCTION(BlueprintCallable)

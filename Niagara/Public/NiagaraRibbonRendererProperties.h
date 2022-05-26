@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraRendererProperties.h"
 #include "ENiagaraRibbonFacingMode.h"
+#include "ENiagaraRibbonDrawDirection.h"
+#include "NiagaraRendererProperties.h"
+#include "NiagaraRibbonShapeCustomVertex.h"
 #include "NiagaraUserParameterBinding.h"
 #include "NiagaraRibbonUVSettings.h"
-#include "NiagaraRibbonShapeCustomVertex.h"
 #include "ENiagaraRibbonShapeMode.h"
-#include "ENiagaraRibbonDrawDirection.h"
 #include "ENiagaraRibbonTessellationMode.h"
 #include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraMaterialAttributeBinding.h"
@@ -54,7 +54,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNiagaraRibbonShapeCustomVertex> CustomVertices;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CurveTension;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -66,7 +66,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseConstantFactor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TessellationAngle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

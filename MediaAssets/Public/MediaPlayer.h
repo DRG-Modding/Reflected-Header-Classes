@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timespan -FallbackName=Timespan
-#include "OnMediaPlayerMediaEventDelegate.h"
-#include "OnMediaPlayerMediaOpenFailedDelegate.h"
 #include "OnMediaPlayerMediaOpenedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "OnMediaPlayerMediaEventDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "OnMediaPlayerMediaOpenFailedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timespan -FallbackName=Timespan
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EMediaPlayerTrack.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MediaUtils -ObjectName=MediaPlayerOptions -FallbackName=MediaPlayerOptions
@@ -77,10 +77,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTimespan TimeDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HorizontalFieldOfView;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float VerticalFieldOfView;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -98,7 +98,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool SupportsScrubbing() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool SupportsRate(float Rate, bool Unthinned) const;
     
     UFUNCTION(BlueprintCallable)
@@ -218,16 +218,16 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FFloatRange GetVideoTrackFrameRates(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVideoTrackFrameRate(int32 TrackIndex, int32 FormatIndex) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIntPoint GetVideoTrackDimensions(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVideoTrackAspectRatio(int32 TrackIndex, int32 FormatIndex) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetVerticalFieldOfView() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -257,7 +257,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetSelectedTrack(EMediaPlayerTrack TrackType) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRate() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -278,7 +278,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetMediaName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHorizontalFieldOfView() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

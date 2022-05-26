@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESteamVRHand.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESteamVRHand : uint8 {
     VR_Left,
     VR_Right,

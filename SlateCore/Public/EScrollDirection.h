@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EScrollDirection.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EScrollDirection {
     Scroll_Down,
     Scroll_Up,

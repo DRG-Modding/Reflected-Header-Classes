@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EnvQueryTest.h"
 #include "EEnvTestDistance.h"
+#include "EnvQueryTest.h"
 #include "EnvQueryTest_Distance.generated.h"
 
 class UEnvQueryContext;

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMediaSoundComponentFFTSize.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMediaSoundComponentFFTSize : uint8 {
     Min_64,
     Small_256,

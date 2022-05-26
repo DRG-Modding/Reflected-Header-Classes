@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ENiagaraAgeUpdateMode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSection -FallbackName=MovieSceneSection
 #include "ENiagaraSystemSpawnSectionStartBehavior.h"
 #include "ENiagaraSystemSpawnSectionEndBehavior.h"
 #include "ENiagaraSystemSpawnSectionEvaluateBehavior.h"
-#include "ENiagaraAgeUpdateMode.h"
 #include "MovieSceneNiagaraSystemSpawnSection.generated.h"
 
 UCLASS(Blueprintable, MinimalAPI)

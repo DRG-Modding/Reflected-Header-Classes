@@ -1,7 +1,7 @@
 #include "RetainerBox.h"
 
-class UMaterialInterface;
 class UMaterialInstanceDynamic;
+class UMaterialInterface;
 
 void URetainerBox::SetTextureParameter(FName NewTextureParameter) {
 }

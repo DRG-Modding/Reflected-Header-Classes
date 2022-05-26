@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraLegacyTrailWidthMode.generated.h"
 
-UENUM()
-enum class ENiagaraLegacyTrailWidthMode {
+UENUM(BlueprintType)
+enum class ENiagaraLegacyTrailWidthMode : uint8 {
     FromCentre,
     FromFirst,
     FromSecond,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPropertyAccessObjectType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPropertyAccessObjectType : uint8 {
     None,
     Object,

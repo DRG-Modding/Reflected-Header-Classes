@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARLineTraceChannels.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARLineTraceChannels : uint8 {
     None,
     FeaturePoint,

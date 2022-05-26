@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAngularConstraintMotion.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EAngularConstraintMotion {
     ACM_Free,
     ACM_Limited,

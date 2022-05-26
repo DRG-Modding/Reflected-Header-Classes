@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EXRDeviceConnectionResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EXRDeviceConnectionResult {
     enum Type {
         NoTrackingSystem,

@@ -5,14 +5,14 @@
 #include "NiagaraBaselineController.generated.h"
 
 class UNiagaraEffectType;
-class UNiagaraSystem;
 class ANiagaraPerfBaselineActor;
+class UNiagaraSystem;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraBaselineController : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TestDuration;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -30,7 +30,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool OnTickTest();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnOwnerTick(float DeltaTime);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

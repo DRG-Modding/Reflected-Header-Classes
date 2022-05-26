@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELandscapeGizmoType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ELandscapeGizmoType {
     LGT_None,
     LGT_Height,

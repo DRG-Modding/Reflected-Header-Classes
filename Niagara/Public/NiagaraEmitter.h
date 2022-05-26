@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "NiagaraEmitterScalabilityOverrides.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "EParticleAllocationMode.h"
+#include "NiagaraEmitterScriptProperties.h"
+#include "NiagaraDetailsLevelScaleOverrides.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+#include "ENiagaraSimTarget.h"
 #include "NiagaraPlatformSet.h"
 #include "NiagaraEventScriptProperties.h"
-#include "EParticleAllocationMode.h"
-#include "NiagaraEmitterScalabilityOverrides.h"
-#include "NiagaraEmitterScriptProperties.h"
-#include "ENiagaraSimTarget.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
-#include "NiagaraDetailsLevelScaleOverrides.h"
 #include "NiagaraEmitter.generated.h"
 
 class UNiagaraScript;
@@ -82,7 +82,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bCombineEventSpawn: 1;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxDeltaTimePerTick;
     
     UPROPERTY(AdvancedDisplay, EditAnywhere)

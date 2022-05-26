@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraTickBehavior.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraTickBehavior : uint8 {
     UsePrereqs,
     UseComponentTickGroup,

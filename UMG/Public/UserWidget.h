@@ -1,44 +1,44 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NamedSlotInterface.h"
+#include "OnVisibilityChangedEventDelegate.h"
 #include "Widget.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EInputEvent -FallbackName=EInputEvent
+#include "NamedSlotInterface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "Widget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "Widget.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Margin -FallbackName=Margin
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=CharacterEvent -FallbackName=CharacterEvent
-#include "OnVisibilityChangedEventDelegate.h"
-#include "AnimationEventBinding.h"
+#include "PaintContext.h"
 #include "NamedSlotBinding.h"
 #include "EWidgetAnimationEvent.h"
 #include "EWidgetTickFrequency.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=MotionEvent -FallbackName=MotionEvent
+#include "AnimationEventBinding.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=Anchors -FallbackName=Anchors
 #include "WidgetAnimationDynamicEventDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Geometry -FallbackName=Geometry
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=Anchors -FallbackName=Anchors
 #include "EUMGSequencePlayMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EInputEvent -FallbackName=EInputEvent
 #include "EventReply.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=PointerEvent -FallbackName=PointerEvent
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=FocusEvent -FallbackName=FocusEvent
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=KeyEvent -FallbackName=KeyEvent
-#include "PaintContext.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=MotionEvent -FallbackName=MotionEvent
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=CharacterEvent -FallbackName=CharacterEvent
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=AnalogInputEvent -FallbackName=AnalogInputEvent
 #include "OnInputActionDelegate.h"
 #include "UserWidget.generated.h"
 
-class APlayerCameraManager;
+class UDragDropOperation;
 class UUMGSequencePlayer;
 class UUMGSequenceTickManager;
-class UInputComponent;
 class UWidgetTree;
+class APawn;
+class UInputComponent;
 class UWidgetAnimation;
+class APlayerCameraManager;
 class APlayerController;
 class USoundBase;
-class UDragDropOperation;
-class APawn;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UMG_API UUserWidget : public UWidget, public INamedSlotInterface {
@@ -127,7 +127,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void UnbindAllFromAnimationFinished(UWidgetAnimation* Animation);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintImplementableEvent)
     void Tick(FGeometry MyGeometry, float InDeltaTime);
     
 protected:
@@ -361,7 +361,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     bool GetIsVisible() const;
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     float GetAnimationCurrentTime(const UWidgetAnimation* InAnimation) const;
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDeviceProfileStateEntry.h"
 #include "NiagaraPlatformSetCVarCondition.h"
+#include "NiagaraDeviceProfileStateEntry.h"
 #include "NiagaraPlatformSet.generated.h"
 
 USTRUCT(BlueprintType)

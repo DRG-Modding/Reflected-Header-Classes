@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ClothCollisionPrim_ConvexFace.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ClothCollisionPrim_ConvexFace.h"
 #include "ClothCollisionPrim_Convex.generated.h"
 
 USTRUCT(BlueprintType)

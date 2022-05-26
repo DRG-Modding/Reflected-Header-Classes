@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBTBlackboardRestart.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EBTBlackboardRestart {
     enum Type {
         ValueChange,

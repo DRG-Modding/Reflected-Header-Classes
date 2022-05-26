@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioReportType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioReportType : uint8 {
     Generic,
     DMCA,

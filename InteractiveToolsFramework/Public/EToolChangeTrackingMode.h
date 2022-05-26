@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EToolChangeTrackingMode.generated.h"
 
-UENUM()
-enum class EToolChangeTrackingMode {
+UENUM(BlueprintType)
+enum class EToolChangeTrackingMode : uint8 {
     NoChangeTracking = 0x1,
     UndoToExit,
     FullUndoRedo,

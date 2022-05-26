@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBodyCollisionResponse.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EBodyCollisionResponse {
     enum Type {
         BodyCollision_Enabled,

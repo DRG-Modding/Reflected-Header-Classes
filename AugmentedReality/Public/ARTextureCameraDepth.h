@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ARTexture.h"
-#include "EARDepthAccuracy.h"
 #include "EARDepthQuality.h"
+#include "EARDepthAccuracy.h"
 #include "ARTextureCameraDepth.generated.h"
 
 UCLASS(Abstract, Blueprintable)

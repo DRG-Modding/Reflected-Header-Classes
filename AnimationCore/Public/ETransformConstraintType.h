@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETransformConstraintType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETransformConstraintType : uint8 {
     Translation,
     Rotation,

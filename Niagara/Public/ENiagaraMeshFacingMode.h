@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraMeshFacingMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraMeshFacingMode : uint8 {
     Default,
     Velocity,

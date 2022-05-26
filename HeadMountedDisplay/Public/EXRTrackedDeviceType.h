@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EXRTrackedDeviceType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EXRTrackedDeviceType : uint8 {
     HeadMountedDisplay,
     Controller,

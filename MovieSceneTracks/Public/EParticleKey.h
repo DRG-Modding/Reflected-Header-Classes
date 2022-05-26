@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EParticleKey.generated.h"
 
-UENUM()
-enum class EParticleKey {
+UENUM(BlueprintType)
+enum class EParticleKey : uint8 {
     Activate,
     Deactivate,
     Trigger,

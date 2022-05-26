@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EImageComponentDebugMode.h"
 #include "ARComponent.h"
 #include "ARImageUpdatePayload.h"
-#include "EImageComponentDebugMode.h"
 #include "ARImageComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

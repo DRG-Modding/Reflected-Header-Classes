@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneBinding.h"
 #include "MovieSceneSignedObject.h"
 #include "MovieSceneSpawnable.h"
 #include "MovieScenePossessable.h"
+#include "MovieSceneBinding.h"
 #include "MovieSceneObjectBindingIDs.h"
-#include "MovieSceneFrameRange.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameRate -FallbackName=FrameRate
+#include "MovieSceneFrameRange.h"
 #include "EMovieSceneEvaluationType.h"
 #include "EUpdateClockSource.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath

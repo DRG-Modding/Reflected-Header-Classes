@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGeometryCollectionDebugDrawActorHideGeometry.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGeometryCollectionDebugDrawActorHideGeometry : uint8 {
     HideNone,
     HideWithCollision,

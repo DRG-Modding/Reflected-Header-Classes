@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETextCommit.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ETextCommit {
     enum Type {
         Default,

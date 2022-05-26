@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EConstraintFrame.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EConstraintFrame {
     enum Type {
         Frame1,

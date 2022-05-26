@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMusicalNoteName.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMusicalNoteName : uint8 {
     C,
     Db,

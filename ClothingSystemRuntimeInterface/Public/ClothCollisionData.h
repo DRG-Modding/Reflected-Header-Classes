@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ClothCollisionPrim_SphereConnection.h"
 #include "ClothCollisionPrim_Sphere.h"
 #include "ClothCollisionPrim_Convex.h"
+#include "ClothCollisionPrim_SphereConnection.h"
 #include "ClothCollisionPrim_Box.h"
 #include "ClothCollisionData.generated.h"
 

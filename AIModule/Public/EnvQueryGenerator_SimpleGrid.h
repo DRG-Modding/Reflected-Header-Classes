@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EnvQueryGenerator_ProjectedPoints.h"
 #include "AIDataProviderFloatValue.h"
+#include "EnvQueryGenerator_ProjectedPoints.h"
 #include "EnvQueryGenerator_SimpleGrid.generated.h"
 
 class UEnvQueryContext;

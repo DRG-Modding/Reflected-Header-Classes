@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DatasmithTessellationOptions.h"
 #include "DatasmithOptionsBase.h"
+#include "DatasmithTessellationOptions.h"
 #include "DatasmithCommonTessellationOptions.generated.h"
 
 UCLASS(Blueprintable, Config=EditorPerProjectUserSettings)

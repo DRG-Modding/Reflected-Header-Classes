@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARLightEstimationMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARLightEstimationMode : uint8 {
     None,
     AmbientLightEstimate,

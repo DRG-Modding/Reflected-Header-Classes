@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EARSessionConfigFlags.generated.h"
 
-UENUM()
-enum class EARSessionConfigFlags {
+UENUM(BlueprintType)
+enum class EARSessionConfigFlags : uint8 {
     None,
     GenerateMeshData,
     RenderMeshDataInWireframe,

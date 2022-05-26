@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EInsetPolygonsMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EInsetPolygonsMode : uint8 {
     All,
     CenterPolygonOnly,

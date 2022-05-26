@@ -26,7 +26,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void PhysicsAssetUpdated();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSimulationTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

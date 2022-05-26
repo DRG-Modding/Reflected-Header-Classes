@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EThreePlayerSplitScreenType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EThreePlayerSplitScreenType {
     enum Type {
         FavorTop,

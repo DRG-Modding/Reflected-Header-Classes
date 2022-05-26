@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EHeightmapRTType.generated.h"
 
-UENUM()
-enum class EHeightmapRTType {
+UENUM(BlueprintType)
+enum class EHeightmapRTType : uint8 {
     HeightmapRT_CombinedAtlas,
     HeightmapRT_CombinedNonAtlas,
     HeightmapRT_Scratch1,

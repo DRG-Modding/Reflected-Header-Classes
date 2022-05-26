@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "NiagaraPerfBaselineActor.generated.h"
 
-class UNiagaraBaselineController;
 class UTextRenderComponent;
+class UNiagaraBaselineController;
 
 UCLASS(Blueprintable)
 class NIAGARA_API ANiagaraPerfBaselineActor : public AActor {

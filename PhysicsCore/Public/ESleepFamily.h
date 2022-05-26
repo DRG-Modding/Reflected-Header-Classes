@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESleepFamily.generated.h"
 
-UENUM()
-enum class ESleepFamily {
+UENUM(BlueprintType)
+enum class ESleepFamily : uint8 {
     Normal,
     Sensitive,
     Custom,

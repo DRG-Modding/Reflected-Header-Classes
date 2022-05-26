@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioLogLevel.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioLogLevel : uint8 {
     Trace,
     Info,

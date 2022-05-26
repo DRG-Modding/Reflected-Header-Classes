@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESelectInfo.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ESelectInfo {
     enum Type {
         OnKeyPress,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARSceneReconstruction.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARSceneReconstruction : uint8 {
     None,
     MeshOnly,

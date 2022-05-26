@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EStandardToolContextMaterials.generated.h"
 
-UENUM()
-enum class EStandardToolContextMaterials {
+UENUM(BlueprintType)
+enum class EStandardToolContextMaterials : uint8 {
     VertexColorMaterial = 0x1,
 };
 

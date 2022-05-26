@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMoviePlaybackType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EMoviePlaybackType {
     MT_Normal,
     MT_Looped,

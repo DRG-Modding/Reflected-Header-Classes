@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMultiBlockType.generated.h"
 
-UENUM()
-enum class EMultiBlockType {
+UENUM(BlueprintType)
+enum class EMultiBlockType : uint8 {
     None,
     ButtonRow,
     EditableText,

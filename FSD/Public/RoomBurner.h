@@ -2,19 +2,19 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ERoomMirror.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "ERoomMirroringSupport.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "RoomBurner.generated.h"
 
-class URoomGenerator;
-class ADeepCSGWorld;
 class UDifficultySetting;
+class URoomGenerator;
 class UBiome;
 class UEnemyDescriptor;
 class UMissionMutator;
 class UMissionWarning;
 class USpecialEvent;
 class UMissionTemplate;
+class ADeepCSGWorld;
 class AProceduralSetup;
 
 UCLASS(Blueprintable)
@@ -31,7 +31,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URoomGenerator* RoomGenerator;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RoomRadius;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

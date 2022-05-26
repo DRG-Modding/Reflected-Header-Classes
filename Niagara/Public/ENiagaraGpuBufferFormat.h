@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraGpuBufferFormat.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraGpuBufferFormat : uint8 {
     Float,
     HalfFloat,

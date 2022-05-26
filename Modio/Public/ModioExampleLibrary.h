@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ModioFilterParams.h"
+#include "EModioAvatarSize.h"
 #include "OnListAllModsDelegateDelegate.h"
 #include "EModioLogoSize.h"
-#include "EModioAvatarSize.h"
 #include "ModioExampleLibrary.generated.h"
 
 UCLASS(Blueprintable, MinimalAPI)

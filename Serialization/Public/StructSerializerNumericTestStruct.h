@@ -30,7 +30,7 @@ public:
     UPROPERTY(EditAnywhere)
     uint64 UInt64;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Float;
     
     UPROPERTY(EditAnywhere)

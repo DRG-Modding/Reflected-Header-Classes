@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FNiagaraFloat {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Value;
     
     NIAGARA_API FNiagaraFloat();

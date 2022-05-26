@@ -30,7 +30,7 @@ public:
     UPROPERTY(EditAnywhere)
     int64 RatingPercentagePositive;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RatingWeightedAggregate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

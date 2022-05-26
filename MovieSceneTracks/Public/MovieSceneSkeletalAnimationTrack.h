@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneSkeletalAnimRootMotionTrackParams.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneNameableTrack -FallbackName=MovieSceneNameableTrack
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneTrackTemplateProducer -FallbackName=MovieSceneTrackTemplateProducer
+//CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneNameableTrack -FallbackName=MovieSceneNameableTrack
+#include "MovieSceneSkeletalAnimRootMotionTrackParams.h"
 #include "MovieSceneSkeletalAnimationTrack.generated.h"
 
 class UMovieSceneSection;

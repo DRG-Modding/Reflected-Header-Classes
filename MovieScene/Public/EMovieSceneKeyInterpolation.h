@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMovieSceneKeyInterpolation.generated.h"
 
-UENUM()
-enum class EMovieSceneKeyInterpolation {
+UENUM(BlueprintType)
+enum class EMovieSceneKeyInterpolation : uint8 {
     Auto,
     User,
     Break,

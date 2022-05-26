@@ -2,42 +2,42 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "EARCaptureType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "ARPose2D.h"
+#include "EARTrackingQuality.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+#include "EARTextureType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
 #include "ARTraceResult.h"
+#include "ARSessionStatus.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EARSessionType.h"
-#include "EARSessionTrackingFeature.h"
 #include "EARSceneReconstruction.h"
+#include "EARSessionTrackingFeature.h"
 #include "EARWorldMappingState.h"
-#include "EARTrackingQuality.h"
 #include "EARTrackingQualityReason.h"
-#include "ARSessionStatus.h"
-#include "ARVideoFormat.h"
 #include "EARObjectClassification.h"
+#include "ARVideoFormat.h"
 #include "ARCameraIntrinsics.h"
-#include "EARTextureType.h"
-#include "ARPose2D.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ARBlueprintLibrary.generated.h"
 
-class UAREnvironmentCaptureProbe;
+class UARTextureCameraDepth;
 class USceneComponent;
-class UARTrackedImage;
 class UARSessionConfig;
-class UARTrackedPoint;
 class UARPin;
+class UTexture2D;
 class UARTrackedGeometry;
+class UARTrackedImage;
 class UARTexture;
 class UARLightEstimate;
 class UARTextureCameraImage;
-class UTexture2D;
-class UARTextureCameraDepth;
 class UARTrackedPose;
+class UARTrackedPoint;
 class UARPlaneGeometry;
+class UAREnvironmentCaptureProbe;
 class UObject;
 class UARCandidateImage;
 
@@ -166,7 +166,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static UARTextureCameraDepth* GetCameraDepth();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetARWorldScale();
     
     UFUNCTION(BlueprintCallable)

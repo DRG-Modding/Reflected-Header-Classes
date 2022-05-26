@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESteamVRTrackedDeviceType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESteamVRTrackedDeviceType : uint8 {
     Controller,
     TrackingReference,

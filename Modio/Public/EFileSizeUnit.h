@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFileSizeUnit.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EFileSizeUnit {
     Largest,
     B,

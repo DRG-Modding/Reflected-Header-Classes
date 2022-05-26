@@ -5,8 +5,8 @@
 
 class UGizmoTransformChangeStateTarget;
 class UTransformProxy;
-class UPrimitiveComponent;
 class UGizmoComponentAxisSource;
+class UPrimitiveComponent;
 
 UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UIntervalGizmo : public UInteractiveGizmo {

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraMeshLockedAxisSpace.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraMeshLockedAxisSpace : uint8 {
     Simulation,
     World,

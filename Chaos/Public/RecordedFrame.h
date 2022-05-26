@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
-#include "SolverCollisionData.h"
 #include "SolverBreakingData.h"
+#include "SolverCollisionData.h"
 #include "SolverTrailingData.h"
 #include "RecordedFrame.generated.h"
 
@@ -31,7 +31,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<FSolverTrailingData> Trailings;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Timestamp;
     
     CHAOS_API FRecordedFrame();

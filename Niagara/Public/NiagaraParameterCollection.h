@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "NiagaraParameterCollection.generated.h"
 
-class UNiagaraParameterCollectionInstance;
 class UMaterialParameterCollection;
+class UNiagaraParameterCollectionInstance;
 
 UCLASS(Blueprintable)
 class NIAGARA_API UNiagaraParameterCollection : public UObject {

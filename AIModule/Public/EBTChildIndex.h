@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EBTChildIndex.generated.h"
 
-UENUM()
-enum class EBTChildIndex {
+UENUM(BlueprintType)
+enum class EBTChildIndex : uint8 {
     FirstNode,
     TaskNode,
 };

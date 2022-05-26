@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMovieSceneCaptureProtocolState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMovieSceneCaptureProtocolState : uint8 {
     Idle,
     Initialized,

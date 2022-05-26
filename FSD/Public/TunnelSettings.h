@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "TunnelSettings.generated.h"
 
-class UTerrainMaterial;
 class UFloodFillSettings;
+class UTerrainMaterial;
 
 UCLASS(Blueprintable)
 class UTunnelSettings : public UDataAsset {

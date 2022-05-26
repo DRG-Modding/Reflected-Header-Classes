@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETickMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETickMode : uint8 {
     Disabled,
     Enabled,

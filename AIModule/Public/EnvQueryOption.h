@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EnvQueryOption.generated.h"
 
-class UEnvQueryTest;
 class UEnvQueryGenerator;
+class UEnvQueryTest;
 
 UCLASS(Blueprintable)
 class AIMODULE_API UEnvQueryOption : public UObject {

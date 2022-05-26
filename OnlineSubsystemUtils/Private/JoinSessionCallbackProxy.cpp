@@ -1,7 +1,7 @@
 #include "JoinSessionCallbackProxy.h"
 
-class UObject;
 class APlayerController;
+class UObject;
 class UJoinSessionCallbackProxy;
 
 UJoinSessionCallbackProxy* UJoinSessionCallbackProxy::JoinSession(UObject* WorldContextObject, APlayerController* PlayerController, const FBlueprintSessionResult& SearchResult) {

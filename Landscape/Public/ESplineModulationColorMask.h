@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESplineModulationColorMask.generated.h"
 
-UENUM()
-enum class ESplineModulationColorMask {
+UENUM(BlueprintType)
+enum class ESplineModulationColorMask : uint8 {
     Red,
     Green,
     Blue,

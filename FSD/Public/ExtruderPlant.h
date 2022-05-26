@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ExtruderPlant.generated.h"
 
-class UAnimationAsset;
-class USkeletalMeshComponent;
 class UAudioComponent;
+class USkeletalMeshComponent;
+class UAnimationAsset;
 
 UCLASS(Abstract, Blueprintable)
 class AExtruderPlant : public AActor {

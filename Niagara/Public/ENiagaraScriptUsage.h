@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraScriptUsage.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraScriptUsage : uint8 {
     Function,
     Module,

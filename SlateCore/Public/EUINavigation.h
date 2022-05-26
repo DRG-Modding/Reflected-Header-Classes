@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EUINavigation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EUINavigation : uint8 {
     Left,
     Right,

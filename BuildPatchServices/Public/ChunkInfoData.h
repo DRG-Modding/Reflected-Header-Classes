@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SHAHashData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "SHAHashData.h"
 #include "ChunkInfoData.generated.h"
 
 USTRUCT(BlueprintType)

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBindingKind.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EBindingKind : uint8 {
     Function,
     Property,

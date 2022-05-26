@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Throwable.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "CarriableEventDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "Throwable.h"
+#include "CarriableEventDelegate.h"
 #include "CarriableComponent.generated.h"
 
 class UDialogDataAsset;

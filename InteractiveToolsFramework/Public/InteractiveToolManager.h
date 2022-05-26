@@ -4,8 +4,8 @@
 #include "ToolContextTransactionProvider.h"
 #include "InteractiveToolManager.generated.h"
 
-class UInteractiveToolBuilder;
 class UInteractiveTool;
+class UInteractiveToolBuilder;
 
 UCLASS(Blueprintable, Transient)
 class INTERACTIVETOOLSFRAMEWORK_API UInteractiveToolManager : public UObject, public IToolContextTransactionProvider {

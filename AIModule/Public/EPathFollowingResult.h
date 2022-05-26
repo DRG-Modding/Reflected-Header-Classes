@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPathFollowingResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPathFollowingResult {
     enum Type {
         Success,

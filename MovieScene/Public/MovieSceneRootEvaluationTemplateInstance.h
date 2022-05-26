@@ -3,8 +3,8 @@
 #include "MovieSceneSequenceID.h"
 #include "MovieSceneRootEvaluationTemplateInstance.generated.h"
 
-class UMovieSceneSequence;
 class UObject;
+class UMovieSceneSequence;
 class UMovieSceneCompiledDataManager;
 class UMovieSceneEntitySystemLinker;
 

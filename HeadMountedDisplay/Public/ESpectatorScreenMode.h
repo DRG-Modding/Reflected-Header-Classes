@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESpectatorScreenMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESpectatorScreenMode : uint8 {
     Disabled,
     SingleEyeLetterboxed,

@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "MediaComponent.generated.h"
 
-class UMediaPlayer;
 class UMediaTexture;
+class UMediaPlayer;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class MEDIAASSETS_API UMediaComponent : public UActorComponent {

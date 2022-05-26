@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETeamAttitude.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ETeamAttitude {
     enum Type {
         Friendly,

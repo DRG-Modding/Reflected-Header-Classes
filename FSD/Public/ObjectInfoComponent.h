@@ -1,13 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ObjectInfoComponent.generated.h"
 
-class UDialogDataAsset;
-class UPrimitiveComponent;
 class UTexture2D;
-class UActorContextWidget;
+class UDialogDataAsset;
 class APlayerController;
+class UPrimitiveComponent;
+class UActorContextWidget;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UObjectInfoComponent : public UActorComponent {
@@ -22,6 +23,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetInGameName(const UPrimitiveComponent* TargetComponent) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FLinearColor GetInGameIconTint(const UPrimitiveComponent* TargetComponent) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetInGameIcon(const UPrimitiveComponent* TargetComponent) const;

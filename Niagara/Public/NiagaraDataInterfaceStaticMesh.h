@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraDataInterface.h"
-#include "NDIStaticMeshSectionFilter.h"
 #include "ENDIStaticMesh_SourceMode.h"
+#include "NDIStaticMeshSectionFilter.h"
 #include "NiagaraDataInterfaceStaticMesh.generated.h"
 
-class UStaticMesh;
 class AActor;
+class UStaticMesh;
 class UStaticMeshComponent;
 
 UCLASS(Blueprintable, EditInlineNew)

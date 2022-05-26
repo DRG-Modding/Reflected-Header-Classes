@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAILockSource.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EAILockSource {
     enum Type {
         Animation,

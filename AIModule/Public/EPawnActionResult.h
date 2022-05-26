@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPawnActionResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPawnActionResult {
     enum Type {
         NotStarted,

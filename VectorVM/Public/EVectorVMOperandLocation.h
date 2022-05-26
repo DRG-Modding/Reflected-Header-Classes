@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EVectorVMOperandLocation.generated.h"
 
-UENUM()
-enum class EVectorVMOperandLocation {
+UENUM(BlueprintType)
+enum class EVectorVMOperandLocation : uint8 {
     Register,
     Constant,
     Num,

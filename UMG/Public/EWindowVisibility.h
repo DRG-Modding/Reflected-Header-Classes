@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWindowVisibility.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWindowVisibility : uint8 {
     Visible,
     SelfHitTestInvisible,

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AttackerPositioningComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "AttackerPositioningComponent.h"
 #include "CustomObjectAttackerPositioning.generated.h"
 
 class UHealthComponentBase;

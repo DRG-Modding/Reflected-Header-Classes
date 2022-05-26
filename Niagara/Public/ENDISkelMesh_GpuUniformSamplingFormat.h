@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENDISkelMesh_GpuUniformSamplingFormat.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ENDISkelMesh_GpuUniformSamplingFormat {
     enum Type {
         Full,

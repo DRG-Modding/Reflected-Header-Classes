@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SubmixEffectMultibandCompressorSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
+#include "SubmixEffectMultibandCompressorSettings.h"
 #include "SubmixEffectMultibandCompressorPreset.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

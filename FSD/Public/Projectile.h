@@ -8,10 +8,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "Projectile.generated.h"
 
+class APawn;
 class UObject;
 class AActor;
 class UFSDProjectileMovementComponent;
-class APawn;
 class AProjectile;
 class USceneComponent;
 class UFSDPhysicalMaterial;

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ERecastPartitioning.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ERecastPartitioning {
     enum Type {
         Monotone,

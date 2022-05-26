@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneSignedObject.h"
+#include "MovieSceneObjectBindingID.h"
 #include "EMovieSceneCompletionMode.h"
 #include "EMovieSceneSequenceFlags.h"
-#include "MovieSceneObjectBindingID.h"
 #include "MovieSceneSequence.generated.h"
 
 class UMovieSceneCompiledData;

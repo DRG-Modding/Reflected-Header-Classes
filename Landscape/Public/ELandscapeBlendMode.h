@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELandscapeBlendMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ELandscapeBlendMode {
     LSBM_AdditiveBlend,
     LSBM_AlphaBlend,

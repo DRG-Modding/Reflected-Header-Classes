@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTestFilterOperator.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTestFilterOperator {
     enum Type {
         AllPass,

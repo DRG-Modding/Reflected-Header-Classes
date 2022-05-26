@@ -1,7 +1,7 @@
 #include "ConnectionCallbackProxy.h"
 
-class UObject;
 class APlayerController;
+class UObject;
 class UConnectionCallbackProxy;
 
 UConnectionCallbackProxy* UConnectionCallbackProxy::ConnectToService(UObject* WorldContextObject, APlayerController* PlayerController) {

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTraceShape.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTraceShape {
     enum Type {
         Line,

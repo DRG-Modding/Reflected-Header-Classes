@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENDISkeletalMesh_SourceMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENDISkeletalMesh_SourceMode : uint8 {
     Default,
     Source,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTestScoreEquation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTestScoreEquation {
     enum Type {
         Linear,

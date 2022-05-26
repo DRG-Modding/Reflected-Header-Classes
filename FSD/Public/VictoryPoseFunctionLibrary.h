@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "VictoryPoseFunctionLibrary.generated.h"
 
-class UObject;
 class UVictoryPose;
+class UObject;
 class UPlayerCharacterID;
 
 UCLASS(Blueprintable)

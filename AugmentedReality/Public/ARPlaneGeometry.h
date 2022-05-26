@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EARPlaneOrientation.h"
 #include "ARTrackedGeometry.h"
+#include "EARPlaneOrientation.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ARPlaneGeometry.generated.h"
 

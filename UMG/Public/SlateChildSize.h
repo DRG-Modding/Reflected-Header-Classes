@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FSlateChildSize {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Value;
     
     UPROPERTY(EditAnywhere)

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EConstraintType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EConstraintType : uint8 {
     Transform,
     Aim,

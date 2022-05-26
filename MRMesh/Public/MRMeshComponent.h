@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "MRMeshComponent.generated.h"
 
-class UBodySetup;
 class UMaterialInterface;
+class UBodySetup;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class MRMESH_API UMRMeshComponent : public UPrimitiveComponent, public IInterface_CollisionDataProvider {

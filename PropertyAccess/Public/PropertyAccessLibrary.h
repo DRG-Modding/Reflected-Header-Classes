@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "PropertyAccessSegment.h"
 #include "PropertyAccessPath.h"
-#include "PropertyAccessCopyBatch.h"
 #include "PropertyAccessIndirectionChain.h"
+#include "PropertyAccessCopyBatch.h"
 #include "PropertyAccessIndirection.h"
 #include "PropertyAccessLibrary.generated.h"
 

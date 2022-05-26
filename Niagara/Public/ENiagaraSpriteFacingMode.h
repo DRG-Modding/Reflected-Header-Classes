@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraSpriteFacingMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraSpriteFacingMode : uint8 {
     FaceCamera,
     FaceCameraPlane,

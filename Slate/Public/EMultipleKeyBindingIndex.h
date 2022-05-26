@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMultipleKeyBindingIndex.generated.h"
 
-UENUM()
-enum class EMultipleKeyBindingIndex {
+UENUM(BlueprintType)
+enum class EMultipleKeyBindingIndex : uint8 {
     Primary,
     Secondary,
     NumChords,

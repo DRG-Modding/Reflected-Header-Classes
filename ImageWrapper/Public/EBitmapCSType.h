@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EBitmapCSType.generated.h"
 
-UENUM()
-enum class EBitmapCSType {
+UENUM(BlueprintType)
+enum class EBitmapCSType : uint8 {
     BCST_BLCS_CALIBRATED_RGB,
     BCST_LCS_sRGB = 0x73524742,
     BCST_LCS_WINDOWS_COLOR_SPACE = 0x57696E20,

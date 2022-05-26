@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "TerrainType.generated.h"
 
-class UParticleSystem;
 class USoundCue;
+class UParticleSystem;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UTerrainType : public UDataAsset {

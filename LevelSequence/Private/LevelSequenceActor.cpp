@@ -1,9 +1,9 @@
 #include "LevelSequenceActor.h"
 #include "Net/UnrealNetwork.h"
+#include "DefaultLevelSequenceInstanceData.h"
+#include "LevelSequenceBurnInOptions.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneBindingOverrides -FallbackName=MovieSceneBindingOverrides
 #include "LevelSequencePlayer.h"
-#include "LevelSequenceBurnInOptions.h"
-#include "DefaultLevelSequenceInstanceData.h"
 
 class ULevelSequence;
 class AActor;

@@ -4,10 +4,10 @@
 #include "AnimationSharingManager.generated.h"
 
 class USkeleton;
-class UAnimSharingInstance;
-class UAnimationSharingSetup;
 class AActor;
+class UAnimSharingInstance;
 class UAnimationSharingManager;
+class UAnimationSharingSetup;
 
 UCLASS(Blueprintable, DefaultConfig)
 class ANIMATIONSHARING_API UAnimationSharingManager : public UObject {

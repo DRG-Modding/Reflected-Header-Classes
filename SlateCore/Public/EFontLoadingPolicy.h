@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFontLoadingPolicy.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFontLoadingPolicy : uint8 {
     LazyLoad,
     Stream,

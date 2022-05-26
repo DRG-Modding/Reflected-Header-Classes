@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDataSortTypeEnum.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDataSortTypeEnum : uint8 {
     ChaosNiagara_DataSortType_NoSorting,
     ChaosNiagara_DataSortType_RandomShuffle,

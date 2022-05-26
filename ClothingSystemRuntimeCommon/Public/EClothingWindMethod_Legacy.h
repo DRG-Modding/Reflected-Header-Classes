@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EClothingWindMethod_Legacy.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EClothingWindMethod_Legacy : uint8 {
     Legacy,
     Accurate,

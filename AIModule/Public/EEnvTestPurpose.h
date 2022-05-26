@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTestPurpose.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTestPurpose {
     enum Type {
         Filter,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFieldPhysicsType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EFieldPhysicsType {
     Field_None,
     Field_DynamicState,

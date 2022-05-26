@@ -1,8 +1,8 @@
 #include "WidgetComponent.h"
 
-class UTextureRenderTarget2D;
-class ULocalPlayer;
 class UUserWidget;
+class ULocalPlayer;
+class UTextureRenderTarget2D;
 class UMaterialInstanceDynamic;
 
 void UWidgetComponent::SetWindowVisibility(EWindowVisibility InVisibility) {

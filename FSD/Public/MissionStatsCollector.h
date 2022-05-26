@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "MissionStatsCollector.generated.h"
 
-class APlayerCharacter;
 class UCappedResource;
+class APlayerCharacter;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UMissionStatsCollector : public UActorComponent {
@@ -17,7 +17,7 @@ protected:
 public:
     UMissionStatsCollector();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnResourceIncremented(UCappedResource* Resource, float Amount);
     
 };

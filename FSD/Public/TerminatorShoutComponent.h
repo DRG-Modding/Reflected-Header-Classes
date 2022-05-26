@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETerminatorShoutState.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "TerminatorShoutState.h"
-#include "DelegateDelegate.h"
 #include "TerminatorTalkMaterial.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAudioComponentPlayState -FallbackName=EAudioComponentPlayState
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "ETerminatorShoutState.h"
+#include "TerminatorShoutState.h"
+#include "DelegateDelegate.h"
 #include "TerminatorShoutComponent.generated.h"
 
-class UPointLightComponent;
 class UAudioComponent;
+class UPointLightComponent;
 class UMeshComponent;
 class USoundCue;
 
@@ -33,10 +33,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
     UPointLightComponent* TalkLight;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxRadius;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxIntensity;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

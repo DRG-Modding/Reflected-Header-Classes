@@ -15,7 +15,7 @@ public:
     UPROPERTY(EditAnywhere)
     TEnumAsByte<EStretchDirection::Type> StretchDirection;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float UserSpecifiedScale;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

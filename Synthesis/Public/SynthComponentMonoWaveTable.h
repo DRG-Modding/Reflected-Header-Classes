@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
-#include "OnTableAlteredDelegate.h"
-#include "NumTablesChangedDelegate.h"
 #include "ESynthLFOType.h"
+#include "OnTableAlteredDelegate.h"
 #include "CurveInterpolationType.h"
+#include "NumTablesChangedDelegate.h"
 #include "SynthComponentMonoWaveTable.generated.h"
 
 class UMonoWaveTableSynthPreset;
@@ -151,7 +151,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMaxTableIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<float> GetKeyFrameValuesForTable(float TableIndex) const;
     
     UFUNCTION(BlueprintCallable)

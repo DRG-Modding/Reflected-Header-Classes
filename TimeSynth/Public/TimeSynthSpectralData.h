@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct TIMESYNTH_API FTimeSynthSpectralData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FrequencyHz;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Magnitude;
     
     FTimeSynthSpectralData();

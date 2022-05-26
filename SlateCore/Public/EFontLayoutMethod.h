@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EFontLayoutMethod.generated.h"
 
-UENUM()
-enum class EFontLayoutMethod {
+UENUM(BlueprintType)
+enum class EFontLayoutMethod : uint8 {
     Metrics,
     BoundingBox,
 };

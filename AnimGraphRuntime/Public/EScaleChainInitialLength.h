@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EScaleChainInitialLength.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EScaleChainInitialLength : uint8 {
     FixedDefaultLengthValue,
     Distance,

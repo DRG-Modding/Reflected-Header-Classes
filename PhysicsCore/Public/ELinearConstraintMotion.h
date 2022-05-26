@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELinearConstraintMotion.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ELinearConstraintMotion {
     LCM_Free,
     LCM_Limited,

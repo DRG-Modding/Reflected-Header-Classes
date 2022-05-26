@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENavCostDisplay.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ENavCostDisplay {
     enum Type {
         TotalCost,

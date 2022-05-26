@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETwoPlayerSplitScreenType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ETwoPlayerSplitScreenType {
     enum Type {
         Horizontal,

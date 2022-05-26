@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "LevelSequencePlayerSnapshot.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+#include "LevelSequencePlayerSnapshot.h"
 #include "LevelSequenceBurnIn.generated.h"
 
-class UObject;
 class ALevelSequenceActor;
+class UObject;
 class ULevelSequenceBurnInInitSettings;
 
 UCLASS(Blueprintable, EditInlineNew)

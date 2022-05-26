@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "HackingToolWidget.generated.h"
 
-class UHackingUsableComponent;
-class UDialogDataAsset;
-class USoundCue;
 class AHackingToolItem;
+class UDialogDataAsset;
+class UHackingUsableComponent;
+class USoundCue;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class FSD_API UHackingToolWidget : public UUserWidget {

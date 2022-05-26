@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPathFollowingAction.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPathFollowingAction {
     enum Type {
         Error,

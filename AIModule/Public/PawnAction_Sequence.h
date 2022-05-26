@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PawnAction.h"
 #include "EPawnActionFailHandling.h"
+#include "PawnAction.h"
 #include "PawnAction_Sequence.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

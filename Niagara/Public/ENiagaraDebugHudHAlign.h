@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraDebugHudHAlign.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraDebugHudHAlign : uint8 {
     Left,
     Center,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESlateBrushImageType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ESlateBrushImageType {
     enum Type {
         NoImage,

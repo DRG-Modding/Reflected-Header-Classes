@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMobileShadowQuality.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMobileShadowQuality : uint8 {
     NoFiltering,
     PCF_1x1,

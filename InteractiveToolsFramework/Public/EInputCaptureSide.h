@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EInputCaptureSide.generated.h"
 
-UENUM()
-enum class EInputCaptureSide {
+UENUM(BlueprintType)
+enum class EInputCaptureSide : uint8 {
     None,
     Left,
     Right,

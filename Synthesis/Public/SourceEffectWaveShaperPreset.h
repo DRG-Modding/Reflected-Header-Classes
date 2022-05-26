@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SourceEffectWaveShaperSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSourcePreset -FallbackName=SoundEffectSourcePreset
+#include "SourceEffectWaveShaperSettings.h"
 #include "SourceEffectWaveShaperPreset.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioGallerySize.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioGallerySize : uint8 {
     Original,
     Thumb320,

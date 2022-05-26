@@ -5,11 +5,11 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequencePlaybackSettings -FallbackName=MovieSceneSequencePlaybackSettings
 #include "LevelSequencePlayer.generated.h"
 
-class UCameraComponent;
-class ULevelSequencePlayer;
-class ALevelSequenceActor;
 class UObject;
+class ULevelSequencePlayer;
+class UCameraComponent;
 class ULevelSequence;
+class ALevelSequenceActor;
 
 UCLASS(Blueprintable)
 class LEVELSEQUENCE_API ULevelSequencePlayer : public UMovieSceneSequencePlayer {

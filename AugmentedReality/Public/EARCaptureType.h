@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARCaptureType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARCaptureType : uint8 {
     Camera,
     QRCode,

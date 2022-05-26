@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPropertyAccessObjectType.h"
 #include "EPropertyAccessIndirectionType.h"
+#include "EPropertyAccessObjectType.h"
 #include "PropertyAccessIndirection.generated.h"
 
 class UFunction;

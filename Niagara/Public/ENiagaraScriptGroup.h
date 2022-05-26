@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraScriptGroup.generated.h"
 
-UENUM()
-enum class ENiagaraScriptGroup {
+UENUM(BlueprintType)
+enum class ENiagaraScriptGroup : uint8 {
     Particle,
     Emitter,
     System,

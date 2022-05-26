@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerController -FallbackName=PlayerController
-#include "PlatformComponent.h"
-#include "LocalVoiceStatusDelegate.h"
 #include "EMinersManualSinglePage.h"
 #include "EHUDVisibilityReason.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerController -FallbackName=PlayerController
+#include "LocalVoiceStatusDelegate.h"
+#include "PlatformComponent.h"
 #include "EMinersManualSection.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EDisconnectReason.h"
@@ -12,8 +12,8 @@
 
 class UMaterialParameterCollection;
 class UWindowManager;
-class UEscapeMenuWindow;
 class UPlayerCharacterID;
+class UEscapeMenuWindow;
 
 UCLASS(Blueprintable)
 class AFSDPlayerControllerBase : public APlayerController {

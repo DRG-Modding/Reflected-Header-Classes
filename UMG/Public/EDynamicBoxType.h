@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDynamicBoxType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDynamicBoxType : uint8 {
     Horizontal,
     Vertical,

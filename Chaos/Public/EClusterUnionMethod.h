@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EClusterUnionMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EClusterUnionMethod : uint8 {
     PointImplicit,
     DelaunayTriangulation,

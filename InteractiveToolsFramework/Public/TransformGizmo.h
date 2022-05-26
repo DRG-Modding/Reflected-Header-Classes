@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteractiveGizmo.h"
 #include "EToolContextCoordinateSystem.h"
+#include "InteractiveGizmo.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "TransformGizmo.generated.h"
 
 class UTransformProxy;
 class UGizmoComponentAxisSource;
-class UGizmoConstantFrameAxisSource;
 class UPrimitiveComponent;
+class UGizmoConstantFrameAxisSource;
 class UGizmoTransformChangeStateTarget;
 class UGizmoScaledTransformSource;
 

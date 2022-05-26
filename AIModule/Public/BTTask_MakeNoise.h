@@ -7,7 +7,7 @@ UCLASS(Blueprintable)
 class AIMODULE_API UBTTask_MakeNoise : public UBTTaskNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Loudnes;
     
     UBTTask_MakeNoise();

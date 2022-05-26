@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraSortMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraSortMode : uint8 {
     None,
     ViewDepth,

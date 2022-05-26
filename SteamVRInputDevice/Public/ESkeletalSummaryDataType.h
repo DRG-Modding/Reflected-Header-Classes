@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESkeletalSummaryDataType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESkeletalSummaryDataType : uint8 {
     VR_SummaryType_FromAnimation,
     VR_SummaryType_FromDevice,

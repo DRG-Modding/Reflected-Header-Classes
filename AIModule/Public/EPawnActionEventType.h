@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPawnActionEventType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPawnActionEventType {
     enum Type {
         Invalid,

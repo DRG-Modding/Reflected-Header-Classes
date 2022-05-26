@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTestCost.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTestCost {
     enum Type {
         Low,

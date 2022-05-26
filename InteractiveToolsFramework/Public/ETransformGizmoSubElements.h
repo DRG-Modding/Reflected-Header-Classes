@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ETransformGizmoSubElements.generated.h"
 
-UENUM()
-enum class ETransformGizmoSubElements {
+UENUM(BlueprintType)
+enum class ETransformGizmoSubElements : uint8 {
     None,
     TranslateAxisX = 0x2,
     TranslateAxisY = 0x4,

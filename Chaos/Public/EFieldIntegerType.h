@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFieldIntegerType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EFieldIntegerType {
     Integer_DynamicState,
     Integer_ActivateDisabled,

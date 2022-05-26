@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EFSDFaction.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "EFSDFaction.h"
 #include "CommunityGoalFaction.generated.h"
 
 class UTexture2D;

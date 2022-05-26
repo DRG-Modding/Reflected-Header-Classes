@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENavigationSource.generated.h"
 
-UENUM()
-enum class ENavigationSource {
+UENUM(BlueprintType)
+enum class ENavigationSource : uint8 {
     FocusedWidget,
     WidgetUnderCursor,
 };

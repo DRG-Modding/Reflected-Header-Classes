@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "FoliageVertexColorMask.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum FoliageVertexColorMask {
     FOLIAGEVERTEXCOLORMASK_Disabled,
     FOLIAGEVERTEXCOLORMASK_Red,

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataInterface.h"
 #include "NiagaraUserParameterBinding.h"
+#include "NiagaraDataInterface.h"
 #include "NiagaraDataInterfaceSpline.generated.h"
 
 class AActor;

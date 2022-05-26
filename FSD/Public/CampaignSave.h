@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ActiveCampaignItem.h"
-#include "WeeklyCampaignItem.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "WeeklyCampaignItem.h"
 #include "CampaignSave.generated.h"
 
 USTRUCT(BlueprintType)

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOculusMR_CompositionMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EOculusMR_CompositionMethod : uint8 {
     ExternalComposition,
     DirectComposition,

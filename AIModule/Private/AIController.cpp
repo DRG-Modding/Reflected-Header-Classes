@@ -3,11 +3,11 @@
 #include "PathFollowingComponent.h"
 #include "PawnActionsComponent.h"
 
-class UBlackboardData;
-class UBehaviorTree;
-class UBlackboardComponent;
 class UNavigationQueryFilter;
+class UBlackboardData;
+class UBlackboardComponent;
 class UGameplayTaskResource;
+class UBehaviorTree;
 class AActor;
 class UAIPerceptionComponent;
 

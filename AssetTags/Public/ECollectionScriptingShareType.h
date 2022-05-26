@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ECollectionScriptingShareType.generated.h"
 
-UENUM()
-enum class ECollectionScriptingShareType {
+UENUM(BlueprintType)
+enum class ECollectionScriptingShareType : uint8 {
     Local,
     Private,
     Shared,

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneEntityProvider.h"
 #include "MovieSceneSection.h"
+#include "MovieSceneEntityProvider.h"
 #include "MovieSceneEvaluationHook.h"
 #include "MovieSceneHookSection.generated.h"
 

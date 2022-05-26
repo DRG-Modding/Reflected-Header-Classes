@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENDISkeletalMesh_SkinningMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENDISkeletalMesh_SkinningMode : uint8 {
     Invalid = 0xFF,
     None = 0x0,

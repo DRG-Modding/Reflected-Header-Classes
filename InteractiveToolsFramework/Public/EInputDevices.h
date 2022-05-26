@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EInputDevices.generated.h"
 
-UENUM()
-enum class EInputDevices {
+UENUM(BlueprintType)
+enum class EInputDevices : uint8 {
     None,
     Keyboard,
     Mouse,

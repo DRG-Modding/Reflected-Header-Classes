@@ -4,8 +4,8 @@
 #include "AnimSharingStateInstance.generated.h"
 
 class UAnimSequence;
-class UAnimSharingInstance;
 class AActor;
+class UAnimSharingInstance;
 
 UCLASS(Blueprintable, NonTransient)
 class ANIMATIONSHARING_API UAnimSharingStateInstance : public UAnimInstance {
@@ -15,10 +15,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UAnimSequence* AnimationToPlay;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float PermutationTimeOffset;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float PlayRate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

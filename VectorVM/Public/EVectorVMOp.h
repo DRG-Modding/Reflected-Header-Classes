@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EVectorVMOp.generated.h"
 
-UENUM()
-enum class EVectorVMOp {
+UENUM(BlueprintType)
+enum class EVectorVMOp : uint8 {
     done,
     add,
     sub,

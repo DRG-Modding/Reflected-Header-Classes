@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDatasmithImportAssetConflictPolicy.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDatasmithImportAssetConflictPolicy : uint8 {
     Replace,
     Update,

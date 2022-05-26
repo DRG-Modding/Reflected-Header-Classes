@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EGameplayTaskState.generated.h"
 
-UENUM()
-enum class EGameplayTaskState {
+UENUM(BlueprintType)
+enum class EGameplayTaskState : uint8 {
     Uninitialized,
     AwaitingActivation,
     Paused,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWidgetGeometryMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWidgetGeometryMode : uint8 {
     Plane,
     Cylinder,

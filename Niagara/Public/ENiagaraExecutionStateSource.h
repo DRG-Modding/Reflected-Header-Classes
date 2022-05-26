@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraExecutionStateSource.generated.h"
 
-UENUM()
-enum class ENiagaraExecutionStateSource {
+UENUM(BlueprintType)
+enum class ENiagaraExecutionStateSource : uint8 {
     Scalability,
     Internal,
     Owner,

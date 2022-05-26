@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIRequestPriority.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EAIRequestPriority {
     enum Type {
         SoftScript,

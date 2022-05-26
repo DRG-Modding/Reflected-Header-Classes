@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "FlareMeta.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "ShadowQualityChangedDelegate.h"
-#include "FlareMeta.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "FlareController.generated.h"
 
+class AActor;
+class AFlareGunProjectile;
 class AFlare;
 class UObject;
-class AFlareGunProjectile;
-class AActor;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFlareController : public UActorComponent {

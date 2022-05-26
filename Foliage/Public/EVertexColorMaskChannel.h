@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EVertexColorMaskChannel.generated.h"
 
-UENUM()
-enum class EVertexColorMaskChannel {
+UENUM(BlueprintType)
+enum class EVertexColorMaskChannel : uint8 {
     Red,
     Green,
     Blue,

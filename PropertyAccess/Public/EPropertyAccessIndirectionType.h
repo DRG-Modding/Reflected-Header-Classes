@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPropertyAccessIndirectionType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPropertyAccessIndirectionType : uint8 {
     Offset,
     Object,

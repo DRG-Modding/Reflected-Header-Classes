@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFourPlayerSplitScreenType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFourPlayerSplitScreenType : uint8 {
     Grid,
     Vertical,

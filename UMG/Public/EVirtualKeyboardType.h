@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EVirtualKeyboardType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EVirtualKeyboardType {
     enum Type {
         Default,

@@ -3,8 +3,8 @@
 #include "PanelWidget.h"
 #include "VerticalBox.generated.h"
 
-class UWidget;
 class UVerticalBoxSlot;
+class UWidget;
 
 UCLASS(Blueprintable)
 class UMG_API UVerticalBox : public UPanelWidget {

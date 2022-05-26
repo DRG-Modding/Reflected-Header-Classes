@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimPhysAngularConstraintType.h"
-#include "AnimPhysLinearConstraintType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "AnimPhysLinearConstraintType.h"
+#include "AnimPhysAngularConstraintType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimPhysTwistAxis -FallbackName=AnimPhysTwistAxis
 #include "AnimPhysConstraintSetup.generated.h"
 
@@ -34,7 +34,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AnimPhysTwistAxis AngularTargetAxis;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ConeAngle;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

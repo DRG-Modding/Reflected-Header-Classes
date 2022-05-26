@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ModioPagedResult.h"
-#include "ModioModDependency.h"
 #include "ModioModDependencyList.h"
+#include "ModioModDependency.h"
 #include "ModioModDependenciesLibrary.generated.h"
 
 UCLASS(Blueprintable)

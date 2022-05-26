@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RewardClaimedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+#include "RewardClaimedDelegate.h"
 #include "SeasonLevel.h"
 #include "SeasonLevelWidget.generated.h"
 

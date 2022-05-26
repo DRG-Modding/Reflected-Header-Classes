@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraUserRedirectionParameterStore.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FXSystemComponent -FallbackName=FXSystemComponent
-#include "OnNiagaraSystemFinishedDelegate.h"
-#include "NiagaraMaterialOverride.h"
-#include "ENiagaraTickBehavior.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachmentRule -FallbackName=EAttachmentRule
+#include "ENiagaraTickBehavior.h"
+#include "NiagaraUserRedirectionParameterStore.h"
+#include "NiagaraMaterialOverride.h"
+#include "OnNiagaraSystemFinishedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector4 -FallbackName=Vector4
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "ENiagaraAgeUpdateMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "NiagaraComponent.generated.h"
 
-class UMaterialInterface;
-class UNiagaraSystem;
 class USceneComponent;
+class UNiagaraSystem;
+class AActor;
 class UTextureRenderTarget;
 class UObject;
-class AActor;
+class UMaterialInterface;
 class UNiagaraDataInterface;
 
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -58,7 +58,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAutoAttachWeldSimulatedBodies: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxTimeBeforeForceUpdateTransform;
     
     UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -215,7 +215,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ENiagaraTickBehavior GetTickBehavior() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSeekDelta() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -224,7 +224,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPreviewLODDistanceEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetPreviewLODDistance() const;
     
     UFUNCTION(BlueprintCallable)
@@ -236,7 +236,7 @@ public:
     UFUNCTION(BlueprintCallable)
     TArray<FVector> GetNiagaraParticlePositions_DebugOnly(const FString& InEmitterName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMaxSimTime() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -245,7 +245,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetForceSolo() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDesiredAge() const;
     
     UFUNCTION(BlueprintCallable)

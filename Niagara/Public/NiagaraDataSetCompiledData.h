@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraVariable.h"
-#include "NiagaraVariableLayoutInfo.h"
 #include "NiagaraDataSetID.h"
+#include "NiagaraVariableLayoutInfo.h"
 #include "ENiagaraSimTarget.h"
 #include "NiagaraDataSetCompiledData.generated.h"
 

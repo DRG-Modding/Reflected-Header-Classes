@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "DeathSigDelegate.h"
 #include "Health.h"
+#include "DeathSigDelegate.h"
+#include "EHealthbarType.h"
 #include "HealthChangedSigDelegate.h"
 #include "DamageSigDelegate.h"
-#include "OnRadialDamageDelegate.h"
 #include "HitSigDelegate.h"
-#include "EHealthbarType.h"
 #include "BodypartHitSigDelegate.h"
+#include "OnRadialDamageDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DamageData.h"
 #include "HealthComponentBase.generated.h"
@@ -87,7 +87,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShowHealthBar() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHealthPct() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -96,7 +96,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetHealthBarWorldOffset() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHealth() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

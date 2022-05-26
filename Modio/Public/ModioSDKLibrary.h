@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioApiKey.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "ModioInitializeOptions.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "EFileSizeUnit.h"
+#include "ModioApiKey.h"
 #include "ModioGameID.h"
 #include "EModioEnvironment.h"
-#include "EFileSizeUnit.h"
 #include "ModioSDKLibrary.generated.h"
 
 UCLASS(Blueprintable, MinimalAPI)

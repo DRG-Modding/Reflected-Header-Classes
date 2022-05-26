@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "ECaveEntranceType.h"
 #include "ECaveEntrancePriority.h"
+#include "ECaveEntranceType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "RoomEntrance.generated.h"
 
 USTRUCT(BlueprintType)

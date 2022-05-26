@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "MovieSceneTrackIdentifier.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "MovieSceneFrameRange.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "MovieSceneTemplateGenerationLedger.generated.h"
 
 USTRUCT(BlueprintType)

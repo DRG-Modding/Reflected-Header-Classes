@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
-#include "EARServiceInstallRequestResult.h"
 #include "EARServicePermissionRequestResult.h"
 #include "EARServiceAvailability.h"
+#include "EARServiceInstallRequestResult.h"
 #include "ARDependencyHandler.generated.h"
 
 class UARSessionConfig;

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SlateWidgetStyle.h"
-#include "SlateBrush.h"
 #include "SlateColor.h"
+#include "SlateBrush.h"
 #include "TableRowStyle.generated.h"
 
 USTRUCT(BlueprintType)

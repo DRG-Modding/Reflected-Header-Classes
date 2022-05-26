@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPropertyAccessCopyType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPropertyAccessCopyType : uint8 {
     None,
     Plain,

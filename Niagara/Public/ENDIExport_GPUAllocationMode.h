@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENDIExport_GPUAllocationMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENDIExport_GPUAllocationMode : uint8 {
     FixedSize,
     PerParticle,

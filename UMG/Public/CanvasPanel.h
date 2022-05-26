@@ -3,8 +3,8 @@
 #include "PanelWidget.h"
 #include "CanvasPanel.generated.h"
 
-class UWidget;
 class UCanvasPanelSlot;
+class UWidget;
 
 UCLASS(Blueprintable)
 class UMG_API UCanvasPanel : public UPanelWidget {

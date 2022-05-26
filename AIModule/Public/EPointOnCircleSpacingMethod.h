@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPointOnCircleSpacingMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPointOnCircleSpacingMethod : uint8 {
     BySpaceBetween,
     ByNumberOfPoints,

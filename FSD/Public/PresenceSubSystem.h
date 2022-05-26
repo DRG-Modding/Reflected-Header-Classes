@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "PresenceSubSystem.generated.h"
 
-class UDiscordWrapper;
 class UCommunityGoalWrapper;
+class UDiscordWrapper;
 
 UCLASS(Blueprintable)
 class UPresenceSubSystem : public UGameInstanceSubsystem {

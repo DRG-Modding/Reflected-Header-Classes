@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SourceEffectStereoDelaySettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSourcePreset -FallbackName=SoundEffectSourcePreset
+#include "SourceEffectStereoDelaySettings.h"
 #include "SourceEffectStereoDelayPreset.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

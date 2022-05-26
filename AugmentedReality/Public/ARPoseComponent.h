@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EPoseComponentDebugMode.h"
 #include "ARComponent.h"
 #include "ARPoseUpdatePayload.h"
-#include "EPoseComponentDebugMode.h"
 #include "ARPoseComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

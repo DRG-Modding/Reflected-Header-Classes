@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "FNiagaraCompileEventSeverity.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class FNiagaraCompileEventSeverity : uint8 {
     Log,
     Warning,

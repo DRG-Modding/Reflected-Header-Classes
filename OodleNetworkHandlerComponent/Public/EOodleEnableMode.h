@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EOodleEnableMode.generated.h"
 
-UENUM()
-enum class EOodleEnableMode {
+UENUM(BlueprintType)
+enum class EOodleEnableMode : uint8 {
     AlwaysEnabled,
     WhenCompressedPacketReceived,
 };

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraPlatformSelectionState.generated.h"
 
-UENUM()
-enum class ENiagaraPlatformSelectionState {
+UENUM(BlueprintType)
+enum class ENiagaraPlatformSelectionState : uint8 {
     Default,
     Enabled,
     Disabled,

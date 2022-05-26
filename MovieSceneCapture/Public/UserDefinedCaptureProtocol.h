@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CapturedPixelsID.h"
 #include "MovieSceneImageCaptureProtocolBase.h"
 #include "CapturedPixels.h"
+#include "CapturedPixelsID.h"
 #include "FrameMetrics.h"
 #include "UserDefinedCaptureProtocol.generated.h"
 

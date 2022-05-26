@@ -1,34 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-#include "AttributesForVertex.h"
-#include "ETriangleTessellationMode.h"
-#include "VertexToMove.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=VertexID -FallbackName=VertexID
-#include "AttributesForEdge.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=EdgeID -FallbackName=EdgeID
-//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=PolygonID -FallbackName=PolygonID
 #include "EMeshModificationType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "PolygonGroupToCreate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=PolygonID -FallbackName=PolygonID
+#include "EInsetPolygonsMode.h"
+#include "ETriangleTessellationMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=VertexID -FallbackName=VertexID
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=EdgeID -FallbackName=EdgeID
 #include "EMeshTopologyChange.h"
 #include "PolygonToSplit.h"
-#include "VertexAttributesForPolygon.h"
+#include "PolygonGroupForPolygon.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Plane -FallbackName=Plane
+#include "AttributesForVertex.h"
 #include "AttributesForVertexInstance.h"
+#include "VertexAttributesForPolygon.h"
+#include "AttributesForEdge.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "VertexToMove.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=PolygonGroupID -FallbackName=PolygonGroupID
-#include "EInsetPolygonsMode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=VertexInstanceID -FallbackName=VertexInstanceID
 #include "SubdivisionLimitData.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=TriangleID -FallbackName=TriangleID
-#include "VertexToCreate.h"
-#include "EdgeToCreate.h"
-#include "VertexInstanceToCreate.h"
-#include "PolygonToCreate.h"
-#include "PolygonGroupToCreate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=BoxSphereBounds -FallbackName=BoxSphereBounds
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+//CROSS-MODULE INCLUDE V2: -ModuleName=MeshDescription -ObjectName=TriangleID -FallbackName=TriangleID
+#include "VertexInstanceToCreate.h"
+#include "VertexToCreate.h"
+#include "PolygonToCreate.h"
+#include "EdgeToCreate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=BoxSphereBounds -FallbackName=BoxSphereBounds
 #include "ChangeVertexInstancesForPolygon.h"
-#include "PolygonGroupForPolygon.h"
 #include "EditableMesh.generated.h"
 
 class UEditableMeshAdapter;

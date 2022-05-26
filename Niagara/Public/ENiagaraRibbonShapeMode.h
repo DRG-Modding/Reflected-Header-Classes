@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraRibbonShapeMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraRibbonShapeMode : uint8 {
     Plane,
     MultiPlane,

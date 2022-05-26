@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARFaceBlendShape.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARFaceBlendShape : uint8 {
     EyeBlinkLeft,
     EyeLookDownLeft,

@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 #include "FSDPawn.h"
 #include "EventParticipant.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "EGuntowerModuleState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "TowerModuleBase.generated.h"
 
-class USkeletalMesh;
-class USkeletalMeshComponent;
 class USceneComponent;
+class USkeletalMeshComponent;
 class UStaticMeshComponent;
 class UEnemyHealthComponent;
+class USkeletalMesh;
 class USoundCue;
 class UParticleSystem;
 
@@ -43,13 +43,13 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UParticleSystem* deathParticles;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ArmorLaunchPower;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HideArmorTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ModuleRotationSpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

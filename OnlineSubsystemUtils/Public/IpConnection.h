@@ -8,7 +8,7 @@ class ONLINESUBSYSTEMUTILS_API UIpConnection : public UNetConnection {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SocketErrorDisconnectDelay;
     
 public:

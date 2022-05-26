@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioModInfoList.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "ModioModInfo.h"
 #include "ModioPagedResult.h"
+#include "ModioModInfoList.h"
+#include "ModioModInfo.h"
 #include "ModioModInfoListLibrary.generated.h"
 
 UCLASS(Blueprintable)

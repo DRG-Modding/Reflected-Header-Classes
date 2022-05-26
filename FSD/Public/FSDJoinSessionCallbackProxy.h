@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
 #include "FSDJoinSessionCallbackProxy.generated.h"
 
+class APlayerController;
 class UObject;
 class UFSDJoinSessionCallbackProxy;
-class APlayerController;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UFSDJoinSessionCallbackProxy : public UOnlineBlueprintCallProxyBase {

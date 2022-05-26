@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELevelVisibility.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ELevelVisibility : uint8 {
     Visible,
     Hidden,

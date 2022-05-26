@@ -23,7 +23,7 @@ public:
     UPROPERTY(EditAnywhere)
     TArray<FBoneReference> IKBonesToMove;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float HandFKWeight;
     
     FAnimNode_HandIKRetargeting();

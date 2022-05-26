@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraNumericOutputTypeSelectionMode.generated.h"
 
-UENUM()
-enum class ENiagaraNumericOutputTypeSelectionMode {
+UENUM(BlueprintType)
+enum class ENiagaraNumericOutputTypeSelectionMode : uint8 {
     None,
     Largest,
     Smallest,

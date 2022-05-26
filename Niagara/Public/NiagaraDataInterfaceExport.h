@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataInterface.h"
 #include "NiagaraUserParameterBinding.h"
+#include "NiagaraDataInterface.h"
 #include "ENDIExport_GPUAllocationMode.h"
 #include "NiagaraDataInterfaceExport.generated.h"
 
@@ -18,7 +18,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 GPUAllocationFixedSize;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float GPUAllocationPerParticleSize;
     
     UNiagaraDataInterfaceExport();

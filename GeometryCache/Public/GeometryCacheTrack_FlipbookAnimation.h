@@ -14,7 +14,7 @@ private:
     
 public:
     UDEPRECATED_GeometryCacheTrack_FlipbookAnimation();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AddMeshSample(const FGeometryCacheMeshData& MeshData, const float SampleTime);
     
 };

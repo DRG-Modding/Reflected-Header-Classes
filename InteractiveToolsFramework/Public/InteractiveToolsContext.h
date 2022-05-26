@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "InteractiveToolsContext.generated.h"
 
-class UInteractiveToolManager;
-class UInputRouter;
 class UInteractiveGizmoManager;
+class UInputRouter;
+class UInteractiveToolManager;
 
 UCLASS(Blueprintable, Transient)
 class INTERACTIVETOOLSFRAMEWORK_API UInteractiveToolsContext : public UObject {

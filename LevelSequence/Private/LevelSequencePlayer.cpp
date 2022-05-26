@@ -1,10 +1,10 @@
 #include "LevelSequencePlayer.h"
 
+class ULevelSequencePlayer;
 class UCameraComponent;
-class ALevelSequenceActor;
 class UObject;
 class ULevelSequence;
-class ULevelSequencePlayer;
+class ALevelSequenceActor;
 
 UCameraComponent* ULevelSequencePlayer::GetActiveCameraComponent() const {
     return NULL;

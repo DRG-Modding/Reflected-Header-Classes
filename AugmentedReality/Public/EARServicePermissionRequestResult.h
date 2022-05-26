@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARServicePermissionRequestResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARServicePermissionRequestResult : uint8 {
     Granted,
     Denied,

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ProximityTriggerItem.h"
-#include "PlayerSphere.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "PlayerSphere.h"
+#include "ProximityTriggerItem.h"
 #include "PlayerProximityDelegateDelegate.h"
 #include "PlayerProximityTracker.generated.h"
 
@@ -14,10 +14,10 @@ class UPlayerProximityTracker : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxDistanceBetweenPlayers;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PlayerSpheresUpdateRatePerSecond;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "AnimPhysLinearConstraintType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class AnimPhysLinearConstraintType : uint8 {
     Free,
     Limited,

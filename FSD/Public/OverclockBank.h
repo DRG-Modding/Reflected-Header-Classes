@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SchematicBankInterface.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "SchematicBankInterface.h"
 #include "OverclockBank.generated.h"
 
 class UItemID;

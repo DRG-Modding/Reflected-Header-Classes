@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvQueryRunMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvQueryRunMode {
     enum Type {
         SingleResult,

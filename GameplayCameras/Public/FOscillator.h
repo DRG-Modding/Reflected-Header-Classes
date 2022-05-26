@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOscillatorWaveform.h"
 #include "EInitialOscillatorOffset.h"
+#include "EOscillatorWaveform.h"
 #include "FOscillator.generated.h"
 
 USTRUCT(BlueprintType)
 struct GAMEPLAYCAMERAS_API FFOscillator {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Amplitude;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Frequency;
     
     UPROPERTY(EditAnywhere)

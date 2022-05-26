@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPawnActionMoveMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPawnActionMoveMode {
     enum Type {
         UsePathfinding,

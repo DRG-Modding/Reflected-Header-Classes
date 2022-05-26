@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBeaconConnectionState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EBeaconConnectionState : uint8 {
     Invalid,
     Closed,

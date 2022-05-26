@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFieldVectorType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EFieldVectorType {
     Vector_LinearForce,
     Vector_LinearVelocity,

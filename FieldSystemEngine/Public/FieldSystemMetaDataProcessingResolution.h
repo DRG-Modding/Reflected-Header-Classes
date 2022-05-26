@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FieldSystemMetaData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Chaos -ObjectName=EFieldResolutionType -FallbackName=EFieldResolutionType
+#include "FieldSystemMetaData.h"
 #include "FieldSystemMetaDataProcessingResolution.generated.h"
 
 class UFieldSystemMetaDataProcessingResolution;

@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FXSystemAsset -FallbackName=FXSystemAsset
-#include "NiagaraSystemScalabilityOverrides.h"
-#include "NiagaraSystemScalabilityOverride.h"
-#include "NiagaraEmitterHandle.h"
 #include "NiagaraSystemCompiledData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FXSystemAsset -FallbackName=FXSystemAsset
+#include "NiagaraSystemScalabilityOverride.h"
+#include "NiagaraSystemScalabilityOverrides.h"
+#include "NiagaraEmitterHandle.h"
 #include "NiagaraUserRedirectionParameterStore.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
 #include "NiagaraSystem.generated.h"
 
 class UNiagaraEffectType;
-class UNiagaraParameterCollectionInstance;
 class UNiagaraScript;
+class UNiagaraParameterCollectionInstance;
 
 UCLASS(Blueprintable)
 class NIAGARA_API UNiagaraSystem : public UFXSystemAsset {
@@ -66,13 +66,13 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAutoDeactivate;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float WarmupTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 WarmupTickCount;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float WarmupTickDelta;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

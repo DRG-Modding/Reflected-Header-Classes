@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESlateDebuggingFocusEvent.generated.h"
 
-UENUM()
-enum class ESlateDebuggingFocusEvent {
+UENUM(BlueprintType)
+enum class ESlateDebuggingFocusEvent : uint8 {
     FocusChanging,
     FocusLost,
     FocusReceived,

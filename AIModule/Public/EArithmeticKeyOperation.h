@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EArithmeticKeyOperation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EArithmeticKeyOperation {
     enum Type {
         Equal,

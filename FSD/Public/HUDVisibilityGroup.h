@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-#include "HUDVisibilityRegisteredWidget.h"
 #include "EHUDVisibilityMode.h"
-#include "EHUDVisibilityGroups.h"
 #include "EHUDVisibilityPresets.h"
+#include "EHUDVisibilityGroups.h"
+#include "HUDVisibilityRegisteredWidget.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=ESlateVisibility -FallbackName=ESlateVisibility
 #include "HUDVisibilityGroup.generated.h"
 

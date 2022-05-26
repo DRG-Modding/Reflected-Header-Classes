@@ -2,14 +2,15 @@
 #include "CoreMinimal.h"
 #include "Widget.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateBrush -FallbackName=SlateBrush
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
+#include "Widget.h"
 #include "Widget.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "Widget.h"
-#include "Widget.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=SlateColor -FallbackName=SlateColor
 #include "Image.generated.h"
 
+class UMaterialInstanceDynamic;
 class UObject;
 class UTexture2DDynamic;
 class UTexture2D;
@@ -17,7 +18,6 @@ class UMaterialInterface;
 class USlateTextureAtlasInterface;
 class ISlateTextureAtlasInterface;
 class USlateBrushAsset;
-class UMaterialInstanceDynamic;
 
 UCLASS(Blueprintable)
 class UMG_API UImage : public UWidget {

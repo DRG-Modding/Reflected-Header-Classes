@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPartyReservationResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPartyReservationResult {
     enum Type {
         NoResult,

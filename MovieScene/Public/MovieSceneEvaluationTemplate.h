@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneTemplateGenerationLedger.h"
+#include "MovieSceneEvaluationTemplateSerialNumber.h"
 #include "MovieSceneTrackIdentifier.h"
 #include "MovieSceneEvaluationTrack.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
-#include "MovieSceneEvaluationTemplateSerialNumber.h"
+#include "MovieSceneTemplateGenerationLedger.h"
 #include "MovieSceneEvaluationTemplate.generated.h"
 
 USTRUCT(BlueprintType)

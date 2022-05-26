@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WidgetAnimationDynamicEventDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequence -FallbackName=MovieSceneSequence
 #include "WidgetAnimationBinding.h"
+#include "WidgetAnimationDynamicEventDelegate.h"
 #include "WidgetAnimation.generated.h"
 
 class UMovieScene;
@@ -39,10 +39,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void UnbindAllFromAnimationFinished(UUserWidget* Widget);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetStartTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetEndTime() const;
     
     UFUNCTION(BlueprintCallable)

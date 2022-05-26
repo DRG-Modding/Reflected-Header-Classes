@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnARTransformUpdatedDelegate.h"
-#include "OnARTrackingStateChangedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "EARTrackingState.h"
+#include "OnARTrackingStateChangedDelegate.h"
+#include "OnARTransformUpdatedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ARPin.generated.h"
 
-class USceneComponent;
 class UWorld;
 class UARTrackedGeometry;
+class USceneComponent;
 
 UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UARPin : public UObject {
@@ -58,7 +58,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetDebugName() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void DebugDraw(UWorld* World, const FLinearColor& Color, float Scale, float PersistForSeconds) const;
     
 };

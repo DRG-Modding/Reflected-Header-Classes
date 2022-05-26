@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "CurveInterpolationType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class CurveInterpolationType : uint8 {
     AUTOINTERP,
     LINEAR,

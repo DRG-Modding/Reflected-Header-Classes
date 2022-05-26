@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EGenericAICheck.generated.h"
 
-UENUM()
-enum class EGenericAICheck {
+UENUM(BlueprintType)
+enum class EGenericAICheck : uint8 {
     Less,
     LessOrEqual,
     Equal,

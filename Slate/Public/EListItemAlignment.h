@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EListItemAlignment.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EListItemAlignment : uint8 {
     EvenlyDistributed,
     EvenlySize,

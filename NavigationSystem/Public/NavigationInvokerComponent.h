@@ -8,10 +8,10 @@ class NAVIGATIONSYSTEM_API UNavigationInvokerComponent : public UActorComponent 
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TileGenerationRadius;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TileRemovalRadius;
     
 public:

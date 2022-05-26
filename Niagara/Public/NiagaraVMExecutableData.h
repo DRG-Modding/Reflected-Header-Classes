@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "VMExternalFunctionBindingInfo.h"
 #include "NiagaraCompilerTag.h"
 #include "NiagaraVariable.h"
 #include "NiagaraScriptDataUsageInfo.h"
+#include "NiagaraDataSetProperties.h"
 #include "NiagaraScriptDataInterfaceCompileInfo.h"
 #include "NiagaraStatScope.h"
+#include "VMExternalFunctionBindingInfo.h"
 #include "NiagaraDataSetID.h"
-#include "ENiagaraScriptCompileStatus.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=NiagaraShader -ObjectName=NiagaraDataInterfaceGPUParamInfo -FallbackName=NiagaraDataInterfaceGPUParamInfo
-#include "NiagaraDataSetProperties.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=NiagaraShader -ObjectName=SimulationStageMetaData -FallbackName=SimulationStageMetaData
+//CROSS-MODULE INCLUDE V2: -ModuleName=NiagaraShader -ObjectName=NiagaraDataInterfaceGPUParamInfo -FallbackName=NiagaraDataInterfaceGPUParamInfo
+#include "ENiagaraScriptCompileStatus.h"
 #include "NiagaraVMExecutableData.generated.h"
 
 USTRUCT(BlueprintType)

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "FileManifestData.h"
-#include "ChunkInfoData.h"
 #include "CustomFieldData.h"
+#include "ChunkInfoData.h"
 #include "BuildPatchManifest.generated.h"
 
 UCLASS(Blueprintable)

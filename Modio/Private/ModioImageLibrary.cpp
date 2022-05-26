@@ -1,7 +1,7 @@
 #include "ModioImageLibrary.h"
 
-class UTexture2DDynamic;
 class UTexture;
+class UTexture2DDynamic;
 
 void UModioImageLibrary::LoadAsync(const FModioImageWrapper& Image, FOnLoadImageDelegate OnImageLoaded) {
 }

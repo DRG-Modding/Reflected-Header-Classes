@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EHMDWornState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EHMDWornState {
     enum Type {
         Unknown,

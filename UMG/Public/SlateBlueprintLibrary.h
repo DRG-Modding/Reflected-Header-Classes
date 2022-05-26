@@ -19,10 +19,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector2D TransformVectorAbsoluteToLocal(const FGeometry& Geometry, FVector2D AbsoluteVector);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float TransformScalarLocalToAbsolute(const FGeometry& Geometry, float LocalScalar);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float TransformScalarAbsoluteToLocal(const FGeometry& Geometry, float AbsoluteScalar);
     
     UFUNCTION(BlueprintCallable)

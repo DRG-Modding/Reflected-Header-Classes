@@ -2,24 +2,24 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Geometry -FallbackName=Geometry
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=Geometry -FallbackName=Geometry
 #include "WidgetLayoutLibrary.generated.h"
 
-class UScrollBoxSlot;
-class UVerticalBoxSlot;
-class UWrapBoxSlot;
+class UGridSlot;
 class UCanvasPanelSlot;
-class USizeBoxSlot;
+class UWrapBoxSlot;
 class UWidget;
 class UWidgetSwitcherSlot;
+class UScrollBoxSlot;
+class UVerticalBoxSlot;
+class USizeBoxSlot;
 class UUniformGridSlot;
-class UBorderSlot;
 class UScaleBoxSlot;
 class USafeZoneSlot;
 class UOverlaySlot;
 class UHorizontalBoxSlot;
-class UGridSlot;
+class UBorderSlot;
 class UObject;
 class APlayerController;
 
@@ -79,13 +79,13 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     static FVector2D GetViewportSize(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     static float GetViewportScale(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable)
     static FGeometry GetPlayerScreenWidgetGeometry(APlayerController* PlayerController);
     
-    UFUNCTION(BlueprintCosmetic, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintCosmetic, BlueprintPure)
     static bool GetMousePositionScaledByDPI(APlayerController* Player, float& LocationX, float& LocationY);
     
     UFUNCTION(BlueprintCallable)

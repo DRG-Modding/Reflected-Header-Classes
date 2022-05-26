@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFontHinting.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFontHinting : uint8 {
     Default,
     Auto,

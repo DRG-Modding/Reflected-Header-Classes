@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "AnimPhysAngularConstraintType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class AnimPhysAngularConstraintType : uint8 {
     Angular,
     Cone,

@@ -1,7 +1,7 @@
 #include "MediaPlayer.h"
 
-class UObject;
 class UMediaSource;
+class UObject;
 class UMediaPlaylist;
 class UMediaTimeStampInfo;
 

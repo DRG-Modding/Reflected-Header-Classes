@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARGeoTrackingStateReason.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARGeoTrackingStateReason : uint8 {
     None,
     NotAvailableAtLocation,

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraRendererProperties.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraLightRendererProperties.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
@@ -18,10 +18,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bAlphaScalesBrightness: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RadiusScale;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DefaultExponent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

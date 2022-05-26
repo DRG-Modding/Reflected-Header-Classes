@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EVanitySlot.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "CharacterVanityItems.generated.h"
 
-class UEyeBrowsVanityItem;
-class UArmorVanityItem;
-class UHeadVanityItem;
 class UVanitySchematicBank;
+class UHeadVanityItem;
 class UMoustacheVanityItem;
 class UBeardVanityItem;
+class UArmorVanityItem;
+class UEyeBrowsVanityItem;
 class UArmorMaterialVanityItem;
 class USideburnsVanityItem;
 class UBeardColorVanityItem;

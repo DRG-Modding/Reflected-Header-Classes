@@ -6,9 +6,9 @@
 #include "EPawnActionResult.h"
 #include "PawnAction.generated.h"
 
+class UPawnActionsComponent;
 class UPawnAction;
 class UBrainComponent;
-class UPawnActionsComponent;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class AIMODULE_API UPawnAction : public UObject {

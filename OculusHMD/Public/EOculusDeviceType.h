@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOculusDeviceType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EOculusDeviceType : uint8 {
     OculusMobile_Deprecated0,
     OculusQuest,

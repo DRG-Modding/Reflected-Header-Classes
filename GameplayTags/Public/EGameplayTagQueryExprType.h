@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGameplayTagQueryExprType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EGameplayTagQueryExprType {
     enum Type {
         Undefined,

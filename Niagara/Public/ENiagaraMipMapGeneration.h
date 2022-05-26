@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraMipMapGeneration.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraMipMapGeneration : uint8 {
     Disabled,
     PostStage,

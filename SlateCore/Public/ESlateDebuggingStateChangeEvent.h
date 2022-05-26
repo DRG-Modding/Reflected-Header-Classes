@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESlateDebuggingStateChangeEvent.generated.h"
 
-UENUM()
-enum class ESlateDebuggingStateChangeEvent {
+UENUM(BlueprintType)
+enum class ESlateDebuggingStateChangeEvent : uint8 {
     MouseCaptureGained,
     MouseCaptureLost,
 };

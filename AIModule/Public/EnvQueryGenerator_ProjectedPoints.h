@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnvTraceData.h"
 #include "EnvQueryGenerator.h"
+#include "EnvTraceData.h"
 #include "EnvQueryGenerator_ProjectedPoints.generated.h"
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)

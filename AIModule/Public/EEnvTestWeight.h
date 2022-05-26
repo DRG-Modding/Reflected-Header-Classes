@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTestWeight.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTestWeight {
     enum Type {
         None,

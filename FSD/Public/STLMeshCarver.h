@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=DeepCSGFloatTree -FallbackName=DeepCSGFloatTree
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=DeepCSGFloatTree -FallbackName=DeepCSGFloatTree
 #include "STLMeshCarver.generated.h"
 
 UCLASS(Blueprintable)

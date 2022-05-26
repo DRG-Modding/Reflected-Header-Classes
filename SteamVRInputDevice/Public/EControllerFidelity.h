@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EControllerFidelity.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EControllerFidelity : uint8 {
     VR_ControllerFidelity_Estimated,
     VR_ControllerFidelity_Full,

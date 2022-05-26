@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "BlackboardComponent.generated.h"
 
-class UBrainComponent;
 class UBlackboardData;
+class UBrainComponent;
 class UBlackboardKeyType;
 class UObject;
 
@@ -80,7 +80,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetValueAsInt(const FName& KeyName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetValueAsFloat(const FName& KeyName) const;
     
     UFUNCTION(BlueprintPure)

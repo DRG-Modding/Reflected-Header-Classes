@@ -2,16 +2,16 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "GameplayTask.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "GameplayTaskSpawnActorDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "GameplayTask_SpawnActor.generated.h"
 
-class AActor;
+class UObject;
 class UGameplayTask_SpawnActor;
+class AActor;
 class UGameplayTaskOwnerInterface;
 class IGameplayTaskOwnerInterface;
-class UObject;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UGameplayTask_SpawnActor : public UGameplayTask {

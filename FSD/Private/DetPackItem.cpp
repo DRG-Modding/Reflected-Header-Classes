@@ -1,8 +1,8 @@
 #include "DetPackItem.h"
 #include "Net/UnrealNetwork.h"
-#include "CapacityHoldingItemAggregator.h"
 #include "FirstPersonSkeletalMeshComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+#include "CapacityHoldingItemAggregator.h"
 
 void ADetPackItem::Simulate_ThrowGrenade_Implementation() {
 }

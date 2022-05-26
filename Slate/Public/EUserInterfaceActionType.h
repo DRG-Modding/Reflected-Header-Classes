@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EUserInterfaceActionType.generated.h"
 
-UENUM()
-enum class EUserInterfaceActionType {
+UENUM(BlueprintType)
+enum class EUserInterfaceActionType : uint8 {
     None,
     Button,
     ToggleButton,

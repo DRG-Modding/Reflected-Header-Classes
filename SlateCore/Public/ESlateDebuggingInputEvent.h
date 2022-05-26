@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESlateDebuggingInputEvent.generated.h"
 
-UENUM()
-enum class ESlateDebuggingInputEvent {
+UENUM(BlueprintType)
+enum class ESlateDebuggingInputEvent : uint8 {
     MouseMove,
     MouseEnter,
     MouseLeave,

@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "OculusMRFunctionLibrary.generated.h"
 
-class USceneComponent;
 class UOculusMR_Settings;
+class USceneComponent;
 
 UCLASS(Blueprintable)
 class OCULUSMR_API UOculusMRFunctionLibrary : public UBlueprintFunctionLibrary {

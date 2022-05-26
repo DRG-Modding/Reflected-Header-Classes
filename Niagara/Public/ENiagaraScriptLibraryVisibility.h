@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraScriptLibraryVisibility.generated.h"
 
-UENUM()
-enum class ENiagaraScriptLibraryVisibility {
+UENUM(BlueprintType)
+enum class ENiagaraScriptLibraryVisibility : uint8 {
     Invalid,
     Unexposed,
     Library,

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EChaosThreadingMode.generated.h"
 
-UENUM()
-enum class EChaosThreadingMode {
+UENUM(BlueprintType)
+enum class EChaosThreadingMode : uint8 {
     DedicatedThread,
     TaskGraph,
     SingleThread,

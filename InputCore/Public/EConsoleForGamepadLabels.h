@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EConsoleForGamepadLabels.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EConsoleForGamepadLabels {
     enum Type {
         None,

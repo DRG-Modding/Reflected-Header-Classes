@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EMovieSceneCaptureProtocolState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "EMovieSceneCaptureProtocolState.h"
 #include "MovieSceneCaptureProtocolBase.generated.h"
 
 UCLASS(Abstract, Blueprintable, PerObjectConfig, Config=EditorPerProjectUserSettings)

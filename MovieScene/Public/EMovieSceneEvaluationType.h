@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMovieSceneEvaluationType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMovieSceneEvaluationType : uint8 {
     FrameLocked,
     WithSubFrames,

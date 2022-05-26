@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "MissionMutator.generated.h"
 
-class UObjective;
-class URunningMissionBP;
-class UTexture2D;
 class UMutator;
+class URunningMissionBP;
+class UObjective;
+class UTexture2D;
 
 UCLASS(Blueprintable)
 class UMissionMutator : public UDataAsset {

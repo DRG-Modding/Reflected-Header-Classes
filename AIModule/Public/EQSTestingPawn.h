@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIDynamicParam.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavAgentProperties -FallbackName=NavAgentProperties
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Character -FallbackName=Character
 #include "EQSQueryResultSourceInterface.h"
 #include "EnvNamedValue.h"
+#include "AIDynamicParam.h"
 #include "EEnvQueryHightlightMode.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavAgentProperties -FallbackName=NavAgentProperties
 #include "EEnvQueryRunMode.h"
 #include "EQSTestingPawn.generated.h"
 
@@ -24,7 +24,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIDynamicParam> QueryConfig;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TimeLimitPerStep;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

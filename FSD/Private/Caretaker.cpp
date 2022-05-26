@@ -1,10 +1,10 @@
 #include "Caretaker.h"
 #include "Net/UnrealNetwork.h"
-#include "HealthDamageTracker.h"
-#include "PawnStatsComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
+#include "HealthDamageTracker.h"
 #include "EnemyHealthComponent.h"
+#include "PawnStatsComponent.h"
 
 class UCaretakerActionComponent;
 

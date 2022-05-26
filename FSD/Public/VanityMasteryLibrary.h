@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "VanityMasterySettings.h"
-#include "VanityMasterySave.h"
 #include "VanityMasteryResult.h"
+#include "VanityMasterySave.h"
 #include "CraftingCost.h"
 #include "VanityMasteryLibrary.generated.h"
 
@@ -33,7 +33,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetFashionitesAwaredForOldPurchases(UObject* WorldContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float CalculateVanityMasteryLevelProgress(int32 Level, int32 XP);
     
     UFUNCTION(BlueprintCallable)

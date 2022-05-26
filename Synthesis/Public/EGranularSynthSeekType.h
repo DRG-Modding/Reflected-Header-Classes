@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGranularSynthSeekType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGranularSynthSeekType : uint8 {
     FromBeginning,
     FromCurrentPosition,

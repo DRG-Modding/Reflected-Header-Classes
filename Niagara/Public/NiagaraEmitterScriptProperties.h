@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraEventGeneratorProperties.h"
 #include "NiagaraEventReceiverProperties.h"
+#include "NiagaraEventGeneratorProperties.h"
 #include "NiagaraEmitterScriptProperties.generated.h"
 
 class UNiagaraScript;

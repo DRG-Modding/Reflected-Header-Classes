@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "NiagaraMeshMaterialOverride.h"
 #include "NiagaraRendererProperties.h"
 #include "ENiagaraMeshFacingMode.h"
 #include "NiagaraMeshRendererMeshProperties.h"
 #include "ENiagaraRendererSourceDataMode.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "ENiagaraMeshPivotOffsetSpace.h"
-#include "ENiagaraSortMode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-#include "NiagaraMeshMaterialOverride.h"
+#include "ENiagaraSortMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ENiagaraMeshLockedAxisSpace.h"
 #include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraMaterialAttributeBinding.h"
+#include "ENiagaraMeshPivotOffsetSpace.h"
 #include "NiagaraMeshRendererProperties.generated.h"
 
 class UStaticMesh;
@@ -68,10 +68,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENiagaraMeshLockedAxisSpace LockedAxisSpace;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinCameraDistance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxCameraDistance;
     
     UPROPERTY(EditAnywhere)

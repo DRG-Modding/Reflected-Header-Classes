@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EImageComponentDebugMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EImageComponentDebugMode : uint8 {
     None,
     ShowDetectedImage,

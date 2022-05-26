@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneEvaluationHookEventContainer.h"
 #include "MovieSceneEntitySystem.h"
 #include "MovieSceneEvaluationInstanceKey.h"
+#include "MovieSceneEvaluationHookEventContainer.h"
 #include "MovieSceneEvaluationHookSystem.generated.h"
 
 UCLASS(Blueprintable)

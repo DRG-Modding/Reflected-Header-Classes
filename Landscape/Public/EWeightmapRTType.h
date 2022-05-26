@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EWeightmapRTType.generated.h"
 
-UENUM()
-enum class EWeightmapRTType {
+UENUM(BlueprintType)
+enum class EWeightmapRTType : uint8 {
     WeightmapRT_Scratch_RGBA,
     WeightmapRT_Scratch1,
     WeightmapRT_Scratch2,

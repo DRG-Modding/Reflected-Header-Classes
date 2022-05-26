@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WidgetMover.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "WidgetFade.h"
-#include "WidgetTextCounter.h"
-#include "WidgetPing.h"
-#include "CustomCounter.h"
 #include "CustomCounterDelegateDelegate.h"
+#include "WidgetPing.h"
+#include "WidgetFade.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "WidgetTextCounter.h"
+#include "CustomCounter.h"
+#include "WidgetMover.h"
 #include "EPingType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EMoveType.h"

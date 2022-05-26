@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraBindingSource.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ENiagaraBindingSource {
     ImplicitFromSource,
     ExplicitParticles,

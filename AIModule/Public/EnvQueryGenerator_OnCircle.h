@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "AIDataProviderIntValue.h"
-#include "EnvQueryGenerator_ProjectedPoints.h"
 #include "AIDataProviderFloatValue.h"
-#include "EnvTraceData.h"
+#include "EnvQueryGenerator_ProjectedPoints.h"
+#include "AIDataProviderIntValue.h"
 #include "EPointOnCircleSpacingMethod.h"
+#include "EnvTraceData.h"
 #include "EnvDirection.h"
 #include "EnvQueryGenerator_OnCircle.generated.h"
 
@@ -33,7 +33,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIDataProviderFloatValue ArcAngle;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float AngleRadians;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

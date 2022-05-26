@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ECollectionGroupEnum.generated.h"
 
-UENUM()
-enum class ECollectionGroupEnum {
+UENUM(BlueprintType)
+enum class ECollectionGroupEnum : uint8 {
     Chaos_Traansform,
     Chaos_Max,
 };

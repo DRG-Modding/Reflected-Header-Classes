@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMultiBoxType.generated.h"
 
-UENUM()
-enum class EMultiBoxType {
+UENUM(BlueprintType)
+enum class EMultiBoxType : uint8 {
     MenuBar,
     ToolBar,
     VerticalToolBar,

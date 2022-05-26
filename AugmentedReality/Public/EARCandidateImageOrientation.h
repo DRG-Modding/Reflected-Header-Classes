@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARCandidateImageOrientation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARCandidateImageOrientation : uint8 {
     Landscape,
     Portrait,

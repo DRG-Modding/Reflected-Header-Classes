@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "OculusSplashDesc.h"
+#include "EFixedFoveatedRenderingLevel.h"
 #include "EColorSpace.h"
 #include "EHandTrackingSupport.h"
-#include "EFixedFoveatedRenderingLevel.h"
 #include "OculusHMDRuntimeSettings.generated.h"
 
 UCLASS(Blueprintable, DefaultConfig)
@@ -32,10 +32,10 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHQDistortion;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PixelDensityMin;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PixelDensityMax;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

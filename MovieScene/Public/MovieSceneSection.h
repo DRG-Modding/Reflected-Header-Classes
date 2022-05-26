@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
+#include "MovieSceneEasingSettings.h"
 #include "MovieSceneSignedObject.h"
 #include "MovieSceneSectionEvalOptions.h"
-#include "MovieSceneEasingSettings.h"
+#include "EMovieSceneBlendType.h"
 #include "MovieSceneFrameRange.h"
 #include "OptionalMovieSceneBlendType.h"
-#include "EMovieSceneBlendType.h"
 #include "EMovieSceneCompletionMode.h"
 #include "MovieSceneSection.generated.h"
 
@@ -43,16 +43,16 @@ private:
     uint8 bIsLocked: 1;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float StartTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float EndTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PrerollTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PostrollTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

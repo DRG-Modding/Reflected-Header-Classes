@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EClothMassMode.generated.h"
 
-UENUM()
-enum class EClothMassMode {
+UENUM(BlueprintType)
+enum class EClothMassMode : uint8 {
     UniformMass,
     TotalMass,
     Density,

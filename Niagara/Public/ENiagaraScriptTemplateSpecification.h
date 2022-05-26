@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraScriptTemplateSpecification.generated.h"
 
-UENUM()
-enum class ENiagaraScriptTemplateSpecification {
+UENUM(BlueprintType)
+enum class ENiagaraScriptTemplateSpecification : uint8 {
     None,
     Template,
     Behavior,

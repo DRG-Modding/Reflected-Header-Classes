@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RagdollItem.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "RagdollItem.h"
 #include "RagdollManager.generated.h"
 
-class UMaterialInstanceDynamic;
 class AActor;
+class UMaterialInstanceDynamic;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class URagdollManager : public UActorComponent {

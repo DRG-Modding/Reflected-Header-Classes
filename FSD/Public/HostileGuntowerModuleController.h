@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=AIStimulus -FallbackName=AIStimulus
 #include "HostileGuntowerModuleController.generated.h"
 
-class UAIPerceptionComponent;
 class AActor;
+class UAIPerceptionComponent;
 
 UCLASS(Blueprintable)
 class AHostileGuntowerModuleController : public AFSDAIController {

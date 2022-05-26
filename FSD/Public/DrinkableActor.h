@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "DrinkableActor.generated.h"
 
-class APlayerCharacter;
 class UDrinkableDataAsset;
+class APlayerCharacter;
 
 UCLASS(Abstract, Blueprintable)
 class ADrinkableActor : public AActor {

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraFunctionDebugState.generated.h"
 
-UENUM()
-enum class ENiagaraFunctionDebugState {
+UENUM(BlueprintType)
+enum class ENiagaraFunctionDebugState : uint8 {
     NoDebug,
     Basic,
 };

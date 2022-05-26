@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BranchingPointNotifyPayload -FallbackName=BranchingPointNotifyPayload
-#include "OnMontagePlayDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "OnMontagePlayDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BranchingPointNotifyPayload -FallbackName=BranchingPointNotifyPayload
 #include "PlayMontageCallbackProxy.generated.h"
 
 class UAnimMontage;
-class UPlayMontageCallbackProxy;
 class USkeletalMeshComponent;
+class UPlayMontageCallbackProxy;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UPlayMontageCallbackProxy : public UObject {

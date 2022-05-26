@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGranularSynthEnvelopeType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGranularSynthEnvelopeType : uint8 {
     Rectangular,
     Triangle,

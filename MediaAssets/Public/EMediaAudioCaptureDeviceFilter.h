@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMediaAudioCaptureDeviceFilter.generated.h"
 
-UENUM()
-enum class EMediaAudioCaptureDeviceFilter {
+UENUM(BlueprintType)
+enum class EMediaAudioCaptureDeviceFilter : uint8 {
     None,
     Card,
     Microphone,

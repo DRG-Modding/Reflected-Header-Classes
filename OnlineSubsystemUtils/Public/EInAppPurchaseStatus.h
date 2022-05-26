@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EInAppPurchaseStatus.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EInAppPurchaseStatus : uint8 {
     Invalid,
     Failed,

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAITaskPriority.generated.h"
 
-UENUM()
-enum class EAITaskPriority {
+UENUM(BlueprintType)
+enum class EAITaskPriority : uint8 {
     Lowest,
     Low = 0x40,
     AutonomousAI = 0x7F,

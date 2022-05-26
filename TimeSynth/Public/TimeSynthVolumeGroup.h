@@ -7,7 +7,7 @@ UCLASS(Blueprintable)
 class TIMESYNTH_API UTimeSynthVolumeGroup : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float DefaultVolume;
     
     UTimeSynthVolumeGroup();

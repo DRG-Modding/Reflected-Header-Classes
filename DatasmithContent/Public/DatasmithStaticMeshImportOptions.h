@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDatasmithImportLightmapMax.h"
 #include "EDatasmithImportLightmapMin.h"
+#include "EDatasmithImportLightmapMax.h"
 #include "DatasmithStaticMeshImportOptions.generated.h"
 
 USTRUCT(BlueprintType)

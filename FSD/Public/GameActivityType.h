@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameActivitySubTask.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "EActivityType.h"
-#include "GameActivitySubTask.h"
 #include "GameActivityType.generated.h"
 
 UCLASS(Blueprintable)

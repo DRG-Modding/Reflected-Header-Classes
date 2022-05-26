@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECheckBoxState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ECheckBoxState : uint8 {
     Unchecked,
     Checked,

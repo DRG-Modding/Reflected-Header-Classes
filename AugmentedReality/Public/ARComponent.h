@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "ARComponent.generated.h"
 
-class UMRMeshComponent;
 class UMaterialInterface;
 class UARTrackedGeometry;
+class UMRMeshComponent;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class AUGMENTEDREALITY_API UARComponent : public USceneComponent {

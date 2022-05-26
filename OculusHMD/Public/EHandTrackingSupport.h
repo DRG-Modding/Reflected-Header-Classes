@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EHandTrackingSupport.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EHandTrackingSupport : uint8 {
     ControllersOnly,
     ControllersAndHands,

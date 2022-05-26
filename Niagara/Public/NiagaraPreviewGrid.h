@@ -5,10 +5,10 @@
 #include "ENiagaraPreviewGridResetMode.h"
 #include "NiagaraPreviewGrid.generated.h"
 
-class UNiagaraSystem;
-class UChildActorComponent;
 class UNiagaraPreviewAxis;
+class UNiagaraSystem;
 class ANiagaraPreviewBase;
+class UChildActorComponent;
 class UNiagaraComponent;
 
 UCLASS(Blueprintable)
@@ -30,10 +30,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ANiagaraPreviewBase> PreviewClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SpacingX;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SpacingY;
     
 private:

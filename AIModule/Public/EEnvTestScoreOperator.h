@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTestScoreOperator.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTestScoreOperator {
     enum Type {
         AverageScore,

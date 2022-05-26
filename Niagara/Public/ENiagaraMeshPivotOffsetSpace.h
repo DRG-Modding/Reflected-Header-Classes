@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraMeshPivotOffsetSpace.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraMeshPivotOffsetSpace : uint8 {
     Mesh,
     Simulation,

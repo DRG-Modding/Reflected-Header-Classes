@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraRendererProperties.h"
+#include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraComponentPropertyBinding.h"
 #include "NiagaraComponentRendererProperties.generated.h"
 

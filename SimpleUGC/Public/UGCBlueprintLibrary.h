@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "UGCBlueprintLibrary.generated.h"
 
-class UObject;
-class UUGCSettings;
 class UUGCRegistry;
+class UUGCSettings;
+class UObject;
 class UUGCLatentActionManager;
 
 UCLASS(Blueprintable)

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SlateWidgetStyle.h"
-#include "SlateColor.h"
 #include "SlateFontInfo.h"
 #include "SlateBrush.h"
+#include "SlateColor.h"
 #include "EditableTextStyle.generated.h"
 
 USTRUCT(BlueprintType)

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ELandscapeLayerDisplayMode.generated.h"
 
-UENUM()
-enum class ELandscapeLayerDisplayMode {
+UENUM(BlueprintType)
+enum class ELandscapeLayerDisplayMode : uint8 {
     Default,
     Alphabetical,
     UserSpecific,

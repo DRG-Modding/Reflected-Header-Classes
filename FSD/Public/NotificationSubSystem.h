@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CampaignNotificationSignatureDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
 #include "DelegateDelegate.h"
+#include "CampaignNotificationSignatureDelegate.h"
 #include "SpaceRigNotification.h"
 #include "NotificationSubSystem.generated.h"
 

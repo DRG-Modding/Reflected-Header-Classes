@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETimeSynthFilter.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETimeSynthFilter : uint8 {
     FilterA,
     FilterB,

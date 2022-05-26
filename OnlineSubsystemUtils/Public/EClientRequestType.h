@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EClientRequestType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EClientRequestType : uint8 {
     NonePending,
     ExistingSessionReservation,

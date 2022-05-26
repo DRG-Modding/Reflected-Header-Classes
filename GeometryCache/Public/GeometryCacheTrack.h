@@ -8,7 +8,7 @@ class GEOMETRYCACHE_API UGeometryCacheTrack : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Duration;
     
 public:

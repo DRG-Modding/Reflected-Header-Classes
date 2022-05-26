@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIOptionFlag.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EAIOptionFlag {
     enum Type {
         Default,

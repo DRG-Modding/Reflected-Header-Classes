@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-#include "MissionTypeDescription.h"
-#include "DamageTypeDescription.h"
 #include "BiomeFeatures.h"
+#include "DamageTypeDescription.h"
+#include "MissionTypeDescription.h"
 #include "MissionStepDescription.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EDamageType.h"
 #include "MinersManual.generated.h"
 
-class ULoreScreenMasterWidget;
-class UEnemyMinersManualData;
 class UBiome;
+class UEnemyMinersManualData;
+class ULoreScreenMasterWidget;
 class UMissionTemplate;
 class UObject;
 class UMinersManualData;
@@ -65,7 +65,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBiomeUnlocked(UObject* WorldContext, UBiome* Biome);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FText> GetUnlockedCreatureLore(UObject* WorldContext, UEnemyMinersManualData* enemy, float& completePercentage);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

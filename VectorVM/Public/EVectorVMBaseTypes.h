@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EVectorVMBaseTypes.generated.h"
 
-UENUM()
-enum class EVectorVMBaseTypes {
+UENUM(BlueprintType)
+enum class EVectorVMBaseTypes : uint8 {
     Float,
     Int,
     Bool,

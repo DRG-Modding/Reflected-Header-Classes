@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DatasmithImportBaseOptions.h"
 #include "DatasmithOptionsBase.h"
-#include "EDatasmithImportSearchPackagePolicy.h"
 #include "EDatasmithImportAssetConflictPolicy.h"
-#include "EDatasmithImportActorPolicy.h"
+#include "EDatasmithImportSearchPackagePolicy.h"
 #include "EDatasmithImportMaterialQuality.h"
+#include "EDatasmithImportActorPolicy.h"
+#include "DatasmithImportBaseOptions.h"
 #include "DatasmithReimportOptions.h"
 #include "DatasmithImportOptions.generated.h"
 

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AISystemBase -FallbackName=AISystemBase
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECollisionChannel -FallbackName=ECollisionChannel
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftClassPath -FallbackName=SoftClassPath
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECollisionChannel -FallbackName=ECollisionChannel
 #include "AISystem.generated.h"
 
-class UEnvQueryManager;
-class UAIAsyncTaskBlueprintProxy;
-class UBehaviorTreeManager;
-class UAIPerceptionSystem;
 class UAIHotSpotManager;
+class UBehaviorTreeManager;
+class UEnvQueryManager;
+class UAIPerceptionSystem;
+class UAIAsyncTaskBlueprintProxy;
 class UNavLocalGridManager;
 
 UCLASS(Blueprintable)
@@ -24,13 +24,13 @@ protected:
     FSoftClassPath HotSpotManagerClassName;
     
 public:
-    UPROPERTY(EditAnywhere, GlobalConfig)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     float AcceptanceRadius;
     
-    UPROPERTY(EditAnywhere, GlobalConfig)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     float PathfollowingRegularPathPointAcceptanceRadius;
     
-    UPROPERTY(EditAnywhere, GlobalConfig)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     float PathfollowingNavLinkAcceptanceRadius;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))

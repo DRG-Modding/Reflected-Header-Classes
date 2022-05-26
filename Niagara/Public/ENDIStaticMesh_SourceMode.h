@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENDIStaticMesh_SourceMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENDIStaticMesh_SourceMode : uint8 {
     Default,
     Source,

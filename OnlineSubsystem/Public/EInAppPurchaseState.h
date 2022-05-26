@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EInAppPurchaseState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EInAppPurchaseState {
     enum Type {
         Unknown,

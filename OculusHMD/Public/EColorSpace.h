@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EColorSpace.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EColorSpace : uint8 {
     Unknown,
     Unmanaged,

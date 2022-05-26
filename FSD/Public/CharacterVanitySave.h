@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterVanityLoadout.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "CharacterVanityLoadout.h"
 #include "EVanitySlot.h"
 #include "CharacterVanitySave.generated.h"
 

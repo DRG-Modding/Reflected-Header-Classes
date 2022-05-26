@@ -1,9 +1,9 @@
 #include "NiagaraComponent.h"
 
-class UTextureRenderTarget;
-class UObject;
-class UMaterialInterface;
 class AActor;
+class UObject;
+class UTextureRenderTarget;
+class UMaterialInterface;
 class UNiagaraSystem;
 class UNiagaraDataInterface;
 

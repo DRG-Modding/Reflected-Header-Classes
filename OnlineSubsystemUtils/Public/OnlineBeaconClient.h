@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBeaconConnectionState.h"
 #include "OnlineBeacon.h"
+#include "EBeaconConnectionState.h"
 #include "OnlineBeaconClient.generated.h"
 
 class AOnlineBeaconHostObject;

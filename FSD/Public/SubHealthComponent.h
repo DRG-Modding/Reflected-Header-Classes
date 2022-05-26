@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "Health.h"
 #include "DamageSigDelegate.h"
+#include "EEnemyHealthScaling.h"
+#include "EHealthbarType.h"
 #include "HealthChangedSigDelegate.h"
 #include "SubHealthComponentDelegateDelegate.h"
-#include "EHealthbarType.h"
-#include "EEnemyHealthScaling.h"
 #include "SubHealthComponent.generated.h"
 
 class AActor;
@@ -42,10 +42,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAlive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHealthPct() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetHealth() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

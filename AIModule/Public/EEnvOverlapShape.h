@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvOverlapShape.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvOverlapShape {
     enum Type {
         Box,

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ELandscapeImportAlphamapType.generated.h"
 
-UENUM()
-enum class ELandscapeImportAlphamapType {
+UENUM(BlueprintType)
+enum class ELandscapeImportAlphamapType : uint8 {
     Additive,
     Layered,
 };

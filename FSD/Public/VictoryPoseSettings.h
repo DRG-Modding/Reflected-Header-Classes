@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "VictoryPoseSettings.generated.h"
 
-class AActor;
-class UVictoryPose;
 class UTexture2D;
+class UVictoryPose;
+class AActor;
 class UActorComponent;
 
 UCLASS(Blueprintable)

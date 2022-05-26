@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ResourcePouch.generated.h"
 
-class AActor;
 class UCarriableInstantUsable;
 class USoundCue;
+class AActor;
 
 UCLASS(Blueprintable)
 class AResourcePouch : public ACarriableItem {

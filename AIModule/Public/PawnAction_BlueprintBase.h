@@ -11,7 +11,7 @@ class AIMODULE_API UPawnAction_BlueprintBase : public UPawnAction {
     GENERATED_BODY()
 public:
     UPawnAction_BlueprintBase();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ActionTick(APawn* ControlledPawn, float DeltaSeconds);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

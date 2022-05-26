@@ -1,6 +1,6 @@
 #include "EnvQueryGenerator_BlueprintBase.h"
-#include "EnvQueryItemType_Actor.h"
 #include "EnvQueryContext_Querier.h"
+#include "EnvQueryItemType_Actor.h"
 
 class UObject;
 class AActor;

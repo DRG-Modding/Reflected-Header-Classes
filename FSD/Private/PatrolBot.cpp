@@ -1,20 +1,20 @@
 #include "PatrolBot.h"
 #include "Net/UnrealNetwork.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
 #include "HackingUsableComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 #include "EnemyComponent.h"
 #include "DamageComponent.h"
 #include "PawnAlertComponent.h"
-#include "PlayerImpactCooldownComponent.h"
 #include "AvoidCeilingComponent.h"
+#include "PlayerImpactCooldownComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
 #include "ProjectileAttackComponent.h"
 
+class AActor;
 class UHealthComponentBase;
 class UPrimitiveComponent;
-class AActor;
 
 void APatrolBot::SetIsPatrolling(bool patroling) {
 }
@@ -78,6 +78,9 @@ void APatrolBot::EndFireRockets() {
 }
 
 void APatrolBot::DisableDrone() {
+}
+
+void APatrolBot::All_SetLaserBeamActive_Implementation(bool Active) {
 }
 
 void APatrolBot::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

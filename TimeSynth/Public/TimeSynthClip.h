@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TimeSynthTimeDef.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "TimeSynthClipSound.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-#include "TimeSynthTimeDef.h"
 #include "ETimeSynthEventClipQuantization.h"
 #include "TimeSynthClip.generated.h"
 

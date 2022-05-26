@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "BlackboardAssetProvider.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "BTDecoratorLogic.h"
 #include "BehaviorTree.generated.h"
 
-class UBTDecorator;
-class UBTCompositeNode;
 class UBlackboardData;
+class UBTCompositeNode;
+class UBTDecorator;
 
 UCLASS(Blueprintable)
 class AIMODULE_API UBehaviorTree : public UObject, public IBlackboardAssetProvider {

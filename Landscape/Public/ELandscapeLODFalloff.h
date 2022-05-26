@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELandscapeLODFalloff.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ELandscapeLODFalloff {
     enum Type {
         Linear,

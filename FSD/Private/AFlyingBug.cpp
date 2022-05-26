@@ -1,7 +1,7 @@
 #include "AFlyingBug.h"
 #include "Net/UnrealNetwork.h"
-#include "PawnStatsComponent.h"
 #include "EnemyComponent.h"
+#include "PawnStatsComponent.h"
 #include "OutlineComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
 #include "PawnAlertComponent.h"

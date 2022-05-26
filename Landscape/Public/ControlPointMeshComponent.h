@@ -7,7 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, MinimalAPI, ClassGroup=Custom, meta=(Bluepr
 class UControlPointMeshComponent : public UStaticMeshComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float VirtualTextureMainPassMaxDrawDistance;
     
     UControlPointMeshComponent();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARTrackingState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARTrackingState : uint8 {
     Unknown,
     Tracking,

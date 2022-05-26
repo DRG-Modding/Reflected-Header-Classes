@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARComponent.h"
 #include "EQRCodeComponentDebugMode.h"
+#include "ARComponent.h"
 #include "ARQRCodeUpdatePayload.h"
 #include "ARQRCodeComponent.generated.h"
 

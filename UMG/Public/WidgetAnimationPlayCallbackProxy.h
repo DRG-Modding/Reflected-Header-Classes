@@ -5,9 +5,9 @@
 #include "EUMGSequencePlayMode.h"
 #include "WidgetAnimationPlayCallbackProxy.generated.h"
 
-class UUserWidget;
 class UWidgetAnimationPlayCallbackProxy;
 class UUMGSequencePlayer;
+class UUserWidget;
 class UWidgetAnimation;
 
 UCLASS(Blueprintable, MinimalAPI)

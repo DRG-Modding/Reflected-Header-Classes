@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETableViewMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ETableViewMode {
     enum Type {
         List,

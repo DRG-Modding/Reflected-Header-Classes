@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlackboardKeySelector.h"
-#include "BTDecorator.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
+#include "BTDecorator.h"
+#include "BlackboardKeySelector.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=EGameplayContainerMatchType -FallbackName=EGameplayContainerMatchType
 #include "BTDecorator_CheckGameplayTagsOnActor.generated.h"
 

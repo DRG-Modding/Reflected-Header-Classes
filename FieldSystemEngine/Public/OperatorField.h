@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FieldNodeBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Chaos -ObjectName=EFieldOperationType -FallbackName=EFieldOperationType
+#include "FieldNodeBase.h"
 #include "OperatorField.generated.h"
 
 class UOperatorField;
@@ -10,7 +10,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FIELDSYSTEMENGINE_API UOperatorField : public UFieldNodeBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Magnitude;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))

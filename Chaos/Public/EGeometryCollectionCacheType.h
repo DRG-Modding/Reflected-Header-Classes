@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGeometryCollectionCacheType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGeometryCollectionCacheType : uint8 {
     None,
     Record,

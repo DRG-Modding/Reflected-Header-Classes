@@ -5,8 +5,8 @@
 #include "LogoutCallbackProxy.generated.h"
 
 class APlayerController;
-class ULogoutCallbackProxy;
 class UObject;
+class ULogoutCallbackProxy;
 
 UCLASS(Blueprintable, MinimalAPI)
 class ULogoutCallbackProxy : public UBlueprintAsyncActionBase {

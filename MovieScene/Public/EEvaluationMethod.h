@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEvaluationMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EEvaluationMethod : uint8 {
     Static,
     Swept,

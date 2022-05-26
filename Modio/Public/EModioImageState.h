@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioImageState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioImageState : uint8 {
     OnDisc,
     LoadingIntoMemory,

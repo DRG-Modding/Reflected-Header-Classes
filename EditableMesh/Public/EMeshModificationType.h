@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMeshModificationType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMeshModificationType : uint8 {
     FirstInterim,
     Interim,

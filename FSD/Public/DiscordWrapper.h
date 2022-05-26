@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DiscordServerInviteData.h"
-#include "DiscordEoMData.h"
-#include "OnDiscordServerCountLoadedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "DiscordServerInviteData.h"
 #include "ResponseSuccessChangedDelegate.h"
+#include "DiscordEoMData.h"
 #include "DiscordEoMDataDelegateDelegate.h"
 #include "DiscordRewardNotification.h"
+#include "OnDiscordServerCountLoadedDelegate.h"
 #include "OnDiscordServerInfoLoadedDelegate.h"
 #include "OnDiscordUserInServerDelegate.h"
 #include "DiscordWrapper.generated.h"

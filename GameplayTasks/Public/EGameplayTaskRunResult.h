@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGameplayTaskRunResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGameplayTaskRunResult : uint8 {
     Error,
     Failed,

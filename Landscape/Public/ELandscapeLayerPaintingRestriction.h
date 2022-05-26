@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ELandscapeLayerPaintingRestriction.generated.h"
 
-UENUM()
-enum class ELandscapeLayerPaintingRestriction {
+UENUM(BlueprintType)
+enum class ELandscapeLayerPaintingRestriction : uint8 {
     None,
     UseMaxLayers,
     ExistingOnly,

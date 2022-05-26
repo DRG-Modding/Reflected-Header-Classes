@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMPMatchOutcome.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EMPMatchOutcome {
     enum Type {
         None,

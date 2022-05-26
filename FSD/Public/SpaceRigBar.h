@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "DrinkableBarSlot.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "DrinkableBarSlot.h"
 #include "SpaceRigBar.generated.h"
 
-class UDrinkableDataAsset;
-class UInstantUsable;
-class UBoxComponent;
 class UBarMenuWidget;
+class UDrinkableDataAsset;
+class UBoxComponent;
+class UInstantUsable;
 class APlayerCharacter;
 class ADrinkableActor;
 

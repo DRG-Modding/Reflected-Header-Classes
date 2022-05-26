@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESimulationOverlap.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace ESimulationOverlap {
     enum Type {
         CollisionOverlap,

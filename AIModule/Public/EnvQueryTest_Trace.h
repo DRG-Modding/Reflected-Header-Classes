@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "AIDataProviderFloatValue.h"
 #include "EnvQueryTest.h"
 #include "EnvTraceData.h"
 #include "AIDataProviderBoolValue.h"
+#include "AIDataProviderFloatValue.h"
 #include "EnvQueryTest_Trace.generated.h"
 
 class UEnvQueryContext;

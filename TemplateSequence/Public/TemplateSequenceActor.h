@@ -8,8 +8,8 @@
 #include "TemplateSequenceBindingOverrideData.h"
 #include "TemplateSequenceActor.generated.h"
 
-class UTemplateSequencePlayer;
 class UTemplateSequence;
+class UTemplateSequencePlayer;
 
 UCLASS(Blueprintable)
 class TEMPLATESEQUENCE_API ATemplateSequenceActor : public AActor, public IMovieSceneSequenceActor, public IMovieScenePlaybackClient {

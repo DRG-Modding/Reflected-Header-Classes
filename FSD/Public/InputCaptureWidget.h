@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
-#include "EKeyBindingSlot.h"
-#include "CustomKeySetting.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+#include "CustomKeySetting.h"
+#include "EKeyBindingSlot.h"
 #include "InputCaptureWidget.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

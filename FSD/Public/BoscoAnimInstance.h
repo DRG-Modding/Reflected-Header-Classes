@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
-#include "EDroneAIState.h"
 #include "BoscoAnimNotifyDelegateDelegate.h"
+#include "EDroneAIState.h"
 #include "BoscoAnimInstance.generated.h"
 
 UCLASS(Blueprintable, NonTransient)
@@ -16,7 +16,7 @@ public:
     FBoscoAnimNotifyDelegate OnWeaponsNotReady;
     
 protected:
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float DigAnimPlayRate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EUdpMessageFormat.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EUdpMessageFormat : uint8 {
     None,
     Json,

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PoseableMeshComponent -FallbackName=PoseableMeshComponent
-#include "EConfidenceBehavior.h"
-#include "EOculusHandType.h"
 #include "EBone.h"
+#include "EOculusHandType.h"
 #include "ESystemGestureBehavior.h"
+#include "EConfidenceBehavior.h"
 #include "OculusCapsuleCollider.h"
 #include "OculusHandComponent.generated.h"
 

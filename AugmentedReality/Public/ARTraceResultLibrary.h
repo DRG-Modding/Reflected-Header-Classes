@@ -28,7 +28,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FTransform GetLocalToTrackingTransform(const FARTraceResult& TraceResult);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetDistanceFromCamera(const FARTraceResult& TraceResult);
     
 };

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPathFollowingStatus.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EPathFollowingStatus {
     enum Type {
         Idle,

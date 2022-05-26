@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETaskResourceOverlapPolicy.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "GameplayTaskOwnerInterface.h"
+#include "ETaskResourceOverlapPolicy.h"
 #include "GameplayTask.generated.h"
 
 class UGameplayTask;

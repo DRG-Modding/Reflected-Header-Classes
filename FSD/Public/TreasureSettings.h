@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETreasureType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "ETreasureType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "TreasureSettings.generated.h"
 
 class UItemAquisitionSource;
+class UDrinkableDataAsset;
 class UItemSkinSet;
 class USpecialEvent;
 class UVictoryPose;
-class UDrinkableDataAsset;
 
 UCLASS(Blueprintable)
 class UTreasureSettings : public UDataAsset {

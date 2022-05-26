@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARGeoTrackingState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARGeoTrackingState : uint8 {
     Initializing,
     Localized,

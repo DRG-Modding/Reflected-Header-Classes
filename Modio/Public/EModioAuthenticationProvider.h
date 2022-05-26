@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioAuthenticationProvider.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioAuthenticationProvider : uint8 {
     XboxLive,
     Steam,

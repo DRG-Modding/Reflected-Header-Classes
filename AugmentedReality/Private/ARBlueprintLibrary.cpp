@@ -1,20 +1,20 @@
 #include "ARBlueprintLibrary.h"
 #include "Templates/SubclassOf.h"
 
-class UAREnvironmentCaptureProbe;
 class USceneComponent;
-class UARTrackedImage;
 class UARSessionConfig;
-class UARTrackedPoint;
 class UARPin;
+class UTexture2D;
 class UARTrackedGeometry;
+class UARTrackedImage;
 class UARTexture;
 class UARLightEstimate;
 class UARTextureCameraImage;
-class UTexture2D;
 class UARTextureCameraDepth;
 class UARTrackedPose;
+class UARTrackedPoint;
 class UARPlaneGeometry;
+class UAREnvironmentCaptureProbe;
 class UObject;
 class UARCandidateImage;
 

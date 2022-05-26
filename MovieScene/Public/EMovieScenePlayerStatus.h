@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMovieScenePlayerStatus.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EMovieScenePlayerStatus {
     enum Type {
         Stopped,

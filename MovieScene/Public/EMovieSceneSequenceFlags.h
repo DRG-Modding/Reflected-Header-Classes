@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMovieSceneSequenceFlags.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMovieSceneSequenceFlags : uint8 {
     None,
     Volatile,

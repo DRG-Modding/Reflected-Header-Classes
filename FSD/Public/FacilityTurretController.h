@@ -4,9 +4,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=AIStimulus -FallbackName=AIStimulus
 #include "FacilityTurretController.generated.h"
 
+class AActor;
 class UAIPerceptionComponent;
 class UHealthComponentBase;
-class AActor;
 
 UCLASS(Blueprintable)
 class AFacilityTurretController : public AFSDAIController {
@@ -16,10 +16,10 @@ public:
     UAIPerceptionComponent* Perception;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RememberTargetTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float RetargetOnAttackChance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

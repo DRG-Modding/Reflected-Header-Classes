@@ -1,7 +1,7 @@
 #include "AISense_Blueprint.h"
 
-class UAIPerceptionComponent;
 class AActor;
+class UAIPerceptionComponent;
 
 
 

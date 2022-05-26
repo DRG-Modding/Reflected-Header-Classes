@@ -18,7 +18,7 @@ public:
     UPROPERTY(EditAnywhere)
     ENiagaraRibbonUVEdgeMode TrailingEdgeMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TilingLength;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EEyeTrackerStatus.generated.h"
 
-UENUM()
-enum class EEyeTrackerStatus {
+UENUM(BlueprintType)
+enum class EEyeTrackerStatus : uint8 {
     NotConnected,
     NotTracking,
     Tracking,

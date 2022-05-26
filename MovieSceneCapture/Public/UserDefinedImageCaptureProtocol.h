@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "CapturedPixelsID.h"
 #include "CapturedPixels.h"
 #include "UserDefinedCaptureProtocol.h"
-#include "CapturedPixelsID.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=ImageWriteQueue -ObjectName=EDesiredImageFormat -FallbackName=EDesiredImageFormat
 #include "FrameMetrics.h"
 #include "UserDefinedImageCaptureProtocol.generated.h"

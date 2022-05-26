@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEnemyFamily.h"
+#include "EnemyMinersManualStats.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "EnemyAttackDescription.h"
 #include "EEnemyType.h"
+#include "EEnemyFamily.h"
 #include "EArmorType.h"
-#include "EnemyMinersManualStats.h"
 #include "EDamageType.h"
 #include "EnemyMinersManualData.generated.h"
 

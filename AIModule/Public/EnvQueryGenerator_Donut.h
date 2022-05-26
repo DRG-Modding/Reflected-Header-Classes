@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "AIDataProviderIntValue.h"
-#include "EnvQueryGenerator_ProjectedPoints.h"
 #include "AIDataProviderFloatValue.h"
+#include "EnvQueryGenerator_ProjectedPoints.h"
+#include "AIDataProviderIntValue.h"
 #include "EnvDirection.h"
 #include "EnvQueryGenerator_Donut.generated.h"
 

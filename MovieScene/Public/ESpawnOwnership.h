@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESpawnOwnership.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESpawnOwnership : uint8 {
     InnerSequence,
     MasterSequence,

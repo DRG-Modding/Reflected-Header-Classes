@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SourceEffectDynamicsProcessorSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSourcePreset -FallbackName=SoundEffectSourcePreset
+#include "SourceEffectDynamicsProcessorSettings.h"
 #include "SourceEffectDynamicsProcessorPreset.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

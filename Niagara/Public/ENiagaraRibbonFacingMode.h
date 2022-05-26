@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraRibbonFacingMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraRibbonFacingMode : uint8 {
     Screen,
     Custom,

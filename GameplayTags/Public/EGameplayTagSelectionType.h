@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EGameplayTagSelectionType.generated.h"
 
-UENUM()
-enum class EGameplayTagSelectionType {
+UENUM(BlueprintType)
+enum class EGameplayTagSelectionType : uint8 {
     None,
     NonRestrictedOnly,
     RestrictedOnly,

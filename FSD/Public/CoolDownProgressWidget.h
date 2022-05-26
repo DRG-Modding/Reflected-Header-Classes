@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "CoolDownProgressStyle.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "CoolDownProgressWidget.generated.h"
 
 class UObject;
@@ -26,7 +26,7 @@ protected:
     UFUNCTION(BlueprintCallable)
     void UpdateProgress(float Progress);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveUpdateProgress(float InProgress);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

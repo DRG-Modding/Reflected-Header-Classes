@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARServiceInstallRequestResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARServiceInstallRequestResult : uint8 {
     Installed,
     DeviceNotCompatible,

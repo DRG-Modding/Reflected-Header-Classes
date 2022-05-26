@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvTestDistance.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvTestDistance {
     enum Type {
         Distance3D,

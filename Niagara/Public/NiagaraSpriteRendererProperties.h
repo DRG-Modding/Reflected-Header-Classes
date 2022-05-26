@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraRendererProperties.h"
-#include "ENiagaraRendererSourceDataMode.h"
-#include "NiagaraUserParameterBinding.h"
 #include "ENiagaraSpriteFacingMode.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "ENiagaraRendererSourceDataMode.h"
 #include "ENiagaraSpriteAlignment.h"
+#include "NiagaraUserParameterBinding.h"
 #include "ENiagaraSortMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraMaterialAttributeBinding.h"
 #include "NiagaraSpriteRendererProperties.generated.h"
@@ -53,19 +53,19 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bGpuLowLatencyTranslucency: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinFacingCameraBlendDistance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxFacingCameraBlendDistance;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bEnableCameraDistanceCulling: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MinCameraDistance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaxCameraDistance;
     
     UPROPERTY(EditAnywhere)

@@ -7,9 +7,9 @@
 #include "OnSynthEnvelopeValueDelegate.h"
 #include "SynthComponent.generated.h"
 
-class USoundClass;
 class USoundAttenuation;
 class USoundConcurrency;
+class USoundClass;
 class USoundEffectSourcePresetChain;
 class USoundSubmixBase;
 class USynthSound;

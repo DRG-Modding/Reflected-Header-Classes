@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESplineBoneAxis.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESplineBoneAxis : uint8 {
     None,
     X,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMeshTopologyChange.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMeshTopologyChange : uint8 {
     NoTopologyChange,
     TopologyChange,

@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=ClothingSystemRuntimeInterface -ObjectName=ClothingAssetBase -FallbackName=ClothingAssetBase
 #include "ClothLODDataCommon.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=ClothingSystemRuntimeInterface -ObjectName=ClothingAssetBase -FallbackName=ClothingAssetBase
 #include "ClothingAssetCommon.generated.h"
 
-class UClothConfigBase;
 class UPhysicsAsset;
+class UClothConfigBase;
 class UClothingAssetCustomData;
 
 UCLASS(Blueprintable)

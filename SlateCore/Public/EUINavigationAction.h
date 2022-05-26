@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EUINavigationAction.generated.h"
 
-UENUM()
-enum class EUINavigationAction {
+UENUM(BlueprintType)
+enum class EUINavigationAction : uint8 {
     Accept,
     Back,
     Num,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioLanguage.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioLanguage : uint8 {
     English,
     Bulgarian,

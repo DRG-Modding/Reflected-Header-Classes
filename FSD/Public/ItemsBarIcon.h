@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "ItemsBarIcon.generated.h"
 
-class APlayerCharacter;
 class UItemsBar;
+class APlayerCharacter;
 class AItem;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "VanityEventSource.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "VanityEventSource.h"
 #include "VanityEventSourceDataAsset.generated.h"
 
 UCLASS(Blueprintable)

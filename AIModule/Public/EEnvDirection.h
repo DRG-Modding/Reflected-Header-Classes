@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvDirection.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvDirection {
     enum Type {
         TwoPoints,

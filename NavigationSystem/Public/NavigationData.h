@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SupportedAreaData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavDataConfig -FallbackName=NavDataConfig
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavigationDataInterface -FallbackName=NavigationDataInterface
 #include "ERuntimeGenerationType.h"
-#include "SupportedAreaData.h"
 #include "NavigationData.generated.h"
 
 class UPrimitiveComponent;
@@ -41,7 +41,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERuntimeGenerationType RuntimeGeneration;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ObservedPathsTickInterval;
     
     UPROPERTY(EditAnywhere)

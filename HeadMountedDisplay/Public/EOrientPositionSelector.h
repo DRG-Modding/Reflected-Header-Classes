@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOrientPositionSelector.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EOrientPositionSelector {
     enum Type {
         Orientation,

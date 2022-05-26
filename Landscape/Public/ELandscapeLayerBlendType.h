@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELandscapeLayerBlendType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ELandscapeLayerBlendType {
     LB_WeightBlend,
     LB_AlphaBlend,

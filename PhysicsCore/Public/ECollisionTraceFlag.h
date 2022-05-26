@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECollisionTraceFlag.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum ECollisionTraceFlag {
     CTF_UseDefault,
     CTF_UseSimpleAndComplex,

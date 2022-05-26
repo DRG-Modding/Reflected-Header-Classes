@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "AssetRegistry.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=AssetData -FallbackName=AssetData
-#include "AssetRegistryDependencyOptions.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=ARFilter -FallbackName=ARFilter
+#include "AssetRegistryDependencyOptions.h"
 #include "AssetRegistryImpl.generated.h"
 
 UCLASS(Blueprintable, Transient)

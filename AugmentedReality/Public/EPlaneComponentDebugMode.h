@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPlaneComponentDebugMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPlaneComponentDebugMode : uint8 {
     None,
     ShowNetworkRole,

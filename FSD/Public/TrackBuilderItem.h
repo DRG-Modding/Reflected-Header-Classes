@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "EPlaceableObstructionType.h"
 #include "AnimatedItem.h"
 #include "PlaceableInterface.h"
-#include "EPlaceableObstructionType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "TrackBuilderItem.generated.h"
 
+class ATrackBuilderSegment;
 class UTrackBuilderConnectPoint;
 class UCrosshairAggregator;
-class ATrackBuilderSegment;
 class UTrackBuilderUsable;
 
 UCLASS(Abstract, Blueprintable)

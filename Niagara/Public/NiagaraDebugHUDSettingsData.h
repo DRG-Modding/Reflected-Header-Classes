@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraDebugPlaybackMode.h"
 #include "ENiagaraDebugHudFont.h"
-#include "NiagaraDebugHUDVariable.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "NiagaraDebugHUDVariable.h"
 #include "ENiagaraDebugHudVerbosity.h"
 #include "NiagaraDebugHudTextOptions.h"
 #include "NiagaraDebugHUDSettingsData.generated.h"
@@ -102,13 +102,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bPlaybackRateEnabled;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float PlaybackRate;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bLoopTimeEnabled;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float LoopTime;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

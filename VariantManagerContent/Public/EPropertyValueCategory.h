@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPropertyValueCategory.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPropertyValueCategory : uint8 {
     Undefined,
     Generic,

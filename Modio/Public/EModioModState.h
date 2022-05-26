@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EModioModState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EModioModState : uint8 {
     InstallationPending,
     Installed,

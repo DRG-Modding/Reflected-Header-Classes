@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARWorldMappingState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARWorldMappingState : uint8 {
     NotAvailable,
     StillMappingNotRelocalizable,

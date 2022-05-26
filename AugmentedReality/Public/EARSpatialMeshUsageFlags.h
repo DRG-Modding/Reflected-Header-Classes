@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARSpatialMeshUsageFlags.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARSpatialMeshUsageFlags : uint8 {
     NotApplicable,
     Visible,

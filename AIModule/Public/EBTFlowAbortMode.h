@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBTFlowAbortMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EBTFlowAbortMode {
     enum Type {
         None,

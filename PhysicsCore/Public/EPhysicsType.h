@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPhysicsType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum EPhysicsType {
     PhysType_Default,
     PhysType_Kinematic,

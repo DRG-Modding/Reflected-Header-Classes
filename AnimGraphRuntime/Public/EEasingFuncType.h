@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEasingFuncType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EEasingFuncType : uint8 {
     Linear,
     Sinusoidal,

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMeshElementAttributeType.generated.h"
 
-UENUM()
-enum class EMeshElementAttributeType {
+UENUM(BlueprintType)
+enum class EMeshElementAttributeType : uint8 {
     None,
     FVector4,
     FVector,

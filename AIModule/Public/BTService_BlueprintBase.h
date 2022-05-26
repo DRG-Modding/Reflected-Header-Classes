@@ -3,9 +3,9 @@
 #include "BTService.h"
 #include "BTService_BlueprintBase.generated.h"
 
-class APawn;
-class AAIController;
 class AActor;
+class AAIController;
+class APawn;
 
 UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBTService_BlueprintBase : public UBTService {
@@ -27,10 +27,10 @@ protected:
 public:
     UBTService_BlueprintBase();
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTickAI(AAIController* OwnerController, APawn* ControlledPawn, float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTick(AActor* OwnerActor, float DeltaSeconds);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

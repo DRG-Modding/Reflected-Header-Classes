@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGeoAnchorComponentDebugMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGeoAnchorComponentDebugMode : uint8 {
     None,
     ShowGeoData,

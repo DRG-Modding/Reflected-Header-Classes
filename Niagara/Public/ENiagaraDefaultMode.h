@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ENiagaraDefaultMode.generated.h"
 
-UENUM()
-enum class ENiagaraDefaultMode {
+UENUM(BlueprintType)
+enum class ENiagaraDefaultMode : uint8 {
     Value,
     Binding,
     Custom,

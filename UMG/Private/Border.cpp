@@ -1,8 +1,8 @@
 #include "Border.h"
 
-class UMaterialInterface;
-class UTexture2D;
 class USlateBrushAsset;
+class UTexture2D;
+class UMaterialInterface;
 class UMaterialInstanceDynamic;
 
 void UBorder::SetVerticalAlignment(TEnumAsByte<EVerticalAlignment> InVerticalAlignment) {

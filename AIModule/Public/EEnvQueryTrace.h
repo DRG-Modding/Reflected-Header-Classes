@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvQueryTrace.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvQueryTrace {
     enum Type {
         None,

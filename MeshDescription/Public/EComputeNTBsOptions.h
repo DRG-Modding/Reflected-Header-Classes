@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EComputeNTBsOptions.generated.h"
 
-UENUM()
-enum class EComputeNTBsOptions {
+UENUM(BlueprintType)
+enum class EComputeNTBsOptions : uint8 {
     None,
     Normals,
     Tangents,

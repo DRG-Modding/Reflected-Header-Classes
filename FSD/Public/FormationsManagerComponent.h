@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "FormationsManagerComponent.generated.h"
 
-class UEnemySpawnManager;
 class UFormationData;
+class UEnemySpawnManager;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFormationsManagerComponent : public UActorComponent {

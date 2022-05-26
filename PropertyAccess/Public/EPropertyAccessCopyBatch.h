@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EPropertyAccessCopyBatch.generated.h"
 
-UENUM()
-enum class EPropertyAccessCopyBatch {
+UENUM(BlueprintType)
+enum class EPropertyAccessCopyBatch : uint8 {
     InternalUnbatched,
     ExternalUnbatched,
     InternalBatched,

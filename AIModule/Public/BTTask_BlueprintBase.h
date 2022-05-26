@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BTTaskNode.h"
 #include "IntervalCountdown.h"
+#include "BTTaskNode.h"
 #include "BTTask_BlueprintBase.generated.h"
 
 class AAIController;
@@ -34,10 +34,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void SetFinishOnMessage(FName MessageName);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTickAI(AAIController* OwnerController, APawn* ControlledPawn, float DeltaSeconds);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveTick(AActor* OwnerActor, float DeltaSeconds);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "BlackboardKeySelector.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
-#include "BlackboardKeySelector.h"
 #include "BTFunctionLibrary.generated.h"
 
-class UObject;
-class AActor;
-class UBTNode;
 class UBlackboardComponent;
+class UBTNode;
+class AActor;
+class UObject;
 class UBehaviorTreeComponent;
 
 UCLASS(Blueprintable)
@@ -77,7 +77,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetBlackboardValueAsInt(UBTNode* NodeOwner, const FBlackboardKeySelector& Key);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float GetBlackboardValueAsFloat(UBTNode* NodeOwner, const FBlackboardKeySelector& Key);
     
     UFUNCTION(BlueprintPure)

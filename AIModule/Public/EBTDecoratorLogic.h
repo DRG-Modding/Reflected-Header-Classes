@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBTDecoratorLogic.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EBTDecoratorLogic {
     enum Type {
         Invalid,

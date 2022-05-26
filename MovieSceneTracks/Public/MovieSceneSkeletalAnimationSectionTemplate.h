@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneSkeletalAnimationSectionTemplateParameters.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneEvalTemplate -FallbackName=MovieSceneEvalTemplate
+#include "MovieSceneSkeletalAnimationSectionTemplateParameters.h"
 #include "MovieSceneSkeletalAnimationSectionTemplate.generated.h"
 
 USTRUCT(BlueprintType)

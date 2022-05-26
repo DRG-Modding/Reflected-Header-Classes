@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=Widget -FallbackName=Widget
-#include "OnControllerCaptureBeginEventDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=Widget -FallbackName=Widget
-#include "SynthKnobStyle.h"
-#include "OnMouseCaptureBeginEventDelegate.h"
 #include "OnMouseCaptureEndEventDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=Widget -FallbackName=Widget
+#include "OnMouseCaptureBeginEventDelegate.h"
+#include "SynthKnobStyle.h"
+#include "OnControllerCaptureBeginEventDelegate.h"
 #include "OnControllerCaptureEndEventDelegate.h"
 #include "OnFloatValueChangedEventDelegate.h"
 #include "SynthKnob.generated.h"
@@ -14,16 +14,16 @@ UCLASS(Blueprintable)
 class SYNTHESIS_API USynthKnob : public UWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Value;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float StepSize;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MouseSpeed;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MouseFineTuneSpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -72,7 +72,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetLocked(bool InValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetValue() const;
     
 };

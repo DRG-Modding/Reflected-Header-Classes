@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "CopyBoneVisibilityCompleted.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "MicroMissileLauncherAnimInstance.generated.h"
 
-class AMicroMissileLauncher;
 class UAnimMontage;
+class AMicroMissileLauncher;
 
 UCLASS(Blueprintable, NonTransient)
 class UMicroMissileLauncherAnimInstance : public UAnimInstance, public ICopyBoneVisibilityCompleted {

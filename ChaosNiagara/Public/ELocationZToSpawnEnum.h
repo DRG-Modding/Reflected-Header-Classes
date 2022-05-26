@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELocationZToSpawnEnum.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ELocationZToSpawnEnum : uint8 {
     ChaosNiagara_LocationZToSpawn_None,
     ChaosNiagara_LocationZToSpawn_Min,

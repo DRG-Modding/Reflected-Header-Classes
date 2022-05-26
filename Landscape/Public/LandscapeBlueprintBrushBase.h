@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
 #include "LandscapeBlueprintBrushBase.generated.h"
 
-class UObject;
 class UTextureRenderTarget2D;
+class UObject;
 
 UCLASS(Abstract, Blueprintable)
 class LANDSCAPE_API ALandscapeBlueprintBrushBase : public AActor {

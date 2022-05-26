@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ModioGameID.h"
 #include "ModioApiKey.h"
-#include "EModioPortal.h"
+#include "ModioGameID.h"
 #include "EModioEnvironment.h"
+#include "EModioPortal.h"
 #include "ModioInitializeOptions.generated.h"
 
 USTRUCT(BlueprintType)

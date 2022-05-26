@@ -9,16 +9,16 @@ class AUGMENTEDREALITY_API UARGeoAnchor : public UARTrackedGeometry {
     GENERATED_BODY()
 public:
     UARGeoAnchor();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLongitude() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetLatitude() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EARAltitudeSource GetAltitudeSource() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetAltitudeMeters() const;
     
 };

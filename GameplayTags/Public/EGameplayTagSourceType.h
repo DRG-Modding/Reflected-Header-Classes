@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGameplayTagSourceType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGameplayTagSourceType : uint8 {
     Native,
     DefaultTagList,

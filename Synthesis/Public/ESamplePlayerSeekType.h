@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESamplePlayerSeekType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESamplePlayerSeekType : uint8 {
     FromBeginning,
     FromCurrentPosition,

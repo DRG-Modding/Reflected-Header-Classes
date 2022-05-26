@@ -1,12 +1,12 @@
 #include "AudioMixerBlueprintLibrary.h"
 
+class USoundWave;
 class UObject;
 class USoundSubmix;
-class USoundWave;
-class USoundCue;
 class UAudioBus;
-class USoundEffectSubmixPreset;
 class USoundEffectSourcePresetChain;
+class USoundEffectSubmixPreset;
+class USoundCue;
 
 float UAudioMixerBlueprintLibrary::TrimAudioCache(float InMegabytesToFree) {
     return 0.0f;

@@ -45,49 +45,49 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bOverride_LPVEmissiveInjectionIntensity: 1;
     
-    UPROPERTY(EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVIntensity;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVVplInjectionBias;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float LPVSize;
     
-    UPROPERTY(EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVSecondaryOcclusionIntensity;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVSecondaryBounceIntensity;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVGeometryVolumeBias;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVEmissiveInjectionIntensity;
     
-    UPROPERTY(EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVDirectionalOcclusionIntensity;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVDirectionalOcclusionRadius;
     
-    UPROPERTY(EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVDiffuseOcclusionExponent;
     
-    UPROPERTY(EditAnywhere, Interp)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVSpecularOcclusionExponent;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVDiffuseOcclusionIntensity;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVSpecularOcclusionIntensity;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVFadeRange;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere, Interp)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Interp, meta=(AllowPrivateAccess=true))
     float LPVDirectionalOcclusionFadeRange;
     
     RENDERER_API FLightPropagationVolumeSettings();

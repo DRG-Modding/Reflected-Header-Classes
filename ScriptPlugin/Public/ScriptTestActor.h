@@ -10,14 +10,14 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString TestString;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TestValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool TestBool;
     
     AScriptTestActor();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     float TestFunction(float InValue, float InFactor, bool bMultiply);
     
 };

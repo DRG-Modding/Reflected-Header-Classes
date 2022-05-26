@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraIterationSource.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraIterationSource : uint8 {
     Particles,
     DataInterface,

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "FSDPhysicsActor.h"
-#include "AttachChangeSigDelegate.h"
 #include "Throwable.h"
-#include "OnCarriableDepositedDelegate.h"
+#include "AttachChangeSigDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "OnCarriableDepositedDelegate.h"
 #include "CarriableItem.generated.h"
 
 class APlayerCharacter;

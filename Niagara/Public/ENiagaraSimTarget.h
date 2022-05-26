@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ENiagaraSimTarget.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ENiagaraSimTarget : uint8 {
     CPUSim,
     GPUComputeSim,

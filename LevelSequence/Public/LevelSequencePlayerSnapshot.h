@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=QualifiedFrameTime -FallbackName=QualifiedFrameTime
-#include "LevelSequenceSnapshotSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequenceID -FallbackName=MovieSceneSequenceID
+#include "LevelSequenceSnapshotSettings.h"
 #include "LevelSequencePlayerSnapshot.generated.h"
 
 class UCameraComponent;

@@ -1,8 +1,8 @@
 #include "EnvQueryManager.h"
 #include "Templates/SubclassOf.h"
 
-class UEnvQuery;
 class UObject;
+class UEnvQuery;
 class UEnvQueryInstanceBlueprintWrapper;
 
 UEnvQueryInstanceBlueprintWrapper* UEnvQueryManager::RunEQSQuery(UObject* WorldContextObject, UEnvQuery* QueryTemplate, UObject* Querier, TEnumAsByte<EEnvQueryRunMode::Type> RunMode, TSubclassOf<UEnvQueryInstanceBlueprintWrapper> WrapperClass) {

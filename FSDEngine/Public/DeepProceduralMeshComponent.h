@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
 #include "DeepProceduralMeshComponent.generated.h"
 
-class UPhysicalMaterial;
-class UTerrainMaterialCore;
 class UBodySetup;
+class UTerrainMaterialCore;
+class UPhysicalMaterial;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSDENGINE_API UDeepProceduralMeshComponent : public UMeshComponent {

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EARTrackingQualityReason.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EARTrackingQualityReason : uint8 {
     None,
     Initializing,

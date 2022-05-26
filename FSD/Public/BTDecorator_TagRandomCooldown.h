@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "RandRange.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=BTDecorator -FallbackName=BTDecorator
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
-#include "RandRange.h"
 #include "BTDecorator_TagRandomCooldown.generated.h"
 
 UCLASS(Blueprintable)

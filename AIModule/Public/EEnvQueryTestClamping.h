@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEnvQueryTestClamping.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 namespace EEnvQueryTestClamping {
     enum Type {
         None,

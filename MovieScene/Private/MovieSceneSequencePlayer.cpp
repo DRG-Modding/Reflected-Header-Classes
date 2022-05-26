@@ -1,8 +1,8 @@
 #include "MovieSceneSequencePlayer.h"
 #include "Net/UnrealNetwork.h"
 
-class UMovieSceneSequence;
 class UObject;
+class UMovieSceneSequence;
 
 void UMovieSceneSequencePlayer::StopAtCurrentTime() {
 }

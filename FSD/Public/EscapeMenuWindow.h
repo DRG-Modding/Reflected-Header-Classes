@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WindowWidget.h"
 #include "EMinersManualSection.h"
+#include "WindowWidget.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EscapeMenuWindow.generated.h"
 
