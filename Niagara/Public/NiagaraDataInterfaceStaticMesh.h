@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataInterface.h"
 #include "ENDIStaticMesh_SourceMode.h"
+#include "NiagaraDataInterface.h"
 #include "NDIStaticMeshSectionFilter.h"
 #include "NiagaraDataInterfaceStaticMesh.generated.h"
 

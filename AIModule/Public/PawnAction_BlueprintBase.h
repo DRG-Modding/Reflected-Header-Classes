@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PawnAction.h"
 #include "EPawnActionResult.h"
+#include "PawnAction.h"
 #include "PawnAction_BlueprintBase.generated.h"
 
 class APawn;

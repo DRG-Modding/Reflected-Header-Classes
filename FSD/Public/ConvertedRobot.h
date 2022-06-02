@@ -1,39 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ERobotState.h"
-#include "RobotStateChangedSigDelegate.h"
 #include "EnemyDeepPathfinderCharacter.h"
 #include "WeaponFireOwner.h"
+#include "ERobotState.h"
+#include "RobotStateChangedSigDelegate.h"
 #include "RobotShieldSwitchSigDelegate.h"
 #include "IntroductionStartedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "EInputKeys.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "ConvertedRobot.generated.h"
 
-class USceneComponent;
-class USingleUsableComponent;
+class USoundCue;
+class UPointLightComponent;
 class UEnemyComponent;
-class UAnimSequenceBase;
 class UPawnStatsComponent;
+class UParticleSystem;
+class USceneComponent;
 class UOutlineComponent;
+class USingleUsableComponent;
+class APawn;
+class AParasiteEnemy;
 class UHitscanComponent;
 class USkeletalMeshComponent;
-class UDamageComponent;
-class UPointLightComponent;
 class USpotLightComponent;
 class UStaticMeshComponent;
 class UAudioComponent;
+class UDamageComponent;
 class USoundBase;
-class UParticleSystem;
 class AActor;
-class AParasiteEnemy;
 class AProjectile;
-class USoundCue;
+class UAnimSequenceBase;
 class APlayerCharacter;
-class APawn;
 
 UCLASS(Blueprintable)
 class AConvertedRobot : public AEnemyDeepPathfinderCharacter, public IWeaponFireOwner {

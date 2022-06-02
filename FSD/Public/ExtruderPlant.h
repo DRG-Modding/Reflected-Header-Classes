@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ExtruderPlant.generated.h"
 
-class UAudioComponent;
 class USkeletalMeshComponent;
+class UAudioComponent;
 class UAnimationAsset;
 
 UCLASS(Abstract, Blueprintable)

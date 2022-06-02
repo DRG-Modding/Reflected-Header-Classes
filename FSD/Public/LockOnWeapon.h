@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "AmmoDrivenWeapon.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "TracerData.h"
 #include "LockCounter.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "LockOnWeapon.generated.h"
 
-class UActorTrackingWidget;
 class AActor;
-class UStatusEffect;
+class UActorTrackingWidget;
 class ALockOnBeam;
+class UStatusEffect;
 class UDamageComponent;
 class UHitscanComponent;
 

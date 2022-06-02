@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Niagara -ObjectName=NiagaraDataInterface -FallbackName=NiagaraDataInterface
-#include "EDataSourceTypeEnum.h"
-#include "ELocationYToSpawnEnum.h"
-#include "ELocationFilteringModeEnum.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "ELocationZToSpawnEnum.h"
 #include "ELocationXToSpawnEnum.h"
-#include "EDebugTypeEnum.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Niagara -ObjectName=NiagaraDataInterface -FallbackName=NiagaraDataInterface
+#include "ERandomVelocityGenerationTypeEnum.h"
+#include "EDataSourceTypeEnum.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "ELocationYToSpawnEnum.h"
+#include "ELocationFilteringModeEnum.h"
 #include "EDataSortTypeEnum.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "ERandomVelocityGenerationTypeEnum.h"
+#include "EDebugTypeEnum.h"
 #include "NiagaraDataInterfaceChaosDestruction.generated.h"
 
 class AChaosSolverActor;

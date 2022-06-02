@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EInputKeys.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "TreasureWeight.h"
 #include "TreasureContainer.generated.h"
 
 class USceneComponent;
 class UOncePerPlayerUsableComponent;
 class UItemAquisitionSource;
-class APlayerCharacter;
 class UTreasureRewarder;
+class APlayerCharacter;
 
 UCLASS(Blueprintable)
 class FSD_API ATreasureContainer : public AActor {

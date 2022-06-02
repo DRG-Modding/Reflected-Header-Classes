@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "TerrainPlacementBox.h"
 #include "EDebrisColliderType.h"
 #include "DebrisCapsule.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "TerrainPlacementDebugItem.generated.h"
 
 USTRUCT(BlueprintType)

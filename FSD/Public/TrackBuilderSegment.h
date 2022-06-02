@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "ETrackBuildPlacementState.h"
 #include "TrackBuilderPoint.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
-#include "ETrackBuildPlacementState.h"
 #include "TrackBuilderSegment.generated.h"
 
+class AItem;
 class UTrackBuilderUsable;
 class APlayerCharacter;
-class AItem;
 class UTrackBuilderConnectPoint;
 class ATrackBuilderSegment;
 

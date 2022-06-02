@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "TurnBasedBlueprintLibrary.generated.h"
 
-class APlayerController;
 class UObject;
+class APlayerController;
 
 UCLASS(Blueprintable)
 class ONLINESUBSYSTEMUTILS_API UTurnBasedBlueprintLibrary : public UBlueprintFunctionLibrary {

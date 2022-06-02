@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MeshComponent -FallbackName=MeshComponent
-#include "EWindowVisibility.h"
 #include "EWidgetSpace.h"
 #include "EWidgetTimingPolicy.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "EWidgetGeometryMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
+#include "EWindowVisibility.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "EWidgetBlendMode.h"
-#include "EWidgetGeometryMode.h"
 #include "ETickMode.h"
 #include "WidgetComponent.generated.h"
 
-class UMaterialInterface;
 class UUserWidget;
 class ULocalPlayer;
 class UBodySetup;
+class UMaterialInterface;
 class UTextureRenderTarget2D;
 class UMaterialInstanceDynamic;
 

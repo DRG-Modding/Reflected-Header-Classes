@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "InAppPurchaseProductRequest2.h"
 #include "InAppPurchaseRestoreResult2Delegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "InAppPurchaseRestoreCallbackProxy2.generated.h"
 
-class APlayerController;
 class UInAppPurchaseRestoreCallbackProxy2;
+class APlayerController;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UInAppPurchaseRestoreCallbackProxy2 : public UObject {

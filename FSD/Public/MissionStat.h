@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "EMissionStatType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "MissionStat.generated.h"
 
-class UFSDAchievement;
-class UMissionStat;
-class UObject;
 class UMissionStatCategory;
+class UObject;
+class UMissionStat;
+class UFSDAchievement;
 class APlayerCharacter;
 class UPlayerCharacterID;
 class UTexture2D;

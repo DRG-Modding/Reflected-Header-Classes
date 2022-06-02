@@ -2,40 +2,40 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "HeroInfo.h"
 #include "ECharacterState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "HeroInfo.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "ActorFunctionLibrary.generated.h"
 
+class UWindowWidget;
+class UPathfinderCollisionComponent;
+class UMaterialInstanceDynamic;
+class UPlayerCharacterID;
 class UItemID;
 class APlayerCharacter;
-class UWindowWidget;
-class APlayerController;
-class UObject;
 class USoundCue;
-class UHealthComponentBase;
-class UMaterialInstanceDynamic;
+class UObject;
+class APlayerController;
 class UUserWidget;
+class UHealthComponentBase;
 class AActor;
 class USceneComponent;
 class UFXSystemAsset;
-class UPathfinderCollisionComponent;
 class UFSDPhysicalMaterial;
-class UPlayerCharacterID;
+class UEnemyComponent;
 class UInventoryList;
+class AFSDGameMode;
 class UTexture2D;
 class UActorComponent;
 class UPostProcessComponent;
 class UBlendableInterface;
 class IBlendableInterface;
-class AFSDGameMode;
 class UMeshComponent;
 class UDamageClass;
-class UEnemyComponent;
 class AFSDGameState;
 
 UCLASS(Blueprintable)

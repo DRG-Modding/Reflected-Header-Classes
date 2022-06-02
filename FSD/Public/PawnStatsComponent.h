@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PawnStatEntriesArray.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "PawnStatEntriesArray.h"
 #include "PawnStatsComponent.generated.h"
 
 class UPawnStat;

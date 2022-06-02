@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Pawn -FallbackName=Pawn
-#include "Steerable.h"
 #include "Targetable.h"
+#include "Steerable.h"
 #include "PathfinderVehicle.generated.h"
 
 class USkeletalMeshComponent;

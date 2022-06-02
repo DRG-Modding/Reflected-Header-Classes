@@ -5,16 +5,16 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "TowerEventModule.generated.h"
 
-class UWeakpointGlowComponent;
-class UArmorHealthDamageComponent;
+class UParticleSystem;
 class USceneComponent;
-class ATowerEventModule;
 class USkeletalMeshComponent;
 class UParticleSystemComponent;
 class UEnemyHealthComponent;
+class UWeakpointGlowComponent;
+class UArmorHealthDamageComponent;
 class USkeletalMesh;
 class USoundCue;
-class UParticleSystem;
+class ATowerEventModule;
 class UStaticMesh;
 class UStaticMeshComponent;
 

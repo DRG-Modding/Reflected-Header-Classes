@@ -2,8 +2,8 @@
 
 class USplineComponent;
 class AActor;
-class UTerrainMaterial;
 class UObject;
+class UTerrainMaterial;
 class USplineMeshComponent;
 
 bool UFSDSplineLibrary::SplineComponentSphereTrace(const USplineComponent*& SplineComponent, float Radius, TEnumAsByte<ETraceTypeQuery> TraceType, float StepSize, TArray<AActor*> IgnoreActors, FHitResult& OutHitResult, FVector Offset) {

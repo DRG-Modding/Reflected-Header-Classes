@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AmmoDrivenWeapon.h"
-#include "DecalData.h"
-#include "ReflectionTraceResult.h"
 #include "BoosterModuleActiveDelegate.h"
+#include "DecalData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "ReflectionTraceResult.h"
 #include "HeavyParticleCannon.generated.h"
 
-class UStickyFlameSpawner;
-class UNiagaraSystem;
-class UDamageComponent;
-class UReflectionHitscanComponent;
 class UFirstPersonNiagaraComponent;
 class UNiagaraComponent;
+class UDamageComponent;
+class UStickyFlameSpawner;
+class UReflectionHitscanComponent;
 class USoundBase;
+class UNiagaraSystem;
 class AActor;
 class UTerrainType;
 class UFSDPhysicalMaterial;

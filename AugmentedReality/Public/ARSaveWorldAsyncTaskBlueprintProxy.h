@@ -4,8 +4,8 @@
 #include "ARSaveWorldPinDelegate.h"
 #include "ARSaveWorldAsyncTaskBlueprintProxy.generated.h"
 
-class UARSaveWorldAsyncTaskBlueprintProxy;
 class UObject;
+class UARSaveWorldAsyncTaskBlueprintProxy;
 
 UCLASS(Blueprintable)
 class UARSaveWorldAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy {

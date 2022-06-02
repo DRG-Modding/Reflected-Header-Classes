@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "PerceptionUpdatedDelegateDelegate.h"
 #include "ActorPerceptionInfoUpdatedDelegateDelegate.h"
+#include "PerceptionUpdatedDelegateDelegate.h"
 #include "ActorPerceptionUpdatedDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EEndPlayReason -FallbackName=EEndPlayReason
 #include "ActorPerceptionBlueprintInfo.h"

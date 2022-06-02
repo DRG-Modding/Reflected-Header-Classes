@@ -1,11 +1,11 @@
 #include "AIBlueprintHelperLibrary.h"
 #include "Templates/SubclassOf.h"
 
-class UBehaviorTree;
+class AActor;
 class UAnimInstance;
 class UObject;
 class APawn;
-class AActor;
+class UBehaviorTree;
 class AController;
 class UNavigationPath;
 class UBlackboardComponent;

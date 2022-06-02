@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RoomFeature.h"
-#include "ECaveEntrancePriority.h"
-#include "ECaveEntranceType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ECaveEntranceType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "ECaveEntrancePriority.h"
 #include "EntranceFeature.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

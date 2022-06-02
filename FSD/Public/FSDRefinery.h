@@ -3,10 +3,10 @@
 #include "Templates/SubclassOf.h"
 #include "DropPod.h"
 #include "ERefineryState.h"
-#include "EInputKeys.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FloatRange -FallbackName=FloatRange
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Int32Range -FallbackName=Int32Range
 #include "EPipelineBuildState.h"
+#include "EInputKeys.h"
 #include "FSDRefinery.generated.h"
 
 class APipelineSegment;

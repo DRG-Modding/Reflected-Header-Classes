@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "EncounterRareCritterItem.h"
 #include "EliteEnemyEntry.h"
 #include "IRandRange.h"
-#include "RandInterval.h"
-#include "EncounterSpecialItem.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "RandRange.h"
+#include "EncounterSpecialItem.h"
+#include "RandInterval.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
 #include "EncounterSettings.generated.h"
 

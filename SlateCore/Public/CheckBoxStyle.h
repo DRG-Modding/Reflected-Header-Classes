@@ -2,10 +2,10 @@
 #include "CoreMinimal.h"
 #include "Margin.h"
 #include "SlateWidgetStyle.h"
-#include "SlateSound.h"
 #include "ESlateCheckBoxType.h"
 #include "SlateColor.h"
 #include "SlateBrush.h"
+#include "SlateSound.h"
 #include "CheckBoxStyle.generated.h"
 
 USTRUCT(BlueprintType)

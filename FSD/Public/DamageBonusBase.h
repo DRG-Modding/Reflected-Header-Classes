@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "DamageBonusBase.generated.h"
 
-class UDamageBonusBase;
 class UDamageCondition;
+class UDamageBonusBase;
 class UDamageComponent;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)

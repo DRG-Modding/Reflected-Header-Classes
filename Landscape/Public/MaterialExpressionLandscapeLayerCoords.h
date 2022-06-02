@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MaterialExpression -FallbackName=MaterialExpression
-#include "ELandscapeCustomizedCoordType.h"
 #include "ETerrainCoordMappingType.h"
+#include "ELandscapeCustomizedCoordType.h"
 #include "MaterialExpressionLandscapeLayerCoords.generated.h"
 
 UCLASS(Blueprintable, CollapseCategories)

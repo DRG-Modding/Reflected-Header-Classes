@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "FSDUserWidget.h"
+#include "HealthBarLooks.h"
 #include "HUDHealthBarSignatureDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "EHealthbarType.h"
-#include "HealthBarLooks.h"
 #include "HUDHealthBar.generated.h"
 
 class UHealth;

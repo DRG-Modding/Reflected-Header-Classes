@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EColorSpace.h"
+#include "EBoundaryType.h"
+#include "GuardianTestResult.h"
+#include "EFixedFoveatedRenderingLevel.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "EOculusDeviceType.h"
-#include "EColorSpace.h"
-#include "EFixedFoveatedRenderingLevel.h"
-#include "ETrackedDeviceType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 //CROSS-MODULE INCLUDE V2: -ModuleName=HeadMountedDisplay -ObjectName=EOrientPositionSelector -FallbackName=EOrientPositionSelector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "ETrackedDeviceType.h"
+#include "EOculusDeviceType.h"
 #include "HmdUserProfile.h"
-#include "GuardianTestResult.h"
-#include "EBoundaryType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "OculusFunctionLibrary.generated.h"

@@ -4,8 +4,8 @@
 #include "OnLeaderboardFlushedDelegate.h"
 #include "LeaderboardFlushCallbackProxy.generated.h"
 
-class APlayerController;
 class ULeaderboardFlushCallbackProxy;
+class APlayerController;
 
 UCLASS(Blueprintable, MinimalAPI)
 class ULeaderboardFlushCallbackProxy : public UObject {

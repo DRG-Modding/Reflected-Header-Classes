@@ -3,10 +3,10 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "SentryGunMuzzleSetup.h"
+#include "WeaponFireOwner.h"
 #include "AmmoCountChangedEventDelegate.h"
 #include "Upgradable.h"
-#include "WeaponFireOwner.h"
-#include "SentryGunMuzzleSetup.h"
 #include "TracerData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OverlapResult -FallbackName=OverlapResult
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
@@ -16,13 +16,13 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "SentryGun.generated.h"
 
+class UHealthComponentBase;
+class USoundCue;
 class USkeletalMeshComponent;
 class AProjectile;
-class USoundCue;
 class UParticleSystem;
-class USoundBase;
-class UHealthComponentBase;
 class UWeaponFireComponent;
+class USoundBase;
 class UAudioComponent;
 class APlayerCharacter;
 

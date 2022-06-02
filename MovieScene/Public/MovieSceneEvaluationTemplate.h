@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "MovieSceneEvaluationTemplateSerialNumber.h"
 #include "MovieSceneTrackIdentifier.h"
-#include "MovieSceneEvaluationTrack.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "MovieSceneEvaluationTrack.h"
 #include "MovieSceneTemplateGenerationLedger.h"
 #include "MovieSceneEvaluationTemplate.generated.h"
 

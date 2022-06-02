@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "ExplosionBaseComponent.generated.h"
 
+class UPhysicalMaterial;
 class UDamageComponent;
 class UPrimitiveComponent;
-class UPhysicalMaterial;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UExplosionBaseComponent : public UActorComponent {

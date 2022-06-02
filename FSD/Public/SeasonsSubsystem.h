@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timespan -FallbackName=Timespan
-#include "OnXPChangedSignatureDelegate.h"
 #include "OnTokensChangedSignatureDelegate.h"
-#include "SeasonMissionResult.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameInstanceSubsystem -FallbackName=GameInstanceSubsystem
+#include "OnXPChangedSignatureDelegate.h"
 #include "OnVanityTreeResetDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timespan -FallbackName=Timespan
 #include "OnScripChallengeUpdatedDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-#include "ClaimStatusChangedDelegate.h"
-#include "ChallengeInfo.h"
 #include "SeasonLevel.h"
+#include "ClaimStatusChangedDelegate.h"
+#include "SeasonMissionResult.h"
+#include "ChallengeInfo.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EPickaxePartLocation.h"
 #include "SeasonsSubsystem.generated.h"
 
-class UItemSkin;
-class UDataAsset;
+class UPickaxePart;
+class UPlayerCharacterID;
+class USeasonChallenge;
+class AFSDPlayerController;
 class UObject;
 class UMissionStat;
 class AFSDPlayerState;
-class USeasonChallenge;
+class UDataAsset;
 class UTextureRenderTarget2D;
 class UVanityItem;
-class UPlayerCharacterID;
-class UPickaxePart;
+class UItemSkin;
 class USeasonEventData;
-class AFSDPlayerController;
 
 UCLASS(Blueprintable)
 class USeasonsSubsystem : public UGameInstanceSubsystem {
@@ -51,6 +51,9 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ForceSeasonEventIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FTimespan NewChallengeTimeSpan;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FSeasonMissionResult TempSeasonMissionResult;

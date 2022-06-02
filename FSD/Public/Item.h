@@ -5,35 +5,35 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "SaveGameIDInterface.h"
 #include "Skinnable.h"
-#include "AudioWithCooldown.h"
-#include "ItemIDInterface.h"
 #include "LoadoutItem.h"
+#include "ItemIDInterface.h"
 #include "PlaySoundInterface.h"
+#include "AudioWithCooldown.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachLocation -FallbackName=EAttachLocation
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "ItemLoadoutAnimations.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachLocation -FallbackName=EAttachLocation
 #include "Item.generated.h"
 
+class UCurveFloat;
 class UAudioComponent;
 class UCameraShakeBase;
-class UItemCharacterAnimationSet;
+class AItem;
 class APlayerCharacter;
 class UItemID;
+class ACharacter;
 class UUpgradableItemComponent;
-class USceneComponent;
-class UCurveFloat;
-class USoundAttenuation;
 class USoundBase;
-class UFirstPersonStaticMeshComponent;
 class UDialogDataAsset;
 class UItemsBarIcon;
+class USceneComponent;
+class USoundAttenuation;
 class USoundConcurrency;
-class ACharacter;
 class UStaticMeshComponent;
+class UFirstPersonStaticMeshComponent;
+class UItemCharacterAnimationSet;
 class USkinEffect;
 class UTexture2D;
-class AItem;
 
 UCLASS(Abstract, Blueprintable)
 class FSD_API AItem : public AActor, public ISaveGameIDInterface, public ISkinnable, public IItemIDInterface, public ILoadoutItem, public IPlaySoundInterface {

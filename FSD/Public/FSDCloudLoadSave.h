@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SDCloudFailedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "SDCloudLoadDelegate.h"
-#include "SDCloudFailedDelegate.h"
 #include "FSDCloudLoadSave.generated.h"
 
 class UFSDCloudSaveHandler;

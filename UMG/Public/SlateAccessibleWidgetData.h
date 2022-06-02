@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESlateAccessibleBehavior.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "ESlateAccessibleBehavior.h"
 #include "SlateAccessibleWidgetData.generated.h"
 
 UCLASS(Blueprintable, DefaultToInstanced)

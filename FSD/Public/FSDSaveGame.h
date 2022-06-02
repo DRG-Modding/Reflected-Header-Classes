@@ -1,56 +1,56 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "SchematicSave.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SaveGame -FallbackName=SaveGame
-#include "MilestoneSave.h"
-#include "UpgradeLoadout.h"
 #include "VanityMasterySave.h"
 #include "VanityMasteryResult.h"
-#include "EventRewardSave.h"
-#include "ESonyControllerMotionMapping.h"
-#include "PromotionRewardsSave.h"
-#include "FSDEventRewardsSave.h"
-#include "EFSDFaction.h"
-#include "GDKWinOptionsInSaveGame.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
 #include "MissionStatSave.h"
+#include "ResourcesSave.h"
+#include "AchievementSave.h"
+#include "CampaignSave.h"
+#include "CharacterSave.h"
+#include "UnLockedMissionParameters.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
+#include "ESonyInputSettingsBools.h"
+#include "MilestoneSave.h"
 #include "PerkClaimsSave.h"
 #include "WatchedTutorial.h"
 #include "CharacterPerksSave.h"
-#include "ResourcesSave.h"
-#include "AchievementSave.h"
-#include "SchematicSave.h"
+#include "PromotionRewardsSave.h"
+#include "FSDEventRewardsSave.h"
 #include "SeasonSave.h"
 #include "GameDLCSave.h"
+#include "EFSDFaction.h"
+#include "EventRewardSave.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
-#include "UnLockedMissionParameters.h"
-#include "CampaignSave.h"
 #include "DeepDiveSave.h"
-#include "CharacterSave.h"
 #include "ForgingSave.h"
 #include "DrinkSave.h"
 #include "ItemUpgradeSelection.h"
+#include "UpgradeLoadout.h"
 #include "ItemNotificationInfo.h"
 #include "SkinList.h"
 #include "ItemUINotifications.h"
 #include "ConsoleOptionsInSaveGame.h"
+#include "GDKWinOptionsInSaveGame.h"
 #include "OptionsInSaveGame.h"
-#include "ESonyInputSettingsBools.h"
-#include "ESonyControllerLightMode.h"
 #include "SonyInputSettings.h"
-#include "ESonyInputSettingsFloats.h"
+#include "ESonyControllerMotionMapping.h"
+#include "ESonyControllerLightMode.h"
 #include "EItemCategory.h"
+#include "ESonyInputSettingsFloats.h"
 #include "FSDSaveGame.generated.h"
 
+class UItemSkin;
 class UItemID;
 class APlayerCharacter;
-class UItemSkin;
 class UResourceData;
+class UFSDGameInstance;
+class UObject;
 class UFSDSaveGame;
 class UVanityItem;
 class UPlayerCharacterID;
-class UFSDGameInstance;
-class UObject;
 class AActor;
 
 UCLASS(Blueprintable)

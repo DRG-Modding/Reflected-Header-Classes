@@ -3,8 +3,8 @@
 #include "BTDecoratorLogic.h"
 #include "BTCompositeChild.generated.h"
 
-class UBTCompositeNode;
 class UBTTaskNode;
+class UBTCompositeNode;
 class UBTDecorator;
 
 USTRUCT(BlueprintType)

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlackboardKeySelector.h"
 #include "EAIParamType.h"
+#include "BlackboardKeySelector.h"
 #include "AIDynamicParam.generated.h"
 
 USTRUCT(BlueprintType)

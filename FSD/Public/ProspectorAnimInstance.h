@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnemyAnimInstance.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EProspectorRobotState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "ProspectorAnimInstance.generated.h"
 
 UCLASS(Blueprintable, NonTransient)

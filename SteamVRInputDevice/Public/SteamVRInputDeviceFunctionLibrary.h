@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SteamVRInputOriginInfo.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "SteamVRFingerSplays.h"
 #include "SteamVRAction.h"
-#include "ESkeletalSummaryDataType.h"
 #include "SteamVRActionSet.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ESteamVRHand.h"
 #include "ESteamVRInputStringBits.h"
 #include "SteamVRInputBindingInfo.h"
-#include "ESteamVRHand.h"
-#include "SteamVRInputOriginInfo.h"
+#include "SteamVRFingerCurls.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "SteamVRSkeletonTransform.h"
 #include "EHand.h"
-#include "SteamVRFingerCurls.h"
+#include "ESkeletalSummaryDataType.h"
 #include "EControllerFidelity.h"
 #include "SteamVRInputDeviceFunctionLibrary.generated.h"
 

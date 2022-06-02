@@ -6,8 +6,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "MovieSceneSkeletalAnimationSection.generated.h"
 
-class UAnimSequenceBase;
 class UAnimSequence;
+class UAnimSequenceBase;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneSkeletalAnimationSection : public UMovieSceneSection {

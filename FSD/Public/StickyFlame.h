@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DecalData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "DecalData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "StickyFlame.generated.h"
 
-class UAudioComponent;
-class UParticleSystemComponent;
 class UStatusEffectTriggerComponent;
+class UParticleSystemComponent;
+class UAudioComponent;
 
 UCLASS(Blueprintable)
 class AStickyFlame : public AActor {

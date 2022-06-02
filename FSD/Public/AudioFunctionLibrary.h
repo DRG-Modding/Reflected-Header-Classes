@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "AudioFunctionLibrary.generated.h"
 
-class UObject;
 class USoundClass;
+class UObject;
 class USoundMix;
 
 UCLASS(Blueprintable)

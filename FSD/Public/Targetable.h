@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "Targetable.generated.h"
 
-class UParticleSystem;
 class UHealthComponentBase;
+class UParticleSystem;
 
 UINTERFACE(Blueprintable)
 class UTargetable : public UInterface {

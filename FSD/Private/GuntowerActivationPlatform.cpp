@@ -1,13 +1,13 @@
 #include "GuntowerActivationPlatform.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CapsuleComponent -FallbackName=CapsuleComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
 class UHealthComponentBase;
-class UPrimitiveComponent;
-class AFSDPlayerState;
 class AActor;
+class AFSDPlayerState;
+class UPrimitiveComponent;
 class AGuntowerModule;
 
 void AGuntowerActivationPlatform::ShutDown() {

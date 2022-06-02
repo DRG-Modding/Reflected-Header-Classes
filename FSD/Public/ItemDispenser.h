@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ItemDispenserDelegateDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EInputKeys.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "ItemDispenserDelegateDelegate.h"
 #include "ItemDispenser.generated.h"
 
 class USceneComponent;
 class UInstantUsable;
-class ACarriableItem;
 class APlayerCharacter;
+class ACarriableItem;
 
 UCLASS(Blueprintable)
 class AItemDispenser : public AActor {

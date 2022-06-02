@@ -4,8 +4,8 @@
 #include "BrushStampData.h"
 #include "BaseBrushTool.generated.h"
 
-class UBrushBaseProperties;
 class UBrushStampIndicator;
+class UBrushBaseProperties;
 
 UCLASS(Blueprintable, NonTransient)
 class INTERACTIVETOOLSFRAMEWORK_API UBaseBrushTool : public UMeshSurfacePointTool {

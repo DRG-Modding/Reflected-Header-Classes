@@ -1,8 +1,8 @@
 #include "FacilityTurretController.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=AIPerceptionComponent -FallbackName=AIPerceptionComponent
 
-class UHealthComponentBase;
 class AActor;
+class UHealthComponentBase;
 
 void AFacilityTurretController::OnTurretsAttackingChanged(bool IsAttacking) {
 }

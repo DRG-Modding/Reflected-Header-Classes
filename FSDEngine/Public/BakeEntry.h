@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DeepCSGFloatTreePacked.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+#include "DeepCSGFloatTreePacked.h"
 #include "SmartTerrainMaterialVal.h"
 #include "BakeEntry.generated.h"
 

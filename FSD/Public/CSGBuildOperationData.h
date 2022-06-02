@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=BakeSettings -FallbackName=BakeSettings
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=MatrixWithExactSync -FallbackName=MatrixWithExactSync
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=BakeSettings -FallbackName=BakeSettings
 #include "CSGBuildOperationData.generated.h"
 
 class ACSGBuilder;

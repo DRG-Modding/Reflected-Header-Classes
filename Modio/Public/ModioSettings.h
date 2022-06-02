@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EModioPortal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EModioEnvironment.h"
 #include "EModioLogLevel.h"
+#include "EModioPortal.h"
 #include "ModioSettings.generated.h"
 
 UCLASS(Blueprintable, DefaultConfig, Config=Game)

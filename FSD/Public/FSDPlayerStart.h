@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "FSDPlayerStart.generated.h"
 
-class AFSDPlayerController;
 class UPlayerCharacterID;
+class AFSDPlayerController;
 
 UCLASS(Blueprintable)
 class AFSDPlayerStart : public AActor {

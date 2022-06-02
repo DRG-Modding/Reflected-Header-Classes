@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "GeometryCollectionActor.generated.h"
 
-class UGeometryCollectionDebugDrawComponent;
 class UGeometryCollectionComponent;
+class UGeometryCollectionDebugDrawComponent;
 
 UCLASS(Blueprintable)
 class GEOMETRYCOLLECTIONENGINE_API AGeometryCollectionActor : public AActor {

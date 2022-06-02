@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "RandRange.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "RandomizedInstantMeshCarver.generated.h"
 
-class UStaticMeshCarver;
 class USTLMeshCarver;
 class UStaticMesh;
 class UTerrainMaterialBase;
+class UStaticMeshCarver;
 
 UCLASS(Blueprintable)
 class ARandomizedInstantMeshCarver : public AActor {

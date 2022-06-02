@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "OnIsFallingToTerrainChangedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "OnIsFallingToTerrainChangedDelegate.h"
 #include "DropToTerrainComponent.generated.h"
 
 class UTerrainDetectComponent;

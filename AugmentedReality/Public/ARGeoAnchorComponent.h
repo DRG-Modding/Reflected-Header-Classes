@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGeoAnchorComponentDebugMode.h"
 #include "ARComponent.h"
 #include "ARGeoAnchorUpdatePayload.h"
+#include "EGeoAnchorComponentDebugMode.h"
 #include "ARGeoAnchorComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

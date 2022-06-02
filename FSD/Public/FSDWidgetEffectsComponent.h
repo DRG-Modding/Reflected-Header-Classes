@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CustomCounterDelegateDelegate.h"
+#include "WidgetTextCounter.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "WidgetPing.h"
 #include "WidgetFade.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "WidgetTextCounter.h"
 #include "CustomCounter.h"
 #include "WidgetMover.h"
+#include "CustomCounterDelegateDelegate.h"
 #include "EPingType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "EMoveType.h"
 #include "FSDWidgetEffectsComponent.generated.h"
 
-class UObject;
 class UTextBlock;
+class UObject;
 class UWidget;
 class UUserWidget;
 

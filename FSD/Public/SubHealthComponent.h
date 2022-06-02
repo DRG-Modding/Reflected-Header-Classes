@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EHealthbarType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "EEnemyHealthScaling.h"
+#include "HealthChangedSigDelegate.h"
 #include "Health.h"
 #include "DamageSigDelegate.h"
-#include "EEnemyHealthScaling.h"
-#include "EHealthbarType.h"
-#include "HealthChangedSigDelegate.h"
 #include "SubHealthComponentDelegateDelegate.h"
 #include "SubHealthComponent.generated.h"
 

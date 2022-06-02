@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AISense.h"
-#include "AINoiseEvent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "AINoiseEvent.h"
 #include "AISense_Hearing.generated.h"
 
 class UObject;

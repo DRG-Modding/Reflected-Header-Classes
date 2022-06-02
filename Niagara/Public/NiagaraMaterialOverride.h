@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "NiagaraMaterialOverride.generated.h"
 
-class UMaterialInterface;
 class UNiagaraRendererProperties;
+class UMaterialInterface;
 
 USTRUCT(BlueprintType)
 struct FNiagaraMaterialOverride {

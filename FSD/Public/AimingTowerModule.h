@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TowerModuleBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "TowerModuleBase.h"
 #include "AimingTowerModule.generated.h"
 
 class AActor;

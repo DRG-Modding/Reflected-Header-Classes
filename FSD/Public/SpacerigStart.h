@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerStart -FallbackName=PlayerStart
-#include "PlayerSpawnInHubDelegate.h"
 #include "ESpacerigStartType.h"
+#include "PlayerSpawnInHubDelegate.h"
 #include "SpacerigStart.generated.h"
 
 class AFSDPlayerController;

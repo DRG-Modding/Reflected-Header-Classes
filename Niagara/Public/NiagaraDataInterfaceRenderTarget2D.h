@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "NiagaraDataInterfaceRWBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
-#include "NiagaraUserParameterBinding.h"
 #include "ENiagaraMipMapGeneration.h"
+#include "NiagaraUserParameterBinding.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETextureRenderTargetFormat -FallbackName=ETextureRenderTargetFormat
 #include "NiagaraDataInterfaceRenderTarget2D.generated.h"
 

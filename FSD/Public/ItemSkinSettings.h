@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ItemSkinSettings.generated.h"
 
-class UItemSkin;
 class UItemSkinSet;
+class UItemSkin;
 
 UCLASS(Blueprintable)
 class FSD_API UItemSkinSettings : public UDataAsset {

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "GameEvent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "RockEnemiesEvent.generated.h"
 
-class UEnemyGroupDescriptor;
 class AProjectile;
 class USkeletalMeshComponent;
 class APawn;
 class UParticleSystem;
+class UEnemyGroupDescriptor;
 class UHealthComponentBase;
 
 UCLASS(Blueprintable)

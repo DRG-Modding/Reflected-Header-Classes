@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StructSerializerObjectTestStruct.h"
-#include "StructSerializerNumericTestStruct.h"
 #include "StructSerializerBooleanTestStruct.h"
+#include "StructSerializerNumericTestStruct.h"
+#include "StructSerializerObjectTestStruct.h"
 #include "StructSerializerMapTestStruct.h"
 #include "StructSerializerBuiltinTestStruct.h"
 #include "StructSerializerArrayTestStruct.h"

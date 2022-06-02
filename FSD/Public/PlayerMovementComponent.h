@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CharacterMovementComponent -FallbackName=CharacterMovementComponent
 #include "PlayerMovementComponent.generated.h"
 
+class AActor;
+class UCharacterStateComponent;
 class USoundBase;
 class APlayerCharacter;
-class UCharacterStateComponent;
-class AActor;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UPlayerMovementComponent : public UCharacterMovementComponent {

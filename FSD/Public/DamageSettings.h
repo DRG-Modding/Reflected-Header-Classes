@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "DecalData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "DamageSettings.generated.h"
 
-class UDamageTag;
 class UStatusEffect;
 class UDamageComponent;
-class USoundCue;
 class UNiagaraSystem;
+class USoundCue;
+class UDamageTag;
 class UDamageImpulse;
 
 UCLASS(Blueprintable)

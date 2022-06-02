@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "ERoomMirror.h"
 #include "ERoomMirroringSupport.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "RoomBurner.generated.h"
 
-class UDifficultySetting;
-class URoomGenerator;
 class UBiome;
 class UEnemyDescriptor;
+class URoomGenerator;
+class UDifficultySetting;
 class UMissionMutator;
 class UMissionWarning;
 class USpecialEvent;

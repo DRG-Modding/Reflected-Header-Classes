@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystemUtils -ObjectName=BlueprintSessionResult -FallbackName=BlueprintSessionResult
 #include "FSDFindSessionsCallbackProxy.generated.h"
 
-class UFSDFindSessionsCallbackProxy;
 class APlayerController;
-class UObject;
 class UFSDFindSteamSessions;
+class UObject;
+class UFSDFindSessionsCallbackProxy;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UFSDFindSessionsCallbackProxy : public UOnlineBlueprintCallProxyBase {

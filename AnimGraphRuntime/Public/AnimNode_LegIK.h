@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimNode_SkeletalControlBase.h"
 #include "AnimLegIKDefinition.h"
+#include "AnimNode_SkeletalControlBase.h"
 #include "AnimNode_LegIK.generated.h"
 
 USTRUCT(BlueprintType)

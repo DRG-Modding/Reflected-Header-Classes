@@ -6,8 +6,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "SchematicSettings.generated.h"
 
-class USchematicBank;
 class UDataTable;
+class USchematicBank;
 class UOverclockBank;
 class USchematic;
 class UItemSkinSchematicCollection;

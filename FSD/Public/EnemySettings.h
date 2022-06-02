@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
+#include "EliteEnemyEntry.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "RandRange.h"
-#include "EliteEnemyEntry.h"
 #include "RandFloatInterval.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
 #include "EnemySettings.generated.h"
 
-class UDamageComponent;
 class UEnemyID;
 class UEnemyDescriptor;
+class UDamageComponent;
 
 UCLASS(Blueprintable)
 class UEnemySettings : public UDataAsset {

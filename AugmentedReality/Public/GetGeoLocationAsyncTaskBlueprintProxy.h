@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARBaseAsyncTaskBlueprintProxy.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ARBaseAsyncTaskBlueprintProxy.h"
 #include "GetGeoLocationAsyncTaskBlueprintProxy.generated.h"
 
 class UGetGeoLocationAsyncTaskBlueprintProxy;

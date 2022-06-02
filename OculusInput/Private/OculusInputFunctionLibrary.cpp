@@ -1,7 +1,7 @@
 #include "OculusInputFunctionLibrary.h"
 
-class USkinnedMeshComponent;
 class USkeletalMesh;
+class USkinnedMeshComponent;
 
 bool UOculusInputFunctionLibrary::IsPointerPoseValid(const EOculusHandType DeviceHand, const int32 ControllerIndex) {
     return false;

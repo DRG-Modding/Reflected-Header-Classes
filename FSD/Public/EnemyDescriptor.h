@@ -2,22 +2,22 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=DeepPathFinderType -FallbackName=DeepPathFinderType
-#include "EVeteranScaling.h"
-#include "EEnemySignificance.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "ECreatureSize.h"
 #include "SpawnRarityItem.h"
 #include "EnemyDebris.h"
+#include "EEnemySignificance.h"
+#include "EVeteranScaling.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=DeepPathFinderType -FallbackName=DeepPathFinderType
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ECreatureSize.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
 #include "EEnemyDescriptorCheatClass.h"
 #include "EnemyDescriptor.generated.h"
 
+class UMissionTemplate;
 class APawn;
-class UBiome;
 class UEnemyID;
 class UEnemyDescriptor;
-class UMissionTemplate;
+class UBiome;
 class AActor;
 class UDebrisPositioning;
 class UCaveInfluencer;

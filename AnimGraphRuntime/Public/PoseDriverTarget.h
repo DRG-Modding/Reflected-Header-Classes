@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ERBFDistanceMethod.h"
-#include "PoseDriverTransform.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
-#include "ERBFFunctionType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RichCurve -FallbackName=RichCurve
+#include "PoseDriverTransform.h"
+#include "ERBFFunctionType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "ERBFDistanceMethod.h"
 #include "PoseDriverTarget.generated.h"
 
 USTRUCT(BlueprintType)

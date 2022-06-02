@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ECommunityGoalIndex.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "CommunityGoalSettings.generated.h"
 
-class UCommunityGoalFaction;
 class UCommunityGoal;
+class UCommunityGoalFaction;
 
 UCLASS(Blueprintable)
 class UCommunityGoalSettings : public UDataAsset {

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EInputKeys.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "DetPack.generated.h"
 
-class UProjectileMovementComponent;
-class ADetPackItem;
+class UHealthComponentBase;
 class UExplosionComponent;
+class UProjectileMovementComponent;
 class USingleUsableComponent;
 class USimpleHealthComponent;
+class ADetPackItem;
 class APlayerCharacter;
-class UHealthComponentBase;
 
 UCLASS(Blueprintable)
 class ADetPack : public AActor {

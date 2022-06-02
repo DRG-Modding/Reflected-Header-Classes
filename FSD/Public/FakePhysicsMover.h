@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-#include "FakeMoverState.h"
 #include "FakeMoveState.h"
+#include "FakeMoverState.h"
 #include "FakePhysicsMover.generated.h"
 
 class USceneComponent;

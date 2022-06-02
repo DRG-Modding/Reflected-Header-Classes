@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EGrabberState.h"
 #include "AFlyingBug.h"
+#include "EGrabberState.h"
 #include "GrabSuccessDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "FlyingLifter.generated.h"
 
-class AActor;
-class UAudioComponent;
 class UCapsuleComponent;
-class UGrabberComponent;
+class UAudioComponent;
 class UPointLightComponent;
+class UGrabberComponent;
 class UInDangerComponent;
 class USoundBase;
 class UAnimSequenceBase;
+class AActor;
 class UPrimitiveComponent;
 
 UCLASS(Abstract, Blueprintable)

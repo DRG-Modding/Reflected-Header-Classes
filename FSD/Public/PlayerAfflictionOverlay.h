@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "PlayerAfflictionOverlay.generated.h"
 
-class UTexture2D;
 class UPlayerAfflictionOverlayWidget;
+class UTexture2D;
 class USoundCue;
 
 UCLASS(Blueprintable)

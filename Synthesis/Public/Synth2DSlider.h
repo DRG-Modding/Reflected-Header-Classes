@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnControllerCaptureBeginEventSynth2DDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=Widget -FallbackName=Widget
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=Widget -FallbackName=Widget
+#include "OnMouseCaptureBeginEventSynth2DDelegate.h"
 #include "Synth2DSliderStyle.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
-#include "OnMouseCaptureBeginEventSynth2DDelegate.h"
 #include "OnControllerCaptureEndEventSynth2DDelegate.h"
 #include "OnMouseCaptureEndEventSynth2DDelegate.h"
+#include "OnControllerCaptureBeginEventSynth2DDelegate.h"
 #include "OnFloatValueChangedEventSynth2DDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "Synth2DSlider.generated.h"

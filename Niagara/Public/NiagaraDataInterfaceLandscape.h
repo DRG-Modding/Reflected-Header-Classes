@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraDataInterface.h"
 #include "ENDILandscape_SourceMode.h"
+#include "NiagaraDataInterface.h"
 #include "NiagaraDataInterfaceLandscape.generated.h"
 
-class UPhysicalMaterial;
 class AActor;
+class UPhysicalMaterial;
 
 UCLASS(Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraDataInterfaceLandscape : public UNiagaraDataInterface {

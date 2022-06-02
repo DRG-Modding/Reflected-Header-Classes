@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TrackPositionList.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "TrackPositionList.h"
 #include "GemProximityTracker.generated.h"
 
 class UGemTracker;

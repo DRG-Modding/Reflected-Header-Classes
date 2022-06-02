@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "SaveGameIDInterface.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-#include "ItemIDInterface.h"
+#include "SaveGameIDInterface.h"
 #include "LoadoutItem.h"
+#include "ItemIDInterface.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "Grenade.generated.h"
 
-class UProjectileMovementComponent;
-class UItemID;
-class UGrenadeAnimationSet;
-class ALoadoutItemProxy;
 class UStaticMesh;
+class UItemID;
+class UProjectileMovementComponent;
+class ALoadoutItemProxy;
 class USoundCue;
 class UParticleSystem;
+class UGrenadeAnimationSet;
 class AGrenade;
 class AItem;
 

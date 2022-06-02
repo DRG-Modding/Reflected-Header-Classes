@@ -1,8 +1,8 @@
 #include "GeometryCollectionComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UFieldSystemMetaData;
 class UFieldNodeBase;
+class UFieldSystemMetaData;
 
 void UGeometryCollectionComponent::SetNotifyBreaks(bool bNewNotifyBreaks) {
 }

@@ -1,57 +1,56 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "PlayerCharacterEventDelegate.h"
+#include "OnPlayerShoutEventDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Character -FallbackName=Character
-#include "ToggleMapToolSignatureDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagAssetInterface -FallbackName=GameplayTagAssetInterface
+#include "OnFlareThrownDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "CollectedEverythingEventDelegate.h"
+#include "LaserPointerSecondaryDelegate.h"
+#include "OnMinePressedSignatureDelegate.h"
 #include "Targetable.h"
+#include "OnCharacterStateChangedSignatureDelegate.h"
 #include "RejoinListener.h"
 #include "PlaySoundInterface.h"
-#include "SaluteEventDelegate.h"
-#include "CollectedDrinkDelegateDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "CollectedVanityItemDeledateDelegate.h"
+#include "HeadlightOnChangedEventDelegate.h"
 #include "DamagedEnemyEventDelegate.h"
 #include "BoolDelegateDelegate.h"
-#include "DelegateDelegate.h"
+#include "HoldButton.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "ThrowCarriableDelegateDelegate.h"
-#include "UpdateMeshesSignatureDelegate.h"
-#include "OnPerkActivationTimerFinishedDelegate.h"
-#include "CollectedEverythingEventDelegate.h"
+#include "DelegateDelegate.h"
 #include "SchematicEventDelegate.h"
 #include "SkinEventDelegate.h"
+#include "CollectedDrinkDelegateDelegate.h"
 #include "CollectedVictoryPoseEventDelegate.h"
 #include "CollectedPickaxePartDelegateDelegate.h"
+#include "CollectedVanityItemDeledateDelegate.h"
 #include "CameraModeChangedDelegate.h"
 #include "OnLaserPointerPressedSignatureDelegate.h"
 #include "DownCameraTargetChangedDelegate.h"
 #include "ActionHoldEventDelegate.h"
 #include "OnJumpPressedSignatureDelegate.h"
 #include "OnJumpReleasedSignatureDelegate.h"
-#include "LaserPointerSecondaryDelegate.h"
-#include "OnMinePressedSignatureDelegate.h"
-#include "OnFlareThrownDelegate.h"
+#include "UpdateMeshesSignatureDelegate.h"
+#include "OnPerkActivationTimerFinishedDelegate.h"
 #include "CoolDownProgressDelegateDelegate.h"
 #include "OpenChatSignatureDelegate.h"
 #include "AcceptInviteSignatureDelegate.h"
 #include "RejectInviteSignatureDelegate.h"
 #include "IgnoreInviteSignatureDelegate.h"
+#include "ToggleMapToolSignatureDelegate.h"
 #include "DepthSignatureDelegate.h"
-#include "OnCharacterStateChangedSignatureDelegate.h"
 #include "CharacterDelegateDelegate.h"
 #include "OnCharacterDeathChangeSignatureDelegate.h"
 #include "LaserPointerEventDelegate.h"
-#include "OnPlayerShoutEventDelegate.h"
+#include "SaluteEventDelegate.h"
 #include "ReviveCallEventDelegate.h"
-#include "HeadlightOnChangedEventDelegate.h"
-#include "HoldButton.h"
+#include "PlayerCharacterEventDelegate.h"
 #include "OnCallDonkeySignatureDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
 #include "DownCameraSettings.h"
 #include "PlatformComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "AnalogAimSettings.h"
 #include "ECharacterCameraMode.h"
@@ -63,52 +62,55 @@
 #include "ECharacterState.h"
 #include "HeroInfo.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
 #include "PlayerCharacter.generated.h"
 
-class AItem;
-class ATutorialManager;
-class UPerkHUDActivationWidget;
 class AActor;
-class USchematic;
-class UWidgetInteractionComponent;
+class AItem;
+class UPlayerReactiveTerrainTrackerComponent;
+class UPawnStatsComponent;
 class UHeightenedSenseComponent;
-class USkeletalMeshComponent;
-class USoundBase;
-class UInventoryComponent;
-class UCameraComponent;
-class UInventoryList;
 class USpringArmComponent;
-class UZipLineStateComponent;
-class AShieldGeneratorActor;
+class UObject;
+class ATutorialManager;
+class USchematic;
+class UCharacterSightComponent;
+class UPawnAffliction;
+class UPlayerHealthComponent;
+class UPlayerAfflictionComponent;
+class UWidgetInteractionComponent;
+class AFSDPlayerController;
+class UCharacterStateComponent;
+class UCappedResource;
 class UPhysicsAsset;
+class UZipLineStateComponent;
+class UPerkHUDActivationWidget;
+class AShieldGeneratorActor;
 class UPlayerCharacterID;
+class USkeletalMeshComponent;
+class UCameraComponent;
 class USceneComponent;
 class UActorTrackingComponent;
 class UCharacterIntoxicationComponent;
 class UMissionStatsCollector;
 class UPointLightComponent;
 class UCharacterCameraController;
-class UPlayerHealthComponent;
-class UCharacterSightComponent;
+class UInventoryComponent;
+class UStatusEffect;
 class UCharacterUseComponent;
 class USingleUsableComponent;
-class UStatusEffect;
 class UOutlineComponent;
 class UCharacterRecoilComponent;
 class UStatusEffectsComponent;
-class UPawnStatsComponent;
-class UPlayerAfflictionComponent;
 class UPlayerInfoComponent;
 class UPlayerAttackPositionComponent;
 class UCommunicationComponent;
-class UParticleSystem;
 class UPlayerTemperatureComponent;
-class UPlayerReactiveTerrainTrackerComponent;
 class UInstantUsable;
 class USoundCue;
-class UPawnAffliction;
+class UParticleSystem;
 class UAudioComponent;
-class UCharacterStateComponent;
+class AFSDPlayerState;
 class UFSDAchievement;
 class UAnimMontage;
 class UMaterialInterface;
@@ -116,22 +118,20 @@ class UMaterialInstanceDynamic;
 class UFSDPhysicalMaterial;
 class UCharacterVanityComponent;
 class AZipLineProjectile;
+class USoundBase;
 class USoundAttenuation;
 class USoundConcurrency;
 class APlayerController;
 class AEventRewardDispenser;
 class APlayerCharacter;
 class AFSDPhysicsActor;
-class UCappedResource;
 class UPlayerTPAnimInstance;
-class AFSDPlayerState;
-class AFSDPlayerController;
+class UInventoryList;
 class UTexture2D;
 class UPlayerFPAnimInstance;
 class ULightComponent;
 class UUsableComponent;
 class UPlayerAnimInstance;
-class UObject;
 
 UCLASS(Abstract, Blueprintable)
 class FSD_API APlayerCharacter : public ACharacter, public IGameplayTagAssetInterface, public ITargetable, public IRejoinListener, public IPlaySoundInterface {

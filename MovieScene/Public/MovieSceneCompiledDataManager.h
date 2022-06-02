@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MovieSceneEntityComponentField.h"
+#include "MovieSceneEvaluationTemplate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "MovieSceneSequenceHierarchy.h"
 #include "MovieSceneEvaluationField.h"
-#include "MovieSceneEvaluationTemplate.h"
-#include "MovieSceneEntityComponentField.h"
 #include "MovieSceneCompiledDataManager.generated.h"
 
 UCLASS(Blueprintable)

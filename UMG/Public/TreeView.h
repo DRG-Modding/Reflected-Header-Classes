@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnItemExpansionChangedDynamicDelegate.h"
 #include "ListView.h"
 #include "OnGetItemChildrenDynamicDelegate.h"
-#include "OnItemExpansionChangedDynamicDelegate.h"
 #include "TreeView.generated.h"
 
 class UObject;

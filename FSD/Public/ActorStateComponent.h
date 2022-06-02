@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "StateTickDelegateDelegate.h"
 #include "StateDelegateDelegate.h"
+#include "StateTickDelegateDelegate.h"
 #include "ActorStateComponent.generated.h"
 
 class UActorStateComponent;

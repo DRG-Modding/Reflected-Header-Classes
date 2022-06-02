@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AITouchEvent.h"
 #include "AISense.h"
+#include "AITouchEvent.h"
 #include "AISense_Touch.generated.h"
 
 UCLASS(Blueprintable)

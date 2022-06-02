@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SeasonLevel.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "RewardClaimedDelegate.h"
-#include "SeasonLevel.h"
 #include "SeasonLevelWidget.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

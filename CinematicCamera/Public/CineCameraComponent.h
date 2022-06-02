@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NamedLensPreset.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraComponent -FallbackName=CameraComponent
 #include "NamedFilmbackPreset.h"
 #include "CameraFilmbackSettings.h"
 #include "CameraLensSettings.h"
 #include "CameraFocusSettings.h"
+#include "NamedLensPreset.h"
 #include "CineCameraComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

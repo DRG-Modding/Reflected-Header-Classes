@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "GameEvent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "RivalBomb.generated.h"
 
-class ARivalBombNode;
-class AGem;
 class UDebrisPositioning;
 class UCurveFloat;
+class ARivalBombNode;
+class AGem;
 
 UCLASS(Blueprintable)
 class ARivalBomb : public AGameEvent {

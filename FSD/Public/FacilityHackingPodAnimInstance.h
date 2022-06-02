@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EHackingPodState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
-#include "EHackingPodState.h"
 #include "FacilityHackingPodAnimInstance.generated.h"
 
 class AActor;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ActorSequenceObjectReferenceMap.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequence -FallbackName=MovieSceneSequence
+#include "ActorSequenceObjectReferenceMap.h"
 #include "ActorSequence.generated.h"
 
 class UMovieScene;

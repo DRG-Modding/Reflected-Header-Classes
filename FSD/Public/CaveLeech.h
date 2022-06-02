@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnemyPawn.h"
-#include "AttackingPointInterface.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+#include "AttackingPointInterface.h"
 #include "ECaveLeechState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CaveLeech.generated.h"
 
-class UPawnAffliction;
-class USkeletalMeshComponent;
 class UGrabberComponent;
+class USkeletalMeshComponent;
+class UPawnAffliction;
+class UHealthComponentBase;
 class AActor;
 class UHealthComponent;
 class USceneComponent;
-class UHealthComponentBase;
 
 UCLASS(Abstract, Blueprintable)
 class ACaveLeech : public AEnemyPawn, public IAttackingPointInterface {

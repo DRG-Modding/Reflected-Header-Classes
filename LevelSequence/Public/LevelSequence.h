@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LevelSequenceBindingReferences.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequence -FallbackName=MovieSceneSequence
 #include "LevelSequenceObjectReferenceMap.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Interface_AssetUserData -FallbackName=Interface_AssetUserData
+#include "LevelSequenceBindingReferences.h"
 #include "LevelSequenceObject.h"
 #include "LevelSequence.generated.h"
 
+class UMovieScene;
 class UObject;
 class UAssetUserData;
-class UMovieScene;
 
 UCLASS(Blueprintable)
 class LEVELSEQUENCE_API ULevelSequence : public UMovieSceneSequence, public IInterface_AssetUserData {

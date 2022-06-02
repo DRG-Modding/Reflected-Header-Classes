@@ -1,7 +1,7 @@
 #include "AnimationSharingManager.h"
 
-class AActor;
 class USkeleton;
+class AActor;
 class UObject;
 class UAnimationSharingManager;
 class UAnimationSharingSetup;

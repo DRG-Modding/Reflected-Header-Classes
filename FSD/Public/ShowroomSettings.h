@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ShowroomSettings.generated.h"
 
-class UCharacterShowroomController;
-class UEnemyShowroomController;
 class AShowroomStage;
+class UEnemyShowroomController;
+class UCharacterShowroomController;
 
 UCLASS(Blueprintable)
 class UShowroomSettings : public UDataAsset {

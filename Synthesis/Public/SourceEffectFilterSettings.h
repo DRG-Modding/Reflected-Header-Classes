@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESourceEffectFilterCircuit.h"
-#include "ESourceEffectFilterType.h"
 #include "SourceEffectFilterAudioBusModulationSettings.h"
+#include "ESourceEffectFilterType.h"
+#include "ESourceEffectFilterCircuit.h"
 #include "SourceEffectFilterSettings.generated.h"
 
 USTRUCT(BlueprintType)

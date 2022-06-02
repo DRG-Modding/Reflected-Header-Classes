@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETerrainPlacementBoxType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ETerrainPlacementBoxType.h"
 #include "TerrainPlacementBox.generated.h"
 
 USTRUCT(BlueprintType)

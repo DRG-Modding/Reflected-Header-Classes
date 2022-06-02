@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESubmixFilterAlgorithm.h"
 #include "ESubmixFilterType.h"
+#include "ESubmixFilterAlgorithm.h"
 #include "SubmixEffectFilterSettings.generated.h"
 
 USTRUCT(BlueprintType)

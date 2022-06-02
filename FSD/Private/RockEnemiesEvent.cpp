@@ -1,8 +1,8 @@
 #include "RockEnemiesEvent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
-class APawn;
 class UHealthComponentBase;
+class APawn;
 
 void ARockEnemiesEvent::StopPowerupGeneration() {
 }

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MovieScene3DPathSection_Axis.h"
 #include "MovieScene3DConstraintSection.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneFloatChannel -FallbackName=MovieSceneFloatChannel
-#include "MovieScene3DPathSection_Axis.h"
 #include "MovieScene3DPathSection.generated.h"
 
 UCLASS(Blueprintable, MinimalAPI)

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "TunnelPath.h"
 #include "RoomNodeBase.h"
 #include "RoomEntrance.h"
-#include "TunnelPath.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "TunnelNode.generated.h"
 

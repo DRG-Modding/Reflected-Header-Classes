@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EnemyDeepPathfinderCharacter.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "EPatrolBotState.h"
-#include "EDeepMovementState.h"
 #include "EPatrolBotControlState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+#include "EDeepMovementState.h"
 #include "PatrolBot.generated.h"
 
 class UHackingUsableComponent;
-class UPawnAlertComponent;
-class UPawnSensingComponent;
+class UAvoidCeilingComponent;
 class UDamageComponent;
+class UPawnSensingComponent;
 class USphereComponent;
 class UParticleSystemComponent;
+class UPawnAlertComponent;
 class UEnemyComponent;
-class UAvoidCeilingComponent;
 class UPlayerImpactCooldownComponent;
 class UAudioComponent;
 class UProjectileAttackComponent;
 class USoundCue;
 class UFakeMoverSettings;
-class AActor;
 class UHealthComponentBase;
+class AActor;
 class UPrimitiveComponent;
 
 UCLASS(Abstract, Blueprintable)

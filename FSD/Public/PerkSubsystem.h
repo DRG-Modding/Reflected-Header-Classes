@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=WorldSubsystem -FallbackName=WorldSubsystem
 #include "PerkSubsystem.generated.h"
 
-class UPerkDelegateItem;
 class UPerkAsset;
+class UPerkDelegateItem;
 
 UCLASS(Blueprintable)
 class FSD_API UPerkSubsystem : public UWorldSubsystem {

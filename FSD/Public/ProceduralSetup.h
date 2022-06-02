@@ -1,35 +1,36 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "CarvedResource.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
-#include "CarvedResource.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
 #include "EncounterSpecialItem.h"
+#include "DebrisCapsule.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
+#include "GeneratedInfluenceSets.h"
 #include "EncountersSpawnedDelegateDelegate.h"
-#include "ESpawnSettings.h"
 #include "CollectableSpawnableItem.h"
-#include "TunnelNode.h"
-#include "GeneratedInstantCarvers.h"
+#include "GeneratedDebris.h"
 #include "VeinResource.h"
 #include "GemResourceAmount.h"
+#include "ESpawnSettings.h"
 #include "RoomNode.h"
-#include "GeneratedInfluenceSets.h"
-#include "GeneratedDebris.h"
+#include "TunnelNode.h"
+#include "EDebrisItemPass.h"
+#include "GeneratedInstantCarvers.h"
 #include "PathObstacle.h"
 #include "InfluenceMap.h"
-#include "EDebrisItemPass.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
 #include "EDebrisCarvedType.h"
 #include "RandRange.h"
-#include "DebrisCapsule.h"
 #include "ProceduralSetup.generated.h"
 
-class USpecialEvent;
-class UNoisyPathfinderComponent;
-class UProceduralTunnelComponent;
 class UPLSEncounterComponent;
+class UTunnelParameters;
+class UProceduralTunnelComponent;
+class UNoisyPathfinderComponent;
 class AFSDPlayerController;
+class USpecialEvent;
 class UProceduralObjectColliders;
 class ADeepCSGWorld;
 class UFloodFillSettings;
@@ -37,7 +38,6 @@ class UMissionDNA;
 class UBiome;
 class UResourceData;
 class AProceduralSetup;
-class UTunnelParameters;
 class URoomGeneratorBase;
 class UCaveInfluencer;
 

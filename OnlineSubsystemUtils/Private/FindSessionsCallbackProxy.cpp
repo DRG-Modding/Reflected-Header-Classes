@@ -1,8 +1,8 @@
 #include "FindSessionsCallbackProxy.h"
 
-class UFindSessionsCallbackProxy;
-class APlayerController;
 class UObject;
+class APlayerController;
+class UFindSessionsCallbackProxy;
 
 FString UFindSessionsCallbackProxy::GetServerName(const FBlueprintSessionResult& Result) {
     return TEXT("");

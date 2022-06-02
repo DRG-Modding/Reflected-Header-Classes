@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "MissionWarning.generated.h"
 
+class UMissionStat;
 class UMutator;
 class URunningMissionBP;
 class UObjective;
-class UMissionStat;
 class UMissionMutator;
 class UTexture2D;
 

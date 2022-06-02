@@ -1,14 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "XRTimedInputActionDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
-#include "XRTimedInputActionDelegateDelegate.h"
+#include "XRGestureConfig.h"
 #include "XRDeviceOnDisconnectDelegateDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-#include "XRDeviceId.h"
 #include "EHMDTrackingOrigin.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "EXRDeviceConnectionResult.h"
 #include "ESpectatorScreenMode.h"
 #include "EOrientPositionSelector.h"
+#include "XRDeviceId.h"
+#include "EXRTrackedDeviceType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 //CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=EControllerHand -FallbackName=EControllerHand
@@ -16,14 +19,11 @@
 #include "EHMDWornState.h"
 #include "XRHMDData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Timespan -FallbackName=Timespan
-#include "EXRTrackedDeviceType.h"
-#include "EXRDeviceConnectionResult.h"
-#include "XRGestureConfig.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=InputCore -ObjectName=Key -FallbackName=Key
 #include "HeadMountedDisplayFunctionLibrary.generated.h"
 
-class UObject;
 class UTexture;
+class UObject;
 
 UCLASS(Blueprintable)
 class HEADMOUNTEDDISPLAY_API UHeadMountedDisplayFunctionLibrary : public UBlueprintFunctionLibrary {

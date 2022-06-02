@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AmmoDrivenWeapon.h"
-#include "DecalData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+#include "DecalData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CryosprayItem.generated.h"
 
-class UStickyFlameSpawner;
-class UHealthComponentBase;
+class AProjectileBase;
 class UMotionAudioController;
 class UProjectileLauncherComponent;
-class UDamageComponent;
-class UParticleSystemComponent;
 class UParticleSystem;
+class UDamageComponent;
+class UStickyFlameSpawner;
+class UParticleSystemComponent;
 class UFSDAudioComponent;
 class UItemUpgrade;
+class UHealthComponentBase;
 class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
-class AProjectileBase;
 
 UCLASS(Abstract, Blueprintable)
 class ACryosprayItem : public AAmmoDrivenWeapon {

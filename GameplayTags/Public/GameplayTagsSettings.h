@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "GameplayTagsList.h"
 #include "GameplayTagCategoryRemap.h"
+#include "RestrictedConfigInfo.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
 #include "GameplayTagRedirect.h"
-#include "RestrictedConfigInfo.h"
 #include "GameplayTagsSettings.generated.h"
 
 UCLASS(Blueprintable, DefaultConfig, Config=GameplayTags)

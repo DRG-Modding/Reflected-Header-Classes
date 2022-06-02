@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EmptyOnlineDelegate__DelegateSignature -FallbackName=EmptyOnlineDelegateDelegate
 #include "FSDCreateSessionCallbackProxy.generated.h"
 
-class UFSDCreateSessionCallbackProxy;
 class APlayerController;
+class UFSDCreateSessionCallbackProxy;
 class UObject;
 
 UCLASS(Blueprintable, MinimalAPI)

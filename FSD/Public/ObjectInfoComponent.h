@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ObjectInfoComponent.generated.h"
 
-class UTexture2D;
 class UDialogDataAsset;
-class APlayerController;
 class UPrimitiveComponent;
 class UActorContextWidget;
+class APlayerController;
+class UTexture2D;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UObjectInfoComponent : public UActorComponent {

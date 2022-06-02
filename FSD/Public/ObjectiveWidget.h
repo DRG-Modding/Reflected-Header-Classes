@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "ObjectiveWidget.generated.h"
 
-class UTexture2D;
-class UObjective;
 class UObjectiveWidget;
+class UObjective;
+class UTexture2D;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UObjectiveWidget : public UUserWidget {

@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "PlayerAfflictionOverlayWidget.generated.h"
 
-class UTexture2D;
 class UPlayerAfflictionOverlay;
+class UTexture2D;
 
 UCLASS(Blueprintable, EditInlineNew)
 class UPlayerAfflictionOverlayWidget : public UUserWidget {

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CharacterStateComponent.h"
-#include "EEnemyControlState.h"
 #include "ControlEnemyState.h"
+#include "EEnemyControlState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "EnemyControlStateComponent.generated.h"
 
-class UAnimMontage;
 class UAIPlayerControlComponent;
+class UAnimMontage;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class FSD_API UEnemyControlStateComponent : public UCharacterStateComponent {

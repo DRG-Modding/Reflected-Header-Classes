@@ -1,13 +1,13 @@
 #include "ARSessionConfig.h"
-#include "ARPoseComponent.h"
-#include "ARMeshComponent.h"
-#include "ARTrackedQRCode.h"
+#include "ARFaceComponent.h"
 #include "ARPlaneComponent.h"
 #include "ARPointComponent.h"
-#include "ARFaceComponent.h"
 #include "ARImageComponent.h"
+#include "ARTrackedQRCode.h"
+#include "ARPoseComponent.h"
 #include "AREnvironmentProbeComponent.h"
 #include "ARObjectComponent.h"
+#include "ARMeshComponent.h"
 #include "ARGeoAnchorComponent.h"
 
 class UARCandidateObject;

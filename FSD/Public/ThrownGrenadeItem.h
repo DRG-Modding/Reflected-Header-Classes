@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EThrownGrenadeItemState.h"
 #include "Item.h"
 #include "RejoinListener.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "EThrownGrenadeItemState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "ThrownGrenadeItem.generated.h"
 
 class UPlayerAnimInstance;
-class AGrenade;
 class UItemCharacterAnimationSet;
+class AGrenade;
 class UGrenadeAnimationSet;
 class UStaticMeshComponent;
 

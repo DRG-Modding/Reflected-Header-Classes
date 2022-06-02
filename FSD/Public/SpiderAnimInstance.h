@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "EnemyAnimInstance.h"
-#include "FootStepNotifyTarget.h"
-#include "EMoveDirection.h"
 #include "RandomWalkCycleEntry.h"
+#include "EnemyAnimInstance.h"
+#include "EMoveDirection.h"
+#include "FootStepNotifyTarget.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ESpiderDeathAnimationCategory.h"
 #include "SpiderAnimInstance.generated.h"
 
 class UEnemyPlaySoundKey;
-class USoundCue;
 class UParticleSystem;
+class USoundCue;
 class UEnemySpawnEffectsKey;
 class UAnimSequenceBase;
 

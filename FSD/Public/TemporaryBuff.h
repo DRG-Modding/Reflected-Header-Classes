@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "TemporaryBuff.generated.h"
 
-class APlayerCharacter;
 class UTexture2D;
+class APlayerCharacter;
 class AFSDPlayerController;
 
 UCLASS(Abstract, Blueprintable)

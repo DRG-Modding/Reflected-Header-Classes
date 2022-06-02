@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ItemLoadoutAnimations.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ItemCharacterAnimationSet.generated.h"
 
-class UItemCharacterAnimationSet;
 class UAnimSequence;
-class UAnimMontage;
 class UBlendSpace1D;
+class UAnimMontage;
+class UItemCharacterAnimationSet;
 
 UCLASS(Blueprintable)
 class UItemCharacterAnimationSet : public UDataAsset {

@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "MusicLibrary.generated.h"
 
-class USoundCue;
 class UMusicCategory;
+class USoundCue;
 
 UCLASS(Blueprintable)
 class UMusicLibrary : public UDataAsset {

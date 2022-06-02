@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "IconGeneratable.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "Skinnable.h"
-#include "IconGeneratable.h"
 #include "ItemPreviewActor.generated.h"
 
-class USkinEffect;
-class UItemSkin;
 class UIconGenerationCameraKey;
+class UItemSkin;
+class USkinEffect;
 
 UCLASS(Blueprintable)
 class AItemPreviewActor : public AActor, public ISkinnable, public IIconGeneratable {

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "AFlyingBug.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "Bomber.generated.h"
 
-class AActor;
-class UAudioComponent;
-class UPrimitiveComponent;
-class UParticleSystemComponent;
-class USoundBase;
-class AProjectile;
 class UParticleSystem;
+class UAudioComponent;
+class USoundBase;
+class UParticleSystemComponent;
+class AProjectile;
+class UPrimitiveComponent;
+class AActor;
 
 UCLASS(Blueprintable)
 class ABomber : public AAFlyingBug {

@@ -1,15 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETraceTypeQuery -FallbackName=ETraceTypeQuery
 #include "TrackBuilderSegment.h"
 #include "EPipelineBuildState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETraceTypeQuery -FallbackName=ETraceTypeQuery
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EInputKeys.h"
 #include "PipelineSegment.generated.h"
 
-class UStaticMesh;
 class APipelineSegment;
-class UTrackBuilderUsable;
+class APlayerCharacter;
+class UHealthComponentBase;
+class UStaticMesh;
 class UMaterialInterface;
 class USingleUsableComponent;
 class UDroneUseComponent;
@@ -20,8 +21,7 @@ class USkeletalMeshComponent;
 class UStaticMeshComponent;
 class UPathfinderSplineSegmentCollisionComponent;
 class APipelineStart;
-class APlayerCharacter;
-class UHealthComponentBase;
+class UTrackBuilderUsable;
 
 UCLASS(Abstract, Blueprintable)
 class APipelineSegment : public ATrackBuilderSegment {

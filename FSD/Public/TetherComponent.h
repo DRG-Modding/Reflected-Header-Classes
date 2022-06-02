@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ETetherConnectionMode.h"
+#include "TetherConnectionChanged_DeletageDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "TeherMessage_DelegateDelegate.h"
 #include "TetherPowerChanged_DelegateDelegate.h"
 #include "TetherRangeChangedDelegate.h"
-#include "TetherConnectionChanged_DeletageDelegate.h"
-#include "TeherMessage_DelegateDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ETetherConnectionMode.h"
 #include "ETetherMessageDirection.h"
 #include "TetherMessageSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "TetherComponent.generated.h"
 
 class UTetherComponent;

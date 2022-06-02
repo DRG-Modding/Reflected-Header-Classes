@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "CampaignNotification.generated.h"
 
-class UCampaignMission;
 class UCampaign;
+class UCampaignMission;
 
 UCLASS(Blueprintable)
 class UCampaignNotification : public UObject {

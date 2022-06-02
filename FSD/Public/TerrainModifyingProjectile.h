@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "TerrainModifyingProjectile.generated.h"
 
-class UTerrainMaterial;
 class UStaticMesh;
+class UTerrainMaterial;
 
 UCLASS(Blueprintable)
 class ATerrainModifyingProjectile : public AProjectile {

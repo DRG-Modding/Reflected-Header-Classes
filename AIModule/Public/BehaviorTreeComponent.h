@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
 #include "BehaviorTreeComponent.generated.h"
 
-class UBTNode;
 class UBehaviorTree;
+class UBTNode;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UBehaviorTreeComponent : public UBrainComponent {

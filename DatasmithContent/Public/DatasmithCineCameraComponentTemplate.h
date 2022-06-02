@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DatasmithPostProcessSettingsTemplate.h"
 #include "DatasmithObjectTemplate.h"
 #include "DatasmithCameraFilmbackSettingsTemplate.h"
 #include "DatasmithCameraLensSettingsTemplate.h"
 #include "DatasmithCameraFocusSettingsTemplate.h"
-#include "DatasmithPostProcessSettingsTemplate.h"
 #include "DatasmithCineCameraComponentTemplate.generated.h"
 
 UCLASS(Blueprintable)

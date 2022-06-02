@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "AnimationSharingManager.generated.h"
 
-class USkeleton;
 class AActor;
+class USkeleton;
 class UAnimSharingInstance;
 class UAnimationSharingManager;
 class UAnimationSharingSetup;

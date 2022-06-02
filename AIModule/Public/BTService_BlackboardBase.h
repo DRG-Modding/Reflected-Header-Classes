@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BTService.h"
 #include "BlackboardKeySelector.h"
+#include "BTService.h"
 #include "BTService_BlackboardBase.generated.h"
 
 UCLASS(Abstract, Blueprintable)

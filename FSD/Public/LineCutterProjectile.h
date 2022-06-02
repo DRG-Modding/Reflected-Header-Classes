@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EImpactDecalSize.h"
+#include "ScaledEffect.h"
 #include "Projectile.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
-#include "ScaledEffect.h"
+#include "EImpactDecalSize.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "ELineRotation.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "LineCutterProjectile.generated.h"
 
 class UParticleSystemComponent;

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnalyticsEventAttr.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "AnalyticsEventAttr.h"
 #include "AnalyticsBlueprintLibrary.generated.h"
 
 UCLASS(Blueprintable)

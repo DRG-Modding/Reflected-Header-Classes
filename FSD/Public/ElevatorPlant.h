@@ -7,10 +7,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "ElevatorPlant.generated.h"
 
-class UAudioComponent;
-class USoundCue;
-class USplineMeshComponent;
 class UCurveFloat;
+class USoundCue;
+class UAudioComponent;
+class USplineMeshComponent;
 class USceneComponent;
 
 UCLASS(Blueprintable)

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RewardsClaimed.h"
-#include "ChallengeSaveInfo.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "ChallengeSaveInfo.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
 #include "SeasonSaveEntry.generated.h"
 

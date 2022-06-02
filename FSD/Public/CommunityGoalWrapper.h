@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "FactionsDataDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "CommunityRewardNotification.h"
 #include "CommunityGoalStateData.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-#include "GoalStateDelegateDelegate.h"
-#include "FactionsDataDelegateDelegate.h"
 #include "CommunityFactionData.h"
+#include "GoalStateDelegateDelegate.h"
 #include "OnFreeBeersChangedDelegateDelegate.h"
 #include "UICheckDelegateDelegate.h"
 #include "CommunityGoalWrapper.generated.h"

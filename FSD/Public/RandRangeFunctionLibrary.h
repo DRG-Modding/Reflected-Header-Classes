@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "IRandRange.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=RandomStream -FallbackName=RandomStream
-#include "IRandRange.h"
 #include "RandRange.h"
 #include "RandRangeFunctionLibrary.generated.h"
 

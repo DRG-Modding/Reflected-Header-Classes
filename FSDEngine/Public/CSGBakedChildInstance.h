@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DeepCSGFloatTree.h"
-#include "CSGBase.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
-#include "CSGBakedChildInstanceProperties.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Matrix -FallbackName=Matrix
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
+#include "CSGBase.h"
+#include "CSGBakedChildInstanceProperties.h"
+#include "DeepCSGFloatTree.h"
 #include "CSGBakedChildInstance.generated.h"
 
 UCLASS(Blueprintable)

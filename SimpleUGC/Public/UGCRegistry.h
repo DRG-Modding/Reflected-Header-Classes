@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-#include "EUGCApprovalStatus.h"
 #include "EPackageSortField.h"
+#include "EUGCApprovalStatus.h"
 #include "UGCRegistry.generated.h"
 
 class UUGCPackage;

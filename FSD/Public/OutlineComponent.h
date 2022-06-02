@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOutline.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "EOutline.h"
 #include "OutlineComponent.generated.h"
 
 class AActor;
+class UHealthComponentBase;
 class APlayerCharacter;
 class UPrimitiveComponent;
-class UHealthComponentBase;
 class AItem;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

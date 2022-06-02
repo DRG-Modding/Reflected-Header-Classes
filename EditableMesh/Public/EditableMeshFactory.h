@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EditableMeshFactory.generated.h"
 
-class UPrimitiveComponent;
 class UEditableMesh;
+class UPrimitiveComponent;
 
 UCLASS(Blueprintable)
 class EDITABLEMESH_API UEditableMeshFactory : public UObject {

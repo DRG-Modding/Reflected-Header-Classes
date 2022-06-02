@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "NiagaraDataInterfaceRWBase.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETextureRenderTargetFormat -FallbackName=ETextureRenderTargetFormat
 #include "NiagaraUserParameterBinding.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETextureRenderTargetFormat -FallbackName=ETextureRenderTargetFormat
 #include "NiagaraDataInterfaceRenderTargetCube.generated.h"
 
 class UTextureRenderTargetCube;

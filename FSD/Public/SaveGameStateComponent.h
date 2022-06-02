@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "PlayerProgressChangedSignatureDelegate.h"
-#include "ItemUpgradesChangedDelegateDelegate.h"
 #include "LoadoutChangedDelegateDelegate.h"
+#include "ItemUpgradesChangedDelegateDelegate.h"
+#include "PlayerProgressChangedSignatureDelegate.h"
 #include "CharacterProgressChangedSignatureDelegate.h"
 #include "SaveGameStatePerkItem.h"
 #include "ItemLoadout.h"

@@ -6,8 +6,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAttachLocation -FallbackName=EAttachLocation
 #include "FirstPersonParticleSystemComponent.generated.h"
 
-class UParticleSystem;
 class USceneComponent;
+class UParticleSystem;
 
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UFirstPersonParticleSystemComponent : public UParticleSystemComponent {

@@ -1,9 +1,9 @@
 #include "LMGGuntoweModule.h"
 #include "Net/UnrealNetwork.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
 #include "HitscanComponent.h"
-#include "DamageComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+#include "DamageComponent.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
 
 void ALMGGuntoweModule::ShowShot(const FVector& Location) {
 }

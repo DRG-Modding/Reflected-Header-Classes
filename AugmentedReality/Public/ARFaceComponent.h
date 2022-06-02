@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARFaceUpdatePayload.h"
-#include "ARComponent.h"
-#include "EFaceComponentDebugMode.h"
 #include "EARFaceTransformMixing.h"
+#include "ARComponent.h"
+#include "ARFaceUpdatePayload.h"
+#include "EFaceComponentDebugMode.h"
 #include "ARFaceComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

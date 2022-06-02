@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "PlayerSpawnedSignatureDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerState -FallbackName=PlayerState
-#include "PlayerVoiceSignatureDelegate.h"
-#include "SelectedCharacterChangedDelegateDelegate.h"
 #include "SupplyStatusChangedDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PlayerState -FallbackName=PlayerState
+#include "SelectedCharacterChangedDelegateDelegate.h"
+#include "PlayerSpawnedSignatureDelegate.h"
+#include "PlayerVoiceSignatureDelegate.h"
 #include "EnemyKilledSignatureDelegate.h"
 #include "PlayerNameChangedSignatureDelegate.h"
 #include "FractionLevelGeneratedDelegateDelegate.h"
@@ -18,14 +18,14 @@
 #include "EChatSenderType.h"
 #include "FSDPlayerState.generated.h"
 
-class AFSDPlayerController;
 class APlayerCharacter;
 class UVanityItem;
 class UPlayerStatsComponent;
-class UPlayerCharacterID;
 class UPlayerRejoinState;
 class USaveGameStateComponent;
 class UPlayerResourceComponent;
+class UPlayerCharacterID;
+class AFSDPlayerController;
 
 UCLASS(Blueprintable)
 class FSD_API AFSDPlayerState : public APlayerState {

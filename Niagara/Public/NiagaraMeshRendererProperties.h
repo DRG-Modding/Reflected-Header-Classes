@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraMeshMaterialOverride.h"
 #include "NiagaraRendererProperties.h"
-#include "ENiagaraMeshFacingMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "NiagaraMeshRendererMeshProperties.h"
 #include "ENiagaraRendererSourceDataMode.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "ENiagaraSortMode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "NiagaraMeshMaterialOverride.h"
+#include "ENiagaraMeshFacingMode.h"
 #include "ENiagaraMeshLockedAxisSpace.h"
 #include "NiagaraVariableAttributeBinding.h"
 #include "NiagaraMaterialAttributeBinding.h"

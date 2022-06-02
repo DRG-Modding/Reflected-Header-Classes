@@ -3,8 +3,8 @@
 #include "FSDPhysicsActor.h"
 #include "Throwable.h"
 #include "AttachChangeSigDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "OnCarriableDepositedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CarriableItem.generated.h"
 
 class APlayerCharacter;

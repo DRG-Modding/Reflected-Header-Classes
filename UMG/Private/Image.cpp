@@ -1,11 +1,11 @@
 #include "Image.h"
 
-class UTexture2D;
-class UTexture2DDynamic;
 class UObject;
-class UMaterialInterface;
+class UTexture2DDynamic;
 class USlateTextureAtlasInterface;
 class ISlateTextureAtlasInterface;
+class UTexture2D;
+class UMaterialInterface;
 class USlateBrushAsset;
 class UMaterialInstanceDynamic;
 

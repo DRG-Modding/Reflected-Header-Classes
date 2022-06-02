@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "UGCLatentActionManager.generated.h"
 
-class UTexture2DDynamic;
 class UModioTermsWrapper;
+class UTexture2DDynamic;
 class UModioModInfoWrapper;
 
 UCLASS(Blueprintable)

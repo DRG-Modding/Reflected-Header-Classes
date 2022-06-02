@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "VanityMasterySettings.h"
 #include "VanityMasteryResult.h"
 #include "VanityMasterySave.h"
+#include "VanityMasterySettings.h"
 #include "CraftingCost.h"
 #include "VanityMasteryLibrary.generated.h"
 
-class UObject;
 class UPlayerCharacterID;
+class UObject;
 
 UCLASS(Blueprintable)
 class UVanityMasteryLibrary : public UBlueprintFunctionLibrary {

@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequencePlayer -FallbackName=MovieSceneSequencePlayer
-#include "OnLevelSequencePlayerCameraCutEventDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequencePlaybackSettings -FallbackName=MovieSceneSequencePlaybackSettings
+#include "OnLevelSequencePlayerCameraCutEventDelegate.h"
 #include "LevelSequencePlayer.generated.h"
 
-class UObject;
 class ULevelSequencePlayer;
 class UCameraComponent;
+class UObject;
 class ULevelSequence;
 class ALevelSequenceActor;
 

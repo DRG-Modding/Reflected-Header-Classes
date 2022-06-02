@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CharacterChangedDelegateDelegate.h"
 #include "AnimatedItem.h"
 #include "Throwable.h"
 #include "FloatDelegateDelegate.h"
+#include "CharacterChangedDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
 #include "EExtractorState.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ExtractorItem.generated.h"
 
-class UFirstPersonParticleSystemComponent;
 class UBoxComponent;
+class UDialogDataAsset;
 class USkeletalMeshComponent;
+class UFirstPersonParticleSystemComponent;
 class UFSDAudioComponent;
+class USoundCue;
 class UPointLightComponent;
 class UParticleSystemComponent;
 class UAnimMontage;
 class UParticleSystem;
 class UForceFeedbackEffect;
 class UResourceData;
-class UDialogDataAsset;
-class USoundCue;
 class AResourceChunk;
 
 UCLASS(Blueprintable)

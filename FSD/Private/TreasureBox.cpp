@@ -1,15 +1,15 @@
 #include "TreasureBox.h"
 #include "Net/UnrealNetwork.h"
-#include "RepairableComponent.h"
 #include "RepairableUsable.h"
+#include "RepairableComponent.h"
 #include "SingleUsableComponent.h"
 #include "TerrainPlacementComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=StaticMeshComponent -FallbackName=StaticMeshComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SkeletalMeshComponent -FallbackName=SkeletalMeshComponent
 
 class AProceduralSetup;
-class UCurveFloat;
 class UDebrisPositioning;
+class UCurveFloat;
 class APlayerCharacter;
 
 void ATreasureBox::PlaceResources(AProceduralSetup* setup, float Radius, UDebrisPositioning* DebrisPositioning, const TArray<FVector>& locationsToAvoid, UCurveFloat* AvoidCostCurve) {

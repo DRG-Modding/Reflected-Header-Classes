@@ -3,9 +3,9 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-#include "StageCompleteSigDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagAssetInterface -FallbackName=GameplayTagAssetInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
+#include "StageCompleteSigDelegate.h"
 #include "DelegateEventDelegate.h"
 #include "ProgressChangedSigDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
@@ -13,9 +13,9 @@
 #include "GameEvent.generated.h"
 
 class AEventStarterButton;
+class ARessuplyPod;
 class UChildActorComponent;
 class UDialogDataAsset;
-class ARessuplyPod;
 class AProceduralSetup;
 class UDebrisPositioning;
 

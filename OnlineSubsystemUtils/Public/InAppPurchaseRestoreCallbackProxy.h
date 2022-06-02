@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystem -ObjectName=InAppPurchaseProductRequest -FallbackName=InAppPurchaseProductRequest
 #include "InAppPurchaseRestoreCallbackProxy.generated.h"
 
-class APlayerController;
 class UInAppPurchaseRestoreCallbackProxy;
+class APlayerController;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UInAppPurchaseRestoreCallbackProxy : public UObject {

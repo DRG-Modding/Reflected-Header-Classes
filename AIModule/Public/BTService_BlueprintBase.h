@@ -3,9 +3,9 @@
 #include "BTService.h"
 #include "BTService_BlueprintBase.generated.h"
 
-class AActor;
-class AAIController;
 class APawn;
+class AAIController;
+class AActor;
 
 UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBTService_BlueprintBase : public UBTService {

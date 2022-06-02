@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ECameraFocusMethod.h"
-#include "CameraTrackingFocusSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
+#include "CameraTrackingFocusSettings.h"
 #include "CameraFocusSettings.generated.h"
 
 USTRUCT(BlueprintType)

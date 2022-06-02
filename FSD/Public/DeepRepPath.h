@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EDeepMovementState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "EDeepMovementState.h"
 #include "DeepRepPath.generated.h"
 
 USTRUCT(BlueprintType)

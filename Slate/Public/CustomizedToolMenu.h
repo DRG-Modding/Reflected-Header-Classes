@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CustomizedToolMenuEntry.h"
-#include "CustomizedToolMenuSection.h"
 #include "CustomizedToolMenuNameArray.h"
+#include "CustomizedToolMenuSection.h"
 #include "CustomizedToolMenu.generated.h"
 
 USTRUCT(BlueprintType)

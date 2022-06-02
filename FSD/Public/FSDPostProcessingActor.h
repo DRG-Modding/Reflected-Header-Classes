@@ -5,12 +5,12 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=WeightedBlendables -FallbackName=WeightedBlendables
 #include "FSDPostProcessingActor.generated.h"
 
-class UBlendableInterface;
-class IBlendableInterface;
-class UMaterialInstanceDynamic;
 class UPostProcessComponent;
 class APostProcessingManager;
 class UObject;
+class UBlendableInterface;
+class IBlendableInterface;
+class UMaterialInstanceDynamic;
 class UMaterialInterface;
 
 UCLASS(Abstract, Blueprintable)

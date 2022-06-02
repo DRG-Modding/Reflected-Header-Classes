@@ -4,9 +4,9 @@
 #include "EBTNodeResult.h"
 #include "BTDecorator_BlueprintBase.generated.h"
 
+class APawn;
 class AAIController;
 class AActor;
-class APawn;
 
 UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBTDecorator_BlueprintBase : public UBTDecorator {

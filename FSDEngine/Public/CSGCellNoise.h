@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DeepCSGNode.h"
-#include "DeepCSGFloatTree.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CSGBase.h"
 #include "MeshCellNoiseProperties.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "BinaryTerrainMaterialCombiner.h"
+#include "DeepCSGNode.h"
+#include "DeepCSGFloatTree.h"
 #include "CSGCellNoise.generated.h"
 
 UCLASS(Blueprintable)

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ClaimableRewardView.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "FSDEventActivateChangedDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "ClaimableRewardView.h"
 #include "FSDEvent.generated.h"
 
-class UTexture2D;
-class UWorld;
 class ADebrisDataActor;
+class UTexture2D;
+class APlayerController;
+class UWorld;
 class UCampaign;
 class UObject;
 class UFSDEvent;
-class APlayerController;
 
 UCLASS(Blueprintable)
 class FSD_API UFSDEvent : public UDataAsset {
@@ -39,6 +39,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UWorld>> SpacerigSublevels;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftObjectPtr<UWorld>> UnloadSpacerigSublevels;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FClaimableRewardView ClaimableRewards;

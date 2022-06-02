@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "SeasonSettings.generated.h"
 
+class USeasonChallenge;
 class USeason;
 class UCurveFloat;
-class USeasonChallenge;
 
 UCLASS(Blueprintable)
 class USeasonSettings : public UDataAsset {

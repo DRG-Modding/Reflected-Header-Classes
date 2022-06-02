@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FakeMoveState.h"
 #include "ProjectileBase.h"
 #include "FakeMoverState.h"
+#include "FakeMoveState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "FakePhysicsProjectile.generated.h"
 

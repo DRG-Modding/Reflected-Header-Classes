@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ESelectionMode -FallbackName=ESelectionMode
-#include "ListViewBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EOrientation -FallbackName=EOrientation
-#include "OnListEntryInitializedDynamicDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EConsumeMouseWheel -FallbackName=EConsumeMouseWheel
+#include "ListViewBase.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Slate -ObjectName=ESelectionMode -FallbackName=ESelectionMode
 #include "SimpleListItemEventDynamicDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EConsumeMouseWheel -FallbackName=EConsumeMouseWheel
+#include "OnListEntryInitializedDynamicDelegate.h"
 #include "OnItemIsHoveredChangedDynamicDelegate.h"
 #include "OnListItemSelectionChangedDynamicDelegate.h"
 #include "OnListItemScrolledIntoViewDynamicDelegate.h"

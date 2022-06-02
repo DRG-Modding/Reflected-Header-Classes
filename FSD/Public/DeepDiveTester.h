@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EMissionStructure.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "EMissionStructure.h"
 #include "DeepDiveTesterItem.h"
 #include "DeepDiveTester.generated.h"
 

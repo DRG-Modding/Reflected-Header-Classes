@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneObjectBindingID -FallbackName=MovieSceneObjectBindingID
 #include "LevelSequenceDirector.generated.h"
 
-class UMovieSceneSequence;
 class ULevelSequencePlayer;
+class UMovieSceneSequence;
 class AActor;
 
 UCLASS(Blueprintable)

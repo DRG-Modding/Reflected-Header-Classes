@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "AnimSharingStateInstance.generated.h"
 
-class UAnimSequence;
 class AActor;
+class UAnimSequence;
 class UAnimSharingInstance;
 
 UCLASS(Blueprintable, NonTransient)

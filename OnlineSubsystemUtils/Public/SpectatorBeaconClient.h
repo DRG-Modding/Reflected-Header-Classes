@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESpectatorReservationResult.h"
 #include "OnlineBeaconClient.h"
-#include "ESpectatorClientRequestType.h"
 #include "SpectatorReservation.h"
+#include "ESpectatorClientRequestType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "SpectatorBeaconClient.generated.h"
 

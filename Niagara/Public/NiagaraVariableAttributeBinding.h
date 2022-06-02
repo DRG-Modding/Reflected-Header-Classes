@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ENiagaraBindingSource.h"
 #include "NiagaraVariableBase.h"
 #include "NiagaraVariable.h"
+#include "ENiagaraBindingSource.h"
 #include "NiagaraVariableAttributeBinding.generated.h"
 
 USTRUCT(BlueprintType)

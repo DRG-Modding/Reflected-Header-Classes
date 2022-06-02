@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "OnAsyncAoE_CompleteDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "OnEnemyKilledDelegateDelegate.h"
 #include "OnEnemyDamagedDelegateDelegate.h"
 #include "OnNoTargetHitDelegate.h"
-#include "OnAsyncAoE_CompleteDelegate.h"
 #include "EDamageComponentType.h"
 #include "EArmorDamageType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
@@ -13,8 +13,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DamageComponent.generated.h"
 
-class UDamageImpulse;
 class UDamageClass;
+class UDamageImpulse;
 class UDamageBonusBase;
 class UDamageModifier;
 class UDamageTag;

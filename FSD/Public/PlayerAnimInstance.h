@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "FootStepNotifyTarget.h"
+#include "GliderAnimSync.h"
 #include "ECharacterState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "GliderAnimSync.h"
 #include "ECharacterMoveDirection.h"
 #include "PlayerAnimInstance.generated.h"
 
-class UParticleSystem;
-class APlayerCharacter;
-class USoundCue;
 class UItemCharacterAnimationSet;
+class APlayerCharacter;
+class UParticleSystem;
+class USoundCue;
 class UAnimMontage;
 class UUseAnimationSetting;
 

@@ -5,8 +5,8 @@
 #include "TemplateSequencePlayer.generated.h"
 
 class UTemplateSequence;
-class UTemplateSequencePlayer;
 class UObject;
+class UTemplateSequencePlayer;
 class ATemplateSequenceActor;
 
 UCLASS(Blueprintable)

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
-#include "ESynthLFOType.h"
-#include "OnTableAlteredDelegate.h"
 #include "CurveInterpolationType.h"
+#include "OnTableAlteredDelegate.h"
 #include "NumTablesChangedDelegate.h"
+#include "ESynthLFOType.h"
 #include "SynthComponentMonoWaveTable.generated.h"
 
 class UMonoWaveTableSynthPreset;

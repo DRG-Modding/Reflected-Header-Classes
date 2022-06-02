@@ -1,7 +1,7 @@
 #include "LogoutCallbackProxy.h"
 
-class APlayerController;
 class UObject;
+class APlayerController;
 class ULogoutCallbackProxy;
 
 ULogoutCallbackProxy* ULogoutCallbackProxy::Logout(UObject* WorldContextObject, APlayerController* PlayerController) {

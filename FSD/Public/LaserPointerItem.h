@@ -4,24 +4,24 @@
 #include "AnimatedItem.h"
 #include "MarkerPlacedDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
-#include "LaserPointerData.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ELaserPointerMarkerType.h"
+#include "LaserPointerData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "LaserPointerItem.generated.h"
 
-class UDialogDataAsset;
-class UTexture2D;
 class ALaserPointerMarker;
-class ALaserPointerWaypoint;
 class USceneComponent;
+class ALaserPointerWaypoint;
+class UDialogDataAsset;
 class UObjectInfoComponent;
 class UTerrainMaterial;
-class AFSDGameState;
 class UObject;
+class AFSDGameState;
 class AActor;
 class UPrimitiveComponent;
+class UTexture2D;
 
 UCLASS(Abstract, Blueprintable)
 class ALaserPointerItem : public AAnimatedItem {

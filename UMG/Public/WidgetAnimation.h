@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneSequence -FallbackName=MovieSceneSequence
-#include "WidgetAnimationBinding.h"
 #include "WidgetAnimationDynamicEventDelegate.h"
+#include "WidgetAnimationBinding.h"
 #include "WidgetAnimation.generated.h"
 
 class UMovieScene;

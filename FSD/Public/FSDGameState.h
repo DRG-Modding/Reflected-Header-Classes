@@ -1,54 +1,54 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "PlayerCharacterDelegateDelegate.h"
+#include "EnemyKilledDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameState -FallbackName=GameState
+#include "GameEventCompletedDelegateDelegate.h"
 #include "Int32DelegateEventDelegate.h"
 #include "DelegateEventDelegate.h"
-#include "GameEventCompletedDelegateDelegate.h"
+#include "GeneratedMissionSeed.h"
 #include "PlayerDelegateDelegate.h"
-#include "FSDChatMessage.h"
-#include "ReplicatedObjectives.h"
-#include "EnemyKilledDelegateDelegate.h"
-#include "PlayerCharacterDelegateDelegate.h"
+#include "FSDLocalizedChatMessage.h"
 #include "BoscoReviveCounterChangedDelegate.h"
 #include "BoolDelegateDelegate.h"
 #include "ObjectivesDelegateDelegate.h"
 #include "DifficultyDelegateDelegate.h"
-#include "CreditsReward.h"
 #include "CountDownStartedDelegate.h"
 #include "CountdownDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
-#include "FSDLocalizedChatMessage.h"
-#include "GeneratedMissionSeed.h"
+#include "ReplicatedObjectives.h"
 #include "CurrentLeaderChangedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+#include "CreditsReward.h"
+#include "FSDChatMessage.h"
 #include "ScaledEffect.h"
 #include "FSDGameState.generated.h"
 
-class UFlareController;
-class APlayerState;
-class APlayerCharacter;
+class UPlayerProximityTracker;
 class AMiningPod;
-class AProceduralSetup;
-class UResourceData;
+class UFlareController;
 class ADeepCSGWorld;
-class UPrimitiveComponent;
 class USpawnEffectsComponent;
+class AProceduralSetup;
+class APlayerCharacter;
+class UPrimitiveComponent;
 class UDynamicMeshScaler;
-class UGemProximityTracker;
 class UAttackerManagerComponent;
+class UGemProximityTracker;
 class UDifficultyManager;
-class AGameStats;
 class USoundMixManagerComponent;
 class USeasonReplicatorComponent;
 class UTeamResourcesComponent;
+class UResourceData;
 class UDifficultySetting;
-class USoundCue;
-class UPlayerProximityTracker;
 class UShowroomManager;
+class AGameStats;
+class APlayerState;
 class UGeneratedMission;
 class AFSDPlayerState;
 class UObjective;
 class UPlayerCharacterID;
 class UFSDEvent;
+class USoundCue;
 
 UCLASS(Blueprintable)
 class FSD_API AFSDGameState : public AGameState {

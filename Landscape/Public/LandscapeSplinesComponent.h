@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimitiveComponent -FallbackName=PrimitiveComponent
 #include "LandscapeSplinesComponent.generated.h"
 
+class UMeshComponent;
 class ULandscapeSplineControlPoint;
 class ULandscapeSplineSegment;
-class UMeshComponent;
 class USplineMeshComponent;
 
 UCLASS(Blueprintable, MinimalAPI, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneImageCaptureProtocolBase.h"
 #include "EHDRCaptureGamut.h"
-#include "CompositionGraphCapturePasses.h"
+#include "MovieSceneImageCaptureProtocolBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
+#include "CompositionGraphCapturePasses.h"
 #include "CompositionGraphCaptureProtocol.generated.h"
 
 class UMaterialInterface;

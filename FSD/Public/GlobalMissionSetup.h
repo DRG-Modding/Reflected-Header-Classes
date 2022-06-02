@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "MissionBiomeItem.h"
 #include "RequiredMissionItem.h"
 #include "IRandRange.h"
-#include "MissionBiomeItem.h"
 #include "MissionTemplateItem.h"
 #include "GlobalMissionSetup.generated.h"
 
+class UPlanetZone;
 class UMissionNameBank;
 class UMissionMutator;
 class UMissionWarning;
-class UPlanetZone;
 
 UCLASS(Blueprintable)
 class UGlobalMissionSetup : public UDataAsset {

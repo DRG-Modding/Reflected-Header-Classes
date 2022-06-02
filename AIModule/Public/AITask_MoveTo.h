@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIMoveRequest.h"
 #include "AITask.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTasks -ObjectName=GameplayTask -FallbackName=GameplayTask
+#include "AIMoveRequest.h"
 #include "MoveTaskCompletedSignatureDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "EAIOptionFlag.h"
 #include "AITask_MoveTo.generated.h"
 
+class UAITask_MoveTo;
 class AAIController;
 class AActor;
-class UAITask_MoveTo;
 
 UCLASS(Blueprintable)
 class AIMODULE_API UAITask_MoveTo : public UAITask {

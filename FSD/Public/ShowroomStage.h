@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "ShowroomStage.generated.h"
 
-class UTextureRenderTarget2D;
+class USceneComponent;
 class USceneCaptureComponent2D;
 class UShowroomController;
-class USceneComponent;
+class UTextureRenderTarget2D;
 
 UCLASS(Abstract, Blueprintable)
 class AShowroomStage : public AActor {

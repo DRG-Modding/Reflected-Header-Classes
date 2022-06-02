@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Pawn -FallbackName=Pawn
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
-#include "ProjectileSpawner.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagAssetInterface -FallbackName=GameplayTagAssetInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "Targetable.h"
 #include "BoolDelegateDelegate.h"
+#include "ProjectileSpawner.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
 #include "EPawnAttitude.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTag -FallbackName=GameplayTag
 #include "FSDPawn.generated.h"
 
 class UStatusEffectsComponent;
 class UEnemyTemperatureComponent;
-class UEnemyDescriptor;
 class UPawnStatsComponent;
+class UEnemyDescriptor;
+class UHealthComponentBase;
 class AActor;
 class USkeletalMeshComponent;
-class UHealthComponentBase;
 class AFSDAIController;
 
 UCLASS(Abstract, Blueprintable)

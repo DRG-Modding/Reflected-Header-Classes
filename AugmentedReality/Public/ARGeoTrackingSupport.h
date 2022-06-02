@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EARGeoTrackingState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 #include "EARGeoTrackingAccuracy.h"
-#include "EARGeoTrackingState.h"
 #include "EARGeoTrackingStateReason.h"
 #include "ARGeoTrackingSupport.generated.h"
 

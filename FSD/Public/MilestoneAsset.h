@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-#include "OnMilestoneClaimedDelegate.h"
-#include "OnMilestoneReachedDelegate.h"
-#include "MilestoneTier.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "MilestoneTier.h"
+#include "OnMilestoneReachedDelegate.h"
+#include "OnMilestoneClaimedDelegate.h"
 #include "MilestoneAsset.generated.h"
 
-class UMissionStat;
-class UTexture2D;
 class UPlayerCharacterID;
+class UTexture2D;
+class UMissionStat;
 class UMilestoneAsset;
 class UObject;
 

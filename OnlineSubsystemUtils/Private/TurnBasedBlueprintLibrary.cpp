@@ -1,7 +1,7 @@
 #include "TurnBasedBlueprintLibrary.h"
 
-class APlayerController;
 class UObject;
+class APlayerController;
 
 void UTurnBasedBlueprintLibrary::RegisterTurnBasedMatchInterfaceObject(UObject* WorldContextObject, APlayerController* PlayerController, UObject* Object) {
 }

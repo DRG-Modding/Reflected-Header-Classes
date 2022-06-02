@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESynthModEnvBiasPatch.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
-#include "ModularSynthPreset.h"
 #include "ESynthStereoDelayMode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=AudioMixer -ObjectName=SynthComponent -FallbackName=SynthComponent
 #include "ESynthLFOPatchType.h"
-#include "ESynth1OscType.h"
 #include "ESynthModEnvPatch.h"
+#include "ESynth1OscType.h"
+#include "ModularSynthPreset.h"
+#include "Synth1PatchCable.h"
+#include "ESynthModEnvBiasPatch.h"
 #include "ESynthLFOType.h"
 #include "ESynthLFOMode.h"
 #include "ESynthFilterType.h"
 #include "ESynth1PatchSource.h"
 #include "ESynthFilterAlgorithm.h"
-#include "Synth1PatchCable.h"
 #include "PatchId.h"
 #include "ModularSynthComponent.generated.h"
 

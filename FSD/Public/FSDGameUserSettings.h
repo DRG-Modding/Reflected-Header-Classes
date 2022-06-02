@@ -1,36 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameUserSettings -FallbackName=GameUserSettings
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EWindowMode -FallbackName=EWindowMode
-#include "ModdingSettingsChangedDelegate.h"
 #include "BoolConfigChangedDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=GameUserSettings -FallbackName=GameUserSettings
 #include "ModdingUISettings.h"
 #include "FloatConfigChangedDelegate.h"
 #include "LanguageChangedDelegate.h"
 #include "StringConfigChangedDelegate.h"
 #include "ChatFontSizeChangedDelegate.h"
-#include "InputSourceChangedSignatureDelegate.h"
+#include "ModdingSettingsChangedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=DLSSBlueprint -ObjectName=UDLSSMode -FallbackName=UDLSSMode
+#include "ESaveSlotChangeProcedure.h"
+#include "ENVidiaReflexMode.h"
 #include "EConsoleGraphicsMode.h"
 #include "HUDElements.h"
+#include "EVolumeType.h"
 #include "CharacterOptions.h"
+#include "InputSourceChangedSignatureDelegate.h"
 #include "Int32ConfigChangedDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
-#include "ETurn180Mode.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EWindowMode -FallbackName=EWindowMode
 #include "CustomKeyBindingsChangedDelegate.h"
 #include "EFSDInputSource.h"
 #include "CustomKeyBinding.h"
 #include "ControllerSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
-#include "EVolumeType.h"
+#include "ETurn180Mode.h"
 #include "ESteamSearchRegion.h"
-#include "ESaveSlotChangeProcedure.h"
 #include "FSDGameUserSettings.generated.h"
 
-class UDifficultySetting;
 class USoundClass;
-class APlayerController;
 class UObject;
+class APlayerController;
+class UDifficultySetting;
 class UFSDGameUserSettings;
 
 UCLASS(Blueprintable)
@@ -132,6 +133,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FSDResolutionScale;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ENVidiaReflexMode ReflexMode;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USoundClass* soundClassCharacterVoices;
@@ -463,6 +467,9 @@ public:
     void SetScreenResolutionToBeApplied(FIntPoint Resolution);
     
     UFUNCTION(BlueprintCallable)
+    void SetReflexMode(ENVidiaReflexMode NewReflexMode);
+    
+    UFUNCTION(BlueprintCallable)
     void SetPushToTalk(bool bEnable);
     
     UFUNCTION(BlueprintCallable)
@@ -617,6 +624,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUpscalingTypeSupported(int32 Type) const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool IsNvReflexAvailable();
+    
 protected:
     UFUNCTION(BlueprintCallable)
     bool IsDx12Enabled();
@@ -707,6 +717,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIntPoint GetScreenResolutionToBeApplied();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    ENVidiaReflexMode GetReflexMode() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetPushToTalk() const;

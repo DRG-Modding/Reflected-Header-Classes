@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CoolDownProgressStyle.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
+#include "CoolDownProgressStyle.h"
 #include "CoolDownProgressWidget.generated.h"
 
 class UObject;

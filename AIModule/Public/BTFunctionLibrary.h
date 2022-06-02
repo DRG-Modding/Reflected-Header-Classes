@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "BlackboardKeySelector.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "BlackboardKeySelector.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "BTFunctionLibrary.generated.h"
 
-class UBlackboardComponent;
 class UBTNode;
 class AActor;
+class UBlackboardComponent;
 class UObject;
 class UBehaviorTreeComponent;
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ENiagaraGpuBufferFormat.h"
-#include "NiagaraUserParameterBinding.h"
 #include "NiagaraDataInterfaceGrid3D.h"
+#include "NiagaraUserParameterBinding.h"
 #include "NiagaraDataInterfaceGrid3DCollection.generated.h"
 
 class UNiagaraComponent;

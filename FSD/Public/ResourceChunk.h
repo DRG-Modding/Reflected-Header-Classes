@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ResourceChunk.generated.h"
 
-class APlayerCharacter;
 class USimpleObjectInfoComponent;
 class USoundCue;
 class UResourceData;
+class APlayerCharacter;
 
 UCLASS(Blueprintable)
 class FSD_API AResourceChunk : public AFSDPhysicsActor {

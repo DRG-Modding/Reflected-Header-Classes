@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ENiagaraRibbonUVEdgeMode.h"
 #include "ENiagaraRibbonUVDistributionMode.h"
+#include "ENiagaraRibbonUVEdgeMode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "NiagaraRibbonUVSettings.generated.h"
 

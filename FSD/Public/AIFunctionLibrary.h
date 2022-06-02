@@ -4,11 +4,11 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "AIFunctionLibrary.generated.h"
 
-class UObject;
 class UAttackerPositioningComponent;
+class UObject;
 class AActor;
-class APlayerCharacter;
 class APawn;
+class APlayerCharacter;
 
 UCLASS(Blueprintable)
 class UAIFunctionLibrary : public UBlueprintFunctionLibrary {

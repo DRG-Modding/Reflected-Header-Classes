@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ContentWidget.h"
-#include "OnButtonClickedEventDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonClickMethod -FallbackName=EButtonClickMethod
+#include "OnButtonPressedEventDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ButtonStyle -FallbackName=ButtonStyle
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonPressMethod -FallbackName=EButtonPressMethod
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=EButtonTouchMethod -FallbackName=EButtonTouchMethod
-#include "OnButtonPressedEventDelegate.h"
+#include "OnButtonClickedEventDelegate.h"
 #include "OnButtonReleasedEventDelegate.h"
 #include "OnButtonHoverEventDelegate.h"
 #include "Button.generated.h"

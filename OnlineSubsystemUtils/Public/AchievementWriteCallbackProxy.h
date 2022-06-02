@@ -4,8 +4,8 @@
 #include "AchievementWriteDelegateDelegate.h"
 #include "AchievementWriteCallbackProxy.generated.h"
 
-class UAchievementWriteCallbackProxy;
 class APlayerController;
+class UAchievementWriteCallbackProxy;
 class UObject;
 
 UCLASS(Blueprintable, MinimalAPI)

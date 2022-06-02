@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ROscillator.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=CameraShakeBase -FallbackName=CameraShakeBase
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECameraShakePlaySpace -FallbackName=ECameraShakePlaySpace
+#include "ROscillator.h"
 #include "VOscillator.h"
 #include "FOscillator.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECameraShakePlaySpace -FallbackName=ECameraShakePlaySpace
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=MinimalViewInfo -FallbackName=MinimalViewInfo
 #include "MatineeCameraShake.generated.h"
 
-class UCameraAnimationSequence;
 class UCameraAnim;
-class USequenceCameraShakePattern;
+class UCameraAnimationSequence;
 class UCameraAnimInst;
+class USequenceCameraShakePattern;
 class UMatineeCameraShake;
 class APlayerCameraManager;
 class UCameraShakeSourceComponent;

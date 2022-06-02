@@ -2,9 +2,9 @@
 #include "CoreMinimal.h"
 #include "EnvQueryRequest.generated.h"
 
-class UWorld;
 class UEnvQuery;
 class UObject;
+class UWorld;
 
 USTRUCT(BlueprintType)
 struct AIMODULE_API FEnvQueryRequest {

@@ -6,9 +6,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "TentacleBase.generated.h"
 
-class USceneComponent;
 class USplineComponent;
 class AStabberVineRoot;
+class USceneComponent;
 
 UCLASS(Abstract, Blueprintable)
 class ATentacleBase : public AEnemyPawn {

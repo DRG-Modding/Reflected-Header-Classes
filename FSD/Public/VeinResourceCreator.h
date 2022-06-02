@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RandRange.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "ResourceCreator.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
+#include "RandRange.h"
 #include "VeinResourceCreator.generated.h"
 
 class UVeinResourceData;

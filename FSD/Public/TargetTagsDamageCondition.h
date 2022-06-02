@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DamageCondition.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
+#include "DamageCondition.h"
 #include "TargetTagsDamageCondition.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

@@ -4,8 +4,8 @@
 #include "OnlineConnectionResultDelegate.h"
 #include "ConnectionCallbackProxy.generated.h"
 
-class UConnectionCallbackProxy;
 class APlayerController;
+class UConnectionCallbackProxy;
 class UObject;
 
 UCLASS(Blueprintable, MinimalAPI)

@@ -1,8 +1,8 @@
 #include "StickyFlame.h"
 #include "Net/UnrealNetwork.h"
+#include "StatusEffectTriggerComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
-#include "StatusEffectTriggerComponent.h"
 
 void AStickyFlame::OnRep_IsActive() {
 }

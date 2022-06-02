@@ -2,8 +2,8 @@
 #include "Net/UnrealNetwork.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
 
-class UTerrainMaterial;
 class AActor;
+class UTerrainMaterial;
 class UPrimitiveComponent;
 class AProjectileBase;
 class UDamageComponent;

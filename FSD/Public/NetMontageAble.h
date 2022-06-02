@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Interface -FallbackName=Interface
 #include "NetMontageAble.generated.h"
 
+class UAnimInstance;
 class UAnimMontage;
 class USkeletalMeshComponent;
-class UAnimInstance;
 
 UINTERFACE(BlueprintType, meta=(CannotImplementInterfaceInBlueprint))
 class UNetMontageAble : public UInterface {

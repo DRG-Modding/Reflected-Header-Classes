@@ -3,8 +3,8 @@
 #include "AITask.h"
 #include "AITask_RunEQS.generated.h"
 
-class AAIController;
 class UAITask_RunEQS;
+class AAIController;
 class UEnvQuery;
 
 UCLASS(Blueprintable)

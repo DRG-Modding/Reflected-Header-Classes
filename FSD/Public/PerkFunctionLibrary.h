@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "EPerkSlotType.h"
 #include "EPerkUsageType.h"
+#include "EPerkSlotType.h"
 #include "PerkFunctionLibrary.generated.h"
 
 class UPlayerCharacterID;

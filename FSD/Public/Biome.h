@@ -1,38 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
-#include "RandRange.h"
-#include "HeatSource.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
-#include "BiomeNoiseItem.h"
-#include "ResourceSpawner.h"
-#include "BiomeEnemyEntry.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ReverbSettings -FallbackName=ReverbSettings
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "HeatSource.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
+#include "ResourceSpawner.h"
+#include "RandRange.h"
+#include "BiomeEnemyEntry.h"
+#include "BiomeNoiseItem.h"
 #include "Biome.generated.h"
 
-class UFloodFillSettings;
-class UDebrisSet;
 class UUserWidget;
 class UFileMediaSource;
 class UTexture2D;
 class UParticleSystem;
-class AActor;
+class UObject;
 class UCaveScriptComponent;
+class ULevelSequence;
+class UDebrisSet;
 class ADebrisDataActor;
-class UMaterialInstance;
+class UTunnelSetting;
+class AActor;
 class UTerrainMaterial;
+class UMaterialInstance;
 class UMissionStat;
+class UFloodFillSettings;
+class UEnemyDescriptor;
 class UDetailNoise;
 class UPillarSettings;
-class UTunnelSetting;
-class UEnemyDescriptor;
 class UCritterDescriptor;
 class USoundCue;
 class UReverbEffect;
-class ULevelSequence;
-class UObject;
 
 UCLASS(Blueprintable)
 class FSD_API UBiome : public UDataAsset {

@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "WeakpointChannel.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "DamageData.h"
 #include "WeakpointGlowComponent.generated.h"
 
-class UFSDPhysicalMaterial;
-class UMeshComponent;
-class UHealthComponentBase;
-class USkeletalMeshComponent;
 class UCurveFloat;
+class UHealthComponentBase;
+class UFSDPhysicalMaterial;
+class USkeletalMeshComponent;
+class UMeshComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UWeakpointGlowComponent : public UActorComponent {

@@ -6,10 +6,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=OnTimelineFloat__DelegateSignature -FallbackName=OnTimelineFloatDelegate
 #include "ZipLineProjectile.generated.h"
 
-class UPointLightComponent;
-class UTimelineComponent;
-class UMaterialInstanceDynamic;
 class UCurveFloat;
+class UTimelineComponent;
+class UPointLightComponent;
+class UMaterialInstanceDynamic;
 class UStatusEffect;
 
 UCLASS(Abstract, Blueprintable)

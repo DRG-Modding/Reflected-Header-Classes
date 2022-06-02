@@ -1,10 +1,10 @@
 #include "EndTurnCallbackProxy.h"
 
-class APlayerController;
-class UObject;
+class UEndTurnCallbackProxy;
 class UTurnBasedMatchInterface;
 class ITurnBasedMatchInterface;
-class UEndTurnCallbackProxy;
+class UObject;
+class APlayerController;
 
 UEndTurnCallbackProxy* UEndTurnCallbackProxy::EndTurn(UObject* WorldContextObject, APlayerController* PlayerController, const FString& MatchID, TScriptInterface<ITurnBasedMatchInterface> TurnBasedMatchInterface) {
     return NULL;

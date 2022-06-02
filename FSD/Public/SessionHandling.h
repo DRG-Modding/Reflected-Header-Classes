@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "EDisconnectReason.h"
-#include "EServerSortOrder.h"
 #include "EFSDNATType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 //CROSS-MODULE INCLUDE V2: -ModuleName=OnlineSubsystemUtils -ObjectName=BlueprintSessionResult -FallbackName=BlueprintSessionResult
+#include "EServerSortOrder.h"
 #include "EMissionStructure.h"
+#include "EDisconnectReason.h"
 #include "FriendInfo.h"
+#include "EServerDistance.h"
 #include "EFSDMissionStatus.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
-#include "EServerDistance.h"
 #include "SessionHandling.generated.h"
 
+class UPlayerCharacterID;
 class UObject;
+class UBiome;
 class UFSDGameInstance;
 class APlayerCharacter;
-class UPlayerCharacterID;
-class UBiome;
 class UDifficultySetting;
 class UMissionTemplate;
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "DelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=WorldSubsystem -FallbackName=WorldSubsystem
 #include "BoolDelegateDelegate.h"
-#include "DelegateDelegate.h"
 #include "HUDActorTrackingSubsystem.generated.h"
 
 UCLASS(Blueprintable)

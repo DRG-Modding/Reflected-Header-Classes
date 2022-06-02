@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "MovieSceneCameraShakeSourceTrigger.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneChannel -FallbackName=MovieSceneChannel
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
-#include "MovieSceneCameraShakeSourceTrigger.h"
 #include "MovieSceneCameraShakeSourceTriggerChannel.generated.h"
 
 USTRUCT(BlueprintType)

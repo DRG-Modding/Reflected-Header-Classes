@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "ProceduralTunnelComponent.generated.h"
 
-class UCaveInfluencer;
 class UTunnelParameters;
+class UCaveInfluencer;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UProceduralTunnelComponent : public UActorComponent {

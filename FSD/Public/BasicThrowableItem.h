@@ -6,16 +6,16 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "BasicThrowableItem.generated.h"
 
-class UStaticMeshComponent;
-class UInstantUsable;
-class UBoxComponent;
+class USoundCue;
 class UFirstPersonStaticMeshComponent;
+class UBoxComponent;
 class UCarriableComponent;
 class USphereComponent;
-class USoundCue;
+class UStaticMeshComponent;
+class UInstantUsable;
 class AActor;
-class APlayerCharacter;
 class UPrimitiveComponent;
+class APlayerCharacter;
 
 UCLASS(Abstract, Blueprintable)
 class ABasicThrowableItem : public ACarriableItem {

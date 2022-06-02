@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ENiagaraBakerViewMode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=IntPoint -FallbackName=IntPoint
 #include "NiagaraBakerTextureSettings.h"
-#include "ENiagaraBakerViewMode.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "NiagaraBakerSettings.generated.h"

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIDamageEvent.h"
 #include "AISenseEvent.h"
+#include "AIDamageEvent.h"
 #include "AISenseEvent_Damage.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

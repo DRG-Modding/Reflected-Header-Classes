@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DatasmithObjectTemplate.h"
 #include "DatasmithPostProcessSettingsTemplate.h"
+#include "DatasmithObjectTemplate.h"
 #include "DatasmithPostProcessVolumeTemplate.generated.h"
 
 UCLASS(Blueprintable)

@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Niagara -ObjectName=NiagaraComponent -FallbackName=NiagaraComponent
 #include "CoilgunTrailSpawner.h"
 
-class UFSDPhysicalMaterial;
 class AActor;
-class UPrimitiveComponent;
 class UHealthComponentBase;
+class UFSDPhysicalMaterial;
+class UPrimitiveComponent;
 class ACoilgunWeaponTrail;
 
 void ACoilGun::UpdateAfflictions() {

@@ -2,10 +2,10 @@
 #include "CoreMinimal.h"
 #include "ENiagaraDebugPlaybackMode.h"
 #include "ENiagaraDebugHudFont.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-#include "NiagaraDebugHUDVariable.h"
-#include "ENiagaraDebugHudVerbosity.h"
 #include "NiagaraDebugHudTextOptions.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "ENiagaraDebugHudVerbosity.h"
+#include "NiagaraDebugHUDVariable.h"
 #include "NiagaraDebugHUDSettingsData.generated.h"
 
 USTRUCT(BlueprintType)

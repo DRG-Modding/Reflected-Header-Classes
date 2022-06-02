@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ENavSystemOverridePolicy.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "ENavSystemOverridePolicy.h"
 #include "NavSystemConfigOverride.generated.h"
 
 class UNavigationSystemConfig;

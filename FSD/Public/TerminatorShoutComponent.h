@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "TerminatorShoutState.h"
+#include "ETerminatorShoutState.h"
+#include "DelegateDelegate.h"
 #include "TerminatorTalkMaterial.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAudioComponentPlayState -FallbackName=EAudioComponentPlayState
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "ETerminatorShoutState.h"
-#include "TerminatorShoutState.h"
-#include "DelegateDelegate.h"
 #include "TerminatorShoutComponent.generated.h"
 
 class UAudioComponent;
+class USoundCue;
 class UPointLightComponent;
 class UMeshComponent;
-class USoundCue;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UTerminatorShoutComponent : public UActorComponent {

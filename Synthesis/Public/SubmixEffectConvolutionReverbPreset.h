@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESubmixEffectConvolutionReverbBlockSize.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
 #include "SubmixEffectConvolutionReverbSettings.h"
+#include "ESubmixEffectConvolutionReverbBlockSize.h"
 #include "SubmixEffectConvolutionReverbPreset.generated.h"
 
 class UAudioImpulseResponse;

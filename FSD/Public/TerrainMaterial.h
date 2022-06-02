@@ -6,13 +6,13 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "TerrainMaterial.generated.h"
 
-class UResourceData;
-class UFXSystemAsset;
-class UDialogDataAsset;
-class UTerrainType;
-class UMaterialInstance;
 class USoundCue;
+class UResourceData;
+class UDialogDataAsset;
 class UFXSystemComponent;
+class UMaterialInstance;
+class UFXSystemAsset;
+class UTerrainType;
 class UObject;
 
 UCLASS(Blueprintable)

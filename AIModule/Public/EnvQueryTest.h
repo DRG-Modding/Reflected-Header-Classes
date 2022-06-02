@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEnvQueryTestClamping.h"
 #include "EnvQueryNode.h"
-#include "AIDataProviderFloatValue.h"
 #include "EEnvTestPurpose.h"
-#include "EEnvTestFilterOperator.h"
-#include "EEnvTestScoreOperator.h"
 #include "EEnvTestScoreEquation.h"
 #include "EEnvTestFilterType.h"
+#include "EEnvTestScoreOperator.h"
+#include "EEnvTestFilterOperator.h"
 #include "AIDataProviderBoolValue.h"
+#include "AIDataProviderFloatValue.h"
+#include "EEnvQueryTestClamping.h"
 #include "EEQSNormalizationType.h"
 #include "EnvQueryTest.generated.h"
 

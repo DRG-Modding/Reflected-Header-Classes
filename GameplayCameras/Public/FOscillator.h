@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EInitialOscillatorOffset.h"
 #include "EOscillatorWaveform.h"
+#include "EInitialOscillatorOffset.h"
 #include "FOscillator.generated.h"
 
 USTRUCT(BlueprintType)

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=NiagaraCore -ObjectName=NiagaraMergeable -FallbackName=NiagaraMergeable
-#include "NiagaraPlatformSet.h"
 #include "ENiagaraRendererMotionVectorSetting.h"
+#include "NiagaraPlatformSet.h"
 #include "NiagaraRendererProperties.generated.h"
 
 UCLASS(Abstract, Blueprintable)

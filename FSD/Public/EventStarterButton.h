@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EInputKeys.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "BootUpDelegateDelegate.h"
-#include "EInputKeys.h"
 #include "EventStarterButton.generated.h"
 
 class USceneComponent;

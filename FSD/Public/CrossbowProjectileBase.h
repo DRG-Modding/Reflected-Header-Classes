@@ -2,19 +2,19 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Projectile.h"
+#include "EInputKeys.h"
 #include "OnCrossbowDamageDealtDelegate.h"
 #include "ECrossbowEffectApplication.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "EInputKeys.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "CrossbowProjectileBase.generated.h"
 
-class ACrossbowProjectileStuck;
 class UCrossbowProjectileRecallable;
+class UTexture2D;
 class UCrossbowProjectileMagnetic;
 class UCrossbowProjectileRicochet;
+class ACrossbowProjectileStuck;
 class UCrossbowStuckProjectileEffectBanshee;
-class UTexture2D;
 class UStatusEffect;
 class USoundCue;
 class USphereComponent;

@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-#include "EOculusMR_ClippingReference.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
-#include "EOculusMR_CameraDeviceEnum.h"
 #include "EOculusMR_CompositionMethod.h"
 #include "EOculusMR_PostProcessEffects.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
+#include "EOculusMR_ClippingReference.h"
+#include "EOculusMR_CameraDeviceEnum.h"
 #include "OculusMR_Settings.generated.h"
 
 UCLASS(Blueprintable)

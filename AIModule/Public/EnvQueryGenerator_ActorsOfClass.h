@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "AIDataProviderBoolValue.h"
 #include "EnvQueryGenerator.h"
+#include "AIDataProviderBoolValue.h"
 #include "AIDataProviderFloatValue.h"
 #include "EnvQueryGenerator_ActorsOfClass.generated.h"
 

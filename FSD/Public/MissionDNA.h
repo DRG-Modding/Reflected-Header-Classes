@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
 #include "MissionDNA.generated.h"
 
-class UMissionDuration;
 class UMissionComplexity;
+class UMissionDuration;
 
 UCLASS(Abstract, Blueprintable)
 class UMissionDNA : public UObject {

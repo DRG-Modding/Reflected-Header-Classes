@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneEventSectionBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=MovieScene -ObjectName=MovieSceneEntityProvider -FallbackName=MovieSceneEntityProvider
+#include "MovieSceneEventSectionBase.h"
 #include "MovieSceneEventChannel.h"
 #include "MovieSceneEventTriggerSection.generated.h"
 

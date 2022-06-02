@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "ComponentTrackingDeactivatedSignatureDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
 #include "ComponentTrackingActivatedSignatureDelegate.h"
-#include "ComponentTrackingDeactivatedSignatureDelegate.h"
 #include "SteamVRTrackingReferences.generated.h"
 
 class UStaticMesh;

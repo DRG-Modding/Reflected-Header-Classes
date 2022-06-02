@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=EPreciousMaterialOptions -FallbackName=EPreciousMaterialOptions
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=EPreciousMaterialOptions -FallbackName=EPreciousMaterialOptions
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=MatrixWithExactSync -FallbackName=MatrixWithExactSync
 #include "CarveWithSTLMeshOperationData.generated.h"
 
-class UStaticMeshCarver;
-class USTLMeshCarver;
 class UTerrainMaterial;
+class USTLMeshCarver;
+class UStaticMeshCarver;
 
 USTRUCT(BlueprintType)
 struct FCarveWithSTLMeshOperationData {

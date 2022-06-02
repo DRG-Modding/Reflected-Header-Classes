@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "NiagaraDataSetProperties.h"
 #include "NiagaraCompilerTag.h"
 #include "NiagaraVariable.h"
+#include "NiagaraDataSetID.h"
 #include "NiagaraScriptDataUsageInfo.h"
-#include "NiagaraDataSetProperties.h"
 #include "NiagaraScriptDataInterfaceCompileInfo.h"
 #include "NiagaraStatScope.h"
 #include "VMExternalFunctionBindingInfo.h"
-#include "NiagaraDataSetID.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=NiagaraShader -ObjectName=SimulationStageMetaData -FallbackName=SimulationStageMetaData
 //CROSS-MODULE INCLUDE V2: -ModuleName=NiagaraShader -ObjectName=NiagaraDataInterfaceGPUParamInfo -FallbackName=NiagaraDataInterfaceGPUParamInfo
 #include "ENiagaraScriptCompileStatus.h"

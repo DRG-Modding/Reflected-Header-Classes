@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEnvTestDot.h"
 #include "EnvQueryTest.h"
 #include "EnvDirection.h"
+#include "EEnvTestDot.h"
 #include "EnvQueryTest_Dot.generated.h"
 
 UCLASS(Blueprintable, MinimalAPI)

@@ -6,10 +6,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
 #include "ItemPlacerAggregator.generated.h"
 
-class AItemMarker;
-class AActor;
 class UDialogDataAsset;
 class AItem;
+class AItemMarker;
+class AActor;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UItemPlacerAggregator : public UItemAggregator {

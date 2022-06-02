@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BlueprintWidgetAnimationDelegateBinding.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DynamicBlueprintBinding -FallbackName=DynamicBlueprintBinding
+#include "BlueprintWidgetAnimationDelegateBinding.h"
 #include "WidgetAnimationDelegateBinding.generated.h"
 
 UCLASS(Blueprintable)

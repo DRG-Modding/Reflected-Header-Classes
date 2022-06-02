@@ -3,8 +3,8 @@
 #include "Templates/SubclassOf.h"
 #include "FoliageTypeObject.generated.h"
 
-class UObject;
 class UFoliageType;
+class UObject;
 class UFoliageType_InstancedStaticMesh;
 
 USTRUCT(BlueprintType)

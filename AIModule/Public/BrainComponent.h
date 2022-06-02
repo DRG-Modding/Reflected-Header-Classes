@@ -4,8 +4,8 @@
 #include "AIResourceInterface.h"
 #include "BrainComponent.generated.h"
 
-class UBlackboardComponent;
 class AAIController;
+class UBlackboardComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class AIMODULE_API UBrainComponent : public UActorComponent, public IAIResourceInterface {

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EChatSenderType.h"
 #include "EChatMessageType.h"
+#include "EChatSenderType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
 #include "FSDChatMessage.generated.h"
 

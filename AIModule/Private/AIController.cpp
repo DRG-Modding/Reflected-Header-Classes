@@ -3,12 +3,12 @@
 #include "PathFollowingComponent.h"
 #include "PawnActionsComponent.h"
 
-class UNavigationQueryFilter;
+class AActor;
 class UBlackboardData;
 class UBlackboardComponent;
+class UNavigationQueryFilter;
 class UGameplayTaskResource;
 class UBehaviorTree;
-class AActor;
 class UAIPerceptionComponent;
 
 bool AAIController::UseBlackboard(UBlackboardData* BlackboardAsset, UBlackboardComponent*& BlackboardComponent) {

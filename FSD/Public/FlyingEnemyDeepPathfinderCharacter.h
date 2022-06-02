@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EnemyDeepPathfinderCharacter.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "EnemyDeepPathfinderCharacter.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "FlyingEnemyDeepPathfinderCharacter.generated.h"
 
-class USoundCue;
+class AActor;
+class UParticleSystem;
 class UPhysicalMaterial;
 class UPhysicsAsset;
-class UParticleSystem;
+class USoundCue;
 class UPrimitiveComponent;
-class AActor;
 
 UCLASS(Blueprintable)
 class AFlyingEnemyDeepPathfinderCharacter : public AEnemyDeepPathfinderCharacter {

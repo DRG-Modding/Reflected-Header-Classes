@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ChaosTrailingEventRequestSettings.h"
-#include "EChaosTrailingSortMethod.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
-#include "OnChaosBreakingEventsDelegate.h"
-#include "ChaosCollisionEventRequestSettings.h"
-#include "ChaosBreakingEventRequestSettings.h"
 #include "OnChaosCollisionEventsDelegate.h"
+#include "ChaosCollisionEventRequestSettings.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+#include "ChaosBreakingEventRequestSettings.h"
+#include "ChaosTrailingEventRequestSettings.h"
+#include "OnChaosBreakingEventsDelegate.h"
 #include "OnChaosTrailingEventsDelegate.h"
-#include "EChaosBreakingSortMethod.h"
-#include "ChaosBreakingEventData.h"
 #include "ChaosTrailingEventData.h"
+#include "EChaosTrailingSortMethod.h"
+#include "ChaosBreakingEventData.h"
 #include "ChaosCollisionEventData.h"
 #include "EChaosCollisionSortMethod.h"
+#include "EChaosBreakingSortMethod.h"
 #include "ChaosDestructionListener.generated.h"
 
-class AChaosSolverActor;
 class AGeometryCollectionActor;
+class AChaosSolverActor;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class GEOMETRYCOLLECTIONENGINE_API UChaosDestructionListener : public USceneComponent {

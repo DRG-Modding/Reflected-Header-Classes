@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DatasmithOptionsBase.h"
-#include "EDatasmithImportAssetConflictPolicy.h"
+#include "DatasmithReimportOptions.h"
 #include "EDatasmithImportSearchPackagePolicy.h"
+#include "DatasmithOptionsBase.h"
 #include "EDatasmithImportMaterialQuality.h"
+#include "EDatasmithImportAssetConflictPolicy.h"
 #include "EDatasmithImportActorPolicy.h"
 #include "DatasmithImportBaseOptions.h"
-#include "DatasmithReimportOptions.h"
 #include "DatasmithImportOptions.generated.h"
 
 UCLASS(Blueprintable, Config=EditorPerProjectUserSettings)

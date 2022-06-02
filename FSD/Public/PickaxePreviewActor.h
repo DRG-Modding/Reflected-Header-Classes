@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "SpawnReleasedActor.h"
 #include "PickaxePartEquip.h"
-#include "EPickaxePartLocation.h"
 #include "ItemIDInterface.h"
+#include "SpawnReleasedActor.h"
+#include "EPickaxePartLocation.h"
 #include "PickaxeMeshInstance.h"
 #include "PickaxePreviewActor.generated.h"
 
-class UItemID;
 class USceneComponent;
+class UItemID;
 class UMaterialInterface;
 class UPickaxePart;
 

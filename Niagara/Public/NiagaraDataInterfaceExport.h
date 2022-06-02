@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraUserParameterBinding.h"
-#include "NiagaraDataInterface.h"
 #include "ENDIExport_GPUAllocationMode.h"
+#include "NiagaraDataInterface.h"
+#include "NiagaraUserParameterBinding.h"
 #include "NiagaraDataInterfaceExport.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

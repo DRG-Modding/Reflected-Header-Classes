@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
-#include "ECommunityGoalType.h"
 #include "ECommunityGoalTier.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "ECommunityGoalType.h"
 #include "CommunityGoal.generated.h"
 
-class UObject;
 class UCommunityGoalCategory;
 class UCommnuityRewardSetup;
+class UObject;
 
 UCLASS(Blueprintable)
 class UCommunityGoal : public UDataAsset {

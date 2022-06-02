@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ProgressUpdatedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-#include "PlayersInsideChangedDelegate.h"
-#include "OnFinishedDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+#include "PlayersInsideChangedDelegate.h"
+#include "ProgressUpdatedDelegate.h"
+#include "OnFinishedDelegate.h"
 #include "GuntowerActivationPlatform.generated.h"
 
-class USceneComponent;
-class USkeletalMeshComponent;
-class UCapsuleComponent;
-class AGuntowerModule;
 class UHealthComponentBase;
+class UCapsuleComponent;
+class USceneComponent;
 class AFSDPlayerState;
+class USkeletalMeshComponent;
+class AGuntowerModule;
 class UPrimitiveComponent;
 
 UCLASS(Blueprintable)

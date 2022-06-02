@@ -2,13 +2,13 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-#include "GooPuddleStatusEffectTrigger.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+#include "GooPuddleStatusEffectTrigger.h"
 #include "DamageData.h"
 #include "GooGunPuddle.generated.h"
 
-class USphereComponent;
 class USimpleHealthComponent;
+class USphereComponent;
 class USoundBase;
 class UStatusEffect;
 class UPrimitiveComponent;
@@ -63,6 +63,12 @@ protected:
     void OnHit(float Damage, const FDamageData& DamageData, bool anyHealthLost);
     
 public:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnGooIgnited();
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void IgniteGoo();
+    
     UFUNCTION(BlueprintCallable)
     void AddStatusEffect(TSubclassOf<UStatusEffect> NewStatusEffect);
     

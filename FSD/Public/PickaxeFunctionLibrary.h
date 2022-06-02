@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PickaxeSet.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "EPickaxePartLocation.h"
+#include "PickaxeSet.h"
 #include "PickaxeFunctionLibrary.generated.h"
 
 class UObject;

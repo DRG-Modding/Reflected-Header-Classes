@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneSignedObject.h"
 #include "MovieSceneObjectBindingID.h"
+#include "MovieSceneSignedObject.h"
 #include "EMovieSceneCompletionMode.h"
 #include "EMovieSceneSequenceFlags.h"
 #include "MovieSceneSequence.generated.h"

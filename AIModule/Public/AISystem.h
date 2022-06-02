@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ECollisionChannel -FallbackName=ECollisionChannel
 #include "AISystem.generated.h"
 
-class UAIHotSpotManager;
-class UBehaviorTreeManager;
-class UEnvQueryManager;
 class UAIPerceptionSystem;
+class UBehaviorTreeManager;
+class UAIHotSpotManager;
+class UEnvQueryManager;
 class UAIAsyncTaskBlueprintProxy;
 class UNavLocalGridManager;
 

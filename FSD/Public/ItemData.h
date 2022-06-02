@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimaryDataAsset -FallbackName=PrimaryDataAsset
 #include "CraftingCost.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PrimaryDataAsset -FallbackName=PrimaryDataAsset
 #include "ItemData.generated.h"
 
 class UItemID;
 class UTexture2D;
-class UResourceData;
 class AActor;
+class UResourceData;
 
 UCLASS(Blueprintable)
 class FSD_API UItemData : public UPrimaryDataAsset {

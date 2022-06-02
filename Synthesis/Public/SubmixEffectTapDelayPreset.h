@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SubmixEffectTapDelaySettings.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
 #include "TapDelayInfo.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
+#include "SubmixEffectTapDelaySettings.h"
 #include "SubmixEffectTapDelayPreset.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

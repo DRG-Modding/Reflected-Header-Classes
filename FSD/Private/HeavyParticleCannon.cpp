@@ -1,13 +1,13 @@
 #include "HeavyParticleCannon.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Niagara -ObjectName=NiagaraComponent -FallbackName=NiagaraComponent
 #include "FirstPersonNiagaraComponent.h"
+#include "StickyFlameSpawner.h"
 #include "DamageComponent.h"
 #include "ReflectionHitscanComponent.h"
-#include "StickyFlameSpawner.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Niagara -ObjectName=NiagaraComponent -FallbackName=NiagaraComponent
 
-class AActor;
 class UFSDPhysicalMaterial;
+class AActor;
 
 void AHeavyParticleCannon::UpdateBeamsVisibility_Implementation(bool isBeamVisible) {
 }

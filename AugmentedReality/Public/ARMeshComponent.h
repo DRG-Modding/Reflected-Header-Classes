@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ARComponent.h"
 #include "ARMeshUpdatePayload.h"
+#include "ARComponent.h"
 #include "ARMeshComponent.generated.h"
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

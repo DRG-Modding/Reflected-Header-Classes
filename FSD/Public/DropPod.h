@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "EDropPodState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "EDropPodState.h"
 #include "DropPod.generated.h"
 
-class UAutoCarverComponent;
 class UCurveFloat;
-class ADropPod;
 class UObject;
+class UAutoCarverComponent;
+class ADropPod;
 
 UCLASS(Blueprintable)
 class FSD_API ADropPod : public AActor {

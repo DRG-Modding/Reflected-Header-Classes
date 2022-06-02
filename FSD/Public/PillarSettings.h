@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PillarSegment.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "PillarSegment.h"
 #include "RandRange.h"
 #include "PillarSettings.generated.h"
 

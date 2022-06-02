@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EMinersManualSection.h"
-#include "WindowWidget.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+#include "WindowWidget.h"
+#include "EMinersManualSection.h"
 #include "EscapeMenuWindow.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

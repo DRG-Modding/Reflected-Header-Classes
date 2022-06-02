@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "ExterminationReward.generated.h"
 
-class AActor;
 class UResourceData;
+class AActor;
 
 UCLASS(Abstract, Blueprintable)
 class UExterminationReward : public URunningMissionBP {

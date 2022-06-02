@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-#include "EMovieScenePlayerStatus.h"
-#include "MovieSceneSequencePlaybackParams.h"
-#include "OnMovieSceneSequencePlayerEventDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
 #include "MovieSceneSequencePlaybackSettings.h"
+#include "OnMovieSceneSequencePlayerEventDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
+#include "EMovieScenePlayerStatus.h"
 #include "MovieSceneRootEvaluationTemplateInstance.h"
 #include "MovieSceneSequenceReplProperties.h"
+#include "MovieSceneSequencePlaybackParams.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameRate -FallbackName=FrameRate
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameTime -FallbackName=FrameTime
 #include "EUpdatePositionMethod.h"

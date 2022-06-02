@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
 #include "AmmoCountWidget.generated.h"
 
-class APlayerCharacter;
 class AItem;
+class APlayerCharacter;
 class UItemAggregator;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)

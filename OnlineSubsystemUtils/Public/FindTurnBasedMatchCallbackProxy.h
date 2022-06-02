@@ -4,11 +4,11 @@
 #include "OnlineTurnBasedMatchResultDelegate.h"
 #include "FindTurnBasedMatchCallbackProxy.generated.h"
 
-class UFindTurnBasedMatchCallbackProxy;
 class APlayerController;
-class UObject;
+class UFindTurnBasedMatchCallbackProxy;
 class UTurnBasedMatchInterface;
 class ITurnBasedMatchInterface;
+class UObject;
 
 UCLASS(Blueprintable, MinimalAPI)
 class UFindTurnBasedMatchCallbackProxy : public UOnlineBlueprintCallProxyBase {

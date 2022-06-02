@@ -4,8 +4,8 @@
 #include "LeaderboardQueryResultDelegate.h"
 #include "LeaderboardQueryCallbackProxy.generated.h"
 
-class APlayerController;
 class ULeaderboardQueryCallbackProxy;
+class APlayerController;
 
 UCLASS(Blueprintable, MinimalAPI)
 class ULeaderboardQueryCallbackProxy : public UObject {

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "OnRadialDamageDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "Health.h"
-#include "DeathSigDelegate.h"
-#include "EHealthbarType.h"
 #include "HealthChangedSigDelegate.h"
+#include "Health.h"
 #include "DamageSigDelegate.h"
 #include "HitSigDelegate.h"
 #include "BodypartHitSigDelegate.h"
-#include "OnRadialDamageDelegate.h"
+#include "DeathSigDelegate.h"
+#include "EHealthbarType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DamageData.h"
 #include "HealthComponentBase.generated.h"

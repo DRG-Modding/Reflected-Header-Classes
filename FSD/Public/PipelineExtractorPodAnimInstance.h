@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
-#include "EPipelineExtractorPodAnimState.h"
 #include "ERessuplyPodState.h"
+#include "EPipelineExtractorPodAnimState.h"
 #include "EPipelineBuildState.h"
 #include "ERefineryState.h"
 #include "PipelineExtractorPodAnimInstance.generated.h"

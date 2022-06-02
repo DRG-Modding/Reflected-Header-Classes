@@ -3,9 +3,9 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ChildActorComponent -FallbackName=ChildActorComponent
 
+class AEventStarterButton;
 class ARessuplyPod;
 class AActor;
-class AEventStarterButton;
 class AProceduralSetup;
 class UDebrisPositioning;
 

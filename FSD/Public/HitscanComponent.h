@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "IRandRange.h"
 #include "HitscanBaseComponent.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "HitDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+#include "IRandRange.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "HitscanComponent.generated.h"
 
-class AActor;
-class UFXSystemAsset;
 class USoundCue;
+class UFXSystemAsset;
+class AActor;
 class UFSDPhysicalMaterial;
 class UPrimitiveComponent;
 

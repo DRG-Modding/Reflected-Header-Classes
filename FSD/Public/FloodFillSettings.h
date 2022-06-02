@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LayeredNoise.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "LayeredNoise.h"
 #include "FloodFillSettings.generated.h"
 
 UCLASS(Blueprintable)

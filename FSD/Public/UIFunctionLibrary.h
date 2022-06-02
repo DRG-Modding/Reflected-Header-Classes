@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "UIFunctionLibrary.generated.h"
 
-class UObject;
 class UPlayerCharacterID;
-class UNewsTextLists;
+class UObject;
 class UMissionNameBank;
+class UNewsTextLists;
 
 UCLASS(Blueprintable)
 class UUIFunctionLibrary : public UBlueprintFunctionLibrary {

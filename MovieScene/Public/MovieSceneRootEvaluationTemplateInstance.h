@@ -3,10 +3,10 @@
 #include "MovieSceneSequenceID.h"
 #include "MovieSceneRootEvaluationTemplateInstance.generated.h"
 
-class UObject;
 class UMovieSceneSequence;
 class UMovieSceneCompiledDataManager;
 class UMovieSceneEntitySystemLinker;
+class UObject;
 
 USTRUCT(BlueprintType)
 struct FMovieSceneRootEvaluationTemplateInstance {

@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "GeometryCollectionRenderLevelSetActor.generated.h"
 
-class UVolumeTexture;
 class UMaterial;
+class UVolumeTexture;
 
 UCLASS(Blueprintable)
 class GEOMETRYCOLLECTIONENGINE_API AGeometryCollectionRenderLevelSetActor : public AActor {

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PropertyBinding.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=ECheckBoxState -FallbackName=ECheckBoxState
+#include "PropertyBinding.h"
 #include "CheckedStateBinding.generated.h"
 
 UCLASS(Blueprintable)

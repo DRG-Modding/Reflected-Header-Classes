@@ -4,10 +4,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "RandomFiringGuntowerModule.generated.h"
 
-class UParticleSystem;
 class UStaticMeshComponent;
 class UParticleSystemComponent;
 class UDamageComponent;
+class UParticleSystem;
 class UAudioComponent;
 
 UCLASS(Blueprintable)

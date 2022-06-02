@@ -3,20 +3,20 @@
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=PhysicsCore -ObjectName=PhysicalMaterial -FallbackName=PhysicalMaterial
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FloatInterval -FallbackName=FloatInterval
-#include "DecalData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
+#include "DecalData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "FSDPhysicalMaterial.generated.h"
 
-class UPrimitiveComponent;
 class UReactiveTerrain;
-class UObject;
-class UNiagaraSystem;
 class USoundCue;
-class UFXSystemAsset;
 class UMaterialInstance;
+class UFXSystemAsset;
+class UNiagaraSystem;
 class UFXSystemComponent;
+class UObject;
 class UFSDPhysicalMaterial;
+class UPrimitiveComponent;
 
 UCLASS(Blueprintable, CollapseCategories)
 class UFSDPhysicalMaterial : public UPhysicalMaterial {

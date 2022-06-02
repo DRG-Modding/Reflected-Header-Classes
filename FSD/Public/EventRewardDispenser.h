@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "EventRewardDispenser.generated.h"
 
 class USchematic;
-class AFSDPlayerState;
 class AEventRewardFrame;
 class APlayerCharacter;
+class AFSDPlayerState;
 
 UCLASS(Blueprintable)
 class AEventRewardDispenser : public AActor {

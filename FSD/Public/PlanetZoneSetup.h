@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "PlanetZoneSetup.generated.h"
 
-class UBiome;
 class UPlanetZone;
+class UBiome;
 
 UCLASS(Blueprintable)
 class UPlanetZoneSetup : public UDataAsset {

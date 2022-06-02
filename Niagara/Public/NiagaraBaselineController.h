@@ -5,8 +5,8 @@
 #include "NiagaraBaselineController.generated.h"
 
 class UNiagaraEffectType;
-class ANiagaraPerfBaselineActor;
 class UNiagaraSystem;
+class ANiagaraPerfBaselineActor;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew)
 class NIAGARA_API UNiagaraBaselineController : public UObject {

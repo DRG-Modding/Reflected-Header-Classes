@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ERBFDistanceMethod.h"
 #include "RBFEntry.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RichCurve -FallbackName=RichCurve
+#include "ERBFDistanceMethod.h"
 #include "ERBFFunctionType.h"
 #include "RBFTarget.generated.h"
 

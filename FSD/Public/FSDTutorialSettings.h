@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NewPlayerMutator.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "NewPlayerMutator.h"
 #include "FSDTutorialSettings.generated.h"
 
 UCLASS(Blueprintable)

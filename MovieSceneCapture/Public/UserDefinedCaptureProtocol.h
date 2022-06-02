@@ -6,8 +6,8 @@
 #include "FrameMetrics.h"
 #include "UserDefinedCaptureProtocol.generated.h"
 
-class UTexture;
 class UWorld;
+class UTexture;
 
 UCLASS(Abstract, Blueprintable)
 class MOVIESCENECAPTURE_API UUserDefinedCaptureProtocol : public UMovieSceneImageCaptureProtocolBase {

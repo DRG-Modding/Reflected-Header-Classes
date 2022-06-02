@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "TerrainFunctionLibrary.generated.h"
 
-class UTerrainMaterial;
 class UObject;
+class UTerrainMaterial;
 
 UCLASS(Blueprintable)
 class UTerrainFunctionLibrary : public UBlueprintFunctionLibrary {

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EVanitySlot.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "VanitySlotCharacter.h"
 #include "VanityMasterySettings.h"
 #include "ResourceSpawner.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
-#include "EVanitySlot.h"
 #include "VanitySettings.generated.h"
 
+class UPlayerCharacterID;
+class UTexture2D;
 class UVanityItem;
 class UDLCBase;
-class UTexture2D;
 class UObject;
-class UPlayerCharacterID;
 
 UCLASS(Blueprintable)
 class FSD_API UVanitySettings : public UDataAsset {

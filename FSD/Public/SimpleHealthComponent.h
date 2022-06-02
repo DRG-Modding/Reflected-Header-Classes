@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HealthComponentBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "HealthComponentBase.h"
 #include "SimpleHealthComponent.generated.h"
 
-class UPawnStat;
 class UEnemyComponent;
+class UPawnStat;
 class UDamageTag;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

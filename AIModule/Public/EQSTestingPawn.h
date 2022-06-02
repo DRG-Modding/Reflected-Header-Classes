@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=NavAgentProperties -FallbackName=NavAgentProperties
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Character -FallbackName=Character
+#include "EEnvQueryRunMode.h"
 #include "EQSQueryResultSourceInterface.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Character -FallbackName=Character
+#include "EEnvQueryHightlightMode.h"
 #include "EnvNamedValue.h"
 #include "AIDynamicParam.h"
-#include "EEnvQueryHightlightMode.h"
-#include "EEnvQueryRunMode.h"
 #include "EQSTestingPawn.generated.h"
 
 class UEnvQuery;

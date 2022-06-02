@@ -2,52 +2,52 @@
 #include "CoreMinimal.h"
 #include "DeepPathfinderCharacter.h"
 #include "Skinnable.h"
-#include "Upgradable.h"
 #include "WeaponFireOwner.h"
-#include "SaveGameIDInterface.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "UpgradableGear.h"
-#include "NotifyMessageReceiver.h"
-#include "ItemIDInterface.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
-#include "EDroneAIState.h"
-#include "ReviveUsedSigDelegate.h"
 #include "StateChangedSigDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
-#include "BoscoLightSetting.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "DamageData.h"
+#include "Upgradable.h"
+#include "SaveGameIDInterface.h"
+#include "ItemIDInterface.h"
+#include "NotifyMessageReceiver.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+#include "BoscoLightSetting.h"
+#include "ReviveUsedSigDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "EDroneAIState.h"
+#include "DamageData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "Bosco.generated.h"
 
+class UItemUpgrade;
+class UDialogDataAsset;
 class UAudioComponent;
-class ABoscoController;
-class UHealthComponent;
-class UBoscoAbillityComponent;
+class USoundCue;
 class UPointLightComponent;
+class UDroneSkinnableComponent;
+class UBoscoAbillityComponent;
+class USkeletalMeshComponent;
+class UBobbingComponent;
+class UHealthComponent;
 class UDamageComponent;
+class UParticleSystem;
 class UPawnSensingComponent;
 class UDroneMiningToolBase;
-class UBobbingComponent;
-class USkeletalMeshComponent;
-class UUpgradableBoscoComponent;
 class UHitscanComponent;
+class ABoscoController;
 class USpotLightComponent;
 class UParticleSystemComponent;
-class UDialogDataAsset;
 class USoundBase;
-class UItemUpgrade;
-class UAnimSequenceBase;
 class UBoscoProjectileAbillity;
-class UTerrainMaterial;
 class APlayerCharacter;
 class UItemID;
-class UDroneSkinnableComponent;
+class UUpgradableBoscoComponent;
+class UAnimSequenceBase;
 class UBoscoAbillity;
 class AActor;
-class USoundCue;
-class UParticleSystem;
+class UTerrainMaterial;
 
 UCLASS(Blueprintable)
 class FSD_API ABosco : public ADeepPathfinderCharacter, public IWeaponFireOwner, public IUpgradableGear, public IUpgradable, public ISaveGameIDInterface, public ISkinnable, public IItemIDInterface, public INotifyMessageReceiver {

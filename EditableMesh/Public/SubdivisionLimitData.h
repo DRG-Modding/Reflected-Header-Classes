@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-#include "SubdivisionLimitSection.h"
 #include "SubdividedWireEdge.h"
+#include "SubdivisionLimitSection.h"
 #include "SubdivisionLimitData.generated.h"
 
 USTRUCT(BlueprintType)

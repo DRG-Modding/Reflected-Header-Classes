@@ -3,8 +3,8 @@
 #include "BTTaskNode.h"
 #include "BTTask_PlayAnimation.generated.h"
 
-class UAnimationAsset;
 class UBehaviorTreeComponent;
+class UAnimationAsset;
 class USkeletalMeshComponent;
 
 UCLASS(Blueprintable)

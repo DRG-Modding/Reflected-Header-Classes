@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AnimInstance -FallbackName=AnimInstance
 #include "MicroMissileLauncherAnimInstance.generated.h"
 
-class UAnimMontage;
 class AMicroMissileLauncher;
+class UAnimMontage;
 
 UCLASS(Blueprintable, NonTransient)
 class UMicroMissileLauncherAnimInstance : public UAnimInstance, public ICopyBoneVisibilityCompleted {

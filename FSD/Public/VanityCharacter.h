@@ -4,16 +4,16 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "VanityCharacter.generated.h"
 
-class UHeadVanityItem;
-class USkinColorVanityItem;
-class UAnimSequenceBase;
-class UChildActorComponent;
-class UBeardColorVanityItem;
-class UArmorVanityItem;
-class UEyeBrowsVanityItem;
 class USideburnsVanityItem;
+class UEyeBrowsVanityItem;
 class UMoustacheVanityItem;
+class UHeadVanityItem;
+class UChildActorComponent;
+class UAnimSequenceBase;
+class USkinColorVanityItem;
+class UBeardColorVanityItem;
 class UBeardVanityItem;
+class UArmorVanityItem;
 class UArmorMaterialVanityItem;
 class USkeletalMeshComponent;
 class UMaterialInterface;

@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 #include "ItemSettings.generated.h"
 
-class UItemID;
-class UItemRefundList;
 class UItemData;
+class UItemRefundList;
+class UItemID;
 
 UCLASS(Blueprintable)
 class UItemSettings : public UDataAsset {

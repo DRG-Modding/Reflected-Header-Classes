@@ -1,7 +1,7 @@
 #include "DestroySessionCallbackProxy.h"
 
-class APlayerController;
 class UObject;
+class APlayerController;
 class UDestroySessionCallbackProxy;
 
 UDestroySessionCallbackProxy* UDestroySessionCallbackProxy::DestroySession(UObject* WorldContextObject, APlayerController* PlayerController) {

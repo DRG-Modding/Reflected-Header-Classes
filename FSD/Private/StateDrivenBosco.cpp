@@ -1,11 +1,11 @@
 #include "StateDrivenBosco.h"
-#include "DroneCombatState.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PointLightComponent -FallbackName=PointLightComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
-#include "DroneReviveState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PointLightComponent -FallbackName=PointLightComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 #include "DroneFollowState.h"
+#include "DroneCombatState.h"
 #include "DroneMiningState.h"
+#include "DroneReviveState.h"
 
 AStateDrivenBosco::AStateDrivenBosco() {
     this->PointLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("PointLight"));

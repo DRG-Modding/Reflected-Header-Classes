@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "EnvQueryTest.h"
-#include "EEnvTestPathfinding.h"
 #include "AIDataProviderBoolValue.h"
+#include "EEnvTestPathfinding.h"
 #include "EnvQueryTest_Pathfinding.generated.h"
 
 class UNavigationQueryFilter;

@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=AIController -FallbackName=AIController
-#include "LaserPointerTarget.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "LaserPointerTarget.h"
 #include "DroneControllerBase.generated.h"
 
-class ADroneBase;
 class APlayerCharacter;
+class ADroneBase;
 class AActor;
 
 UCLASS(Blueprintable)

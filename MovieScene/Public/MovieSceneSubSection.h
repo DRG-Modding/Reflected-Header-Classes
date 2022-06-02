@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneSection.h"
 #include "MovieSceneSectionParameters.h"
+#include "MovieSceneSection.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DirectoryPath -FallbackName=DirectoryPath
 #include "MovieSceneSubSection.generated.h"
 

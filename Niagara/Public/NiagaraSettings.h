@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
-//CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETextureRenderTargetFormat -FallbackName=ETextureRenderTargetFormat
 #include "ENiagaraDefaultRendererMotionVectorSetting.h"
-#include "ENiagaraGpuBufferFormat.h"
-#include "ENDISkelMesh_GpuMaxInfluences.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=DeveloperSettings -ObjectName=DeveloperSettings -FallbackName=DeveloperSettings
 #include "ENDISkelMesh_AdjacencyTriangleIndexFormat.h"
 #include "ENDISkelMesh_GpuUniformSamplingFormat.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=SoftObjectPath -FallbackName=SoftObjectPath
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ETextureRenderTargetFormat -FallbackName=ETextureRenderTargetFormat
+#include "ENiagaraGpuBufferFormat.h"
+#include "ENDISkelMesh_GpuMaxInfluences.h"
 #include "NiagaraSettings.generated.h"
 
 class UNiagaraEffectType;

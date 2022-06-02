@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SoundEffectSubmixPreset -FallbackName=SoundEffectSubmixPreset
 #include "SubmixEffectFilterSettings.h"
-#include "ESubmixFilterAlgorithm.h"
 #include "ESubmixFilterType.h"
+#include "ESubmixFilterAlgorithm.h"
 #include "SubmixEffectFilterPreset.generated.h"
 
 UCLASS(Blueprintable, EditInlineNew)

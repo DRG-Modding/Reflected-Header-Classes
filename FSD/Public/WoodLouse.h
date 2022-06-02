@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "EWoodLouseState.h"
 #include "EnemyDeepPathfinderCharacter.h"
 #include "BumpPlayerHit.h"
-#include "EWoodLouseState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagQuery -FallbackName=GameplayTagQuery
 #include "WoodLouse.generated.h"
 
 class USceneComponent;
-class UStatusEffect;
 class UPawnSensingComponent;
 class UFakeMoverSettings;
+class UStatusEffect;
 class AProjectile;
 class AActor;
 class USoundBase;

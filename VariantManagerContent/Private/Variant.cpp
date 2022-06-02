@@ -2,9 +2,9 @@
 
 class UTexture2D;
 class UObject;
+class AActor;
 class UVariantSet;
 class ULevelVariantSets;
-class AActor;
 class UVariant;
 
 void UVariant::SwitchOn() {

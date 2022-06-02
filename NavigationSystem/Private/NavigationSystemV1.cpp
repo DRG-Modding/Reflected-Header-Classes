@@ -3,10 +3,10 @@
 
 class AActor;
 class AController;
-class ANavMeshBoundsVolume;
-class ANavigationData;
 class UObject;
+class ANavMeshBoundsVolume;
 class UNavigationQueryFilter;
+class ANavigationData;
 class UNavArea;
 class UNavigationSystemV1;
 class UNavigationPath;

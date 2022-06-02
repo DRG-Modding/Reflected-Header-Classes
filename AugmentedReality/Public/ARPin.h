@@ -2,15 +2,15 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
-#include "EARTrackingState.h"
-#include "OnARTrackingStateChangedDelegate.h"
 #include "OnARTransformUpdatedDelegate.h"
+#include "OnARTrackingStateChangedDelegate.h"
+#include "EARTrackingState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "ARPin.generated.h"
 
-class UWorld;
-class UARTrackedGeometry;
 class USceneComponent;
+class UARTrackedGeometry;
+class UWorld;
 
 UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UARPin : public UObject {

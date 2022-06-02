@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "FieldNodeFloat.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Chaos -ObjectName=EFieldFalloffType -FallbackName=EFieldFalloffType
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+//CROSS-MODULE INCLUDE V2: -ModuleName=Chaos -ObjectName=EFieldFalloffType -FallbackName=EFieldFalloffType
 #include "BoxFalloff.generated.h"
 
 class UBoxFalloff;

@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "LaserPointerWaypoint.generated.h"
 
-class ALaserPointerItem;
 class APlayerCharacter;
+class ALaserPointerItem;
 
 UCLASS(Abstract, Blueprintable)
 class ALaserPointerWaypoint : public AActor {

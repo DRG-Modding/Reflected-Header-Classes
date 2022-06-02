@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "LevelGenerationCarver.generated.h"
 
-class UStaticMeshCarver;
+class UTerrainMaterial;
 class UStaticMesh;
 class USTLMeshCarver;
-class UTerrainMaterial;
+class UStaticMeshCarver;
 
 USTRUCT(BlueprintType)
 struct FLevelGenerationCarver {

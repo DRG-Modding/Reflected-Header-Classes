@@ -5,8 +5,8 @@
 #include "LevelSequencePlayerSnapshot.h"
 #include "LevelSequenceBurnIn.generated.h"
 
-class ALevelSequenceActor;
 class UObject;
+class ALevelSequenceActor;
 class ULevelSequenceBurnInInitSettings;
 
 UCLASS(Blueprintable, EditInlineNew)

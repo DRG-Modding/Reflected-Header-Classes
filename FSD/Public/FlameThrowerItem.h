@@ -2,22 +2,22 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "AmmoDrivenWeapon.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
 #include "DecalData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "FlameThrowerItem.generated.h"
 
-class UStickyFlameSpawner;
-class UHealthComponentBase;
 class UParticleSystemComponent;
+class UParticleSystem;
 class UDamageComponent;
+class UStickyFlameSpawner;
 class UMotionAudioController;
 class UStatusEffect;
-class UParticleSystem;
 class UItemUpgrade;
 class USoundCue;
 class UProjectileLauncherBaseComponent;
+class UHealthComponentBase;
 class AActor;
 class UFSDPhysicalMaterial;
 class UPrimitiveComponent;

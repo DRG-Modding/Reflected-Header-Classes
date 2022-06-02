@@ -4,8 +4,8 @@
 class UGameplayTaskOwnerInterface;
 class IGameplayTaskOwnerInterface;
 class AActor;
-class UObject;
 class UGameplayTask_SpawnActor;
+class UObject;
 
 UGameplayTask_SpawnActor* UGameplayTask_SpawnActor::SpawnActor(TScriptInterface<IGameplayTaskOwnerInterface> TaskOwner, FVector SpawnLocation, FRotator SpawnRotation, TSubclassOf<AActor> Class, bool bSpawnOnlyOnAuthority) {
     return NULL;

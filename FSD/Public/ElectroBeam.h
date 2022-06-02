@@ -6,12 +6,12 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
 #include "ElectroBeam.generated.h"
 
-class UAudioComponent;
-class UCapsuleComponent;
-class UStatusEffect;
-class USceneComponent;
-class UParticleSystemComponent;
 class UHealthComponentBase;
+class USceneComponent;
+class UCapsuleComponent;
+class UParticleSystemComponent;
+class UAudioComponent;
+class UStatusEffect;
 
 UCLASS(Abstract, Blueprintable)
 class AElectroBeam : public AActor {

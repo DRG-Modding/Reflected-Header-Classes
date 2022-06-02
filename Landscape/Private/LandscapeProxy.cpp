@@ -1,10 +1,10 @@
 #include "LandscapeProxy.h"
 
-class UTexture;
-class UTextureRenderTarget2D;
-class UMaterialInterface;
-class USplineComponent;
 class ULandscapeLayerInfoObject;
+class UTexture;
+class UMaterialInterface;
+class UTextureRenderTarget2D;
+class USplineComponent;
 
 void ALandscapeProxy::SetLandscapeMaterialVectorParameterValue(FName ParameterName, FLinearColor Value) {
 }

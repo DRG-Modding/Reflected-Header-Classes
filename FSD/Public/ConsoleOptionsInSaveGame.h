@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ControllerSettings.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=DLSSBlueprint -ObjectName=UDLSSMode -FallbackName=UDLSSMode
+#include "ControllerSettings.h"
+#include "EConsoleGraphicsMode.h"
 #include "HUDElements.h"
 #include "CharacterOptions.h"
-#include "EConsoleGraphicsMode.h"
 #include "CustomKeyBinding.h"
 #include "ConsoleOptionsInSaveGame.generated.h"
 

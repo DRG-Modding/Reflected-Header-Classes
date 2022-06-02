@@ -10,7 +10,6 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
 #include "Image.generated.h"
 
-class UMaterialInstanceDynamic;
 class UObject;
 class UTexture2DDynamic;
 class UTexture2D;
@@ -18,6 +17,7 @@ class UMaterialInterface;
 class USlateTextureAtlasInterface;
 class ISlateTextureAtlasInterface;
 class USlateBrushAsset;
+class UMaterialInstanceDynamic;
 
 UCLASS(Blueprintable)
 class UMG_API UImage : public UWidget {

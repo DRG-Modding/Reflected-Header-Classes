@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EImpactDecalSize.h"
-#include "DelegateDelegate.h"
-#include "WeaponFireComponent.h"
-#include "SpreadChangedDelegateDelegate.h"
 #include "ERicochetBehavior.h"
+#include "SpreadChangedDelegateDelegate.h"
+#include "WeaponFireComponent.h"
+#include "DelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
+#include "EImpactDecalSize.h"
 #include "HitscanBaseComponent.generated.h"
 
 class UDamageComponent;

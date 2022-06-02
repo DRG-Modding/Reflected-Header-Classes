@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "SaveGameIDInterface.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-#include "ItemIDInterface.h"
+#include "SaveGameIDInterface.h"
 #include "LoadoutItem.h"
+#include "ItemIDInterface.h"
 #include "ArmorPiece.generated.h"
 
-class UPawnStat;
 class UItemID;
 class UUpgradableGearComponent;
 class ALoadoutItemProxy;
+class UPawnStat;
 class AArmorPiece;
 class AItem;
 

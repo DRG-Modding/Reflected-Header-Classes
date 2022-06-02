@@ -5,8 +5,8 @@
 #include "ARComponent.generated.h"
 
 class UMaterialInterface;
-class UARTrackedGeometry;
 class UMRMeshComponent;
+class UARTrackedGeometry;
 
 UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class AUGMENTEDREALITY_API UARComponent : public USceneComponent {

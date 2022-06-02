@@ -3,8 +3,8 @@
 #include "ARBaseAsyncTaskBlueprintProxy.h"
 #include "CheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy.generated.h"
 
-class UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy;
 class UObject;
+class UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy;
 
 UCLASS(Blueprintable)
 class AUGMENTEDREALITY_API UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy : public UARBaseAsyncTaskBlueprintProxy {

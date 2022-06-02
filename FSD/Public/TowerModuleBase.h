@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "FSDPawn.h"
 #include "EventParticipant.h"
-#include "EGuntowerModuleState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
+#include "EGuntowerModuleState.h"
 #include "TowerModuleBase.generated.h"
 
+class USkeletalMesh;
+class UParticleSystem;
 class USceneComponent;
 class USkeletalMeshComponent;
 class UStaticMeshComponent;
 class UEnemyHealthComponent;
-class USkeletalMesh;
 class USoundCue;
-class UParticleSystem;
 
 UCLASS(Blueprintable)
 class ATowerModuleBase : public AFSDPawn, public IEventParticipant {

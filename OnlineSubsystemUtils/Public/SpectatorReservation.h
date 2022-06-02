@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PlayerReservation.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=UniqueNetIdRepl -FallbackName=UniqueNetIdRepl
+#include "PlayerReservation.h"
 #include "SpectatorReservation.generated.h"
 
 USTRUCT(BlueprintType)

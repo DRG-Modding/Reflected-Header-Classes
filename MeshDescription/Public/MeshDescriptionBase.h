@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "VertexInstanceID.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "VertexID.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "PolygonID.h"
-#include "PolygonGroupID.h"
+#include "VertexInstanceID.h"
 #include "TriangleID.h"
+#include "PolygonGroupID.h"
 #include "EdgeID.h"
 #include "MeshDescriptionBase.generated.h"
 

@@ -5,9 +5,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "GuntowerLineProjectile.generated.h"
 
-class USceneComponent;
-class UDamageComponent;
 class UParticleSystemComponent;
+class UDamageComponent;
+class USceneComponent;
 
 UCLASS(Blueprintable)
 class AGuntowerLineProjectile : public AProjectile {

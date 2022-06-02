@@ -2,19 +2,19 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "MissionShoutDelegateDelegate.h"
 #include "MissionShoutEndDelegateDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=GameplayTags -ObjectName=GameplayTagContainer -FallbackName=GameplayTagContainer
 #include "ActiveOutline.h"
 #include "MissionShoutQueueItem.h"
 #include "EShoutType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CommunicationComponent.generated.h"
 
+class UCharacterShoutsData;
 class UAudioComponent;
 class UShoutWidget;
 class UDialogDataAsset;
-class UCharacterShoutsData;
 class APlayerCharacter;
 class UObject;
 class USoundBase;

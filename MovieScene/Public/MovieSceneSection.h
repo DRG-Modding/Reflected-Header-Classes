@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
-#include "MovieSceneEasingSettings.h"
 #include "MovieSceneSignedObject.h"
 #include "MovieSceneSectionEvalOptions.h"
-#include "EMovieSceneBlendType.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=FrameNumber -FallbackName=FrameNumber
+#include "MovieSceneEasingSettings.h"
 #include "MovieSceneFrameRange.h"
-#include "OptionalMovieSceneBlendType.h"
+#include "EMovieSceneBlendType.h"
 #include "EMovieSceneCompletionMode.h"
+#include "OptionalMovieSceneBlendType.h"
 #include "MovieSceneSection.generated.h"
 
 UCLASS(Abstract, Blueprintable, DefaultToInstanced, MinimalAPI)

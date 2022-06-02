@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NiagaraSystemCompiledData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=FXSystemAsset -FallbackName=FXSystemAsset
 #include "NiagaraSystemScalabilityOverride.h"
 #include "NiagaraSystemScalabilityOverrides.h"
 #include "NiagaraEmitterHandle.h"
+#include "NiagaraSystemCompiledData.h"
 #include "NiagaraUserRedirectionParameterStore.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
 #include "NiagaraSystem.generated.h"
 
 class UNiagaraEffectType;
-class UNiagaraScript;
 class UNiagaraParameterCollectionInstance;
+class UNiagaraScript;
 
 UCLASS(Blueprintable)
 class NIAGARA_API UNiagaraSystem : public UFXSystemAsset {

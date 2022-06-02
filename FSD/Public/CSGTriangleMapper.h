@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DebrisCellNoiseParameters.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CellNoise.h"
+#include "DebrisCellNoiseParameters.h"
 #include "CSGTriangleMapper.generated.h"
 
 class UTerrainMaterial;

@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EWoodLouseState.h"
 #include "SpiderAnimInstance.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
-#include "EWoodLouseState.h"
 #include "WoodLouseAnimInstance.generated.h"
 
 UCLASS(Blueprintable, NonTransient)

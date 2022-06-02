@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RoomNodeBase.h"
-#include "RoomGeneratorItem.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+#include "RoomGeneratorItem.h"
 #include "RoomEntrance.h"
 #include "GeneratedRoom.h"
 #include "RoomNode.generated.h"

@@ -4,9 +4,9 @@
 #include "AIPredictionEvent.h"
 #include "AISense_Prediction.generated.h"
 
-class APawn;
 class AActor;
 class AAIController;
+class APawn;
 
 UCLASS(Blueprintable)
 class AIMODULE_API UAISense_Prediction : public UAISense {

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ResourceChangedSignatureDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
+#include "ResourceChangedSignatureDelegate.h"
 #include "ResourceAddedSignatureDelegate.h"
 #include "ResourceFullSignatureDelegate.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Color -FallbackName=Color
 #include "CappedResource.generated.h"
 
 class UResourceData;

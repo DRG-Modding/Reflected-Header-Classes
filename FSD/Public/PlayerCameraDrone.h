@@ -6,10 +6,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 #include "PlayerCameraDrone.generated.h"
 
-class UCameraComponent;
-class AActor;
-class UPawnMovementComponent;
 class UAnimationAsset;
+class UPawnMovementComponent;
+class AActor;
+class UCameraComponent;
 class UPrimitiveComponent;
 
 UCLASS(Abstract, Blueprintable)

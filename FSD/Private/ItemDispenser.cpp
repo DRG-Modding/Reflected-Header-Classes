@@ -1,7 +1,7 @@
 #include "ItemDispenser.h"
 #include "Net/UnrealNetwork.h"
-#include "InstantUsable.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SceneComponent -FallbackName=SceneComponent
+#include "InstantUsable.h"
 
 class APlayerCharacter;
 class AActor;

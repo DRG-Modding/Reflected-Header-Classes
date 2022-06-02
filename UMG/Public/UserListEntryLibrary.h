@@ -3,9 +3,9 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "UserListEntryLibrary.generated.h"
 
+class UListViewBase;
 class UUserListEntry;
 class IUserListEntry;
-class UListViewBase;
 
 UCLASS(Blueprintable)
 class UMG_API UUserListEntryLibrary : public UBlueprintFunctionLibrary {

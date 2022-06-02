@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=CarveOptionsCellSize -FallbackName=CarveOptionsCellSize
 #include "LevelGenerationCarverComponent.generated.h"
 
-class UTerrainMaterialBase;
-class UStaticMeshCarver;
 class UStaticMesh;
 class USTLMeshCarver;
+class UTerrainMaterialBase;
+class UStaticMeshCarver;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class ULevelGenerationCarverComponent : public UPrimitiveComponent {

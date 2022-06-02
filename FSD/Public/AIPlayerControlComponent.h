@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "AIPlayerControlComponent.generated.h"
 
-class UDialogDataAsset;
 class UAnimMontage;
+class UDialogDataAsset;
 class UControlEnemyUsable;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))

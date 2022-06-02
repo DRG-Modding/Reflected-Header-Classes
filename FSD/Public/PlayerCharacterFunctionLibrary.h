@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "PlayerCharacterFunctionLibrary.generated.h"
 
-class AFSDPlayerState;
 class UObject;
+class AFSDPlayerState;
 class APlayerCharacter;
 class AActor;
 

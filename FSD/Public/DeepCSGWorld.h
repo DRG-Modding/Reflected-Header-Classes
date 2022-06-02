@@ -1,50 +1,50 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=VisualLoggerDebugSnapshotInterface -FallbackName=VisualLoggerDebugSnapshotInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=EPreciousMaterialOptions -FallbackName=EPreciousMaterialOptions
+#include "CarveWithSTLMeshOperationData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=VisualLoggerDebugSnapshotInterface -FallbackName=VisualLoggerDebugSnapshotInterface
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=EncodedChunkId -FallbackName=EncodedChunkId
+#include "MeltOperationData.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
+#include "CarveWithColliderOperationData.h"
 #include "TerrainBaseDoneDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=CarveOptionsCellSize -FallbackName=CarveOptionsCellSize
 #include "CSGRaycastHitInfo.h"
 #include "DebrisWhenCarving.h"
 #include "CSGBuildOperationData.h"
 #include "TerrainLateJoinData.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=EncodedChunkId -FallbackName=EncodedChunkId
 #include "PickaxeDigOperationData.h"
 #include "RemoveFloatingIslandOperationData.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=LatentActionInfo -FallbackName=LatentActionInfo
-#include "MeltOperationData.h"
 #include "GrenadeExplodeOperationData.h"
 #include "DrillOperationData.h"
-#include "CarveWithSTLMeshOperationData.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=CarveSplineSegment -FallbackName=CarveSplineSegment
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 #include "SplineSegmentCarveOperationData.h"
-#include "CarveWithColliderOperationData.h"
 #include "ELandscapeCellFilter.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=ECarveFilterType -FallbackName=ECarveFilterType
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
-//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=EPreciousMaterialOptions -FallbackName=EPreciousMaterialOptions
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
+//CROSS-MODULE INCLUDE V2: -ModuleName=FSDEngine -ObjectName=CarveOptionsCellSize -FallbackName=CarveOptionsCellSize
 #include "DeepCSGWorld.generated.h"
 
 class UTerrainMaterial;
+class UStaticMesh;
+class UDebrisSet;
+class UDebrisInstances;
 class UDebrisBase;
 class UTerrainType;
-class ADebrisDataActor;
+class UAsyncPathRequests;
 class UTerrainMaterialsCollection;
-class UDebrisSet;
 class UMaterialInterface;
+class ADebrisDataActor;
 class AProceduralSetup;
 class UObject;
-class UAsyncPathRequests;
-class USTLMeshCarver;
-class UDebrisInstances;
 class UPrimitiveComponent;
-class ADeepCSGWorld;
-class UStaticMesh;
-class UStaticMeshCarver;
 class ACSGBuilder;
+class ADeepCSGWorld;
+class USTLMeshCarver;
+class UStaticMeshCarver;
 
 UCLASS(Blueprintable)
 class FSD_API ADeepCSGWorld : public AActor, public IVisualLoggerDebugSnapshotInterface {

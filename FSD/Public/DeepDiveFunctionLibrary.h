@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
 #include "DeepDiveFunctionLibrary.generated.h"
 
-class UDeepDive;
 class UObject;
-class UGeneratedMission;
 class UDeepDiveTemplate;
+class UGeneratedMission;
+class UDeepDive;
 
 UCLASS(Blueprintable)
 class UDeepDiveFunctionLibrary : public UBlueprintFunctionLibrary {

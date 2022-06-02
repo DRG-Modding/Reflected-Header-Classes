@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "TutorialManager.generated.h"
 
-class AFSDPlayerController;
-class UTutorialComponent;
 class APlayerCharacter;
+class AFSDPlayerController;
 class UFSDSaveGame;
+class UTutorialComponent;
 
 UCLASS(Abstract, Blueprintable)
 class ATutorialManager : public AActor {

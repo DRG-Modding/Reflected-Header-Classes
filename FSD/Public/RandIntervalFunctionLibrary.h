@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RandInterval.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
+#include "RandInterval.h"
 #include "RandIntervalFunctionLibrary.generated.h"
 
 UCLASS(Blueprintable)

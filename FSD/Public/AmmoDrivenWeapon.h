@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimatedItem.h"
-#include "RejoinListener.h"
-#include "Upgradable.h"
 #include "WeaponFireOwner.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
+#include "AnimatedItem.h"
+#include "RecoilSettings.h"
+#include "Upgradable.h"
+#include "RejoinListener.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
 #include "UpgradableGear.h"
+#include "DelegateDelegate.h"
 #include "AmountChangedSignatureDelegate.h"
 #include "AmmoDrivenGenericEventDelegate.h"
-#include "DelegateDelegate.h"
-#include "ItemAnimationItem.h"
 #include "TracerData.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=RuntimeFloatCurve -FallbackName=RuntimeFloatCurve
-#include "RecoilSettings.h"
+#include "ItemAnimationItem.h"
 #include "EAmmoWeaponState.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "AmmoDrivenWeapon.generated.h"
 
+class USoundCue;
 class UWeaponFireComponent;
 class UAmmoDriveWeaponAggregator;
 class UAnimMontage;
+class UAudioComponent;
 class UFXSystemAsset;
 class UParticleSystem;
 class ULightComponent;
-class USoundCue;
 class UForceFeedbackEffect;
-class UAudioComponent;
-class UDialogDataAsset;
 class UItemUpgrade;
+class UDialogDataAsset;
 class APlayerCharacter;
 
 UCLASS(Abstract, Blueprintable)

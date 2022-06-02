@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DeepCSGFloatTree.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Matrix -FallbackName=Matrix
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
 #include "CSGBase.h"
 #include "CSGSDFModulatedInstanceProperties.h"
 #include "BinaryTerrainMaterialCombiner.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Box -FallbackName=Box
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Matrix -FallbackName=Matrix
+#include "DeepCSGFloatTree.h"
 #include "CSGModulatedSDFInstance.generated.h"
 
 class UBakeConfig;

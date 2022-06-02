@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OculusCapsuleCollider.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "ETrackingConfidence.h"
 #include "EOculusHandType.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
+#include "OculusCapsuleCollider.h"
+#include "ETrackingConfidence.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Quat -FallbackName=Quat
 #include "EBone.h"
 #include "OculusInputFunctionLibrary.generated.h"

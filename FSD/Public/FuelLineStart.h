@@ -3,10 +3,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "FuelLineStart.generated.h"
 
-class UFuelLineStartUsable;
 class UStaticMeshComponent;
 class AFuelLineStart;
 class UOutlineComponent;
+class UFuelLineStartUsable;
 class USimpleObjectInfoComponent;
 class UTrackBuilderUsable;
 class ATrackBuilderSegment;

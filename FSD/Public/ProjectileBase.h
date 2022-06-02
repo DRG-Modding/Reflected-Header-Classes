@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EOnProjectileImpactBehaviourEnum.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
-#include "ProjectileImpact.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
+#include "ProjectileImpact.h"
+#include "EOnProjectileImpactBehaviourEnum.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "ProjectileBase.generated.h"
 
-class USoundCue;
-class USphereComponent;
 class UTerrainMaterial;
 class UProjectileUpgradeElement;
+class USoundCue;
+class USphereComponent;
 class UPrimitiveComponent;
 class AProjectileBase;
 class UDamageComponent;

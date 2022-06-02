@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "PathObstacle.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
+#include "PathObstacle.h"
 #include "NoisyPathfinderTest.generated.h"
 
 class UTunnelSegmentSetting;
-class UFloodFillSettings;
 class UTunnelParameters;
+class UFloodFillSettings;
 class ADeepCSGWorld;
 
 UCLASS(Blueprintable)

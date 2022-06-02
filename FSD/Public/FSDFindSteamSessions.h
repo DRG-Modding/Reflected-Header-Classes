@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "indSteamSessionsResultDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Object -FallbackName=Object
+#include "indSteamSessionsResultDelegate.h"
 #include "FSDFindSteamSessions.generated.h"
 
 UCLASS(Blueprintable)

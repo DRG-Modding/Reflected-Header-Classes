@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimNode_PoseHandler.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PoseLink -FallbackName=PoseLink
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EAlphaBlendOption -FallbackName=EAlphaBlendOption
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=PoseLink -FallbackName=PoseLink
+#include "AnimNode_PoseHandler.h"
 #include "AnimNode_PoseBlendNode.generated.h"
 
 class UCurveFloat;

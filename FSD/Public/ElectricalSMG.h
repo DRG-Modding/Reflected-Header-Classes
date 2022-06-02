@@ -6,12 +6,12 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantizeNormal -FallbackName=Vector_NetQuantizeNormal
 #include "ElectricalSMG.generated.h"
 
-class UHealthComponentBase;
-class USoundCue;
-class UParticleSystem;
-class UStatusEffect;
-class UPrimitiveComponent;
 class UFSDPhysicalMaterial;
+class UHealthComponentBase;
+class UStatusEffect;
+class UParticleSystem;
+class USoundCue;
+class UPrimitiveComponent;
 
 UCLASS(Blueprintable)
 class AElectricalSMG : public AAmmoDrivenWeapon {

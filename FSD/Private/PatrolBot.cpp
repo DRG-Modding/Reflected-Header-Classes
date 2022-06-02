@@ -1,19 +1,19 @@
 #include "PatrolBot.h"
 #include "Net/UnrealNetwork.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 #include "HackingUsableComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=AIModule -ObjectName=PawnSensingComponent -FallbackName=PawnSensingComponent
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=SphereComponent -FallbackName=SphereComponent
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ParticleSystemComponent -FallbackName=ParticleSystemComponent
 #include "EnemyComponent.h"
+#include "AvoidCeilingComponent.h"
 #include "DamageComponent.h"
 #include "PawnAlertComponent.h"
-#include "AvoidCeilingComponent.h"
 #include "PlayerImpactCooldownComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=AudioComponent -FallbackName=AudioComponent
 #include "ProjectileAttackComponent.h"
 
-class AActor;
 class UHealthComponentBase;
+class AActor;
 class UPrimitiveComponent;
 
 void APatrolBot::SetIsPatrolling(bool patroling) {

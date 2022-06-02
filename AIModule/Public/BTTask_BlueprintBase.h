@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "IntervalCountdown.h"
 #include "BTTaskNode.h"
+#include "IntervalCountdown.h"
 #include "BTTask_BlueprintBase.generated.h"
 
-class AAIController;
 class AActor;
 class APawn;
+class AAIController;
 
 UCLASS(Abstract, Blueprintable)
 class AIMODULE_API UBTTask_BlueprintBase : public UBTTaskNode {

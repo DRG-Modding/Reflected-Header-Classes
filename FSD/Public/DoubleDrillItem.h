@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "DualAnimatedItem.h"
-#include "RejoinListener.h"
 #include "Upgradable.h"
-#include "EDoubleDrillState.h"
+#include "RejoinListener.h"
 #include "UpgradableGear.h"
+#include "EDoubleDrillState.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Vector_NetQuantize -FallbackName=Vector_NetQuantize
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=HitResult -FallbackName=HitResult
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "DoubleDrillDamageItem.h"
 #include "DoubleDrillItem.generated.h"
 
 class UFirstPersonParticleSystemComponent;
+class UDamageComponent;
 class UFSDAudioComponent;
 class UDoubleDrillAggregator;
-class UDamageComponent;
 class UAnimMontage;
 class UParticleSystem;
 class UForceFeedbackEffect;

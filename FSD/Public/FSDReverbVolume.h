@@ -3,8 +3,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=Actor -FallbackName=Actor
 #include "FSDReverbVolume.generated.h"
 
-class UReverbEffect;
 class USphereComponent;
+class UReverbEffect;
 
 UCLASS(Blueprintable)
 class AFSDReverbVolume : public AActor {

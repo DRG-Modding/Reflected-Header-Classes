@@ -5,10 +5,10 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CalldownItem.generated.h"
 
-class AActor;
-class UResourceData;
 class UItemPlacerAggregator;
 class ARessuplyPod;
+class UResourceData;
+class AActor;
 
 UCLASS(Blueprintable)
 class ACalldownItem : public AAnimatedItem {

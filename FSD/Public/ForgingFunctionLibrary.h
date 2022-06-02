@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ForgingResult.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BlueprintFunctionLibrary -FallbackName=BlueprintFunctionLibrary
-#include "ESchematicType.h"
 #include "ForgingPendingReward.h"
+#include "ESchematicType.h"
+#include "ForgingResult.h"
 #include "ForgingFunctionLibrary.generated.h"
 
 class USchematic;

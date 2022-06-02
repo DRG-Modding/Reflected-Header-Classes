@@ -1,7 +1,7 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 
-class UObject;
 class UTexture;
+class UObject;
 
 void UHeadMountedDisplayFunctionLibrary::UpdateExternalTrackingHMDPosition(const FTransform& ExternalTrackingTransform) {
 }

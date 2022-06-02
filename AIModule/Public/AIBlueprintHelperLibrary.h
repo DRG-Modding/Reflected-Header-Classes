@@ -6,14 +6,14 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "AIBlueprintHelperLibrary.generated.h"
 
-class UBlackboardComponent;
-class UBehaviorTree;
+class AActor;
 class UAnimInstance;
 class APawn;
 class UObject;
-class AActor;
 class AController;
+class UBehaviorTree;
 class UNavigationPath;
+class UBlackboardComponent;
 class AAIController;
 class UAIAsyncTaskBlueprintProxy;
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "RejoinFloat.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
+#include "RejoinFloat.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Guid -FallbackName=Guid
 #include "RejoinInt.h"
 #include "PlayerRejoinState.generated.h"

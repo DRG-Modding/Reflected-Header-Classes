@@ -5,8 +5,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "CableComponent.generated.h"
 
-class USceneComponent;
 class AActor;
+class USceneComponent;
 
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class CABLECOMPONENT_API UCableComponent : public UMeshComponent {

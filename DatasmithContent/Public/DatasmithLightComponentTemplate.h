@@ -4,8 +4,8 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=LinearColor -FallbackName=LinearColor
 #include "DatasmithLightComponentTemplate.generated.h"
 
-class UMaterialInterface;
 class UTextureLightProfile;
+class UMaterialInterface;
 
 UCLASS(Blueprintable)
 class DATASMITHCONTENT_API UDatasmithLightComponentTemplate : public UDatasmithObjectTemplate {

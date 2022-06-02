@@ -3,8 +3,8 @@
 #include "EGameplayTagSourceType.h"
 #include "GameplayTagSource.generated.h"
 
-class URestrictedGameplayTagsList;
 class UGameplayTagsList;
+class URestrictedGameplayTagsList;
 
 USTRUCT(BlueprintType)
 struct GAMEPLAYTAGS_API FGameplayTagSource {

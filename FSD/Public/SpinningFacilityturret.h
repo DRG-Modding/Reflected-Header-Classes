@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FacilityTurret.h"
 #include "RandRange.h"
+#include "FacilityTurret.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Rotator -FallbackName=Rotator
 #include "SpinningFacilityturret.generated.h"
 

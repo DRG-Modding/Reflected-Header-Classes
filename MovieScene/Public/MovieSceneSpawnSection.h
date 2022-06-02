@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MovieSceneBoolSection.h"
 #include "MovieSceneEntityProvider.h"
+#include "MovieSceneBoolSection.h"
 #include "MovieSceneSpawnSection.generated.h"
 
 UCLASS(Blueprintable, MinimalAPI)

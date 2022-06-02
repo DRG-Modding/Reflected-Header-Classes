@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "TickableActionBase.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EEasingFunc -FallbackName=EEasingFunc
+//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Transform -FallbackName=Transform
 #include "MoveComponentToAction.generated.h"
 
+class UObject;
 class USceneComponent;
 class UMoveComponentToAction;
-class UObject;
 
 UCLASS(Blueprintable)
 class UMoveComponentToAction : public UTickableActionBase {

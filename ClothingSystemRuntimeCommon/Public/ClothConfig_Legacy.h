@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ClothConstraintSetup_Legacy.h"
 #include "EClothingWindMethod_Legacy.h"
+#include "ClothConstraintSetup_Legacy.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector -FallbackName=Vector
 #include "ClothConfig_Legacy.generated.h"
 

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InputDisplay.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=UMG -ObjectName=UserWidget -FallbackName=UserWidget
-#include "EFSDInputSource.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SlateCore -ObjectName=TextBlockStyle -FallbackName=TextBlockStyle
 //CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=Vector2D -FallbackName=Vector2D
+#include "EFSDInputSource.h"
+#include "InputDisplay.h"
 #include "RichTextInputWidget.generated.h"
 
-class URichTextBlock;
 class UTextBlock;
+class URichTextBlock;
 
 UCLASS(Abstract, Blueprintable, EditInlineNew, HideDropdown)
 class URichTextInputWidget : public UUserWidget {

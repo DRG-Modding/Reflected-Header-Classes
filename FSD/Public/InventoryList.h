@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "ItemFilterDelegateDelegate.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=DataAsset -FallbackName=DataAsset
+#include "ItemFilterDelegateDelegate.h"
 #include "EItemCategory.h"
 #include "InventoryList.generated.h"
 
-class UItemID;
 class UTexture2D;
 class UMaterialInterface;
+class UItemID;
 class UObject;
 class AActor;
 

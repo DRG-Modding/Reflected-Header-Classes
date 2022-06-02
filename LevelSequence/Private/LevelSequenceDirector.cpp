@@ -1,8 +1,8 @@
 #include "LevelSequenceDirector.h"
 
-class UObject;
 class UMovieSceneSequence;
 class AActor;
+class UObject;
 
 
 UMovieSceneSequence* ULevelSequenceDirector::GetSequence() {

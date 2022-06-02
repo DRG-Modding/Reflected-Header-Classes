@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ActorComponent -FallbackName=ActorComponent
-#include "LerpingPercent.h"
-#include "CountDownFloat.h"
 #include "EIntoxicationState.h"
 #include "EDrinkableAlcoholStrength.h"
+#include "LerpingPercent.h"
+#include "CountDownFloat.h"
 #include "CharacterIntoxicationComponent.generated.h"
 
-class APlayerCharacter;
 class UCurveFloat;
+class APlayerCharacter;
 class UDrinkableDataAsset;
 
 UCLASS(Blueprintable, MinimalAPI, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
